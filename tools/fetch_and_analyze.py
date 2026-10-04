@@ -104,41 +104,29 @@ def generate_rassegna_html(articles):
 
     system_instruction = f"""
 Sei un caporedattore edigooglitore esperto di cronaca, economia e politica dell'Emilia-Romagna.
-Analizza la lista di notizie estratte oggi ({TODAY}) e sintetizzale in una Rassegna Stampa quotidiana completa, autorevole e strutturata in formato HTML.
+Analizza la lista di notizie estratte oggi ({TODAY}) e sintetizzale in una Rassegna Stampa quotidiana completa in formato HTML.
 
-REGOLE DI COPERTURA E SEZIONI:
-1. COPERTURA TERRITORIALE OBBLIGATORIA: Devi coprire notizie rilevanti da tutte e 9 le province dell'Emilia-Romagna:
-   - Bologna (inclusa Città Metropolitana e Imola)
-   - Modena
-   - Reggio Emilia
-   - Parma
-   - Piacenza
-   - Ferrara
-   - Ravenna
-   - Forlì-Cesena
-   - Rimini
+REGOLE TASSATIVE DI STRUTTURA HTML (FONDAMENTALE PER IL LETTORE VOCALE):
+- Usa ESCLUSIVAMENTE tag <h2> per i titoli di sezione, <h3> per i capoluoghi/province, e singoli paragrafi <p> o liste <ul><li> per OGNI notizia.
+- NON avvolgere le notizie dentro tag <div> generici. Ogni singola notizia deve stare dentro un proprio tag <p> o <li>.
 
-2. LINK E FONTI OBBLIGATORI PER OGNI NOTIZIA:
-   - Per OGNI singola notizia riportata, DEVI sempre inserire alla fine del paragrafo il link cliccabile alla fonte originale.
-   - Usa la sintassi HTML: <a href="URL_ARTICOLO" target="_blank">(Fonte)</a> o inserisci il nome della testata come link.
-   - Se unisci più notizie sullo stesso argomento, incolla i link di tutte le fonti incrociate (es. Fonti: <a href="URL1" target="_blank">Ansa</a>, <a href="URL2" target="_blank">il Resto del Carlino</a>).
+REGOLE DI COPERTURA E FONTI:
+1. COPERTURA TERRITORIALE OBBLIGATORIA: Devi coprire tutte e 9 le province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
+2. LINK ALLA FONTE PER OGNI NOTIZIA: Alla fine di ogni paragrafo <p> o <li>, inserisci SEMPRE il link cliccabile originale:
+   Es: <p>Testo notizia... <a href="URL" target="_blank">(Fonte: Ansa)</a></p>
+3. FILTRO CONTENUTI: Scarta gossip e sport minore. Includi le allerte meteo ufficiali della Protezione Civile. Unifica le notizie duplicate citando le diverse fonti.
 
-3. FILTRO CONTENUTI (COSA SCARTARE):
-   - Scarta gossip, gossip locale, notizie di sport (salvo eventi o fatti economici legati allo sport).
-   - Scarta meteo ordinario, ma INCLUDI OBBLIGATORIAMENTE allerte meteo o idrogeologiche della Protezione Civile regionale.
-   - Scarta notizie clickbait o pubblicitarie.
-
-4. SEZIONI RICHIESTE NELL'HTML (Utilizza esattamente questi tag h2):
-   - <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
-   - <h2>ECONOMIA, LAVORO E IMPRESE</h2>
-   - <h2>CRONACA E TERRITORIO</h2> (Suddivisa con tag <h3> per le singole province o macro-aree)
-   - <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
+SEZIONI OBBLIGATORIE:
+- <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
+- <h2>ECONOMIA, LAVORO E IMPRESE</h2>
+- <h2>CRONACA E TERRITORIO</h2> (usa <h3> per le varie province)
+- <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
 
 FORMATO OUTPUT:
-Restituisci SOLO ed esclusivamente il codice HTML del corpo (usando <h2>, <h3>, <p>, <strong>, <a>). Non aggiungere blocchi di codice markdown (nessun ```html).
+Restituisci SOLO ed esclusivamente il frammento HTML (senza tag <html> o <body> e senza blocchi markdown ```html).
 """
 
-    prompt = f"Ecco gli articoli pubblicati oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera la rassegna stampa HTML coordinata:"
+    prompt = f"Ecco gli articoli pubblicati oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera la rassegna stampa HTML:"
 
     models_to_try = ["gemini-2.5-flash", "gemini-1.5-pro"]
     
@@ -158,7 +146,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo (usando <h2>, <h3>, 
                 clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
                 return clean_html
         except Exception as e:
-            print(f"Avviso: Errore con il modello {model_name}: {e}. Tentativo con modello successivo...")
+            print(f"Avviso: Errore con il modello {model_name}: {e}. Tentativo successivo...")
 
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
@@ -170,27 +158,13 @@ def main():
     
     articles = fetch_rss_articles()
     if not articles:
-        print("Nessun articolo estratto dai feed RSS. Interruzione.")
+        print("Nessun articolo estratto. Interruzione.")
         return
 
     html_content = generate_rassegna_html(articles)
-    
-    full_html = f"""<!doctype html>
-<html lang="it">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rassegna Stampa Emilia-Romagna - {TODAY}</title>
-</head>
-<body>
-    <main>
-        {html_content}
-    </main>
-</body>
-</html>"""
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(full_html)
+        f.write(html_content)
         
     print(f"✅ Rassegna generata con successo e salvata in: {OUTPUT_FILE}")
 
