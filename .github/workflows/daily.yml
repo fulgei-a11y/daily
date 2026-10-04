@@ -4,17 +4,17 @@ on:
   schedule:
     # Esegue ogni mattina alle 07:00 italiane (05:00 UTC)
     - cron: '0 5 * * *'
-  workflow_dispatch: # Ti permette di avviarlo anche manualmente con un click
+  workflow_dispatch: # Avvio manuale tramite pulsante
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Scarica il codice
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configura Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -28,10 +28,13 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           TODAY=$(date +'%Y-%m-%d')
-          # 1. Recupera le notizie e crea l'HTML tramite IA
-          python3 tools/fetch_and_analyze.py
           
-          # 2. Genera l'audio MP3 e il JSON dei timestamp
+          # Se hai uno script di scraping in tools/, eseguilo:
+          if [ -f tools/fetch_and_analyze.py ]; then
+            python3 tools/fetch_and_analyze.py
+          fi
+          
+          # Generazione Audio MP3 e JSON timestamp
           python3 tools/build_audio.py --html edizioni/$TODAY.html --audio-out audio/$TODAY.mp3 --json-out edizioni/$TODAY.json
 
       - name: Pubblica i file aggiornati su GitHub Pages
