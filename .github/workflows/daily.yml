@@ -4,7 +4,7 @@ on:
   schedule:
     # Esegue ogni mattina alle 07:00 italiane (05:00 UTC)
     - cron: '0 5 * * *'
-  workflow_dispatch: # Avvio manuale tramite pulsante
+  workflow_dispatch: # Permette l'avvio manuale tramite il pulsante "Run workflow"
 
 jobs:
   build:
@@ -18,31 +18,51 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Installa dipendenze Python e utilità
+      - name: Installa dipendenze di sistema e pacchetti Python
         run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg dos2unix
           python -m pip install --upgrade pip
-          pip install sherpa-onnx requests beautifulsoup4 google-genai
-          sudo apt-get install -y dos2unix
+          pip install requests beautifulsoup4 google-genai
 
-      - name: Normalizza i file di testo e genera Rassegna
+      - name: Genera Rassegna HTML e Audio MP3
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           TODAY=$(date +'%Y-%m-%d')
           
-          # Converti eventuali fine riga Windows in formato Linux
-          dos2unix tools/*.py
+          # Individua i percorsi reali dei file ignorando differenze tra maiuscole/minuscole
+          FETCH_SCRIPT=$(find . -maxdepth 3 -iname "fetch_and_analyze.py" | head -n 1)
+          BUILD_SCRIPT=$(find . -maxdepth 3 -iname "build_audio.py" | head -n 1)
           
-          # 1. Esegui lo scraping e la sintesi HTML
-          python3 tools/fetch_and_analyze.py
+          echo "Script di analisi individuato: $FETCH_SCRIPT"
+          echo "Script audio individuato: $BUILD_SCRIPT"
           
-          # 2. Genera l'audio MP3 e i timestamp JSON
-          python3 tools/build_audio.py --html edizioni/$TODAY.html --audio-out audio/$TODAY.mp3 --json-out edizioni/$TODAY.json
+          if [ -z "$FETCH_SCRIPT" ]; then
+            echo "CRITICO: Impossibile trovare fetch_and_analyze.py nel repository."
+            echo "Mappa attuale delle cartelle:"
+            ls -R
+            exit 1
+          fi
           
-          # 3. Aggiorna il registro index.json
+          # Normalizza eventuali caratteri di fine riga Windows (CRLF -> LF)
+          dos2unix "$FETCH_SCRIPT"
+          if [ -n "$BUILD_SCRIPT" ]; then
+            dos2unix "$BUILD_SCRIPT"
+          fi
+          
+          # 1. Esegue lo scraping e genera l'HTML dell'edizione
+          python3 "$FETCH_SCRIPT"
+          
+          # 2. Esegue la generazione audio se lo script e la relativa cartella esistono
+          if [ -n "$BUILD_SCRIPT" ]; then
+            python3 "$BUILD_SCRIPT" --html edizioni/$TODAY.html --date $TODAY --out audio
+          fi
+          
+          # 3. Aggiorna l'indice dell'ultima edizione per la PWA
           echo "{\"latest\": \"$TODAY\"}" > index.json
 
-      - name: Pubblica i file aggiornati su GitHub Pages
+      - name: Pubblica gli aggiornamenti su GitHub Pages
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
