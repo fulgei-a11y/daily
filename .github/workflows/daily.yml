@@ -2,13 +2,15 @@ name: Rassegna Stampa Automatica
 
 on:
   schedule:
+    # Esegue ogni mattina alle 07:00 italiane (05:00 UTC)
     - cron: '0 5 * * *'
-  workflow_dispatch:
+  workflow_dispatch: # Permette l'avvio manuale tramite il pulsante "Run workflow"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
+    # Permesso fondamentale per consentire al bot di salvare i nuovi file nel repository
     permissions:
       contents: write
 
@@ -50,17 +52,21 @@ jobs:
             dos2unix "$BUILD_SCRIPT"
           fi
           
+          # 1. Esegue lo scraping e genera l'HTML dell'edizione di oggi
           python3 "$FETCH_SCRIPT"
           
+          # 2. Esegue la generazione audio MP3
           if [ -n "$BUILD_SCRIPT" ]; then
             python3 "$BUILD_SCRIPT" --html edizioni/$TODAY.html --date $TODAY --out audio
           fi
           
+          # 3. Aggiorna l'indice JSON e sovrascrive index.html con l'edizione aggiornata
           echo "{\"latest\": \"$TODAY\"}" > index.json
+          cp "edizioni/$TODAY.html" index.html
 
       - name: Commit e Push automatico sicuro
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto-update rassegna"
           branch: main
-          file_pattern: 'edizioni/* audio/* index.json'
+          file_pattern: 'edizioni/* audio/* index.json index.html'
