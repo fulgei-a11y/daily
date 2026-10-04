@@ -93,7 +93,7 @@ def fetch_rss_articles():
 # ---------------------------------------------------------------------------
 # 3. PROMPT DI SISTEMA ED ELABORAZIONE IA (Gemini 2.5 Flash / Fallback)
 # ---------------------------------------------------------------------------
-def generate_rassegna_html(articles):
+def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise ValueError("ERRORE CRITICO: La variabile d'ambiente GEMINI_API_KEY non è impostata.")
@@ -106,7 +106,7 @@ def generate_rassegna_html(articles):
 Sei un caporedattore edigooglitore esperto di cronaca, economia e politica dell'Emilia-Romagna.
 Analizza la lista di notizie estratte oggi ({TODAY}) e sintetizzale in una Rassegna Stampa quotidiana completa in formato HTML.
 
-REGOLE TASSATIVE DI STRUTTURA HTML (FONDAMENTALE PER IL LETTORE VOCALE):
+REGOLE TASSATIVE DI STRUTTURA HTML (COMPATIBILE CON LETTORE AUDIO E STAMPA PDF):
 - Usa ESCLUSIVAMENTE tag <h2> per i titoli di sezione, <h3> per i capoluoghi/province, e singoli paragrafi <p> o liste <ul><li> per OGNI notizia.
 - NON avvolgere le notizie dentro tag <div> generici. Ogni singola notizia deve stare dentro un proprio tag <p> o <li>.
 
@@ -123,7 +123,7 @@ SEZIONI OBBLIGATORIE:
 - <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
 
 FORMATO OUTPUT:
-Restituisci SOLO ed esclusivamente il frammento HTML (senza tag <html> o <body> e senza blocchi markdown ```html).
+Restituisci SOLO ed esclusivamente il frammento HTML del corpo (senza tag <html> o <body> e senza blocchi markdown ```html).
 """
 
     prompt = f"Ecco gli articoli pubblicati oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera la rassegna stampa HTML:"
@@ -151,7 +151,7 @@ Restituisci SOLO ed esclusivamente il frammento HTML (senza tag <html> o <body> 
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 4. SALVATAGGIO FILE HTML
+# 4. SALVATAGGIO FILE HTML CON STILE CSS ELEGANTE PER STAMPA/PDF
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -161,12 +161,104 @@ def main():
         print("Nessun articolo estratto. Interruzione.")
         return
 
-    html_content = generate_rassegna_html(articles)
+    body_content = generate_rassegna_body(articles)
+
+    # Inserimento dello stile grafico per lo schermo e per il PDF
+    full_html = f"""<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rassegna Stampa Emilia-Romagna - {TODAY}</title>
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }}
+        main {{
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }}
+        h1 {{
+            font-size: 24px;
+            color: #004085;
+            border-bottom: 3px solid #004085;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }}
+        h2 {{
+            font-size: 18px;
+            color: #155724;
+            background-color: #e2e3e5;
+            padding: 8px 12px;
+            border-left: 5px solid #28a745;
+            margin-top: 30px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }}
+        h3 {{
+            font-size: 16px;
+            color: #0056b3;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 4px;
+            margin-top: 20px;
+        }}
+        p, li {{
+            font-size: 14.5px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }}
+        a {{
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 600;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
+        /* Stile specifico ottimizzato per l'esportazione / Stampa in PDF */
+        @media print {{
+            body {{
+                background-color: #ffffff;
+                padding: 0;
+            }}
+            main {{
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }}
+            h2 {{
+                background-color: #f1f1f1 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }}
+            a {{
+                color: #000000;
+                text-decoration: underline;
+            }}
+        }}
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Rassegna Stampa Emilia-Romagna — {TODAY}</h1>
+        {body_content}
+    </main>
+</body>
+</html>"""
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(html_content)
+        f.write(full_html)
         
-    print(f"✅ Rassegna generata con successo e salvata in: {OUTPUT_FILE}")
+    print(f"✅ Rassegna generata con successo con layout PDF in: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
