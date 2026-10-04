@@ -2,15 +2,13 @@ name: Rassegna Stampa Automatica
 
 on:
   schedule:
-    # Esegue ogni mattina alle 07:00 italiane (05:00 UTC)
     - cron: '0 5 * * *'
-  workflow_dispatch: # Permette l'avvio manuale tramite il pulsante "Run workflow"
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
-    # PERMISSO FONDAMENTALE: permette al bot di salvare i nuovi file su GitHub
     permissions:
       contents: write
 
@@ -18,7 +16,7 @@ jobs:
       - name: Scarica il codice del repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # SCARICA TUTTO LO STORICO: necessario per far funzionare il rebase
+          fetch-depth: 0
 
       - name: Configura Python
         uses: actions/setup-python@v5
@@ -38,35 +36,25 @@ jobs:
         run: |
           TODAY=$(date +'%Y-%m-%d')
           
-          # Individua i percorsi reali dei file ignorando differenze tra maiuscole/minuscole
           FETCH_SCRIPT=$(find . -maxdepth 3 -iname "fetch_and_analyze.py" | head -n 1)
           BUILD_SCRIPT=$(find . -maxdepth 3 -iname "build_audio.py" | head -n 1)
           
-          echo "Script di analisi individuato: $FETCH_SCRIPT"
-          echo "Script audio individuato: $BUILD_SCRIPT"
-          
           if [ -z "$FETCH_SCRIPT" ]; then
             echo "CRITICO: Impossibile trovare fetch_and_analyze.py nel repository."
-            echo "Mappa attuale delle cartelle:"
-            ls -R
             exit 1
           fi
           
-          # Normalizza eventuali caratteri di fine riga Windows (CRLF -> LF)
           dos2unix "$FETCH_SCRIPT"
           if [ -n "$BUILD_SCRIPT" ]; then
             dos2unix "$BUILD_SCRIPT"
           fi
           
-          # 1. Esegue lo scraping e genera l'HTML dell'edizione
           python3 "$FETCH_SCRIPT"
           
-          # 2. Esegue la generazione audio se lo script e la relativa cartella esistono
           if [ -n "$BUILD_SCRIPT" ]; then
             python3 "$BUILD_SCRIPT" --html edizioni/$TODAY.html --date $TODAY --out audio
           fi
           
-          # 3. Aggiorna l'indice dell'ultima edizione per la PWA
           echo "{\"latest\": \"$TODAY\"}" > index.json
 
       - name: Commit and push changes
@@ -75,8 +63,18 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Auto-update rassegna $(date +'%Y-%m-%d')" || echo "Nessuna modifica da committare"
+          
+          # 1. Sincronizzazione preventiva con il server
           git fetch origin main
-          git pull origin main --rebase --autostash
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git main
+          git pull origin main --rebase
+          
+          # 2. Aggiunta dei file generati
+          git add -A
+          
+          # 3. Commit e Push sicuro con token e force-with-lease
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "Auto-update rassegna $(date +'%Y-%m-%d')"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git main --force-with-lease
+          else
+            echo "Nessun cambiamento rilevato, skip del commit."
+          fi
