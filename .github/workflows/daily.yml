@@ -62,11 +62,11 @@ jobs:
           # 3. Aggiorna l'indice dell'ultima edizione per la PWA
           echo "{\"latest\": \"$TODAY\"}" > index.json
 
-      - name: Pubblica gli aggiornamenti su GitHub Pages
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Auto-update rassegna $(date +'%Y-%m-%d')" || exit 0
-          git pull origin main --rebase
-          git push origin main
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update rassegna ${{ env.TODAY }}"
+          branch: main
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
