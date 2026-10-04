@@ -9,9 +9,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    # PERMISSO FONDAMENTALE: permette al bot di salvare i nuovi file su GitHub
+    permissions:
+      contents: write
+
     steps:
       - name: Scarica il codice del repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # SCARICA TUTTO LO STORICO: necessario per far funzionare il rebase
 
       - name: Configura Python
         uses: actions/setup-python@v5
@@ -23,7 +30,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg dos2unix
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 google-genai
+          pip install requests beautifulsoup4 google-genai gTTS
 
       - name: Genera Rassegna HTML e Audio MP3
         env:
