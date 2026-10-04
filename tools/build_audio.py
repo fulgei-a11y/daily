@@ -6,15 +6,28 @@ Input: il frammento HTML dell'edizione (lo stesso che sta dentro <template id="d
 Produce: out/AAAA-MM-GG.mp3 e out/audio_meta.json
   audio_meta.json = {"date", "audio": "audio/AAAA-MM-GG.mp3", "duration": sec, "items": N, "segments": [{"i": indice notizia, "t": sec}]}
 Gli indici "i" corrispondono, nello stesso ordine, alle notizie che l'app mostra (stessa logica di lettura del frammento),
-cosi' la pagina evidenzia la notizia in ascolto e un tocco su una notizia salta al punto giusto dell'audio.
+così la pagina evidenzia la notizia in ascolto e un tocco su una notizia salta al punto giusto dell'audio.
 """
-import argparse, json, os, re, subprocess, sys, tarfile, tempfile, wave, shutil
+import argparse
+import datetime
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tarfile
+import tempfile
+import wave
 
 SHERPA_VER = "1.12.14"
 SHERPA_URL = f"https://github.com/k2-fsa/sherpa-onnx/releases/download/v{SHERPA_VER}/sherpa-onnx-v{SHERPA_VER}-linux-x64-shared.tar.bz2"
 VOICE_URL = "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-it_IT-paola-medium.tar.bz2"
 CACHE = os.path.expanduser("~/.cache/rassegna-tts")
-MESI = ['', 'gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']
+MESI = [
+    '', 'gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno',
+    'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'
+]
 GIORNI = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica']
 
 
@@ -22,7 +35,10 @@ def ensure_libs():
     try:
         import bs4  # noqa
     except ImportError:
-        subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--break-system-packages", "beautifulsoup4"], check=True)
+        subprocess.run(
+            [sys.executable, "-m", "pip", "install", "-q", "--break-system-packages", "beautifulsoup4"],
+            check=True
+        )
 
 
 def ensure_engine():
@@ -40,8 +56,16 @@ def ensure_engine():
 
 def normalize(s):
     s = re.sub(r"\s+", " ", s)
-    s = re.sub(r"\b(\d{1,2})/(\d{1,2})/(\d{4})\b", lambda m: f"{int(m[1])} {MESI[int(m[2])]} {m[3]}" if 1 <= int(m[2]) <= 12 else m[0], s)
-    s = re.sub(r"\b(\d{1,2})/(\d{1,2})\b", lambda m: f"{int(m[1])} {MESI[int(m[2])]}" if 1 <= int(m[2]) <= 12 and int(m[1]) <= 31 else m[0], s)
+    s = re.sub(
+        r"\b(\d{1,2})/(\d{1,2})/(\d{4})\b",
+        lambda m: f"{int(m[1])} {MESI[int(m[2])]} {m[3]}" if 1 <= int(m[2]) <= 12 else m[0],
+        s
+    )
+    s = re.sub(
+        r"\b(\d{1,2})/(\d{1,2})\b",
+        lambda m: f"{int(m[1])} {MESI[int(m[2])]}" if 1 <= int(m[2]) <= 12 and int(m[1]) <= 31 else m[0],
+        s
+    )
     s = re.sub(r"€\s?/\s?l\b", " euro al litro", s)
     s = re.sub(r"€\s?/\s?kg\b", " euro al chilo", s)
     s = re.sub(r"€\s?/\s?MWh\b", " euro al megawattora", s)
@@ -92,6 +116,7 @@ def items_from_fragment(html):
                         add(c)
                 else:
                     walk(n.children)
+
     walk(soup.children)
     return out
 
@@ -117,11 +142,12 @@ def spoken(prev, cur):
 
 
 def split_long(text, limit=600):
-    """Frasi lunghe in pezzi, per una sintesi piu' stabile."""
+    """Frasi lunghe in pezzi, per una sintesi più stabile."""
     parts, buf = [], ""
     for p in re.split(r"(?<=[.!?;])\s+", text):
         if len(buf) + len(p) + 1 > limit and buf:
-            parts.append(buf); buf = p
+            parts.append(buf)
+            buf = p
         else:
             buf = (buf + " " + p).strip()
     if buf:
@@ -133,16 +159,28 @@ def synth_all(jobs, root, vdir, workers=3):
     from concurrent.futures import ThreadPoolExecutor
     exe = os.path.join(root, "bin", "sherpa-onnx-offline-tts")
     env = dict(os.environ, LD_LIBRARY_PATH=os.path.join(root, "lib"))
-    base = [exe, f"--vits-model={vdir}/it_IT-paola-medium.onnx", f"--vits-tokens={vdir}/tokens.txt",
-            f"--vits-data-dir={vdir}/espeak-ng-data", "--num-threads=1", "--vits-length-scale=1.0"]
+    base = [
+        exe,
+        f"--vits-model={vdir}/it_IT-paola-medium.onnx",
+        f"--vits-tokens={vdir}/tokens.txt",
+        f"--vits-data-dir={vdir}/espeak-ng-data",
+        "--num-threads=1",
+        "--vits-length-scale=1.0"
+    ]
 
     def one(job):
         text, out = job
         for _ in range(2):
-            r = subprocess.run(base + [f"--output-filename={out}", text], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            r = subprocess.run(
+                base + [f"--output-filename={out}", text],
+                env=env,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
             if r.returncode == 0 and os.path.exists(out):
                 return True
         return False
+
     with ThreadPoolExecutor(workers) as ex:
         return list(ex.map(one, jobs))
 
@@ -153,25 +191,34 @@ def main():
     ap.add_argument("--date", required=True)
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
+
     ensure_libs()
     root, vdir = ensure_engine()
     os.makedirs(a.out, exist_ok=True)
-    its = items_from_fragment(open(a.html, encoding="utf-8").read())
+
+    with open(a.html, encoding="utf-8") as f:
+        html_content = f.read()
+
+    its = items_from_fragment(html_content)
     y, m, d = map(int, a.date.split("-"))
-    import datetime
     wd = GIORNI[datetime.date(y, m, d).weekday()]
     intro = f"Rassegna dell'Emilia-Romagna di {wd} {d} {MESI[m]} {y}."
     texts = [spoken(its[i - 1] if i else None, its[i]) for i in range(len(its))]
+
     tmp = tempfile.mkdtemp()
     jobs, owner = [(intro, os.path.join(tmp, "intro.wav"))], [-1]
     for i, t in enumerate(texts):
         for k, piece in enumerate(split_long(t)):
-            jobs.append((piece, os.path.join(tmp, f"{i:04d}_{k:02d}.wav"))); owner.append(i)
+            jobs.append((piece, os.path.join(tmp, f"{i:04d}_{k:02d}.wav")))
+            owner.append(i)
+
     ok = synth_all(jobs, root, vdir)
     if sum(ok) < len(jobs) * 0.95:
         sys.exit(f"Sintesi fallita per {len(jobs) - sum(ok)} pezzi su {len(jobs)}")
+
     rate, segs, t, last = None, [], 0.0, None
     full = os.path.join(tmp, "full.wav")
+
     with wave.open(full, "wb") as w:
         for (txt, p), i in zip(jobs, owner):
             if not os.path.exists(p):
@@ -179,26 +226,46 @@ def main():
             with wave.open(p, "rb") as r:
                 if rate is None:
                     rate = r.getframerate()
-                    w.setnchannels(1); w.setsampwidth(r.getsampwidth()); w.setframerate(rate)
+                    w.setnchannels(1)
+                    w.setsampwidth(r.getsampwidth())
+                    w.setframerate(rate)
                 if i != last and i >= 0:
                     newsec = i == 0 or its[i][0] != its[i - 1][0]
                     gap = 0.9 if newsec else 0.35
-                    w.writeframes(b"\x00\x00" * int(rate * gap)); t += gap
+                    w.writeframes(b"\x00\x00" * int(rate * gap))
+                    t += gap
                     segs.append({"i": i, "t": round(t, 2)})
                     last = i
-                w.writeframes(r.readframes(r.getnframes())); t += r.getnframes() / rate
-                w.writeframes(b"\x00\x00" * int(rate * 0.15)); t += 0.15
+                w.writeframes(r.readframes(r.getnframes()))
+                t += r.getnframes() / rate
+                w.writeframes(b"\x00\x00" * int(rate * 0.15))
+                t += 0.15
+
     mp3 = os.path.join(a.out, f"{a.date}.mp3")
     for br in ("40k", "32k", "24k"):
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", full, "-ac", "1", "-ar", "22050",
-                        "-codec:a", "libmp3lame", "-b:a", br, mp3], check=True)
+        subprocess.run([
+            "ffmpeg", "-y", "-loglevel", "error", "-i", full, "-ac", "1", "-ar", "22050",
+            "-codec:a", "libmp3lame", "-b:a", br, mp3
+        ], check=True)
         if os.path.getsize(mp3) < 14 * 1024 * 1024:
             break
-    meta = {"date": a.date, "audio": f"audio/{a.date}.mp3", "duration": round(t, 1), "items": len(its), "segments": segs}
-    json.dump(meta, open(os.path.join(a.out, "audio_meta.json"), "w"), ensure_ascii=False)
-    shutil.copy(os.path.join(a.out, "audio_meta.json"), os.path.join(a.out, f"{a.date}.json"))
+
+    meta = {
+        "date": a.date,
+        "audio": f"audio/{a.date}.mp3",
+        "duration": round(t, 1),
+        "items": len(its),
+        "segments": segs
+    }
+
+    meta_path = os.path.join(a.out, "audio_meta.json")
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False)
+
+    shutil.copy(meta_path, os.path.join(a.out, f"{a.date}.json"))
     shutil.rmtree(tmp, ignore_errors=True)
-    print(f"OK {mp3} {os.path.getsize(mp3)//1024} KB, {t/60:.1f} min, {len(segs)} notizie")
+
+    print(f"OK {mp3} {os.path.getsize(mp3) // 1024} KB, {t / 60:.1f} min, {len(segs)} notizie")
 
 
 if __name__ == "__main__":
