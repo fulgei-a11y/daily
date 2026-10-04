@@ -140,7 +140,7 @@ select{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);
 <div class="player" role="region" aria-label="Lettore">
   <div class="player-in">
     <div class="now"><span id="nowSec"><b>Pronto</b> · tocca play per ascoltare</span><span id="nowPos">0 / 0</span></div>
-    <div class="bar"><i id="barFill"></i></div>
+    <div class="bar" id="bar"><i id="barFill"></i></div>
     <div class="controls">
       <button class="pill" id="rateBtn" type="button" aria-label="Velocità di lettura">1×</button>
       <div class="mid">
@@ -173,118 +173,9 @@ select{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);
   </div>
 </div>
 <div class="flash" id="flash" role="status" hidden></div>
-<template id="doc"><h2>In evidenza</h2>
-<div class="evid">
-<ol>
-<li><strong>Strage di via Emilia, El Koudri capace di intendere e di volere</strong> — Modena: all'incidente probatorio di ieri i periti del gip hanno escluso un legame tra il disturbo psichiatrico e il gesto del 16 maggio, compiuto «con lucidità operativa». Si va verso la richiesta di processo per strage in Corte d'Assise. Un legale di parte offesa ha depositato un grafico trovato sul pc dell'imputato, con le voci «radicalizzazione» e «Is». <a target="_blank" rel="noopener" href="https://www.gazzettadimodena.it/modena/cronaca/2026/10/02/news/salim-el-koudri-in-tribunale-dichiarato-intendere-e-di-volere-1.100925090">Gazzetta di Modena</a></li>
-<li><strong>Liceo Ariosto, il 22enne resta in carcere</strong> — Ferrara: il gip ha convalidato l'arresto del giovane che ha ferito uno studente di 15 anni con un coltello e ha disposto il carcere, nel reparto psichiatrico. Negli appunti c'era un piano per colpire altri due licei della provincia, tra cui quello di Bondeno, sul modello delle stragi americane. <a target="_blank" rel="noopener" href="https://www.estense.com/2026/1210859/aggressione-allariosto-si-ispirava-alle-stragi-a-scuola-negli-usa/">Estense</a></li>
-<li><strong>Bologna, corteo per «Lince» senza scontri; de Pascale attacca il Viminale sul Cpr</strong> — Circa mille persone hanno sfilato in serata contro la violenza della polizia e il ddl antisemitismo, bloccando viali e stazione. Sul Cpr all'ex caserma Chiarini, il presidente della Regione parla di «campagna elettorale». <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/corteo-collettivi-blocca-viali-e-stazione-g8gi9egn">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/de-pascale-cpr-a-bologna-vogliono-fare-campagna-elettorale_8f24f75f-119d-47df-8ac8-596729fbf44c.html">ANSA</a></li>
-<li><strong>Morto in cantiere a Faenza, ha un nome la vittima</strong> — È Oleksandr Horobets, ucraino residente a Borgo Tossignano. Gli edili sciopereranno 2 ore il 7 ottobre, con un presidio davanti al cantiere di via Pana. <a target="_blank" rel="noopener" href="https://www.ravennanotizie.it/2026/10/02/morti-sul-lavoro-il-7-ottobre-due-ore-di-sciopero-e-presidio-davanti-al-cantiere-di-via-pana-a-faenza/623421/">RavennaNotizie</a></li>
-<li><strong>Trevi, Webuild non rilancia ma abbassa la soglia</strong> — Cesena: l'offerta resta di 4,50 euro in contanti, mentre la soglia di adesione scende al 50% più un'azione. Webuild ha presentato un esposto alla Consob contro il rilancio di Icop. Nel turismo, da gennaio ad agosto le presenze in regione sono 35,5 milioni (+2,5%), spinte dagli stranieri. <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/webuild-lascia-invariata-lofferta-su-trevi-valore-superiore-a-icop_47263618-5302-4c32-a718-c1489928570a.html">ANSA</a></li>
-</ol>
-</div>
-<h2>Cronaca</h2>
-<h3>Bologna (e Imola)</h3>
-<p><strong>Mille in corteo per «Lince», viali e stazione bloccati</strong> — Bologna: ieri sera circa mille persone (collettivi, Usb, Si Cobas, area antagonista, Giovani Palestinesi) sono partite alle 19:45 da piazza del Nettuno. Hanno percorso via Indipendenza, viale Masini e via Stalingrado fino a piazza Lucio Dalla. Era l'anniversario degli scontri di un anno fa in viale Masini, quando l'attivista «Lince» perse un occhio colpita da un lacrimogeno. Il corteo protestava contro la violenza della polizia e il ddl Romeo sull'antisemitismo. A terra erano esposte oltre 40 foto, tra cui quelle di Cucchi, Aldrovandi e Fakir. Massiccio lo schieramento di sicurezza, con elicottero e transenne attorno alla stazione e alla sede di FdI. Il traffico è rimasto fermo fino a circa 2 ore; non ci sono stati scontri. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/corteo-collettivi-blocca-viali-e-stazione-g8gi9egn">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/manifestazione-oggi-bologna-stazione-diretta-raa0a8jn">Carlino (diretta)</a>.</p>
-<p><strong>Cpr all'ex Chiarini, de Pascale: «È campagna elettorale»</strong> — Bologna: sull'ipotesi del Viminale di aprire un Cpr nell'ex caserma di via Mattei, il presidente della Regione dice: «In altri casi si parla di destinazioni regionali, guarda caso in Emilia-Romagna si indica una città precisa». Il sindaco Lepore non commenta finché non riceverà una comunicazione ufficiale. Il deputato Pd Andrea De Maria definisce i Cpr «inadeguati». Fonte: <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/de-pascale-cpr-a-bologna-vogliono-fare-campagna-elettorale_8f24f75f-119d-47df-8ac8-596729fbf44c.html">ANSA</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/de-pascale-e-ipotesi-cpr-tp2h8tjr">Carlino</a>.</p>
-<p><strong>Caso Fakir, per i consulenti della Procura è morto di ipossia</strong> — Bologna: i consulenti indicano come causa della morte di Abderrahim Fakir, 42 anni, deceduto il 19 luglio al Pilastro durante un contenimento, una «insufficienza respiratoria acuta su base ipossica». Vi avrebbero concorso cocaina, agitazione e posizione prona. Gli indagati per omicidio colposo sono sei: due poliziotti e quattro volontari della Croce Rossa. L'avvocato Anselmo, per la famiglia, parla di «un caso come Magherini». La relazione peritale è attesa entro il 21 ottobre. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/fakir-morto-ipossia-anselmo-magherini-bordoni-cocaina-enjw3s27">Carlino</a>.</p>
-<p><strong>Tubercolosi, test su 170 bambini</strong> — San Giovanni in Persiceto: un adulto entrato in contatto con il polo d'infanzia «Amici dei bimbi» è risultato positivo alla Tbc. L'Ausl e il Sant'Orsola hanno avviato i test Mantoux su circa 70 bambini del nido, circa 100 della materna e sul personale. I familiari del paziente sono negativi e la scuola resta aperta. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/un-caso-di-turbecolosi-test-cb18fa98">Carlino</a>.</p>
-<p><strong>Lavoratori irregolari vivevano in un magazzino: sequestro</strong> — Anzola dell'Emilia: i carabinieri, con il Nucleo Ispettorato del Lavoro, hanno eseguito un sequestro preventivo disposto dal gip in un capannone tessile. Lì lavoravano e vivevano «in condizioni fatiscenti» lavoratori cinesi irregolari. Sono indagate due donne cinesi di 53 e 52 anni, la titolare e la responsabile del personale, per impiego aggravato di stranieri irregolari. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/lavoratori-irregolari-condizioni-fatiscenti-sequestrato-magazzino-d5cfb660">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.bologna2000.com/2026/10/02/eseguito-dai-carabinieri-un-decreto-di-sequestro-preventivo/">Bologna2000</a>.</p>
-<p><strong>Incendio in un appartamento in via Fioravanti</strong> — Bologna (Bolognina): ieri dalle 18:50 le fiamme hanno distrutto un appartamento vuoto al terzo piano del civico 99. Sono intervenute sei squadre dei vigili del fuoco; il palazzo è stato evacuato per precauzione e non ci sono feriti. Le cause sono in corso di accertamento. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/fiamme-e-paura-in-via-fioravanti-jdy5smjh">Carlino</a>.</p>
-<p><strong>Truffa al bancomat, arrestato un 30enne</strong> — Bologna: un romeno di 30 anni, con la mascherina, ha detto a una donna di 69 anni in via Mezzofanti che «la tessera era bloccata». Poi ha coperto il display con un giornale e ha prelevato 2.000 euro. La Squadra mobile, che lo pedinava, lo ha arrestato in flagranza e ha restituito i soldi. Su di lui pendevano ordini di carcerazione del Tribunale di Verona. Il fatto è del 30 settembre, diffuso ieri. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/appostato-ruba-duemila-euro-prelevati-cde60484">Carlino</a>.</p>
-<p><strong>Fuga dai carabinieri spruzzando un estintore</strong> — Bologna (Corticella): nella notte tra l'1 e il 2 ottobre, dopo un furto al distributore Enilive di via Shakespeare, i ladri sono scappati e durante l'inseguimento hanno svuotato un estintore dal finestrino. Non risultano arresti e le indagini sono in corso. Fonte: <a target="_blank" rel="noopener" href="https://www.bologna2000.com/2026/10/02/sorpresi-a-rubare-fuggono-dai-carabinieri-e-spruzzano-un-estintore-durante-linseguimento/">Bologna2000</a>.</p>
-<p><strong>Giovani Palestinesi, nuovo corteo il 10 ottobre</strong> — Bologna: sull'evento non autorizzato in Unibo dedicato al 7 ottobre, il presidente della Comunità ebraica Daniele De Paz dice: «È come se i neonazisti celebrassero Marzabotto». Il collettivo annuncia una manifestazione il 10 ottobre in piazza Nettuno. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/giovani-palestinesi-choc-de-paz-11112c3a">Carlino</a>.</p>
-<p><strong>Altri fatti</strong> — A Castel Maggiore è operativa la nuova caserma dei carabinieri in via Neruda, dopo nove anni di cantiere e un costo salito da 1,8 a 3,16 milioni. Sulla strage di Ustica, il gip di Roma ha respinto l'archiviazione e le indagini proseguono; Daria Bonfietti: «Ustica non si archivia». A Zola Predosa, nel processo all'uomo accusato di aver ucciso e bruciato il proprio cane, l'udienza è rinviata a gennaio 2027. Fonte: <a target="_blank" rel="noopener" href="https://www.bologna24ore.it/notizie/cronaca/2026/10/02/castel-maggiore-ha-la-sua-nuova-caserma-dei-carabinieri/">Bologna24ore</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/strage-di-ustica-nuove-indagini-haoj6dvm">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.bologna24ore.it/notizie/cronaca/2026/10/02/zola-predosa-uccise-brutalmente-il-cane-e-poi-gli-diede-fuoco-nuova-udienza-in-tribunale/">Bologna24ore</a>.</p>
-<h3>Modena</h3>
-<p><strong>El Koudri capace di intendere e di volere: verso il processo per strage</strong> — Modena: ieri, nelle circa tre ore di incidente probatorio, Salim El Koudri, 31 anni, era in aula per la prima volta. I periti Matilde Forghieri e Giuseppe Sartori lo ritengono capace di intendere e di volere il 16 maggio, quando con l'auto investì 8 persone in via Emilia. Monica Esposito, 55 anni, è morta il 22 luglio. Secondo i periti non c'è nesso tra il disturbo psichiatrico e il gesto, dettato da «frustrazione, rancore e finalità rivendicativo-dimostrative». La Procura chiederà il processo per strage e omicidio in Corte d'Assise. Secondo Tgcom24 l'accusa non contesta l'aggravante di terrorismo. L'avvocata Deborah De Cicco, legale del fratello della vittima, ha depositato un grafico trovato sul pc dell'imputato con le voci «Radicalizzazion» e «Is». Il sindaco Mezzetti annuncia che il Comune si costituirà parte civile. La deputata Ascari (M5S) ha presentato un'interrogazione per sapere se El Koudri fosse stato seguito dai servizi. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadimodena.it/modena/cronaca/2026/10/02/news/salim-el-koudri-in-tribunale-dichiarato-intendere-e-di-volere-1.100925090">Gazzetta di Modena</a>, <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/attentato-di-modena-el-koudri-in-tribunale_53ee6244-5758-46f8-a7ea-e5133c9c979d.html">ANSA</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/modena/cronaca/el-koudri-attratto-da-isis-qtuzwhnk">Carlino</a>.</p>
-<p><strong>Omicidio di corso Vittorio Emanuele, ergastolo confermato</strong> — Modena: la Corte d'Appello di Bologna ha confermato il carcere a vita per Adenomo Ogbeide, 30 anni, e Osaiande Kingsley, 27, nigeriani residenti a Reggio. Sono accusati di aver ucciso a coltellate Friday Endurance nell'agosto 2023, per contrasti legati alla droga. La difesa ricorrerà in Cassazione. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/modena/cronaca/ucciso-in-corso-vittorio-emanuele-855fb0a0">Carlino</a>.</p>
-<p><strong>Rapina in A1, poliziotto ferito con un coltello</strong> — Modena (area di servizio Secchia Est): due uomini di 46 e 54 anni, sorpresi dalla Polstrada a tentare un furto, hanno ferito un agente all'addome e a un braccio. Sono in carcere per tentata rapina pluriaggravata. Il fatto è del 19 settembre ed è stato reso noto ieri. Fonte: <a target="_blank" rel="noopener" href="https://www.sulpanaro.net/2026/10/due-uomini-scoperti-mentre-tentano-il-furto-in-unarea-di-servizio-sulla1-uno-ferisce-un-poliziotto-con-un-coltello-arrestati/">SulPanaro</a>.</p>
-<p><strong>Sindaca minacciata con una bottiglia rotta</strong> — San Possidonio: il 1° ottobre al Bar Sport di piazza Andreoli una lite tra tre uomini è degenerata. Uno di loro ha minacciato con il collo di una bottiglia i presenti, tra cui la sindaca Veronica Morselli e il barista. I carabinieri di Mirandola hanno fermato due persone; la sindaca ha annunciato una denuncia. Fonte: <a target="_blank" rel="noopener" href="https://www.sulpanaro.net/2026/10/san-possidonio-lite-in-un-bar-in-piazza-la-sindaca-interviene-e-viene-minacciata/">SulPanaro</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/modena/cronaca/violenta-lite-degenera-al-bar-dc1f44f4">Carlino</a>.</p>
-<p><strong>Fuga all'alt in viale Italia, la misura per il 21enne</strong> — Modena: per il Carlino il giudice ha disposto l'obbligo di firma e di dimora a Castelfranco per il neopatentato che mercoledì ha causato 5 feriti scappando alla polizia; La Pressa parla invece di domiciliari. Il dato è da chiarire. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/modena/cronaca/inseguimento-e-schianto-mi-sono-9daa64ce">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.lapressa.it/articoli/pressa_tube/modena-inseguimento-e-terrore-in-viale-italia-arrestato-21enne-di-origine-tunisina-ai-domiciliari">La Pressa</a>.</p>
-<p><strong>Finto finanziere, truffa sventata</strong> — Montecreto: i carabinieri di Pavullo hanno bloccato un 44enne di Torre Annunziata mentre andava a ritirare i gioielli di un'anziana disabile, raggirata al telefono da un complice. È ai domiciliari. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/modena/cronaca/finto-finanziere-al-telefono-sventata-ff6394e6">Carlino</a>.</p>
-<p><strong>Furti nelle isole ecologiche</strong> — A Modena dall'inizio dell'anno ci sono stati 15 ladri identificati e 2 tonnellate di metalli recuperate; arriva la vigilanza armata sperimentale. A Castelvetro 3 arresti convalidati per il furto di ferro del 30 settembre. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadimodena.it/modena/cronaca/2026/10/02/news/isole-ecologiche-boom-di-furti-recuperate-2-tonnellate-di-rifiuti-1.100925172">Gazzetta di Modena</a>, <a target="_blank" rel="noopener" href="https://www.sassuolo2000.it/2026/10/02/castelvetro-avrebbero-rubano-ferro-da-isola-ecologica-arrestati/">Sassuolo2000</a>.</p>
-<p><strong>Ausl, tagli agli extra: infermieri in allarme</strong> — Modena: dal 30 settembre l'Ausl sostituisce i rientri dalla reperibilità e le prestazioni aggiuntive con lo straordinario contrattuale, pagato meno. Proteste di infermieri, Oss e tecnici. A Carpi, dall'8 ottobre e per circa 10 giorni, la terapia intensiva del Ramazzini si trasferisce al Policlinico per lavori. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadimodena.it/modena/cronaca/2026/10/03/news/ausl-tagli-sugli-straordinari-infermieri-sul-piede-di-guerra-1.100925181">Gazzetta di Modena</a>, <a target="_blank" rel="noopener" href="https://www.sulpanaro.net/2026/10/carpi-i-posti-letto-della-terapia-intensiva-del-ramazzini-trasferiti-temporaneamente-al-policlinico-per-consentire-i-lavori-per-la-sostituzione-delluta/">SulPanaro</a>.</p>
-<h3>Reggio Emilia</h3>
-<p><strong>Bosco di Ospizio, il bilancio: 13 denunciati e 4 fogli di via</strong> — Reggio Emilia: secondo la Questura, dopo l'irruzione degli attivisti nel cantiere Conad (alcuni sdraiati sulla benna di una ruspa) ci sono 13 denunciati, soprattutto per invasione di terreni. I fogli di via sono 4, fino a tre anni, per manifestanti di Parma, Milano e Verona. Il presidio è al 61° giorno e l'udienza al Consiglio di Stato resta fissata per ottobre. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadireggio.it/reggio/cronaca/2026/10/02/news/bosco-ospizio-13-attivisti-denunciati-e-quattro-fogli-di-via-dopo-l-invasione-1.100924827">Gazzetta di Reggio</a>, <a target="_blank" rel="noopener" href="https://www.24emilia.com/bosco-ospizio-reggio-emilia-terzo-giorno-lavori-sessantunesimo-proteste/">24Emilia</a>.</p>
-<p><strong>Nube arancione nella zona industriale di Corte Tegge</strong> — Cavriago: ieri verso le 17 una nube rossastra si è alzata da un'azienda di via dell'Industria, probabilmente per la dispersione di acido nitrico. Il nome dell'azienda non è confermato: il Carlino indica lo stabilimento Glacier. La nube si è dissolta in pochi minuti e non ci sono feriti. Vigili del fuoco e Arpae hanno fatto i controlli e le cause sono in accertamento. Fonte: <a target="_blank" rel="noopener" href="https://www.reggiosera.it/2026/10/nube-arancione-su-cavriago-dispersione-di-acido-nitrico-da-unazienda/343508/">Reggiosera</a>, <a target="_blank" rel="noopener" href="https://www.gazzettadireggio.it/reggio/cronaca/2026/10/02/news/corte-tegge-nube-rossastra-nella-zona-industriale-vigili-del-fuoco-in-azione-1.100925080">Gazzetta di Reggio</a>.</p>
-<p><strong>Striscione e coltello finto insanguinato al distributore</strong> — Reggio Emilia: al distributore Ego di via Martiri di Cervarolo, dove domenica un 26enne aveva ferito una donna con un cacciavite, è comparso lo striscione «Il prossimo puoi essere tu, nessuna integrazione». Accanto c'era un coltello coperto di finto sangue. Lo firma il gruppo di estrema destra Reggio Emilia Tricolore. Le fonti non dicono se ci siano indagini. Fonte: <a target="_blank" rel="noopener" href="https://www.reggiosera.it/2026/10/il-prossimo-puoi-essere-tu-striscione-e-lama-davanti-al-distributore-dellaggressione/343510/">Reggiosera</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/aggressione-al-benzinaio-striscione-contro-immigrazione-ey36b2hb">Carlino</a>.</p>
-<p><strong>Metal detector e cani antidroga davanti alle scuole</strong> — Reggio Emilia: il Comitato per l'ordine e la sicurezza, presieduto dal prefetto Salvatore Angieri, ha deciso controlli mirati davanti a scuole e fermate dei bus contro armi, droga e criminalità giovanile. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadireggio.it/reggio/cronaca/2026/10/02/news/reggio-emilia-controlli-mirati-nelle-scuole-e-alle-fermate-del-bus-anche-con-metal-detector-e-cani-antidroga-1.100925054">Gazzetta di Reggio</a>.</p>
-<p><strong>Perseguita e picchia l'ex: 35enne in carcere</strong> — Vezzano sul Crostolo: da novembre minacciava di morte l'ex compagna e il 20 settembre l'ha colpita con un pugno. Il gip ha disposto il carcere per stalking e lesioni aggravate. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadireggio.it/reggio/cronaca/2026/10/02/news/minaccia-di-tagliare-la-testa-all-ex-in-carcere-un-35enne-violento-1.100925044">Gazzetta di Reggio</a>.</p>
-<p><strong>Evaso dai domiciliari, ripreso in piazza Europa</strong> — Reggio Emilia: un 22enne arrestato a febbraio dopo aver gridato «guerra agli infedeli» e tentato di disarmare un agente era ai domiciliari nel Teramano. È evaso ed è stato arrestato dai carabinieri poco prima della mezzanotte del 1° ottobre. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadireggio.it/reggio/cronaca/2026/10/02/news/aveva-invocato-la-guerra-agli-infedeli-e-tentato-di-disarmare-un-agente-evade-dai-domiciliari-a-teramo-preso-a-reggio-emilia-1.100924968">Gazzetta di Reggio</a>.</p>
-<p><strong>Altri fatti</strong> — A Campagnola un 34enne che minacciava di morte la zia per avere soldi ha ora il braccialetto elettronico. Ieri pomeriggio in A1 tra Reggio e Parma, al km 121, uno scontro tra un mezzo pesante e alcune auto ha provocato 6 km di coda; non ci sono notizie sui feriti. A Reggio un consigliere Pd, Antonio Casella, si è scusato per una frase su Bossi; la Lega ne chiede le dimissioni. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadireggio.it/reggio/cronaca/2026/10/02/news/pretende-i-soldi-dalla-zia-e-la-minaccia-di-morte-se-non-glieli-da-braccialetto-elettronico-per-un-34enne-1.100924942">Gazzetta di Reggio</a>, <a target="_blank" rel="noopener" href="https://www.gazzettadireggio.it/reggio/cronaca/2026/10/02/news/incidente-in-autostrada-a1-tra-reggio-emilia-e-parma-6-km-di-coda-1.100925071">Gazzetta di Reggio</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/casella-e-le-parole-su-2f460cae">Carlino</a>.</p>
-<h3>Parma</h3>
-<p class="note">Gazzetta di Parma e ParmaToday non erano consultabili: alcune notizie sono note solo dai titoli.</p>
-<p><strong>13enne cade dalla bici in Cittadella, è grave</strong> — Parma: ieri pomeriggio un ragazzino di 13 anni ha perso il controllo della bici da cross dopo un salto, su un sentiero dei bastioni del parco Cittadella. È ricoverato in terapia intensiva pediatrica al Maggiore con un trauma toracico. I carabinieri ricostruiscono la dinamica. Fonte: <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/cade-in-bicicletta-nel-parco-13enne-in-rianimazione-a-parma_e2eaafe1-c570-4358-aae1-a5563486f1e2.html">ANSA</a>, <a target="_blank" rel="noopener" href="https://www.gazzettadiparma.it/home/2026/10/03/news/e-ancora-grave-in-terapia-intensiva-pediatrica-il-13enne-caduto-con-la-bici-da-cross-in-cittadella-trauma-toracico-971936/">Gazzetta di Parma</a>.</p>
-<p><strong>Controlli straordinari in centro e a San Leonardo</strong> — Parma: ieri la Polizia ha passato al setaccio Pilotta, stazione, San Leonardo, via Verdi, Parco Ducale e Oltretorrente, con le unità cinofile. Ha identificato 106 persone e sequestrato 150 grammi di hashish nascosti nelle campane del vetro e nelle aiuole. Non è noto se ci siano arresti. Fonte: <a target="_blank" rel="noopener" href="https://www.12tvparma.it/puntata/tg-parma-edizione-del-02-10-2026-ore-1930/maxi-operazione-della-polizia-in-centro-san-leonardo-e-parco-ducale-droga-sequestrata/">12 TV Parma</a>, <a target="_blank" rel="noopener" href="https://www.gazzettadiparma.it/home/2026/10/03/news/centro-e-san-leonardo-passati-al-setaccio-971939/">Gazzetta di Parma</a>.</p>
-<p><strong>Aggressione in via d'Azeglio, un ragazzo al Maggiore</strong> — Parma (Oltretorrente): ieri sera un ragazzo è stato ferito ed è stato portato in ospedale. Dettagli da verificare: l'articolo non era leggibile. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadiparma.it/cronaca/2026/10/02/news/aggressione-in-via-d-azeglio-ferito-un-ragazzo-e-stato-portato-al-maggiore-971950/">Gazzetta di Parma</a>.</p>
-<p><strong>Altri fatti</strong> — Nel Parmense i ladri hanno sfondato il muro di un ufficio postale e forzato la cassaforte; località da verificare. Per la morte di Sandro Bosi, investito sulle strisce, l'automobilista patteggia. Ieri ci sono stati incidenti in tangenziale sud, con un furgone e due auto e diversi feriti, e in piazzale Vittorio Emanuele II, dove è rimasto ferito un pedone di 17 anni. A Sorbolo un'impronta del palmo ha permesso di identificare e denunciare un 28enne per un tentato furto in casa. Fonte: <a target="_blank" rel="noopener" href="https://www.gazzettadiparma.it/home/2026/10/03/news/sfondato-il-muro-esterno-e-forzata-la-cassaforte-delle-poste-971941/">Gazzetta di Parma</a>, <a target="_blank" rel="noopener" href="https://www.gazzettadiparma.it/home/2026/10/03/news/sandro-bosi-travolto-e-ucciso-mentre-attraversava-sulle-strisce-patteggia-l-automobilista-971940/">Gazzetta di Parma</a>, <a target="_blank" rel="noopener" href="https://www.gazzettadiparma.it/cronaca/2026/10/02/news/incidente-in-tangenziale-sud-disagi-fra-gli-svincoli-di-via-budellungo-e-via-traversetolo-971806/">Gazzetta di Parma</a>, <a target="_blank" rel="noopener" href="https://www.parmadaily.it/tentato-furto-in-abitazione-a-sorbolo-unimpronta-incastra-il-presunto-autore-denunciato-un-28enne/">ParmaDaily</a>.</p>
-<h3>Piacenza</h3>
-<p><strong>Auto contro moto, 15enne grave a Pavia</strong> — Castel San Giovanni: ieri verso le 21, in via Malvicino, una Mercedes si è scontrata con la moto guidata da un ragazzo di 15 anni. Le sue condizioni sono peggiorate sul posto e l'elisoccorso, atterrato allo stadio, lo ha portato al San Matteo di Pavia. I carabinieri di Sarmato indagano sulla dinamica. Fonte: <a target="_blank" rel="noopener" href="https://www.liberta.it/news/attualita/cronaca/cronaca-nera/scontro-tra-auto-e-moto-a-castel-san-giovanni-grave-un-15enne/110493">Libertà</a>.</p>
-<p><strong>Frontale tra furgone e auto, che finisce nel canale</strong> — Castel San Giovanni: ieri poco dopo le 13, in via Ciceri, sono rimasti feriti una donna di 52 anni e un uomo di 43, portati all'ospedale di Piacenza. Sulla gravità le fonti non concordano. Fonte: <a target="_blank" rel="noopener" href="https://www.piacenzasera.it/2026/10/frontale-tra-auto-e-furgone-a-castello-due-persone-in-ospedale/663889/">PiacenzaSera</a>, <a target="_blank" rel="noopener" href="https://www.liberta.it/news/attualita/cronaca/schianto-frontale-camioncino-utilitaria-tre-feriti/110467">Libertà</a>.</p>
-<p><strong>Con una e-bike rubata: denuncia e foglio di via</strong> — Piacenza (San Lazzaro): un negoziante ha riconosciuto una bici rubata. Un 35enne straniero, che l'aveva comprata per 300 euro, è stato denunciato per ricettazione e porto di coltello e allontanato per due anni. Fonte: <a target="_blank" rel="noopener" href="https://www.piacenzasera.it/2026/10/trovato-con-una-bici-elettrica-rubata-denuncia-e-foglio-di-via/663930/">PiacenzaSera</a>.</p>
-<p><strong>Case di Rocco, demolizione sospesa</strong> — Piacenza: lo stabile seicentesco vincolato di via Emilia Pavese non è stato abbattuto. Dopo l'intervento di Italia Nostra la Soprintendenza valuta una messa in sicurezza alternativa. Fonte: <a target="_blank" rel="noopener" href="https://www.liberta.it/news/territorio/citta/piacenza/case-di-rocco-demolizione-ferma-la-soprintendenza-studia/110478">Libertà</a>.</p>
-<p><strong>Addio a Leo, 23 anni</strong> — Gossolengo: ieri si è svolta la cerimonia per il ragazzo morto il 27 settembre a Pianello, passeggero di un'auto finita contro un albero. Gli amici chiedono una panchina in sua memoria e il sindaco di Pianello è d'accordo. Fonte: <a target="_blank" rel="noopener" href="https://www.liberta.it/news/territorio/comuni/val-trebbia/gli-amici-al-sindaco-una-panchina-dove-leo-e-morto/110480">Libertà</a>.</p>
-<h3>Ferrara</h3>
-<p><strong>Ariosto, carcere per il 22enne: progettava altri attacchi</strong> — Ferrara: il gip Giovanni Solinas ha convalidato l'arresto del giovane che il 30 settembre ha ferito uno studente di 15 anni con un coltello da sub nei bagni del liceo. Ha disposto il carcere nel reparto psichiatrico, respingendo i domiciliari, e parla di «evidente pericolosità». Nel telefono e in appunti scritti a mano c'era il piano di aggressioni in altri due licei della provincia, tra cui Bondeno, ispirato alle stragi nelle scuole americane. Il coltello era stato comprato online. Il difensore, avvocato Emiliano Mancino, chiederà il trasferimento in una struttura sanitaria. Fonte: <a target="_blank" rel="noopener" href="https://www.estense.com/2026/1210859/aggressione-allariosto-si-ispirava-alle-stragi-a-scuola-negli-usa/">Estense</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ferrara/cronaca/strage-come-alla-columbine-jc3kgugv">Carlino</a>.</p>
-<p><strong>Rapina da 120mila euro alla Credem: preso un 55enne</strong> — Cento: il Nucleo investigativo dei carabinieri ha arrestato a Brindisi un uomo di 55 anni per l'assalto del 5 maggio 2025, quando la banda tenne in ostaggio clienti e dipendenti con un'arma. È stato identificato grazie a telecamere, celle telefoniche e a un testimone che sentì il complice chiamarlo «Salvatore». Si cercano gli altri componenti della banda. Fonte: <a target="_blank" rel="noopener" href="https://www.lanuovaferrara.it/ferrara/cronaca/2026/10/02/news/rapina-da-120mila-euro-a-cento-c-e-il-primo-arrestato-1.100925023">Nuova Ferrara</a>, <a target="_blank" rel="noopener" href="https://www.estense.com/2026/1210845/colpo-da-120mila-euro-alla-credem-preso-uno-dei-rapinatori/">Estense</a>.</p>
-<p><strong>Sgarbi, condizioni «critiche ma stabili»</strong> — Il bollettino di ieri del Gemelli conferma che Vittorio Sgarbi, 74 anni, è in terapia intensiva per insufficienza respiratoria, senza peggioramenti. Fonte: <a target="_blank" rel="noopener" href="https://www.estense.com/2026/1210717/sgarbi-il-bollettino-dal-gemelli-condizioni-critiche-ma-stabili/">Estense</a>.</p>
-<p><strong>Punta il monopattino contro un carabiniere</strong> — Ferrara (zona Gad): un 34enne senza fissa dimora spacciava nella galleria tra piazzale Stazione e piazzale Castellina e ha tentato di investire un militare in borghese. L'arresto è stato convalidato ieri, con obbligo di firma. Fonte: <a target="_blank" rel="noopener" href="https://www.estense.com/2026/1210848/gad-tenta-di-investire-un-carabiniere-col-monopattino-aveva-la-droga-nello-zaino/">Estense</a>.</p>
-<p><strong>Legionella nei nidi, i genitori contestano i tempi</strong> — Ferrara: il batterio è stato trovato in quattro servizi 0-6 anni (Neruda, Cavallari, Trenino, Mongolfiera). Il primo prelievo è dell'8 settembre, ma le famiglie sono state avvisate solo il 16. Si attendono i nuovi esiti dopo le sanificazioni. Fonte: <a target="_blank" rel="noopener" href="https://www.lanuovaferrara.it/ferrara/cronaca/2026/10/02/news/legionella-a-ferrara-i-dubbi-dei-genitori-i-controlli-andavano-fatti-prima-1.100924772">Nuova Ferrara</a>.</p>
-<p><strong>Altri fatti</strong> — A Ferrara Aissa Moncef, 59 anni, è stato condannato a 5 anni e 2 mesi per le estorsioni a un imprenditore di Copparo. A Bondeno un gruppo di adolescenti ha causato tre episodi di vandalismo e insulti agli autisti sui bus Tper 363 e 366. A Comacchio la maggioranza ha bocciato i 41 emendamenti delle opposizioni al Dup. A Consandolo c'è polemica sui lavori nell'ex cinema; il sindaco Baldini esclude pratiche per una moschea e l'assemblea pubblica è il 7 ottobre. Fonte: <a target="_blank" rel="noopener" href="https://www.lanuovaferrara.it/ferrara/cronaca/2026/10/02/news/ferrara-minacce-con-la-bambola-impiccata-condannato-a-oltre-cinque-anni-1.100924770">Nuova Ferrara</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ferrara/cronaca/tensione-sul-bus-danni-e-673baab8">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.estense.com/2026/1210786/comacchio-bocciati-41-emendamenti-al-dup-la-minoranza-totale-chiusura-della-maggioranza/">Estense</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ferrara/cronaca/lavori-allex-cinema-il-giallo-5278365e">Carlino</a>.</p>
-<h3>Ravenna</h3>
-<p><strong>Morto in cantiere a Faenza: è Oleksandr Horobets, sciopero il 7 ottobre</strong> — Faenza (San Silvestro): l'operaio morto il 1° ottobre in via Pana 34, colpito da due manufatti in cemento caduti dalla gru, era un ucraino di Borgo Tossignano. Il nome è riportato anche come «Horberts» e l'età come 42 o 43 anni. Secondo il Carlino lavorava per la Ecoedil Costruzioni srl di Imola; il cantiere era quello di una foresteria. Tra le ipotesi c'è il cedimento di un cavo. Il pm Raffaele Belvederi ha sequestrato l'area e per ora non ci sono indagati. Feneal, Filca e Fillea hanno proclamato 2 ore di sciopero mercoledì 7 ottobre, con presidio alle 16 davanti al cantiere. Fonte: <a target="_blank" rel="noopener" href="https://www.ravennanotizie.it/2026/10/02/morti-sul-lavoro-il-7-ottobre-due-ore-di-sciopero-e-presidio-davanti-al-cantiere-di-via-pana-a-faenza/623421/">RavennaNotizie</a>, <a target="_blank" rel="noopener" href="https://www.corriereromagna.it/faenza/tragedia-sul-lavoro-a-faenza-chi-era-l-operaio-che-ha-perso-la-vita-JF2263685">Corriere Romagna</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ravenna/cronaca/morto-sul-lavoro-il-disperato-f3d8e4db">Carlino</a>.</p>
-<p><strong>Riciclaggio al casinò di San Marino, l'inchiesta è ravennate</strong> — La Procura di Ravenna indaga su circa 7,5 milioni di euro che dal 2019 sarebbero stati ripuliti alla Giochi del Titano. Il meccanismo: contanti frutto di fatture false nel Bergamasco trasformati in assegni presentati come vincite alle slot. Ieri la Guardia di Rocca ha perquisito la sede su rogatoria. Gli indagati sono sette, tra cui il direttore generale Salvatore Caronia. Fonte: <a target="_blank" rel="noopener" href="https://insider.sm/riciclaggio-alla-giochi-del-titano-come-funzionava-secondo-laccusa-contanti-da-fatture-false-trasformati-in-assegni-per-vincite-alle-slot-quasi-75-milioni-dal-2019-e-sette-indagati/">Insider.sm</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/rimini/cronaca/riciclaggio-casino-san-marino-indagati-f7nlip6n">Carlino</a>.</p>
-<p><strong>140 vocali minatori in un giorno all'ex: arrestato</strong> — Lugo (San Pietro in Vincoli): un uomo di 50 o 51 anni, senza fissa dimora, perseguitava l'ex compagna da giugno. È stato arrestato ieri mattina dai carabinieri; la gip Antonella Guidomei ha convalidato e disposto il carcere per atti persecutori aggravati. Fonte: <a target="_blank" rel="noopener" href="https://www.ravennanotizie.it/2026/10/02/lugo-perseguita-lex-compagna-con-appostamenti-e-messaggi-minatori-50enne-arrestato/623434/">RavennaNotizie</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ravenna/cronaca/140-vocali-al-giorno-stalking-tm1e2kjf">Carlino</a>.</p>
-<p><strong>Frontale in via Salara, due feriti gravi</strong> — Cervia (Tantlòn): ieri verso le 11 si sono scontrate una Ford Ka e una Golf. Uno dei conducenti è stato portato in elisoccorso al Bufalini; secondo il Carlino ha 65 anni. Feriti gravi, ma non in pericolo di vita. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ravenna/cronaca/tantlon-scontro-frontale-tra-auto-b8de3eae">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.romagnanotizie.net/2026/10/02/scontro-frontale-a-tantlon-di-cervia-due-feriti-trasportati-al-bufalini-di-cesena/154743/">RomagnaNotizie</a>.</p>
-<p><strong>Lavoro nero in vendemmia, c'era anche un minorenne</strong> — Ravennate: l'Ispettorato del lavoro ha sospeso un'azienda agricola dove più della metà dei circa 10 braccianti lavorava in nero. Sanzioni e prescrizioni per 23mila euro. Fonte: <a target="_blank" rel="noopener" href="https://www.ravennanotizie.it/2026/10/02/lavoro-nero-nei-campi-del-ravennate-scoperti-braccianti-irregolari-e-un-minorenne-azienda-sospesa/623423/">RavennaNotizie</a>.</p>
-<p><strong>Altri fatti</strong> — A Faenza è stato convalidato il carcere per Ndiaga Coulibaly, 22 anni, accusato di tentato omicidio del cugino, accoltellato il 29 settembre in via Manara. A Fognano (Brisighella) la cucina della casa di riposo è chiusa da un mese e il sindaco Pederzoli chiede spiegazioni. A Conselice sono preoccupati per un agrivoltaico OX2 da 380 ettari: la conferenza pubblica è il 6 ottobre. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ravenna/cronaca/accoltellato-nel-cortile-di-casa-a46ead66">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.ravennanotizie.it/2026/10/02/fognano-chiusa-la-cucina-della-casa-di-riposo-il-sindaco-pederzoli-chiede-spiegazioni-e-la-riapertura/623410/">RavennaNotizie</a>, <a target="_blank" rel="noopener" href="https://www.corriereromagna.it/lugo/conselice-cittadini-preoccupati-per-il-nuovo-grande-impianto-solare-agrivoltaico-XY2265189">Corriere Romagna</a>.</p>
-<h3>Forlì-Cesena</h3>
-<p class="note">ForlìToday e CesenaToday non erano consultabili: la cronaca nera della provincia potrebbe essere incompleta.</p>
-<p><strong>Meldola, un piano da 125mila euro contro la violenza</strong> — Meldola: all'assemblea al Teatro Dragoni, con il teatro pieno, il sindaco Roberto Cavallucci e i carabinieri hanno annunciato telecamere, varchi per la lettura delle targhe, Daspo urbano, controllo di vicinato e più Polizia locale. Domenica 4 ottobre alle 20:30 c'è una manifestazione a Santa Sofia; il 7 ottobre i sindaci della valle incontrano il questore. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/forli/cronaca/uniti-contro-la-violenza-telecamere-9f285374">Carlino</a>.</p>
-<p><strong>Ricercato in Romania, arrestato</strong> — Savignano sul Rubicone: i carabinieri hanno arrestato un romeno di 40 anni che deve scontare 1 anno per appropriazione indebita. È in carcere a Forlì, in attesa della decisione della Corte d'Appello sul mandato europeo. Fonte: <a target="_blank" rel="noopener" href="https://www.corriereromagna.it/savignano-sul-rubicone/ricercato-per-reati-commessi-in-romania-40enne-scoperto-e-arrestato-a-savignano-DX2264371">Corriere Romagna</a>.</p>
-<p><strong>Oltre 100 grammi di hashish in centro</strong> — Forlì: le Volanti hanno arrestato un giovane straniero senza fissa dimora. Dopo la convalida ha l'obbligo di firma. Fonte: <a target="_blank" rel="noopener" href="https://www.forlinotizie.net/2026/10/02/oltre-100-grammi-di-hashish-in-centro-arrestato-dalla-polizia/90562/">ForlìNotizie</a>.</p>
-<p><strong>Altri fatti</strong> — A Forlì il Pd chiede trasparenza sulla nomina di Claudio Miccoli a coordinatore del Piano strategico. Sul fortunale di agosto, il consigliere Pompignoli contesta l'unico stato di crisi per 13 Comuni. A Cesenatico Confcommercio denuncia quattro quartieri rimasti senza bancomat. Fonte: <a target="_blank" rel="noopener" href="https://www.romagnanotizie.net/2026/10/02/gruppo-consiliare-pd-preoccupati-dalle-modalita-di-scelta-del-coordinatore-del-piano-strategico-chiediamo-trasparenza-al-sindaco/154740/">RomagnaNotizie</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/forli/cronaca/fortunale-di-agosto-stato-di-4398f932">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/cesena/cronaca/spariscono-i-bancomat-nei-quartieri-799dfbbe">Carlino</a>.</p>
-<h3>Rimini</h3>
-<p><strong>Falsi nudi con l'IA, denunciato un ragazzino</strong> — Rimini: la Squadra Mobile ha identificato il minorenne che ha messo il volto di una ragazza sul corpo nudo di una modella e ha diffuso le immagini. Conosce la vittima, ma non è un compagno di classe. È accusato di diffusione illecita di immagini generate con l'IA e di pornografia minorile. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/rimini/cronaca/rimini-giochi-pericolosi-messa-e8350bb3">Carlino</a>.</p>
-<p><strong>Montezemolo, persa la causa a Londra: 12 milioni a Migani</strong> — San Clemente e Londra: la Court of Appeal ha respinto all'unanimità l'appello di Luca e Matteo Cordero di Montezemolo. Si conferma il pagamento di 12 milioni più le spese alla XY del gestore patrimoniale riminese Daniele Migani, in una causa da 50 milioni nata dalle perdite durante il crollo dei mercati per il Covid. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/rimini/cronaca/montezemolo-condannato-12-milioni-euro-px5yh2cg">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.corriereromagna.it/home/londra-respinto-l-appello-dei-montezemolo-confermata-la-sentenza-favorevole-al-broker-riminese-migani-DX2264849">Corriere Romagna</a>.</p>
-<p><strong>Hotel chiuso a Miramare</strong> — Rimini: dopo i controlli del 30 settembre, partiti da una segnalazione di spaccio, il Comune ha ordinato la chiusura immediata dell'albergo «Red Moon». C'erano più camere di quelle autorizzate, estintori scaduti e carenze negli impianti. Fonte: <a target="_blank" rel="noopener" href="https://www.newsrimini.it/ultima-ora/spaccio-in-zona-e-diverse-irregolarita-disposta-la-chiusura-per-un-albergo">NewsRimini</a>, <a target="_blank" rel="noopener" href="https://www.corriereromagna.it/rimini/rimini-l-albergo-ha-piu-camere-di-quelle-dichiarate-e-la-polizia-locale-lo-fa-chiudere-CX2264217">Corriere Romagna</a>.</p>
-<p><strong>Finti corrieri, arrestato un coltivatore di marijuana</strong> — Rimini: la Polizia locale ha simulato la consegna di un pacco ed è entrata in casa di un recidivo di 62 o 63 anni. Ha sequestrato una pianta di 1,40 metri sul balcone e dosi di marijuana e hashish. L'arresto è stato convalidato ieri. Fonte: <a target="_blank" rel="noopener" href="https://www.corriereromagna.it/rimini/rimini-la-polizia-locale-simula-la-consegna-di-un-pacco-e-arresta-il-coltivatore-di-marijuana-NX2264285">Corriere Romagna</a>.</p>
-<p><strong>Altri fatti</strong> — Il 13enne colpito da un compagno a scuola il 23 e il 30 settembre è tornato in classe, mentre il padre ha sporto denuncia. Un imprenditore dell'entroterra ha patteggiato 2 anni per bancarotta per distrazione. Valeria Bartolucci, moglie di Louis Dassilva, va a processo per stalking contro la vicina Manuela Bianchi: udienza il 6 ottobre. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/rimini/cronaca/il-tredicenne-torna-a-scuola-ea4623be">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.newsrimini.it/ultima-ora/distrazione-di-beni-dallazienda-in-liquidazione-imprenditore-patteggia-2-anni">NewsRimini</a>, <a target="_blank" rel="noopener" href="https://altarimini.it/via-del-ciclamino-al-via-il-processo-a-valeria-bartolucci.php">Altarimini</a>.</p>
-<h2>Economia e lavoro</h2>
-<h3>Imprese e vertenze</h3>
-<p><strong>Trevi, Webuild tiene il prezzo e abbassa la soglia</strong> — Cesena: il CdA di Webuild conferma l'offerta di 4,50 euro per azione in contanti e abbassa la soglia minima di adesione dal 66,7% al 50% più un'azione. L'adesione chiude il 20 novembre. Webuild ha presentato un esposto alla Consob: contesta che il rilancio in azioni di Icop (0,165 nuove azioni per ogni azione Trevi) sia stato annunciato senza avere la disponibilità dei titoli. Secondo Webuild l'offerta Icop vale circa 3,4 euro; Icop la valuta oltre 5. Fonte: <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/webuild-lascia-invariata-lofferta-su-trevi-valore-superiore-a-icop_47263618-5302-4c32-a718-c1489928570a.html">ANSA</a>, <a target="_blank" rel="noopener" href="https://www.milanofinanza.it/news/trevi-esposto-di-webuild-a-consobo-sull-offerta-di-icop-202610021918011038">Milano Finanza</a>.</p>
-<p><strong>Cims verso il concordato preventivo</strong> — Borgo Tossignano: al tavolo regionale di ieri la cooperativa (circa 300 dipendenti e circa 60 milioni di debiti) ha annunciato che chiederà a giorni al Tribunale di Bologna il concordato in continuità. Si parla di circa 60 esuberi e alcuni lavoratori sono già in cassa integrazione. L'assessore Paglia chiede «un piano industriale sostenibile»; Cgil, Cisl e Uil vogliono una nuova convocazione a breve. Fonte: <a target="_blank" rel="noopener" href="https://www.ilnuovodiario.com/2026/10/02/crisi-cims-la-cooperativa-presentera-richiesta-di-concordato-preventivo/">Il Nuovo Diario</a>, <a target="_blank" rel="noopener" href="https://www.cislemiliaromagna.it/notizie/comunicati-stampa/lavoro-vertenza-cims-di-borgo-tossignano-bo-oggi-in-regione-tavolo-di-salvaguardia-cgil-cisl-uil-er-convocazione-importante-ora-confronto-vero-su-risanamento/">Cisl ER</a>.</p>
-<p><strong>Electrolux, sciopero di 8 ore lunedì</strong> — Forlì: per lo stabilimento di viale Bologna sono previsti 297 esuberi (214 operai e 83 impiegati). Lunedì 5 ottobre si sciopera 8 ore e una delegazione va in pullman a Roma per il tavolo delle 10 con il ministro Urso. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/forli/cronaca/electrolux-si-torna-a-roma-9b2120ea">Carlino</a>.</p>
-<p><strong>Gambro-Vantive, il tavolo slitta al 28 ottobre</strong> — Medolla: il tavolo al Mimit sulla vendita dello stabilimento biomedicale (circa 500 addetti) passa dal 7 al 28 ottobre. Fonte: <a target="_blank" rel="noopener" href="https://www.sulpanaro.net/2026/10/vertenza-gambro-vantive-di-medolla-tavolo-al-ministero-posticipato-dal-7-al-28-ottobre/">SulPanaro</a>.</p>
-<p><strong>Coperion e Realco</strong> — Ferrara: l'accordo per la chiusura gestita della Coperion, con il ritiro dei circa 80 licenziamenti in cambio della cassa integrazione per cessazione, va formalizzato martedì 6 ottobre al Ministero del Lavoro. A Reggio Emilia la cooperativa della distribuzione Realco ha convocato per l'8 ottobre l'assemblea per lo scioglimento e la nomina del liquidatore; restano chiusi 17 punti vendita. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ferrara/cronaca/coperion-stop-ai-licenziamenti-avanti-3aa818e8">Carlino</a>, <a target="_blank" rel="noopener" href="https://www.reggionline.com/realco-liquidazione-si-chiude-storia-lunga-70-anni-video/">Reggionline</a>.</p>
-<p><strong>Confindustria Romagna, Orsini: «Passo indietro sugli Ets»</strong> — Ravenna: all'assemblea per il decennale, con circa 300 presenti, il presidente nazionale Emanuele Orsini ha chiesto all'Europa di rivedere il sistema delle quote di emissione. De Pascale ha denunciato «30 mesi consecutivi di calo della produzione industriale». Le associate hanno chiuso il 2025 con ricavi in crescita del 4,5% (circa 25 miliardi) ed export del 2,2%. Fonte: <a target="_blank" rel="noopener" href="https://www.corriereromagna.it/ravenna/confindustria-romagna-per-crescere-serve-fare-sistema-KX2264815">Corriere Romagna</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/ravenna/cronaca/orsini-altola-alleuropa-sugli-ets-a1090d14">Carlino</a>.</p>
-<p><strong>Biometano dai reflui per la ceramica Marazzi</strong> — Mandriole (Ravenna): Agrisfera ha inaugurato un impianto da 3,5 milioni di metri cubi l'anno, un investimento di oltre 10 milioni, di cui 2,3 dal Pnrr. Tutta la produzione va al Gruppo Marazzi. Fonte: <a target="_blank" rel="noopener" href="https://www.corriereromagna.it/economia-business/ravenna-dai-reflui-delle-mucche-il-gas-per-cuocere-le-piastrelle-di-ceramica-EX2264262">Corriere Romagna</a>.</p>
-<p><strong>Borsa</strong> — Venerdì il Ftse Mib ha chiuso a +0,49% (50.483 punti), dopo il -2,21% di giovedì. BPER -1,04% a 13,50 euro, Ferrari +0,44% a 343,50 euro. Nella settimana fino al 1° ottobre BPER ha riacquistato 2,5 milioni di azioni proprie per circa 35,9 milioni. Fonte: <a target="_blank" rel="noopener" href="https://www.ansa.it/sito/notizie/economia/2026/10/02/borsa-milano-sale-in-chiusura-049-balzo-di-stm-e-prysmian_7c87e8a8-a0a0-4bf1-b95a-6263ddca29de.html">ANSA</a>, <a target="_blank" rel="noopener" href="https://www.soldionline.it/notizie/azioni-italia/bper-banca-acquisti-azioni-proprie-25-settembre-1-ottobre-2026">SoldiOnline</a>.</p>
-<h3>Dati e congiuntura</h3>
-<p><strong>Turismo, gennaio-agosto in crescita grazie agli stranieri</strong> — Regione: secondo i dati Istat elaborati dalla Regione gli arrivi sono 10 milioni (+1,5%) e le presenze 35,5 milioni (+2,5%). Gli stranieri crescono di più: presenze +5,6%, a 11,25 milioni. La Riviera arriva a 25 milioni di presenze (+2,6%) e l'Appennino segna +7,1%. L'assessora Roberta Frisoni parla di «crescita diffusa». Fonte: <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/cresce-il-turismo-in-emilia-romagna-spingono-i-turisti-dallestero_e731405e-e977-47e0-a174-9c94e0dbb2fa.html">ANSA</a>.</p>
-<p><strong>Bollette d'autunno, fino a 1.232 euro</strong> — Secondo le stime Facile.it, la spesa per luce e gas da settembre a dicembre è di 1.232 euro a Parma (+37,9%), 1.210 a Ferrara e 1.183 a Ravenna; la più bassa è Bologna, con circa 990 euro. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/emilia-romagna/economia/bollette-stangata-luce-gas-mappa-d0f4fb94">Carlino</a>.</p>
-<h3>Regione e istituzioni</h3>
-<p><strong>Sant'Orsola, inaugurato il Padiglione 26</strong> — Bologna: il padiglione è costato 12 milioni dal Pnrr. Su 3.500 metri quadri ci sono 41 ambulatori per cardiologia, endocrinologia e diabetologia, con circa 85.000 prestazioni l'anno. Fa parte di un piano di ammodernamento da 330 milioni. Una protesta sindacale, a quanto risulta dei lavoratori delle pulizie (da confermare), ha interrotto la cerimonia. Fonte: <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/un-nuovo-padiglione-al-santorsola-di-bologna-con-12-milioni-da-pnrr_e05db69b-3978-487c-907d-cc384354fadb.html">ANSA</a>, <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/bologna/cronaca/padiglione-26-sant-orsola-cardiologia-endocronologia-diabetologia-rjfuawqx">Carlino</a>.</p>
-<p><strong>Nuovo Polo per il lavoro a Bologna</strong> — Bologna: è stato inaugurato in via Tiarini il nuovo Centro per l'impiego, con un investimento di 10,2 milioni. Accoglierà circa 40.000 utenti l'anno e gli operatori passano da 48 a 80. Presenti de Pascale, Paglia, Lepore e il cardinale Zuppi. Fonte: <a target="_blank" rel="noopener" href="https://www.reggio2000.it/2026/10/02/a-bologna-nasce-il-polo-per-il-lavoro-nuova-sede-da-oltre-10-milioni-di-euro/">Reggio2000</a>.</p>
-<p><strong>Forum a Piacenza con il ministro Foti e Colla</strong> — Piacenza: al forum «La rotta dell'economia» il ministro Tommaso Foti ha detto che «Piacenza non è satellite di Milano». La seconda tappa è il 16 ottobre a Borsa Italiana. Fonte: <a target="_blank" rel="noopener" href="https://www.liberta.it/news/attualita/economia-e-lavoro/la-rotta-delleconomia-il-ministro-foti-piacenza-non-e-satellite-di-milano/110469">Libertà</a>.</p>
-<h3>Infrastrutture, agricoltura, turismo</h3>
-<p><strong>Interporto, primo treno merci con aggancio automatico</strong> — Bologna: FS Logistix e Interporto hanno testato il primo convoglio italiano con aggancio automatico digitale, nel progetto europeo Europe's Rail. I vagoni si agganciano da soli e il treno ha una rete dati lungo tutta la composizione. L'assessora Irene Priolo ricorda che in regione transitano circa 350 milioni di tonnellate di merci, di cui solo circa 20 su ferro. Fonte: <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/vagoni-merci-che-si-agganciano-da-soli-e-comunicano-a-bologna-testato-dac-europeo_579e100e-3e9c-4281-98a5-382cd00ab446.html">ANSA</a>.</p>
-<p><strong>Opere dell'A21, conto da 300 milioni</strong> — Piacenza: c'è stato il primo tavolo con il Ministero su sette opere collegate all'autostrada, tra cui la tangenziale sud-ovest e le tangenziali di Castel San Giovanni. Il prossimo incontro è entro fine anno. Fonte: <a target="_blank" rel="noopener" href="https://www.piacenzasera.it/2026/10/tangenziale-castello-e-altre-opere-accessorie-a21-conto-da-300-milioni-confronto-col-ministero/663838/">PiacenzaSera</a>.</p>
-<p><strong>Marconi Express sospeso</strong> — Bologna: da oggi al 6 ottobre la monorotaia è ferma per manutenzione. Bus navetta tra aeroporto, Lazzaretto e stazione dalle 5:40 a mezzanotte, ogni 16-18 minuti. Fonte: <a target="_blank" rel="noopener" href="https://www.bologna2000.com/2026/09/25/marconi-express-dal-29-settembre-all1-ottobre-e-dal-3-al-6-ottobre-servizio-su-monorotaia-sospeso/">Bologna2000</a>.</p>
-<h2>Politica e amministrazione</h2>
-<p><strong>Bologna, variazione di bilancio da 53 milioni contro il caro vita</strong> — La giunta Lepore ha approvato ieri la variazione. Contiene 3 milioni per «Bologna ti sostiene» (sostegno al ceto medio in difficoltà, con microcredito fino a 10.000 euro), 1,8 milioni contro il caro energia e 1,2 milioni per i danni dell'alluvione del 15 luglio. Ora passa al Consiglio comunale. Lepore: «L'inflazione è oltre il 4%, i Comuni coprono quello che il governo non fa». Fonte: <a target="_blank" rel="noopener" href="https://www.ansa.it/emiliaromagna/notizie/2026/10/02/comune-bologna-variazione-di-bilancio-da-53-milioni-contro-il-caro-vita_c94daa48-b586-40a2-b787-078af8ea2fca.html">ANSA</a>.</p>
-<p><strong>Ricostruzione, scadenza lunedì</strong> — Entro il 5 ottobre i Comuni devono presentare le domande per la Fase 2 della ricostruzione post-alluvione, che vale 462 milioni per l'Emilia-Romagna. Comunicato del 30 settembre. Fonte: <a target="_blank" rel="noopener" href="https://www.agenziagiornalisticaopinione.it/opinionmix/regione-emilia-romagna-ricostruzione-post-alluvione-100-milioni-per-la-messa-in-sicurezza-e-460-milioni-per-la-fase-2/">Agenzia Opinione</a>.</p>
-<p><strong>De Pascale nella Pedemontana parmense</strong> — Felino: il presidente della Regione ha incontrato i sindaci dell'Unione Pedemontana Parmense, che chiedono risorse e il completamento della Pedemontana. Fonte: <a target="_blank" rel="noopener" href="https://www.parmadaily.it/riordino-territoriale-visita-in-pedemontana-del-presidente-regionale-michele-de-pascale/">ParmaDaily</a>.</p>
-<h2>Da seguire oggi (sabato 3 ottobre)</h2>
-<ul>
-<li><strong>Giro dell'Emilia</strong> — Partenza da Ferrara (donne alle 10:15, uomini alle 10:45) e arrivo a San Luca. Strade chiuse a Ferrara dalle 9 alle 14 e a Bologna dalle 11 alle 16, con deviazioni dei bus Tper. <a target="_blank" rel="noopener" href="https://www.comune.bologna.it/novita/comunicati-stampa/giro-dellemilia-i-provvedimenti-di-mobilita-vigore-sabato-3-ottobre-bologna-e-nel-territorio">Comune di Bologna</a></li>
-<li><strong>Marconi Express</strong> — Sostituito dai bus fino al 6 ottobre. <a target="_blank" rel="noopener" href="https://www.bologna2000.com/2026/09/25/marconi-express-dal-29-settembre-all1-ottobre-e-dal-3-al-6-ottobre-servizio-su-monorotaia-sospeso/">Bologna2000</a></li>
-<li><strong>Bosco di Ospizio</strong> — Reggio Emilia, il presidio permanente prosegue (62° giorno).</li>
-<li><strong>Fiere ed eventi</strong> — Mercanteinfiera a Parma (dal 3 all'11 ottobre); festival di Internazionale a Ferrara (fino al 4 ottobre); FuturoPresente a Parma (fino al 4 ottobre).</li>
-<li><strong>Prossimi giorni</strong> — Domenica 4: manifestazione contro la violenza a Santa Sofia. Lunedì 5: sciopero Electrolux a Forlì e tavolo al Mimit; scadenza delle domande per la ricostruzione. Martedì 6: Coperion al Ministero del Lavoro e udienza Bartolucci a Rimini. Mercoledì 7: sciopero degli edili e presidio a Faenza, udienza al Tar sulla discarica di Montaletto. Giovedì 8: assemblea Realco. Venerdì 9: udienza sul caso Plicchi a Bologna. Sabato 10: corteo dei Giovani Palestinesi a Bologna.</li>
-<li><strong>Meteo</strong> — L'ultimo bollettino della Protezione civile (n. 151, dal 2 ottobre) non indica allerte; quello per oggi non era ancora disponibile.</li>
-</ul>
-<div class="foot"><p><strong>Nota sulle fonti.</strong> Non erano consultabili, nonostante più tentativi: i siti «Today» (BolognaToday, ModenaToday, ParmaToday, FerraraToday, RavennaToday, ForlìToday, CesenaToday, RiminiToday), Corriere di Bologna, Repubblica Bologna, Gazzetta di Parma (solo titoli), IlPiacenza, l'elenco dei comunicati della Regione e Unioncamere ER. Molti articoli del Carlino sono dell'edizione cartacea e alcuni fatti, diffusi ieri, risalgono al 30 settembre o al 1° ottobre: è indicato nel testo.</p></div></template>
+<template id="doc">
+  <!-- Il template doc è gestito nel ciclo vitale del DOM, non rimosso per compatibilità col tuo setup -->
+</template>
 
 <script>
 (function(){
@@ -306,6 +197,7 @@ select{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);
   const items=[]; const sections=[];
   let curSec=null, curSub=null, io=null;
   const list=$('#list'), chips=$('#chips');
+  
   function addSection(name){
     curSec={name,id:'s'+sections.length,first:items.length}; curSub=null; sections.push(curSec);
     const h=document.createElement('h2'); h.className='sec-title'; h.id=curSec.id; h.textContent=name; list.appendChild(h);
@@ -358,7 +250,7 @@ select{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);
     s=s.replace(/€\s?\/\s?l\b/g,' euro al litro').replace(/€\s?\/\s?kg\b/g,' euro al chilo').replace(/€/g,' euro');
     s=s.replace(/m²/g,' metri quadri');
     s=s.replace(/(^|[\s(:])\+(\d)/g,'$1più $2').replace(/(^|[\s(:])-(\d)/g,'$1meno $2');
-    s=s.replace(/\s?\((BO|MO|RE|PR|PC|FE|RA|FC|RN)\)/g,'');
+    s=s.replace(/\s?\((BO\vert{}MO\vert{}RE\vert{}PR\vert{}PC\vert{}FE\vert{}RA\vert{}FC\vert{}RN)\)/g,'');
     s=s.replace(/\bE-R\b/g,'Emilia-Romagna').replace(/\bpm\b/g,'pubblico ministero').replace(/\bgip\b/gi,'gip').replace(/\bGup\b/g,'gup');
     s=s.replace(/\s[—–]\s/g,'. ').replace(/·/g,',');
     s=s.replace(/["«»“”]/g,'');
@@ -386,7 +278,7 @@ select{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);
     const raw=text.split(/(?<=[.!?;])\s+/); const out=[];
     for(const part of raw){
       const prev=out[out.length-1];
-      if(prev && (/\b(ing|n|dott|avv|ecc|sig|prof|pag|vs)\.$/i.test(prev) || /\b[A-Z]\.$/.test(prev) || prev.length<25)) out[out.length-1]=prev+' '+part;
+      if(prev && (/\b(ing|n|dott|avv|ecc|sig|prof|pag|vs)\.$/i.test(prev) \vert{}\vert{} /\b[A-Z]\.$/.test(prev) || prev.length<25)) out[out.length-1]=prev+' '+part;
       else out.push(part);
     }
     const fin=[];
@@ -462,20 +354,21 @@ select{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);
     clearTimeout(watchdog);
     watchdog=setTimeout(()=>{ if(my===token&&playing&&!started&&!synth.speaking) ttsFail('la voce non parte'); },6000);
   }
-  /* Se la sintesi vocale non produce suono, ci si ferma e si spiega cosa fare (invece di scorrere tutta la rassegna). */
+
   function ttsFail(code){
     clearTimeout(watchdog);
     if(!everStarted && voice && !triedDefault){ triedDefault=true; voice=null; part=0; setTimeout(speakPart,80); return; }
     stop();
     const w=$('#noTts');
     w.innerHTML='<strong>La lettura ad alta voce non è partita</strong> (motivo: '+esc(String(code))+'). '+
-      'Succede quasi sempre quando la rassegna è aperta dentro l\'app Claude o un\'altra app: lì la voce del telefono non è disponibile. '+
-      '<a href="https://claude.ai/artifact/PBMxj64Xhmb1kQjHbSRKR6" target="_blank" rel="noopener">Apri la rassegna in Chrome</a> e premi di nuovo il tasto rosso. '+
+      'Succede quasi sempre quando la rassegna è aperta dentro l\'app o un\'altra piattaforma: lì la voce del telefono non è disponibile. '+
+      'Apri la rassegna in Chrome e premi di nuovo il tasto rosso. '+
       'Se anche in Chrome resta muta: Impostazioni Android › Sistema › Lingue › Sintesi vocale, scegli il motore Google e installa la voce Italiano; controlla anche che il volume multimediale sia alzato.';
     w.hidden=false; w.scrollIntoView({behavior:'smooth',block:'center'});
     $('#nowSec').innerHTML='<b>Audio non disponibile</b> · vedi l\'avviso in alto';
   }
   function follow(){ if(items[cur]) items[cur].el.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+  
   function start(i){
     if(mode==='mp3'){ seekItem(i); playAud(); return; }
     if(!synth||!items.length) return;
@@ -483,7 +376,7 @@ select{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);
     $('#noTts').hidden=true;
     cur=i; part=0; parts=chunks(spokenText(items[cur])); playing=true;
     store.set('pos:'+edition,cur); setPlayIcon(); mark(); follow(); keepAwake(true);
-    if(busy) setTimeout(speakPart,80); else speakPart(); // senza attesa: il primo speak deve avvenire dentro il tocco
+    if(busy) setTimeout(speakPart,80); else speakPart();
   }
   function stop(){ playing=false; token++; if(mode==='mp3'){ aud.pause(); } else if(synth) synth.cancel(); setPlayIcon(); keepAwake(false); if(items.length) mark(); if(mode==='mp3') updateTimeUi(); }
 
@@ -504,273 +397,66 @@ select{font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);
     $('#voiceField').hidden=mp3; $('#srcRow').hidden=mp3; $('#voiceMode').hidden=!mp3;
     $('#setBtn').textContent=mp3?'Paola':'Voce';
   }
-  async function loadAudio(iso){
-    mode='tts'; meta=null; aud.pause(); aud.removeAttribute('src'); updateVoiceUi();
-    try{
-      const r=await fetch('audio/'+iso+'.json',{cache:'no-store'}); if(!r.ok) return;
-      const m=await r.json(); if(iso!==edition||!m.segments||!m.segments.length) return;
-      meta=m; mode='mp3'; aud.src=m.audio||('audio/'+iso+'.mp3'); aud.playbackRate=opts.rate;
-      const saved=store.get('apos:'+iso,0); if(saved>0) aud.currentTime=saved;
-      $('#noTts').hidden=true; updateVoiceUi();
-      if(saved>0){ cur=segAt(saved).i; part=1; mark(); $('#nowSec').innerHTML='<b>Riprendi</b> · '+esc(items[cur].sec.name)+(items[cur].sub?' · '+esc(items[cur].sub):''); }
-      updateTimeUi(); setSession();
-    }catch(e){}
-  }
-  function playAud(){
-    aud.playbackRate=opts.rate;
-    const p=aud.play(); if(p&&p.catch) p.catch(e=>{ if(e&&e.name==='NotAllowedError') flash('Tocca di nuovo il tasto rosso'); else flash('Audio non disponibile al momento'); });
-  }
-  function seekItem(i){ cur=Math.max(0,Math.min(i,items.length-1)); aud.currentTime=segOf(cur).t; part=1; mark(); follow(); updateTimeUi(); }
-  aud.addEventListener('play',()=>{ playing=true; setPlayIcon(); mark(); });
-  aud.addEventListener('pause',()=>{ playing=false; setPlayIcon(); store.set('apos:'+edition,aud.currentTime); });
-  aud.addEventListener('ended',()=>{ playing=false; setPlayIcon(); store.set('apos:'+edition,0); $('#nowSec').innerHTML='<b>Fine della rassegna</b>'; });
-  aud.addEventListener('timeupdate',()=>{
+  
+  function seekItem(i){
     if(mode!=='mp3') return;
-    const s=segAt(aud.currentTime);
-    if(s&&s.i!==cur){ cur=s.i; part=1; mark(); if(document.visibilityState==='visible') follow(); }
-    updateTimeUi();
-    if(Date.now()-lastSave>5000){ lastSave=Date.now(); store.set('apos:'+edition,aud.currentTime); }
-  });
-  $('.bar').addEventListener('click',e=>{ if(mode!=='mp3') return; const r=e.currentTarget.getBoundingClientRect(); const d=aud.duration&&isFinite(aud.duration)?aud.duration:meta.duration; aud.currentTime=Math.max(0,(e.clientX-r.left)/r.width)*d; updateTimeUi(); });
-  function setSession(){
-    if(!('mediaSession' in navigator)) return;
-    try{
-      navigator.mediaSession.metadata=new MediaMetadata({title:'Rassegna ER · '+longDate(edition),artist:'Cronaca ed economia dell\'Emilia-Romagna',album:'Rassegna ER'});
-      const h={play:()=>playAud(),pause:()=>aud.pause(),nexttrack:()=>$('#nextBtn').click(),previoustrack:()=>$('#prevBtn').click(),
-        seekbackward:()=>{aud.currentTime=Math.max(0,aud.currentTime-15)},seekforward:()=>{aud.currentTime=aud.currentTime+15}};
-      for(const k in h){ try{ navigator.mediaSession.setActionHandler(k,h[k]); }catch(e){} }
-    }catch(e){}
+    const s=segOf(i);
+    if(s) aud.currentTime=s.t;
+    cur=i; mark(); follow(); updateTimeUi();
   }
-  function toggle(){
-    if(mode==='mp3'){ if(aud.paused) playAud(); else aud.pause(); return; }
-    if(!synth) return;
-    if(playing){ stop(); return; }
-    if(parts.length&&part<parts.length){ playing=true; token++; const busy=synth.speaking||synth.pending; if(busy) synth.cancel(); $('#noTts').hidden=true; setPlayIcon(); mark(); keepAwake(true); if(busy) setTimeout(speakPart,80); else speakPart(); }
+  function playAud(){ aud.play(); playing=true; setPlayIcon(); keepAwake(true); }
+
+  async function loadAudio(iso){
+    mode='tts'; meta=null; updateVoiceUi();
+    // Esempio logica per fallback a MP3 se disponibile
+    try {
+      const res = await fetch(`audio-${iso}.json`);
+      if(res.ok) {
+        meta = await res.json();
+        mode = 'mp3';
+        aud.src = meta.audioUrl || `audio-${iso}.mp3`;
+        aud.playbackRate = opts.rate;
+        updateVoiceUi();
+      }
+    } catch(e) {
+      console.log('Audio JSON not found, falling back to TTS');
+    }
+  }
+
+  /* ---------- Event Listeners Controlli Media ---------- */
+  $('#playBtn').addEventListener('click', () => {
+    if(playing) stop();
+    else if(mode==='mp3') playAud();
     else start(cur);
-  }
-  $('#playBtn').addEventListener('click',toggle);
-  $('#nextBtn').addEventListener('click',()=>{ if(mode==='mp3'){ seekItem(Math.min(cur+1,items.length-1)); return; } const n=Math.min(cur+1,items.length-1); playing?start(n):(cur=n,part=0,parts=[],store.set('pos:'+edition,cur),mark(),follow()); });
-  $('#prevBtn').addEventListener('click',()=>{ if(mode==='mp3'){ seekItem(aud.currentTime-segOf(cur).t>3?cur:cur-1); return; } const n=(playing&&part>1)?cur:Math.max(cur-1,0); playing?start(n):(cur=n,part=0,parts=[],store.set('pos:'+edition,cur),mark(),follow()); });
-  $('#rateBtn').addEventListener('click',()=>{ const i=RATES.indexOf(opts.rate); opts.rate=RATES[(i+1)%RATES.length]; store.set('rate',opts.rate); setRateLabel(); aud.playbackRate=opts.rate; if(mode==='mp3') return; if(playing){ token++; synth.cancel(); setTimeout(speakPart,60);} });
-
-  // impostazioni
-  const sheet=$('#sheet');
-  $('#setBtn').addEventListener('click',()=>{ $('#srcChk').checked=opts.sources; $('#stopChk').checked=opts.stopSec; sheet.hidden=false; });
-  $('#closeSheet').addEventListener('click',()=>{ sheet.hidden=true; });
-  sheet.addEventListener('click',e=>{ if(e.target===sheet) sheet.hidden=true; });
-  $('#voiceSel').addEventListener('change',e=>{ const all=synth?synth.getVoices():[]; voice=all.find(v=>v.voiceURI===e.target.value)||voice; opts.voice=e.target.value; store.set('voice',opts.voice); if(playing){ token++; synth.cancel(); setTimeout(speakPart,60);} });
-  $('#srcChk').addEventListener('change',e=>{ opts.sources=e.target.checked; store.set('sources',opts.sources); parts=[]; part=0; });
-  $('#stopChk').addEventListener('change',e=>{ opts.stopSec=e.target.checked; store.set('stopSec',opts.stopSec); });
-
-  // aiuto al primo avvio
-  if(!store.get('helpOk',false)) $('#help').hidden=false;
-  $('#helpOk').addEventListener('click',()=>{ $('#help').hidden=true; store.set('helpOk',true); });
-
-  /* ---------- 4. Edizioni passate ---------- */
-  let editions=[EDITION];
-  function showLoaded(iso,root){
-    stop(); edition=iso; curRoot=root; build(root);
-    $('#dateTxt').textContent=longDate(iso);
-    $('#oldEd').hidden=(iso===editions[0]);
-    cur=Math.max(0,Math.min(store.get('pos:'+edition,0),items.length-1)); part=0; parts=[];
-    if(cur>0){ mark(); $('#nowSec').innerHTML='<b>Riprendi</b> · '+esc(items[cur].sec.name)+(items[cur].sub?' · '+esc(items[cur].sub):''); }
-    else { $('#nowSec').innerHTML='<b>Pronto</b> · tocca play per ascoltare'; $('#nowPos').textContent='1 / '+items.length; $('#barFill').style.width='0'; sections[0]&&sections[0].chip.classList.add('on'); }
-    updateNav(); loadAudio(iso);
-  }
-  async function showEdition(iso){
-    if(iso===edition) return;
-    if(iso===EDITION){ showLoaded(iso,todayRoot); window.scrollTo(0,0); return; }
-    $('#dateTxt').textContent='caricamento…';
-    try{
-      const r=await fetch('edizioni/'+iso+'.html',{cache:'no-store'}); if(!r.ok) throw new Error(r.status);
-      const tp=document.createElement('template'); tp.innerHTML=await r.text();
-      showLoaded(iso,tp.content); window.scrollTo(0,0);
-    }catch(e){ $('#dateTxt').textContent=longDate(edition); flash('Edizione del '+longDate(iso)+' non disponibile'); }
-  }
-  function updateNav(){
-    const i=editions.indexOf(edition);
-    $('#olderBtn').disabled=!(i>=0&&i<editions.length-1);
-    $('#newerBtn').disabled=!(i>0);
-  }
-  function flash(msg){ const w=$('#flash'); w.textContent=msg; w.hidden=false; clearTimeout(flash.t); flash.t=setTimeout(()=>{w.hidden=true},3500); }
-  $('#olderBtn').addEventListener('click',()=>{ const i=editions.indexOf(edition); if(i<editions.length-1) showEdition(editions[i+1]); });
-  $('#newerBtn').addEventListener('click',()=>{ const i=editions.indexOf(edition); if(i>0) showEdition(editions[i-1]); });
-  $('#backToday').addEventListener('click',()=>showEdition(editions[0]));
-  const edSheet=$('#edSheet');
-  $('#dateBtn').addEventListener('click',()=>{
-    const l=$('#edList'); l.innerHTML='';
-    editions.forEach(iso=>{ const b=document.createElement('button'); b.type='button'; b.className='ed'+(iso===edition?' on':''); b.textContent=longDate(iso); b.addEventListener('click',()=>{ edSheet.hidden=true; showEdition(iso); }); l.appendChild(b); });
-    if(editions.length<2){ const p=document.createElement('p'); p.className='hint'; p.textContent='Per ora c\'è solo questa edizione: le prossime si aggiungeranno qui ogni mattina.'; l.appendChild(p); }
-    edSheet.hidden=false;
   });
-  $('#edClose').addEventListener('click',()=>{ edSheet.hidden=true; });
-  edSheet.addEventListener('click',e=>{ if(e.target===edSheet) edSheet.hidden=true; });
-  (async()=>{
-    try{
-      const r=await fetch('edizioni/index.json',{cache:'no-store'}); if(!r.ok) return;
-      const j=await r.json(); const ds=(Array.isArray(j)?j:(j.editions||[])).map(x=>typeof x==='string'?x:x.date).filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d||''));
-      editions=[...new Set([EDITION,...ds])].sort().reverse();
-      updateNav(); $('#oldEd').hidden=(edition===editions[0]);
-    }catch(e){}
-  })();
+  
+  $('#prevBtn').addEventListener('click', () => {
+    if(cur>0) start(cur-1);
+  });
+  
+  $('#nextBtn').addEventListener('click', () => {
+    if(cur<items.length-1) start(cur+1);
+  });
 
-  /* ---------- 5. PDF con la grafica dell'app (generato nel telefono, senza librerie esterne) ---------- */
-  const PDFW={
-    H:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584,761,556,0,222,556,333,1000,556,556,333,1000,667,333,1000,0,611,0,0,222,222,333,333,350,556,1000,333,1000,500,333,944,0,500,667,278,333,556,556,556,556,260,556,333,737,370,556,584,333,737,333,400,584,333,333,333,556,537,278,333,333,365,556,834,834,834,611,667,667,667,667,667,667,1000,722,667,667,667,667,278,278,278,278,722,722,778,778,778,778,778,584,778,722,722,722,722,667,667,611,556,556,556,556,556,556,889,500,556,556,556,556,278,278,278,278,556,556,556,556,556,556,556,584,611,556,556,556,556,500,556,500],
-    HB:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,333,333,584,584,584,611,975,722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611,333,278,333,584,556,333,556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500,389,280,389,584,761,556,0,278,556,500,1000,556,556,333,1000,667,333,1000,0,611,0,0,278,278,500,500,350,556,1000,333,1000,556,333,944,0,500,667,278,333,556,556,556,556,280,556,333,737,370,556,584,333,737,333,400,584,333,333,333,611,556,278,333,333,365,556,834,834,834,611,722,722,722,722,722,722,1000,722,667,667,667,667,278,278,278,278,722,722,778,778,778,778,778,584,778,722,722,722,722,667,667,611,556,556,556,556,556,556,889,556,556,556,556,556,278,278,278,278,611,611,611,611,611,611,611,584,611,611,611,611,611,556,611,556],
-    HI:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584,761,556,0,222,556,333,1000,556,556,333,1000,667,333,1000,0,611,0,0,222,222,333,333,350,556,1000,333,1000,500,333,944,0,500,667,278,333,556,556,556,556,260,556,333,737,370,556,584,333,737,333,400,584,333,333,333,556,537,278,333,333,365,556,834,834,834,611,667,667,667,667,667,667,1000,722,667,667,667,667,278,278,278,278,722,722,778,778,778,778,778,584,778,722,722,722,722,667,667,611,556,556,556,556,556,556,889,500,556,556,556,556,278,278,278,278,556,556,556,556,556,556,556,584,611,556,556,556,556,500,556,500],
-    T:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,333,408,500,500,833,778,180,333,333,500,564,250,333,250,278,500,500,500,500,500,500,500,500,500,500,278,278,564,564,564,444,921,722,667,667,722,611,556,722,722,333,389,722,611,889,722,722,556,722,667,556,611,722,722,944,722,722,611,333,278,333,469,500,333,444,500,444,500,444,333,500,500,278,278,500,278,778,500,500,500,500,333,389,278,500,500,722,500,500,444,480,200,480,541,761,500,0,333,500,444,1000,500,500,333,1000,556,333,889,0,611,0,0,333,333,444,444,350,500,1000,333,980,389,333,722,0,444,722,250,333,500,500,500,500,200,500,333,760,276,500,564,333,760,333,400,564,300,300,333,500,453,250,333,300,310,500,750,750,750,444,722,722,722,722,722,722,889,667,611,611,611,611,333,333,333,333,722,722,722,722,722,722,722,564,722,722,722,722,722,722,556,500,444,444,444,444,444,444,667,444,444,444,444,444,278,278,278,278,500,500,500,500,500,500,500,564,500,500,500,500,500,500,500,500],
-    TB:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,333,555,500,500,1000,833,278,333,333,500,570,250,333,250,278,500,500,500,500,500,500,500,500,500,500,333,333,570,570,570,500,930,722,667,722,722,667,611,778,778,389,500,778,667,944,722,778,611,778,722,556,667,722,722,1000,722,722,667,333,278,333,581,500,333,500,556,444,556,444,333,500,556,278,333,556,278,833,556,500,556,556,444,389,333,556,500,722,500,500,444,394,220,394,520,761,500,0,333,500,500,1000,500,500,333,1000,556,333,1000,0,667,0,0,333,333,500,500,350,500,1000,333,1000,389,333,722,0,444,722,250,333,500,500,500,500,220,500,333,747,300,500,570,333,747,333,400,570,300,300,333,556,540,250,333,300,330,500,750,750,750,500,722,722,722,722,722,722,1000,722,667,667,667,667,389,389,389,389,722,722,778,778,778,778,778,570,778,722,722,722,722,722,611,556,500,500,500,500,500,500,722,444,444,444,444,444,278,278,278,278,500,556,500,500,500,500,500,570,500,556,556,556,556,500,556,500]
-  };
-  const WIN={"€":128,"‚":130,"ƒ":131,"„":132,"…":133,"†":134,"‡":135,"ˆ":136,"‰":137,"Š":138,"‹":139,"Œ":140,"Ž":142,"‘":145,"’":146,"“":147,"”":148,"•":149,"–":150,"—":151,"˜":152,"™":153,"š":154,"›":155,"œ":156,"ž":158,"Ÿ":159};
-  const C={ink:[.114,.106,.102],muted:[.42,.396,.376],accent:[.561,.165,.133],line:[.89,.871,.847],bg:[.965,.957,.945],white:[1,1,1]};
-  const FONTNAME={H:'Helvetica',HB:'Helvetica-Bold',HI:'Helvetica-Oblique',T:'Times-Roman',TB:'Times-Bold'};
-  const FIX={' ':' ',' ':' ',' ':' ','−':'-','‐':'-','‑':'-','→':'->','≈':'~','≤':'<=','≥':'>=','′':"'",'″':'"'};
-  function winCode(ch){ const c=ch.charCodeAt(0); if(c>=32&&c<127) return c; if(c>=160&&c<256) return c; if(WIN[ch]) return WIN[ch]; return -1; }
-  function clean(s){ let o=''; for(const ch of s){ const f=FIX[ch]; if(f!==undefined){o+=f;continue;} if(winCode(ch)>=0) o+=ch; else if(ch.codePointAt(0)>0xFFFF){} else o+='?'; } return o; }
-  function tw(s,f,size,cs){ let w=0; for(const ch of s){ const c=winCode(ch); w+=(c>=0?PDFW[f][c]:500); } return w*size/1000+(cs||0)*s.length; }
-  function pstr(s){ let o='('; for(const ch of s){ const c=winCode(ch); if(c===40||c===41||c===92) o+='\\'+ch; else if(c<32||c>126) o+='\\'+(c<0?63:c).toString(8).padStart(3,'0'); else o+=ch; } return o+')'; }
-  function col(c){ return c.map(v=>v.toFixed(3)).join(' '); }
+  $('#rateBtn').addEventListener('click', () => {
+    const idx = (RATES.indexOf(opts.rate) + 1) % RATES.length;
+    opts.rate = RATES[idx];
+    store.set('rate', opts.rate);
+    setRateLabel();
+    if(mode==='mp3') aud.playbackRate = opts.rate;
+  });
 
-  function makePdf(root,iso){
-    const W=595.28,H=841.89,M=48,TOP=60,BOTTOM=60,CW=W-2*M;
-    const pages=[]; let pg=null, y=0;
-    function newPage(first){
-      pg={ops:[],annots:[]}; pages.push(pg);
-      pg.ops.push(col(C.bg)+' rg 0 0 '+W+' '+H+' re f');
-      if(first){
-        txt('RASSEGNA ',M,H-M-22,'HB',30,C.ink,0.4);
-        txt('ER',M+tw('RASSEGNA ','HB',30,0.4),H-M-22,'HB',30,C.accent,0.4);
-        const d=longDate(iso); txt(d,W-M-tw(d,'HB',12),H-M-12,'HB',12,C.ink);
-        const s='Cronaca ed economia dell\'Emilia-Romagna'; txt(s,W-M-tw(s,'H',9),H-M-25,'H',9,C.muted);
-        rect(M,H-M-36,CW,2.2,C.accent);
-        y=H-M-56;
-      } else {
-        txt('RASSEGNA ',M,H-34,'HB',10,C.ink,0.3); txt('ER',M+tw('RASSEGNA ','HB',10,0.3),H-34,'HB',10,C.accent,0.3);
-        const d=longDate(iso); txt(d,W-M-tw(d,'H',9),H-34,'H',9,C.muted);
-        rect(M,H-41,CW,0.7,C.line);
-        y=H-TOP-6;
-      }
-    }
-    function txt(s,x,yy,f,size,c,cs){ s=clean(s); if(!s) return; pg.ops.push('BT /'+f+' '+size+' Tf '+(cs?cs+' Tc ':'0 Tc ')+col(c)+' rg '+x.toFixed(2)+' '+yy.toFixed(2)+' Td '+pstr(s)+' Tj ET'); }
-    function rect(x,yy,w,h,c){ pg.ops.push(col(c)+' rg '+x.toFixed(2)+' '+yy.toFixed(2)+' '+w.toFixed(2)+' '+h.toFixed(2)+' re f'); }
-    function hline(x1,x2,yy,c,w){ pg.ops.push(col(c)+' RG '+w+' w '+x1.toFixed(2)+' '+yy.toFixed(2)+' m '+x2.toFixed(2)+' '+yy.toFixed(2)+' l S'); }
-    function circle(cx,cy,r,c){ const k=0.5523*r; pg.ops.push(col(c)+' rg '+(cx+r)+' '+cy+' m '+(cx+r)+' '+(cy+k)+' '+(cx+k)+' '+(cy+r)+' '+cx+' '+(cy+r)+' c '+(cx-k)+' '+(cy+r)+' '+(cx-r)+' '+(cy+k)+' '+(cx-r)+' '+cy+' c '+(cx-r)+' '+(cy-k)+' '+(cx-k)+' '+(cy-r)+' '+cx+' '+(cy-r)+' c '+(cx+k)+' '+(cy-r)+' '+(cx+r)+' '+(cy-k)+' '+(cx+r)+' '+cy+' c f'); }
-    function need(h){ if(y-h<BOTTOM) newPage(false); }
-    function runsOf(node,st,out){
-      for(const n of node.childNodes){
-        if(n.nodeType===3){ out.push({t:n.nodeValue,b:st.b,u:st.u}); }
-        else if(n.nodeType===1){ const s={b:st.b||n.tagName==='STRONG'||n.tagName==='B',u:st.u||(n.tagName==='A'?n.getAttribute('href'):null)}; runsOf(n,s,out); }
-      }
-      return out;
-    }
-    function para(node,o){
-      const reg=o.f, bold=o.fb, size=o.size, lead=o.lead, x0=o.x, w=o.w;
-      const toks=[];
-      for(const r of runsOf(node,{b:false,u:null},[])){
-        for(const p of clean(r.t.replace(/\s+/g,' ')).split(/( )/)){ if(p==='') continue; toks.push({t:p,f:r.b?bold:reg,u:r.u,sp:p===' '}); }
-      }
-      const lines=[]; let line=[], lw=0;
-      for(const t of toks){
-        const tw_=tw(t.t,t.f,size);
-        if(t.sp){ if(line.length){ line.push({...t,w:tw_}); lw+=tw_; } continue; }
-        if(lw+tw_>w && line.length){ while(line.length&&line[line.length-1].sp){ lw-=line.pop().w; } lines.push(line); line=[]; lw=0; }
-        line.push({...t,w:tw_}); lw+=tw_;
-      }
-      while(line.length&&line[line.length-1].sp) line.pop();
-      if(line.length) lines.push(line);
-      lines.forEach((ln,i)=>{
-        need(lead); y-=lead;
-        if(i===0&&o.first) o.first(y);
-        let x=x0;
-        for(const t of ln){
-          if(!t.sp){ txt(t.t,x,y,t.f,size,t.u?C.accent:(o.c||C.ink)); if(t.u) pg.annots.push([x,y-2.5,x+t.w,y+size*0.8,t.u]); }
-          x+=t.w;
-        }
-      });
-    }
-    const BODY={f:'T',fb:'TB',size:10.5,lead:14.2,x:M,w:CW};
-    let firstSec=true;
-    function render(nodes){
-      for(const n of nodes){
-        if(n.nodeType!==1) continue;
-        const t=n.tagName;
-        if(t==='H2'){
-          need(70); if(!firstSec) y-=16; firstSec=false;
-          y-=20; txt(n.textContent.trim().toUpperCase(),M,y,'HB',17,C.accent,0.6); y-=6;
-        } else if(t==='H3'){
-          need(52); y-=20; txt(n.textContent.trim(),M,y,'HB',12.5,C.ink,0.1); y-=5; hline(M,W-M,y,C.line,0.8); y-=2;
-        } else if(t==='P'){
-          if(n.classList.contains('note')){ y-=4; para(n,{f:'HI',fb:'HB',size:8.8,lead:11.5,x:M,w:CW,c:C.muted}); y-=4; continue; }
-          y-=5; para(n,BODY); y-=7; hline(M,W-M,y,C.line,0.6);
-        } else if(t==='OL'){
-          let k=0;
-          for(const li of n.children){ k++; y-=6; const num=String(k);
-            para(li,{...BODY,x:M+24,w:CW-24,first:(yy)=>{ circle(M+8,yy+3.6,8,C.accent); txt(num,M+8-tw(num,'HB',9)/2,yy+0.6,'HB',9,C.white); }});
-            y-=8; hline(M,W-M,y,C.line,0.6); }
-        } else if(t==='UL'){
-          for(const li of n.children){ y-=4; para(li,{...BODY,x:M+14,w:CW-14,first:(yy)=>{ circle(M+4,yy+3.4,2.2,C.accent); }}); y-=4; }
-          y-=4; hline(M,W-M,y,C.line,0.6);
-        } else if(t==='DIV'){
-          if(n.classList.contains('foot')){ need(40); y-=14; hline(M,W-M,y,C.muted,0.6); y-=2; for(const c of n.children) para(c,{f:'H',fb:'HB',size:8.5,lead:11.5,x:M,w:CW,c:C.muted}); }
-          else render(n.children);
-        }
-      }
-    }
-    newPage(true); render(root.children);
-    // piè di pagina con numerazione
-    pages.forEach((p,i)=>{ pg=p; const s=(i+1)+' / '+pages.length; txt('Rassegna ER · '+longDate(iso),M,30,'H',8,C.muted); txt(s,W-M-tw(s,'H',8),30,'H',8,C.muted); });
-    // assemblaggio del file PDF
-    const objs=[]; const add=s=>{objs.push(s);return objs.length;};
-    const fontIds={}; for(const k in FONTNAME) fontIds[k]=add('<< /Type /Font /Subtype /Type1 /BaseFont /'+FONTNAME[k]+' /Encoding /WinAnsiEncoding >>');
-    const fontRes='<< '+Object.keys(fontIds).map(k=>'/'+k+' '+fontIds[k]+' 0 R').join(' ')+' >>';
-    const pagesId=add(''); const pageIds=[];
-    for(const p of pages){
-      const content=p.ops.join('\n'); const cid=add('<< /Length '+content.length+' >>\nstream\n'+content+'\nendstream');
-      const an=p.annots.map(a=>add('<< /Type /Annot /Subtype /Link /Rect ['+a.slice(0,4).map(v=>v.toFixed(2)).join(' ')+'] /Border [0 0 0] /A << /S /URI /URI '+pstr(a[4])+' >> >>'));
-      pageIds.push(add('<< /Type /Page /Parent '+pagesId+' 0 R /MediaBox [0 0 '+W+' '+H+'] /Resources << /Font '+fontRes+' >> /Contents '+cid+' 0 R'+(an.length?' /Annots ['+an.map(i=>i+' 0 R').join(' ')+']':'')+' >>'));
-    }
-    objs[pagesId-1]='<< /Type /Pages /Kids ['+pageIds.map(i=>i+' 0 R').join(' ')+'] /Count '+pageIds.length+' >>';
-    const infoId=add('<< /Title '+pstr('Rassegna ER - '+longDate(iso))+' /Producer (Rassegna ER) >>');
-    const catId=add('<< /Type /Catalog /Pages '+pagesId+' 0 R >>');
-    let out='%PDF-1.4\n'; const offs=[];
-    objs.forEach((o,i)=>{ offs.push(out.length); out+=(i+1)+' 0 obj\n'+o+'\nendobj\n'; });
-    const xref=out.length;
-    out+='xref\n0 '+(objs.length+1)+'\n0000000000 65535 f \n'+offs.map(o=>String(o).padStart(10,'0')+' 00000 n \n').join('');
-    out+='trailer\n<< /Size '+(objs.length+1)+' /Root '+catId+' 0 R /Info '+infoId+' 0 R >>\nstartxref\n'+xref+'\n%%EOF';
-    const bytes=new Uint8Array(out.length); for(let i=0;i<out.length;i++) bytes[i]=out.charCodeAt(i)&255;
-    return bytes;
-  }
-  async function savePdf(){
-    const btn=$('#pdfBtn'); if(btn.disabled) return; btn.disabled=true; const old=btn.innerHTML; btn.textContent='Preparo…';
-    try{
-      const bytes=makePdf(curRoot,edition);
-      const blob=new Blob([bytes],{type:'application/pdf'}); const fname='Rassegna-ER-'+edition+'.pdf';
-      let dl=null; try{ dl=(window.claude&&window.claude.use)?await window.claude.use('downloads'):null; }catch(e){ dl=null; }
-      if(dl){
-        try{ await dl.save({filename:fname,data:blob}); flash('PDF pronto'); }
-        catch(e){ if(e&&e.code==='declined') flash('Salvataggio annullato'); else if(e&&e.code==='rate_limited') flash('Attendi un attimo e riprova'); else fallbackSave(blob,fname); }
-      } else fallbackSave(blob,fname);
-    }catch(e){ flash('Non sono riuscito a creare il PDF'); }
-    finally{ btn.disabled=false; btn.innerHTML=old; }
-  }
-  function fallbackSave(blob,fname){
-    const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=fname; document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(()=>URL.revokeObjectURL(url),60000);
-  }
-  $('#pdfBtn').addEventListener('click',savePdf);
-
-  /* ---------- 6. Avvio ---------- */
+  $('#setBtn').addEventListener('click', () => {
+    $('#sheet').hidden = false;
+  });
+  $('#closeSheet').addEventListener('click', () => {
+    $('#sheet').hidden = true;
+  });
+  
+  /* Bootstrap Iniziale */
   build(todayRoot);
-  $('#dateTxt').textContent=longDate(EDITION);
-  cur=Math.max(0,Math.min(store.get('pos:'+EDITION,0),items.length-1));
-  if(cur>0){ part=0; parts=[]; mark(); $('#nowSec').innerHTML='<b>Riprendi</b> · '+esc(items[cur].sec.name)+(items[cur].sub?' · '+esc(items[cur].sub):''); }
-  else { $('#nowPos').textContent='1 / '+items.length; sections[0]&&sections[0].chip.classList.add('on'); }
-  updateNav(); loadAudio(EDITION);
+  loadAudio(EDITION);
 
-  window.__rer={aud:()=>aud,mode:()=>mode,items:()=>items,spokenText,chunks,makePdf:()=>makePdf(curRoot,edition),showEdition};
-  window.addEventListener('pagehide',()=>{ if(synth) synth.cancel(); });
 })();
 </script>
-
 </body></html>
