@@ -1,248 +1,198 @@
 import os
-import time
+import re
 import datetime
-import urllib.request
+import requests
 import xml.etree.ElementTree as ET
 from google import genai
-from google.genai import errors
+from google.genai import types
 
-# ==========================================
-# 1. LISTA COMPLETA FEED RSS EMILIA-ROMAGNA
-# ==========================================
-RSS_FEEDS = {
-    # Generali / Regionali
-    "ANSA Emilia-Romagna": "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
-    "RAI TGR Emilia-Romagna": "https://www.rainews.it/rss/tgr/emiliaromagna",
-    "Corriere Romagna": "https://www.corriereromagna.it/feed/",
+# ---------------------------------------------------------------------------
+# 1. CONFIGURAZIONE E LISTA FONTI RSS (Copertura 9 Province + Economia + Regione)
+# ---------------------------------------------------------------------------
+TODAY = datetime.date.today().strftime('%Y-%m-%d')
+OUTPUT_DIR = "edizioni"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, f"{TODAY}.html")
+
+RSS_FEEDS = [
+    # Regione & Protezione Civile
+    "https://www.regione.emilia-romagna.it/notizie/RSS",
+    "https://allertameteo.regione.emilia-romagna.it/notizie-rss",
     
-    # Bologna / Imola
-    "BolognaToday": "https://www.bolognatoday.it/rss",
-    "Resto del Carlino - Bologna": "https://www.ilrestodelcarlino.it/bologna/rss",
-    "Bologna24ore": "https://www.bologna24ore.it/feed/",
-    "Bologna2000": "https://www.bologna2000.com/feed/",
-    "Resto del Carlino - Imola": "https://www.ilrestodelcarlino.it/imola/rss",
+    # ANSA Regionali
+    "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
     
-    # Modena
-    "ModenaToday": "https://www.modenatoday.it/rss",
-    "Resto del Carlino - Modena": "https://www.ilrestodelcarlino.it/modena/rss",
-    "Gazzetta di Modena": "https://www.gazzettadimodena.it/rss",
-    "SulPanaro": "https://www.sulpanaro.net/feed/",
-    "Sassuolo2000": "https://www.sassuolo2000.it/feed/",
-    "La Pressa": "https://www.lapressa.it/feed/",
+    # Resto del Carlino (Copertura capillare province)
+    "https://www.ilrestodelcarlino.it/bologna/rss",
+    "https://www.ilrestodelcarlino.it/modena/rss",
+    "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
+    "https://www.ilrestodelcarlino.it/ferrara/rss",
+    "https://www.ilrestodelcarlino.it/ravenna/rss",
+    "https://www.ilrestodelcarlino.it/forli/rss",
+    "https://www.ilrestodelcarlino.it/cesena/rss",
+    "https://www.ilrestodelcarlino.it/rimini/rss",
+    "https://www.ilrestodelcarlino.it/imola/rss",
     
-    # Reggio Emilia
-    "Resto del Carlino - Reggio": "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
-    "Gazzetta di Reggio": "https://www.gazzettadireggio.it/rss",
-    "24Emilia": "https://www.24emilia.com/feed/",
-    "Reggiosera": "https://www.reggiosera.it/feed/",
+    # Network "Today" (Province e capoluoghi)
+    "https://www.bolognatoday.it/rss",
+    "https://www.modenatoday.it/rss",
+    "https://www.riminitoday.it/rss",
+    "https://www.ravennatoday.it/rss",
+    "https://www.parmatoday.it/rss",
+    "https://www.piacenzatoday.it/rss",
+    "https://www.forlitoday.it/rss",
     
-    # Parma
-    "ParmaToday": "https://www.parmatoday.it/rss",
-    "Resto del Carlino - Parma": "https://www.ilrestodelcarlino.it/parma/rss",
-    "Gazzetta di Parma": "https://www.gazzettadiparma.it/feed/",
-    "ParmaDaily": "https://www.parmadaily.it/feed/",
-    "12 TV Parma": "https://www.12tvparma.it/feed/",
+    # Testate locali e Gazzette
+    "https://www.gazzettadiparma.it/rss/",
+    "https://www.piacenzasera.it/feed/",
+    "https://www.corriereromagna.it/feed/",
+    "https://www.estense.com/feed/",
     
-    # Piacenza
-    "PiacenzaSera": "https://www.piacenzasera.it/feed/",
-    "Il Piacenza": "https://www.ilpiacenza.it/rss",
-    "Libertà": "https://www.liberta.it/feed/",
-    
-    # Ferrara
-    "Estense.com": "https://www.estense.com/feed/",
-    "Resto del Carlino - Ferrara": "https://www.ilrestodelcarlino.it/ferrara/rss",
-    "La Nuova Ferrara": "https://www.lanuovaferrara.it/rss",
-    
-    # Ravenna
-    "RavennaToday": "https://www.ravennatoday.it/rss",
-    "RavennaNotizie": "https://www.ravennanotizie.it/feed/",
-    "Resto del Carlino - Ravenna": "https://www.ilrestodelcarlino.it/ravenna/rss",
-    
-    # Forlì-Cesena
-    "ForlìToday": "https://www.forlitoday.it/rss",
-    "CesenaToday": "https://www.cesenatoday.it/rss",
-    "Resto del Carlino - Forlì": "https://www.ilrestodelcarlino.it/forli/rss",
-    "Resto del Carlino - Cesena": "https://www.ilrestodelcarlino.it/cesena/rss",
-    
-    # Rimini
-    "RiminiToday": "https://www.riminitoday.it/rss",
-    "Resto del Carlino - Rimini": "https://www.ilrestodelcarlino.it/rimini/rss",
+    # Economia & Imprese
+    "https://www.ilsole24ore.com/rss/italia--emilia-romagna.xml"
+]
+
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 }
 
-
+# ---------------------------------------------------------------------------
+# 2. RAGGRUPPAMENTO E SCRAPING DEI FEED RSS
+# ---------------------------------------------------------------------------
 def fetch_rss_articles():
-    """Raccoglie tutti gli articoli dai feed RSS in modo resiliente."""
     articles = []
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
-
-    for source_name, url in RSS_FEEDS.items():
+    print(f"[{TODAY}] Avvio estrazione notizie da {len(RSS_FEEDS)} fonti RSS...")
+    
+    for feed_url in RSS_FEEDS:
         try:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=15) as response:
-                xml_bytes = response.read()
+            response = requests.get(feed_url, headers=HEADERS, timeout=10)
+            if response.status_code != 200:
+                continue
+            
+            root = ET.fromstring(response.content)
+            items = root.findall('.//item') or root.findall('.//{http://www.w3.org/2005/Atom}entry')
+            
+            for item in items[:10]:
+                title = item.findtext('title') or item.findtext('{http://www.w3.org/2005/Atom}title') or ""
+                link = item.findtext('link') or item.findtext('{http://www.w3.org/2005/Atom}href') or ""
+                description = item.findtext('description') or item.findtext('{http://www.w3.org/2005/Atom}summary') or ""
                 
-                # Gestione dei caratteri non validi nei feed XML locali
-                try:
-                    root = ET.fromstring(xml_bytes)
-                except ET.ParseError:
-                    cleaned_xml = xml_bytes.decode('utf-8', errors='ignore')
-                    root = ET.fromstring(cleaned_xml)
+                clean_desc = re.sub(r'<[^>]+>', '', description).strip()
+                
+                if title:
+                    articles.append({
+                        'title': title.strip(),
+                        'link': link.strip(),
+                        'description': clean_desc[:300]
+                    })
+        except Exception:
+            continue
 
-                for item in root.findall(".//item"):
-                    title = item.findtext("title")
-                    description = item.findtext("description")
-                    if title:
-                        text = f"Fonte: {source_name} | Titolo: {title.strip()}"
-                        if description:
-                            # Sanificazione tag HTML elementari dal sommario
-                            clean_desc = description.replace("<p>", "").replace("</p>", "").replace("<br>", "").replace("<br/>", "").strip()
-                            text += f" | Dettaglio: {clean_desc[:500]}"
-                        articles.append(text)
-        except Exception as e:
-            print(f"Attenzione: Impossibile recuperare feed {source_name}: {e}")
-
-    print(f"Raccolti {len(articles)} articoli totali da {len(RSS_FEEDS)} fonti locali.")
+    print(f"Estratti con successo {len(articles)} articoli totali.")
     return articles
 
-
-def build_prompt(today_str, articles_text):
-    """Crea il prompt ad alta densità informativa per l'analisi di Gemini."""
-    return f"""
-Sei un caporedattore e analista d'informazione professionista. Il tuo compito è redigere la **Rassegna Stampa Ufficiale dell'Emilia-Romagna** per la giornata del {today_str}.
-
-I dati provengono da oltre 30 testate giornalistiche regionali e provinciali. Devi produrre un documento HTML **estremamente utile, ricco, operativo e ad alto valore informativo**. Evita assolutamente sintesi generiche, banalità o omissioni.
-
-REGOLE DI REDAZIONE RIGOROSE:
-1. **DENSITÀ ED ESATTEZZA**: Conserva dettagli concreti come nomi delle persone coinvolte, età, vie o quartieri specifici, importi economici, decisioni amministrative e dinamiche dettagliate.
-2. **COPERTURA CAPILLARE**: Non scartare le notizie locali minori se sono rilevanti per il territorio. Se per una provincia ci sono 15 notizie di cronaca o utilità, inseriscile tutte.
-3. **ATTRIBUZIONE FONTI**: Ogni singolo punto informativo deve riportare tra parentesi la fonte originale (es. *Fonte: BolognaToday* o *Fonte: ANSA Emilia-Romagna / Resto del Carlino*).
-4. **ORGANIZZAZIONE**: Suddividi chiaramente la cronaca per singola provincia.
-
-FORMATO DI OUTPUT RICHIESTO (Fornisci ESCLUSIVAMENTE il contenuto HTML interno al tag <body>, SENZA blocchi markdown ```html):
-
-<h1>Rassegna Stampa Emilia-Romagna - {today_str}</h1>
-
-<h2>In Evidenza e Notizie Principali</h2>
-<ol>
-  <li><strong>[Titolo Notizia Fondamentale 1]</strong> — <em>[Località]</em>: Analisi approfondita ed esaustiva dell'evento, impatto sul territorio, dichiarazioni e dettagli esecutivi. (Fonte: ...)</li>
-  <li><strong>[Titolo Notizia Fondamentale 2]</strong> — <em>[Località]</em>: Analisi approfondita ed esaustiva dell'evento. (Fonte: ...)</li>
-</ol>
-
-<h2>Cronaca Provinciale Capillare</h2>
-
-<h3>Bologna e Imola</h3>
-<ul>
-  <li><strong>[Titolo Notizia]</strong> — <em>[Comune/Quartiere]</em>: Dettaglio completo, nomi, fatti ed evoluzioni. (Fonte: ...)</li>
-</ul>
-
-<h3>Modena</h3>
-<ul> ... </ul>
-
-<h3>Reggio Emilia</h3>
-<ul> ... </ul>
-
-<h3>Parma</h3>
-<ul> ... </ul>
-
-<h3>Piacenza</h3>
-<ul> ... </ul>
-
-<h3>Ferrara</h3>
-<ul> ... </ul>
-
-<h3>Ravenna</h3>
-<ul> ... </ul>
-
-<h3>Forlì-Cesena</h3>
-<ul> ... </ul>
-
-<h3>Rimini</h3>
-<ul> ... </ul>
-
-<h2>Economia, Lavoro, Infrastrutture e Politica Regionale</h2>
-<ul>
-  <li><strong>[Titolo Argomento]</strong> — Dettagli esatti su vertenze sindacali, investimenti aziendali, bandi pubblici o decisioni della Giunta Regionale. (Fonte: ...)</li>
-</ul>
-
-ARTICOLI GREZZI ACQUISITI DALLE FONTI LOCALI:
-{articles_text}
-"""
-
-
-def generate_rassegna():
-    today_file_fmt = datetime.datetime.now().strftime("%Y-%m-%d")
-    today_display_fmt = datetime.datetime.now().strftime("%d/%m/%Y")
-    
-    print(f"[{today_file_fmt}] Avvio scansione e analisi rassegna stampa...")
-    
-    # 1. Raccolta dati
-    articles = fetch_rss_articles()
-    if not articles:
-        print("Errore critico: Nessun articolo recuperato dalle fonti RSS.")
-        return
-
-    # Invia fino a 350 articoli per garantire massima ricchezza di contenuto
-    articles_text = "\n".join(articles[:350]) 
-    
-    # 2. Configurazione Client Gemini
+# ---------------------------------------------------------------------------
+# 3. PROMPT DI SISTEMA ED ELABORAZIONE IA (Gemini 2.5 Flash / Fallback)
+# ---------------------------------------------------------------------------
+def generate_rassegna_html(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        raise ValueError("La variabile d'ambiente GEMINI_API_KEY non è impostata.")
+        raise ValueError("ERRORE CRITICO: La variabile d'ambiente GEMINI_API_KEY non è impostata.")
 
     client = genai.Client(api_key=api_key)
-    prompt = build_prompt(today_display_fmt, articles_text)
-    
-    # Stratificazione modelli per prevenire blocchi da 503 Server Unavailable
-    candidate_models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-1.5-pro']
-    max_retries_per_model = 3
-    html_content = None
 
-    for model_name in candidate_models:
-        for attempt in range(1, max_retries_per_model + 1):
-            try:
-                print(f"[IA] Generazione in corso con '{model_name}' (Tentativo {attempt}/{max_retries_per_model})...")
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents=prompt
+    raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
+
+    system_instruction = f"""
+Sei un caporedattore edigooglitore esperto di cronaca, economia e politica dell'Emilia-Romagna.
+Analizza la lista di notizie estratte oggi ({TODAY}) e sintetizzale in una Rassegna Stampa quotidiana completa, autorevole e strutturata in formato HTML.
+
+REGOLE DI COPERTURA E SEZIONI:
+1. COPERTURA TERRITORIALE OBBLIGATORIA: Devi coprire notizie rilevanti da tutte e 9 le province dell'Emilia-Romagna:
+   - Bologna (inclusa Città Metropolitana e Imola)
+   - Modena
+   - Reggio Emilia
+   - Parma
+   - Piacenza
+   - Ferrara
+   - Ravenna
+   - Forlì-Cesena
+   - Rimini
+
+2. LINK E FONTI OBBLIGATORI PER OGNI NOTIZIA:
+   - Per OGNI singola notizia riportata, DEVI sempre inserire alla fine del paragrafo il link cliccabile alla fonte originale.
+   - Usa la sintassi HTML: <a href="URL_ARTICOLO" target="_blank">(Fonte)</a> o inserisci il nome della testata come link.
+   - Se unisci più notizie sullo stesso argomento, incolla i link di tutte le fonti incrociate (es. Fonti: <a href="URL1" target="_blank">Ansa</a>, <a href="URL2" target="_blank">il Resto del Carlino</a>).
+
+3. FILTRO CONTENUTI (COSA SCARTARE):
+   - Scarta gossip, gossip locale, notizie di sport (salvo eventi o fatti economici legati allo sport).
+   - Scarta meteo ordinario, ma INCLUDI OBBLIGATORIAMENTE allerte meteo o idrogeologiche della Protezione Civile regionale.
+   - Scarta notizie clickbait o pubblicitarie.
+
+4. SEZIONI RICHIESTE NELL'HTML (Utilizza esattamente questi tag h2):
+   - <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
+   - <h2>ECONOMIA, LAVORO E IMPRESE</h2>
+   - <h2>CRONACA E TERRITORIO</h2> (Suddivisa con tag <h3> per le singole province o macro-aree)
+   - <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
+
+FORMATO OUTPUT:
+Restituisci SOLO ed esclusivamente il codice HTML del corpo (usando <h2>, <h3>, <p>, <strong>, <a>). Non aggiungere blocchi di codice markdown (nessun ```html).
+"""
+
+    prompt = f"Ecco gli articoli pubblicati oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera la rassegna stampa HTML coordinata:"
+
+    models_to_try = ["gemini-2.5-flash", "gemini-1.5-pro"]
+    
+    for model_name in models_to_try:
+        try:
+            print(f"Generazione in corso con il modello {model_name}...")
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    system_instruction=system_instruction,
+                    temperature=0.3
                 )
-                if response and response.text:
-                    html_content = response.text.strip()
-                    break
-            except errors.ServerError as e:
-                print(f"[503 Server Demand] Il modello {model_name} è momentaneamente occupato: {e}")
-                if attempt < max_retries_per_model:
-                    wait_seconds = attempt * 10
-                    print(f"Pausa tattica di {wait_seconds}s prima del re-try...")
-                    time.sleep(wait_seconds)
-            except Exception as e:
-                print(f"Eccezione con {model_name}: {e}")
-                break
+            )
+            if response.text:
+                clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
+                clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
+                return clean_html
+        except Exception as e:
+            print(f"Avviso: Errore con il modello {model_name}: {e}. Tentativo con modello successivo...")
 
-        if html_content:
-            print(f"Generazione completata con successo tramite modello '{model_name}'.")
-            break
+    raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
-    if not html_content:
-        raise RuntimeError("Impossibile completare l'analisi: tutti i modelli dell'API risultano temporaneamente occupati.")
-
-    # Sanitizzazione blocchi di codice markdown
-    if html_content.startswith("```html"):
-        html_content = html_content[7:]
-    if html_content.startswith("```"):
-        html_content = html_content[3:]
-    if html_content.endswith("```"):
-        html_content = html_content[:-3]
-    html_content = html_content.strip()
-
-    # 3. Salvataggio
-    os.makedirs("edizioni", exist_ok=True)
-    out_path = os.path.join("edizioni", f"{today_file_fmt}.html")
+# ---------------------------------------------------------------------------
+# 4. SALVATAGGIO FILE HTML
+# ---------------------------------------------------------------------------
+def main():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    with open(out_path, "w", encoding="utf-8") as f:
-        f.write(html_content)
-        
-    print(f"File dell'edizione salvato correttamente in: {out_path}")
+    articles = fetch_rss_articles()
+    if not articles:
+        print("Nessun articolo estratto dai feed RSS. Interruzione.")
+        return
 
+    html_content = generate_rassegna_html(articles)
+    
+    full_html = f"""<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rassegna Stampa Emilia-Romagna - {TODAY}</title>
+</head>
+<body>
+    <main>
+        {html_content}
+    </main>
+</body>
+</html>"""
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(full_html)
+        
+    print(f"✅ Rassegna generata con successo e salvata in: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    generate_rassegna()
+    main()
