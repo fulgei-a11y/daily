@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Configura Python
         uses: actions/setup-python@v5
@@ -57,24 +58,9 @@ jobs:
           
           echo "{\"latest\": \"$TODAY\"}" > index.json
 
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # 1. Sincronizzazione preventiva con il server
-          git fetch origin main
-          git pull origin main --rebase
-          
-          # 2. Aggiunta dei file generati
-          git add -A
-          
-          # 3. Commit e Push sicuro con token e force-with-lease
-          if ! git diff-index --quiet HEAD; then
-            git commit -m "Auto-update rassegna $(date +'%Y-%m-%d')"
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git main --force-with-lease
-          else
-            echo "Nessun cambiamento rilevato, skip del commit."
-          fi
+      - name: Commit e Push automatico sicuro
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update rassegna"
+          branch: main
+          file_pattern: 'edizioni/* audio/* index.json'
