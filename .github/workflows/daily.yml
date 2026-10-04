@@ -4,7 +4,7 @@ on:
   schedule:
     # Esegue ogni mattina alle 07:00 italiane (05:00 UTC)
     - cron: '0 5 * * *'
-  workflow_dispatch: # Avvio manuale tramite pulsante
+  workflow_dispatch: # Permette l'avvio manuale con un click dalla scheda Actions
 
 jobs:
   build:
@@ -29,13 +29,16 @@ jobs:
         run: |
           TODAY=$(date +'%Y-%m-%d')
           
-          # Se hai uno script di scraping in tools/, eseguilo:
+          # 1. Se esiste lo script di scraping in tools/, lo esegue per creare l'HTML del giorno
           if [ -f tools/fetch_and_analyze.py ]; then
             python3 tools/fetch_and_analyze.py
           fi
           
-          # Generazione Audio MP3 e JSON timestamp
+          # 2. Generazione dell'Audio MP3 e del JSON dei timestamp
           python3 tools/build_audio.py --html edizioni/$TODAY.html --audio-out audio/$TODAY.mp3 --json-out edizioni/$TODAY.json
+          
+          # 3. Aggiorna il registro index.json con la data del giorno corrente
+          echo "{\"latest\": \"$TODAY\"}" > index.json
 
       - name: Pubblica i file aggiornati su GitHub Pages
         run: |
