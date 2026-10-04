@@ -4,7 +4,7 @@ on:
   schedule:
     # Esegue ogni mattina alle 07:00 italiane (05:00 UTC)
     - cron: '0 5 * * *'
-  workflow_dispatch: # Permette l'avvio manuale con un click
+  workflow_dispatch: # Avvio manuale tramite pulsante
 
 jobs:
   build:
@@ -18,26 +18,28 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Installa dipendenze Python
+      - name: Installa dipendenze Python e utilità
         run: |
           python -m pip install --upgrade pip
           pip install sherpa-onnx requests beautifulsoup4 google-genai
+          sudo apt-get install -y dos2unix
 
-      - name: Genera la Rassegna e l'Audio
+      - name: Normalizza i file di testo e genera Rassegna
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           TODAY=$(date +'%Y-%m-%d')
           
-          # Entra nella cartella tools ed esegue lo scraping
-          cd tools
-          python3 fetch_and_analyze.py
+          # Converti eventuali fine riga Windows in formato Linux
+          dos2unix tools/*.py
           
-          # Torna alla cartella principale ed esegue la sintesi audio
-          cd ..
+          # 1. Esegui lo scraping e la sintesi HTML
+          python3 tools/fetch_and_analyze.py
+          
+          # 2. Genera l'audio MP3 e i timestamp JSON
           python3 tools/build_audio.py --html edizioni/$TODAY.html --audio-out audio/$TODAY.mp3 --json-out edizioni/$TODAY.json
           
-          # Aggiorna il file index.json
+          # 3. Aggiorna il registro index.json
           echo "{\"latest\": \"$TODAY\"}" > index.json
 
       - name: Pubblica i file aggiornati su GitHub Pages
