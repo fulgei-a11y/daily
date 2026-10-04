@@ -4,13 +4,13 @@ on:
   schedule:
     # Esegue ogni mattina alle 07:00 italiane (05:00 UTC)
     - cron: '0 5 * * *'
-  workflow_dispatch: # Permette l'avvio manuale con un click dalla scheda Actions
+  workflow_dispatch: # Permette l'avvio manuale con un click
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Scarica il codice
+      - name: Scarica il codice del repository
         uses: actions/checkout@v4
 
       - name: Configura Python
@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Installa dipendenze
+      - name: Installa dipendenze Python
         run: |
           python -m pip install --upgrade pip
           pip install sherpa-onnx requests beautifulsoup4 google-genai
@@ -29,15 +29,15 @@ jobs:
         run: |
           TODAY=$(date +'%Y-%m-%d')
           
-          # 1. Se esiste lo script di scraping in tools/, lo esegue per creare l'HTML del giorno
-          if [ -f tools/fetch_and_analyze.py ]; then
-            python3 tools/fetch_and_analyze.py
-          fi
+          # Entra nella cartella tools ed esegue lo scraping
+          cd tools
+          python3 fetch_and_analyze.py
           
-          # 2. Generazione dell'Audio MP3 e del JSON dei timestamp
+          # Torna alla cartella principale ed esegue la sintesi audio
+          cd ..
           python3 tools/build_audio.py --html edizioni/$TODAY.html --audio-out audio/$TODAY.mp3 --json-out edizioni/$TODAY.json
           
-          # 3. Aggiorna il registro index.json con la data del giorno corrente
+          # Aggiorna il file index.json
           echo "{\"latest\": \"$TODAY\"}" > index.json
 
       - name: Pubblica i file aggiornati su GitHub Pages
