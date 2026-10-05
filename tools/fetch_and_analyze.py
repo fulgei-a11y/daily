@@ -1,268 +1,260 @@
 import os
 import re
-import html
 import time
+import datetime
 import requests
-import feedparser
-from datetime import datetime
-import google.generativeai as genai
+import xml.etree.ElementTree as ET
+from google import genai
+from google.genai import types
 
-# ==========================================
-# 1. CONFIGURAZIONE API E FONTI RSS
-# ==========================================
-
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-if not GEMINI_API_KEY:
-    raise ValueError("GEMINI_API_KEY non trovata nelle variabili d'ambiente.")
-
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.5-flash")
+# ---------------------------------------------------------------------------
+# 1. CONFIGURAZIONE E LISTA FONTI RSS
+# ---------------------------------------------------------------------------
+TODAY = datetime.date.today().strftime('%Y-%m-%d')
+OUTPUT_DIR = "edizioni"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, f"{TODAY}.html")
 
 RSS_FEEDS = [
-    # Fonti Generali e Agenzie
-    "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
-    "https://www.ilrestodelcarlino.it/rss",
-    "https://www.corrieredibo.it/feed/",
+    # Regione & Protezione Civile
+    "https://www.regione.emilia-romagna.it/notizie/RSS",
+    "https://allertameteo.regione.emilia-romagna.it/notizie-rss",
     
-    # Fonti Territoriali e Locali
+    # ANSA Regionali
+    "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
+    
+    # Resto del Carlino (Copertura capillare province)
+    "https://www.ilrestodelcarlino.it/bologna/rss",
+    "https://www.ilrestodelcarlino.it/modena/rss",
+    "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
+    "https://www.ilrestodelcarlino.it/ferrara/rss",
+    "https://www.ilrestodelcarlino.it/ravenna/rss",
+    "https://www.ilrestodelcarlino.it/forli/rss",
+    "https://www.ilrestodelcarlino.it/cesena/rss",
+    "https://www.ilrestodelcarlino.it/rimini/rss",
+    "https://www.ilrestodelcarlino.it/imola/rss",
+    
+    # Network "Today" (Province e capoluoghi)
     "https://www.bolognatoday.it/rss",
-    "https://www.estense.com/feed/",
-    "https://www.ilPiacenza.it/rss",
-    "https://www.parmatoday.it/rss",
-    "https://www.reggiotoday.it/rss",
     "https://www.modenatoday.it/rss",
-    "https://www.ravennatoday.it/rss",
     "https://www.riminitoday.it/rss",
+    "https://www.ravennatoday.it/rss",
+    "https://www.parmatoday.it/rss",
+    "https://www.piacenzatoday.it/rss",
     "https://www.forlitoday.it/rss",
-    "https://www.cesenatoday.it/rss"
+    
+    # Testate locali e Gazzette
+    "https://www.gazzettadiparma.it/rss/",
+    "https://www.piacenzasera.it/feed/",
+    "https://www.corriereromagna.it/feed/",
+    "https://www.estense.com/feed/",
+    
+    # Economia & Imprese
+    "https://www.ilsole24ore.com/rss/italia--emilia-romagna.xml"
 ]
 
-PROVINCE = [
-    "Bologna", "Ferrara", "Forlì-Cesena", "Modena", 
-    "Parma", "Piacenza", "Ravenna", "Reggio Emilia", "Rimini"
-]
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+}
 
-# ==========================================
-# 2. BLACKLIST E SCORING
-# ==========================================
-
-BLACKLIST_KEYWORDS = [
-    "calcio", "serie a", "serie b", "serie c", "promozione", "eccellenza",
-    "basket", "pallavolo", "tennis", "formula 1", "motogp", "partita",
-    "ballando con le stelle", "grande fratello", "sanremo", "oroscopo",
-    "gossip", "spettacolo", "concerti", "disco", "movida"
-]
-
-KW_PA = ["regione", "giunta", "assemblea legislativa", "comune", "sindaco", "ausl", "bando", "delibera", "pnrr", "appalto", "finanziamento", "sanità"]
-KW_ECONOMIA = ["azienda", "crisi", "sindacato", "lavoro", "licenziamento", "investimenti", "export", "fiera", "confindustria", "infrastrutture", "porto"]
-KW_CRONACA = ["arresto", "omicidio", "incidente", "carabinieri", "polizia", "sequestro", "indagine", "procura", "incendio", "protezione civile", "alluvione"]
-
-def clean_html_text(text):
-    if not text:
-        return ""
-    text = re.sub(r'<[^>]+>', '', text)
-    text = html.unescape(text)
-    return ' '.join(text.split())
-
-def calculate_relevance_score(title, desc):
-    full_text = f"{title} {desc}".lower()
-    if any(kw in full_text for kw in BLACKLIST_KEYWORDS):
-        return -100
-        
-    score = 0
-    for kw in KW_PA:
-        if kw in full_text: score += 4
-    for kw in KW_ECONOMIA:
-        if kw in full_text: score += 3
-    for kw in KW_CRONACA:
-        if kw in full_text: score += 3
-    for prov in PROVINCE:
-        if prov.lower() in full_text: score += 2
-
-    return score
-
-def detect_province(title, desc):
-    full_text = f"{title} {desc}".lower()
-    detected = [prov for prov in PROVINCE if prov.lower() in full_text]
-    return detected if detected else ["Regionale"]
-
-# ==========================================
-# 3. PIPELINE RACCOLTA
-# ==========================================
-
-def fetch_and_process_news():
-    raw_articles = []
-    seen_fingerprints = set()
-
-    print("--> 1. Raccolta articoli da RSS...")
+# ---------------------------------------------------------------------------
+# 2. SCRAPING DEI FEED RSS
+# ---------------------------------------------------------------------------
+def fetch_rss_articles():
+    articles = []
+    print(f"[{TODAY}] Avvio estrazione notizie da {len(RSS_FEEDS)} fonti RSS...")
+    
     for feed_url in RSS_FEEDS:
         try:
-            feed = feedparser.parse(feed_url)
-            source_name = feed.feed.get("title", "Fonte Locale")
+            response = requests.get(feed_url, headers=HEADERS, timeout=10)
+            if response.status_code != 200:
+                continue
             
-            for entry in feed.entries[:35]:
-                title = clean_html_text(entry.get("title", ""))
-                summary = clean_html_text(entry.get("summary", entry.get("description", "")))
-                link = entry.get("link", "")
+            root = ET.fromstring(response.content)
+            items = root.findall('.//item') or root.findall('.//{http://www.w3.org/2005/Atom}entry')
+            
+            for item in items[:10]:
+                title = item.findtext('title') or item.findtext('{http://www.w3.org/2005/Atom}title') or ""
+                link = item.findtext('link') or item.findtext('{http://www.w3.org/2005/Atom}href') or ""
+                description = item.findtext('description') or item.findtext('{http://www.w3.org/2005/Atom}summary') or ""
                 
-                if not title or len(title) < 10:
-                    continue
+                clean_desc = re.sub(r'<[^>]+>', '', description).strip()
                 
-                title_words = re.sub(r'[^\w\s]', '', title.lower()).split()
-                fingerprint = " ".join(title_words[:6])
-                
-                if fingerprint in seen_fingerprints:
-                    continue
-                seen_fingerprints.add(fingerprint)
+                if title:
+                    articles.append({
+                        'title': title.strip(),
+                        'link': link.strip(),
+                        'description': clean_desc[:300]
+                    })
+        except Exception:
+            continue
 
-                score = calculate_relevance_score(title, summary)
-                if score < 0:
-                    continue
+    print(f"Estratti con successo {len(articles)} articoli totali.")
+    return articles
 
-                provinces = detect_province(title, summary)
-                raw_articles.append({
-                    "title": title,
-                    "desc": summary[:800],
-                    "link": link,
-                    "source": source_name,
-                    "score": score,
-                    "provinces": provinces
-                })
-        except Exception as e:
-            print(f"Errore feed {feed_url}: {e}")
+# ---------------------------------------------------------------------------
+# 3. GENERAZIONE HTML CON GEMINI
+# ---------------------------------------------------------------------------
+def generate_rassegna_body(articles):
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        raise ValueError("ERRORE CRITICO: La variabile d'ambiente GEMINI_API_KEY non è impostata.")
 
-    print(f"--> Raccolti {len(raw_articles)} articoli validi.")
-    raw_articles.sort(key=lambda x: x["score"], reverse=True)
-    return raw_articles
+    client = genai.Client(api_key=api_key)
 
-# ==========================================
-# 4. GENERAZIONE SEZIONI PER PROVINCIA (SINTASSI STRICT PER BUILD_AUDIO)
-# ==========================================
+    raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
 
-def generate_section_html(section_title, articles_list, prompt_instruction):
-    if not articles_list:
-        return f"<h2>{section_title}</h2><p>Nessun aggiornamento di rilievo nelle ultime ore.</p>"
+    system_instruction = f"""
+Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
+Sintetizza le notizie di oggi ({TODAY}) in una Rassegna Stampa HTML.
 
-    formatted_articles = ""
-    for idx, a in enumerate(articles_list, 1):
-        formatted_articles += f"""
----
-ARTICOLO {idx}:
-Titolo: {a['title']}
-Fonte: {a['source']}
-Territorio/Provincia: {', '.join(a['provinces'])}
-Testo: {a['desc']}
-Link: {a['link']}
+REGOLE TASSATIVE DI STRUTTURA:
+- NON generare <html>, <head> o <body>. Genera SOLO il frammento interno.
+- Usa <h2> per i titoli di sezione principale.
+- Usa <h3> per le sotto-sezioni/province.
+- Ogni singola notizia deve essere racchiusa in un paragrafo <p> o in un punto elenco <li>.
+- NON usare <div> per avvolgere le notizie.
+
+REGOLE CONTENUTI E FONTI:
+1. Copertura obbligatoria delle 9 province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
+2. Inserisci SEMPRE il link alla fonte alla fine di ogni paragrafo o punto elenco:
+   Es: <p>Testo notizia... <a href="URL" target="_blank">(Fonte: Ansa)</a></p>
+3. Escludi gossip e sport minore. Includi allerte della Protezione Civile.
+
+SEZIONI OBBLIGATORIE:
+- <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
+- <h2>ECONOMIA, LAVORO E IMPRESE</h2>
+- <h2>CRONACA E TERRITORIO</h2>
+- <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
+
+FORMATO OUTPUT:
+Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
 """
 
-    prompt = f"""
-Sei un caporedattore esperto della Regione Emilia-Romagna.
+    prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
-Compito: Genera il frammento HTML per la sezione "<h2>{section_title}</h2>".
-
-REGOLE RIGIDISSIME DI SINTASSI HTML (FONDAMENTALI PER IL PARSER AUDIO):
-1. Inizia SEMPRE la sezione con il tag `<h2>{section_title}</h2>`.
-2. DIVIDI OBBLIGATORIAMENTE I CONTENUTI PER PROVINCIA usando ESCLUSIVAMENTE il tag `<h3>` (es: `<h3>Focus Provincia di Bologna</h3>`, `<h3>Focus Provincia di Modena</h3>`, `<h3>Notizie Regionali</h3>`).
-3. OGNI SINGOLA NOTIZIA DEVE ESSERE CONTENUTA IN UN TAG `<p>`. Non usare mai <h4> o <div> per le notizie.
-4. Formatta ciascuna notizia dentro il tag `<p>` esattamente in questo modo:
-   `<p><strong>Titolo della Notizia.</strong> Testo del riassunto chiaro ed esaustivo in 2-3 frasi. <a href="LINK" target="_blank">Leggi su FONTE</a></p>`
-5. {prompt_instruction}
-6. Restituisci SOLO codice HTML grezzo senza contenitori markdown (no ```html).
-
-ARTICOLI A DISPOSIZIONE:
-{formatted_articles}
-"""
-    for attempt in range(3):
-        try:
-            response = model.generate_content(prompt)
-            text = response.text.strip()
-            text = re.sub(r'^```html\s*', '', text)
-            text = re.sub(r'\s*```$', '', text)
-            time.sleep(2)
-            return text
-        except Exception as e:
-            print(f"Tentativo {attempt+1} fallito per {section_title}: {e}")
-            time.sleep(4)
-
-    # Fallback rigoroso conforme al parser audio
-    fallback = f"<h2>{section_title}</h2>"
-    by_prov = {}
-    for a in articles_list:
-        prov = a['provinces'][0]
-        by_prov.setdefault(prov, []).append(a)
-        
-    for prov, arts in by_prov.items():
-        fallback += f"<h3>Focus Provincia di {prov}</h3>"
-        for a in arts[:4]:
-            fallback += f"<p><strong>{a['title']}.</strong> {a['desc']} <a href='{a['link']}' target='_blank'>Leggi su {a['source']}</a></p>"
-    return fallback
-
-# ==========================================
-# 5. ASSEMBLAGGIO FINALE DEL DOCUMENTO
-# ==========================================
-
-def build_full_rassegna():
-    articles = fetch_and_process_news()
+    # Modelli sicuri e validati per l'API Google GenAI v1beta
+    models_to_try = [
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "gemini-2.0-flash",
+        "gemini-1.5-flash"
+    ]
     
-    top_pa = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_PA) or a["score"] >= 6][:20]
-    top_economy = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_ECONOMIA)][:18]
-    top_cronaca = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_CRONACA)][:18]
+    for model_name in models_to_try:
+        for attempt in range(2):
+            try:
+                print(f"Generazione in corso con il modello {model_name} (tentativo {attempt + 1})...")
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=system_instruction,
+                        temperature=0.3
+                    )
+                )
+                if response and response.text:
+                    clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
+                    clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
+                    if len(clean_html) > 100:
+                        return clean_html
+            except Exception as e:
+                print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
+                time.sleep(5)
 
-    print("--> 2. Generazione Pubblica Amministrazione & Territorio...")
-    html_pa = generate_section_html("Prima Pagina e Pubblica Amministrazione", top_pa, "Raggruppa le notizie per Provincia con tag <h3> e inserisci ciascuna notizia dentro un tag <p>.")
+    raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
-    print("--> 3. Generazione Economia e Lavoro...")
-    html_eco = generate_section_html("Economia, Lavoro e Imprese", top_economy, "Raggruppa le notizie per Provincia con tag <h3> e inserisci ciascuna notizia dentro un tag <p>.")
-
-    print("--> 4. Generazione Cronaca e Sicurezza...")
-    html_cro = generate_section_html("Cronaca e Sicurezza", top_cronaca, "Raggruppa le notizie per Provincia con tag <h3> e inserisci ciascuna notizia dentro un tag <p>.")
-
-    today_str = datetime.now().strftime("%d/%m/%Y")
+# ---------------------------------------------------------------------------
+# 4. SALVATAGGIO FILE HTML
+# ---------------------------------------------------------------------------
+def main():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    full_html = f"""<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rassegna Stampa Emilia-Romagna - {today_str}</title>
-    <style>
-        body {{ font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #222; max-width: 900px; margin: 0 auto; padding: 20px; background: #f4f6f8; }}
-        .container {{ background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }}
-        header {{ border-bottom: 3px solid #d9534f; padding-bottom: 15px; margin-bottom: 30px; }}
-        h1 {{ color: #111; margin: 0 0 5px 0; font-size: 28px; }}
-        h2 {{ color: #d9534f; border-bottom: 1px solid #eee; padding-bottom: 8px; font-size: 22px; margin-top: 35px; }}
-        h3 {{ color: #0275d8; margin-top: 25px; font-size: 18px; background: #eef5fa; padding: 6px 12px; border-left: 4px solid #0275d8; }}
-        p {{ margin-top: 10px; margin-bottom: 15px; font-size: 15px; }}
-        strong {{ color: #111; }}
-        a {{ color: #0275d8; text-decoration: none; font-size: 13px; }}
-        a:hover {{ text-decoration: underline; }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Rassegna Stampa Emilia-Romagna</h1>
-            <div><strong>Edizione del {today_str} — PA, Economia e Cronaca per Provincia</strong></div>
-        </header>
+    articles = fetch_rss_articles()
+    if not articles:
+        print("Nessun articolo estratto. Interruzione.")
+        return
 
-        <main>
-            {html_pa}
-            {html_eco}
-            {html_cro}
-        </main>
+    body_content = generate_rassegna_body(articles)
+
+    styled_html = f"""<style>
+    @import url('[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap)');
+    
+    .rassegna-container {{
+        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.7;
+        color: #2c3e50;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }}
+    .rassegna-header {{
+        border-bottom: 3px solid #004085;
+        padding-bottom: 12px;
+        margin-bottom: 25px;
+    }}
+    .rassegna-header h1 {{
+        font-family: 'Merriweather', serif;
+        font-size: 26px;
+        color: #004085;
+        margin: 0;
+    }}
+    h2 {{
+        font-family: 'Merriweather', serif;
+        font-size: 18px;
+        color: #1b4332;
+        background-color: #e8f5e9;
+        padding: 10px 14px;
+        border-left: 6px solid #2d6a4f;
+        margin-top: 35px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }}
+    h3 {{
+        font-size: 16px;
+        color: #1d3557;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 4px;
+        margin-top: 25px;
+    }}
+    p, li {{
+        font-size: 15px;
+        margin-bottom: 14px;
+        text-align: justify;
+    }}
+    a {{
+        color: #0056b3;
+        text-decoration: none;
+        font-weight: 600;
+    }}
+    a:hover {{
+        text-decoration: underline;
+    }}
+    @media print {{
+        .rassegna-container {{
+            max-width: 100%;
+            padding: 0;
+        }}
+        h2 {{
+            background-color: #f1f1f1 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }}
+    }}
+</style>
+
+<div class="rassegna-container">
+    <div class="rassegna-header">
+        <h1>Rassegna Stampa Emilia-Romagna</h1>
+        <small style="color: #6c757d;">Edizione del {TODAY}</small>
     </div>
-</body>
-</html>
-"""
-    
-    os.makedirs("edizioni", exist_ok=True)
-    today_filename = datetime.now().strftime("%Y-%m-%d.html")
-    output_path = os.path.join("edizioni", today_filename)
-    
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(full_html)
+    {body_content}
+</div>"""
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(styled_html)
         
-    print(f"--> Rassegna completata e salvata con successo in '{output_path}'.")
+    print(f"✅ File generato con successo: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    build_full_rassegna()
+    main()
