@@ -4,6 +4,7 @@ import time
 import datetime
 import requests
 import xml.etree.ElementTree as ET
+import trafilatura
 from google import genai
 from google.genai import types
 
@@ -22,7 +23,7 @@ RSS_FEEDS = [
     # ANSA Regionali
     "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
     
-    # Resto del Carlino (Copertura capillare province)
+    # Resto del Carlino
     "https://www.ilrestodelcarlino.it/bologna/rss",
     "https://www.ilrestodelcarlino.it/modena/rss",
     "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
@@ -33,7 +34,7 @@ RSS_FEEDS = [
     "https://www.ilrestodelcarlino.it/rimini/rss",
     "https://www.ilrestodelcarlino.it/imola/rss",
     
-    # Network "Today" (Province e capoluoghi)
+    # Network "Today"
     "https://www.bolognatoday.it/rss",
     "https://www.modenatoday.it/rss",
     "https://www.riminitoday.it/rss",
@@ -57,11 +58,11 @@ HEADERS = {
 }
 
 # ---------------------------------------------------------------------------
-# 2. SCRAPING DEI FEED RSS
+# 2. SCRAPING DEI FEED RSS & FULL-TEXT EXTRACTION
 # ---------------------------------------------------------------------------
 def fetch_rss_articles():
-    articles = []
-    print(f"[{TODAY}] Avvio estrazione notizie da {len(RSS_FEEDS)} fonti RSS...")
+    raw_articles = []
+    print(f"[{TODAY}] Avvio estrazione feed RSS da {len(RSS_FEEDS)} fonti...")
     
     for feed_url in RSS_FEEDS:
         try:
@@ -72,27 +73,51 @@ def fetch_rss_articles():
             root = ET.fromstring(response.content)
             items = root.findall('.//item') or root.findall('.//{http://www.w3.org/2005/Atom}entry')
             
-            for item in items[:10]:
+            for item in items[:6]:  # Prendiamo i primi 6 da ciascun feed per garantire qualità
                 title = item.findtext('title') or item.findtext('{http://www.w3.org/2005/Atom}title') or ""
                 link = item.findtext('link') or item.findtext('{http://www.w3.org/2005/Atom}href') or ""
                 description = item.findtext('description') or item.findtext('{http://www.w3.org/2005/Atom}summary') or ""
                 
                 clean_desc = re.sub(r'<[^>]+>', '', description).strip()
                 
-                if title:
-                    articles.append({
+                if title and link:
+                    raw_articles.append({
                         'title': title.strip(),
                         'link': link.strip(),
-                        'description': clean_desc[:300]
+                        'description': clean_desc
                     })
         except Exception:
             continue
 
-    print(f"Estratti con successo {len(articles)} articoli totali.")
-    return articles
+    print(f"Estratti {len(raw_articles)} link. Avvio download testo integrale (Full-Text Extraction)...")
+    
+    # Full-Text Extraction con Trafilatura
+    full_articles = []
+    for idx, art in enumerate(raw_articles[:40]):  # Analizziamo fino a 40 articoli top
+        try:
+            downloaded = trafilatura.fetch_url(art['link'])
+            text = trafilatura.extract(downloaded, include_comments=False, include_tables=False)
+            
+            # Fallback se trafilatura non estrae il testo integrale
+            final_content = text if text and len(text) > 200 else art['description']
+            
+            full_articles.append({
+                'title': art['title'],
+                'link': art['link'],
+                'content': final_content[:2500]  # Fino a 2500 caratteri per articolo
+            })
+            print(f"[{idx+1}/{min(40, len(raw_articles))}] Estratto: {art['title'][:40]}...")
+        except Exception:
+            full_articles.append({
+                'title': art['title'],
+                'link': art['link'],
+                'content': art['description']
+            })
+
+    return full_articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE HTML CON GEMINI
+# 3. GENERAZIONE HTML CON EXECUTIVE SUMMARY & ANALISI APPROFONDITA
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -101,38 +126,42 @@ def generate_rassegna_body(articles):
 
     client = genai.Client(api_key=api_key)
 
-    raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
+    raw_text = "\n\n".join([f"=== ARTICOLO ===\nTitolo: {a['title']}\nLink: {a['link']}\nTesto Completo:\n{a['content']}" for a in articles])
 
     system_instruction = f"""
-Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
-Sintetizza le notizie di oggi ({TODAY}) in una Rassegna Stampa HTML.
+Sei il Caporedattore e Chief Analyst di una newsletter d'informazione strategica ed economica per dirigenti e istituzioni dell'Emilia-Romagna.
+Il tuo compito è produrre un REPORT DI SCENARIO ED ANALISI STRATEGICA sulla giornata di oggi ({TODAY}).
 
-REGOLE TASSATIVE DI STRUTTURA:
-- NON generare <html>, <head> o <body>. Genera SOLO il frammento interno.
-- Usa <h2> per i titoli di sezione principale.
-- Usa <h3> per le sotto-sezioni/province.
-- Ogni singola notizia deve essere racchiusa in un paragrafo <p> o in un punto elenco <li>.
-- NON usare <div> per avvolgere le notizie.
+CRITERI RIGIDI DI FILTRAGGIO (SELEZIONE CRITICA):
+- ESCLUDI TASSATIVAMENTE la micro-cronaca e la cronaca nera minore: NESSUN incidente stradale isolato, NESSUN furto in abitazione, NESSUNA rissa da bar.
+- CONCENTRATI ESCLUSIVAMENTE SU TEMI DI RILEVANZA DI SISTEMA: Politica regionale e locale, infrastrutture, nodi sanitari, industria e distretti, turismo, scuola/integrazione, transizione ecologica e allerte meteo.
 
-REGOLE CONTENUTI E FONTI:
-1. Copertura obbligatoria delle 9 province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
-2. Inserisci SEMPRE il link alla fonte alla fine di ogni paragrafo o punto elenco:
-   Es: <p>Testo notizia... <a href="URL" target="_blank">(Fonte: Ansa)</a></p>
-3. Escludi gossip e sport minore. Includi allerte della Protezione Civile.
+STRUTTURA DELL'OUTPUT HTML:
+Devi generare SOLO il frammento interno HTML (senza <html>, <head> o <body>), così formattato:
+
+1. BOX EXECUTIVE SUMMARY & KEY FIGURES (In testa al report):
+   - Inserisci un div con classe 'executive-box':
+     * Titolo <h3>I 3 Fatti Chiave di Oggi</h3> con un elenco di 3 punti focali e le relative implicazioni.
+     * Un contenitore div con classe 'key-figures-grid' contenente 3-4 badge ('figure-card') con le cifre/statistiche più importanti estratte dai testi (es. "+4% Turismo", "4.5M€ per Condotte", "25kg Sequestro").
+
+2. SEZIONI DI ANALISI APPROFONDITA (Testo fluido e giornalistico):
+   - Usa <h2> per le macro-sezioni tematiche.
+   - Usa <h3> per i focus territoriali/tematici.
+   - NON USARE ELENCHI PUNTATI BANALI NEL CORPO DELLE SEZIONI. Scrivi paragrafi ampi, articolati (300-500 parole per macro-sezione) che colleghino le fonti e contestualizzino le posizioni dei vari attori.
+   - Inserisci SEMPRE il link alla fonte citata: ... <a href="URL" target="_blank">(Fonte: Nome)</a>.
 
 SEZIONI OBBLIGATORIE:
-- <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
-- <h2>ECONOMIA, LAVORO E IMPRESE</h2>
-- <h2>CRONACA E TERRITORIO</h2>
-- <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
+- <h2>1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
+- <h2>2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
+- <h2>3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
+- <h2>4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE</h2>
 
 FORMATO OUTPUT:
 Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
 """
 
-    prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
+    prompt = f"Ecco gli articoli integrali estratti oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera il Report con Executive Summary e Cifre Chiave:"
 
-    # Modelli sicuri e validati per l'API Google GenAI v1beta
     models_to_try = [
         "gemini-2.5-flash",
         "gemini-2.5-pro",
@@ -143,7 +172,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     for model_name in models_to_try:
         for attempt in range(2):
             try:
-                print(f"Generazione in corso con il modello {model_name} (tentativo {attempt + 1})...")
+                print(f"Generazione analisi avanzata con {model_name} (tentativo {attempt + 1})...")
                 response = client.models.generate_content(
                     model=model_name,
                     contents=prompt,
@@ -155,7 +184,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                 if response and response.text:
                     clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
                     clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
-                    if len(clean_html) > 100:
+                    if len(clean_html) > 300:
                         return clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
@@ -164,7 +193,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 4. SALVATAGGIO FILE HTML
+# 4. SALVATAGGIO FILE HTML E CSS PREMIUM
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -181,45 +210,92 @@ def main():
     
     .rassegna-container {{
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-        line-height: 1.7;
+        line-height: 1.8;
         color: #2c3e50;
-        max-width: 800px;
+        max-width: 850px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 25px;
     }}
     .rassegna-header {{
-        border-bottom: 3px solid #004085;
-        padding-bottom: 12px;
+        border-bottom: 4px solid #004085;
+        padding-bottom: 15px;
         margin-bottom: 25px;
     }}
     .rassegna-header h1 {{
         font-family: 'Merriweather', serif;
-        font-size: 26px;
+        font-size: 28px;
         color: #004085;
-        margin: 0;
+        margin: 0 0 5px 0;
     }}
-    h2 {{
+    
+    /* Box Executive Summary & Cifre */
+    .executive-box {{
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: 6px solid #004085;
+        padding: 20px;
+        border-radius: 6px;
+        margin-bottom: 35px;
+    }}
+    .executive-box h3 {{
+        margin-top: 0;
+        color: #004085;
         font-family: 'Merriweather', serif;
         font-size: 18px;
-        color: #1b4332;
-        background-color: #e8f5e9;
-        padding: 10px 14px;
-        border-left: 6px solid #2d6a4f;
-        margin-top: 35px;
-        border-radius: 4px;
+        border-bottom: none;
+    }}
+    .key-figures-grid {{
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }}
+    .figure-card {{
+        background: #ffffff;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        padding: 10px 15px;
+        flex: 1;
+        min-width: 140px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }}
+    .figure-card .number {{
+        font-size: 20px;
+        font-weight: 700;
+        color: #2d6a4f;
+        display: block;
+    }}
+    .figure-card .label {{
+        font-size: 12px;
+        color: #6c757d;
         text-transform: uppercase;
+    }}
+
+    h2 {{
+        font-family: 'Merriweather', serif;
+        font-size: 20px;
+        color: #1b4332;
+        background-color: #f0f7f4;
+        padding: 12px 16px;
+        border-left: 6px solid #2d6a4f;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-radius: 4px;
         letter-spacing: 0.5px;
     }}
     h3 {{
-        font-size: 16px;
+        font-family: 'Merriweather', serif;
+        font-size: 17px;
         color: #1d3557;
         border-bottom: 2px solid #e9ecef;
-        padding-bottom: 4px;
-        margin-top: 25px;
+        padding-bottom: 6px;
+        margin-top: 30px;
+        margin-bottom: 15px;
     }}
-    p, li {{
+    p {{
         font-size: 15px;
-        margin-bottom: 14px;
+        margin-bottom: 18px;
         text-align: justify;
     }}
     a {{
@@ -245,8 +321,8 @@ def main():
 
 <div class="rassegna-container">
     <div class="rassegna-header">
-        <h1>Rassegna Stampa Emilia-Romagna</h1>
-        <small style="color: #6c757d;">Edizione del {TODAY}</small>
+        <h1>Rassegna Stampa & Strategic Analysis</h1>
+        <small style="color: #6c757d; font-size: 14px;">Emilia-Romagna • Edizione del {TODAY}</small>
     </div>
     {body_content}
 </div>"""
