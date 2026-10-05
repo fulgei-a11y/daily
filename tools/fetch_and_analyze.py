@@ -23,7 +23,7 @@ RSS_FEEDS = [
     # ANSA Regionali
     "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
     
-    # Resto del Carlino
+    # Resto del Carlino (Capillare sulle province)
     "https://www.ilrestodelcarlino.it/bologna/rss",
     "https://www.ilrestodelcarlino.it/modena/rss",
     "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
@@ -73,7 +73,7 @@ def fetch_rss_articles():
             root = ET.fromstring(response.content)
             items = root.findall('.//item') or root.findall('.//{http://www.w3.org/2005/Atom}entry')
             
-            for item in items[:6]:  # Prendiamo i primi 6 da ciascun feed per garantire qualità
+            for item in items[:6]:  # Selezioniamo i primi 6 da ciascun feed
                 title = item.findtext('title') or item.findtext('{http://www.w3.org/2005/Atom}title') or ""
                 link = item.findtext('link') or item.findtext('{http://www.w3.org/2005/Atom}href') or ""
                 description = item.findtext('description') or item.findtext('{http://www.w3.org/2005/Atom}summary') or ""
@@ -89,22 +89,20 @@ def fetch_rss_articles():
         except Exception:
             continue
 
-    print(f"Estratti {len(raw_articles)} link. Avvio download testo integrale (Full-Text Extraction)...")
+    print(f"Estratti {len(raw_articles)} link. Avvio estrazione testo integrale (Full-Text Extraction)...")
     
-    # Full-Text Extraction con Trafilatura
     full_articles = []
     for idx, art in enumerate(raw_articles[:40]):  # Analizziamo fino a 40 articoli top
         try:
             downloaded = trafilatura.fetch_url(art['link'])
             text = trafilatura.extract(downloaded, include_comments=False, include_tables=False)
             
-            # Fallback se trafilatura non estrae il testo integrale
             final_content = text if text and len(text) > 200 else art['description']
             
             full_articles.append({
                 'title': art['title'],
                 'link': art['link'],
-                'content': final_content[:2500]  # Fino a 2500 caratteri per articolo
+                'content': final_content[:2500]
             })
             print(f"[{idx+1}/{min(40, len(raw_articles))}] Estratto: {art['title'][:40]}...")
         except Exception:
@@ -117,7 +115,7 @@ def fetch_rss_articles():
     return full_articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE HTML CON EXECUTIVE SUMMARY & ANALISI APPROFONDITA
+# 3. GENERAZIONE HTML CON INTELLIGENCE STRATEGICA COMPLETA
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -129,38 +127,53 @@ def generate_rassegna_body(articles):
     raw_text = "\n\n".join([f"=== ARTICOLO ===\nTitolo: {a['title']}\nLink: {a['link']}\nTesto Completo:\n{a['content']}" for a in articles])
 
     system_instruction = f"""
-Sei il Caporedattore e Chief Analyst di una newsletter d'informazione strategica ed economica per dirigenti e istituzioni dell'Emilia-Romagna.
+Sei il Caporedattore e Chief Analyst di un'agenzia d'intelligence e analisi strategica per dirigenti, investitori e istituzioni dell'Emilia-Romagna.
 Il tuo compito è produrre un REPORT DI SCENARIO ED ANALISI STRATEGICA sulla giornata di oggi ({TODAY}).
 
 CRITERI RIGIDI DI FILTRAGGIO (SELEZIONE CRITICA):
-- ESCLUDI TASSATIVAMENTE la micro-cronaca e la cronaca nera minore: NESSUN incidente stradale isolato, NESSUN furto in abitazione, NESSUNA rissa da bar.
+- ESCLUDI TASSATIVAMENTE la micro-cronaca e la cronaca nera minore: NESSUN incidente stradale isolato, NESSUN furto in abitazione, NESSUNA rissa da bar, NESSUN soccorso ad escursionisti isolati.
 - CONCENTRATI ESCLUSIVAMENTE SU TEMI DI RILEVANZA DI SISTEMA: Politica regionale e locale, infrastrutture, nodi sanitari, industria e distretti, turismo, scuola/integrazione, transizione ecologica e allerte meteo.
 
 STRUTTURA DELL'OUTPUT HTML:
 Devi generare SOLO il frammento interno HTML (senza <html>, <head> o <body>), così formattato:
 
-1. BOX EXECUTIVE SUMMARY & KEY FIGURES (In testa al report):
+1. BOX EXECUTIVE SUMMARY & METRICHE STRATEGICHE (In testa al report):
    - Inserisci un div con classe 'executive-box':
-     * Titolo <h3>I 3 Fatti Chiave di Oggi</h3> con un elenco di 3 punti focali e le relative implicazioni.
-     * Un contenitore div con classe 'key-figures-grid' contenente 3-4 badge ('figure-card') con le cifre/statistiche più importanti estratte dai testi (es. "+4% Turismo", "4.5M€ per Condotte", "25kg Sequestro").
+     * Un div con classe 'trend-bar': Un paragrafo sintetico con il "Clima della Giornata" (es. 🟢 Dinamismo industriale e turistico | 🔴 Tensione sulla sanità e liste d'attesa).
+     * Titolo <h3>I 3 Fatti Chiave di Oggi</h3> con un elenco puntato dei 3 fatti focali e le relative implicazioni di policy.
+     * Un contenitore div con classe 'key-figures-grid' contenente 3-4 badge ('figure-card') con le cifre/statistiche più importanti estratte (es. "+4% Arrivi", "4.5M€ Condotte", "18.91% Webuild").
+     * Un div 'swot-box' con due righe: ⚠️ **Rischio di Sistema:** [Analisi breve] | 💡 **Opportunità:** [Analisi breve].
+     * Se presente nei testi, un blocco 'quote-box' con la **Frase del Giorno** (citazione significativa, autore e ruolo).
 
-2. SEZIONI DI ANALISI APPROFONDITA (Testo fluido e giornalistico):
-   - Usa <h2> per le macro-sezioni tematiche.
-   - Usa <h3> per i focus territoriali/tematici.
-   - NON USARE ELENCHI PUNTATI BANALI NEL CORPO DELLE SEZIONI. Scrivi paragrafi ampi, articolati (300-500 parole per macro-sezione) che colleghino le fonti e contestualizzino le posizioni dei vari attori.
+2. INDICE DI NAVIGAZIONE RAPIDA (Table of Contents):
+   - Genera un div con classe 'toc-box' contenente i link interni di salto alle sezioni:
+     <a href="#sec1">🏛️ Politica & Infrastrutture</a>
+     <a href="#sec2">📈 Economia & Turismo</a>
+     <a href="#sec3">🏥 Sanità & Sociale</a>
+     <a href="#sec4">🌿 Ambiente & Risorse</a>
+     <a href="#sec5">🗓️ Agenda & Prossimi Passaggi</a>
+
+3. SEZIONI DI ANALISI APPROFONDITA:
+   - Utilizza gli ID negli <h2> per l'indice (es. <h2 id="sec1">...).
+   - BADGE TERRITORIALI OBLIGATORI: Ogni volta che tratti un fatto o un focus legato a una città o provincia, inserisci un badge HTML all'inizio della frase o paragrafo:
+     <span class="city-tag">BOLOGNA</span>, <span class="city-tag">FORLÌ-CESENA</span>, <span class="city-tag">PARMA</span>, <span class="city-tag">MODENA</span>, <span class="city-tag">RAVENNA</span>, <span class="city-tag">REGGIO EMILIA</span>, <span class="city-tag">FERRARA</span>, <span class="city-tag">RIMINI</span>, <span class="city-tag">PIACENZA</span>.
+   - NON USARE ELENCHI PUNTATI BANALI NELLE SEZIONI 1-4. Scrivi paragrafi ampi, articolati, discorsivi e di ampio respiro.
    - Inserisci SEMPRE il link alla fonte citata: ... <a href="URL" target="_blank">(Fonte: Nome)</a>.
 
 SEZIONI OBBLIGATORIE:
-- <h2>1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
-- <h2>2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
-- <h2>3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
-- <h2>4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE</h2>
+- <h2 id="sec1">1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
+- <h2 id="sec2">2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
+- <h2 id="sec3">3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
+- <h2 id="sec4">4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE TERRITORIALE</h2>
+  * REGOLE PER LA SEZIONE 4: NON RIPETERE MAI notizie o eventi già citati nelle sezioni precedenti. Se non ci sono allerte meteo, concentrala ESCLUSIVAMENTE su transizione ecologica, gestione delle risorse idriche, energie rinnovabili, stoccaggio e progetti di sostenibilità.
+- <h2 id="sec5">5. AGENDA & PROSSIMI PASSAGGI ISTITUZIONALI</h2>
+  * Un breve elenco con bullet point sui prossimi tavoli di confronto, scioperi, scadenze amministrative, assemblee o festival annunciati per i prossimi giorni negli articoli.
 
 FORMATO OUTPUT:
 Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
 """
 
-    prompt = f"Ecco gli articoli integrali estratti oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera il Report con Executive Summary e Cifre Chiave:"
+    prompt = f"Ecco gli articoli integrali estratti oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera il Report con Intelligence Strategica, Badge e Agenda:"
 
     models_to_try = [
         "gemini-2.5-flash",
@@ -172,7 +185,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     for model_name in models_to_try:
         for attempt in range(2):
             try:
-                print(f"Generazione analisi avanzata con {model_name} (tentativo {attempt + 1})...")
+                print(f"Generazione report strategico con {model_name} (tentativo {attempt + 1})...")
                 response = client.models.generate_content(
                     model=model_name,
                     contents=prompt,
@@ -193,7 +206,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 4. SALVATAGGIO FILE HTML E CSS PREMIUM
+# 4. SALVATAGGIO FILE HTML E STILIZZAZIONE ADVANCED
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -212,7 +225,7 @@ def main():
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         line-height: 1.8;
         color: #2c3e50;
-        max-width: 850px;
+        max-width: 880px;
         margin: 0 auto;
         padding: 25px;
     }}
@@ -235,7 +248,15 @@ def main():
         border-left: 6px solid #004085;
         padding: 20px;
         border-radius: 6px;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
+    }}
+    .trend-bar {{
+        font-size: 14px;
+        font-weight: 600;
+        background: #e9ecef;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-bottom: 15px;
     }}
     .executive-box h3 {{
         margin-top: 0;
@@ -246,30 +267,89 @@ def main():
     }}
     .key-figures-grid {{
         display: flex;
-        gap: 15px;
+        gap: 12px;
         flex-wrap: wrap;
-        margin-top: 15px;
+        margin: 15px 0;
     }}
     .figure-card {{
         background: #ffffff;
         border: 1px solid #ced4da;
         border-radius: 6px;
-        padding: 10px 15px;
+        padding: 10px 14px;
         flex: 1;
-        min-width: 140px;
+        min-width: 130px;
         text-align: center;
         box-shadow: 0 2px 4px rgba(0,0,0,0.04);
     }}
     .figure-card .number {{
-        font-size: 20px;
+        font-size: 19px;
         font-weight: 700;
         color: #2d6a4f;
         display: block;
     }}
     .figure-card .label {{
-        font-size: 12px;
+        font-size: 11px;
         color: #6c757d;
         text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }}
+    .swot-box {{
+        background: #ffffff;
+        border: 1px dashed #adb5bd;
+        padding: 12px 15px;
+        font-size: 13.5px;
+        border-radius: 4px;
+        margin-top: 15px;
+    }}
+    .quote-box {{
+        font-style: italic;
+        background: #e8f4f8;
+        border-left: 4px solid #17a2b8;
+        padding: 10px 15px;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #2b580c;
+    }}
+
+    /* Indice di Navigazione Rapida (TOC) */
+    .toc-box {{
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        background: #ffffff;
+        padding: 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 6px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }}
+    .toc-box a {{
+        font-size: 12px;
+        background: #f1f3f5;
+        color: #495057;
+        padding: 6px 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.2s;
+    }}
+    .toc-box a:hover {{
+        background: #e9ecef;
+        color: #004085;
+    }}
+
+    /* Badge Territoriali (Città) */
+    .city-tag {{
+        display: inline-block;
+        background-color: #004085;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 7px;
+        border-radius: 3px;
+        margin-right: 6px;
+        vertical-align: middle;
+        letter-spacing: 0.5px;
     }}
 
     h2 {{
@@ -298,6 +378,14 @@ def main():
         margin-bottom: 18px;
         text-align: justify;
     }}
+    ul {{
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }}
+    li {{
+        margin-bottom: 8px;
+        font-size: 14.5px;
+    }}
     a {{
         color: #0056b3;
         text-decoration: none;
@@ -310,6 +398,9 @@ def main():
         .rassegna-container {{
             max-width: 100%;
             padding: 0;
+        }}
+        .toc-box {{
+            display: none;
         }}
         h2 {{
             background-color: #f1f1f1 !important;
