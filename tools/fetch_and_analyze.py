@@ -4,7 +4,6 @@ import time
 import datetime
 import requests
 import xml.etree.ElementTree as ET
-import trafilatura
 from google import genai
 from google.genai import types
 
@@ -23,7 +22,7 @@ RSS_FEEDS = [
     # ANSA Regionali
     "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
     
-    # Resto del Carlino (Capillare sulle province)
+    # Resto del Carlino (Copertura capillare province)
     "https://www.ilrestodelcarlino.it/bologna/rss",
     "https://www.ilrestodelcarlino.it/modena/rss",
     "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
@@ -34,7 +33,7 @@ RSS_FEEDS = [
     "https://www.ilrestodelcarlino.it/rimini/rss",
     "https://www.ilrestodelcarlino.it/imola/rss",
     
-    # Network "Today"
+    # Network "Today" (Province e capoluoghi)
     "https://www.bolognatoday.it/rss",
     "https://www.modenatoday.it/rss",
     "https://www.riminitoday.it/rss",
@@ -58,11 +57,11 @@ HEADERS = {
 }
 
 # ---------------------------------------------------------------------------
-# 2. SCRAPING DEI FEED RSS & FULL-TEXT EXTRACTION
+# 2. SCRAPING DEI FEED RSS
 # ---------------------------------------------------------------------------
 def fetch_rss_articles():
-    raw_articles = []
-    print(f"[{TODAY}] Avvio estrazione feed RSS da {len(RSS_FEEDS)} fonti...")
+    articles = []
+    print(f"[{TODAY}] Avvio estrazione notizie da {len(RSS_FEEDS)} fonti RSS...")
     
     for feed_url in RSS_FEEDS:
         try:
@@ -73,49 +72,27 @@ def fetch_rss_articles():
             root = ET.fromstring(response.content)
             items = root.findall('.//item') or root.findall('.//{http://www.w3.org/2005/Atom}entry')
             
-            for item in items[:6]:  # Selezioniamo i primi 6 da ciascun feed
+            for item in items[:10]:
                 title = item.findtext('title') or item.findtext('{http://www.w3.org/2005/Atom}title') or ""
                 link = item.findtext('link') or item.findtext('{http://www.w3.org/2005/Atom}href') or ""
                 description = item.findtext('description') or item.findtext('{http://www.w3.org/2005/Atom}summary') or ""
                 
                 clean_desc = re.sub(r'<[^>]+>', '', description).strip()
                 
-                if title and link:
-                    raw_articles.append({
+                if title:
+                    articles.append({
                         'title': title.strip(),
                         'link': link.strip(),
-                        'description': clean_desc
+                        'description': clean_desc[:300]
                     })
         except Exception:
             continue
 
-    print(f"Estratti {len(raw_articles)} link. Avvio estrazione testo integrale (Full-Text Extraction)...")
-    
-    full_articles = []
-    for idx, art in enumerate(raw_articles[:40]):  # Analizziamo fino a 40 articoli top
-        try:
-            downloaded = trafilatura.fetch_url(art['link'])
-            text = trafilatura.extract(downloaded, include_comments=False, include_tables=False)
-            
-            final_content = text if text and len(text) > 200 else art['description']
-            
-            full_articles.append({
-                'title': art['title'],
-                'link': art['link'],
-                'content': final_content[:2500]
-            })
-            print(f"[{idx+1}/{min(40, len(raw_articles))}] Estratto: {art['title'][:40]}...")
-        except Exception:
-            full_articles.append({
-                'title': art['title'],
-                'link': art['link'],
-                'content': art['description']
-            })
-
-    return full_articles
+    print(f"Estratti con successo {len(articles)} articoli totali.")
+    return articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE HTML CON INTELLIGENCE STRATEGICA COMPLETA
+# 3. GENERAZIONE HTML CON GEMINI
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -124,57 +101,38 @@ def generate_rassegna_body(articles):
 
     client = genai.Client(api_key=api_key)
 
-    raw_text = "\n\n".join([f"=== ARTICOLO ===\nTitolo: {a['title']}\nLink: {a['link']}\nTesto Completo:\n{a['content']}" for a in articles])
+    raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
 
     system_instruction = f"""
-Sei il Caporedattore e Chief Analyst di un'agenzia d'intelligence e analisi strategica per dirigenti, investitori e istituzioni dell'Emilia-Romagna.
-Il tuo compito è produrre un REPORT DI SCENARIO ED ANALISI STRATEGICA sulla giornata di oggi ({TODAY}).
+Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
+Sintetizza le notizie di oggi ({TODAY}) in una Rassegna Stampa HTML.
 
-CRITERI RIGIDI DI FILTRAGGIO (SELEZIONE CRITICA):
-- ESCLUDI TASSATIVAMENTE la micro-cronaca e la cronaca nera minore: NESSUN incidente stradale isolato, NESSUN furto in abitazione, NESSUNA rissa da bar, NESSUN soccorso ad escursionisti isolati.
-- CONCENTRATI ESCLUSIVAMENTE SU TEMI DI RILEVANZA DI SISTEMA: Politica regionale e locale, infrastrutture, nodi sanitari, industria e distretti, turismo, scuola/integrazione, transizione ecologica e allerte meteo.
+REGOLE TASSATIVE DI STRUTTURA:
+- NON generare <html>, <head> o <body>. Genera SOLO il frammento interno.
+- Usa <h2> per i titoli di sezione principale.
+- Usa <h3> per le sotto-sezioni/province.
+- Ogni singola notizia deve essere racchiusa in un paragrafo <p> o in un punto elenco <li>.
+- NON usare <div> per avvolgere le notizie.
 
-STRUTTURA DELL'OUTPUT HTML:
-Devi generare SOLO il frammento interno HTML (senza <html>, <head> o <body>), così formattato:
-
-1. BOX EXECUTIVE SUMMARY & METRICHE STRATEGICHE (In testa al report):
-   - Inserisci un div con classe 'executive-box':
-     * Un div con classe 'trend-bar': Un paragrafo sintetico con il "Clima della Giornata" (es. 🟢 Dinamismo industriale e turistico | 🔴 Tensione sulla sanità e liste d'attesa).
-     * Titolo <h3>I 3 Fatti Chiave di Oggi</h3> con un elenco puntato dei 3 fatti focali e le relative implicazioni di policy.
-     * Un contenitore div con classe 'key-figures-grid' contenente 3-4 badge ('figure-card') con le cifre/statistiche più importanti estratte (es. "+4% Arrivi", "4.5M€ Condotte", "18.91% Webuild").
-     * Un div 'swot-box' con due righe: ⚠️ **Rischio di Sistema:** [Analisi breve] | 💡 **Opportunità:** [Analisi breve].
-     * Se presente nei testi, un blocco 'quote-box' con la **Frase del Giorno** (citazione significativa, autore e ruolo).
-
-2. INDICE DI NAVIGAZIONE RAPIDA (Table of Contents):
-   - Genera un div con classe 'toc-box' contenente i link interni di salto alle sezioni:
-     <a href="#sec1">🏛️ Politica & Infrastrutture</a>
-     <a href="#sec2">📈 Economia & Turismo</a>
-     <a href="#sec3">🏥 Sanità & Sociale</a>
-     <a href="#sec4">🌿 Ambiente & Risorse</a>
-     <a href="#sec5">🗓️ Agenda & Prossimi Passaggi</a>
-
-3. SEZIONI DI ANALISI APPROFONDITA:
-   - Utilizza gli ID negli <h2> per l'indice (es. <h2 id="sec1">...).
-   - BADGE TERRITORIALI OBLIGATORI: Ogni volta che tratti un fatto o un focus legato a una città o provincia, inserisci un badge HTML all'inizio della frase o paragrafo:
-     <span class="city-tag">BOLOGNA</span>, <span class="city-tag">FORLÌ-CESENA</span>, <span class="city-tag">PARMA</span>, <span class="city-tag">MODENA</span>, <span class="city-tag">RAVENNA</span>, <span class="city-tag">REGGIO EMILIA</span>, <span class="city-tag">FERRARA</span>, <span class="city-tag">RIMINI</span>, <span class="city-tag">PIACENZA</span>.
-   - NON USARE ELENCHI PUNTATI BANALI NELLE SEZIONI 1-4. Scrivi paragrafi ampi, articolati, discorsivi e di ampio respiro.
-   - Inserisci SEMPRE il link alla fonte citata: ... <a href="URL" target="_blank">(Fonte: Nome)</a>.
+REGOLE CONTENUTI E FONTI:
+1. Copertura obbligatoria delle 9 province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
+2. Inserisci SEMPRE il link alla fonte alla fine di ogni paragrafo o punto elenco:
+   Es: <p>Testo notizia... <a href="URL" target="_blank">(Fonte: Ansa)</a></p>
+3. Escludi gossip e sport minore. Includi allerte della Protezione Civile.
 
 SEZIONI OBBLIGATORIE:
-- <h2 id="sec1">1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
-- <h2 id="sec2">2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
-- <h2 id="sec3">3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
-- <h2 id="sec4">4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE TERRITORIALE</h2>
-  * REGOLE PER LA SEZIONE 4: NON RIPETERE MAI notizie o eventi già citati nelle sezioni precedenti. Se non ci sono allerte meteo, concentrala ESCLUSIVAMENTE su transizione ecologica, gestione delle risorse idriche, energie rinnovabili, stoccaggio e progetti di sostenibilità.
-- <h2 id="sec5">5. AGENDA & PROSSIMI PASSAGGI ISTITUZIONALI</h2>
-  * Un breve elenco con bullet point sui prossimi tavoli di confronto, scioperi, scadenze amministrative, assemblee o festival annunciati per i prossimi giorni negli articoli.
+- <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
+- <h2>ECONOMIA, LAVORO E IMPRESE</h2>
+- <h2>CRONACA E TERRITORIO</h2>
+- <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
 
 FORMATO OUTPUT:
 Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
 """
 
-    prompt = f"Ecco gli articoli integrali estratti oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera il Report con Intelligence Strategica, Badge e Agenda:"
+    prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
+    # Modelli sicuri e validati per l'API Google GenAI v1beta
     models_to_try = [
         "gemini-2.5-flash",
         "gemini-2.5-pro",
@@ -185,7 +143,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     for model_name in models_to_try:
         for attempt in range(2):
             try:
-                print(f"Generazione report strategico con {model_name} (tentativo {attempt + 1})...")
+                print(f"Generazione in corso con il modello {model_name} (tentativo {attempt + 1})...")
                 response = client.models.generate_content(
                     model=model_name,
                     contents=prompt,
@@ -197,7 +155,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                 if response and response.text:
                     clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
                     clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
-                    if len(clean_html) > 300:
+                    if len(clean_html) > 100:
                         return clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
@@ -206,7 +164,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 4. SALVATAGGIO FILE HTML E STILIZZAZIONE ADVANCED
+# 4. SALVATAGGIO FILE HTML
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -223,168 +181,46 @@ def main():
     
     .rassegna-container {{
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-        line-height: 1.8;
+        line-height: 1.7;
         color: #2c3e50;
-        max-width: 880px;
+        max-width: 800px;
         margin: 0 auto;
-        padding: 25px;
+        padding: 20px;
     }}
     .rassegna-header {{
-        border-bottom: 4px solid #004085;
-        padding-bottom: 15px;
+        border-bottom: 3px solid #004085;
+        padding-bottom: 12px;
         margin-bottom: 25px;
     }}
     .rassegna-header h1 {{
         font-family: 'Merriweather', serif;
-        font-size: 28px;
+        font-size: 26px;
         color: #004085;
-        margin: 0 0 5px 0;
+        margin: 0;
     }}
-    
-    /* Box Executive Summary & Cifre */
-    .executive-box {{
-        background-color: #f8f9fa;
-        border: 1px solid #e9ecef;
-        border-left: 6px solid #004085;
-        padding: 20px;
-        border-radius: 6px;
-        margin-bottom: 25px;
-    }}
-    .trend-bar {{
-        font-size: 14px;
-        font-weight: 600;
-        background: #e9ecef;
-        padding: 8px 12px;
-        border-radius: 4px;
-        margin-bottom: 15px;
-    }}
-    .executive-box h3 {{
-        margin-top: 0;
-        color: #004085;
+    h2 {{
         font-family: 'Merriweather', serif;
         font-size: 18px;
-        border-bottom: none;
-    }}
-    .key-figures-grid {{
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin: 15px 0;
-    }}
-    .figure-card {{
-        background: #ffffff;
-        border: 1px solid #ced4da;
-        border-radius: 6px;
+        color: #1b4332;
+        background-color: #e8f5e9;
         padding: 10px 14px;
-        flex: 1;
-        min-width: 130px;
-        text-align: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-    }}
-    .figure-card .number {{
-        font-size: 19px;
-        font-weight: 700;
-        color: #2d6a4f;
-        display: block;
-    }}
-    .figure-card .label {{
-        font-size: 11px;
-        color: #6c757d;
+        border-left: 6px solid #2d6a4f;
+        margin-top: 35px;
+        border-radius: 4px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }}
-    .swot-box {{
-        background: #ffffff;
-        border: 1px dashed #adb5bd;
-        padding: 12px 15px;
-        font-size: 13.5px;
-        border-radius: 4px;
-        margin-top: 15px;
-    }}
-    .quote-box {{
-        font-style: italic;
-        background: #e8f4f8;
-        border-left: 4px solid #17a2b8;
-        padding: 10px 15px;
-        margin-top: 15px;
-        font-size: 14px;
-        color: #2b580c;
-    }}
-
-    /* Indice di Navigazione Rapida (TOC) */
-    .toc-box {{
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        background: #ffffff;
-        padding: 12px;
-        border: 1px solid #dee2e6;
-        border-radius: 6px;
-        margin-bottom: 30px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    }}
-    .toc-box a {{
-        font-size: 12px;
-        background: #f1f3f5;
-        color: #495057;
-        padding: 6px 10px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: background 0.2s;
-    }}
-    .toc-box a:hover {{
-        background: #e9ecef;
-        color: #004085;
-    }}
-
-    /* Badge Territoriali (Città) */
-    .city-tag {{
-        display: inline-block;
-        background-color: #004085;
-        color: #ffffff;
-        font-size: 10px;
-        font-weight: 700;
-        padding: 2px 7px;
-        border-radius: 3px;
-        margin-right: 6px;
-        vertical-align: middle;
-        letter-spacing: 0.5px;
-    }}
-
-    h2 {{
-        font-family: 'Merriweather', serif;
-        font-size: 20px;
-        color: #1b4332;
-        background-color: #f0f7f4;
-        padding: 12px 16px;
-        border-left: 6px solid #2d6a4f;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        border-radius: 4px;
-        letter-spacing: 0.5px;
-    }}
     h3 {{
-        font-family: 'Merriweather', serif;
-        font-size: 17px;
+        font-size: 16px;
         color: #1d3557;
         border-bottom: 2px solid #e9ecef;
-        padding-bottom: 6px;
-        margin-top: 30px;
-        margin-bottom: 15px;
+        padding-bottom: 4px;
+        margin-top: 25px;
     }}
-    p {{
+    p, li {{
         font-size: 15px;
-        margin-bottom: 18px;
+        margin-bottom: 14px;
         text-align: justify;
-    }}
-    ul {{
-        margin-bottom: 20px;
-        padding-left: 20px;
-    }}
-    li {{
-        margin-bottom: 8px;
-        font-size: 14.5px;
     }}
     a {{
         color: #0056b3;
@@ -399,9 +235,6 @@ def main():
             max-width: 100%;
             padding: 0;
         }}
-        .toc-box {{
-            display: none;
-        }}
         h2 {{
             background-color: #f1f1f1 !important;
             -webkit-print-color-adjust: exact;
@@ -412,8 +245,8 @@ def main():
 
 <div class="rassegna-container">
     <div class="rassegna-header">
-        <h1>Rassegna Stampa & Strategic Analysis</h1>
-        <small style="color: #6c757d; font-size: 14px;">Emilia-Romagna • Edizione del {TODAY}</small>
+        <h1>Rassegna Stampa Emilia-Romagna</h1>
+        <small style="color: #6c757d;">Edizione del {TODAY}</small>
     </div>
     {body_content}
 </div>"""
