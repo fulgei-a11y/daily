@@ -3,45 +3,92 @@
     
     .rassegna-container {
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-        line-height: 1.7;
+        line-height: 1.8;
         color: #2c3e50;
-        max-width: 800px;
+        max-width: 850px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 25px;
     }
     .rassegna-header {
-        border-bottom: 3px solid #004085;
-        padding-bottom: 12px;
+        border-bottom: 4px solid #004085;
+        padding-bottom: 15px;
         margin-bottom: 25px;
     }
     .rassegna-header h1 {
         font-family: 'Merriweather', serif;
-        font-size: 26px;
+        font-size: 28px;
         color: #004085;
-        margin: 0;
+        margin: 0 0 5px 0;
     }
-    h2 {
+    
+    /* Box Executive Summary & Cifre */
+    .executive-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: 6px solid #004085;
+        padding: 20px;
+        border-radius: 6px;
+        margin-bottom: 35px;
+    }
+    .executive-box h3 {
+        margin-top: 0;
+        color: #004085;
         font-family: 'Merriweather', serif;
         font-size: 18px;
-        color: #1b4332;
-        background-color: #e8f5e9;
-        padding: 10px 14px;
-        border-left: 6px solid #2d6a4f;
-        margin-top: 35px;
-        border-radius: 4px;
+        border-bottom: none;
+    }
+    .key-figures-grid {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+    .figure-card {
+        background: #ffffff;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        padding: 10px 15px;
+        flex: 1;
+        min-width: 140px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .figure-card .number {
+        font-size: 20px;
+        font-weight: 700;
+        color: #2d6a4f;
+        display: block;
+    }
+    .figure-card .label {
+        font-size: 12px;
+        color: #6c757d;
         text-transform: uppercase;
+    }
+
+    h2 {
+        font-family: 'Merriweather', serif;
+        font-size: 20px;
+        color: #1b4332;
+        background-color: #f0f7f4;
+        padding: 12px 16px;
+        border-left: 6px solid #2d6a4f;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-radius: 4px;
         letter-spacing: 0.5px;
     }
     h3 {
-        font-size: 16px;
+        font-family: 'Merriweather', serif;
+        font-size: 17px;
         color: #1d3557;
         border-bottom: 2px solid #e9ecef;
-        padding-bottom: 4px;
-        margin-top: 25px;
+        padding-bottom: 6px;
+        margin-top: 30px;
+        margin-bottom: 15px;
     }
-    p, li {
+    p {
         font-size: 15px;
-        margin-bottom: 14px;
+        margin-bottom: 18px;
         text-align: justify;
     }
     a {
@@ -67,219 +114,54 @@
 
 <div class="rassegna-container">
     <div class="rassegna-header">
-        <h1>Rassegna Stampa Emilia-Romagna</h1>
-        <small style="color: #6c757d;">Edizione del 2026-10-05</small>
+        <h1>Rassegna Stampa & Strategic Analysis</h1>
+        <small style="color: #6c757d; font-size: 14px;">Emilia-Romagna • Edizione del 2026-10-05</small>
     </div>
-    <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
+    <div class="executive-box">
+    <h3>I 3 Fatti Chiave di Oggi</h3>
+    <ul>
+        <li><strong>Crisi nell'Accesso Sanitario e Rilancio dell'Istruzione:</strong> Le liste d'attesa per esami diagnostici cruciali, come l'eco-colordoppler, si estendono fino al 2027, evidenziando una profonda criticità nel sistema sanitario pubblico regionale e nazionale. Parallelamente, il dibattito sull'importanza dell'istruzione come pilastro della civiltà e le iniziative di solidarietà per il sostegno scolastico delle famiglie in difficoltà sottolineano l'urgenza di investire nel welfare educativo. <em>Implicazione: La Regione è chiamata a una riflessione strategica e a interventi mirati per garantire il diritto alla salute e all'istruzione, pilastri fondamentali per la coesione sociale e lo sviluppo del capitale umano.</em></li>
+        <li><strong>Dinamismo Economico e Sfide Regolatorie nel Turismo:</strong> Il panorama economico emiliano-romagnolo è animato da significative operazioni finanziarie e industriali, come l'incremento della quota Webuild in Trevi e le manovre su MPS, che riflettono un fermento nel settore. Il comparto turistico e culturale, con eventi di successo come il MEI di Faenza e le proposte di Bologna, si conferma un motore vitale. Tuttavia, la gestione della sicurezza negli eventi pubblici e il contrasto all'abusivismo nel trasporto turistico emergono come nodi cruciali per la sostenibilità e la reputazione del sistema. <em>Implicazione: È essenziale bilanciare la promozione economica con un rigoroso quadro normativo e di controllo per tutelare la sicurezza pubblica, la legalità e la qualità dell'offerta turistica.</em></li>
+        <li><strong>Allarme Sicurezza e Richiesta di Coesione Sociale:</strong> Le comunità locali, da Lido Adriano alla Val Bidente, manifestano una crescente preoccupazione per la sicurezza pubblica, con episodi di violenza che riaccendono il dibattito sul disagio giovanile e sulla necessità di risposte coordinate. Le assemblee cittadine e le denunce evidenziano un bisogno impellente di maggiore presenza istituzionale e di strategie integrate per la prevenzione e il recupero sociale. <em>Implicazione: Le amministrazioni locali e regionali devono rafforzare il dialogo con i cittadini e implementare politiche di sicurezza urbana che vadano oltre la repressione, investendo in educazione, inclusione e presidi territoriali.</em></li>
+    </ul>
+    <div class="key-figures-grid">
+        <div class="figure-card">
+            <h4>Quota Webuild in Trevi</h4>
+            <p><strong>18.91%</strong></p>
+            <span>(+13.916% oggi)</span>
+        </div>
+        <div class="figure-card">
+            <h4>Liste d'Attesa Eco-Colordoppler</h4>
+            <p><strong>2027</strong></p>
+            <span>(Prenotazioni chiuse)</span>
+        </div>
+        <div class="figure-card">
+            <h4>Materiale Scolastico Raccolto</h4>
+            <p><strong>120 kg</strong></p>
+            <span>('Zaino Sospeso' Forlì)</span>
+        </div>
+        <div class="figure-card">
+            <h4>Capienza Eventi Pubblici</h4>
+            <p><strong>900 vs 440</strong></p>
+            <span>(Marina Bay, persone vs autorizzate)</span>
+        </div>
+    </div>
+</div>
 
-<h3>Regione Emilia-Romagna</h3>
-<ul>
-    <li>Marcello Fois, vincitore del Premio Campiello 2026, ha dichiarato che il problema principale dell'Italia è l'istruzione, sottolineando come figure come Murgia abbiano colmato il vuoto lasciato da Pasolini. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/marcello-fois-il-problema-dellitalia-e-listruzione_9739c363-d56f-4bdf-b283-33b92865f61b.html" target="_blank">(Fonte: Ansa)</a></li>
-    <li>Il governatore Stefano Bonaccini, ospite di Confindustria, ha criticato l'attuale sistema aeroportuale regionale, elogiando gli investimenti di Forlì e sottolineando come l'aeroporto "Ridolfi" abbia spazio per crescere, in un contesto di "scintille" tra la Regione e il "Marconi" di Bologna. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/aeroporti-de-pascale-non-molla-baca5f77" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
+<h2>1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
+<p>La giornata odierna in Emilia-Romagna evidenzia una serie di dinamiche che toccano direttamente la governabilità locale e la gestione delle infrastrutture sociali e culturali, ponendo l'accento sulla necessità di un equilibrio tra promozione degli eventi e garanzia della sicurezza pubblica. Un caso emblematico emerge da Ravenna, dove il processo a carico dei gestori del Marina Bay di Marina di Ravenna riaccende i riflettori sulla corretta applicazione delle normative relative alla capienza dei luoghi di pubblico spettacolo. L'accusa di aver ospitato circa 900 persone in un'area autorizzata per un massimo di 440, durante un concerto di Capo Plaza nel luglio 2023, solleva interrogativi significativi sulla supervisione degli eventi e sulle responsabilità degli organizzatori. La difesa, pur contestando la metodologia di conteggio, sottolinea la complessità della gestione dei flussi di pubblico, con un sistema di biglietteria che permetteva entrate e uscite multiple. Questo episodio, lungi dall'essere un fatto isolato, impone una riflessione più ampia sulle procedure di autorizzazione e controllo, cruciali per la tutela dell'incolumità pubblica in una regione che fa del turismo e degli eventi un volano economico. La capacità di prevenire situazioni di sovraffollamento e di garantire la sicurezza è un indicatore chiave dell'efficacia della governabilità locale e della pianificazione infrastrutturale per il tempo libero. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/marina-bay-processo-al-concerto-d7061707" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p>In un contesto più ampio di dibattito politico e culturale, Bologna ha ospitato il "Festival del Presente", un'iniziativa di Pandora Rivista che ha visto la partecipazione di figure di spicco come Giuliano Amato e Augusto Barbera. L'incontro, incentrato sul tema "Inizi. Origini, generazioni, metamorfosi" e sulla riflessione riguardo "Le stagioni della Repubblica", offre uno spaccato del fermento intellettuale e politico che anima la regione. La discussione sul futuro della democrazia italiana, ospitata in un contesto culturale di rilievo come l'Oratorio San Filippo Neri, evidenzia il ruolo dell'Emilia-Romagna come piattaforma per il confronto su temi di rilevanza nazionale. Questi eventi non solo arricchiscono l'offerta culturale del territorio, ma fungono anche da infrastrutture immateriali per la circolazione delle idee e per il rafforzamento del senso critico, elementi fondamentali per una cittadinanza attiva e consapevole. La presenza di amministratori e figure istituzionali a tali appuntamenti conferma l'attenzione della politica regionale verso il dialogo e la promozione di una cultura civica partecipata. <a href="https://www.ilrestodelcarlino.it/bologna/cosa-fare/eventi-5-11-ottobre-2026-a0e67c95" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
 
-<h3>Bologna</h3>
-<ul>
-    <li>In occasione della festa del patrono San Petronio, il cardinale Zuppi ha lanciato un appello affinché Bologna non sia "un condominio di egoisti", ma una "casa accogliente" che custodisca i più deboli, ricordando i martiri di Monte Sole. La Basilica ha anche introdotto il POS per le offerte. <a href="https://www.bolognatoday.it/cronaca/san-petronio-zuppi-bologna-condominio-egoisti-martiri-monte-sole.html" target="_blank">(Fonte: BolognaToday)</a></li>
-    <li>Dopo recenti attacchi omofobi, il Cassero ha replicato al sindaco Lepore e alle richieste di maggiore polizia da parte di FdI, sostenendo che non serva più repressione ma "spazi alla cultura delle differenze", accusando i discorsi d'odio di alcuni ministri di legittimare la violenza. <a href="https://www.bolognatoday.it/cronaca/omofobia-cassero-fdi.html" target="_blank">(Fonte: BolognaToday)</a></li>
-    <li>La Cgil di Bologna ha annunciato un presidio per il 6 ottobre dopo il rogo di uno striscione, con l'intenzione di riattaccare insieme il messaggio "Qui nessuno è straniero". <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/cgil-bologna-il-6-ottobre-presidio-dopo-lo-striscione-bruciato_ed15f276-bbb5-4da9-8d0f-da48332bceaa.html" target="_blank">(Fonte: Ansa)</a></li>
-    <li>A Marzabotto, in occasione dell'82esima commemorazione degli eccidi di Monte Sole, piazza dei Martiri era gremita. Cecilia Strada e la sindaca Cuppi hanno chiesto "mai più atrocità così", con un riferimento a Gaza e Ucraina. <a href="https://www.ilrestodelcarlino.it/bologna/cronaca/gli-eccidi-di-monte-sole-5a13d862" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Il capogruppo riminese del Pd, Petrucci, ha attaccato l'ex sindaca di Riccione Tosi, nominata nel cda di Autostrade per l’Italia, per il suo "silenzio elettorale" sul terzo casello di Imola, opera ritenuta strategica. <a href="https://www.ilrestodelcarlino.it/imola/cronaca/terzo-casello-petrucci-attacca-tosi-26bfa0a0" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Il presidente del Circus della F1, Domenicali, ha dichiarato che Qatar e Abu Dhabi chiuderanno la stagione, escludendo di fatto il "piano B" per Imola. Nonostante ciò, i lavori in autodromo proseguono nell'eventualità di una gara, con il nodo economico che rimane aperto. <a href="https://www.ilrestodelcarlino.it/imola/cronaca/gp-imola-resta-ai-box-c86e0bf3" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
+<h2>2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
+<p>Il panorama economico dell'Emilia-Romagna si presenta oggi con un duplice volto: da un lato, un dinamismo finanziario e industriale che vede protagonisti attori di peso nazionale; dall'altro, un settore turistico e culturale in piena effervescenza, seppur con alcune ombre legate alla regolamentazione. Sul fronte industriale, l'operazione che ha visto Webuild aumentare la propria partecipazione in Trevi al 18,91% del capitale, con un investimento di oltre 47 milioni di euro, è un segnale di consolidamento e fiducia nel settore delle costruzioni e delle ingegnerie specialistiche. Questo movimento strategico di un colosso come Webuild verso un'azienda storica del territorio come Trevi, con sede a Cesena, ha implicazioni significative per il distretto e per l'occupazione, oltre a riflettere un trend di riorganizzazione e rafforzamento delle filiere produttive italiane. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/05/webuild-acquista-azioni-trevi-e-sale-al-1891-del-capitale_d2f1d177-8631-4311-bde3-9126dc66bb82.html" target="_blank">(Fonte: ANSA)</a>. A livello finanziario più ampio, la notizia dell'orientamento di Delfin ad appoggiare l'offerta di Intesa Sanpaolo per Monte dei Paschi di Siena, con un aumento della componente cash dell'Opas, sebbene non direttamente legata a un'azienda emiliano-romagnola, è un evento di portata sistemica che influenza la stabilità e le prospettive del settore bancario italiano, con ricadute indirette ma significative sull'accesso al credito e sugli investimenti per le imprese della regione. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/delfin-verso-lappoggio-allofferta-di-intesa-sanpaolo-per-mps_12b00ba3-b58f-46cc-9fbd-2114ee1f75a0.html" target="_blank">(Fonte: ANSA)</a>.</p>
+<p>Il settore del turismo e della cultura si conferma un pilastro dell'economia regionale. Faenza ha celebrato il successo record del "MEI 30 e Lode", l'edizione trentennale della kermesse che ha letteralmente invaso il centro storico con migliaia di giovani, registrando un'affluenza senza precedenti. L'evento, che ha visto il tutto esaurito per convegni, fiere e concerti, si conferma un "formidabile motore per la cultura, la formazione, la socialità e il turismo del territorio romagnolo". Il confronto imminente con l'Amministrazione comunale di Faenza per definire le strategie future è cruciale per consolidare il MEI come un pilastro dell'attrattività cittadina, al pari di eventi storici come Argillà e il Palio del Niballo. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/mei-30-e-lode-da-105fc4c7" target="_blank">(Fonte: Il Resto del Carlino)</a>. Anche Forlì ha visto un "successo" per l'apertura della stagione autunnale dell'auditorium realizzato nell'ex cinema Odeon, con il concerto del pianista Dardust che ha registrato il quasi tutto esaurito, confermando l'attenzione del pubblico per i nuovi contenitori culturali e la validità degli investimenti nel settore. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/musica-allauditorium-successo-per-dardust-dbcdf406" target="_blank">(Fonte: Il Resto del Carlino)</a>. Bologna, dal canto suo, si prepara a una settimana ricca di eventi culturali, dal "Festival del Presente" con figure istituzionali, al festival di musica elettronica ROBOT, fino all'esposizione della collezione Carmen Thyssen a Palazzo Albergati, consolidando la sua immagine di città vivace e attrattiva per un turismo di qualità. <a href="https://www.ilrestodelcarlino.it/bologna/cosa-fare/eventi-5-11-ottobre-2026-a0e67c95" target="_blank">(Fonte: Il Resto del Carlino)</a>. Tuttavia, l'efficacia del "Brand Turismo" regionale è minacciata da fenomeni di abusivismo, come evidenziato a Ravenna con il fermo di un NCC abusivo che trasportava turiste americane. Questo ennesimo episodio, con un operatore sprovvisto di licenza e con un veicolo non revisionato, sottolinea la necessità di intensificare i controlli per tutelare i consumatori e gli operatori legali, garantendo un servizio di trasporto turistico sicuro e conforme alle normative. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/fermato-un-altro-ncc-abusivo.-trasporta-turiste-americane-con-lauto-priva-di-revisione_2011732e.html" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
 
-<h3>Modena</h3>
-<ul>
-    <li>Tre esponenti del centrodestra modenese (Gidari, Rinaldi e Torrini) hanno aderito a "Casa Riformista" di Matteo Renzi, criticando il distacco tra classe dirigente e cittadini. <a href="https://www.modenatoday.it/politica/gidari-rinaldi-torrini-casa-riformista-renzi.html" target="_blank">(Fonte: ModenaToday)</a></li>
-    <li>Il sindaco di Sassuolo, Matteo Mesini, si è detto soddisfatto del percorso di integrazione Sassuolo-Scandiano, ritenendolo strategico per il Punto nascite. <a href="https://www.ilrestodelcarlino.it/modena/cronaca/il-sindaco-mesini-promuove-il-2681496c" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
+<h2>3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
+<p>La giornata odierna mette in luce sfide significative e lodevoli iniziative nel campo della sanità, dell'istruzione e delle politiche sociali in Emilia-Romagna, evidenziando la necessità di risposte coordinate e strutturali. Un allarme preoccupante giunge da Forlì, dove Forza Italia ha denunciato liste d'attesa per esami diagnostici essenziali, come l'eco-colordoppler dei tronchi sovraortici, che si estendono fino al 2027, con le prenotazioni di fatto chiuse. Questa situazione costringe i cittadini con disponibilità economica a rivolgersi al privato, pagando tra gli 80 e i 100 euro per un esame immediato, mentre chi non può permetterselo rischia di rinviare controlli necessari. Il dibattito politico che ne è scaturito, con le accuse di Alleanza Verdi e Sinistra al Governo Meloni per i tagli alla spesa sanitaria (scesa al 6,2% del PIL contro una media europea del 7,1%), sottolinea una crisi sistemica che mina il diritto universale alla salute e favorisce la sanità privata a discapito di quella pubblica. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/eco-colordoppler-tutto-esaurito-nel-2027-d0a5fb84" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p>Sul fronte dell'istruzione, lo scrittore Marcello Fois, vincitore del Premio Campiello 2026, ha ribadito con forza che "il problema di questa nazione è l'istruzione". Le sue parole, che sottolineano l'importanza di avere persone con senso critico e un vocabolario ricco per non essere "fregati dalle parole altrui", risuonano come un monito sull'urgenza di valorizzare la lettura e l'apprendimento in un'epoca in cui l'istruzione è percepita come secondaria. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/marcello-fois-il-problema-dellitalia-e-listruzione_9739c363-d56f-4bdf-b283-33b92865f61b.html" target="_blank">(Fonte: ANSA)</a>. In questo contesto, l'iniziativa "Zaino sospeso" del Lions Club Forlì Host, che ha raccolto 120 chili di materiale scolastico da distribuire tramite la Caritas alle famiglie in difficoltà, rappresenta un gesto concreto di solidarietà per contrastare la povertà educativa e garantire a tutti gli alunni un percorso scolastico dignitoso, di fronte a spese che possono superare i 670 euro per studente. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/zaino-sospeso-120-chili-di-a006bd12" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p>La sicurezza e la coesione sociale rimangono temi caldi sul territorio. A Lido Adriano, l'aggressione a un'anziana di 80 anni, con frattura di un braccio e un colpo alla testa, riaccende i riflettori sulla sicurezza nella località e sulla presenza di situazioni di degrado. La denuncia della figlia, che indica un aggressore già noto nella zona, evidenzia la necessità di una maggiore presenza e di interventi mirati da parte delle forze dell'ordine e delle istituzioni per tutelare i cittadini più vulnerabili. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/aggressione-a-unanziana-il-racconto-choc-della-figlia-j6ynq7wm" target="_blank">(Fonte: Il Resto del Carlino)</a>. La preoccupazione per la violenza e il disagio giovanile ha mobilitato anche la Val Bidente, dove un'assemblea pubblica a Santa Sofia ha visto la partecipazione di 500 persone per dire "no alla violenza e al clima di paura". L'iniziativa, promossa da un gruppo di donne, ha riunito cittadini di diverse origini e amministratori locali, chiedendo più controlli e interventi preventivi, con un focus sull'educazione e sul ruolo degli adulti e delle associazioni. La sindaca di Santa Sofia ha sottolineato l'importanza di "intervenire prima partendo dal ruolo dell’educazione, dal ruolo degli adulti, delle famiglie, delle associazioni del terzo settore e quelle sportive che devono tutti insieme prevenire il disagio giovanile". <a href="https://www.ilrestodelcarlino.it/forli/cronaca/assemblea-per-la-sicurezza-in-fd84ef14" target="_blank">(Fonte: Il Resto del Carlino)</a>. Infine, un esempio positivo di impegno comunitario per la salute pubblica arriva da Portomaggiore, dove il Lions Club ha donato un defibrillatore all'ASD Portomaggiore, una società sportiva giovanile con oltre 120 calciatori. Questo gesto concreto, che sottolinea l'importanza di avere strumenti salvavita negli spazi sportivi, è un esempio virtuoso di collaborazione tra associazioni e istituzioni per la sicurezza e la promozione della salute sul territorio. <a href="https://www.ilrestodelcarlino.it/ferrara/cronaca/donato-un-defibrillatore-allasd-portomaggiore-b4df4c5f" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
 
-<h3>Reggio Emilia</h3>
-<ul>
-    <li>Il dibattito sul tetto agli alunni stranieri in classe riaccende il ricordo del "modello Luzzara" degli anni '80, dove l'ex preside Ferrari creò una sezione senza italiani, suscitando polemiche ma, a suo dire, favorendo l'integrazione. <a href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/tetto-agli-alunni-stranieri-in-79d5087e" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Il sindacato Gilda ha criticato il provvedimento sul tetto agli alunni stranieri, definendolo "inapplicabile sui nostri territori" e una "decisione presa per propaganda", accusando la politica di sviare l'opinione pubblica dai problemi reali. <a href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/gilda-contro-il-provvedimento-inapplicabile-3ed1471b" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Bufera su Reggio Children per l'invito a scuole ebraiche. Il gruppo di educatori deciderà se partecipare, mentre è stata sottoscritta una carta contro la "militarizzazione" negli asili. <a href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/bufera-reggio-children-ospiti-le-6bd91451" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Il nipote di Loris Malaguzzi ha lanciato un appello a non strumentalizzare i bambini e l'istituzione contro il nuovo polo a Ospizio, invitando i genitori ad un atteggiamento costruttivo. <a href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/il-nipote-di-malaguzzi-non-e8e25ec8" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>M5s ha chiesto di annullare tutto, mentre FdI e Psi hanno accolto favorevolmente alcune iniziative politiche a Reggio Emilia. <a href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/m5s-annullate-tutto-fdi-e-8dd0c243" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
-
-<h3>Parma</h3>
-<ul>
-    <li>Il sindaco di Parma, Michele Guerra, è intervenuto alla Leopolda di Firenze, definendo l'appuntamento di "Parma Capitale europea dei giovani" come "storico" e da non mancare. <a href="https://www.parmatoday.it/attualita/guerra-alla-leopolda-parma-capitale-europea-dei-giovani-appuntamento-storico.html" target="_blank">(Fonte: ParmaToday)</a></li>
-    <li>La Lega di Parma ha espresso preoccupazione per l'impianto di biometano a Mezzani, sostenendo che "il territorio non è un dettaglio del progetto" e chiedendo valutazioni su viabilità, criticità idrauliche, sicurezza e impatto ambientale. <a href="https://www.parmatoday.it/attualita/impianto-di-biometano-a-mezzani-la-lega-il-territorio-non-e-un-dettaglio-del-progetto.html" target="_blank">(Fonte: ParmaToday)</a></li>
-</ul>
-
-<h3>Ravenna</h3>
-<ul>
-    <li>Il consigliere comunale Gianfranco Spadoni (Lista per Ravenna) ha commentato la ZTL a Marina di Ravenna, definendo il bicchiere "mezzo pieno e mezzo vuoto". <a href="https://www.ravennatoday.it/politica/ztl-a-marina-di-ravenna-spadoni-il-bicchiere-e-mezzo-pieno-e-mezzo-vuoto.html" target="_blank">(Fonte: RavennaToday)</a></li>
-</ul>
-
-<h3>Forlì-Cesena</h3>
-<ul>
-    <li>Grande partecipazione in Val Bidente per un'assemblea sulla sicurezza, con 500 persone che hanno chiesto "più controlli" dopo due pestaggi. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/assemblea-per-la-sicurezza-in-fd84ef14" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>A Santa Sofia, la comunità si è mobilitata per la sicurezza dopo che un 30enne è stato picchiato da una gang, chiedendo più carabinieri. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/sicurezza-santa-sofia-si-mobilita-f3c5cb87" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Polemiche sul "Piano strategico" di Forlì: il Pd ha contestato il ruolo di coordinatore annunciato dal geologo Miccoli, citando suoi "guai con la giustizia", ma il Comune ha smentito il suo incarico retribuito. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/piano-strategico-veleni-su-miccoli-aadefa31" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
-
-<h2>ECONOMIA, LAVORO E IMPRESE</h2>
-
-<h3>Regione Emilia-Romagna</h3>
-<ul>
-    <li>Webuild ha acquisito ulteriori azioni Trevi, salendo al 18,91% del capitale e offrendo 5,165 euro per azione a coloro che aderiscono all'Opa. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/05/webuild-acquista-azioni-trevi-e-sale-al-1891-del-capitale_d2f1d177-8631-4311-bde3-9126dc66bb82.html" target="_blank">(Fonte: Ansa)</a></li>
-    <li>Delfin si sta orientando verso l'appoggio all'offerta di Intesa Sanpaolo per Mps, con il board della holding riunitosi dopo l'annuncio di Ca' de Sass. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/delfin-verso-lappoggio-allofferta-di-intesa-sanpaolo-per-mps_12b00ba3-b58f-46cc-9fbd-2114ee1f75a0.html" target="_blank">(Fonte: Ansa)</a></li>
-</ul>
-
-<h3>Bologna</h3>
-<ul>
-    <li>La regione Emilia-Romagna, storicamente ricca di giacimenti, ha perso capacità produttiva di petrolio e gas. Ora, una società australiana è pronta a rilanciare l'attività nel Bolognese, con Minerbio che ospita uno dei principali siti di stoccaggio del Paese. <a href="https://www.bolognatoday.it/dossier/economia/gas-petrolio-giacimenti-pozzi-bologna-stoccaggio-po-valley.html" target="_blank">(Fonte: BolognaToday)</a></li>
-</ul>
-
-<h3>Modena</h3>
-<ul>
-    <li>Le associazioni di categoria dell'agricoltura modenese hanno rinnovato l'appello all'Europa per sostenere il settore, denunciando come i costi di fertilizzanti e carburante stiano "prosciugando" le imprese e che le misure attuali siano "del tutto insufficienti", mettendo a rischio le piccole imprese. <a href="https://www.ilrestodelcarlino.it/modena/cronaca/agricoltura-imprese-prosciugate-costi-di-bceb3039" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>La fiera "Usatissimo" ha registrato lunghe file di visitatori fin dalle prime ore del mattino, dimostrando un forte interesse per arredo e accessori riciclati come risposta alla crisi. <a href="https://www.ilrestodelcarlino.it/modena/cronaca/usatissimo-la-fiera-contro-la-4b8b32a0" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>La Cisl di Modena ha sollevato dubbi sui servizi sanitari integrati con Reggio Emilia, definendola una "scelta calata dall'alto" e chiedendo di essere ascoltati, con dati chiari su turni e organici. <a href="https://www.ilrestodelcarlino.it/modena/cronaca/mal-di-pancia-nel-mondo-4ad3e875" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
-
-<h3>Parma</h3>
-<ul>
-    <li>Il presidente di CEPIM e UIR, Serpagli, è intervenuto all'Interporto di Bologna durante l'evento "Open Hub", sottolineando l'importanza di "fare sistema per generare nuovi traffici e nuove opportunità". <a href="https://www.parmatoday.it/attualita/cepim-a-open-hub-serpagli-fare-sistema-per-generare-nuovi-traffici-e-nuove-opportunita.html" target="_blank">(Fonte: ParmaToday)</a></li>
-    <li>Il Ministero delle Infrastrutture e dei Trasporti ha stanziato 4,5 milioni di euro per la nuova condotta idrica Parma-Fontanellato, al fine di migliorare la sicurezza e l'affidabilità del servizio. <a href="https://www.parmatoday.it/attualita/opere-idriche-4-5-milioni-per-la-nuova-condotta-parma-fontanellato.html" target="_blank">(Fonte: ParmaToday)</a></li>
-</ul>
-
-<h3>Ravenna</h3>
-<ul>
-    <li>Nei primi otto mesi dell'anno, il turismo nel ravennate ha registrato un aumento del 4% negli arrivi, con l'assessore Sbaraglia che ha evidenziato una "destinazione turistica in crescita e con una vocazione sempre più internazionale". <a href="https://www.ravennatoday.it/economia/turismo-nel-ravennate-nei-primi-otto-mesi-dell-anno-arrivi-in-aumento-del-4.html" target="_blank">(Fonte: RavennaToday)</a></li>
-</ul>
-
-<h3>Forlì-Cesena</h3>
-<ul>
-    <li>La Cisl ha evidenziato il potenziale turistico di Forlì e delle sue aree montane, con un aumento del 4% nei pernottamenti in città e del 28,5% a Santa Sofia nei primi 8 mesi dell'anno, invitando a sfruttare tale potenziale. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/turismo-bene-forli-e-i-aa23e79e" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Gatteo Mare ha registrato un "boom" nel turismo, con il sindaco Pari che esulta per una crescita quattro volte superiore alla media, attribuendola alla "qualità e servizi vincenti" e al "gioco di squadra". <a href="https://www.ilrestodelcarlino.it/cesena/cronaca/turismo-il-boom-di-gatteo-49e95140" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>A Cesena si registra un "boom di stranieri" nel turismo, con Gatteo che "vola" e Cesenatico che "tiene", confermando la riviera come traino per la provincia, ma con ottime performance anche dall'entroterra. <a href="https://www.ilrestodelcarlino.it/cesena/cronaca/a-cesena-e-boom-di-52bc1382" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>I dipendenti dell'Unione dei Comuni Rubicone e Mare sciopereranno giovedì 8 ottobre per due ore, con un presidio in Piazza Borghesi a Savignano. <a href="https://www.ilrestodelcarlino.it/cesena/cronaca/rubicone-e-mare-presidio-e-5ccd1247" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
-
-<h3>Rimini</h3>
-<ul>
-    <li>Code di automobilisti dall'Italia si sono formate al distributore Eni di San Marino per la benzina a 1,74 euro e il diesel a 1,99 euro, portando il distributore a chiudere per "tutto esaurito". <a href="https://www.ilrestodelcarlino.it/rimini/cronaca/benzina-e-diesel-corsa-al-06ae578f" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Santarcangelo si conferma traino del turismo nell'entroterra riminese, registrando il primato nel 2026 per l'aumento dei pernottamenti, con il sindaco Sacchetti che stima un indotto di oltre 30 milioni di euro dagli eventi. <a href="https://www.riminitoday.it/economia/santarcangelo-traina-il-turismo-dell-entroterra-ed-e-primo-nel-2026-per-l-aumento-dei-pernottamenti.html" target="_blank">(Fonte: RiminiToday)</a></li>
-    <li>Un bar di Cattolica è stato riconfermato tra i migliori locali secondo il Gambero Rosso, con il titolare Paolo Staccoli che ha sottolineato come sia "la Riviera che vince, se lavoriamo tutti insieme". <a href="https://www.riminitoday.it/cronaca/un-bar-di-cattolica-confermato-tra-i-migliori-locali-secondo-il-gambero-rosso.html" target="_blank">(Fonte: RiminiToday)</a></li>
-</ul>
-
-<h2>CRONACA E TERRITORIO</h2>
-
-<h3>Bologna</h3>
-<ul>
-    <li>Un incendio ha colpito un deposito attrezzi in un'abitazione a Granarolo Emilia, nel Bolognese, causando il ferimento del proprietario e di un poliziotto fuori servizio, entrambi ricoverati in ospedale. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/a-fuoco-un-deposito-attrezzi-in-abitazione-nel-bolognese-due-feriti_0305d12a-b96d-4db2-9e81-4829d89a9de7.html" target="_blank">(Fonte: Ansa)</a></li>
-    <li>Nuovi esami sono stati disposti sul secondo cellulare nel "Caso Fakir", con verifiche anche su eventuali manipolazioni. L'incarico al consulente della Procura è stato affidato oggi, mentre la difesa degli agenti chiederà di verificare l'integrità del dispositivo. <a href="https://www.bolognatoday.it/cronaca/caso-fakir-nuovi-esami-sul-secondo-cellulare-verifiche-anche-su-eventuali-manipolazioni.html" target="_blank">(Fonte: BolognaToday)</a></li>
-    <li>Una rissa tra stranieri in via Zamboni ha portato al ferimento di un 20enne con una coltellata al costato. I responsabili sono in fuga e i carabinieri stanno indagando. <a href="https://www.ilrestodelcarlino.it/bologna/cronaca/rissa-tra-stranieri-in-via-838a48c1" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Il "Giro dei Tre Monti" a Imola ha registrato un'edizione da record con oltre 4mila presenze in due giorni, riempiendo l'Autodromo di colori e festeggiando una domenica di sport e socialità. <a href="https://www.ilrestodelcarlino.it/imola/cronaca/il-giro-dei-tre-monti-e-da-record-oltre-4mila-presenze-in-due-giorni-r72y3xw8" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Modifiche orarie sono state comunicate per il treno regionale Milano-Bologna a causa di lavori sulla linea ferroviaria. <a href="https://www.piacenzasera.it/2026/10/lavori-sulla-linea-modifiche-orarie-per-il-regionale-milano-bologna/664106/html" target="_blank">(Fonte: PiacenzaSera)</a></li>
-    <li>Il Museo Civico Archeologico di Bologna ospita la mostra “Elliott Erwitt. L’arte di osservare”, un viaggio nell'universo del fotografo. <a href="https://www.bolognatoday.it/eventi/elliot-erwitt-mostra.html" target="_blank">(Fonte: BolognaToday)</a></li>
-    <li>Bologna offre una ricca settimana di eventi culturali, tra musica, teatro e grandi nomi, con appuntamenti da non perdere dal 5 al 9 ottobre. <a href="https://www.bolognatoday.it/eventi/cosa-fare-bologna-5-6-7-8-9-ottobre-2026.html" target="_blank">(Fonte: BolognaToday)</a></li>
-    <li>Una riflessione sul mestiere dello scrivere al cinema e i prossimi appuntamenti in sala a Bologna. <a href="https://www.bolognatoday.it/blog/quaderno-di-cinema-appunti-da-bologna/blog-cinema-film-programmazione-bologna-ottobre-2026.html" target="_blank">(Fonte: BolognaToday)</a></li>
-    <li>A Imola, la manifestazione Volleystart ha alzato il sipario per due giorni di pallavolo con 34 squadre in campo, un'occasione per la città. <a href="https://www.ilrestodelcarlino.it/imola/cronaca/due-giorni-di-pallavolo-volleystart-e5ddc71d" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
-
-<h3>Modena</h3>
-<ul>
-    <li>Un "incubo liste d'attesa" affligge Modena, con appuntamenti per risonanze magnetiche prospettati addirittura per il 2028. I cittadini sono invitati a far valere i propri diritti. <a href="https://www.ilrestodelcarlino.it/modena/cronaca/incubo-liste-dattesa-risonanza-nel-d8e23471" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Lavori sulla SP4 Fondovalle Panaro, nel tratto da Marano a Fanano, comporteranno un cantiere per due settimane con senso unico alternato. L'intervento è finanziato dalla Regione Emilia-Romagna per oltre 4 milioni di euro. <a href="https://www.modenatoday.it/attualita/lavori-fondovalle-panaro-marano-fanano-ottobre-2026.html" target="_blank">(Fonte: ModenaToday)</a></li>
-    <li>La Festa del Racconto 2026 ha registrato un successo con 18mila presenze e il tutto esaurito tra Carpi, Campogalliano, Novi di Modena e Soliera, con oltre 60 eventi gratuiti e 70 autori. <a href="https://www.modenatoday.it/eventi/cultura/festa-racconto-presenze-2026.html" target="_blank">(Fonte: ModenaToday)</a></li>
-    <li>A Sassuolo, Grandezze & Meraviglie porta un concerto di Telemann e il barocco mitteleuropeo alla Chiesa di San Giorgio. <a href="https://www.modenatoday.it/eventi/concerto-sassuolo-telemann-6-ottobre-2026.html" target="_blank">(Fonte: ModenaToday)</a></li>
-    <li>L'allarme per una nuova truffa delle multe sul parabrezza, con falsi verbali dotati di QR code per rubare dati bancari, è partito da Modena e si sta diffondendo anche a Parma. <a href="https://www.parmatoday.it/cronaca/falsa-multa-qr-code-parabrezza-truffa-falso-verbale-auto-parcheggiate.html" target="_blank">(Fonte: ParmaToday)</a></li>
-</ul>
-
-<h3>Parma</h3>
-<ul>
-    <li>Un 32enne è stato trasportato in ospedale dopo che la sua auto è finita fuori strada nella notte a Torrile. Sul posto carabinieri e vigili del fuoco. <a href="https://www.parmatoday.it/cronaca/incidente-stradale/auto-fuori-strada-nella-notte-a-torrile-32enne-trasportato-in-ospedale.html" target="_blank">(Fonte: ParmaToday)</a></li>
-    <li>Un incidente in A1, all'altezza di Soragna, ha visto scontrarsi due auto poco dopo la mezzanotte, con tre persone coinvolte e una ferita gravemente. <a href="https://www.parmatoday.it/cronaca/incidente-stradale/incidente-in-a1-due-auto-si-scontrano-all-altezza-di-soragna.html" target="_blank">(Fonte: ParmaToday)</a></li>
-    <li>Sabato 10 ottobre, in piazza Garibaldi a Parma, pediatri e infermieri dell’Ospedale dei Bambini insegneranno a genitori e cittadini le manovre di disostruzione pediatrica e di rianimazione cardiopolmonare con l'iniziativa "Manovra per la Vita". <a href="https://www.parmatoday.it/attualita/manovra-per-la-vita-a-parma-si-imparano-i-gesti-che-possono-salvare-un-bambino.html" target="_blank">(Fonte: ParmaToday)</a></li>
-</ul>
-
-<h3>Piacenza</h3>
-<ul>
-    <li>In occasione della celebrazione di San Francesco, Patrono d'Italia, si rinnova il rito dell'offerta dell'olio votivo. <a href="https://www.piacenzasera.it/2026/10/lofferta-dellolio-votivo-per-celebrare-san-francesco-patrono-ditalia/664055/html" target="_blank">(Fonte: PiacenzaSera)</a></li>
-    <li>Piacenza Partenopea ha partecipato a Milano alla festa del centenario dei Napoli Club del Nord. <a href="https://www.piacenzasera.it/2026/10/piacenza-partenopea-a-milano-per-la-festa-del-centenario-dei-napoli-club-del-nord/664109/html" target="_blank">(Fonte: PiacenzaSera)</a></li>
-</ul>
-
-<h3>Ferrara</h3>
-<ul>
-    <li>Un 75enne di Codigoro (Ferrara), Luciano Scalambra, è morto in un incidente stradale lungo la SS309 Romea ad Ariano Polesine, in provincia di Rovigo, a seguito di uno schianto tra la sua auto e un furgone. <a href="https://www.estense.com/2026/1211104/ariano-polesine-schianto-lungo-la-romea-muore-75enne-ferrarese/html" target="_blank">(Fonte: Estense.com)</a></li>
-    <li>Un imbianchino è precipitato dal tetto mentre lavorava a Ferrara, riportando gravi condizioni e venendo trasportato in elicottero all'Ospedale Maggiore di Bologna. <a href="https://www.ilrestodelcarlino.it/ferrara/cronaca/precipita-dal-tetto-mentre-lavora-d92a0500" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Il festival di giornalismo "Internazionale" a Ferrara si è concluso con un successo di pubblico, registrando 80.000 presenze per la sua XX edizione. <a href="https://www.estense.com/2026/1211068/in-ottantamila-per-i-ventanni-di-internazionale/html" target="_blank">(Fonte: Estense.com)</a></li>
-    <li>Il Coordinamento nazionale docenti della disciplina dei Diritti umani ha chiesto una riflessione più ampia sulle modalità di accesso agli istituti scolastici, dopo l'episodio di un coltello all'Ariosto, per "migliorare la sicurezza senza sacrificare la fiducia". <a href="https://www.ilrestodelcarlino.it/ferrara/cronaca/allariosto-con-il-coltello-migliorare-000ce32a" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Le accuse di truffa dell'oro a un broker sono cadute in prescrizione, mentre è arrivata l'assoluzione per l'accusa di commercio abusivo. <a href="https://www.ilrestodelcarlino.it/ferrara/cronaca/la-truffa-delloro-in-4a1bcbe3" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>La celebrazione dell'anno francescano a Ferrara si è conclusa con un richiamo a San Francesco come "uomo di pace" e un invito a scegliere la verità. <a href="https://www.ilrestodelcarlino.it/ferrara/cronaca/san-francesco-un-uomo-di-3cb2dda8" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>A Ferrara, la "Volontariato in Festa" in piazza Ariostea ha dedicato una giornata alla solidarietà, con la partecipazione di una sessantina di associazioni. <a href="https://www.estense.com/2026/1209479/volontariato-in-festa-in-piazza-ariostea-una-giornata-dedicata-alla-solidarieta/html" target="_blank">(Fonte: Estense.com)</a></li>
-    <li>Un incontro a Ferrara ha ricordato la missione della Flotilla a un anno di distanza, con la presentazione del libro "Global Sumud Flotilla. La storia siete voi". <a href="https://www.estense.com/2026/1211016/a-un-anno-dalla-missione-della-flotilla-lincontro-con-la-portavoce-delia/html" target="_blank">(Fonte: Estense.com)</a></li>
-    <li>La storia di Nasser Abu Srour, poeta e scrittore palestinese, è stata raccontata a Ferrara, come un inno alla scrittura come strumento di resistenza. <a href="https://www.estense.com/2026/1211072/dalle-carceri-israeliane-allesilio-in-egitto-aiutatemi-a-tornare-a-vivere/html" target="_blank">(Fonte: Estense.com)</a></li>
-    <li>La Giornata Mondiale degli Insegnanti ha ricordato il ruolo della scuola in ospedale, attiva all'interno dell'Azienda Ospedaliero – Universitaria di Ferrara. <a href="https://www.estense.com/2026/1210978/il-ruolo-della-scuola-in-ospedale/html" target="_blank">(Fonte: Estense.com)</a></li>
-    <li>A Forlì, un grande concerto gratuito è in programma per festeggiare l’autunno, con una protagonista e due giovani talenti. <a href="https://www.forlitoday.it/eventi/concerto-gratuito-formi-musica-ottobre.html" target="_blank">(Fonte: ForlìToday)</a></li>
-    <li>Il progetto “Spazi di futuro” a Forlì ha preso il via con laboratori e concerti per immaginare e costruire una città più verde e sostenibile. <a href="https://www.forlitoday.it/eventi/clima-laboratori-e-concerti-al-via-tra-il-progetto-spazi-di-futuro.html" target="_blank">(Fonte: ForlìToday)</a></li>
-    <li>L'opera "L’estasi di San Francesco" del Guercino a Forlì ha ritrovato la sua luce, con un pomeriggio partecipato che ha unito musica, arte e parole legate alla figura del santo. <a href="https://www.forlitoday.it/cronaca/l-estasi-di-san-francesco-del-guercino-ritrova-la-sua-luce-e-a-dicembre-arriva-lo-storico-franco-cardini.html" target="_blank">(Fonte: ForlìToday)</a></li>
-    <li>La nona edizione della Marcia della Pace della Romagna ha visto un "serpentone colorato" di 1500 partecipanti raggiungere Bertinoro. <a href="https://www.forlitoday.it/video/marcia-pace-romagna-4-ottobre-2026.html" target="_blank">(Fonte: ForlìToday)</a></li>
-    <li>Il Governatore Eugenio Boni ha visitato il Rotary Forlì Tre Valli, in una serata che ha visto la "spillatura" di nuovi candidati e l'ingresso di tre nuovi soci. <a href="https://www.forlitoday.it/cronaca/visita-istituzionale-del-governatore-eugenio-boni-al-rotary-forli-tre-valli-tra-scienza-giovani-e-integrazione.html" target="_blank">(Fonte: ForlìToday)</a></li>
-    <li>Un articolo ripercorre la storia di quando la statua della Madonna del Fuoco trovò rifugio nella chiesa di San Filippo Neri a Forlì. <a href="https://www.forlitoday.it/blog/forli-ieri-e-oggi/quando-la-statua-della-madonna-del-fuoco-trovo-rifugio-nella-chiesa-di-san-filippo-neri.html" target="_blank">(Fonte: ForlìToday)</a></li>
-</ul>
-
-<h3>Ravenna</h3>
-<ul>
-    <li>I due gestori dello stabilimento Marina Bay sono sotto processo a Ravenna con l'accusa di apertura abusiva di luoghi di pubblico spettacolo, per aver ospitato un concerto con 900 persone, il doppio della capienza consentita. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/marina-bay-processo-al-concerto-d7061707" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Un altro NCC abusivo è stato fermato dalla Polizia locale davanti al terminal di Porto Corsini, mentre trasportava turiste americane con un'auto priva di revisione, che è stata sequestrata. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/fermato-un-altro-ncc-abusivo-2011732e" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Il MEI 30 e Lode a Faenza ha registrato un successo da record, con Piazza Gremita tra concerti e dibattiti. Lo staff ora si confronterà con il Comune per programmare il futuro. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/mei-30-e-lode-da-105fc4c7" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Un nuovo libro di Virman Cusenza, presentato al Capanno, svela un Garibaldi innovatore, ambientalista e comunicatore, attraverso i Diari di Caprera. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/ambientalista-e-comunicatore-un-garibaldi-e794a89e" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Una 80enne è stata aggredita a Lido Adriano mentre andava a comprare il pesce, come denunciato dalla figlia sui social. Un malvivente l'avrebbe inseguita e colpita alle spalle. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/aggressione-a-unanziana-il-racconto-choc-della-figlia-j6ynq7wm" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Il municipio di Sant'Agata sul Santerno è stato inaugurato dopo i lavori di ripristino da un milione di euro, devastato dall'alluvione del 2023, tornando ad essere un "punto di riferimento per i cittadini". <a href="https://www.ravennatoday.it/cronaca/alluvione-municipio-santagata-santerno-inaugura-ripristinato.html" target="_blank">(Fonte: RavennaToday)</a></li>
-    <li>L'associazione ravennate "Anime Senza Voce" celebra dieci anni portando a Vienna opere d'arte e performance di artisti internazionali contro l'abuso sui minori. <a href="https://www.ravennatoday.it/cronaca/anime-senza-voce-10-anni-sede-vienna.html" target="_blank">(Fonte: RavennaToday)</a></li>
-    <li>La "Cervia Run 2027" alla sua quarta edizione vedrà il debutto della Maratona del Sale con i 42 chilometri, affiancando le distanze già consolidate. <a href="https://www.ravennatoday.it/sport/altro/cervia-run-2027-maratona-del-sale.html" target="_blank">(Fonte: RavennaToday)</a></li>
-</ul>
-
-<h3>Forlì-Cesena</h3>
-<ul>
-    <li>L'iniziativa "Zaino sospeso" a Forlì ha raccolto 120 chili di materiale scolastico, dimostrando una grande solidarietà. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/zaino-sospeso-120-chili-di-a006bd12" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Successo per il concerto di Dardust all'auditorium di Forlì, con un "grande pubblico" e apprezzamenti per l'acustica. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/musica-allauditorium-successo-per-dardust-dbcdf406" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Due anziani di Forlì hanno sventato una truffa, facendo arrestare un finto carabiniere che chiedeva gioielli, grazie alla loro tempestiva chiamata alla polizia. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/anziani-fanno-arrestare-il-truffatore-1c615a45" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Un nuovo carrello per la gestione e somministrazione dei farmaci è stato destinato alla Terapia Intensiva Neonatale e Pediatrica dell’ospedale Bufalini di Cesena. <a href="https://www.ilrestodelcarlino.it/cesena/cronaca/un-carrello-per-i-farmaci-ca5bfd61" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>La Casa della Musica di Cesena vedrà l'insediamento del Conservatorio e del Corelli nel 2029, con un fondo di 3 milioni acquisito per i lavori. <a href="https://www.ilrestodelcarlino.it/cesena/cronaca/casa-della-musica-conservatorio-fa5f4f66" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Gli scout di Savignano sul Rubicone festeggiano 70 anni con una settimana di iniziative e una mostra fotografica inaugurata nella Sala Allende. <a href="https://www.ilrestodelcarlino.it/cesena/cronaca/gli-scout-festeggiano-70-anni-08b98686" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Pietro, un 90enne, è stato operato con successo al cuore a Cotignola e ha dichiarato di essere "tornato alla mia vita di sempre", potendo di nuovo andare in bici e trascorrere tempo con gli amici. <a href="https://www.ilrestodelcarlino.it/cesena/cronaca/pietro-operato-al-cuore-a-90-anni-ora-bici-e-tempo-con-gli-amici-sono-tornato-alla-mia-vita-di-sempre-n4knvlr6" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>Martedì alla Malatestiana di Cesena si terrà il ricordo dell'affondamento dell'Arandora Star, la nave silurata per errore nel 1940, con "tanti romagnoli tra le vittime". <a href="https://www.ilrestodelcarlino.it/cesena/cronaca/laffondamento-dellarandora-star-tanti-romagnoli-09d2eb91" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-</ul>
-
-<h3>Rimini</h3>
-<ul>
-    <li>Maxi operazione antidroga della Polizia di Stato nel Riminese e a Cesena ha portato all'arresto di due uomini e al sequestro di 25 chili di cocaina, nascosti in auto e in casa, con un valore stimato di 10 milioni di euro. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/nascosti-in-auto-e-in-casa-25-chili-di-cocaina-due-uomini-arrestati_4b832459-9e33-4aef-a61e-3d882636bb82.html" target="_blank">(Fonte: Ansa)</a></li>
-    <li>Bufera al Flaminio di Rimini: la moglie israeliana incinta di un giocatore è stata insultata con epiteti come "assassina", rimanendo visibilmente scossa. <a href="https://www.ilrestodelcarlino.it/rimini/cronaca/bufera-al-flaminio-insulti-choc-alla-moglie-israeliana-di-un-giocatore-di-rimini-vz3fc27c" target="_blank">(Fonte: Il Resto del Carlino)</a></li>
-    <li>A Santarcangelo, un 39enne è stato denunciato dopo essersi schiantato con la sua Mercedes contro una casa e essere fuggito. Nell'auto, semidistrutta, è stato trovato un coltello nascosto. <a href="https://www.riminitoday.it/cronaca/distrugge-mercedes-coltello-in-auto-denunciato.html" target="_blank">(Fonte: RiminiToday)</a></li>
-    <li>Maxi furto in casa di un'avvocatessa a Rimini, con un colpo da circa 300mila euro tra denaro e orologi. I ladri avrebbero agito senza forzare la porta d'ingresso. <a href="https://www.riminitoday.it/cronaca/maxi-furto-in-casa-avvocata-covignano.html" target="_blank">(Fonte: RiminiToday)</a></li>
-    <li>Migliaia di visitatori hanno affollato Sant'Agata Feltria per l'apertura della Fiera del Tartufo, con un "serpentone" di auto che ha risalito la Marecchiese. <a href="https://www.riminitoday.it/attualita/fiera-tartufo-sant-agata-feltria-42-edizione.html" target="_blank">(Fonte: RiminiToday)</a></li>
-    <li>Settima edizione della "Viale Astore Street Parade" a Marina Centro di Rimini, con sessanta persone, un maialino allo spiedo e un commovente incontro tra un ex residente e i nuovi proprietari della sua casa d'infanzia. <a href="https://www.riminitoday.it/attualita/viale-astore-street-parade-settima-edizione.html" target="_blank">(Fonte: RiminiToday)</a></li>
-</ul>
-
-<h2>PROTEZIONE CIVILE E AMBIENTE</h2>
-
-<h3>Modena</h3>
-<ul>
-    <li>Volontari dei Quartieri 3 e 4 di Modena hanno raccolto 36 sacchi di rifiuti abbandonati in zona Saliceta, con Hera avvisata per il ritiro. <a href="https://www.modenatoday.it/attualita/volontari-q3-q4-raccolta-rifiuti-saliceta.html" target="_blank">(Fonte: ModenaToday)</a></li>
-    <li>Le previsioni meteo per lunedì 5 ottobre a Modena indicano cieli in prevalenza poco nuvolosi, con nubi in contenuto aumento dal tardo pomeriggio. <a href="https://www.modenatoday.it/meteo/previsioni-modena-5-ottobre-2026.html" target="_blank">(Fonte: ModenaToday)</a></li>
-</ul>
-
-<h3>Parma</h3>
-<ul>
-    <li>Una fungaiola 54enne è caduta e si è ferita sull'Appennino parmense ed è stata soccorsa dal SAER, per poi essere trasportata con l'elisoccorso all'Ospedale Maggiore di Parma. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/fungaiola-cade-e-si-ferisce-sullappennino-parmense-soccorsa-dal-saer_9fc2a4a5-8cce-4bf5-9c58-b4b7d36a1772.html" target="_blank">(Fonte: Ansa)</a></li>
-    <li>Un escursionista è rimasto ferito dopo una caduta nella zona del Monte Pirolo, nel Parmense, rendendo necessario l'intervento dell'elisoccorso. <a href="https://www.parmatoday.it/cronaca/ennesima-caduta-nel-parmense-ferito-un-escursionista-nella-zona-del-monte-pirolo.html" target="_blank">(Fonte: ParmaToday)</a></li>
-</ul>
-
-<h3>Piacenza</h3>
-<ul>
-    <li>Una donna si è rotta la caviglia lungo un sentiero mentre faceva un'escursione sul Monte Piastra ed è stata soccorsa dai vigili del fuoco. <a href="https://www.piacenzasera.it/2026/10/si-rompe-la-caviglia-lungo-un-sentiero-soccorsa-dai-vigili-del-fuoco/664120/html" target="_blank">(Fonte: PiacenzaSera)</a></li>
-</ul>
-
-<h3>Forlì-Cesena</h3>
-<ul>
-    <li>Un escursionista è caduto malamente lungo un sentiero a Santa Sofia, procurandosi un trauma a una gamba, ed è stato raggiunto e portato in ospedale con l'elicottero. <a href="https://www.forlitoday.it/cronaca/escursionista-santa-sofia-soccorsa-elicottero.html" target="_blank">(Fonte: ForlìToday)</a></li>
-    <li>Fiamme in un garage a Forlì, domate dai vigili del fuoco, originate dalla batteria di una bicicletta. <a href="https://www.forlitoday.it/cronaca/fiamme-nel-garage-incendio-oggi-domenica-batteria-bici.html" target="_blank">(Fonte: ForlìToday)</a></li>
-</ul>
+<h2>4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE</h2>
+<p>La giornata odierna non ha registrato particolari allerte meteo o eventi di protezione civile di vasta portata in Emilia-Romagna, un dato che, in assenza di notizie specifiche, può essere interpretato positivamente come un periodo di relativa stabilità climatica per la regione. Tuttavia, il tema della pianificazione e della gestione degli spazi pubblici, con le sue implicazioni per la sicurezza e la prevenzione, rimane centrale. Il processo in corso a Ravenna, che vede coinvolti i gestori del Marina Bay per presunto superamento della capienza autorizzata durante un concerto, offre uno spunto significativo sulla necessità di una pianificazione rigorosa e di controlli efficaci nella gestione degli eventi e delle infrastrutture pubbliche. La discordanza tra le 440 persone autorizzate e le circa 900 stimate presenti all'evento solleva questioni fondamentali sulla capacità delle autorità locali di far rispettare le normative di sicurezza e sulla responsabilità degli organizzatori nel garantire l'incolumità dei partecipanti. Questo caso evidenzia come la "pianificazione" non si limiti alla mera urbanistica o alla gestione delle emergenze naturali, ma si estenda anche alla regolamentazione e al controllo degli eventi che attraggono grandi folle, un aspetto cruciale per la protezione civile in senso lato, intesa come prevenzione dei rischi per la popolazione. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/marina-bay-processo-al-concerto-d7061707" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p>La gestione di eventi di massa e l'utilizzo degli spazi pubblici richiedono una pianificazione integrata che tenga conto non solo degli aspetti logistici e di ordine pubblico, ma anche delle potenziali vulnerabilità ambientali e strutturali. Sebbene non vi siano state notizie dirette su nuove politiche ambientali o grandi progetti infrastrutturali legati alla transizione ecologica, la costante attenzione della regione verso la sostenibilità e la resilienza del territorio è un dato acquisito. La capacità di prevenire incidenti in contesti affollati, come quello del Marina Bay, si inserisce in un quadro più ampio di pianificazione territoriale che mira a garantire la sicurezza dei cittadini in ogni circostanza, sia essa legata a fenomeni naturali che a eventi antropici. La lezione che emerge da questi episodi è la necessità di un monitoraggio continuo e di un'applicazione intransigente delle norme, per evitare che opportunità economiche e di svago si trasformino in rischi per la collettività. La protezione civile, in questo senso, si configura non solo come intervento post-evento, ma soprattutto come un'azione preventiva e di pianificazione attenta, che coinvolge tutti i livelli di governo e la collaborazione con gli operatori privati.</p>
 </div>
