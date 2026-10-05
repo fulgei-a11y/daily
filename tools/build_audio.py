@@ -83,9 +83,13 @@ def normalize(s):
 
 
 def items_from_fragment(html):
-    """Stessa logica di walk() nell'app: restituisce [(sezione, sottosezione, nodo)]."""
+    """Esegue il parsing dell'HTML estraendo h2, h3, p e li anche da documenti HTML completi."""
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html, "html.parser")
+    
+    # Se il documento contiene un body o un main, usalo come radice di partenza
+    root = soup.find("main") or soup.find("body") or soup
+    
     out, st = [], {"sec": None, "sub": None}
 
     def add(node):
@@ -109,15 +113,12 @@ def items_from_fragment(html):
             elif t in ("ol", "ul"):
                 for li in n.find_all("li", recursive=False):
                     add(li)
-            elif t == "div":
-                if "foot" in (n.get("class") or []):
-                    st["sec"], st["sub"] = "Note", None
-                    for c in n.find_all(recursive=False):
-                        add(c)
-                else:
+            else:
+                # Entra ricorsivamente in qualsiasi altro contenitore (html, body, main, div, section, ecc.)
+                if hasattr(n, "children"):
                     walk(n.children)
 
-    walk(soup.children)
+    walk(root.children)
     return out
 
 
