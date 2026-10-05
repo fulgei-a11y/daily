@@ -1,5 +1,266 @@
-<h2>In evidenza</h2>
-<div class="evid">
-  <ol>
-    <li><strong>Maxi sequestro di cocaina e due arresti tra Morciano e Cesena</strong> — La Squadra Mobile di Rimini, in collaborazione con Forlì-Cesena, ha arrestato due cittadini albanesi di 46 e 34 anni, sequestrando oltre 25 chili di cocaina con un valore stimato di 10 milioni di euro. La droga è stata trovata in un borsone in auto a Morciano (RN) e in un doppio fondo in un mobile a Cesena (FC), insieme a 29.500 euro in contanti. Fonte: <a target="_blank" rel="noopener" href="https://www.ilrestodelcarlino.it/rimini/cronaca/scacco-allo-spaccio-nascondevano-droga-a291c45e">il Resto del Carlino</a></li>
-    <li><strong>Nations League: Italia-Turchia a Bologna, Mancini chiede di "chiudere in bellezza"</strong> — Il commissario tecnico Roberto Mancini ha invitato la Nazionale italiana a non sottovalutare l'impegno contro la Turchia nella quarta sfida di Nations League, in programma oggi 5 ottobre 2026 allo stadio Dall'Ara di Bologna. Mancini ha annunciato diversi cambi nella formazione a causa dei soli due giorni di recupero e ha confermato l'assenza di Kean. Fonte: <a
+<style>
+    @import url('[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap)');
+    
+    .rassegna-container {
+        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.8;
+        color: #2c3e50;
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 25px;
+    }
+    .rassegna-header {
+        border-bottom: 4px solid #004085;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+    }
+    .rassegna-header h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 28px;
+        color: #004085;
+        margin: 0 0 5px 0;
+    }
+    
+    /* Box Executive Summary & Cifre */
+    .executive-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-left: 6px solid #004085;
+        padding: 20px;
+        border-radius: 6px;
+        margin-bottom: 25px;
+    }
+    .trend-bar {
+        font-size: 14px;
+        font-weight: 600;
+        background: #e9ecef;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+    }
+    .executive-box h3 {
+        margin-top: 0;
+        color: #004085;
+        font-family: 'Merriweather', serif;
+        font-size: 18px;
+        border-bottom: none;
+    }
+    .key-figures-grid {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 15px 0;
+    }
+    .figure-card {
+        background: #ffffff;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        padding: 10px 14px;
+        flex: 1;
+        min-width: 130px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .figure-card .number {
+        font-size: 19px;
+        font-weight: 700;
+        color: #2d6a4f;
+        display: block;
+    }
+    .figure-card .label {
+        font-size: 11px;
+        color: #6c757d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .swot-box {
+        background: #ffffff;
+        border: 1px dashed #adb5bd;
+        padding: 12px 15px;
+        font-size: 13.5px;
+        border-radius: 4px;
+        margin-top: 15px;
+    }
+    .quote-box {
+        font-style: italic;
+        background: #e8f4f8;
+        border-left: 4px solid #17a2b8;
+        padding: 10px 15px;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #2b580c;
+    }
+
+    /* Indice di Navigazione Rapida (TOC) */
+    .toc-box {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        background: #ffffff;
+        padding: 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 6px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .toc-box a {
+        font-size: 12px;
+        background: #f1f3f5;
+        color: #495057;
+        padding: 6px 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.2s;
+    }
+    .toc-box a:hover {
+        background: #e9ecef;
+        color: #004085;
+    }
+
+    /* Badge Territoriali (Città) */
+    .city-tag {
+        display: inline-block;
+        background-color: #004085;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 7px;
+        border-radius: 3px;
+        margin-right: 6px;
+        vertical-align: middle;
+        letter-spacing: 0.5px;
+    }
+
+    h2 {
+        font-family: 'Merriweather', serif;
+        font-size: 20px;
+        color: #1b4332;
+        background-color: #f0f7f4;
+        padding: 12px 16px;
+        border-left: 6px solid #2d6a4f;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+    }
+    h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 17px;
+        color: #1d3557;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 6px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 15px;
+        margin-bottom: 18px;
+        text-align: justify;
+    }
+    ul {
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 8px;
+        font-size: 14.5px;
+    }
+    a {
+        color: #0056b3;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    @media print {
+        .rassegna-container {
+            max-width: 100%;
+            padding: 0;
+        }
+        .toc-box {
+            display: none;
+        }
+        h2 {
+            background-color: #f1f1f1 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    }
+</style>
+
+<div class="rassegna-container">
+    <div class="rassegna-header">
+        <h1>Rassegna Stampa & Strategic Analysis</h1>
+        <small style="color: #6c757d; font-size: 14px;">Emilia-Romagna • Edizione del 2026-10-05</small>
+    </div>
+    <div class="executive-box">
+    <div class="trend-bar">
+        <p>🟢 Dinamismo culturale e industriale | 🔴 Tensione sulla sanità e sicurezza urbana</p>
+    </div>
+    <h3>I 3 Fatti Chiave di Oggi</h3>
+    <ul>
+        <li><strong>Consolidamento Industriale Webuild-Trevi:</strong> Webuild ha incrementato la sua quota in Trevi al 18,91% con un investimento di oltre 47 milioni di euro.
+            <br><em>Implicazione di policy:</em> Questo movimento segnala un consolidamento nel settore delle costruzioni e ingegneria, con potenziali ricadute sull'occupazione e sulla filiera produttiva regionale. È cruciale monitorare le dinamiche di mercato e assicurare il mantenimento delle competenze sul territorio.</li>
+        <li><strong>Crisi Liste d'Attesa Sanitarie:</strong> Segnalazioni da <span class="city-tag">FORLÌ-CESENA</span> di impossibilità di prenotare esami specialistici (es. eco-colordoppler) anche per il 2027, con il settore privato che offre soluzioni rapide a pagamento.
+            <br><em>Implicazione di policy:</em> Si evidenzia un'urgente necessità di interventi regionali per ridurre i tempi di attesa, riorganizzare l'offerta pubblica e garantire l'accesso universale al diritto alla salute, mitigando il rischio di una sanità a due velocità.</li>
+        <li><strong>Allarme Sicurezza Urbana:</strong> Crescente preoccupazione per la sicurezza in diverse località (<span class="city-tag">FORLÌ-CESENA</span>, <span class="city-tag">RAVENNA</span>) con assemblee pubbliche e denunce di aggressioni, che evidenziano un disagio sociale e la necessità di maggiori controlli e politiche preventive.
+            <br><em>Implicazione di policy:</em> Richiede un coordinamento rafforzato tra forze dell'ordine e amministrazioni locali, investimenti in videosorveglianza e programmi di prevenzione del disagio giovanile e sociale.</li>
+    </ul>
+    <div class="key-figures-grid">
+        <div class="figure-card"><strong>18.91%</strong><br>Quota Webuild in Trevi</div>
+        <div class="figure-card"><strong>47.1M€</strong><br>Valore acquisto azioni Trevi</div>
+        <div class="figure-card"><strong>80-100€</strong><br>Costo Eco-colordoppler privato</div>
+        <div class="figure-card"><strong>6.2%</strong><br>Spesa Sanità Italia/PIL (vs 7.1% UE)</div>
+    </div>
+    <div class="swot-box">
+        ⚠️ <strong>Rischio di Sistema:</strong> L'aggravarsi delle liste d'attesa nella sanità pubblica, con il dirottamento verso il privato, mina il principio di universalità e crea disuguaglianze nell'accesso alle cure essenziali, potendo generare ulteriore sfiducia nelle istituzioni. | 💡 <strong>Opportunità:</strong> Il successo di eventi culturali come il MEI e i festival bolognesi, unito agli investimenti in infrastrutture culturali, rafforza il brand turistico regionale e la capacità di attrarre giovani e talenti, fungendo da volano per l'economia locale e l'innovazione sociale.
+    </div>
+    <div class="quote-box">
+        <strong>Frase del Giorno:</strong> "Il problema di questa nazione è l'istruzione. Risolverlo vuol dire superare una marea di problemi a carambola perché vuol dire avere persone con parole, con punti di vista, con senso critico."
+        <br><em>— Marcello Fois, Scrittore e vincitore Premio Campiello 2026</em>
+    </div>
+</div>
+
+<div class="toc-box">
+    <a href="#sec1">🏛️ Politica & Infrastrutture</a>
+    <a href="#sec2">📈 Economia & Turismo</a>
+    <a href="#sec3">🏥 Sanità & Sociale</a>
+    <a href="#sec4">🌿 Ambiente & Risorse</a>
+    <a href="#sec5">🗓️ Agenda & Prossimi Passaggi</a>
+</div>
+
+<h2 id="sec1">1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
+<p><span class="city-tag">RAVENNA</span> Il processo sul concerto di Capo Plaza al Marina Bay di Marina di Ravenna ha riacceso i riflettori sulla gestione della sicurezza negli eventi pubblici e sul rispetto delle normative sulla capienza. La Polizia Locale ha stimato la presenza di circa 900 persone in un'area autorizzata per 440, con 1.115 biglietti venduti, mentre la difesa ha sostenuto un sistema di controllo degli accessi che avrebbe garantito la capienza massima in ogni momento <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/marina-bay-processo-al-concerto-d7061707" target="_blank">(Fonte: Il Resto del Carlino)</a>. Questo caso solleva interrogativi sulla vigilanza e sull'applicazione delle sanzioni per garantire l'incolumità pubblica in contesti di grande affluenza, evidenziando la necessità di un'attenta pianificazione e monitoraggio da parte delle autorità locali.</p>
+<p><span class="city-tag">FORLÌ-CESENA</span> La Val Bidente è stata teatro di un'importante assemblea pubblica a Santa Sofia, dove circa 500 cittadini si sono riuniti per esprimere un fermo "no alla violenza" e al clima di paura generato da recenti pestaggi e episodi di criminalità. L'iniziativa, promossa da un gruppo di donne, ha visto la partecipazione di amministratori locali e rappresentanti della comunità, evidenziando la necessità di maggiori controlli, videosorveglianza e, soprattutto, interventi preventivi sul disagio giovanile attraverso l'educazione e il coinvolgimento di famiglie e associazioni <a href="https://www.ilrestodelcarlino.it/forli/cronaca/assemblea-per-la-sicurezza-in-fd84ef14" target="_blank">(Fonte: Il Resto del Carlino)</a>. Questo dimostra una crescente domanda di sicurezza partecipata e un ruolo attivo delle comunità nella richiesta di politiche integrate che vadano oltre la mera repressione, puntando sulla coesione sociale e la prevenzione.</p>
+
+<h2 id="sec2">2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
+<p><span class="city-tag">FORLÌ-CESENA</span> Il gruppo Webuild ha annunciato un'ulteriore acquisizione di azioni Trevi, portando la sua partecipazione complessiva al 18,91% del capitale sociale. L'operazione, del valore di oltre 47 milioni di euro, è stata effettuata a un prezzo unitario di 5,165 euro per azione e comporterà un adeguamento del corrispettivo per tutti gli aderenti all'offerta pubblica di acquisto su Trevi-Finanziaria <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/05/webuild-acquista-azioni-trevi-e-sale-al-1891-del-capitale_d2f1d177-8631-4311-bde3-9126dc66bb82.html" target="_blank">(Fonte: ANSA)</a>. Questo consolidamento strategico nel settore dell'ingegneria e delle costruzioni ha implicazioni significative per il distretto industriale romagnolo e per le prospettive future di Trevi, un'azienda chiave per il territorio.</p>
+<p><span class="city-tag">BOLOGNA</span> La città si conferma un polo di attrazione culturale e turistica con un'intensa settimana di eventi. Il Festival del Presente all'Oratorio San Filippo Neri ospita dibattiti sulla democrazia con figure come Giuliano Amato, mentre il festival NipPop dell'Università di Bologna accoglie la giornalista giapponese Ito Shiori per discutere di diritti e violenza sessuale. Il cartellone include anche spettacoli di Roberto Bolle, il festival di musica elettronica ROBOT e l'esposizione della collezione Carmen Thyssen a Palazzo Albergati <a href="https://www.ilrestodelcarlino.it/bologna/cosa-fare/eventi-5-11-ottobre-2026-a0e67c95" target="_blank">(Fonte: Il Resto del Carlino)</a>. Questi eventi contribuiscono a rafforzare il brand turistico della città, attrarre visitatori e stimolare l'economia locale, posizionando Bologna come hub culturale di rilievo internazionale.</p>
+<p><span class="city-tag">MODENA</span> Il Sassuolo Calcio registra un notevole incremento del valore della sua rosa, che si attesta a 219 milioni di euro, con una crescita di oltre il 50% rispetto all'anno precedente. Questo posiziona il club neroverde tra i 'top' per capitalizzazione della rosa in Serie A, evidenziando una strategia di valorizzazione dei talenti che genera ritorni economici significativi e consolida la filosofia aziendale di "valorizzare e capitalizzare senza smobilitare" <a href="https://www.ilrestodelcarlino.it/modena/sport/sassuolo-la-rosa-8cdcd36f" target="_blank">(Fonte: Il Resto del Carlino)</a>. Tale modello rappresenta un esempio di gestione sportiva che si traduce in un asset economico di valore per il territorio.</p>
+<p><span class="city-tag">RAVENNA</span> La Polizia Locale di Ravenna continua la sua azione di contrasto al fenomeno degli Ncc abusivi al Terminal crociere di Porto Corsini. Un 38enne è stato fermato mentre trasportava turiste americane con un'auto priva di revisione e senza le necessarie licenze, evidenziando una problematica persistente che danneggia gli operatori regolari e solleva questioni di sicurezza per i turisti <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/fermato-un-altro-ncc-abusivo-2011732e" target="_blank">(Fonte: Il Resto del Carlino)</a>. La lotta a queste pratiche abusive è fondamentale per tutelare il settore turistico e la reputazione della destinazione.</p>
+<p><span class="city-tag">RAVENNA</span> Il "MEI 30 e Lode" a Faenza ha registrato un successo record, con migliaia di giovani che hanno affollato il centro storico per l'edizione celebrativa dei trent'anni della kermesse. L'evento, che ha visto il tutto esaurito per convegni, fiere e momenti di alta formazione, si conferma un motore strategico per la cultura, la formazione, la socialità e il turismo del territorio romagnolo. Nei prossimi giorni è previsto un confronto con l'Amministrazione comunale di Faenza per definire le strategie future e assicurare il sostegno a questo pilastro dell'attrattività cittadina <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/mei-30-e-lode-da-105fc4c7" target="_blank">(Fonte: Il Resto del Carlino)</a>. Il MEI rappresenta un modello di evento culturale capace di generare valore economico e sociale.</p>
+<p><span class="city-tag">RAVENNA</span> Un incontro a Ravenna ha svelato un ritratto inedito di Giuseppe Garibaldi attraverso i "Diari agricoli di Caprera", presentandolo come un innovatore, imprenditore e "ambientalista ante litteram". L'evento, che ha visto la partecipazione di figure istituzionali e culturali, ha sottolineato l'attualità del pensiero garibaldino e la sua eredità, anche in termini di comunicazione e ruolo della donna <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/ambientalista-e-comunicatore-un-garibaldi-e794a89e" target="_blank">(Fonte: Il Resto del Carlino)</a>. Queste iniziative culturali arricchiscono l'offerta turistica e promuovono la valorizzazione del patrimonio storico-identitario.</p>
+<p><span class="city-tag">FORLÌ-CESENA</span> L'auditorium realizzato nell'ex cinema Odeon di Forlì ha inaugurato la sua prima stagione autunnale con un concerto sold-out del pianista e compositore Dardust. Il successo di pubblico conferma l'attenzione per il nuovo contenitore culturale e l'efficacia degli investimenti nel settore, con l'amministratore delegato di Cia-Conad, sponsor dell'auditorium, che ha elogiato la qualità acustica e il valore dello spazio per la città <a href="https://www.ilrestodelcarlino.it/forli/cronaca/musica-allauditorium-successo-per-dardust-dbcdf406" target="_blank">(Fonte: Il Resto del Carlino)</a>. L'apertura di nuove infrastrutture culturali è un segnale positivo per lo sviluppo urbano e l'attrattività del territorio.</p>
+
+<h2 id="sec3">3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
+<p>Lo scrittore Marcello Fois, vincitore del Premio Campiello 2026, ha sottolineato come l'istruzione sia il "problema di questa nazione", la cui risoluzione porterebbe a superare una miriade di altre problematiche, promuovendo il senso critico e la civiltà. Ha avvertito sul rischio di considerare l'istruzione secondaria, con conseguenze gravi per la società <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/marcello-fois-il-problema-dellitalia-e-listruzione_9739c363-d56f-4bdf-b283-33b92865f61b.html" target="_blank">(Fonte: ANSA)</a>. Questa riflessione di ampio respiro evidenzia una criticità sistemica che impatta direttamente sul futuro sociale ed economico della regione, richiamando l'attenzione sulla necessità di investire prioritariamente nel capitale umano.</p>
+<p><span class="city-tag">RAVENNA</span> Un'aggressione subita da un'anziana di 80 anni a Lido Adriano ha riacceso i riflettori sul tema della sicurezza nella località. La figlia della vittima ha denunciato l'episodio sui social, evidenziando una situazione di degrado e la presenza di persone dedite allo spaccio, già segnalate in passato. L'accaduto, che ha causato gravi lesioni all'anziana, sottolinea la necessità di un intervento più incisivo delle forze dell'ordine e delle politiche sociali per garantire la sicurezza dei cittadini, in particolare delle fasce più vulnerabili <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/aggressione-a-unanziana-il-racconto-choc-della-figlia-j6ynq7wm" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p><span class="city-tag">FORLÌ-CESENA</span> L'iniziativa "Zaino sospeso" del Lions Club Forlì Host ha raccolto 120 chili di materiale scolastico, destinato alle famiglie in difficoltà attraverso la Caritas di Forlì-Bertinoro. L'iniziativa, giunta alla seconda edizione, mira a contrastare le crescenti spese per il materiale scolastico, che possono superare i 670 euro per studente, garantendo a numerosi alunni di affrontare il percorso educativo senza patire differenze economiche <a href="https://www.ilrestodelcarlino.it/forli/cronaca/zaino-sospeso-120-chili-di-a006bd12" target="_blank">(Fonte: Il Resto del Carlino)</a>. Questo progetto di solidarietà evidenzia l'importanza del supporto sociale per l'inclusione scolastica e la riduzione delle disuguaglianze.</p>
+<p><span class="city-tag">FORLÌ-CESENA</span> Forza Italia ha denunciato la grave situazione delle liste d'attesa nella sanità romagnola, segnalando l'impossibilità di prenotare un eco-colordoppler dei tronchi sovraortici anche per il 2027, mentre nel privato l'esame è disponibile in una settimana con un costo tra gli 80 e i 100 euro. La deputata Rosaria Tassinari ha chiesto un intervento urgente alla Regione e all'Ausl per garantire il diritto alla salute indipendentemente dal reddito. L'Alleanza Verdi e Sinistra ha replicato attribuendo la responsabilità ai tagli alla spesa sanitaria del Governo, che ha visto una diminuzione della spesa sul PIL al 6,2% contro una media europea del 7,1% <a href="https://www.ilrestodelcarlino.it/forli/cronaca/eco-colordoppler-tutto-esaurito-nel-2027-d0a5fb84" target="_blank">(Fonte: Il Resto del Carlino)</a>. Il dibattito politico sulla sanità pubblica e l'accesso alle cure rimane un nodo cruciale per la regione.</p>
+
+<h2 id="sec4">4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE TERRITORIALE</h2>
+<p>Oggi non sono state riportate notizie di allerta meteo o eventi significativi legati alla protezione civile. Le informazioni disponibili non includono aggiornamenti su progetti di transizione ecologica, gestione delle risorse idriche, energie rinnovabili o stoccaggio con rilevanza sistemica per la regione, né piani di pianificazione territoriale di ampio respiro.</p>
+
+<h2 id="sec5">5. AGENDA & PROSSIMI PASSAGGI ISTITUZIONALI</h2>
+<ul>
+    <li><strong>6 ottobre 2026</strong>: <span class="city-tag">BOLOGNA</span>, Partita di Nations League Italia vs Turchia allo stadio Dall'Ara <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/nations-league-mancini-domani-dobbiamo-chiudere-in-bellezza_d5fe8c68-e6dd-4013-8273-206b66b3b0a9.html" target="_blank">(Fonte: ANSA)</a>.</li>
+    <li><strong>6 ottobre 2026</strong>: <span class="city-tag">BOLOGNA</span>, NipPop festival ospita Ito Shiori a Palazzo Marchesini e al Modernissimo <a href="https://www.ilrestodelcarlino.it/bologna/cosa-fare/eventi-5-11-ottobre-2026-a0e67c95" target="_blank">(Fonte: Il Resto del Carlino)</a>.</li>
+    <li><strong>7 ottobre 2026</strong>: Regolamento dell'operazione di acquisto azioni Trevi da parte di Webuild <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/05/webuild-acquista-azioni-trevi-e-sale-al-1891-del-capitale_d2f1d177-8631-4311-bde3-9126dc66bb82.html" target="_blank">(Fonte: ANSA)</a>.</li>
+    <li><strong>Dal 8 ottobre 2026</strong>: <span class="city-tag">BOLOGNA</span>, Inizio del festival di musica elettronica ROBOT <a href="https://www.ilrestodelcarlino.it/bologna/cosa-fare/eventi-5-11-ottobre-2026-a0e67c95" target="_blank">(Fonte: Il Resto del Carlino)</a>.</li>
+    <li><strong>Prossimi giorni</strong>: <span class="city-tag">RAVENNA</span>, Incontro decisivo tra lo staff del MEI e l'Amministrazione comunale di Faenza per definire le strategie future dell'evento <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/mei-30-e-lode-da-105fc4c7" target="_blank">(Fonte: Il Resto del Carlino)</a>.</li>
+    <li><strong>3 e 4 novembre 2026</strong>: <span class="city-tag">BOLOGNA</span>, Date del tour "Io Canto / Yo Canto World Tour 2026/2027" di Laura Pausini all'Unipol Forum <a href="https://www.ilrestodelcarlino.it/ravenna/cultura/laura-pausini-concerto-milano-loredana-berte-max-pezzali-74583e9b" target="_blank">(Fonte: Il Resto del Carlino)</a>.</li>
+    <li><strong>Prossimamente</strong>: <span class="city-tag">FORLÌ-CESENA</span>, Seconda edizione di ‘Culla sospesa’ per la raccolta di beni per neonati tramite la Caritas <a href="https://www.ilrestodelcarlino.it/forli/cronaca/zaino-sospeso-120-chili-di-a006bd12" target="_blank">(Fonte: Il Resto del Carlino)</a>.</li>
+</ul>
+</div>
