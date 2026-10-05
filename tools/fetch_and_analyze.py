@@ -7,7 +7,7 @@ from google import genai
 from google.genai import types
 
 # ---------------------------------------------------------------------------
-# 1. CONFIGURAZIONE E LISTA FONTI RSS (Copertura 9 Province + Economia + Regione)
+# 1. CONFIGURAZIONE E LISTA FONTI RSS
 # ---------------------------------------------------------------------------
 TODAY = datetime.date.today().strftime('%Y-%m-%d')
 OUTPUT_DIR = "edizioni"
@@ -21,7 +21,7 @@ RSS_FEEDS = [
     # ANSA Regionali
     "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
     
-    # Resto del Carlino (Copertura capillare province)
+    # Resto del Carlino
     "https://www.ilrestodelcarlino.it/bologna/rss",
     "https://www.ilrestodelcarlino.it/modena/rss",
     "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
@@ -32,7 +32,7 @@ RSS_FEEDS = [
     "https://www.ilrestodelcarlino.it/rimini/rss",
     "https://www.ilrestodelcarlino.it/imola/rss",
     
-    # Network "Today" (Province e capoluoghi)
+    # Network "Today"
     "https://www.bolognatoday.it/rss",
     "https://www.modenatoday.it/rss",
     "https://www.riminitoday.it/rss",
@@ -56,7 +56,7 @@ HEADERS = {
 }
 
 # ---------------------------------------------------------------------------
-# 2. RAGGRUPPAMENTO E SCRAPING DEI FEED RSS
+# 2. SCRAPING DEI FEED RSS
 # ---------------------------------------------------------------------------
 def fetch_rss_articles():
     articles = []
@@ -91,7 +91,7 @@ def fetch_rss_articles():
     return articles
 
 # ---------------------------------------------------------------------------
-# 3. PROMPT DI SISTEMA ED ELABORAZIONE IA (Gemini 2.5 Flash / Fallback)
+# 3. GENERAZIONE HTML CON GEMINI
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -103,30 +103,33 @@ def generate_rassegna_body(articles):
     raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
 
     system_instruction = f"""
-Sei un caporedattore edigooglitore esperto di cronaca, economia e politica dell'Emilia-Romagna.
-Analizza la lista di notizie estratte oggi ({TODAY}) e sintetizzale in una Rassegna Stampa quotidiana completa in formato HTML.
+Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
+Sintetizza le notizie di oggi ({TODAY}) in una Rassegna Stampa HTML.
 
-REGOLE TASSATIVE DI STRUTTURA HTML (COMPATIBILE CON LETTORE AUDIO E STAMPA PDF):
-- Usa ESCLUSIVAMENTE tag <h2> per i titoli di sezione, <h3> per i capoluoghi/province, e singoli paragrafi <p> o liste <ul><li> per OGNI notizia.
-- NON avvolgere le notizie dentro tag <div> generici. Ogni singola notizia deve stare dentro un proprio tag <p> o <li>.
+REGOLE TASSATIVE DI STRUTTURA:
+- NON generare <html>, <head> o <body>. Genera SOLO il frammento interno.
+- Usa <h2> per i titoli di sezione principale.
+- Usa <h3> per le sotto-sezioni/province.
+- Ogni singola notizia deve essere racchiusa in un paragrafo <p> o in un punto elenco <li>.
+- NON usare <div> per avvolgere le notizie.
 
-REGOLE DI COPERTURA E FONTI:
-1. COPERTURA TERRITORIALE OBBLIGATORIA: Devi coprire tutte e 9 le province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
-2. LINK ALLA FONTE PER OGNI NOTIZIA: Alla fine di ogni paragrafo <p> o <li>, inserisci SEMPRE il link cliccabile originale:
+REGOLE CONTENUTI E FONTI:
+1. Copertura obbligatoria delle 9 province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
+2. Inserisci SEMPRE il link alla fonte alla fine di ogni paragrafo o punto elenco:
    Es: <p>Testo notizia... <a href="URL" target="_blank">(Fonte: Ansa)</a></p>
-3. FILTRO CONTENUTI: Scarta gossip e sport minore. Includi le allerte meteo ufficiali della Protezione Civile. Unifica le notizie duplicate citando le diverse fonti.
+3. Escludi gossip e sport minore. Includi allerte della Protezione Civile.
 
 SEZIONI OBBLIGATORIE:
 - <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
 - <h2>ECONOMIA, LAVORO E IMPRESE</h2>
-- <h2>CRONACA E TERRITORIO</h2> (usa <h3> per le varie province)
+- <h2>CRONACA E TERRITORIO</h2>
 - <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
 
 FORMATO OUTPUT:
-Restituisci SOLO ed esclusivamente il frammento HTML del corpo (senza tag <html> o <body> e senza blocchi markdown ```html).
+Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
 """
 
-    prompt = f"Ecco gli articoli pubblicati oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera la rassegna stampa HTML:"
+    prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
     models_to_try = ["gemini-2.5-flash", "gemini-1.5-pro"]
     
@@ -148,10 +151,10 @@ Restituisci SOLO ed esclusivamente il frammento HTML del corpo (senza tag <html>
         except Exception as e:
             print(f"Avviso: Errore con il modello {model_name}: {e}. Tentativo successivo...")
 
-    raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
+    raise RuntimeError("Impossibile generare la rassegna.")
 
 # ---------------------------------------------------------------------------
-# 4. SALVATAGGIO FILE HTML CON STILE CSS ELEGANTE PER STAMPA/PDF
+# 4. SALVATAGGIO FILE CON CSS COMPATIBILE E LETTURA AUDIO COMPLETA
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -163,102 +166,87 @@ def main():
 
     body_content = generate_rassegna_body(articles)
 
-    # Inserimento dello stile grafico per lo schermo e per il PDF
-    full_html = f"""<!doctype html>
-<html lang="it">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rassegna Stampa Emilia-Romagna - {TODAY}</title>
-    <style>
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-        }}
-        main {{
-            max-width: 850px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }}
-        h1 {{
-            font-size: 24px;
-            color: #004085;
-            border-bottom: 3px solid #004085;
-            padding-bottom: 10px;
-            margin-top: 0;
+    # Inseriamo lo stile CSS dentro un tag <style> che NON rompe il parser di build_audio.py
+    # e garantisce una resa tipografica bellissima sia a schermo che in stampa PDF.
+    styled_html = f"""<style>
+    @import url('[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap)');
+    
+    .rassegna-container {{
+        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.7;
+        color: #2c3e50;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }}
+    .rassegna-header {{
+        border-bottom: 3px solid #004085;
+        padding-bottom: 12px;
+        margin-bottom: 25px;
+    }}
+    .rassegna-header h1 {{
+        font-family: 'Merriweather', serif;
+        font-size: 26px;
+        color: #004085;
+        margin: 0;
+    }}
+    h2 {{
+        font-family: 'Merriweather', serif;
+        font-size: 18px;
+        color: #1b4332;
+        background-color: #e8f5e9;
+        padding: 10px 14px;
+        border-left: 6px solid #2d6a4f;
+        margin-top: 35px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }}
+    h3 {{
+        font-size: 16px;
+        color: #1d3557;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 4px;
+        margin-top: 25px;
+    }}
+    p, li {{
+        font-size: 15px;
+        margin-bottom: 14px;
+        text-align: justify;
+    }}
+    a {{
+        color: #0056b3;
+        text-decoration: none;
+        font-weight: 600;
+    }}
+    a:hover {{
+        text-decoration: underline;
+    }}
+    @media print {{
+        .rassegna-container {{
+            max-width: 100%;
+            padding: 0;
         }}
         h2 {{
-            font-size: 18px;
-            color: #155724;
-            background-color: #e2e3e5;
-            padding: 8px 12px;
-            border-left: 5px solid #28a745;
-            margin-top: 30px;
-            border-radius: 3px;
-            text-transform: uppercase;
+            background-color: #f1f1f1 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }}
-        h3 {{
-            font-size: 16px;
-            color: #0056b3;
-            border-bottom: 1px solid #dee2e6;
-            padding-bottom: 4px;
-            margin-top: 20px;
-        }}
-        p, li {{
-            font-size: 14.5px;
-            margin-bottom: 12px;
-            text-align: justify;
-        }}
-        a {{
-            color: #0056b3;
-            text-decoration: none;
-            font-weight: 600;
-        }}
-        a:hover {{
-            text-decoration: underline;
-        }}
-        /* Stile specifico ottimizzato per l'esportazione / Stampa in PDF */
-        @media print {{
-            body {{
-                background-color: #ffffff;
-                padding: 0;
-            }}
-            main {{
-                box-shadow: none;
-                padding: 0;
-                max-width: 100%;
-            }}
-            h2 {{
-                background-color: #f1f1f1 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }}
-            a {{
-                color: #000000;
-                text-decoration: underline;
-            }}
-        }}
-    </style>
-</head>
-<body>
-    <main>
-        <h1>Rassegna Stampa Emilia-Romagna — {TODAY}</h1>
-        {body_content}
-    </main>
-</body>
-</html>"""
+    }}
+</style>
+
+<div class="rassegna-container">
+    <div class="rassegna-header">
+        <h1>Rassegna Stampa Emilia-Romagna</h1>
+        <small style="color: #6c757d;">Edizione del {TODAY}</small>
+    </div>
+    {body_content}
+</div>"""
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(full_html)
+        f.write(styled_html)
         
-    print(f"✅ Rassegna generata con successo con layout PDF in: {OUTPUT_FILE}")
+    print(f"✅ File generato con successo: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
