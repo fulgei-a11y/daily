@@ -5,7 +5,7 @@
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         line-height: 1.8;
         color: #2c3e50;
-        max-width: 850px;
+        max-width: 880px;
         margin: 0 auto;
         padding: 25px;
     }
@@ -28,7 +28,15 @@
         border-left: 6px solid #004085;
         padding: 20px;
         border-radius: 6px;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
+    }
+    .trend-bar {
+        font-size: 14px;
+        font-weight: 600;
+        background: #e9ecef;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-bottom: 15px;
     }
     .executive-box h3 {
         margin-top: 0;
@@ -39,30 +47,89 @@
     }
     .key-figures-grid {
         display: flex;
-        gap: 15px;
+        gap: 12px;
         flex-wrap: wrap;
-        margin-top: 15px;
+        margin: 15px 0;
     }
     .figure-card {
         background: #ffffff;
         border: 1px solid #ced4da;
         border-radius: 6px;
-        padding: 10px 15px;
+        padding: 10px 14px;
         flex: 1;
-        min-width: 140px;
+        min-width: 130px;
         text-align: center;
         box-shadow: 0 2px 4px rgba(0,0,0,0.04);
     }
     .figure-card .number {
-        font-size: 20px;
+        font-size: 19px;
         font-weight: 700;
         color: #2d6a4f;
         display: block;
     }
     .figure-card .label {
-        font-size: 12px;
+        font-size: 11px;
         color: #6c757d;
         text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .swot-box {
+        background: #ffffff;
+        border: 1px dashed #adb5bd;
+        padding: 12px 15px;
+        font-size: 13.5px;
+        border-radius: 4px;
+        margin-top: 15px;
+    }
+    .quote-box {
+        font-style: italic;
+        background: #e8f4f8;
+        border-left: 4px solid #17a2b8;
+        padding: 10px 15px;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #2b580c;
+    }
+
+    /* Indice di Navigazione Rapida (TOC) */
+    .toc-box {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        background: #ffffff;
+        padding: 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 6px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .toc-box a {
+        font-size: 12px;
+        background: #f1f3f5;
+        color: #495057;
+        padding: 6px 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.2s;
+    }
+    .toc-box a:hover {
+        background: #e9ecef;
+        color: #004085;
+    }
+
+    /* Badge Territoriali (Città) */
+    .city-tag {
+        display: inline-block;
+        background-color: #004085;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 7px;
+        border-radius: 3px;
+        margin-right: 6px;
+        vertical-align: middle;
+        letter-spacing: 0.5px;
     }
 
     h2 {
@@ -91,6 +158,14 @@
         margin-bottom: 18px;
         text-align: justify;
     }
+    ul {
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 8px;
+        font-size: 14.5px;
+    }
     a {
         color: #0056b3;
         text-decoration: none;
@@ -103,6 +178,9 @@
         .rassegna-container {
             max-width: 100%;
             padding: 0;
+        }
+        .toc-box {
+            display: none;
         }
         h2 {
             background-color: #f1f1f1 !important;
@@ -118,50 +196,70 @@
         <small style="color: #6c757d; font-size: 14px;">Emilia-Romagna • Edizione del 2026-10-05</small>
     </div>
     <div class="executive-box">
+    <div class="trend-bar">
+        <p>🟢 Dinamismo economico e culturale | 🔴 Tensione sulla sanità e sicurezza sociale</p>
+    </div>
     <h3>I 3 Fatti Chiave di Oggi</h3>
     <ul>
-        <li><strong>Crisi nell'Accesso Sanitario e Rilancio dell'Istruzione:</strong> Le liste d'attesa per esami diagnostici cruciali, come l'eco-colordoppler, si estendono fino al 2027, evidenziando una profonda criticità nel sistema sanitario pubblico regionale e nazionale. Parallelamente, il dibattito sull'importanza dell'istruzione come pilastro della civiltà e le iniziative di solidarietà per il sostegno scolastico delle famiglie in difficoltà sottolineano l'urgenza di investire nel welfare educativo. <em>Implicazione: La Regione è chiamata a una riflessione strategica e a interventi mirati per garantire il diritto alla salute e all'istruzione, pilastri fondamentali per la coesione sociale e lo sviluppo del capitale umano.</em></li>
-        <li><strong>Dinamismo Economico e Sfide Regolatorie nel Turismo:</strong> Il panorama economico emiliano-romagnolo è animato da significative operazioni finanziarie e industriali, come l'incremento della quota Webuild in Trevi e le manovre su MPS, che riflettono un fermento nel settore. Il comparto turistico e culturale, con eventi di successo come il MEI di Faenza e le proposte di Bologna, si conferma un motore vitale. Tuttavia, la gestione della sicurezza negli eventi pubblici e il contrasto all'abusivismo nel trasporto turistico emergono come nodi cruciali per la sostenibilità e la reputazione del sistema. <em>Implicazione: È essenziale bilanciare la promozione economica con un rigoroso quadro normativo e di controllo per tutelare la sicurezza pubblica, la legalità e la qualità dell'offerta turistica.</em></li>
-        <li><strong>Allarme Sicurezza e Richiesta di Coesione Sociale:</strong> Le comunità locali, da Lido Adriano alla Val Bidente, manifestano una crescente preoccupazione per la sicurezza pubblica, con episodi di violenza che riaccendono il dibattito sul disagio giovanile e sulla necessità di risposte coordinate. Le assemblee cittadine e le denunce evidenziano un bisogno impellente di maggiore presenza istituzionale e di strategie integrate per la prevenzione e il recupero sociale. <em>Implicazione: Le amministrazioni locali e regionali devono rafforzare il dialogo con i cittadini e implementare politiche di sicurezza urbana che vadano oltre la repressione, investendo in educazione, inclusione e presidi territoriali.</em></li>
+        <li><strong>Sanità in crisi e liste d'attesa prolungate:</strong> La segnalazione di prenotazioni per eco-colordoppler esaurite fino al 2027, con possibilità di accesso rapido solo tramite privato, evidenzia una profonda criticità nel sistema sanitario pubblico regionale.
+            <br><em>Implicazione di policy:</em> Urgente necessità di rivedere le politiche di finanziamento e gestione delle prestazioni diagnostiche, con un appello al governo centrale per un incremento delle risorse destinate alla sanità pubblica, al fine di garantire il diritto universale alla salute e ridurre le disuguaglianze di accesso.</li>
+        <li><strong>Percezione di insicurezza e disagio sociale:</strong> Due episodi distinti, un'aggressione a un'anziana a <span class="city-tag">RAVENNA</span> e un'assemblea cittadina per la sicurezza in Val Bidente (<span class="city-tag">FORLÌ-CESENA</span>), segnalano una crescente preoccupazione per la sicurezza urbana e il disagio giovanile.
+            <br><em>Implicazione di policy:</em> Richiesta di un approccio integrato che rafforzi i controlli territoriali, investa in programmi di prevenzione del disagio giovanile e promuova la coesione comunitaria attraverso la collaborazione tra istituzioni, famiglie e associazioni.</li>
+        <li><strong>Dinamismo economico e culturale regionale:</strong> L'incremento della partecipazione di Webuild in Trevi nel settore delle costruzioni e il successo di eventi culturali come il MEI a <span class="city-tag">FAENZA</span> e l'apertura del nuovo auditorium a <span class="city-tag">FORLÌ</span>, sottolineano la vitalità e l'attrattività economica e culturale dell'Emilia-Romagna.
+            <br><em>Implicazione di policy:</em> Continuare a sostenere gli investimenti strategici in settori chiave e le iniziative culturali come motori di sviluppo economico, occupazionale e di promozione del brand territoriale, integrando queste azioni in una visione di crescita sostenibile.</li>
     </ul>
     <div class="key-figures-grid">
-        <div class="figure-card">
-            <h4>Quota Webuild in Trevi</h4>
-            <p><strong>18.91%</strong></p>
-            <span>(+13.916% oggi)</span>
-        </div>
-        <div class="figure-card">
-            <h4>Liste d'Attesa Eco-Colordoppler</h4>
-            <p><strong>2027</strong></p>
-            <span>(Prenotazioni chiuse)</span>
-        </div>
-        <div class="figure-card">
-            <h4>Materiale Scolastico Raccolto</h4>
-            <p><strong>120 kg</strong></p>
-            <span>('Zaino Sospeso' Forlì)</span>
-        </div>
-        <div class="figure-card">
-            <h4>Capienza Eventi Pubblici</h4>
-            <p><strong>900 vs 440</strong></p>
-            <span>(Marina Bay, persone vs autorizzate)</span>
-        </div>
+        <div class="figure-card"><span>18.91%</span><br>Webuild in Trevi</div>
+        <div class="figure-card"><span>47.1M€</span><br>Investimento Webuild</div>
+        <div class="figure-card"><span>900 vs 440</span><br>Capienza Marina Bay</div>
+        <div class="figure-card"><span>6.2% PIL</span><br>Spesa Sanità Italia</div>
+    </div>
+    <div class="swot-box">
+        ⚠️ <strong>Rischio di Sistema:</strong> L'aggravarsi delle liste d'attesa sanitarie e la crescente percezione di insicurezza sociale minano la fiducia dei cittadini nelle istituzioni e nel sistema di welfare, con potenziali ripercussioni sulla coesione sociale e sulla stabilità politica locale.
+        <br>💡 <strong>Opportunità:</strong> Il dinamismo del settore culturale e l'attrattività degli eventi regionali, uniti agli investimenti strategici in comparti chiave come le costruzioni, possono fungere da volano per l'economia e l'immagine dell'Emilia-Romagna, se adeguatamente supportati e integrati in una visione di sviluppo sostenibile.
+    </div>
+    <div class="quote-box">
+        <strong>Frase del Giorno:</strong> "Il problema di questa nazione è l'istruzione. Risolverlo vuol dire superare una marea di problemi a carambola perché vuol dire avere persone con parole, con punti di vista, con senso critico..."
+        <br><em>Marcello Fois, scrittore, vincitore Premio Campiello 2026.</em>
     </div>
 </div>
 
-<h2>1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
-<p>La giornata odierna in Emilia-Romagna evidenzia una serie di dinamiche che toccano direttamente la governabilità locale e la gestione delle infrastrutture sociali e culturali, ponendo l'accento sulla necessità di un equilibrio tra promozione degli eventi e garanzia della sicurezza pubblica. Un caso emblematico emerge da Ravenna, dove il processo a carico dei gestori del Marina Bay di Marina di Ravenna riaccende i riflettori sulla corretta applicazione delle normative relative alla capienza dei luoghi di pubblico spettacolo. L'accusa di aver ospitato circa 900 persone in un'area autorizzata per un massimo di 440, durante un concerto di Capo Plaza nel luglio 2023, solleva interrogativi significativi sulla supervisione degli eventi e sulle responsabilità degli organizzatori. La difesa, pur contestando la metodologia di conteggio, sottolinea la complessità della gestione dei flussi di pubblico, con un sistema di biglietteria che permetteva entrate e uscite multiple. Questo episodio, lungi dall'essere un fatto isolato, impone una riflessione più ampia sulle procedure di autorizzazione e controllo, cruciali per la tutela dell'incolumità pubblica in una regione che fa del turismo e degli eventi un volano economico. La capacità di prevenire situazioni di sovraffollamento e di garantire la sicurezza è un indicatore chiave dell'efficacia della governabilità locale e della pianificazione infrastrutturale per il tempo libero. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/marina-bay-processo-al-concerto-d7061707" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
-<p>In un contesto più ampio di dibattito politico e culturale, Bologna ha ospitato il "Festival del Presente", un'iniziativa di Pandora Rivista che ha visto la partecipazione di figure di spicco come Giuliano Amato e Augusto Barbera. L'incontro, incentrato sul tema "Inizi. Origini, generazioni, metamorfosi" e sulla riflessione riguardo "Le stagioni della Repubblica", offre uno spaccato del fermento intellettuale e politico che anima la regione. La discussione sul futuro della democrazia italiana, ospitata in un contesto culturale di rilievo come l'Oratorio San Filippo Neri, evidenzia il ruolo dell'Emilia-Romagna come piattaforma per il confronto su temi di rilevanza nazionale. Questi eventi non solo arricchiscono l'offerta culturale del territorio, ma fungono anche da infrastrutture immateriali per la circolazione delle idee e per il rafforzamento del senso critico, elementi fondamentali per una cittadinanza attiva e consapevole. La presenza di amministratori e figure istituzionali a tali appuntamenti conferma l'attenzione della politica regionale verso il dialogo e la promozione di una cultura civica partecipata. <a href="https://www.ilrestodelcarlino.it/bologna/cosa-fare/eventi-5-11-ottobre-2026-a0e67c95" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<div class="toc-box">
+    <a href="#sec1">🏛️ Politica & Infrastrutture</a>
+    <a href="#sec2">📈 Economia & Turismo</a>
+    <a href="#sec3">🏥 Sanità & Sociale</a>
+    <a href="#sec4">🌿 Ambiente & Risorse</a>
+    <a href="#sec5">🗓️ Agenda & Prossimi Passaggi</a>
+</div>
 
-<h2>2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
-<p>Il panorama economico dell'Emilia-Romagna si presenta oggi con un duplice volto: da un lato, un dinamismo finanziario e industriale che vede protagonisti attori di peso nazionale; dall'altro, un settore turistico e culturale in piena effervescenza, seppur con alcune ombre legate alla regolamentazione. Sul fronte industriale, l'operazione che ha visto Webuild aumentare la propria partecipazione in Trevi al 18,91% del capitale, con un investimento di oltre 47 milioni di euro, è un segnale di consolidamento e fiducia nel settore delle costruzioni e delle ingegnerie specialistiche. Questo movimento strategico di un colosso come Webuild verso un'azienda storica del territorio come Trevi, con sede a Cesena, ha implicazioni significative per il distretto e per l'occupazione, oltre a riflettere un trend di riorganizzazione e rafforzamento delle filiere produttive italiane. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/05/webuild-acquista-azioni-trevi-e-sale-al-1891-del-capitale_d2f1d177-8631-4311-bde3-9126dc66bb82.html" target="_blank">(Fonte: ANSA)</a>. A livello finanziario più ampio, la notizia dell'orientamento di Delfin ad appoggiare l'offerta di Intesa Sanpaolo per Monte dei Paschi di Siena, con un aumento della componente cash dell'Opas, sebbene non direttamente legata a un'azienda emiliano-romagnola, è un evento di portata sistemica che influenza la stabilità e le prospettive del settore bancario italiano, con ricadute indirette ma significative sull'accesso al credito e sugli investimenti per le imprese della regione. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/delfin-verso-lappoggio-allofferta-di-intesa-sanpaolo-per-mps_12b00ba3-b58f-46cc-9fbd-2114ee1f75a0.html" target="_blank">(Fonte: ANSA)</a>.</p>
-<p>Il settore del turismo e della cultura si conferma un pilastro dell'economia regionale. Faenza ha celebrato il successo record del "MEI 30 e Lode", l'edizione trentennale della kermesse che ha letteralmente invaso il centro storico con migliaia di giovani, registrando un'affluenza senza precedenti. L'evento, che ha visto il tutto esaurito per convegni, fiere e concerti, si conferma un "formidabile motore per la cultura, la formazione, la socialità e il turismo del territorio romagnolo". Il confronto imminente con l'Amministrazione comunale di Faenza per definire le strategie future è cruciale per consolidare il MEI come un pilastro dell'attrattività cittadina, al pari di eventi storici come Argillà e il Palio del Niballo. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/mei-30-e-lode-da-105fc4c7" target="_blank">(Fonte: Il Resto del Carlino)</a>. Anche Forlì ha visto un "successo" per l'apertura della stagione autunnale dell'auditorium realizzato nell'ex cinema Odeon, con il concerto del pianista Dardust che ha registrato il quasi tutto esaurito, confermando l'attenzione del pubblico per i nuovi contenitori culturali e la validità degli investimenti nel settore. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/musica-allauditorium-successo-per-dardust-dbcdf406" target="_blank">(Fonte: Il Resto del Carlino)</a>. Bologna, dal canto suo, si prepara a una settimana ricca di eventi culturali, dal "Festival del Presente" con figure istituzionali, al festival di musica elettronica ROBOT, fino all'esposizione della collezione Carmen Thyssen a Palazzo Albergati, consolidando la sua immagine di città vivace e attrattiva per un turismo di qualità. <a href="https://www.ilrestodelcarlino.it/bologna/cosa-fare/eventi-5-11-ottobre-2026-a0e67c95" target="_blank">(Fonte: Il Resto del Carlino)</a>. Tuttavia, l'efficacia del "Brand Turismo" regionale è minacciata da fenomeni di abusivismo, come evidenziato a Ravenna con il fermo di un NCC abusivo che trasportava turiste americane. Questo ennesimo episodio, con un operatore sprovvisto di licenza e con un veicolo non revisionato, sottolinea la necessità di intensificare i controlli per tutelare i consumatori e gli operatori legali, garantendo un servizio di trasporto turistico sicuro e conforme alle normative. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/fermato-un-altro-ncc-abusivo.-trasporta-turiste-americane-con-lauto-priva-di-revisione_2011732e.html" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<h2 id="sec1">1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
+<p><span class="city-tag">RAVENNA</span> Il dibattito sulla sicurezza e la gestione degli eventi pubblici si riaccende a seguito del processo contro i gestori del Marina Bay di Marina di Ravenna, accusati di aver superato la capienza autorizzata durante un concerto. Secondo la Polizia Locale, erano presenti circa 900 persone in un'area omologata per 440, con 1.115 biglietti venduti. La difesa sostiene che il sistema di scansione dei biglietti gestiva ingressi e uscite, permettendo un numero maggiore di vendite senza superare la capienza istantanea. Questo episodio solleva interrogativi sulla vigilanza e sull'efficacia delle normative per la sicurezza negli eventi di massa, un tema cruciale per la reputazione turistica e la governabilità locale. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/marina-bay-processo-al-concerto-d7061707" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p><span class="city-tag">RAVENNA</span> Sempre sul fronte della legalità e della regolamentazione dei servizi, la Polizia Locale di Ravenna ha intensificato i controlli contro il fenomeno degli Ncc abusivi al Terminal crociere di Porto Corsini. Un 38enne di origine marocchina è stato fermato mentre trasportava turiste americane con un'auto priva di revisione e senza le necessarie licenze, per un compenso di circa 100 euro. L'uomo ha sostenuto che le donne fossero sue amiche, ma la versione non ha evitato la sanzione e il sequestro del veicolo. Questo ennesimo episodio, che segue altri casi di operatori stranieri e sammarinesi non conformi alle normative, evidenzia la necessità di un presidio costante per tutelare sia i consumatori che gli operatori regolari nel settore del trasporto turistico, fondamentale per l'economia locale. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/fermato-un-altro-ncc-abusivo-2011732e" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
 
-<h2>3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
-<p>La giornata odierna mette in luce sfide significative e lodevoli iniziative nel campo della sanità, dell'istruzione e delle politiche sociali in Emilia-Romagna, evidenziando la necessità di risposte coordinate e strutturali. Un allarme preoccupante giunge da Forlì, dove Forza Italia ha denunciato liste d'attesa per esami diagnostici essenziali, come l'eco-colordoppler dei tronchi sovraortici, che si estendono fino al 2027, con le prenotazioni di fatto chiuse. Questa situazione costringe i cittadini con disponibilità economica a rivolgersi al privato, pagando tra gli 80 e i 100 euro per un esame immediato, mentre chi non può permetterselo rischia di rinviare controlli necessari. Il dibattito politico che ne è scaturito, con le accuse di Alleanza Verdi e Sinistra al Governo Meloni per i tagli alla spesa sanitaria (scesa al 6,2% del PIL contro una media europea del 7,1%), sottolinea una crisi sistemica che mina il diritto universale alla salute e favorisce la sanità privata a discapito di quella pubblica. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/eco-colordoppler-tutto-esaurito-nel-2027-d0a5fb84" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
-<p>Sul fronte dell'istruzione, lo scrittore Marcello Fois, vincitore del Premio Campiello 2026, ha ribadito con forza che "il problema di questa nazione è l'istruzione". Le sue parole, che sottolineano l'importanza di avere persone con senso critico e un vocabolario ricco per non essere "fregati dalle parole altrui", risuonano come un monito sull'urgenza di valorizzare la lettura e l'apprendimento in un'epoca in cui l'istruzione è percepita come secondaria. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/marcello-fois-il-problema-dellitalia-e-listruzione_9739c363-d56f-4bdf-b283-33b92865f61b.html" target="_blank">(Fonte: ANSA)</a>. In questo contesto, l'iniziativa "Zaino sospeso" del Lions Club Forlì Host, che ha raccolto 120 chili di materiale scolastico da distribuire tramite la Caritas alle famiglie in difficoltà, rappresenta un gesto concreto di solidarietà per contrastare la povertà educativa e garantire a tutti gli alunni un percorso scolastico dignitoso, di fronte a spese che possono superare i 670 euro per studente. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/zaino-sospeso-120-chili-di-a006bd12" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
-<p>La sicurezza e la coesione sociale rimangono temi caldi sul territorio. A Lido Adriano, l'aggressione a un'anziana di 80 anni, con frattura di un braccio e un colpo alla testa, riaccende i riflettori sulla sicurezza nella località e sulla presenza di situazioni di degrado. La denuncia della figlia, che indica un aggressore già noto nella zona, evidenzia la necessità di una maggiore presenza e di interventi mirati da parte delle forze dell'ordine e delle istituzioni per tutelare i cittadini più vulnerabili. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/aggressione-a-unanziana-il-racconto-choc-della-figlia-j6ynq7wm" target="_blank">(Fonte: Il Resto del Carlino)</a>. La preoccupazione per la violenza e il disagio giovanile ha mobilitato anche la Val Bidente, dove un'assemblea pubblica a Santa Sofia ha visto la partecipazione di 500 persone per dire "no alla violenza e al clima di paura". L'iniziativa, promossa da un gruppo di donne, ha riunito cittadini di diverse origini e amministratori locali, chiedendo più controlli e interventi preventivi, con un focus sull'educazione e sul ruolo degli adulti e delle associazioni. La sindaca di Santa Sofia ha sottolineato l'importanza di "intervenire prima partendo dal ruolo dell’educazione, dal ruolo degli adulti, delle famiglie, delle associazioni del terzo settore e quelle sportive che devono tutti insieme prevenire il disagio giovanile". <a href="https://www.ilrestodelcarlino.it/forli/cronaca/assemblea-per-la-sicurezza-in-fd84ef14" target="_blank">(Fonte: Il Resto del Carlino)</a>. Infine, un esempio positivo di impegno comunitario per la salute pubblica arriva da Portomaggiore, dove il Lions Club ha donato un defibrillatore all'ASD Portomaggiore, una società sportiva giovanile con oltre 120 calciatori. Questo gesto concreto, che sottolinea l'importanza di avere strumenti salvavita negli spazi sportivi, è un esempio virtuoso di collaborazione tra associazioni e istituzioni per la sicurezza e la promozione della salute sul territorio. <a href="https://www.ilrestodelcarlino.it/ferrara/cronaca/donato-un-defibrillatore-allasd-portomaggiore-b4df4c5f" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<h2 id="sec2">2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
+<p>Il settore delle costruzioni e dell'ingegneria infrastrutturale vede un'importante operazione finanziaria: Webuild ha annunciato di aver raggiunto il 18,91% del capitale di Trevi, azienda con radici nel distretto di <span class="city-tag">CESENA</span>, attraverso l'acquisto di ulteriori 9.125.702 azioni ordinarie. L'operazione, del valore complessivo di 47.134.250,83 euro, è stata effettuata a un prezzo unitario di 5,165 euro per azione, superiore al corrispettivo dell'Opa iniziale, e questo prezzo sarà esteso a tutti gli aderenti all'offerta. Il regolamento è previsto per il 7 ottobre 2026. Questo consolidamento della partecipazione di Webuild in Trevi segnala un rafforzamento strategico nel settore, con potenziali ricadute positive per il know-how e l'occupazione nel territorio emiliano-romagnolo, in un momento di rilancio degli investimenti in infrastrutture. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/05/webuild-acquista-azioni-trevi-e-sale-al-1891-del-capitale_d2f1d177-8631-4311-bde3-9126dc66bb82.html" target="_blank">(Fonte: ANSA)</a>.</p>
+<p>Sul fronte finanziario nazionale, ma con possibili implicazioni sistemiche, la holding Delfin della famiglia Del Vecchio si starebbe orientando ad appoggiare l'offerta pubblica di acquisto e scambio di Intesa Sanpaolo su Monte dei Paschi di Siena. La decisione, accelerata in vista dell'assemblea di Mps del 29 ottobre, segue l'aumento di 25 centesimi della componente cash dell'Opas da parte di Intesa, condizionato al rifiuto del piano difensivo di Luigi Lovaglio. Questa mossa potrebbe segnare un passaggio chiave nel riassetto del sistema bancario italiano, con effetti a cascata anche sul tessuto economico regionale. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/delfin-verso-lappoggio-allofferta-di-intesa-sanpaolo-per-mps_12b00ba3-b58f-46cc-9fbd-2114ee1f75a0.html" target="_blank">(Fonte: ANSA)</a>.</p>
+<p>Il settore del turismo e degli eventi culturali continua a mostrare grande vitalità. <span class="city-tag">FAENZA</span> ha celebrato il successo record del "MEI 30 e Lode", l'edizione trentennale della kermesse che ha richiamato migliaia di giovani nel centro storico. L'evento ha registrato il tutto esaurito per convegni, fiere del disco e momenti di alta formazione, confermando il suo ruolo strategico come motore culturale, formativo, sociale e turistico per la Romagna. Lo staff organizzativo, guidato da Giordano Sangiorgi, si prepara ora a un confronto decisivo con l'Amministrazione comunale di Faenza per definire le strategie future e assicurare il sostegno a questo pilastro dell'attrattività cittadina. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/mei-30-e-lode-da-105fc4c7" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p><span class="city-tag">FORLÌ-CESENA</span> Anche <span class="city-tag">FORLÌ</span> ha inaugurato con successo la prima stagione autunnale del nuovo auditorium realizzato nell'ex cinema Odeon. Il concerto del pianista e compositore Dardust ha registrato il quasi tutto esaurito, confermando l'attenzione del pubblico forlivese per il nuovo contenitore culturale. Luca Panzavolta, AD di Cia-Conad, sponsor dell'auditorium, ha espresso soddisfazione per la risposta del pubblico e la qualità acustica, sottolineando l'importanza di investire nella cultura e nel territorio. Questi eventi rafforzano il brand turistico e culturale della regione, attirando visitatori e generando indotto economico. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/musica-allauditorium-successo-per-dardust-dbcdf406" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p><span class="city-tag">BOLOGNA</span> La città si prepara a una settimana ricca di eventi culturali, sportivi e di approfondimento, che contribuiranno ad animare il tessuto urbano e ad attrarre visitatori. Tra il 5 e l'11 ottobre, il Festival del Presente all'Oratorio San Filippo Neri ospiterà dialoghi sulla democrazia con Giuliano Amato e Augusto Barbera. Martedì 6 ottobre, la giornalista giapponese Ito Shiori, volto del #MeToo giapponese, sarà a Palazzo Marchesini e al Modernissimo per incontri e proiezioni. La settimana vedrà anche spettacoli di danza con Roberto Bolle, il festival di musica elettronica ROBOT e l'apertura a Palazzo Albergati della collezione Carmen Thyssen. Questi appuntamenti sottolineano il ruolo di <span class="city-tag">BOLOGNA</span> come hub culturale e polo di attrazione turistica. <a href="https://www.ilrestodelcarlino.it/bologna/cosa-fare/eventi-5-11-ottobre-2026-a0e67c95" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p><span class="city-tag">BOLOGNA</span> Infine, il capoluogo emiliano si prepara ad ospitare un importante evento sportivo internazionale: la quarta sfida di Nations League tra Italia e Turchia. Il commissario tecnico Roberto Mancini ha sottolineato l'importanza di "chiudere in bellezza" la sosta, invitando a non sottovalutare l'impegno sul prato del Dall'Ara. Eventi di questa portata contribuiscono non solo all'immagine sportiva della città, ma generano anche un significativo indotto economico per il settore dell'ospitalità e del commercio locale. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/nations-league-mancini-domani-dobbiamo-chiudere-in-bellezza_d5fe8c68-e6dd-4013-b8273-206b66b3b0a9.html" target="_blank">(Fonte: ANSA)</a>.</p>
 
-<h2>4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE</h2>
-<p>La giornata odierna non ha registrato particolari allerte meteo o eventi di protezione civile di vasta portata in Emilia-Romagna, un dato che, in assenza di notizie specifiche, può essere interpretato positivamente come un periodo di relativa stabilità climatica per la regione. Tuttavia, il tema della pianificazione e della gestione degli spazi pubblici, con le sue implicazioni per la sicurezza e la prevenzione, rimane centrale. Il processo in corso a Ravenna, che vede coinvolti i gestori del Marina Bay per presunto superamento della capienza autorizzata durante un concerto, offre uno spunto significativo sulla necessità di una pianificazione rigorosa e di controlli efficaci nella gestione degli eventi e delle infrastrutture pubbliche. La discordanza tra le 440 persone autorizzate e le circa 900 stimate presenti all'evento solleva questioni fondamentali sulla capacità delle autorità locali di far rispettare le normative di sicurezza e sulla responsabilità degli organizzatori nel garantire l'incolumità dei partecipanti. Questo caso evidenzia come la "pianificazione" non si limiti alla mera urbanistica o alla gestione delle emergenze naturali, ma si estenda anche alla regolamentazione e al controllo degli eventi che attraggono grandi folle, un aspetto cruciale per la protezione civile in senso lato, intesa come prevenzione dei rischi per la popolazione. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/marina-bay-processo-al-concerto-d7061707" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
-<p>La gestione di eventi di massa e l'utilizzo degli spazi pubblici richiedono una pianificazione integrata che tenga conto non solo degli aspetti logistici e di ordine pubblico, ma anche delle potenziali vulnerabilità ambientali e strutturali. Sebbene non vi siano state notizie dirette su nuove politiche ambientali o grandi progetti infrastrutturali legati alla transizione ecologica, la costante attenzione della regione verso la sostenibilità e la resilienza del territorio è un dato acquisito. La capacità di prevenire incidenti in contesti affollati, come quello del Marina Bay, si inserisce in un quadro più ampio di pianificazione territoriale che mira a garantire la sicurezza dei cittadini in ogni circostanza, sia essa legata a fenomeni naturali che a eventi antropici. La lezione che emerge da questi episodi è la necessità di un monitoraggio continuo e di un'applicazione intransigente delle norme, per evitare che opportunità economiche e di svago si trasformino in rischi per la collettività. La protezione civile, in questo senso, si configura non solo come intervento post-evento, ma soprattutto come un'azione preventiva e di pianificazione attenta, che coinvolge tutti i livelli di governo e la collaborazione con gli operatori privati.</p>
+<h2 id="sec3">3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
+<p><span class="city-tag">FORLÌ-CESENA</span> La sanità pubblica in Emilia-Romagna affronta una sfida critica, con Forza Italia che denuncia l'impossibilità di prenotare un eco-colordoppler dei tronchi sovraortici fino al 2027, mentre nel privato l'esame è disponibile in una settimana a un costo di 80-100 euro. La deputata Rosaria Tassinari ha chiesto verifiche e percorsi concreti per i cittadini, sottolineando che "il diritto alla salute non può dipendere dal reddito". L'Alleanza Verdi e Sinistra ha replicato, esprimendo sconcerto e ricordando che il governo Meloni, di cui Forza Italia fa parte, ha ridotto la spesa sanitaria rapportata al PIL al 6,2%, contro una media europea del 7,1%, attribuendo a questi tagli l'allungamento delle liste d'attesa e il favoreggiamento del ricorso al privato. Questa situazione evidenzia una tensione crescente tra la domanda di servizi sanitari e la capacità di risposta del sistema pubblico, con gravi implicazioni sociali. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/eco-colordoppler-tutto-esaurito-nel-2027-d0a5fb84" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p><span class="city-tag">RAVENNA</span> Il tema della sicurezza urbana e del disagio sociale riemerge con forza a Lido Adriano, dove una donna di 80 anni sarebbe stata aggredita in pieno giorno, riportando gravi ferite tra cui la frattura di un braccio. La figlia, che ha denunciato l'episodio sui social, ha riferito che l'aggressore sarebbe una persona già nota nella località per precedenti segnalazioni legate a spaccio e degrado. Questo evento riaccende i riflettori sulla necessità di rafforzare la sicurezza e contrastare il degrado in aree sensibili, per garantire la tranquillità dei residenti e dei turisti. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/a-fuoco-un-deposito-attrezzi-in-abitazione-nel-bolognese-due-feriti_0305d12a-b96d-4db2-9e81-4829d89a9de7.html" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p><span class="city-tag">FORLÌ-CESENA</span> La percezione di insicurezza ha mobilitato la comunità della Val Bidente, dove 500 persone si sono riunite in piazza a Santa Sofia per un'assemblea sulla sicurezza. L'iniziativa, promossa da un gruppo di donne, è nata dopo recenti pestaggi subiti da un 30enne e un 17enne. L'evento ha visto la partecipazione di cittadini di diverse origini, amministratori locali e il parroco, a dimostrazione che il problema attraversa l'intera valle. Debora Piaschiri, a nome degli organizzatori, ha chiesto più controlli e ha ribadito che "alla violenza non si risponde con la violenza ma con atti concreti". La sindaca Ilaria Marianini ha sottolineato l'importanza di intervenire prima, partendo dal ruolo dell'educazione, delle famiglie e delle associazioni per prevenire il disagio giovanile. Questo episodio evidenzia la necessità di un approccio olistico alla sicurezza, che integri repressione, prevenzione e coesione sociale. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/assemblea-per-la-sicurezza-in-fd84ef14" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p><span class="city-tag">FORLÌ-CESENA</span> Sul fronte dell'istruzione e del supporto sociale, la seconda edizione di "Zaino sospeso" a <span class="city-tag">FORLÌ</span> ha raccolto 120 chili di materiale scolastico, destinato alle famiglie in difficoltà tramite la Caritas. L'iniziativa del Lions Club Forlì Host, supportata da diverse attività commerciali, risponde a un bisogno crescente, considerando che la spesa per il materiale scolastico può superare i 670 euro per studente, arrivando a quasi 1.500 euro per il primo anno delle superiori. Questa solidarietà è fondamentale per garantire il diritto allo studio e contrastare le differenze dovute alle capacità economiche delle famiglie. <a href="https://www.ilrestodelcarlino.it/forli/cronaca/zaino-sospeso-120-chili-di-a006bd12" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+<p>Il dibattito sull'importanza dell'istruzione come pilastro della società è stato riacceso dalle parole dello scrittore Marcello Fois, vincitore del Premio Campiello 2026 con "L'immensa distrazione". Fois ha dichiarato che "il problema di questa nazione è l'istruzione", sottolineando come risolverlo significhi superare una miriade di problemi a cascata, formando individui con senso critico e capacità di discernimento. Ha avvertito sui rischi di considerare l'istruzione secondaria, che può portare a una società meno civile e più manipolabile. Le sue riflessioni, sebbene di portata nazionale, risuonano profondamente nel contesto regionale, dove le politiche educative e di integrazione sono costantemente al centro dell'attenzione. <a href="https://www.ansa.it/emiliaromagna/notizie/2026/10/04/marcello-fois-il-problema-dellitalia-e-listruzione_9739c363-d56f-4bdf-b283-33b92865f61b.html" target="_blank">(Fonte: ANSA)</a>.</p>
+
+<h2 id="sec4">4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE TERRITORIALE</h2>
+<p><span class="city-tag">RAVENNA</span> Un interessante spunto di riflessione sulla sostenibilità e la pianificazione territoriale emerge dalla rilettura della figura di Giuseppe Garibaldi attraverso i suoi "Diari agricoli di Caprera". L'incontro tenutosi al Capanno di Garibaldi ha svelato un Garibaldi innovatore, imprenditore e "ambientalista ante litteram", con una straordinaria sensibilità per la natura e gli animali. Questa prospettiva, presentata da Virman Cusenza, ex direttore del Mattino e del Messaggero, offre un modello storico di gestione del territorio e delle risorse che, sebbene contestualizzato nel XIX secolo, può ispirare le attuali politiche di transizione ecologica e sostenibilità, sottolineando l'importanza di un legame profondo tra l'uomo e l'ambiente. <a href="https://www.ilrestodelcarlino.it/ravenna/cronaca/ambientalista-e-comunicatore-un-garibaldi-e794a89e" target="_blank">(Fonte: Il Resto del Carlino)</a>.</p>
+
+<h2 id="sec5">5. AGENDA & PROSSIMI PASSAGGI ISTITUZIONALI</h2>
+<ul>
+    <li><strong>7 ottobre 2026:</strong> Previsto il regolamento dell'operazione di acquisto azioni Trevi da parte di Webuild.</li>
+    <li><strong>5-11 ottobre 2026:</strong> Settimana ricca di eventi culturali a <span class="city-tag">BOLOGNA</span>, tra cui il Festival del Presente (fino al 18 ottobre), spettacoli di danza con Roberto Bolle, il festival di musica elettronica ROBOT e l'apertura della collezione Carmen Thyssen a Palazzo Albergati.</li>
+    <li><strong>6 ottobre 2026:</strong> Incontri e proiezioni con la giornalista giapponese Ito Shiori a Palazzo Marchesini e al Modernissimo di <span class="city-tag">BOLOGNA</span>, nell'ambito del festival NipPop.</li>
+    <li><strong>Prossimi giorni:</strong> Incontro decisivo tra lo staff organizzativo del MEI e l'Amministrazione comunale di <span class="city-tag">FAENZA</span> per definire le strategie future e il sostegno al festival.</li>
+    <li><strong>29 ottobre 2026:</strong> Assemblea di Monte dei Paschi di Siena, cruciale per l'offerta di Intesa Sanpaolo e l'orientamento di Delfin.</li>
+</ul>
 </div>
