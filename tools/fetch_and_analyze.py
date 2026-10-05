@@ -58,8 +58,25 @@ HEADERS = {
 }
 
 # ---------------------------------------------------------------------------
-# 2. SCRAPING DEI FEED RSS & FULL-TEXT EXTRACTION
+# 2. SCRAPING DEI FEED RSS, DEDUPLICAZIONE & FULL-TEXT EXTRACTION
 # ---------------------------------------------------------------------------
+def deduplicate_articles(articles):
+    """Rimuove articoli con titoli quasi identici per evitare notizie doppie."""
+    unique_articles = []
+    seen_titles = set()
+    
+    for art in articles:
+        # Normalizza il titolo per il confronto (minuscolo, senza punteggiatura)
+        norm_title = re.sub(r'\W+', ' ', art['title'].lower()).strip()
+        words = norm_title.split()[:6] # Confronta le prime 6 parole
+        short_key = " ".join(words)
+        
+        if short_key not in seen_titles and len(short_key) > 10:
+            seen_titles.add(short_key)
+            unique_articles.append(art)
+            
+    return unique_articles
+
 def fetch_rss_articles():
     raw_articles = []
     print(f"[{TODAY}] Avvio estrazione feed RSS da {len(RSS_FEEDS)} fonti...")
@@ -73,7 +90,7 @@ def fetch_rss_articles():
             root = ET.fromstring(response.content)
             items = root.findall('.//item') or root.findall('.//{http://www.w3.org/2005/Atom}entry')
             
-            for item in items[:6]:  # Selezioniamo i primi 6 da ciascun feed
+            for item in items[:6]:
                 title = item.findtext('title') or item.findtext('{http://www.w3.org/2005/Atom}title') or ""
                 link = item.findtext('link') or item.findtext('{http://www.w3.org/2005/Atom}href') or ""
                 description = item.findtext('description') or item.findtext('{http://www.w3.org/2005/Atom}summary') or ""
@@ -89,10 +106,12 @@ def fetch_rss_articles():
         except Exception:
             continue
 
-    print(f"Estratti {len(raw_articles)} link. Avvio estrazione testo integrale (Full-Text Extraction)...")
+    # Applica deduplicazione sui feed grezzi
+    unique_raw = deduplicate_articles(raw_articles)
+    print(f"Estratti {len(raw_articles)} link (ridotti a {len(unique_raw)} unici). Avvio Full-Text Extraction...")
     
     full_articles = []
-    for idx, art in enumerate(raw_articles[:40]):  # Analizziamo fino a 40 articoli top
+    for idx, art in enumerate(unique_raw[:35]):  # Analizziamo i 35 articoli top più rilevanti
         try:
             downloaded = trafilatura.fetch_url(art['link'])
             text = trafilatura.extract(downloaded, include_comments=False, include_tables=False)
@@ -102,9 +121,9 @@ def fetch_rss_articles():
             full_articles.append({
                 'title': art['title'],
                 'link': art['link'],
-                'content': final_content[:2500]
+                'content': final_content[:2200]
             })
-            print(f"[{idx+1}/{min(40, len(raw_articles))}] Estratto: {art['title'][:40]}...")
+            print(f"[{idx+1}/{min(35, len(unique_raw))}] Estratto: {art['title'][:40]}...")
         except Exception:
             full_articles.append({
                 'title': art['title'],
@@ -115,7 +134,7 @@ def fetch_rss_articles():
     return full_articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE HTML CON INTELLIGENCE STRATEGICA COMPLETA
+# 3. GENERAZIONE HTML CON INTELLIGENCE STRATEGICA E CAPILLARE (PROMPT EVOLUTO)
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -124,56 +143,60 @@ def generate_rassegna_body(articles):
 
     client = genai.Client(api_key=api_key)
 
-    raw_text = "\n\n".join([f"=== ARTICOLO ===\nTitolo: {a['title']}\nLink: {a['link']}\nTesto Completo:\n{a['content']}" for a in articles])
+    raw_text = "\n\n".join([f"=== ARTICOLO ===\nTitolo: {a['title']}\nLink: {a['link']}\nTesto:\n{a['content']}" for a in articles])
 
     system_instruction = f"""
-Sei il Caporedattore e Chief Analyst di un'agenzia d'intelligence e analisi strategica per dirigenti, investitori e istituzioni dell'Emilia-Romagna.
-Il tuo compito è produrre un REPORT DI SCENARIO ED ANALISI STRATEGICA sulla giornata di oggi ({TODAY}).
+Sei il Chief Content Analyst di un'agenzia d'intelligence editoriale per istituzioni e C-Level in Emilia-Romagna.
+Il tuo compito è sintetizzare la rassegna di oggi ({TODAY}) fornendo un'informazione densa, analitica e ad alto valore aggiunto.
 
-CRITERI RIGIDI DI FILTRAGGIO (SELEZIONE CRITICA):
-- ESCLUDI TASSATIVAMENTE la micro-cronaca e la cronaca nera minore: NESSUN incidente stradale isolato, NESSUN furto in abitazione, NESSUNA rissa da bar, NESSUN soccorso ad escursionisti isolati.
-- CONCENTRATI ESCLUSIVAMENTE SU TEMI DI RILEVANZA DI SISTEMA: Politica regionale e locale, infrastrutture, nodi sanitari, industria e distretti, turismo, scuola/integrazione, transizione ecologica e allerte meteo.
+REGOLE TASSATIVE SUL CONTENUTO:
+1. NIENTE CRONACA MINORE O RUMORE: Scarta incroci stradali minori, piccoli furti domestici o fatti irrilevanti. Mantieni invece la cronaca giudiziaria importante, la sicurezza urbana di sistema, le vertenze di lavoro e la sanità.
+2. ESTRAZIONE DATI & NUMERI CHIAVE: In ogni notizia, se sono presenti cifre (es. euro, percentuali, posti di lavoro, ore di sciopero, tempi di attesa), DEVI evidenziarle in grassetto o utilizzarle nei badge della dashboard.
+3. NESSUNA DUPLICAZIONE: Non trattare la stessa notizia in più sezioni diverse.
 
 STRUTTURA DELL'OUTPUT HTML:
-Devi generare SOLO il frammento interno HTML (senza <html>, <head> o <body>), così formattato:
+Restituisci SOLO ed esclusivamente il frammento HTML (senza tag <html>, <head> o <body> e senza blocchi ```html):
 
-1. BOX EXECUTIVE SUMMARY & METRICHE STRATEGICHE (In testa al report):
-   - Inserisci un div con classe 'executive-box':
-     * Un div con classe 'trend-bar': Un paragrafo sintetico con il "Clima della Giornata" (es. 🟢 Dinamismo industriale e turistico | 🔴 Tensione sulla sanità e liste d'attesa).
-     * Titolo <h3>I 3 Fatti Chiave di Oggi</h3> con un elenco puntato dei 3 fatti focali e le relative implicazioni di policy.
-     * Un contenitore div con classe 'key-figures-grid' contenente 3-4 badge ('figure-card') con le cifre/statistiche più importanti estratte (es. "+4% Arrivi", "4.5M€ Condotte", "18.91% Webuild").
-     * Un div 'swot-box' con due righe: ⚠️ **Rischio di Sistema:** [Analisi breve] | 💡 **Opportunità:** [Analisi breve].
+1. BOX EXECUTIVE SUMMARY:
+   - Div 'executive-box':
+     * Div 'trend-bar': Sintesi del clima meteo-politico ed economico in una sola riga (es. 🟢 Dinamismo industriale e turistico | 🔴 Tensioni su sanità e vertenze aziendali).
+     * Titolo <h3>🔑 I 3 Fatti Strategici del Giorno</h3> con elenco puntato dei 3 fatti a maggior impatto di sistema e relative implicazioni politiche/economiche.
+     * Contenitore 'key-figures-grid' con 3-4 badge ('figure-card'): Estrai metriche e cifre reali presenti negli articoli (es. <div class="figure-card"><span class="number">+12.5%</span><span class="label">Passeggeri Marconi</span></div>).
+     * Div 'swot-box': ⚠️ **Rischio di Sistema:** [Analisi d'impatto] | 💡 **Opportunità:** [Analisi d'impatto].
      * Se presente nei testi, un blocco 'quote-box' con la **Frase del Giorno** (citazione significativa, autore e ruolo).
 
-2. INDICE DI NAVIGAZIONE RAPIDA (Table of Contents):
-   - Genera un div con classe 'toc-box' contenente i link interni di salto alle sezioni:
-     <a href="#sec1">🏛️ Politica & Infrastrutture</a>
-     <a href="#sec2">📈 Economia & Turismo</a>
-     <a href="#sec3">🏥 Sanità & Sociale</a>
-     <a href="#sec4">🌿 Ambiente & Risorse</a>
-     <a href="#sec5">🗓️ Agenda & Prossimi Passaggi</a>
+2. INDICE DI NAVIGAZIONE RAPIDA (TOC):
+   - Div 'toc-box' con i link di salto:
+     <a href="#macro">🏛️ Politica & Economia</a>
+     <a href="#bologna">Bologna & Imola</a>
+     <a href="#modena">Modena</a>
+     <a href="#reggio">Reggio Emilia</a>
+     <a href="#parma">Parma & Piacenza</a>
+     <a href="#ferrara">Ferrara</a>
+     <a href="#romagna">Forlì-Cesena & Ravenna</a>
+     <a href="#rimini">Rimini</a>
+     <a href="#agenda">🗓️ Agenda & Scadenze</a>
 
-3. SEZIONI DI ANALISI APPROFONDITA:
-   - Utilizza gli ID negli <h2> per l'indice (es. <h2 id="sec1">...).
-   - BADGE TERRITORIALI OBLIGATORI: Ogni volta che tratti un fatto o un focus legato a una città o provincia, inserisci un badge HTML all'inizio della frase o paragrafo:
-     <span class="city-tag">BOLOGNA</span>, <span class="city-tag">FORLÌ-CESENA</span>, <span class="city-tag">PARMA</span>, <span class="city-tag">MODENA</span>, <span class="city-tag">RAVENNA</span>, <span class="city-tag">REGGIO EMILIA</span>, <span class="city-tag">FERRARA</span>, <span class="city-tag">RIMINI</span>, <span class="city-tag">PIACENZA</span>.
-   - NON USARE ELENCHI PUNTATI BANALI NELLE SEZIONI 1-4. Scrivi paragrafi ampi, articolati, discorsivi e di ampio respiro.
-   - Inserisci SEMPRE il link alla fonte citata: ... <a href="URL" target="_blank">(Fonte: Nome)</a>.
+3. SEZIONI TERRITORIALI E CRONACA CAPILLARE:
+   - Assegna sempre gli ID corretti negli <h2> (es. <h2 id="bologna">...</h2>).
+   - Utilizza i BADGE CITTÀ ad inizio paragrafo:
+     <span class="city-tag">BOLOGNA</span>, <span class="city-tag">MODENA</span>, <span class="city-tag">REGGIO EMILIA</span>, <span class="city-tag">PARMA</span>, <span class="city-tag">PIACENZA</span>, <span class="city-tag">FERRARA</span>, <span class="city-tag">FORLÌ-CESENA</span>, <span class="city-tag">RAVENNA</span>, <span class="city-tag">RIMINI</span>.
+   - Ogni punto di cronaca locale deve contenere: **[Sottotema]** Spiegazione chiara e completa del fatto con dati numerici se presenti. <a href="URL" target="_blank">(Fonte: Nome Testata)</a>.
 
 SEZIONI OBBLIGATORIE:
-- <h2 id="sec1">1. POLITICA REGIONALE, GOVERNABILITÀ ED INFRASTRUTTURE</h2>
-- <h2 id="sec2">2. ECONOMIA, DISTRETTI INDUSTRIALI E BRAND TURISMO</h2>
-- <h2 id="sec3">3. SANITÀ, SCUOLA E POLITICHE SOCIALI SUL TERRITORIO</h2>
-- <h2 id="sec4">4. PROTEZIONE CIVILE, AMBIENTE E PIANIFICAZIONE TERRITORIALE</h2>
-  * REGOLE PER LA SEZIONE 4: NON RIPETERE MAI notizie o eventi già citati nelle sezioni precedenti. Se non ci sono allerte meteo, concentrala ESCLUSIVAMENTE su transizione ecologica, gestione delle risorse idriche, energie rinnovabili, stoccaggio e progetti di sostenibilità.
-- <h2 id="sec5">5. AGENDA & PROSSIMI PASSAGGI ISTITUZIONALI</h2>
-  * Un breve elenco con bullet point sui prossimi tavoli di confronto, scioperi, scadenze amministrative, assemblee o festival annunciati per i prossimi giorni negli articoli.
-
-FORMATO OUTPUT:
-Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
+- <h2 id="macro">🏛️ POLITICA REGIONALE & ECONOMIA MACRO</h2>
+- <h2 id="bologna">📍 BOLOGNA & IMOLA</h2>
+- <h2 id="modena">📍 MODENA</h2>
+- <h2 id="reggio">📍 REGGIO EMILIA</h2>
+- <h2 id="parma">📍 PARMA & PIACENZA</h2>
+- <h2 id="ferrara">📍 FERRARA</h2>
+- <h2 id="romagna">📍 FORLÌ-CESENA & RAVENNA</h2>
+- <h2 id="rimini">📍 RIMINI</h2>
+- <h2 id="agenda">🗓️ AGENDA PROSPETTICA E SCADENZE</h2>
+  * Elenco puntato di prossimi tavoli, scadenze amministrative, scioperi o eventi annunciati.
 """
 
-    prompt = f"Ecco gli articoli integrali estratti oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera il Report con Intelligence Strategica, Badge e Agenda:"
+    prompt = f"Ecco gli articoli selezionati e deduplicati di oggi in Emilia-Romagna:\n\n{raw_text}\n\nGenera il Report HTML con Executive Summary, Cifre Chiave, Sezioni Provinciali e Agenda:"
 
     models_to_try = [
         "gemini-2.5-flash",
@@ -191,7 +214,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         system_instruction=system_instruction,
-                        temperature=0.3
+                        temperature=0.2 # Temperatura abbassata a 0.2 per massima precisione analitica
                     )
                 )
                 if response and response.text:
