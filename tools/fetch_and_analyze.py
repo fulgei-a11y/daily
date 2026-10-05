@@ -1,6 +1,7 @@
 import os
 import re
 import html
+import time
 import requests
 import feedparser
 from datetime import datetime
@@ -45,7 +46,6 @@ PROVINCE = [
 # 2. BLACKLIST E SCORING
 # ==========================================
 
-# Esclusione perentoria di sport, gossip ed eventi leggeri
 BLACKLIST_KEYWORDS = [
     "calcio", "serie a", "serie b", "serie c", "promozione", "eccellenza",
     "basket", "pallavolo", "tennis", "formula 1", "motogp", "partita",
@@ -53,7 +53,6 @@ BLACKLIST_KEYWORDS = [
     "gossip", "spettacolo", "concerti", "disco", "movida"
 ]
 
-# Keyword per il calcolo del punteggio di rilevanza
 KW_PA = ["regione", "giunta", "assemblea legislativa", "comune", "sindaco", "ausl", "bando", "delibera", "pnrr", "appalto", "finanziamento", "sanità"]
 KW_ECONOMIA = ["azienda", "crisi", "sindacato", "lavoro", "licenziamento", "investimenti", "export", "fiera", "confindustria", "infrastrutture", "porto"]
 KW_CRONACA = ["arresto", "omicidio", "incidente", "carabinieri", "polizia", "sequestro", "indagine", "procura", "incendio", "protezione civile", "alluvione"]
@@ -68,44 +67,28 @@ def clean_html_text(text):
 def calculate_relevance_score(title, desc):
     full_text = f"{title} {desc}".lower()
     
-    # Se contiene termini in blacklist, viene scartato subito (score -100)
     if any(kw in full_text for kw in BLACKLIST_KEYWORDS):
         return -100
         
     score = 0
-    
-    # Punteggio PA e Istituzioni
     for kw in KW_PA:
-        if kw in full_text:
-            score += 4
-            
-    # Punteggio Economia e Lavoro
+        if kw in full_text: score += 4
     for kw in KW_ECONOMIA:
-        if kw in full_text:
-            score += 3
-            
-    # Punteggio Cronaca Grave e Sicurezza
+        if kw in full_text: score += 3
     for kw in KW_CRONACA:
-        if kw in full_text:
-            score += 3
-
-    # Bonus presenza riferimenti territoriali
+        if kw in full_text: score += 3
     for prov in PROVINCE:
-        if prov.lower() in full_text:
-            score += 2
+        if prov.lower() in full_text: score += 2
 
     return score
 
 def detect_province(title, desc):
     full_text = f"{title} {desc}".lower()
-    detected = []
-    for prov in PROVINCE:
-        if prov.lower() in full_text:
-            detected.append(prov)
+    detected = [prov for prov in PROVINCE if prov.lower() in full_text]
     return detected if detected else ["Emilia-Romagna"]
 
 # ==========================================
-# 3. PIPELINE DI RACCOLTA E ELABORAZIONE
+# 3. PIPELINE DI RACCOLTA
 # ==========================================
 
 def fetch_and_process_news():
@@ -118,7 +101,6 @@ def fetch_and_process_news():
             feed = feedparser.parse(feed_url)
             source_name = feed.feed.get("title", "Fonte Locale")
             
-            # Leggiamo fino a 35 articoli per RSS
             for entry in feed.entries[:35]:
                 title = clean_html_text(entry.get("title", ""))
                 summary = clean_html_text(entry.get("summary", entry.get("description", "")))
@@ -127,7 +109,6 @@ def fetch_and_process_news():
                 if not title or len(title) < 10:
                     continue
                 
-                # Fingerprint flessibile per deduplicazione (prime 6 parole del titolo)
                 title_words = re.sub(r'[^\w\s]', '', title.lower()).split()
                 fingerprint = " ".join(title_words[:6])
                 
@@ -137,12 +118,9 @@ def fetch_and_process_news():
 
                 score = calculate_relevance_score(title, summary)
                 if score < 0:
-                    # Articolo filtrato (sport, gossip, ecc.)
                     continue
 
                 provinces = detect_province(title, summary)
-                
-                # Manteniamo fino a 800 caratteri di descrizione
                 extended_desc = summary[:800]
 
                 raw_articles.append({
@@ -157,13 +135,11 @@ def fetch_and_process_news():
             print(f"Errore nella lettura del feed {feed_url}: {e}")
 
     print(f"--> Raccolti e filtrati {len(raw_articles)} articoli validi.")
-    
-    # Ordinamento per punteggio di rilevanza decrescente
     raw_articles.sort(key=lambda x: x["score"], reverse=True)
     return raw_articles
 
 # ==========================================
-# 4. CHIAMATE SELETTIVE A GEMINI PER SEZIONE
+# 4. ROBUSTA GENERAZIONE CON RETRY & PAUSE
 # ==========================================
 
 def generate_section_html(section_title, articles_list, prompt_instruction):
@@ -202,16 +178,26 @@ ISTRUZIONI DI REDAZIONE:
 ARTICOLI A DISPOSIZIONE:
 {formatted_articles}
 """
-    try:
-        response = model.generate_content(prompt)
-        text = response.text.strip()
-        # Pulizia eventuale wrap markdown
-        text = re.sub(r'^```html\s*', '', text)
-        text = re.sub(r'\s*```$', '', text)
-        return text
-    except Exception as e:
-        print(f"Errore durante la generazione della sezione {section_title}: {e}")
-        return f"<section><h2>{section_title}</h2><p>Si è verificato un errore durante l'elaborazione di questa sezione.</p></section>"
+    # Meccanismo di tentativi multipli (Retry) per evitare fallimenti temporanei API
+    for attempt in range(3):
+        try:
+            response = model.generate_content(prompt)
+            text = response.text.strip()
+            text = re.sub(r'^```html\s*', '', text)
+            text = re.sub(r'\s*```$', '', text)
+            time.sleep(2) # Pausa di cortesia per rate-limiting
+            return text
+        except Exception as e:
+            print(f"Tentativo {attempt+1} fallito per la sezione {section_title}: {e}")
+            time.sleep(4)
+
+    # Fallback se tutti i tentativi falliscono: genera HTML semplice con gli articoli ricevuti
+    print(f"-> Utilizzo fallback locale per {section_title}")
+    fallback_html = f"<section><h2>{section_title}</h2>"
+    for a in articles_list[:8]:
+        fallback_html += f"<h3>{a['title']}</h3><p>{a['desc']}</p><p><a href='{a['link']}' target='_blank'>Leggi su {a['source']}</a></p>"
+    fallback_html += "</section>"
+    return fallback_html
 
 # ==========================================
 # 5. ASSEMBLAGGIO FINALE DEL DOCUMENTO
@@ -220,7 +206,6 @@ ARTICOLI A DISPOSIZIONE:
 def build_full_rassegna():
     articles = fetch_and_process_news()
     
-    # Selezioni ottimizzate per sezione
     top_regional = [a for a in articles if "Emilia-Romagna" in a["provinces"] or a["score"] >= 8][:12]
     top_economy = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_ECONOMIA)][:15]
     top_cronaca = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_CRONACA)][:18]
@@ -313,11 +298,6 @@ def build_full_rassegna():
         a:hover {{
             text-decoration: underline;
         }}
-        .source-tag {{
-            font-size: 12px;
-            color: #777;
-            margin-left: 5px;
-        }}
         footer {{
             margin-top: 40px;
             text-align: center;
@@ -349,9 +329,8 @@ def build_full_rassegna():
 </html>
 """
     
-    # Crea la cartella edizioni se non esiste
+    # Salvataggio nella cartella edizioni
     os.makedirs("edizioni", exist_ok=True)
-    
     today_filename = datetime.now().strftime("%Y-%m-%d.html")
     output_path = os.path.join("edizioni", today_filename)
     
