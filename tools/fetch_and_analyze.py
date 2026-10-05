@@ -3,7 +3,6 @@
 tools/fetch_and_analyze.py
 --------------------------
 Script definitivo per l'estrazione quotidiana di notizie dalle 9 province dell'Emilia-Romagna.
-Garantisce:
 - Copertura equa di tutte e 9 le province (3 fonti per provincia).
 - Filtro temporale (max 36 ore) e deduplicazione automatica.
 - Blocco totale di sport, gossip e notizie riempitive.
@@ -106,7 +105,7 @@ def parse_pub_date(date_str: str) -> datetime:
         return None
 
 def make_title_key(title: str) -> str:
-    """Genera una chiave per la deduplicazione basata sulle prime 5 parole significativi."""
+    """Genera una chiave per la deduplicazione basata sulle prime 5 parole significative."""
     norm = re.sub(r'\W+', ' ', title.lower()).strip()
     words = norm.split()
     return " ".join(words[:5]) if words else ""
@@ -120,7 +119,7 @@ def fetch_rss_balanced() -> list:
     for category, feeds in PROVINCIAL_FEEDS.items():
         category_count = 0
         for feed_info in feeds:
-            if category_count >= 3:  # Max 3 articoli distinti per provincia
+            if category_count >= 3:
                 break
             try:
                 resp = requests.get(feed_info["url"], headers=HEADERS, timeout=8)
@@ -196,4 +195,141 @@ def generate_executive_newsletter(articles: list) -> str:
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("ERRORE: GEMINI_API_KEY non trovata nell'ambiente.")
-        sys.exit(1
+        sys.exit(1)
+
+    client = genai.Client(api_key=api_key)
+
+    articles_payload = ""
+    for idx, art in enumerate(articles, 1):
+        articles_payload += f"\n--- ARTICOLO {idx} [Area: {art['province_cat']}] ---\n"
+        articles_payload += f"TITOLO: {art['title']}\n"
+        articles_payload += f"TESTATA: {art['source']}\n"
+        articles_payload += f"LINK: {art['link']}\n"
+        articles_payload += f"TESTO: {art['content']}\n"
+
+    system_instruction = """
+Sei un Senior Editor e Analyst. Il tuo compito è produrre la RASSEGNA STAMPA DELL'EMILIA-ROMAGNA analizzando ESCLUSIVAMENTE gli articoli forniti.
+
+REGOLE TASSATIVE:
+1. RIGOROSAMENTE VIETATO LO SPORT:
+   - Escludi calcio, basket, sport dilettantistico, gare podistiche, pagelle o calciomercato.
+2. NO GOSSIP E NO METEO ORDINARIO:
+   - Mantieni un profilo executive. Includi solo allerte ufficiali della Protezione Civile, cronaca vera ed economia reale.
+3. STRUTTURA OBBLIGATORIA PER TUTTE LE 9 PROVINCE:
+   Nel blocco Cronaca DEVI INCLUDERE OBBLIGATORIAMENTE TUTTI E 9 GLI INTESTAZIONI H3 NELL'ORDINE ESATTO:
+   - Bologna (e Imola)
+   - Modena
+   - Reggio Emilia
+   - Parma
+   - Piacenza
+   - Ferrara
+   - Ravenna
+   - Forlì-Cesena
+   - Rimini
+
+   Se per una provincia non ci sono notizie tra gli articoli forniti, scrivi tassativamente:
+   "<p>Nessun fatto straordinario di cronaca segnalato nelle ultime 24 ore.</p>"
+
+4. CITAZIONI E LINK:
+   Usa sempre la TESTATA fornita e formatta i link esaminati come segue:
+   Fonte: <a target="_blank" rel="noopener" href="URL">TESTATA</a>
+
+FORMATO HTML RICHIESTO (Restituisci SOLO il codice HTML senza blocchi ```html):
+
+<h2>In evidenza</h2>
+<div class="evid">
+  <ol>
+    <li><strong>Titolo</strong> — sintesi con fatti e cifre. Fonte: <a target="_blank" rel="noopener" href="URL">TESTATA</a></li>
+  </ol>
+</div>
+
+<h2>Cronaca</h2>
+<h3>Bologna (e Imola)</h3>
+<p><strong>Titolo</strong> — comune: fatto circostanziato. Fonte: <a target="_blank" rel="noopener" href="URL">TESTATA</a></p>
+
+<h3>Modena</h3>
+<p>...</p>
+
+<h3>Reggio Emilia</h3>
+<p>...</p>
+
+<h3>Parma</h3>
+<p>...</p>
+
+<h3>Piacenza</h3>
+<p>...</p>
+
+<h3>Ferrara</h3>
+<p>...</p>
+
+<h3>Ravenna</h3>
+<p>...</p>
+
+<h3>Forlì-Cesena</h3>
+<p>...</p>
+
+<h3>Rimini</h3>
+<p>...</p>
+
+<h2>Economia e lavoro</h2>
+<h3>Imprese e vertenze</h3>
+<p>...</p>
+<h3>Dati e congiuntura</h3>
+<p>...</p>
+<h3>Regione e istituzioni</h3>
+<p>...</p>
+<h3>Infrastrutture, agricoltura, turismo</h3>
+<p>...</p>
+
+<h2>Politica e amministrazione</h2>
+<p>...</p>
+
+<h2>Da seguire oggi</h2>
+<ul>
+  <li>...</li>
+</ul>
+"""
+
+    prompt = f"Data di oggi: {TODAY_HUMAN}\n\nArticoli estratti da analizzare:\n{articles_payload}"
+
+    print("Generazione rassegna con Gemini API (gemini-2.5-flash)...")
+    response = client.models.generate_content(
+        model='gemini-2.5-flash',
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            system_instruction=system_instruction,
+            temperature=0.1,
+            max_output_tokens=8192
+        )
+    )
+
+    return response.text
+
+# ---------------------------------------------------------------------------
+# MAIN EXECUTION
+# ---------------------------------------------------------------------------
+def main():
+    start_time = time.time()
+    articles = fetch_rss_balanced()
+    if not articles:
+        print("Nessun articolo estratto dai feed. Interruzione script.")
+        sys.exit(1)
+
+    html_output = generate_executive_newsletter(articles)
+    
+    # Pulizia rigorosa da qualsiasi blocco di codice markdown (```html / ```)
+    clean_html = re.sub(r'^```[a-z]*\s*', '', html_output, flags=re.MULTILINE)
+    clean_html = re.sub(r'```$', '', clean_html, flags=re.MULTILINE).strip()
+
+    out_dir = "edizioni"
+    os.makedirs(out_dir, exist_ok=True)
+    out_filepath = os.path.join(out_dir, f"{TODAY_STR}.html")
+
+    with open(out_filepath, "w", encoding="utf-8") as f:
+        f.write(clean_html)
+
+    elapsed = round(time.time() - start_time, 2)
+    print(f"[{TODAY_STR}] Rassegna completa generata con successo in {out_filepath} in {elapsed}s.")
+
+if __name__ == "__main__":
+    main()
