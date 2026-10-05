@@ -8,7 +8,7 @@ from google import genai
 from google.genai import types
 
 # ---------------------------------------------------------------------------
-# 1. CONFIGURAZIONE E LISTA FONTI RSS (Identica a 1.py)
+# 1. CONFIGURAZIONE E LISTA FONTI RSS
 # ---------------------------------------------------------------------------
 TODAY = datetime.date.today().strftime('%Y-%m-%d')
 OUTPUT_DIR = "edizioni"
@@ -22,7 +22,7 @@ RSS_FEEDS = [
     # ANSA Regionali
     "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
     
-    # Resto del Carlino (Copertura capillare province)
+    # Resto del Carlino
     "https://www.ilrestodelcarlino.it/bologna/rss",
     "https://www.ilrestodelcarlino.it/modena/rss",
     "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
@@ -33,7 +33,7 @@ RSS_FEEDS = [
     "https://www.ilrestodelcarlino.it/rimini/rss",
     "https://www.ilrestodelcarlino.it/imola/rss",
     
-    # Network "Today" (Province e capoluoghi)
+    # Network "Today"
     "https://www.bolognatoday.it/rss",
     "https://www.modenatoday.it/rss",
     "https://www.riminitoday.it/rss",
@@ -42,7 +42,7 @@ RSS_FEEDS = [
     "https://www.piacenzatoday.it/rss",
     "https://www.forlitoday.it/rss",
     
-    # Testate locali e Gazzette
+    # Testate locali
     "https://www.gazzettadiparma.it/rss/",
     "https://www.piacenzasera.it/feed/",
     "https://www.corriereromagna.it/feed/",
@@ -57,7 +57,7 @@ HEADERS = {
 }
 
 # ---------------------------------------------------------------------------
-# 2. SCRAPING DEI FEED RSS (Identica a 1.py)
+# 2. SCRAPING DEI FEED RSS
 # ---------------------------------------------------------------------------
 def fetch_rss_articles():
     articles = []
@@ -92,29 +92,34 @@ def fetch_rss_articles():
     return articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE SINTESI TEMATICA ESTESA (Nuova funzione modulare)
+# 3. GENERAZIONE SINTESI TEMATICA ESTESA
 # ---------------------------------------------------------------------------
 def generate_sintesi_tematica(articles, client):
     raw_text = "\n".join([f"- Titolo: {a['title']}\n  Sintesi: {a['description']}\n" for a in articles])
 
     system_instruction = f"""
-Sei un caporedattore esperto dell'Emilia-Romagna.
-Analizza le notizie di oggi ({TODAY}) e crea un QUADRO SINTETICO E TEMATICO REGIONALE molto ampio e articolato.
+Sei il Caporedattore e Analista Politico di un quotidiano regionale dell'Emilia-Romagna.
+Analizza tutte le notizie del giorno ({TODAY}) ed elabora una Sintesi Esecutiva di livello dirigenziale.
 
-REGOLE TASSATIVE:
-- Restituisci SOLO un blocco HTML racchiuso in <section class="sintesi-tematica">...</section>.
-- Inserisci come titolo: <h2>QUADRO SINTETICO E TEMATICO REGIONALE</h2>
-- Crea una lista <ul> con 6-8 macro-temi chiave che coprano l'intera regione e le sue 9 province (Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini).
-- Per OGNI punto <li>:
-  - Metti un titolo in grassetto (es. <strong>Politica e Riforme Regionali:</strong>, <strong>Economia, Industria e Turismo:</strong>, <strong>Infrastrutture e Trasporti:</strong>, <strong>Cronaca e Sicurezza Urbana:</strong>, <strong>Sanità e Servizi al Cittadino:</strong>, <strong>Ambiente e Protezione Civile:</strong>, ecc.).
-  - Scrivi un paragrafo corposo (4-6 righe) che riassuma le novità più importanti, citando le province interessate e fornendo dettagli di contesto.
-- NON inserire tag <html>, <head> o markdown ```html.
+STRUTTURA OBBLIGATORIA (Rispettare scrupolosamente i tag per compatibilità con il lettore vocale):
+- Restituisci ESCLUSIVAMENTE un blocco HTML racchiuso dentro un <div class="sintesi-tematica">...</div>.
+- Titolo iniziale: <h2>QUADRO SINTETICO E TEMATICO REGIONALE</h2>
+- Genera un elenco <ul> contenente esattamente tra i 6 e gli 8 punti tematici distinti.
+- Ogni punto <li> deve rappresentare un'area di interesse strategico (es. Politica & Riforme, Economia & Imprese, Infrastrutture & Aeroporti, Lavoro & Crisi Industriali, Sanità & Sociale, Ordine Pubblico & Sicurezza, Territorio & Ambiente).
+
+REGOLE DI REDAZIONE PER I PUNTI (<li>):
+1. Inizia ogni punto con un titolo sintetico, es. <strong>1. Politica e Riforme Regionali:</strong>
+2. Sviluppa per OGNI punto un paragrafo approfondito e analitico di 5-7 righe.
+3. Citando le province coinvolte tra le 9 della regione (Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini), specificando i fatti, i dati e l'impatto sul territorio.
+4. Mantieni un tono formale e autorevole.
+
+NON inserire tag <section>, <html>, <head> o marcatori markdown ```html.
 """
 
-    prompt = f"Ecco tutte le notizie estratte oggi:\n\n{raw_text}\n\nGenera il blocco HTML della sintesi tematica estesa:"
+    prompt = f"Ecco le notizie del giorno:\n\n{raw_text}\n\nGenera la sintesi tematica approfondita per le 9 province:"
 
     try:
-        print("Generazione della sintesi tematica estesa in corso...")
+        print("Generazione della sintesi tematica professionale in corso...")
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt,
@@ -129,11 +134,11 @@ REGOLE TASSATIVE:
             clean = re.sub(r'```$', '', clean.strip(), flags=re.MULTILINE)
             return clean
     except Exception as e:
-        print(f"Avviso: Impossibile generare la sintesi tematica: {e}")
+        print(f"Errore durante la generazione della sintesi: {e}")
     return ""
 
 # ---------------------------------------------------------------------------
-# 4. GENERAZIONE HTML CON GEMINI (Originale di 1.py)
+# 4. GENERAZIONE CORPO RASSEGNA
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -142,22 +147,20 @@ def generate_rassegna_body(articles):
 
     client = genai.Client(api_key=api_key)
 
-    # 1. Generiamo la sintesi tematica ampia
     sintesi_html = generate_sintesi_tematica(articles, client)
 
     raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
 
-    # Instruction ORIGINALE del tuo 1.py
     system_instruction = f"""
 Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
 Sintetizza le notizie di oggi ({TODAY}) in una Rassegna Stampa HTML.
 
-REGOLE TASSATIVE DI STRUTTURA:
-- NON generare <html>, <head> o <body>. Genera SOLO il frammento interno.
-- Usa <h2> per i titoli di sezione principale.
-- Usa <h3> per le sotto-sezioni/province.
-- Ogni singola notizia deve essere racchiusa in un paragrafo <p> o in un punto elenco <li>.
-- NON usare <div> per avvolgere le notizie.
+REGOLE TASSATIVE DI STRUTTURA PER COMPATIBILITÀ PARSER AUDIO:
+- NON generare <html>, <head>, <body> o <section>.
+- Usa SOLO <h2> per i titoli di sezione principale.
+- Usa SOLO <h3> per le sotto-sezioni o province.
+- Ogni singola notizia deve essere racchiusa esclusivamente in un elemento <p> o <li>.
+- NON avvolgere le notizie in tag <div> generici o personalizzati.
 
 REGOLE CONTENUTI E FONTI:
 1. Copertura obbligatoria delle 9 province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
@@ -172,7 +175,7 @@ SEZIONI OBBLIGATORIE:
 - <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
 
 FORMATO OUTPUT:
-Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
+Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown.
 """
 
     prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
@@ -180,8 +183,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     models_to_try = [
         "gemini-2.5-flash",
         "gemini-2.5-pro",
-        "gemini-2.0-flash",
-        "gemini-1.5-flash"
+        "gemini-2.0-flash"
     ]
     
     for model_name in models_to_try:
@@ -200,16 +202,15 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                     clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
                     clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
                     if len(clean_html) > 100:
-                        # Uniamo la sintesi tematica al corpo originale
                         return sintesi_html + "\n\n" + clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
-                time.sleep(5)
+                time.sleep(3)
 
-    raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
+    raise RuntimeError("Impossibile generare la rassegna con i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 5. SALVATAGGIO FILE HTML
+# 5. MAIN
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -222,7 +223,7 @@ def main():
     body_content = generate_rassegna_body(articles)
 
     styled_html = f"""<style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap');
+    @import url('[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap)');
     
     .rassegna-container {{
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -244,7 +245,6 @@ def main():
         margin: 0;
     }}
     
-    /* Stile grafico per la Sintesi Tematica */
     .sintesi-tematica {{
         background-color: #f4f7f9;
         border: 1px solid #b8daff;
@@ -252,7 +252,6 @@ def main():
         border-radius: 6px;
         padding: 20px 24px;
         margin-bottom: 35px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.03);
     }}
     .sintesi-tematica h2 {{
         font-family: 'Merriweather', serif;
@@ -264,7 +263,6 @@ def main():
         margin-top: 0;
         margin-bottom: 16px;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
         border-bottom: 2px solid #cce5ff;
         padding-bottom: 8px;
     }}
@@ -275,7 +273,7 @@ def main():
     }}
     .sintesi-tematica li {{
         font-size: 14.5px;
-        margin-bottom: 16px;
+        margin-bottom: 18px;
         text-align: justify;
         line-height: 1.65;
         padding-bottom: 12px;
@@ -303,7 +301,6 @@ def main():
         margin-top: 35px;
         border-radius: 4px;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
     }}
     h3 {{
         font-size: 16px;
@@ -322,20 +319,6 @@ def main():
         text-decoration: none;
         font-weight: 600;
     }}
-    a:hover {{
-        text-decoration: underline;
-    }}
-    @media print {{
-        .rassegna-container {{
-            max-width: 100%;
-            padding: 0;
-        }}
-        h2 {{
-            background-color: #f1f1f1 !important;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-        }}
-    }}
 </style>
 
 <div class="rassegna-container">
@@ -348,8 +331,7 @@ def main():
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(styled_html)
-        
-    print(f"✅ File generato con successo: {OUTPUT_FILE}")
+    print(f"✅ File HTML generato con successo per la rassegna e l'audio TTS: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
