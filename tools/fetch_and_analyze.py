@@ -92,7 +92,7 @@ def fetch_rss_articles():
     return articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE HTML CON GEMINI (Con Gestione Fallback e Retry)
+# 3. GENERAZIONE HTML CON GEMINI
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -132,12 +132,12 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
 
     prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
-    # Sequenza di fallback stabile
+    # Modelli sicuri e validati per l'API Google GenAI v1beta
     models_to_try = [
         "gemini-2.5-flash",
+        "gemini-2.5-pro",
         "gemini-2.0-flash",
-        "gemini-1.5-flash",
-        "gemini-1.5-pro"
+        "gemini-1.5-flash"
     ]
     
     for model_name in models_to_try:
@@ -159,7 +159,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                         return clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
-                time.sleep(4)
+                time.sleep(5)
 
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
@@ -258,5 +258,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
