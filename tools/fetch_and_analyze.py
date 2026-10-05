@@ -66,7 +66,6 @@ def clean_html_text(text):
 
 def calculate_relevance_score(title, desc):
     full_text = f"{title} {desc}".lower()
-    
     if any(kw in full_text for kw in BLACKLIST_KEYWORDS):
         return -100
         
@@ -85,10 +84,10 @@ def calculate_relevance_score(title, desc):
 def detect_province(title, desc):
     full_text = f"{title} {desc}".lower()
     detected = [prov for prov in PROVINCE if prov.lower() in full_text]
-    return detected if detected else ["Emilia-Romagna"]
+    return detected if detected else ["Regionale"]
 
 # ==========================================
-# 3. PIPELINE DI RACCOLTA
+# 3. PIPELINE RACCOLTA
 # ==========================================
 
 def fetch_and_process_news():
@@ -121,30 +120,28 @@ def fetch_and_process_news():
                     continue
 
                 provinces = detect_province(title, summary)
-                extended_desc = summary[:800]
-
                 raw_articles.append({
                     "title": title,
-                    "desc": extended_desc,
+                    "desc": summary[:800],
                     "link": link,
                     "source": source_name,
                     "score": score,
                     "provinces": provinces
                 })
         except Exception as e:
-            print(f"Errore nella lettura del feed {feed_url}: {e}")
+            print(f"Errore feed {feed_url}: {e}")
 
-    print(f"--> Raccolti e filtrati {len(raw_articles)} articoli validi.")
+    print(f"--> Raccolti {len(raw_articles)} articoli validi.")
     raw_articles.sort(key=lambda x: x["score"], reverse=True)
     return raw_articles
 
 # ==========================================
-# 4. ROBUSTA GENERAZIONE CON RETRY & PAUSE
+# 4. GENERAZIONE SEZIONI PER PROVINCIA (SINTASSI STRICT PER BUILD_AUDIO)
 # ==========================================
 
 def generate_section_html(section_title, articles_list, prompt_instruction):
     if not articles_list:
-        return f"<section><h2>{section_title}</h2><p>Nessun aggiornamento di rilievo nelle ultime ore.</p></section>"
+        return f"<h2>{section_title}</h2><p>Nessun aggiornamento di rilievo nelle ultime ore.</p>"
 
     formatted_articles = ""
     for idx, a in enumerate(articles_list, 1):
@@ -153,51 +150,52 @@ def generate_section_html(section_title, articles_list, prompt_instruction):
 ARTICOLO {idx}:
 Titolo: {a['title']}
 Fonte: {a['source']}
-Territorio: {', '.join(a['provinces'])}
-Punteggio Rilevanza: {a['score']}
+Territorio/Provincia: {', '.join(a['provinces'])}
 Testo: {a['desc']}
 Link: {a['link']}
 """
 
     prompt = f"""
-Sei un caporedattore esperto specializzato in Pubblica Amministrazione, Economia e Cronaca della Regione Emilia-Romagna.
+Sei un caporedattore esperto della Regione Emilia-Romagna.
 
-Compito: Genera il codice HTML pulito e ben strutturato per la sezione "{section_title}".
+Compito: Genera il frammento HTML per la sezione "<h2>{section_title}</h2>".
 
-ISTRUZIONI DI REDAZIONE:
-1. {prompt_instruction}
-2. Non inserire notizie sportive, di gossip, spettacoli minori o curiosità.
-3. Raggruppa le notizie in modo chiaro per argomento o per Provincia se pertinente.
-4. Per ogni notizia includi:
-   - Titolo chiaro ed esaustivo in <h3> o <h4>
-   - Un riassunto giornalistico accurato ed esaustivo (2-4 frasi)
-   - L'indicazione della fonte e il link originale `<a href="..." target="_blank">Leggi su [Fonte]</a>`
-5. Usa tag HTML semanticamente corretti (`<section>`, `<h3>`, `<p>`, `<ul>`, `<li>`, `<strong>`).
-6. NON restituire blocchi markdown ```html ... ```, restituisci solo il codice HTML grezzo.
+REGOLE RIGIDISSIME DI SINTASSI HTML (FONDAMENTALI PER IL PARSER AUDIO):
+1. Inizia SEMPRE la sezione con il tag `<h2>{section_title}</h2>`.
+2. DIVIDI OBBLIGATORIAMENTE I CONTENUTI PER PROVINCIA usando ESCLUSIVAMENTE il tag `<h3>` (es: `<h3>Focus Provincia di Bologna</h3>`, `<h3>Focus Provincia di Modena</h3>`, `<h3>Notizie Regionali</h3>`).
+3. OGNI SINGOLA NOTIZIA DEVE ESSERE CONTENUTA IN UN TAG `<p>`. Non usare mai <h4> o <div> per le notizie.
+4. Formatta ciascuna notizia dentro il tag `<p>` esattamente in questo modo:
+   `<p><strong>Titolo della Notizia.</strong> Testo del riassunto chiaro ed esaustivo in 2-3 frasi. <a href="LINK" target="_blank">Leggi su FONTE</a></p>`
+5. {prompt_instruction}
+6. Restituisci SOLO codice HTML grezzo senza contenitori markdown (no ```html).
 
 ARTICOLI A DISPOSIZIONE:
 {formatted_articles}
 """
-    # Meccanismo di tentativi multipli (Retry) per evitare fallimenti temporanei API
     for attempt in range(3):
         try:
             response = model.generate_content(prompt)
             text = response.text.strip()
             text = re.sub(r'^```html\s*', '', text)
             text = re.sub(r'\s*```$', '', text)
-            time.sleep(2) # Pausa di cortesia per rate-limiting
+            time.sleep(2)
             return text
         except Exception as e:
-            print(f"Tentativo {attempt+1} fallito per la sezione {section_title}: {e}")
+            print(f"Tentativo {attempt+1} fallito per {section_title}: {e}")
             time.sleep(4)
 
-    # Fallback se tutti i tentativi falliscono: genera HTML semplice con gli articoli ricevuti
-    print(f"-> Utilizzo fallback locale per {section_title}")
-    fallback_html = f"<section><h2>{section_title}</h2>"
-    for a in articles_list[:8]:
-        fallback_html += f"<h3>{a['title']}</h3><p>{a['desc']}</p><p><a href='{a['link']}' target='_blank'>Leggi su {a['source']}</a></p>"
-    fallback_html += "</section>"
-    return fallback_html
+    # Fallback rigoroso conforme al parser audio
+    fallback = f"<h2>{section_title}</h2>"
+    by_prov = {}
+    for a in articles_list:
+        prov = a['provinces'][0]
+        by_prov.setdefault(prov, []).append(a)
+        
+    for prov, arts in by_prov.items():
+        fallback += f"<h3>Focus Provincia di {prov}</h3>"
+        for a in arts[:4]:
+            fallback += f"<p><strong>{a['title']}.</strong> {a['desc']} <a href='{a['link']}' target='_blank'>Leggi su {a['source']}</a></p>"
+    return fallback
 
 # ==========================================
 # 5. ASSEMBLAGGIO FINALE DEL DOCUMENTO
@@ -206,31 +204,18 @@ ARTICOLI A DISPOSIZIONE:
 def build_full_rassegna():
     articles = fetch_and_process_news()
     
-    top_regional = [a for a in articles if "Emilia-Romagna" in a["provinces"] or a["score"] >= 8][:12]
-    top_economy = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_ECONOMIA)][:15]
+    top_pa = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_PA) or a["score"] >= 6][:20]
+    top_economy = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_ECONOMIA)][:18]
     top_cronaca = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_CRONACA)][:18]
-    top_pa = [a for a in articles if any(k in f"{a['title']} {a['desc']}".lower() for k in KW_PA)][:18]
 
-    print("--> 2. Generazione sezione: Prima Pagina & Pubblica Amministrazione...")
-    html_pa = generate_section_html(
-        "Prima Pagina e Pubblica Amministrazione",
-        top_pa + top_regional,
-        "Focalizzati sulle delibere della Regione, atti dei Comuni, sanità (AUSL), PNRR, bandi e decisioni istituzionali per ciascuna provincia."
-    )
+    print("--> 2. Generazione Pubblica Amministrazione & Territorio...")
+    html_pa = generate_section_html("Prima Pagina e Pubblica Amministrazione", top_pa, "Raggruppa le notizie per Provincia con tag <h3> e inserisci ciascuna notizia dentro un tag <p>.")
 
-    print("--> 3. Generazione sezione: Economia, Lavoro e Imprese...")
-    html_eco = generate_section_html(
-        "Economia, Lavoro e Imprese",
-        top_economy,
-        "Evidenzia vertenze aziendali, accordi sindacali, investimenti, fiere, export, infrastrutture e mercati dell'Emilia-Romagna."
-    )
+    print("--> 3. Generazione Economia e Lavoro...")
+    html_eco = generate_section_html("Economia, Lavoro e Imprese", top_economy, "Raggruppa le notizie per Provincia con tag <h3> e inserisci ciascuna notizia dentro un tag <p>.")
 
-    print("--> 4. Generazione sezione: Cronaca, Sicurezza e Protezione Civile...")
-    html_cro = generate_section_html(
-        "Cronaca e Sicurezza",
-        top_cronaca,
-        "Riporta i fatti di cronaca giudiziaria, arresti, operazioni di polizia, incidenti rilevanti, incendi ed allerte meteo/Protezione Civile."
-    )
+    print("--> 4. Generazione Cronaca e Sicurezza...")
+    html_cro = generate_section_html("Cronaca e Sicurezza", top_cronaca, "Raggruppa le notizie per Provincia con tag <h3> e inserisci ciascuna notizia dentro un tag <p>.")
 
     today_str = datetime.now().strftime("%d/%m/%Y")
     
@@ -241,78 +226,23 @@ def build_full_rassegna():
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rassegna Stampa Emilia-Romagna - {today_str}</title>
     <style>
-        body {{
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 20px;
-        }}
-        .container {{
-            max-width: 900px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }}
-        header {{
-            border-bottom: 3px solid #d9534f;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }}
-        h1 {{
-            color: #111;
-            margin: 0 0 5px 0;
-            font-size: 28px;
-        }}
-        .date {{
-            color: #666;
-            font-weight: bold;
-        }}
-        section {{
-            margin-bottom: 35px;
-        }}
-        h2 {{
-            color: #d9534f;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-            font-size: 22px;
-        }}
-        h3 {{
-            color: #2c3e50;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            font-size: 18px;
-        }}
-        p {{
-            margin-top: 0;
-            margin-bottom: 12px;
-        }}
-        a {{
-            color: #0275d8;
-            text-decoration: none;
-            font-size: 14px;
-        }}
-        a:hover {{
-            text-decoration: underline;
-        }}
-        footer {{
-            margin-top: 40px;
-            text-align: center;
-            font-size: 13px;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }}
+        body {{ font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #222; max-width: 900px; margin: 0 auto; padding: 20px; background: #f4f6f8; }}
+        .container {{ background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }}
+        header {{ border-bottom: 3px solid #d9534f; padding-bottom: 15px; margin-bottom: 30px; }}
+        h1 {{ color: #111; margin: 0 0 5px 0; font-size: 28px; }}
+        h2 {{ color: #d9534f; border-bottom: 1px solid #eee; padding-bottom: 8px; font-size: 22px; margin-top: 35px; }}
+        h3 {{ color: #0275d8; margin-top: 25px; font-size: 18px; background: #eef5fa; padding: 6px 12px; border-left: 4px solid #0275d8; }}
+        p {{ margin-top: 10px; margin-bottom: 15px; font-size: 15px; }}
+        strong {{ color: #111; }}
+        a {{ color: #0275d8; text-decoration: none; font-size: 13px; }}
+        a:hover {{ text-decoration: underline; }}
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Rassegna Stampa Emilia-Romagna</h1>
-            <div class="date">Edizione del {today_str} — PA, Economia e Territorio</div>
+            <div><strong>Edizione del {today_str} — PA, Economia e Cronaca per Provincia</strong></div>
         </header>
 
         <main>
@@ -320,16 +250,11 @@ def build_full_rassegna():
             {html_eco}
             {html_cro}
         </main>
-
-        <footer>
-            Generato automaticamente via GitHub Actions & Gemini API — Emilia-Romagna Monitor
-        </footer>
     </div>
 </body>
 </html>
 """
     
-    # Salvataggio nella cartella edizioni
     os.makedirs("edizioni", exist_ok=True)
     today_filename = datetime.now().strftime("%Y-%m-%d.html")
     output_path = os.path.join("edizioni", today_filename)
@@ -337,7 +262,7 @@ def build_full_rassegna():
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(full_html)
         
-    print(f"--> Rassegna completata con successo! Salvata in '{output_path}'.")
+    print(f"--> Rassegna completata e salvata con successo in '{output_path}'.")
 
 if __name__ == "__main__":
     build_full_rassegna()
