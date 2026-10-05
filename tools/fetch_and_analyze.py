@@ -1,5 +1,6 @@
 import os
 import re
+import time
 import datetime
 import requests
 import xml.etree.ElementTree as ET
@@ -91,7 +92,7 @@ def fetch_rss_articles():
     return articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE HTML CON GEMINI
+# 3. GENERAZIONE HTML CON GEMINI (2.5 Flash / 2.5 Pro / Fallbacks)
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -131,30 +132,39 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
 
     prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
-    models_to_try = ["gemini-2.5-flash", "gemini-1.5-pro"]
+    # Modelli ordinati per priorità ed efficienza (Gemini 2.5 in testa)
+    models_to_try = [
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "gemini-2.0-flash",
+        "gemini-1.5-flash"
+    ]
     
     for model_name in models_to_try:
-        try:
-            print(f"Generazione in corso con il modello {model_name}...")
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    temperature=0.3
+        # Fino a 2 tentativi per modello con pausa in caso di picco di traffico (503)
+        for attempt in range(2):
+            try:
+                print(f"Generazione in corso con il modello {model_name} (tentativo {attempt + 1})...")
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=system_instruction,
+                        temperature=0.3
+                    )
                 )
-            )
-            if response.text:
-                clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
-                clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
-                return clean_html
-        except Exception as e:
-            print(f"Avviso: Errore con il modello {model_name}: {e}. Tentativo successivo...")
+                if response.text:
+                    clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
+                    clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
+                    return clean_html
+            except Exception as e:
+                print(f"Avviso: Errore con {model_name}: {e}.")
+                time.sleep(5)  # Attesa prima di riprovare
 
-    raise RuntimeError("Impossibile generare la rassegna.")
+    raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 4. SALVATAGGIO FILE CON CSS COMPATIBILE E LETTURA AUDIO COMPLETA
+# 4. SALVATAGGIO FILE HTML
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -166,8 +176,6 @@ def main():
 
     body_content = generate_rassegna_body(articles)
 
-    # Inseriamo lo stile CSS dentro un tag <style> che NON rompe il parser di build_audio.py
-    # e garantisce una resa tipografica bellissima sia a schermo che in stampa PDF.
     styled_html = f"""<style>
     @import url('[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap)');
     
