@@ -118,7 +118,7 @@ def fetch_and_process_news():
             feed = feedparser.parse(feed_url)
             source_name = feed.feed.get("title", "Fonte Locale")
             
-            # Leggiamo fino a 35 articoli per RSS (ampliato rispetto a 10)
+            # Leggiamo fino a 35 articoli per RSS
             for entry in feed.entries[:35]:
                 title = clean_html_text(entry.get("title", ""))
                 summary = clean_html_text(entry.get("summary", entry.get("description", "")))
@@ -349,10 +349,16 @@ def build_full_rassegna():
 </html>
 """
     
-    with open("rassegna.html", "w", encoding="utf-8") as f:
+    # Crea la cartella edizioni se non esiste
+    os.makedirs("edizioni", exist_ok=True)
+    
+    today_filename = datetime.now().strftime("%Y-%m-%d.html")
+    output_path = os.path.join("edizioni", today_filename)
+    
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(full_html)
         
-    print("--> Rassegna completata con successo! Salvata in 'rassegna.html'.")
+    print(f"--> Rassegna completata con successo! Salvata in '{output_path}'.")
 
 if __name__ == "__main__":
     build_full_rassegna()
