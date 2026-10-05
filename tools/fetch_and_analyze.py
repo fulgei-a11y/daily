@@ -57,7 +57,7 @@ HEADERS = {
 }
 
 # ---------------------------------------------------------------------------
-# 2. SCRAPING BILANCIATO DEI FEED RSS
+# 2. SCRAPING ESTESO DEI FEED RSS
 # ---------------------------------------------------------------------------
 def fetch_rss_articles():
     articles = []
@@ -72,8 +72,7 @@ def fetch_rss_articles():
             root = ET.fromstring(response.content)
             items = root.findall('.//item') or root.findall('.//{http://www.w3.org/2005/Atom}entry')
             
-            # Limitato a 12 per evitare il sovraccarico di dati e mantenere alta la qualità
-            for item in items[:12]:
+            for item in items[:15]:
                 title = item.findtext('title') or item.findtext('{http://www.w3.org/2005/Atom}title') or ""
                 link = item.findtext('link') or item.findtext('{http://www.w3.org/2005/Atom}href') or ""
                 description = item.findtext('description') or item.findtext('{http://www.w3.org/2005/Atom}summary') or ""
@@ -84,86 +83,82 @@ def fetch_rss_articles():
                     articles.append({
                         'title': title.strip(),
                         'link': link.strip(),
-                        'description': clean_desc[:350]
+                        'description': clean_desc[:400]
                     })
         except Exception:
             continue
 
-    print(f"Estratti con successo {len(articles)} articoli puliti.")
+    print(f"Estratti con successo {len(articles)} articoli totali.")
     return articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE HTML CON GEMINI (Struttura protetta)
+# 3. GENERAZIONE PER SEZIONI SEPARATE (Mai più troncamenti)
 # ---------------------------------------------------------------------------
+def generate_section(client, section_title, articles_text):
+    system_instruction = f"""
+Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
+Devi redigere ESCLUSIVAMENTE la sezione: "{section_title}" per la rassegna stampa di oggi ({TODAY}).
+
+REGOLE TASSATIVE:
+- Restituisci SOLO il codice HTML relativo a questa sezione (inizia direttamente con <h2>{section_title}</h2>).
+- Usa <h3> per suddividere per provincia o sotto-temi rilevanti.
+- Ogni notizia deve essere in un paragrafo <p> dettagliato e completo.
+- Inserisci SEMPRE il link alla fonte alla fine di ogni paragrafo nel formato esatto: <a href="URL" target="_blank">(Fonte: Nome)</a>.
+- NON generare <html> o <body>. Solo il blocco della sezione.
+- Assicurati di completare la sezione senza troncare le frasi.
+"""
+
+    prompt = f"Ecco gli articoli disponibili:\n\n{articles_text}\n\nScrivi la sezione '{section_title}' in modo approfondito:"
+
+    models_to_try = ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-2.0-flash", "gemini-1.5-flash"]
+
+    for model_name in models_to_try:
+        for attempt in range(2):
+            try:
+                print(f"Generazione sezione '{section_title}' con {model_name}...")
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=system_instruction,
+                        temperature=0.3,
+                        max_output_tokens=4096
+                    )
+                )
+                if response and response.text:
+                    clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
+                    clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
+                    if len(clean_html) > 50:
+                        return clean_html
+            except Exception as e:
+                print(f"Errore tentato con {model_name}: {e}")
+                time.sleep(3)
+                
+    return f"<h2>{section_title}</h2><p>Errore di generazione per questa sezione.</p>"
+
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise ValueError("ERRORE CRITICO: La variabile d'ambiente GEMINI_API_KEY non è impostata.")
 
     client = genai.Client(api_key=api_key)
-
     raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
 
-    system_instruction = f"""
-Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
-Il tuo compito è redigere una Rassegna Stampa HTML professionale, fluida e completa per la data odierna ({TODAY}).
-
-REGOLE TASSATIVE DI STRUTTURA:
-- NON generare <html>, <head> o <body>. Genera SOLO il frammento interno.
-- Usa <h2> per i titoli di sezione principale.
-- Usa <h3> per le sotto-sezioni (es. le province).
-- Ogni singola notizia deve essere racchiusa in un paragrafo <p> o in un punto elenco <li> ben scritto.
-- NON usare <div> per avvolgere le notizie.
-- Assicurati di chiudere correttamente tutti i tag HTML (specialmente <p>, <h3>, <a>). Non troncare mai la risposta a metà.
-
-REGOLE CONTENUTI E FONTI:
-1. Copertura delle principali notizie suddivise per sezioni logiche e province dell'Emilia-Romagna.
-2. Inserisci SEMPRE il link alla fonte alla fine di ogni paragrafo o punto elenco nel formato esatto:
-   Es: <p>Testo notizia... <a href="URL" target="_blank">(Fonte: Nome Testata)</a></p>
-3. Escludi gossip, sport minore o contenuti non rilevanti. Includi le notizie istituzionali e di cronaca principale.
-
-SEZIONI OBBLIGATORIE:
-- <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
-- <h2>ECONOMIA, LAVORO E IMPRESE</h2>
-- <h2>CRONACA E TERRITORIO</h2>
-- <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
-
-FORMATO OUTPUT:
-Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
-"""
-
-    prompt = f"Ecco la selezione degli articoli di oggi:\n\n{raw_text}\n\nGenera la rassegna completa e conclusa in ogni sua parte:"
-
-    models_to_try = [
-        "gemini-2.5-flash",
-        "gemini-2.5-pro",
-        "gemini-2.0-flash",
-        "gemini-1.5-flash"
+    sections = [
+        "PRIMA PAGINA E POLITICA REGIONALE",
+        "ECONOMIA, LAVORO E IMPRESE",
+        "CRONACA E TERRITORIO",
+        "PROTEZIONE CIVILE E AMBIENTE"
     ]
-    
-    for model_name in models_to_try:
-        for attempt in range(2):
-            try:
-                print(f"Generazione in corso con il modello {model_name} (tentativo {attempt + 1})...")
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        system_instruction=system_instruction,
-                        temperature=0.2, # Temperatura bassa per maggiore coerenza e rigore
-                        max_output_tokens=8192
-                    )
-                )
-                if response and response.text:
-                    clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
-                    clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
-                    if len(clean_html) > 200:
-                        return clean_html
-            except Exception as e:
-                print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
-                time.sleep(5)
 
-    raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
+    full_body_html = ""
+    for sec in sections:
+        print(f"\nElaborazione sezione: {sec}...")
+        section_html = generate_section(client, sec, raw_text)
+        full_body_html += "\n" + section_html + "\n"
+        time.sleep(1) # Pausa breve tra una chiamata e l'altra
+
+    return full_body_html
 
 # ---------------------------------------------------------------------------
 # 4. SALVATAGGIO FILE HTML
@@ -179,7 +174,7 @@ def main():
     body_content = generate_rassegna_body(articles)
 
     styled_html = f"""<style>
-    @import url('[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap)');
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap');
     
     .rassegna-container {{
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -256,7 +251,7 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(styled_html)
         
-    print(f"✅ File generato con successo: {OUTPUT_FILE}")
+    print(f"\n✅ File generato con successo: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
