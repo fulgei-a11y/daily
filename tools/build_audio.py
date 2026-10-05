@@ -2,11 +2,15 @@
 """Genera l'MP3 di un'edizione della "Rassegna ER" con la voce italiana Paola (sherpa-onnx, offline).
 
 Uso:  python3 build_audio.py --html AAAA-MM-GG.html --date AAAA-MM-GG --out ./audio_out
-Input: il frammento HTML dell'edizione (lo stesso che sta dentro <template id="doc"> dell'app).
+Input: il frammento HTML dell'edizione.
 Produce: out/AAAA-MM-GG.mp3 e out/audio_meta.json
-  audio_meta.json = {"date", "audio": "audio/AAAA-MM-GG.mp3", "duration": sec, "items": N, "segments": [{"i": indice notizia, "t": sec}]}
-Gli indici "i" corrispondono, nello stesso ordine, alle notizie che l'app mostra (stessa logica di lettura del frammento),
-così la pagina evidenzia la notizia in ascolto e un tocco su una notizia salta al punto giusto dell'audio.
+  audio_meta.json = {
+      "date": "AAAA-MM-GG",
+      "audio": "audio/AAAA-MM-GG.mp3",
+      "duration": sec,
+      "items": N,
+      "segments": [{"i": indice_notizia, "t": tempo_in_secondi}]
+  }
 """
 import argparse
 import datetime
@@ -83,18 +87,24 @@ def normalize(s):
 
 
 def items_from_fragment(html):
-    """Esegue il parsing dell'HTML estraendo h2, h3, p e li anche da documenti HTML completi."""
+    """Esegue il parsing dell'HTML estraendo h2, h3, p e li, ignorando le notizie duplicate."""
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html, "html.parser")
     
-    # Se il documento contiene un body o un main, usalo come radice di partenza
     root = soup.find("main") or soup.find("body") or soup
-    
     out, st = [], {"sec": None, "sub": None}
+    seen_texts = set()
 
     def add(node):
         if st["sec"] is None:
             st["sec"] = "Rassegna"
+            
+        # Chiave univoca per rilevare duplicati (escludendo punteggiatura e spazi)
+        raw_text = re.sub(r"\W+", "", node.get_text().lower())
+        if not raw_text or raw_text in seen_texts:
+            return
+            
+        seen_texts.add(raw_text)
         out.append((st["sec"], st["sub"], node))
 
     def walk(nodes):
@@ -114,7 +124,6 @@ def items_from_fragment(html):
                 for li in n.find_all("li", recursive=False):
                     add(li)
             else:
-                # Entra ricorsivamente in qualsiasi altro contenitore (html, body, main, div, section, ecc.)
                 if hasattr(n, "children"):
                     walk(n.children)
 
@@ -143,7 +152,7 @@ def spoken(prev, cur):
 
 
 def split_long(text, limit=600):
-    """Frasi lunghe in pezzi, per una sintesi più stabile."""
+    """Spezza frasi lunghe per garantire una sintesi vocale stabile."""
     parts, buf = [], ""
     for p in re.split(r"(?<=[.!?;])\s+", text):
         if len(buf) + len(p) + 1 > limit and buf:
@@ -220,6 +229,7 @@ def main():
     rate, segs, t, last = None, [], 0.0, None
     full = os.path.join(tmp, "full.wav")
 
+    # Assemblaggio audio e registrazione dei timestamp per evidenziazione testo
     with wave.open(full, "wb") as w:
         for (txt, p), i in zip(jobs, owner):
             if not os.path.exists(p):
@@ -266,8 +276,7 @@ def main():
     shutil.copy(meta_path, os.path.join(a.out, f"{a.date}.json"))
     shutil.rmtree(tmp, ignore_errors=True)
 
-    print(f"OK {mp3} {os.path.getsize(mp3) // 1024} KB, {t / 60:.1f} min, {len(segs)} notizie")
-
+    print(f"OK {mp3} {os.path.getsize(mp3) // 1024} KB, {t / 60:.1f} min, {len(segs)} notizie sincronizzate"
 
 if __name__ == "__main__":
     main()
