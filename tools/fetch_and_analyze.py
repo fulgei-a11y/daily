@@ -72,7 +72,8 @@ def fetch_rss_articles():
             root = ET.fromstring(response.content)
             items = root.findall('.//item') or root.findall('.//{http://www.w3.org/2005/Atom}entry')
             
-            for item in items[:10]:
+            # Preleviamo fino a 15 notizie per feed
+            for item in items[:15]:
                 title = item.findtext('title') or item.findtext('{http://www.w3.org/2005/Atom}title') or ""
                 link = item.findtext('link') or item.findtext('{http://www.w3.org/2005/Atom}href') or ""
                 description = item.findtext('description') or item.findtext('{http://www.w3.org/2005/Atom}summary') or ""
@@ -83,7 +84,8 @@ def fetch_rss_articles():
                     articles.append({
                         'title': title.strip(),
                         'link': link.strip(),
-                        'description': clean_desc[:300]
+                        # Estraiamo fino a 800 caratteri di descrizione per dare più contesto a Gemini
+                        'description': clean_desc[:800]
                     })
         except Exception:
             continue
@@ -105,7 +107,7 @@ def generate_rassegna_body(articles):
 
     system_instruction = f"""
 Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
-Sintetizza le notizie di oggi ({TODAY}) in una Rassegna Stampa HTML.
+Elabora una Rassegna Stampa HTML approfondita ed esaustiva per la giornata di oggi ({TODAY}).
 
 REGOLE TASSATIVE DI STRUTTURA:
 - NON generare <html>, <head> o <body>. Genera SOLO il frammento interno.
@@ -114,11 +116,17 @@ REGOLE TASSATIVE DI STRUTTURA:
 - Ogni singola notizia deve essere racchiusa in un paragrafo <p> o in un punto elenco <li>.
 - NON usare <div> per avvolgere le notizie.
 
-REGOLE CONTENUTI E FONTI:
-1. Copertura obbligatoria delle 9 province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
-2. Inserisci SEMPRE il link alla fonte alla fine di ogni paragrafo o punto elenco:
-   Es: <p>Testo notizia... <a href="URL" target="_blank">(Fonte: Ansa)</a></p>
-3. Escludi gossip e sport minore. Includi allerte della Protezione Civile.
+REGOLE PER IL DETTAGLIO E LO STILE GIORNALISTICO (FONDAMENTALE):
+- OGNI NOTIZIA DEVE ESSERE DETTAGLIATA ED ESAUSTIVA: NON scrivere meri riassunti di una sola riga.
+- Ciascuna notizia deve sviluppare un paragrafo ben articolato (tra le 4 e le 6 righe), fornendo contesto, dinamica dei fatti, persone/enti coinvolti, dichiarazioni rilevanti, cifre o impatti sul territorio.
+- Mantieni uno stile giornalistico fluido, professionale e informativo.
+
+REGOLE CONTENUTI E GEOGRAFIA:
+1. Assicura la copertura delle 9 province emiliano-romagnole: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
+2. Filtra ed elimina rigorosamente qualsiasi notizia non pertinente all'Emilia-Romagna (es. altre regioni come Calabria, Veneto, ecc.).
+3. Inserisci SEMPRE il link alla fonte alla fine di ogni notizia:
+   Es: <p>Testo approfondito della notizia... <a href="URL" target="_blank">(Fonte: Ansa)</a></p>
+4. Escludi gossip e sport minore. Includi allerte della Protezione Civile ed emergenze del territorio.
 
 SEZIONI OBBLIGATORIE:
 - <h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
@@ -130,7 +138,7 @@ FORMATO OUTPUT:
 Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
 """
 
-    prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
+    prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna dettagliata:"
 
     # Modelli sicuri e validati per l'API Google GenAI v1beta
     models_to_try = [
@@ -149,7 +157,8 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         system_instruction=system_instruction,
-                        temperature=0.3
+                        temperature=0.3,
+                        max_output_tokens=8192
                     )
                 )
                 if response and response.text:
