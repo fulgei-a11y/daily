@@ -159,7 +159,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                         return clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
-                time.sleep(4)  # Pausa per riprovare superando picchi 503
+                time.sleep(4)
 
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
@@ -209,4 +209,54 @@ def main():
         border-radius: 4px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+    }}
+    h3 {{
+        font-size: 16px;
+        color: #1d3557;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 4px;
+        margin-top: 25px;
+    }}
+    p, li {{
+        font-size: 15px;
+        margin-bottom: 14px;
+        text-align: justify;
+    }}
+    a {{
+        color: #0056b3;
+        text-decoration: none;
+        font-weight: 600;
+    }}
+    a:hover {{
+        text-decoration: underline;
+    }}
+    @media print {{
+        .rassegna-container {{
+            max-width: 100%;
+            padding: 0;
+        }}
+        h2 {{
+            background-color: #f1f1f1 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }}
+    }}
+</style>
+
+<div class="rassegna-container">
+    <div class="rassegna-header">
+        <h1>Rassegna Stampa Emilia-Romagna</h1>
+        <small style="color: #6c757d;">Edizione del {TODAY}</small>
+    </div>
+    {body_content}
+</div>"""
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(styled_html)
+        
+    print(f"✅ File generato con successo: {OUTPUT_FILE}")
+
+if __name__ == "__main__":
+    main()
+
 
