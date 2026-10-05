@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Genera l'MP3 di un'edizione della "Rassegna ER" con la voce italiana Paola (sherpa-onnx, offline).
 
 Uso:  python3 build_audio.py --html AAAA-MM-GG.html --date AAAA-MM-GG --out ./audio_out
@@ -276,7 +275,8 @@ def main():
     shutil.copy(meta_path, os.path.join(a.out, f"{a.date}.json"))
     shutil.rmtree(tmp, ignore_errors=True)
 
-    print(f"OK {mp3} {os.path.getsize(mp3) // 1024} KB, {t / 60:.1f} min, {len(segs)} notizie sincronizzate"
+    print(f"OK {mp3} {os.path.getsize(mp3) // 1024} KB, {t / 60:.1f} min, {len(segs)} notizie sincronizzate")
+
 
 if __name__ == "__main__":
     main()
