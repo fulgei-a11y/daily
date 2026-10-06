@@ -22,7 +22,7 @@ RSS_FEEDS = [
     # ANSA Regionali
     "https://www.ansa.it/emiliaromagna/notizie/emiliaromagna_rss.xml",
     
-    # Resto del Carlino
+    # Resto del Carlino (Copertura capillare province)
     "https://www.ilrestodelcarlino.it/bologna/rss",
     "https://www.ilrestodelcarlino.it/modena/rss",
     "https://www.ilrestodelcarlino.it/reggio-emilia/rss",
@@ -33,7 +33,7 @@ RSS_FEEDS = [
     "https://www.ilrestodelcarlino.it/rimini/rss",
     "https://www.ilrestodelcarlino.it/imola/rss",
     
-    # Network "Today"
+    # Network "Today" (Province e capoluoghi)
     "https://www.bolognatoday.it/rss",
     "https://www.modenatoday.it/rss",
     "https://www.riminitoday.it/rss",
@@ -42,7 +42,7 @@ RSS_FEEDS = [
     "https://www.piacenzatoday.it/rss",
     "https://www.forlitoday.it/rss",
     
-    # Testate locali
+    # Testate locali e Gazzette
     "https://www.gazzettadiparma.it/rss/",
     "https://www.piacenzasera.it/feed/",
     "https://www.corriereromagna.it/feed/",
@@ -92,7 +92,7 @@ def fetch_rss_articles():
     return articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE SINTESI TEMATICA ESTESA
+# 3. GENERAZIONE SINTESI TEMATICA
 # ---------------------------------------------------------------------------
 def generate_sintesi_tematica(articles, client):
     raw_text = "\n".join([f"- Titolo: {a['title']}\n  Sintesi: {a['description']}\n" for a in articles])
@@ -118,23 +118,24 @@ NON inserire tag <section>, <html>, <head> o marcatori markdown ```html.
 
     prompt = f"Ecco le notizie del giorno:\n\n{raw_text}\n\nGenera la sintesi tematica approfondita per le 9 province:"
 
-    try:
-        print("Generazione della sintesi tematica professionale in corso...")
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                system_instruction=system_instruction,
-                temperature=0.2,
-                max_output_tokens=4096
+    for model_name in ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.0-flash"]:
+        try:
+            print(f"Generazione sintesi tematica con {model_name}...")
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    system_instruction=system_instruction,
+                    temperature=0.2
+                )
             )
-        )
-        if response and response.text:
-            clean = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
-            clean = re.sub(r'```$', '', clean.strip(), flags=re.MULTILINE)
-            return clean
-    except Exception as e:
-        print(f"Errore durante la generazione della sintesi: {e}")
+            if response and response.text:
+                clean = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
+                clean = re.sub(r'```$', '', clean.strip(), flags=re.MULTILINE)
+                return clean
+        except Exception as e:
+            print(f"Avviso Sintesi ({model_name}): {e}")
+            time.sleep(3)
     return ""
 
 # ---------------------------------------------------------------------------
@@ -155,12 +156,12 @@ def generate_rassegna_body(articles):
 Sei un caporedattore esperto di cronaca, economia e politica dell'Emilia-Romagna.
 Sintetizza le notizie di oggi ({TODAY}) in una Rassegna Stampa HTML.
 
-REGOLE TASSATIVE DI STRUTTURA PER COMPATIBILITÀ PARSER AUDIO:
-- NON generare <html>, <head>, <body> o <section>.
-- Usa SOLO <h2> per i titoli di sezione principale.
-- Usa SOLO <h3> per le sotto-sezioni o province.
-- Ogni singola notizia deve essere racchiusa esclusivamente in un elemento <p> o <li>.
-- NON avvolgere le notizie in tag <div> generici o personalizzati.
+REGOLE TASSATIVE DI STRUTTURA:
+- NON generare <html>, <head> o <body>. Genera SOLO il frammento interno.
+- Usa <h2> per i titoli di sezione principale.
+- Usa <h3> per le sotto-sezioni/province.
+- Ogni singola notizia deve essere racchiusa in un paragrafo <p> o in un punto elenco <li>.
+- NON usare <div> per avvolgere le notizie.
 
 REGOLE CONTENUTI E FONTI:
 1. Copertura obbligatoria delle 9 province: Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini.
@@ -175,21 +176,23 @@ SEZIONI OBBLIGATORIE:
 - <h2>PROTEZIONE CIVILE E AMBIENTE</h2>
 
 FORMATO OUTPUT:
-Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown.
+Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdown (nessun ```html).
 """
 
     prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
+    # Modelli sicuri e validati per l'API Google GenAI v1beta
     models_to_try = [
         "gemini-2.5-flash",
+        "gemini-2.5-pro",
         "gemini-2.0-flash",
-        "gemini-2.5-pro"
+        "gemini-1.5-flash"
     ]
     
     for model_name in models_to_try:
         for attempt in range(2):
             try:
-                print(f"Generazione del corpo rassegna con {model_name} (tentativo {attempt + 1})...")
+                print(f"Generazione in corso con il modello {model_name} (tentativo {attempt + 1})...")
                 response = client.models.generate_content(
                     model=model_name,
                     contents=prompt,
@@ -205,12 +208,12 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                         return sintesi_html + "\n\n" + clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
-                time.sleep(3)
+                time.sleep(5)
 
-    raise RuntimeError("Impossibile generare la rassegna con i modelli configurati.")
+    raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 5. MAIN
+# 5. SALVATAGGIO FILE HTML
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -223,13 +226,13 @@ def main():
     body_content = generate_rassegna_body(articles)
 
     styled_html = f"""<style>
-    @import url('[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap)');
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap');
     
     .rassegna-container {{
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         line-height: 1.7;
         color: #2c3e50;
-        max-width: 820px;
+        max-width: 800px;
         margin: 0 auto;
         padding: 20px;
     }}
@@ -244,7 +247,6 @@ def main():
         color: #004085;
         margin: 0;
     }}
-    
     .sintesi-tematica {{
         background-color: #f4f7f9;
         border: 1px solid #b8daff;
@@ -290,7 +292,6 @@ def main():
         display: block;
         margin-bottom: 4px;
     }}
-
     h2 {{
         font-family: 'Merriweather', serif;
         font-size: 18px;
@@ -301,6 +302,7 @@ def main():
         margin-top: 35px;
         border-radius: 4px;
         text-transform: uppercase;
+        letter-spacing: 0.5px;
     }}
     h3 {{
         font-size: 16px;
@@ -319,6 +321,20 @@ def main():
         text-decoration: none;
         font-weight: 600;
     }}
+    a:hover {{
+        text-decoration: underline;
+    }}
+    @media print {{
+        .rassegna-container {{
+            max-width: 100%;
+            padding: 0;
+        }}
+        h2 {{
+            background-color: #f1f1f1 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }}
+    }}
 </style>
 
 <div class="rassegna-container">
@@ -331,7 +347,8 @@ def main():
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(styled_html)
-    print(f"✅ File HTML generato con successo per la rassegna e l'audio TTS: {OUTPUT_FILE}")
+        
+    print(f"✅ File generato con successo: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
