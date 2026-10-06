@@ -8,7 +8,7 @@ from google import genai
 from google.genai import types
 
 # ---------------------------------------------------------------------------
-# 1. CONFIGURAZIONE E LISTA FONTI RSS
+# 1. CONFIGURAZIONE E LISTA FONTI RSS (Identico a 1_4.py)
 # ---------------------------------------------------------------------------
 TODAY = datetime.date.today().strftime('%Y-%m-%d')
 OUTPUT_DIR = "edizioni"
@@ -57,7 +57,7 @@ HEADERS = {
 }
 
 # ---------------------------------------------------------------------------
-# 2. SCRAPING DEI FEED RSS
+# 2. SCRAPING DEI FEED RSS (Identico a 1_4.py)
 # ---------------------------------------------------------------------------
 def fetch_rss_articles():
     articles = []
@@ -83,7 +83,7 @@ def fetch_rss_articles():
                     articles.append({
                         'title': title.strip(),
                         'link': link.strip(),
-                        'description': clean_desc[:300]
+                        'description': clean_desc[:400]
                     })
         except Exception:
             continue
@@ -92,35 +92,51 @@ def fetch_rss_articles():
     return articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE SINTESI TEMATICA
+# 3. GENERAZIONE SINTESI TEMATICA DETTAGLIATA (9 PROVINCE)
 # ---------------------------------------------------------------------------
 def generate_sintesi_tematica(articles, client):
-    raw_text = "\n".join([f"- Titolo: {a['title']}\n  Sintesi: {a['description']}\n" for a in articles])
+    # Analizza fino a 60 notizie per garantire la copertura di tutte le 9 province
+    raw_text = "\n".join([f"- Titolo: {a['title']}\n  Sintesi: {a['description']}\n" for a in articles[:60]])
 
     system_instruction = f"""
 Sei il Caporedattore e Analista Politico di un quotidiano regionale dell'Emilia-Romagna.
-Analizza tutte le notizie del giorno ({TODAY}) ed elabora una Sintesi Esecutiva di livello dirigenziale.
+Analizza in profondità il pacchetto di notizie di oggi ({TODAY}) ed elabora un QUADRO SINTETICO E TEMATICO REGIONALE altamente dettagliato.
 
-STRUTTURA OBBLIGATORIA (Rispettare scrupolosamente i tag per compatibilità con il lettore vocale):
+STRUTTURA HTML OBBLIGATORIA (Compatibile con il lettore vocale TTS):
 - Restituisci ESCLUSIVAMENTE un blocco HTML racchiuso dentro un <div class="sintesi-tematica">...</div>.
 - Titolo iniziale: <h2>QUADRO SINTETICO E TEMATICO REGIONALE</h2>
-- Genera un elenco <ul> contenente esattamente tra i 6 e gli 8 punti tematici distinti.
-- Ogni punto <li> deve rappresentare un'area di interesse strategico (es. Politica & Riforme, Economia & Imprese, Infrastrutture & Aeroporti, Lavoro & Crisi Industriali, Sanità & Sociale, Ordine Pubblico & Sicurezza, Territorio & Ambiente).
+- Genera un elenco <ul> contenente esattamente 8 punti tematici distinti.
 
-REGOLE DI REDAZIONE PER I PUNTI (<li>):
-1. Inizia ogni punto con un titolo in grassetto senza numeri, es. <strong>Politica e Riforme Regionali:</strong>
-2. Sviluppa per OGNI punto un paragrafo approfondito e analitico di 5-7 righe.
-3. Cita dove pertinente le province coinvolte tra le 9 della regione (Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini), specificando fatti, dati e impatto sul territorio.
-4. Mantieni un tono formale e autorevole.
+SETTORI TEMATICI OBBLIGATORI (Ogni punto <li> deve trattare una delle seguenti aree):
+1. Politica Regionale e Riforme Giuntale/Consiliare
+2. Economia, Distretti Industriali ed Export
+3. Infrastrutture, Trasporti, Mobilità ed Aeroporti
+4. Lavoro, Occupazione e Crisi Aziendali
+5. Sanità, Welfare e Assistenza Territoriale
+6. Protezione Civile, Dissesto Idrogeologico e Meteo
+7. Cronaca Giudiziaria e Sicurezza Urbana
+8. Territorio, Ambiente, Cultura e Turismo
+
+REGOLE TASSATIVE DI REDAZIONE PER CIASCUN PUNTO (<li>):
+- Inizia SEMPRE con il titolo del tema in grassetto senza numeri, es: <strong>Politica Regionale e Riforme:</strong>
+- Sviluppa un testo APPROFONDITO di almeno 6-8 righe complete per ciascun punto.
+- Cita esplicitamente i fatti, i numeri, le istituzioni coinvolte e le specifiche PROVINCE interessate tra le 9 della Regione (Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini).
+- Mantieni uno stile giornalistico autorevole, preciso e informativo.
 
 NON inserire tag <section>, <html>, <head> o marcatori markdown ```html.
 """
 
-    prompt = f"Ecco le notizie del giorno:\n\n{raw_text}\n\nGenera la sintesi tematica approfondita per le 9 province:"
+    prompt = f"Ecco il corpus delle notizie di oggi:\n\n{raw_text}\n\nGenera la sintesi tematica analitica e dettagliata per le 9 province:"
 
-    for model_name in ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.0-flash"]:
+    models_to_try = [
+        "gemini-2.5-flash",
+        "gemini-2.0-flash",
+        "gemini-1.5-flash"
+    ]
+
+    for model_name in models_to_try:
         try:
-            print(f"Generazione sintesi tematica con {model_name}...")
+            print(f"Generazione sintesi tematica dettagliata con {model_name}...")
             response = client.models.generate_content(
                 model=model_name,
                 contents=prompt,
@@ -132,14 +148,27 @@ NON inserire tag <section>, <html>, <head> o marcatori markdown ```html.
             if response and response.text:
                 clean = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
                 clean = re.sub(r'```$', '', clean.strip(), flags=re.MULTILINE)
-                return clean
+                if len(clean) > 200:
+                    return clean
         except Exception as e:
             print(f"Avviso Sintesi ({model_name}): {e}")
-            time.sleep(3)
-    return ""
+            time.sleep(2)
+
+    # Fallback garantito in caso di errore di tutte le API
+    print("⚠️ Attivazione fallback strutturato per la sintesi tematica...")
+    items_html = ""
+    for a in articles[:8]:
+        items_html += f"<li><strong>Sintesi Cronaca Territoriale:</strong> {a['title']} — {a['description']}</li>\n"
+    
+    return f"""<div class="sintesi-tematica">
+<h2>QUADRO SINTETICO E TEMATICO REGIONALE</h2>
+<ul>
+{items_html}
+</ul>
+</div>"""
 
 # ---------------------------------------------------------------------------
-# 4. GENERAZIONE CORPO RASSEGNA
+# 4. GENERAZIONE HTML CON GEMINI (Struttura di 1_4.py + Sintesi)
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -148,6 +177,7 @@ def generate_rassegna_body(articles):
 
     client = genai.Client(api_key=api_key)
 
+    # Generazione preventiva della sintesi tematica
     sintesi_html = generate_sintesi_tematica(articles, client)
 
     raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
@@ -181,7 +211,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
 
     prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
-    # Modelli sicuri e validati per l'API Google GenAI v1beta
+    # Modelli sicuri e validati (Identico a 1_4.py)[span_2](start_span)[span_2](end_span)
     models_to_try = [
         "gemini-2.5-flash",
         "gemini-2.5-pro",
@@ -205,6 +235,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                     clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
                     clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
                     if len(clean_html) > 100:
+                        # Unione di Sintesi Tematica e Corpo
                         return sintesi_html + "\n\n" + clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
@@ -213,7 +244,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 5. SALVATAGGIO FILE HTML
+# 5. SALVATAGGIO FILE HTML (Stili aggiornati per la Sintesi)
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
