@@ -8,7 +8,7 @@ from google import genai
 from google.genai import types
 
 # ---------------------------------------------------------------------------
-# 1. CONFIGURAZIONE E LISTA FONTI RSS (Identico a 1_4.py)
+# 1. CONFIGURAZIONE E LISTA FONTI RSS
 # ---------------------------------------------------------------------------
 TODAY = datetime.date.today().strftime('%Y-%m-%d')
 OUTPUT_DIR = "edizioni"
@@ -57,7 +57,7 @@ HEADERS = {
 }
 
 # ---------------------------------------------------------------------------
-# 2. SCRAPING DEI FEED RSS (Identico a 1_4.py)
+# 2. SCRAPING DEI FEED RSS
 # ---------------------------------------------------------------------------
 def fetch_rss_articles():
     articles = []
@@ -83,7 +83,7 @@ def fetch_rss_articles():
                     articles.append({
                         'title': title.strip(),
                         'link': link.strip(),
-                        'description': clean_desc[:400]
+                        'description': clean_desc[:300]
                     })
         except Exception:
             continue
@@ -92,83 +92,7 @@ def fetch_rss_articles():
     return articles
 
 # ---------------------------------------------------------------------------
-# 3. GENERAZIONE SINTESI TEMATICA DETTAGLIATA (9 PROVINCE)
-# ---------------------------------------------------------------------------
-def generate_sintesi_tematica(articles, client):
-    # Analizza fino a 60 notizie per garantire la copertura di tutte le 9 province
-    raw_text = "\n".join([f"- Titolo: {a['title']}\n  Sintesi: {a['description']}\n" for a in articles[:60]])
-
-    system_instruction = f"""
-Sei il Caporedattore e Analista Politico di un quotidiano regionale dell'Emilia-Romagna.
-Analizza in profondità il pacchetto di notizie di oggi ({TODAY}) ed elabora un QUADRO SINTETICO E TEMATICO REGIONALE altamente dettagliato.
-
-STRUTTURA HTML OBBLIGATORIA (Compatibile con il lettore vocale TTS):
-- Restituisci ESCLUSIVAMENTE un blocco HTML racchiuso dentro un <div class="sintesi-tematica">...</div>.
-- Titolo iniziale: <h2>QUADRO SINTETICO E TEMATICO REGIONALE</h2>
-- Genera un elenco <ul> contenente esattamente 8 punti tematici distinti.
-
-SETTORI TEMATICI OBBLIGATORI (Ogni punto <li> deve trattare una delle seguenti aree):
-1. Politica Regionale e Riforme Giuntale/Consiliare
-2. Economia, Distretti Industriali ed Export
-3. Infrastrutture, Trasporti, Mobilità ed Aeroporti
-4. Lavoro, Occupazione e Crisi Aziendali
-5. Sanità, Welfare e Assistenza Territoriale
-6. Protezione Civile, Dissesto Idrogeologico e Meteo
-7. Cronaca Giudiziaria e Sicurezza Urbana
-8. Territorio, Ambiente, Cultura e Turismo
-
-REGOLE TASSATIVE DI REDAZIONE PER CIASCUN PUNTO (<li>):
-- Inizia SEMPRE con il titolo del tema in grassetto senza numeri, es: <strong>Politica Regionale e Riforme:</strong>
-- Sviluppa un testo APPROFONDITO di almeno 6-8 righe complete per ciascun punto.
-- Cita esplicitamente i fatti, i numeri, le istituzioni coinvolte e le specifiche PROVINCE interessate tra le 9 della Regione (Bologna, Modena, Reggio Emilia, Parma, Piacenza, Ferrara, Ravenna, Forlì-Cesena, Rimini).
-- Mantieni uno stile giornalistico autorevole, preciso e informativo.
-
-NON inserire tag <section>, <html>, <head> o marcatori markdown ```html.
-"""
-
-    prompt = f"Ecco il corpus delle notizie di oggi:\n\n{raw_text}\n\nGenera la sintesi tematica analitica e dettagliata per le 9 province:"
-
-    models_to_try = [
-        "gemini-2.5-flash",
-        "gemini-2.0-flash",
-        "gemini-1.5-flash"
-    ]
-
-    for model_name in models_to_try:
-        try:
-            print(f"Generazione sintesi tematica dettagliata con {model_name}...")
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    temperature=0.2
-                )
-            )
-            if response and response.text:
-                clean = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
-                clean = re.sub(r'```$', '', clean.strip(), flags=re.MULTILINE)
-                if len(clean) > 200:
-                    return clean
-        except Exception as e:
-            print(f"Avviso Sintesi ({model_name}): {e}")
-            time.sleep(2)
-
-    # Fallback garantito in caso di errore di tutte le API
-    print("⚠️ Attivazione fallback strutturato per la sintesi tematica...")
-    items_html = ""
-    for a in articles[:8]:
-        items_html += f"<li><strong>Sintesi Cronaca Territoriale:</strong> {a['title']} — {a['description']}</li>\n"
-    
-    return f"""<div class="sintesi-tematica">
-<h2>QUADRO SINTETICO E TEMATICO REGIONALE</h2>
-<ul>
-{items_html}
-</ul>
-</div>"""
-
-# ---------------------------------------------------------------------------
-# 4. GENERAZIONE HTML CON GEMINI (Struttura di 1_4.py + Sintesi)
+# 3. GENERAZIONE HTML CON GEMINI
 # ---------------------------------------------------------------------------
 def generate_rassegna_body(articles):
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -176,9 +100,6 @@ def generate_rassegna_body(articles):
         raise ValueError("ERRORE CRITICO: La variabile d'ambiente GEMINI_API_KEY non è impostata.")
 
     client = genai.Client(api_key=api_key)
-
-    # Generazione preventiva della sintesi tematica
-    sintesi_html = generate_sintesi_tematica(articles, client)
 
     raw_text = "\n".join([f"- Titolo: {a['title']}\n  Link: {a['link']}\n  Sintesi: {a['description']}\n" for a in articles])
 
@@ -211,7 +132,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
 
     prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
-    # Modelli sicuri e validati (Identico a 1_4.py)[span_2](start_span)[span_2](end_span)
+    # Modelli sicuri e validati per l'API Google GenAI v1beta
     models_to_try = [
         "gemini-2.5-flash",
         "gemini-2.5-pro",
@@ -235,8 +156,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                     clean_html = re.sub(r'^```html\s*', '', response.text.strip(), flags=re.MULTILINE)
                     clean_html = re.sub(r'```$', '', clean_html.strip(), flags=re.MULTILINE)
                     if len(clean_html) > 100:
-                        # Unione di Sintesi Tematica e Corpo
-                        return sintesi_html + "\n\n" + clean_html
+                        return clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
                 time.sleep(5)
@@ -244,7 +164,7 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
     raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
 
 # ---------------------------------------------------------------------------
-# 5. SALVATAGGIO FILE HTML (Stili aggiornati per la Sintesi)
+# 4. SALVATAGGIO FILE HTML
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -257,7 +177,7 @@ def main():
     body_content = generate_rassegna_body(articles)
 
     styled_html = f"""<style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap');
+    @import url('[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap)');
     
     .rassegna-container {{
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -277,51 +197,6 @@ def main():
         font-size: 26px;
         color: #004085;
         margin: 0;
-    }}
-    .sintesi-tematica {{
-        background-color: #f4f7f9;
-        border: 1px solid #b8daff;
-        border-left: 6px solid #004085;
-        border-radius: 6px;
-        padding: 20px 24px;
-        margin-bottom: 35px;
-    }}
-    .sintesi-tematica h2 {{
-        font-family: 'Merriweather', serif;
-        font-size: 18px;
-        color: #004085;
-        background-color: transparent;
-        padding: 0;
-        border-left: none;
-        margin-top: 0;
-        margin-bottom: 16px;
-        text-transform: uppercase;
-        border-bottom: 2px solid #cce5ff;
-        padding-bottom: 8px;
-    }}
-    .sintesi-tematica ul {{
-        margin: 0;
-        padding-left: 0;
-        list-style-type: none;
-    }}
-    .sintesi-tematica li {{
-        font-size: 14.5px;
-        margin-bottom: 18px;
-        text-align: justify;
-        line-height: 1.65;
-        padding-bottom: 12px;
-        border-bottom: 1px dashed #d6e4f0;
-    }}
-    .sintesi-tematica li:last-child {{
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }}
-    .sintesi-tematica strong {{
-        color: #0c5460;
-        font-size: 15px;
-        display: block;
-        margin-bottom: 4px;
     }}
     h2 {{
         font-family: 'Merriweather', serif;
