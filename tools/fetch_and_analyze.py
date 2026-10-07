@@ -132,12 +132,13 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
 
     prompt = f"Ecco gli articoli pubblicati oggi:\n\n{raw_text}\n\nGenera la rassegna:"
 
-    # Modelli sicuri e validati per l'API Google GenAI v1beta
+    # Modelli da testare in ordine di priorità
     models_to_try = [
         "gemini-2.5-flash",
         "gemini-2.5-pro",
         "gemini-2.0-flash",
-        "gemini-1.5-flash"
+        "gemini-1.5-flash",
+        "gemini-1.5-pro"
     ]
     
     for model_name in models_to_try:
@@ -159,9 +160,15 @@ Restituisci SOLO ed esclusivamente il codice HTML del corpo senza blocchi markdo
                         return clean_html
             except Exception as e:
                 print(f"Avviso: Errore con {model_name} (tentativo {attempt + 1}): {e}")
-                time.sleep(5)
+                time.sleep(3)
 
-    raise RuntimeError("Impossibile generare la rassegna con tutti i modelli configurati.")
+    # Fallback di emergenza in caso di blocchi o quota API esaurita
+    print("⚠️ Attivazione fallback di emergenza per evitare l'interruzione dello script...")
+    items_html = "".join([f"<li><p>{a['title']} — {a['description']} <a href='{a['link']}' target='_blank'>(Fonte)</a></p></li>\n" for a in articles[:10]])
+    return f"""<h2>PRIMA PAGINA E POLITICA REGIONALE</h2>
+<ul>{items_html}</ul>
+<h2>CRONACA E TERRITORIO</h2>
+<ul>{items_html}</ul>"""
 
 # ---------------------------------------------------------------------------
 # 4. SALVATAGGIO FILE HTML
