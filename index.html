@@ -4,202 +4,492 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Rassegna ER</title>
-<meta name="theme-color" content="#8f2a22">
+<meta name="theme-color" content="#f6f4f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161413" media="(prefers-color-scheme: dark)">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <style>
 :root{
   --bg:#f6f4f1; --surface:#ffffff; --ink:#1d1b1a; --muted:#6b6560; --line:#e3ded8;
-  --accent:#8f2a22; --accent-ink:#ffffff; --active:#f3e3dc; --chip:#ece7e1;
+  --accent:#8f2a22; --accent-ink:#ffffff; --active:#f6e2da; --chip:#ece7e1; --hl:#fff4d6;
   --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
   --f-ui:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --player-h:132px;
+  --player-h:150px;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+@media (prefers-color-scheme: dark){ :root{
   --bg:#161413; --surface:#211e1c; --ink:#ece7e2; --muted:#a39b94; --line:#35302c;
-  --accent:#e2735f; --accent-ink:#1a1210; --active:#3a2621; --chip:#2b2724; color-scheme:dark } }
+  --accent:#e2735f; --accent-ink:#1a1210; --active:#3a2621; --chip:#2b2724; --hl:#3b3320; color-scheme:dark } }
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
+html{scroll-behavior:smooth}
 html,body{background:var(--bg)}
-body{color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;margin:0}
+body{color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;margin:0;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-underline-offset:2px}
-button{font:inherit;color:inherit}
+button,input,select{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 
-/* Testata */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-.masthead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px 16px 6px;max-width:760px;margin:0 auto}
-.brand{white-space:nowrap;font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1;letter-spacing:.01em;text-transform:uppercase;margin:0}
+/* ---------- Testata ---------- */
+.top{background:var(--bg);padding-top:env(safe-area-inset-top,0px)}
+.navbar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px}
+.masthead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:12px}
+.brand{white-space:nowrap;font-family:var(--f-display);font-weight:700;font-size:30px;line-height:1;letter-spacing:.01em;text-transform:uppercase;margin:0}
 .brand span{color:var(--accent)}
-.dateline{min-width:0;font-family:var(--f-ui);font-size:12.5px;color:var(--muted);text-align:right;line-height:1.3}
-.dateline b{display:block;color:var(--ink);font-weight:600}
-.chips{display:flex;gap:6px;overflow-x:auto;padding:6px 16px 10px;max-width:760px;margin:0 auto;scrollbar-width:none}
+.dateline{min-width:0;font-family:var(--f-ui);font-size:12.5px;color:var(--muted);text-align:right;line-height:1.35}
+.dateline b{display:block;color:var(--ink);font-weight:600;font-size:13.5px}
+.toolbar{display:flex;align-items:center;gap:6px;padding:10px 0 4px}
+.icon{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer}
+.icon:disabled{opacity:.35;cursor:default}
+.icon svg{width:18px;height:18px;fill:var(--ink)}
+.datesel{flex:1;min-width:0;height:38px;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:0 14px;font-family:var(--f-ui);font-weight:600;font-size:15px;text-align:center;text-align-last:center;appearance:none;-webkit-appearance:none;cursor:pointer}
+.pdfbtn{flex:none;border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;height:38px;padding:0 14px;font-family:var(--f-ui);font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.pdfbtn svg{width:16px;height:16px;fill:currentColor}
+.search{display:flex;align-items:center;gap:8px;margin:6px 0 2px;height:38px;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:0 12px}
+.search svg{width:16px;height:16px;fill:var(--muted);flex:none}
+.search input{flex:1;min-width:0;border:0;background:transparent;font-family:var(--f-ui);font-size:15px;outline:none}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 0;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
-.chip{flex:none;border:0;background:var(--chip);border-radius:999px;padding:6px 12px;font-family:var(--f-ui);font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap}
+.chips + .chips{padding-top:0}
+.chip{flex:none;border:0;background:var(--chip);border-radius:999px;padding:6px 12px;font-family:var(--f-ui);font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
+.chip small{font-weight:500;opacity:.7;margin-left:4px}
 .chip.on{background:var(--accent);color:var(--accent-ink)}
+.chips.prov .chip{background:transparent;border:1px solid var(--line);font-weight:500;padding:5px 11px}
+.chips.prov .chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 
-/* Contenuto */
-main{max-width:760px;margin:0 auto;padding:8px 16px calc(var(--player-h) + 40px)}
-.sec-title{font-family:var(--f-display);font-weight:700;font-size:26px;text-transform:uppercase;letter-spacing:.02em;margin:28px 0 4px;color:var(--accent);text-wrap:balance;scroll-margin-top:120px}
-.sub-title{font-family:var(--f-display);font-weight:600;font-size:20px;margin:18px 0 2px;padding-bottom:4px;border-bottom:1px solid var(--line);text-wrap:balance;scroll-margin-top:120px}
-.item{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;padding:12px 8px 12px 4px;border-bottom:1px solid var(--line);border-radius:8px;scroll-margin-top:130px}
-.item .txt{min-width:0}
+/* ---------- Contenuto ---------- */
+main{max-width:780px;margin:0 auto;padding:4px 16px calc(var(--player-h) + 48px)}
+.sec{scroll-margin-top:100px}
+.sec-title{font-family:var(--f-display);font-weight:700;font-size:27px;text-transform:uppercase;letter-spacing:.02em;margin:30px 0 4px;color:var(--accent);text-wrap:balance;display:flex;align-items:baseline;gap:10px}
+.sec-title small{margin-left:auto;white-space:nowrap;font-family:var(--f-ui);font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0;text-transform:none}
+.sec.evidenza .item{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin:8px 0;padding:14px 12px 14px 8px}
+.sub-title{font-family:var(--f-display);font-weight:600;font-size:19px;margin:18px 0 2px;padding-bottom:4px;border-bottom:2px solid var(--line);color:var(--ink)}
+.item{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;padding:12px 8px 12px 4px;border-bottom:1px solid var(--line);border-radius:10px;scroll-margin-top:110px;transition:background .25s}
+.item .txt{min-width:0;overflow-wrap:anywhere}
 .item .txt p{margin:0}
-.pbtn{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;margin-top:2px}
-.pbtn svg{width:14px;height:14px;fill:var(--ink)}
+.item .txt > b:first-child,.item .txt > strong:first-child{font-family:var(--f-ui);font-weight:700}
+.sec.notes .item{border:0}
+.sec.notes .pbtn{visibility:hidden}
+.sec.notes .txt{font-family:var(--f-ui);font-size:14px;color:var(--muted)}
+.item .src{display:block;margin-top:4px;font-family:var(--f-ui);font-size:13px;color:var(--muted)}
+.item .src a{font-weight:600}
+.pbtn{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;margin-top:2px;padding:0}
+.pbtn svg{width:13px;height:13px;fill:var(--ink)}
 .item.reading{background:var(--active);border-bottom-color:transparent}
 .item.reading .pbtn{background:var(--accent);border-color:var(--accent)}
 .item.reading .pbtn svg{fill:var(--accent-ink)}
+mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
+.note{font-family:var(--f-ui);font-size:14px;color:var(--muted);background:var(--chip);border-radius:10px;padding:10px 12px}
+.empty{font-family:var(--f-ui);color:var(--muted);text-align:center;padding:48px 0}
+.skel{height:14px;border-radius:7px;background:var(--chip);margin:16px 0;animation:pulse 1.2s infinite alternate}
+@keyframes pulse{to{opacity:.45}}
 
-/* Lettore Audio */
+/* ---------- Lettore audio ---------- */
 .player{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px));box-shadow:0 -6px 24px rgb(0 0 0 / .08)}
-.player-in{max-width:760px;margin:0 auto;display:grid;gap:8px}
+.player-in{max-width:780px;margin:0 auto;display:grid;gap:8px}
 .now{font-family:var(--f-ui);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;min-width:0}
 .now span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .now b{color:var(--ink);font-weight:600}
-.bar{height:6px;cursor:pointer;background:var(--chip);border-radius:2px;overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar{position:relative;height:8px;cursor:pointer;background:var(--chip);border-radius:4px;overflow:hidden;touch-action:none}
+.bar i{display:block;height:100%;width:0;background:var(--accent)}
 .controls{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mid{display:flex;align-items:center;gap:6px}
 .ctl{border:0;background:transparent;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;cursor:pointer}
 .ctl svg{width:24px;height:24px;fill:var(--ink)}
-.ctl.main{width:64px;height:64px;background:var(--accent)}
+.ctl.main{width:62px;height:62px;background:var(--accent)}
 .ctl.main svg{width:28px;height:28px;fill:var(--accent-ink)}
-.pill{border:1px solid var(--line);background:var(--bg);border-radius:999px;height:40px;min-width:64px;padding:0 12px;font-family:var(--f-ui);font-weight:600;font-size:15px;cursor:pointer}
-.mid{display:flex;align-items:center;gap:4px}
+.pill{border:1px solid var(--line);background:var(--bg);border-radius:999px;height:40px;min-width:64px;padding:0 12px;font-family:var(--f-ui);font-weight:600;font-size:14px;cursor:pointer}
+.pill.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.player.noaudio .controls,.player.noaudio .bar{display:none}
 
-.toolbar{display:flex;align-items:center;gap:6px;max-width:760px;margin:0 auto;padding:0 16px 4px}
-.datebtn{flex:1;min-width:0;border:0;background:transparent;font-family:var(--f-ui);font-size:15px;text-align:center;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:6px 2px}
-.pdfbtn{flex:none;border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;height:34px;padding:0 14px;font-family:var(--f-ui);font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px}
-.pdfbtn svg{width:16px;height:16px;fill:currentColor}
+@media (min-width:700px){ body{font-size:17.5px} .brand{font-size:34px} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
 
-@media print {
-  .top, .player, .pbtn { display: none !important; }
-  main { padding: 0 !important; max-width: 100% !important; }
+/* ---------- Stampa / PDF ---------- */
+@media print{
+  :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#444;--line:#ccc;--accent:#7a1f18;--active:#fff;--chip:#fff}
+  body{font-size:10.5pt;line-height:1.45}
+  .top .toolbar,.top .search,.navbar,.chips,.player,.pbtn{display:none!important}
+  .printdate{display:block!important;font-family:var(--f-ui);font-weight:600;margin:4pt 0 0}
+  .top{position:static;border:0}
+  main{padding:0!important;max-width:none}
+  .item{display:block;padding:5pt 0;break-inside:avoid;border-radius:0}
+  .item[hidden]{display:block!important}
+  .sec[hidden],.sub-title[hidden]{display:block!important}
+  .sec.evidenza .item{border:0;border-bottom:1px solid var(--line);background:none;margin:0;padding:5pt 0}
+  .sec-title{font-size:16pt;margin-top:14pt;break-after:avoid}
+  .sub-title{font-size:12.5pt;break-after:avoid}
+  .item .src a{text-decoration:none;color:#000}
 }
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="masthead">
-    <h1 class="brand">Rassegna <span>ER</span></h1>
-    <div class="dateline"><b>Emilia-Romagna</b><span id="durTxt">caricamento...</span></div>
+  <div class="wrap">
+    <div class="masthead">
+      <div><h1 class="brand">Rassegna <span>ER</span></h1><p class="printdate" id="printDate" hidden></p></div>
+      <div class="dateline"><b>Emilia-Romagna</b><span id="stats">caricamento…</span></div>
+    </div>
+    <div class="toolbar">
+      <button class="icon" id="prevEd" type="button" aria-label="Edizione precedente"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg></button>
+      <select class="datesel" id="dateSel" aria-label="Scegli l'edizione"></select>
+      <button class="icon" id="nextEd" type="button" aria-label="Edizione successiva"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
+      <button class="pdfbtn" id="pdfBtn" type="button"><svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"/></svg>PDF</button>
+    </div>
+    <label class="search"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9"/></svg><input id="q" type="search" placeholder="Cerca nella rassegna (es. alluvione, Bologna, sanità)" autocomplete="off"></label>
   </div>
-  <div class="toolbar">
-    <button class="datebtn" id="dateBtn" type="button"><b id="dateTxt">Caricamento edizione...</b></button>
-    <button class="pdfbtn" id="pdfBtn" type="button" onclick="window.print()"><svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"/></svg>PDF</button>
-  </div>
-  <nav class="chips" id="chips"></nav>
 </header>
+<div class="navbar">
+  <div class="wrap">
+    <nav class="chips" id="secChips" aria-label="Sezioni"></nav>
+    <nav class="chips prov" id="provChips" aria-label="Province"></nav>
+  </div>
+</div>
 
-<main id="main">
-  <div id="list">Caricamento in corso...</div>
-</main>
+<main id="main"><div class="skel"></div><div class="skel" style="width:80%"></div><div class="skel" style="width:60%"></div></main>
 
-<div class="player" role="region" aria-label="Lettore">
+<div class="player" id="player" role="region" aria-label="Lettore audio">
   <div class="player-in">
-    <div class="now"><span id="nowSec"><b>Pronto</b> · tocca play per ascoltare</span><span id="nowPos">0:00 / 0:00</span></div>
+    <div class="now"><span id="nowTxt"><b>Ascolta la rassegna</b> · voce Paola</span><span id="nowPos">0:00 / 0:00</span></div>
     <div class="bar" id="bar"><i id="barFill"></i></div>
     <div class="controls">
-      <button class="pill" id="rateBtn" type="button">1×</button>
+      <button class="pill" id="rateBtn" type="button" aria-label="Velocità">1×</button>
       <div class="mid">
+        <button class="ctl" id="prevItem" type="button" aria-label="Notizia precedente"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
         <button class="ctl main" id="playBtn" type="button" aria-label="Ascolta"><svg id="playIco" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="ctl" id="nextItem" type="button" aria-label="Notizia successiva"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
       </div>
-      <button class="pill" id="audioStat" type="button" disabled>MP3</button>
+      <button class="pill on" id="followBtn" type="button" aria-pressed="true" title="Scorre la pagina seguendo la lettura">Segui</button>
     </div>
   </div>
 </div>
 
-<audio id="audioPlayer" preload="none"></audio>
+<audio id="audio" preload="metadata"></audio>
 
 <script>
 (function(){
-  const $=s=>document.querySelector(s);
-  const audio=$('#audioPlayer');
-  let playing=false;
-  
-  function fmtTime(s){ s=Math.floor(s||0); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  const $ = s => document.querySelector(s);
+  const audio = $('#audio'), main = $('#main');
+  const PLAY = '<path d="M8 5v14l11-7z"/>', PAUSE = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
+  const MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+  let editions = [], current = null, items = [], segs = [], syncOK = false, curIdx = -1;
+  let follow = true, lastUserScroll = 0, prov = 'Tutte';
 
-  // 1. Legge index.json per trovare l'ultima edizione
-  fetch('index.json?v=' + Date.now())
-    .then(r=>r.json())
-    .then(data=>{
-      if(data.latest){
-        loadEdition(data.latest);
-      }
-    })
-    .catch(e=>console.error('Errore index.json', e));
+  const store = { get(k){ try { return localStorage.getItem(k); } catch(e) { return null; } },
+                  set(k,v){ try { localStorage.setItem(k,v); } catch(e) {} } };
+  const fmt = s => { s = Math.floor(s || 0); return Math.floor(s/60) + ':' + String(s % 60).padStart(2,'0'); };
+  const longDate = iso => { const d = new Date(iso + 'T12:00:00');
+    return isNaN(d) ? iso : d.toLocaleDateString('it-IT', { weekday:'long', day:'numeric', month:'long', year:'numeric' }); };
+  const shortDate = iso => { const d = new Date(iso + 'T12:00:00');
+    return isNaN(d) ? iso : d.toLocaleDateString('it-IT', { weekday:'short', day:'numeric', month:'long', year:'numeric' }); };
+  // titoli tutti in maiuscolo (vecchie edizioni) → "Prima pagina e politica regionale"
+  const nice = t => t === t.toUpperCase() ? t.charAt(0) + t.slice(1).toLowerCase() : t;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-  function loadEdition(isoDate){
-    $('#dateTxt').textContent = isoDate;
-    
-    // Carica il contenuto HTML dell'edizione
-    fetch(`edizioni/${isoDate}.html`)
-      .then(r=>r.text())
-      .then(html=>{
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const content = doc.querySelector('main') || doc.body;
-        $('#list').innerHTML = content.innerHTML;
-        buildSections();
-      });
+  /* ---------- Archivio edizioni ---------- */
+  async function init(){
+    let latest = null;
+    try { latest = (await (await fetch('index.json?v=' + Date.now())).json()).latest; } catch(e) {}
+    try { editions = (await (await fetch('edizioni/index.json?v=' + Date.now())).json()).map(e => e.date || e); } catch(e) {}
+    if (latest && !editions.includes(latest)) editions.push(latest);
+    editions = [...new Set(editions)].filter(Boolean).sort().reverse();
+    if (!editions.length) { main.innerHTML = '<p class="empty">Nessuna edizione disponibile.</p>'; return; }
+    const sel = $('#dateSel');
+    sel.innerHTML = editions.map(d => `<option value="${d}">${shortDate(d)}</option>`).join('');
+    sel.onchange = () => load(sel.value);
+    $('#prevEd').onclick = () => step(1);
+    $('#nextEd').onclick = () => step(-1);
+    const wanted = location.hash.slice(1);
+    load(editions.includes(wanted) ? wanted : editions[0]);
+  }
+  function step(d){ const i = editions.indexOf(current) + d; if (i >= 0 && i < editions.length) load(editions[i]); }
+  window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (h !== current && editions.includes(h)) load(h); });
 
-    // Collega il file audio MP3 corrispondente
-    audio.src = `audio/${isoDate}.mp3`;
-    $('#audioStat').textContent = 'MP3 OK';
+  /* ---------- Caricamento di un'edizione ---------- */
+  async function load(date){
+    current = date;
+    $('#dateSel').value = date;
+    $('#prevEd').disabled = editions.indexOf(date) >= editions.length - 1;
+    $('#nextEd').disabled = editions.indexOf(date) <= 0;
+    if (location.hash.slice(1) !== date) history.replaceState(null, '', '#' + date);
+    document.title = 'Rassegna ER · ' + longDate(date);
+    $('#printDate').textContent = longDate(date).replace(/^./, c => c.toUpperCase());
+    audio.pause(); setPlayIcon(false);
+    main.innerHTML = '<div class="skel"></div><div class="skel" style="width:80%"></div>';
+    try {
+      const r = await fetch(`edizioni/${date}.html?v=${Date.now()}`);
+      if (!r.ok) throw new Error(r.status);
+      render(await r.text());
+    } catch(e) {
+      main.innerHTML = `<p class="empty">Edizione non disponibile (${esc(e.message)}).</p>`;
+      items = [];
+    }
+    await loadAudio(date);
+    updateStats();
+    window.scrollTo({ top: 0 });
   }
 
-  function buildSections(){
-    const list = $('#list');
-    const sections = list.querySelectorAll('h2, h3');
-    const chips = $('#chips');
-    chips.innerHTML = '';
-    
-    sections.forEach((sec, idx)=>{
-      sec.id = 'sec-' + idx;
-      const btn = document.createElement('button');
-      btn.className = 'chip';
-      btn.textContent = sec.textContent;
-      btn.onclick = () => sec.scrollIntoView({behavior:'smooth'});
-      chips.appendChild(btn);
+  /* Stessa logica di lettura di build_audio.py: l'indice di ogni notizia coincide con l'audio */
+  function walkFragment(root){
+    const out = [], st = { sec: null, sub: null };
+    const add = n => { if (st.sec === null) st.sec = 'Rassegna'; out.push({ sec: st.sec, sub: st.sub, node: n }); };
+    const walk = nodes => {
+      for (const n of nodes){
+        if (n.nodeType !== 1) continue;
+        const t = n.tagName.toLowerCase();
+        if (t === 'h2'){ st.sec = n.textContent.trim(); st.sub = null; }
+        else if (t === 'h3'){ st.sub = n.textContent.trim(); }
+        else if (t === 'p'){ if (!n.classList.contains('note')) add(n); }
+        else if (t === 'ol' || t === 'ul'){ for (const li of n.children) if (li.tagName === 'LI') add(li); }
+        else if (t === 'div'){
+          if (n.classList.contains('foot')){ st.sec = 'Note'; st.sub = null; for (const c of n.children) add(c); }
+          else walk(n.childNodes);
+        }
+      }
+    };
+    walk(root.childNodes);
+    return out;
+  }
+
+  function render(html){
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    doc.querySelectorAll('style,script,link').forEach(n => n.remove());
+    const notes = [...doc.querySelectorAll('p.note')].map(n => n.outerHTML).join('');
+    const list = walkFragment(doc.body);
+    main.innerHTML = notes;
+    items = [];
+    let secEl = null, lastSec = null, lastSub = null;
+    list.forEach((it, i) => {
+      if (it.sec !== lastSec){
+        secEl = document.createElement('section');
+        secEl.className = 'sec' + (/evidenza/i.test(it.sec) ? ' evidenza' : '') + (it.sec === 'Note' ? ' notes' : '');
+        secEl.id = 'sec-' + i;
+        secEl.dataset.title = nice(it.sec);
+        secEl.innerHTML = `<h2 class="sec-title">${esc(nice(it.sec))} <small></small></h2>`;
+        main.appendChild(secEl);
+        lastSec = it.sec; lastSub = null;
+      }
+      if (it.sub && it.sub !== lastSub){
+        const h = document.createElement('h3');
+        h.className = 'sub-title'; h.textContent = it.sub; h.dataset.prov = it.sub;
+        secEl.appendChild(h);
+      }
+      lastSub = it.sub;
+      const el = document.createElement('article');
+      el.className = 'item'; el.dataset.i = i; el.dataset.prov = it.sub || ''; el.dataset.sub = it.sub ? '1' : '';
+      el.innerHTML = `<button class="pbtn" type="button" aria-label="Ascolta da questa notizia"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><div class="txt">${it.node.innerHTML}</div>`;
+      el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+      // vecchie edizioni: "(Fonte: X)" dentro il link diventa la riga delle fonti
+      if (!el.querySelector('.src')){
+        const links = [...el.querySelectorAll('.txt > a')].filter(a => /fonte/i.test(a.textContent));
+        if (links.length){
+          const span = document.createElement('span'); span.className = 'src';
+          links.forEach((a, k) => { a.textContent = a.textContent.replace(/[()]/g, '').replace(/^\s*Fonte:\s*/i, '');
+            span.append(k ? ', ' : 'Fonte: ', a); });
+          el.querySelector('.txt').appendChild(span);
+        }
+      }
+      el.querySelector('.pbtn').onclick = () => playFrom(i);
+      el.dataset.text = el.textContent.toLowerCase();
+      secEl.appendChild(el);
+      items.push(el);
+    });
+    if (!items.length) main.insertAdjacentHTML('beforeend', '<p class="empty">Questa edizione non contiene notizie.</p>');
+    buildChips();
+    applyFilters();
+  }
+
+  /* ---------- Sezioni, province e ricerca ---------- */
+  function buildChips(){
+    const secs = [...main.querySelectorAll('.sec')];
+    $('#secChips').innerHTML = '';
+    secs.forEach(s => {
+      const b = document.createElement('button');
+      b.className = 'chip'; b.type = 'button'; b.dataset.target = s.id;
+      b.innerHTML = esc(s.dataset.title) + '<small></small>';
+      b.onclick = () => s.scrollIntoView({ behavior: 'smooth' });
+      $('#secChips').appendChild(b);
+    });
+    const order = ['Emilia-Romagna','Bologna','Modena','Reggio Emilia','Parma','Piacenza','Ferrara','Ravenna','Forlì-Cesena','Rimini'];
+    const present = new Set(items.map(i => i.dataset.prov).filter(Boolean));
+    const provs = ['Tutte', ...order.filter(p => present.has(p)), ...[...present].filter(p => !order.includes(p)).sort()];
+    if (!provs.includes(prov)) prov = 'Tutte';
+    $('#provChips').innerHTML = '';
+    $('#provChips').hidden = provs.length <= 2;
+    provs.forEach(p => {
+      const b = document.createElement('button');
+      b.className = 'chip' + (p === prov ? ' on' : ''); b.type = 'button'; b.textContent = p;
+      b.onclick = () => { prov = p; [...$('#provChips').children].forEach(c => c.classList.toggle('on', c === b)); applyFilters(); };
+      $('#provChips').appendChild(b);
+    });
+    observeSections();
+  }
+
+  function applyFilters(){
+    const q = $('#q').value.trim().toLowerCase();
+    items.forEach(el => {
+      // le notizie senza provincia (In evidenza, Da seguire) restano se ne parlano
+      const okProv = prov === 'Tutte' || el.dataset.prov === prov ||
+        (!el.dataset.sub && prov !== 'Emilia-Romagna' && el.dataset.text.includes(prov.toLowerCase().split('-')[0]));
+      el.hidden = !(okProv && (!q || el.dataset.text.includes(q)));
+      const txt = el.querySelector('.txt');
+      if (!txt.dataset.orig) txt.dataset.orig = txt.innerHTML;
+      txt.innerHTML = txt.dataset.orig;
+      if (q && !el.hidden) highlight(txt, q);
+    });
+    main.querySelectorAll('.sec').forEach(s => {
+      const n = s.querySelectorAll('.item:not([hidden])').length;
+      s.hidden = n === 0;
+      s.querySelector('.sec-title small').textContent = n ? n + (n === 1 ? ' notizia' : ' notizie') : '';
+      const chip = $(`#secChips [data-target="${s.id}"]`);
+      if (chip){ chip.hidden = n === 0; chip.querySelector('small').textContent = n; }
+      s.querySelectorAll('.sub-title').forEach(h => {
+        let el = h.nextElementSibling, any = false;
+        while (el && el.classList.contains('item')){ if (!el.hidden) any = true; el = el.nextElementSibling; }
+        h.hidden = !any;
+      });
+    });
+    let msg = $('#noResults');
+    const none = items.length && !items.some(el => !el.hidden);
+    if (none && !msg) main.insertAdjacentHTML('beforeend', '<p class="empty" id="noResults">Nessuna notizia corrisponde alla ricerca.</p>');
+    if (!none && msg) msg.remove();
+  }
+  function highlight(root, q){
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const hits = [];
+    while (walker.nextNode()){ const n = walker.currentNode; if (n.nodeValue.toLowerCase().includes(q)) hits.push(n); }
+    hits.forEach(n => {
+      const i = n.nodeValue.toLowerCase().indexOf(q);
+      const m = document.createElement('mark');
+      const after = n.splitText(i); after.splitText(q.length);
+      m.textContent = after.nodeValue; after.replaceWith(m);
     });
   }
+  let qTimer; $('#q').addEventListener('input', () => { clearTimeout(qTimer); qTimer = setTimeout(applyFilters, 150); });
 
-  // Controlli Riproduttore Audio MP3
-  $('#playBtn').onclick = () => {
-    if(playing){
-      audio.pause();
-      playing = false;
-      $('#playIco').innerHTML = '<path d="M8 5v14l11-7z"/>';
-    } else {
-      audio.play().then(()=>{
-        playing = true;
-        $('#playIco').innerHTML = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
-      }).catch(err => {
-        alert('File MP3 in fase di generazione o non ancora pronto per questa edizione.');
-      });
+  let io;
+  function observeSections(){
+    if (io) io.disconnect();
+    io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting){
+        [...$('#secChips').children].forEach(c => { const on = c.dataset.target === e.target.id; c.classList.toggle('on', on);
+          if (on) c.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); });
+      } });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    main.querySelectorAll('.sec').forEach(s => io.observe(s));
+  }
+
+  /* ---------- Audio sincronizzato ---------- */
+  async function loadAudio(date){
+    segs = []; syncOK = false; curIdx = -1;
+    $('#player').classList.remove('noaudio');
+    let meta = null;
+    try { const r = await fetch(`audio/${date}.json?v=${Date.now()}`); if (r.ok) meta = await r.json(); } catch(e) {}
+    if (!meta){
+      $('#player').classList.add('noaudio');
+      $('#nowTxt').innerHTML = '<b>Audio non disponibile</b> per questa edizione';
+      $('#nowPos').textContent = '';
+      audio.removeAttribute('src');
+      items.forEach(el => el.querySelector('.pbtn').hidden = true);
+      return;
     }
-  };
+    audio.src = meta.audio || `audio/${date}.mp3`;
+    segs = (meta.segments || []).slice().sort((a, b) => a.t - b.t);
+    syncOK = segs.length > 0 && meta.items === items.length;
+    $('#nowTxt').innerHTML = `<b>Ascolta la rassegna</b> · ${fmt(meta.duration)} · voce Paola`;
+    $('#nowPos').textContent = '0:00 / ' + fmt(meta.duration);
+    const saved = parseFloat(store.get('pos-' + date));
+    if (saved > 5) audio.addEventListener('loadedmetadata', () => { audio.currentTime = saved; }, { once: true });
+    items.forEach(el => el.querySelector('.pbtn').hidden = !syncOK);
+    setupMediaSession(date);
+  }
 
+  function segIndexAt(t){
+    let lo = 0, hi = segs.length - 1, ans = -1;
+    while (lo <= hi){ const m = (lo + hi) >> 1; if (segs[m].t <= t + 0.05){ ans = m; lo = m + 1; } else hi = m - 1; }
+    return ans;
+  }
+  function playFrom(i){
+    const s = segs.find(x => x.i === i);
+    if (!s) return;
+    audio.currentTime = s.t; lastUserScroll = 0; play();
+  }
+  function play(){ audio.play().then(() => setPlayIcon(true)).catch(() => {
+    $('#nowTxt').innerHTML = '<b>Audio non ancora pronto</b> · riprova tra qualche minuto'; }); }
+  function setPlayIcon(on){ $('#playIco').innerHTML = on ? PAUSE : PLAY; $('#playBtn').setAttribute('aria-label', on ? 'Pausa' : 'Ascolta'); }
+
+  $('#playBtn').onclick = () => audio.paused ? play() : audio.pause();
+  audio.onpause = () => setPlayIcon(false);
+  audio.onplay = () => setPlayIcon(true);
+  audio.onended = () => { setPlayIcon(false); store.set('pos-' + current, 0); };
+  $('#prevItem').onclick = () => { const k = segIndexAt(audio.currentTime);
+    if (k >= 0 && audio.currentTime - segs[k].t > 3) audio.currentTime = segs[k].t;
+    else if (k > 0) audio.currentTime = segs[k - 1].t; else audio.currentTime = 0; };
+  $('#nextItem').onclick = () => { const k = segIndexAt(audio.currentTime); if (k + 1 < segs.length) audio.currentTime = segs[k + 1].t; };
+
+  let saveTick = 0;
   audio.ontimeupdate = () => {
-    if(!audio.duration) return;
-    const pct = (audio.currentTime / audio.duration) * 100;
-    $('#barFill').style.width = pct + '%';
-    $('#nowPos').textContent = fmtTime(audio.currentTime) + ' / ' + fmtTime(audio.duration);
+    const d = audio.duration || 0;
+    $('#barFill').style.width = d ? (audio.currentTime / d * 100) + '%' : '0';
+    $('#nowPos').textContent = fmt(audio.currentTime) + ' / ' + fmt(d);
+    if (++saveTick % 8 === 0) store.set('pos-' + current, audio.currentTime);
+    if (!syncOK) return;
+    const k = segIndexAt(audio.currentTime);
+    const idx = k >= 0 ? segs[k].i : -1;
+    if (idx === curIdx) return;
+    if (items[curIdx]) items[curIdx].classList.remove('reading');
+    curIdx = idx;
+    const el = items[idx];
+    if (!el) return;
+    el.classList.add('reading');
+    const sec = el.closest('.sec').dataset.title, sub = el.dataset.prov;
+    $('#nowTxt').innerHTML = `<b>${esc(sec)}</b>${sub ? ' · ' + esc(sub) : ''} · ${idx + 1}/${items.length}`;
+    if ('mediaSession' in navigator) navigator.mediaSession.metadata.artist = sec + (sub ? ' · ' + sub : '');
+    if (follow && !el.hidden && Date.now() - lastUserScroll > 5000) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
+  ['wheel', 'touchmove'].forEach(ev => window.addEventListener(ev, () => { lastUserScroll = Date.now(); }, { passive: true }));
 
-  const rates = [1, 1.25, 1.5, 0.85];
-  let rateIdx = 0;
-  $('#rateBtn').onclick = () => {
-    rateIdx = (rateIdx + 1) % rates.length;
-    audio.playbackRate = rates[rateIdx];
-    $('#rateBtn').textContent = rates[rateIdx] + '×';
-  };
+  const bar = $('#bar');
+  const seek = e => { const r = bar.getBoundingClientRect(); const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+    if (audio.duration) audio.currentTime = Math.max(0, Math.min(1, x / r.width)) * audio.duration; };
+  bar.addEventListener('pointerdown', e => { seek(e); bar.setPointerCapture(e.pointerId); bar.onpointermove = seek; });
+  bar.addEventListener('pointerup', () => { bar.onpointermove = null; });
+
+  const rates = [1, 1.25, 1.5, 1.75, 0.85];
+  let rateIdx = Math.max(0, rates.indexOf(parseFloat(store.get('rate')) || 1));
+  const applyRate = () => { audio.playbackRate = rates[rateIdx]; $('#rateBtn').textContent = rates[rateIdx] + '×'; };
+  applyRate();
+  audio.addEventListener('loadedmetadata', applyRate);
+  $('#rateBtn').onclick = () => { rateIdx = (rateIdx + 1) % rates.length; store.set('rate', rates[rateIdx]); applyRate(); };
+
+  $('#followBtn').onclick = () => { follow = !follow; $('#followBtn').classList.toggle('on', follow);
+    $('#followBtn').setAttribute('aria-pressed', follow); lastUserScroll = 0; };
+
+  function setupMediaSession(date){
+    if (!('mediaSession' in navigator)) return;
+    navigator.mediaSession.metadata = new MediaMetadata({ title: 'Rassegna ER · ' + longDate(date), artist: 'Emilia-Romagna', album: 'Rassegna stampa' });
+    const h = { play: play, pause: () => audio.pause(),
+      previoustrack: () => $('#prevItem').click(), nexttrack: () => $('#nextItem').click(),
+      seekbackward: () => { audio.currentTime -= 15; }, seekforward: () => { audio.currentTime += 15; } };
+    for (const k in h) { try { navigator.mediaSession.setActionHandler(k, h[k]); } catch(e) {} }
+  }
+
+  function updateStats(){
+    const n = items.length;
+    $('#stats').textContent = n ? `${n} notizie${segs.length ? ' · con audio' : ''}` : '';
+  }
+
+  $('#pdfBtn').onclick = () => { const q = $('#q'); const v = q.value; const p = prov;
+    // in stampa tutte le notizie, senza filtri
+    q.value = ''; prov = 'Tutte'; applyFilters(); window.print();
+    setTimeout(() => { q.value = v; prov = p; [...$('#provChips').children].forEach(c => c.classList.toggle('on', c.textContent === p)); applyFilters(); }, 500); };
+
+  init();
 })();
 </script>
 </body>
