@@ -2,13 +2,13 @@ name: Rassegna Stampa Automatica
 
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 4 * * *'   # 06:00 ora legale italiana (05:00 con l'ora solare)
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
     permissions:
       contents: write
 
@@ -16,52 +16,41 @@ jobs:
       - name: Scarica il codice del repository
         uses: actions/checkout@v5
         with:
-          fetch-depth: 0
           ref: main
 
       - name: Configura Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
-      - name: Installa dipendenze di sistema e pacchetti Python
+      - name: Installa dipendenze
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg dos2unix
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg dos2unix
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 google-genai gTTS trafilatura
+          pip install requests beautifulsoup4 google-genai trafilatura
 
-      - name: Genera Rassegna HTML e Audio MP3
+      - name: Controlla che gli script siano completi
+        run: |
+          for f in tools/fetch_and_analyze.py tools/build_audio.py; do
+            dos2unix -q "$f"
+            python -m py_compile "$f" || { echo "❌ $f non è valido: ricaricalo per intero."; exit 1; }
+            tail -3 "$f" | grep -q "main()" || { echo "❌ $f è incompleto: ricaricalo per intero."; exit 1; }
+          done
+
+      - name: Genera la rassegna (HTML)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          TODAY=$(date +'%Y-%m-%d')
-          
-          FETCH_SCRIPT=$(find . -maxdepth 3 -iname "fetch_and_analyze.py" | head -n 1)
-          BUILD_SCRIPT=$(find . -maxdepth 3 -iname "build_audio.py" | head -n 1)
-          
-          if [ -z "$FETCH_SCRIPT" ]; then
-            echo "CRITICO: Impossibile trovare fetch_and_analyze.py nel repository."
-            exit 1
-          fi
-          
-          dos2unix "$FETCH_SCRIPT"
-          if [ -n "$BUILD_SCRIPT" ]; then
-            dos2unix "$BUILD_SCRIPT"
-          fi
-          
-          # 1. Genera l'HTML dell'edizione di oggi
-          python3 "$FETCH_SCRIPT"
-          
-          # 2. Genera l'audio MP3 e i metadati audio
-          if [ -n "$BUILD_SCRIPT" ]; then
-            python3 "$BUILD_SCRIPT" --html edizioni/$TODAY.html --date $TODAY --out audio
-          fi
-          
-          # 3. Aggiorna solo index.json con la data odierna
-          echo "{\"latest\": \"$TODAY\"}" > index.json
+        run: python3 tools/fetch_and_analyze.py
 
-      - name: Commit e Push automatico sicuro
+      - name: Genera l'audio MP3 con la voce Paola
+        run: |
+          TODAY=$(TZ=Europe/Rome date +'%Y-%m-%d')
+          if [ -f "edizioni/$TODAY.html" ]; then
+            python3 tools/build_audio.py --html "edizioni/$TODAY.html" --date "$TODAY" --out audio
+          fi
+
+      - name: Pubblica
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto-update rassegna"
