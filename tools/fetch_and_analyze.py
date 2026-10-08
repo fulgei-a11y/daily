@@ -250,6 +250,10 @@ SEZIONI, in quest'ordine (ometti una sezione se è vuota):
 <h2>Da seguire oggi ({GIORNO})</h2>  (senza <h3>: appuntamenti, scioperi, udienze, consigli comunali, scadenze,
    strade chiuse, allerte e eventi di oggi e dei prossimi giorni ricavati dalle notizie; una riga ciascuno)
 
+COMPLETEZZA
+- La rassegna deve essere completa e ricca: di norma 70-120 notizie in tutto, con tutte le province
+  che hanno notizie. Non fermarti alle notizie principali.
+
 Restituisci solo il frammento HTML, senza blocchi di codice.
 """
 
@@ -268,22 +272,61 @@ def build_prompt(articles):
     return f"Notizie raccolte per l'edizione del {TODAY}:\n\n" + "\n".join(lines) + "\nScrivi la rassegna."
 
 
+def _finish_reason(resp):
+    try:
+        return str(resp.candidates[0].finish_reason or "")
+    except Exception:
+        return ""
+
+
 def call_gemini(prompt):
+    """Scrive la rassegna; se la risposta si interrompe per lunghezza, chiede di continuare."""
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise ValueError("GEMINI_API_KEY non impostata.")
     client = genai.Client(api_key=api_key)
-    config = types.GenerateContentConfig(system_instruction=SYSTEM_INSTRUCTION,
-                                         temperature=0.25, max_output_tokens=32768)
+
+    def config_for(model):
+        kw = dict(system_instruction=SYSTEM_INSTRUCTION, temperature=0.25, max_output_tokens=60000)
+        # il "ragionamento" interno consuma lo stesso spazio della risposta: lo limitiamo
+        if "flash" in model or "pro" in model:
+            try:
+                kw["thinking_config"] = types.ThinkingConfig(thinking_budget=2048 if "pro" in model else 1024)
+            except Exception:
+                pass
+        return types.GenerateContentConfig(**kw)
+
     for model in MODELS_TO_TRY:
         for attempt in range(2):
             try:
                 print(f"Gemini: {model} (tentativo {attempt + 1})...")
-                resp = client.models.generate_content(model=model, contents=prompt, config=config)
+                cfg = config_for(model)
+                resp = client.models.generate_content(model=model, contents=prompt, config=cfg)
                 text = (resp.text or "").strip()
-                if len(text) > 300:
-                    print(f"✅ Rassegna scritta con {model}")
-                    return text
+                if len(text) < 300:
+                    print(f"⚠️ {model}: risposta troppo corta ({len(text)} caratteri)")
+                    continue
+                # continuazioni se il testo è stato troncato
+                for part in range(4):
+                    reason = _finish_reason(resp)
+                    if "MAX_TOKENS" not in reason:
+                        break
+                    print(f"   ↪️ Risposta interrotta per lunghezza: chiedo di continuare ({part + 1})...")
+                    contents = [
+                        types.Content(role="user", parts=[types.Part(text=prompt)]),
+                        types.Content(role="model", parts=[types.Part(text=text)]),
+                        types.Content(role="user", parts=[types.Part(text=(
+                            "Continua esattamente dal punto in cui ti sei interrotto, senza ripetere nulla "
+                            "e senza commenti, fino a completare tutte le sezioni."))]),
+                    ]
+                    resp = client.models.generate_content(model=model, contents=contents, config=cfg)
+                    text += (resp.text or "")
+                n = len(re.findall(r"<li\b", text))
+                print(f"✅ Rassegna scritta con {model}: {n} notizie, {len(text)} caratteri")
+                if n < 25 and model != MODELS_TO_TRY[-1]:
+                    print("⚠️ Troppo poche notizie: provo il modello successivo.")
+                    break
+                return text
             except Exception as e:
                 print(f"⚠️ {model}: {e}")
                 time.sleep(4)
