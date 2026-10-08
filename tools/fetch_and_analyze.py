@@ -80,7 +80,7 @@ HEADERS = {
     "Accept-Language": "it-IT,it;q=0.9",
 }
 
-MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-2.5-flash-lite"]
+MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-3.5-flash", "gemini-2.5-pro", "gemini-3.5-flash-lite"]
 
 NS = {
     "atom": "http://www.w3.org/2005/Atom",
