@@ -4,6 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Rassegna ER</title>
+<meta name="description" content="La rassegna stampa quotidiana dell'Emilia-Romagna: le notizie di tutte le province, ogni mattina, da leggere o da ascoltare.">
+<!-- anteprima dei link (WhatsApp, Telegram, Facebook, X) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Rassegna ER">
+<meta property="og:title" content="Rassegna ER · la rassegna stampa dell'Emilia-Romagna">
+<meta property="og:description" content="Ogni mattina le notizie di tutte le province, da leggere o da ascoltare.">
+<meta property="og:url" content="https://fulgei-a11y.github.io/rassegna/">
+<meta property="og:image" content="https://fulgei-a11y.github.io/rassegna/icons/og-image.png">
+<meta property="og:image:secure_url" content="https://fulgei-a11y.github.io/rassegna/icons/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rassegna ER, la rassegna stampa quotidiana dell'Emilia-Romagna">
+<meta name="twitter:card" content="summary_large_image">
+<!-- app installabile -->
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Rassegna ER">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#f6f4f1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#161413" media="(prefers-color-scheme: dark)">
 <meta name="mobile-web-app-capable" content="yes">
@@ -88,6 +109,19 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 .skel{height:14px;border-radius:7px;background:var(--chip);margin:16px 0;animation:pulse 1.2s infinite alternate}
 @keyframes pulse{to{opacity:.45}}
 
+.src .sharebtn{border:0;background:none;padding:0 0 0 10px;margin:0;font:inherit;font-weight:600;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.src .sharebtn svg{width:13px;height:13px;fill:currentColor}
+.src .sharebtn:hover{color:var(--accent)}
+.item.target,.sec.evidenza .item.target{background:var(--hl)}
+.banner{display:flex;align-items:center;gap:10px;margin:8px 0 2px;padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-family:var(--f-ui);font-size:14px;line-height:1.35}
+.banner img{width:36px;height:36px;border-radius:8px;flex:none}
+.banner span{flex:1;min-width:0}
+.banner .go{flex:none;border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;height:34px;padding:0 14px;font-weight:600;cursor:pointer}
+.banner .x{flex:none;border:0;background:none;width:30px;height:30px;font-size:22px;line-height:1;color:var(--muted);cursor:pointer;padding:0}
+.banner.warn{background:var(--hl);border-color:transparent}
+.toast{position:fixed;left:50%;bottom:calc(var(--player-h) + 20px);transform:translateX(-50%);max-width:calc(100% - 32px);background:var(--ink);color:var(--bg);font-family:var(--f-ui);font-size:14px;padding:9px 16px;border-radius:999px;z-index:20;opacity:0;transition:opacity .2s;pointer-events:none;text-align:center}
+.toast.on{opacity:1}
+
 /* ---------- Lettore audio ---------- */
 .player{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px));box-shadow:0 -6px 24px rgb(0 0 0 / .08)}
 .player-in{max-width:780px;margin:0 auto;display:grid;gap:8px}
@@ -113,7 +147,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 @media print{
   :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#444;--line:#ccc;--accent:#7a1f18;--active:#fff;--chip:#fff}
   body{font-size:10.5pt;line-height:1.45}
-  .top .toolbar,.top .search,.navbar,.chips,.player,.pbtn{display:none!important}
+  .top .toolbar,.top .search,.navbar,.chips,.player,.pbtn,.banner,.sharebtn,.toast{display:none!important}
   .printdate{display:block!important;font-family:var(--f-ui);font-weight:600;margin:4pt 0 0}
   .top{position:static;border:0}
   main{padding:0!important;max-width:none}
@@ -139,9 +173,12 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       <button class="icon" id="prevEd" type="button" aria-label="Edizione precedente"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg></button>
       <select class="datesel" id="dateSel" aria-label="Scegli l'edizione"></select>
       <button class="icon" id="nextEd" type="button" aria-label="Edizione successiva"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
+      <button class="icon" id="shareBtn" type="button" aria-label="Condividi l'edizione"><svg viewBox="0 0 24 24"><path d="M18 16.1c-.8 0-1.4.3-2 .8l-7.1-4.2c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.2c.5.5 1.2.8 2 .8a3 3 0 1 0-3-3c0 .2 0 .5.1.7L8 9.8A3 3 0 1 0 8 14.2l7.1 4.2c0 .2-.1.4-.1.6a2.9 2.9 0 1 0 3-2.9"/></svg></button>
       <button class="pdfbtn" id="pdfBtn" type="button"><svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"/></svg>PDF</button>
     </div>
     <label class="search"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9"/></svg><input id="q" type="search" placeholder="Cerca nella rassegna (es. alluvione, Bologna, sanità)" autocomplete="off"></label>
+    <div class="banner warn" id="staleBar" hidden><span id="staleTxt"></span></div>
+    <div class="banner" id="installBar" hidden><img src="icons/icon-192.png" alt=""><span id="installTxt"></span><button class="go" id="installGo" type="button">Installa</button><button class="x" id="installX" type="button" aria-label="Chiudi">×</button></div>
   </div>
 </header>
 <div class="navbar">
@@ -170,6 +207,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 </div>
 
 <audio id="audio" preload="metadata"></audio>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function(){
@@ -178,7 +216,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   const PLAY = '<path d="M8 5v14l11-7z"/>', PAUSE = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
   const MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
   let editions = [], current = null, items = [], segs = [], syncOK = false, curIdx = -1;
-  let follow = true, lastUserScroll = 0, prov = 'Tutte';
+  let follow = true, lastUserScroll = 0, prov = 'Tutte', focusK = 0;
 
   const store = { get(k){ try { return localStorage.getItem(k); } catch(e) { return null; } },
                   set(k,v){ try { localStorage.setItem(k,v); } catch(e) {} } };
@@ -186,10 +224,87 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   const longDate = iso => { const d = new Date(iso + 'T12:00:00');
     return isNaN(d) ? iso : d.toLocaleDateString('it-IT', { weekday:'long', day:'numeric', month:'long', year:'numeric' }); };
   const shortDate = iso => { const d = new Date(iso + 'T12:00:00');
-    return isNaN(d) ? iso : d.toLocaleDateString('it-IT', { weekday:'short', day:'numeric', month:'long', year:'numeric' }); };
+    if (isNaN(d)) return iso;
+    const y = d.getFullYear() !== new Date().getFullYear();
+    return d.toLocaleDateString('it-IT', { weekday:'short', day:'numeric', month: y ? 'short' : 'long', year: y ? 'numeric' : undefined }); };
   // titoli tutti in maiuscolo (vecchie edizioni) → "Prima pagina e politica regionale"
   const nice = t => t === t.toUpperCase() ? t.charAt(0) + t.slice(1).toLowerCase() : t;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  /* ---------- Province: ogni notizia riceve la sua, dal titoletto o dal luogo ("Sassuolo (Modena):") ---------- */
+  const PROV_ORDER = ['Emilia-Romagna','Bologna','Modena','Reggio Emilia','Parma','Piacenza','Ferrara','Ravenna','Forlì-Cesena','Rimini'];
+  const SIGLE = { BO:'Bologna', MO:'Modena', RE:'Reggio Emilia', PR:'Parma', PC:'Piacenza', FE:'Ferrara', RA:'Ravenna', FC:'Forlì-Cesena', RN:'Rimini' };
+  const norm = t => String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’`]/g, "'").replace(/\s+/g, ' ').trim();
+  const PLACE = new Map();
+  'BO:Alto Reno Terme|Anzola dell\'Emilia|Appennino bolognese|Argelato|Baricella|Bazzano|Bentivoglio|Bologna|Borgo Tossignano|Budrio|Calderara di Reno|Camugnano|Casalecchio|Casalecchio di Reno|Casalfiumanese|Castel Guelfo di Bologna|Castel Maggiore|Castel San Pietro Terme|Castel d\'Aiano|Castel del Rio|Castel di Casio|Castello d\'Argile|Castenaso|Castiglione dei Pepoli|Crespellano|Crevalcore|Dozza|Fontanelice|Gaggio Montano|Galliera|Granarolo dell\'Emilia|Grizzana Morandi|Imola|Lizzano in Belvedere|Loiano|Malalbergo|Marzabotto|Medicina|Minerbio|Molinella|Monghidoro|Monte San Pietro|Monterenzio|Monzuno|Mordano|Ozzano dell\'Emilia|Pianoro|Pieve di Cento|Sala Bolognese|San Benedetto Val di Sambro|San Giorgio di Piano|San Giovanni in Persiceto|San Lazzaro di Savena|San Pietro in Casale|Sant\'Agata Bolognese|Sasso Marconi|Val di Zena|Valsamoggia|Vergato|Zola Predosa;FC:Bagno di Romagna|Bertinoro|Borghi|Castrocaro Terme e Terra del Sole|Cesena|Cesenatico|Civitella di Romagna|Dovadola|Forlimpopoli|Forlì|Galeata|Gambettola|Gatteo|Longiano|Meldola|Mercato Saraceno|Modigliana|Montiano|Portico e San Benedetto|Predappio|Premilcuore|Rocca San Casciano|Roncofreddo|San Mauro Pascoli|Santa Sofia|Sarsina|Savignano sul Rubicone|Sogliano al Rubicone|Terra del Sole|Tredozio|Val Bidente|ValBidente|Valle del Savio|Verghereto|Villa Selva;FE:Argenta|Bondeno|Cento|Codigoro|Comacchio|Copparo|Delta del Po|Ferrara|Fiscaglia|Goro|Jolanda di Savoia|Lagosanto|Lido degli Estensi|Lido delle Nazioni|Lido di Spina|Masi Torello|Mesola|Ostellato|Poggio Renatico|Porto Garibaldi|Portomaggiore|Riva del Po|Terre del Reno|Tresignana|Vigarano Mainarda|Voghiera;MO:Bassa modenese|Bastiglia|Bomporto|Campogalliano|Camposanto|Carpi|Castelfranco Emilia|Castelnuovo Rangone|Castelvetro di Modena|Cavazzona|Cavezzo|Concordia sulla Secchia|Distretto ceramico|Fanano|Finale Emilia|Fiorano Modenese|Fiumalbo|Formigine|Frassinoro|Frignano|Guiglia|Lama Mocogno|Maranello|Marano sul Panaro|Medolla|Mirandola|Modena|Montecreto|Montefiorino|Montese|Nonantola|Novi di Modena|Palagano|Pavullo nel Frignano|Pievepelago|Polinago|Prignano sulla Secchia|Ravarino|Riolunato|San Cesario sul Panaro|San Felice sul Panaro|San Possidonio|San Prospero|Sassuolo|Savignano sul Panaro|Serramazzoni|Sestola|Soliera|Sorbara|Spilamberto|Terre d\'Argine|Vignola|Zocca;PC:Agazzano|Alseno|Alta Val Tidone|Besenzone|Bettola|Bobbio|Borgonovo Val Tidone|Cadeo|Calendasco|Caorso|Carpaneto Piacentino|Castel San Giovanni|Castell\'Arquato|Castelvetro Piacentino|Cerignale|Coli|Corte Brugnatella|Cortemaggiore|Farini|Ferriere|Fiorenzuola d\'Arda|Gazzola|Gossolengo|Gragnano Trebbiense|Gropparello|Lugagnano Val d\'Arda|Monticelli d\'Ongina|Morfasso|Ottone|Piacenza|Pianello Val Tidone|Piozzano|Podenzano|Ponte dell\'Olio|Pontenure|Rivergaro|Rottofreno|San Giorgio Piacentino|San Pietro in Cerro|Sarmato|Travo|Val Nure|Val Tidone|Val Trebbia|Val d\'Arda|Vernasca|Vigolzone|Villanova sull\'Arda|Zerba|Ziano Piacentino;PR:Albareto|Appennino parmense|Bardi|Bassa parmense|Bedonia|Berceto|Bore|Borgo Val di Taro|Busseto|Calestano|Collecchio|Colorno|Compiano|Corniglio|Felino|Fidenza|Fontanellato|Fontevivo|Fornovo di Taro|Langhirano|Lesignano de\' Bagni|Medesano|Monchio delle Corti|Montechiarugolo|Neviano degli Arduini|Noceto|Palanzano|Parma|Pellegrino Parmense|Polesine Zibello|Roccabianca|Sala Baganza|Salsomaggiore Terme|San Secondo Parmense|Sissa Trecasali|Solignano|Soragna|Sorbolo Mezzani|Terenzo|Tizzano Val Parma|Tornolo|Torrile|Traversetolo|Val Ceno|Val Taro|Valmozzola|Varano de\' Melegari|Varsi;RA:Alfonsine|Bagnacavallo|Bagnara di Romagna|Bassa Romagna|Brisighella|Casal Borsetti|Casola Valsenio|Castel Bolognese|Cervia|Conselice|Cotignola|Faenza|Fusignano|Lido Adriano|Lido di Classe|Lido di Savio|Lugo|Marina Romea|Marina di Ravenna|Massa Lombarda|Milano Marittima|Pinarella|Punta Marina|Ravenna|Riolo Terme|Romagna Faentina|Russi|Sant\'Agata sul Santerno|Solarolo;RE:Albinea|Appennino reggiano|Bagnolo in Piano|Baiso|Bassa reggiana|Bibbiano|Boretto|Brescello|Cadelbosco di Sopra|Campagnola Emilia|Campegine|Canossa|Carpineti|Casalgrande|Casina|Castellarano|Castelnovo di Sotto|Castelnovo ne\' Monti|Cavriago|Correggio|Fabbrico|Gattatico|Gualtieri|Guastalla|Luzzara|Montecchio Emilia|Novellara|Poviglio|Quattro Castella|Reggio Emilia|Reggio nell\'Emilia|Reggiolo|Rio Saliceto|Rolo|Rubiera|San Martino in Rio|San Polo d\'Enza|Sant\'Ilario d\'Enza|Scandiano|Toano|Ventasso|Vetto|Vezzano sul Crostolo|Viano|Villa Minozzo;RN:Bellaria-Igea Marina|Casteldelci|Cattolica|Coriano|Gemmano|Maiolo|Marebello|Miramare|Misano Adriatico|Mondaino|Montefiore Conca|Montegridolfo|Montescudo-Monte Colombo|Morciano di Romagna|Novafeltria|Pennabilli|Poggio Torriana|Riccione|Rimini|Rivazzurra|Saludecio|San Clemente|San Giovanni in Marignano|San Leo|Sant\'Agata Feltria|Santarcangelo di Romagna|Talamello|Torre Pedrera|Valconca|Valmarecchia|Verucchio|Viserba'.split(';').forEach(g => { const [sig, list] = g.split(':'); list.split('|').forEach(c => PLACE.set(norm(c), SIGLE[sig])); });
+  PROV_ORDER.forEach(p => PLACE.set(norm(p), p));
+  Object.entries(SIGLE).forEach(([k, p]) => PLACE.set(k.toLowerCase(), p));
+  [['regione','Emilia-Romagna'],['emilia romagna','Emilia-Romagna'],['romagna',''],['forli cesena','Forlì-Cesena'],
+   ['provincia di bologna','Bologna'],['citta metropolitana di bologna','Bologna'],['bolognese','Bologna'],['modenese','Modena'],
+   ['reggiano','Reggio Emilia'],['parmense','Parma'],['piacentino','Piacenza'],['ferrarese','Ferrara'],['ravennate','Ravenna'],
+   ['forlivese','Forlì-Cesena'],['cesenate','Forlì-Cesena'],['riminese','Rimini'],
+   // forme brevi usate dai giornali
+   ['pavullo','Modena'],['montale','Modena'],['castelnovo monti','Reggio Emilia'],['san lazzaro','Bologna'],
+   ['castel san pietro','Bologna'],['borgotaro','Parma'],['salsomaggiore','Parma'],['san giovanni in persiceto','Bologna'],
+   ['persiceto','Bologna'],['porretta','Bologna'],['porretta terme','Bologna'],['fiorenzuola','Piacenza'],
+   ['castel san giovanni','Piacenza'],['santarcangelo','Rimini'],['savignano','Forlì-Cesena'],['bagno di romagna','Forlì-Cesena']].forEach(([k, p]) => PLACE.set(k, p));
+  const provOf = t => {
+    if (!t) return '';
+    const n = norm(t).replace(/^(provincia di|comune di|unione( dei comuni)?( di| della| del)?)\s+/, '');
+    if (PLACE.has(n)) return PLACE.get(n);
+    const first = n.split(/,|\s+e\s+|\s+ed\s+|\s+-\s+|\/|;/)[0].trim();
+    return PLACE.get(first) || '';
+  };
+  // nomi di comuni che sono anche parole o cognomi comuni: non bastano da soli
+  const AMBIGUI = new Set(['cento','medicina','ferriere','bore','bardi','ottone','gualtieri','casina','vetto','zerba','re','romagna']);
+  const words = t => ' ' + norm(t).replace(/[^a-z0-9]+/g, ' ') + ' ';
+  const SCAN = [...PLACE].filter(([k, p]) => p && k.length > 2 && !AMBIGUI.has(k)).map(([k, p]) => [words(k), p]);
+  function detectProv(node){
+    const box = node.cloneNode(true);
+    box.querySelectorAll('.src').forEach(n => n.remove());   // le testate ("RavennaToday") non contano
+    const full = box.textContent || '';
+    const head = box.querySelector('strong,b');
+    const rest = head ? full.slice(full.indexOf(head.textContent) + head.textContent.length) : full;
+    const m = rest.match(/^\s*[—–-]?\s*([^:]{2,80}?)\s*:/);
+    if (m){
+      const place = m[1].trim();
+      const par = place.match(/\(([^()]+)\)\s*$/);
+      const p = (par && provOf(par[1])) || provOf(place.replace(/\(.*$/, ''));
+      if (p) return p;
+    }
+    // ultima possibilità: i comuni citati nel testo appartengono tutti alla stessa provincia
+    const w = words(full), found = new Set();
+    SCAN.forEach(([k, p]) => { if (p !== 'Emilia-Romagna' && w.includes(k)) found.add(p); });
+    if (found.size === 1) return [...found][0];
+    return !found.size && w.includes(' emilia romagna ') ? 'Emilia-Romagna' : '';
+  }
+
+  let toastTimer;
+  function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2600); }
+  const pageUrl = () => location.origin + location.pathname;
+  async function share(data){
+    if (navigator.share){ try { await navigator.share(data); } catch(e) {} return; }
+    const txt = [data.text, data.url].filter(Boolean).join('\n');
+    try { await navigator.clipboard.writeText(txt); toast('Link copiato: incollalo su WhatsApp o dove vuoi'); }
+    catch(e) { window.open('https://wa.me/?text=' + encodeURIComponent(txt), '_blank', 'noopener'); }
+  }
+  function shareItem(i){
+    const el = items[i]; if (!el) return;
+    const t = el.querySelector('.txt').cloneNode(true);
+    t.querySelectorAll('.src').forEach(n => n.remove());
+    const title = (t.querySelector('strong,b') || {}).textContent || 'Notizia';
+    let body = t.textContent.replace(/\s+/g, ' ').trim();
+    if (body.length > 300) body = body.slice(0, 297).replace(/\s\S*$/, '') + '…';
+    share({ title, text: body + '\n\n— Rassegna ER, ' + longDate(current), url: pageUrl() + '#' + current + '/' + (i + 1) });
+  }
+  $('#shareBtn').onclick = () => {
+    const vis = items.filter(el => !el.hidden && !el.closest('.notes')).length;
+    const scope = prov !== 'Tutte' ? ' · ' + prov : '';
+    share({ title: 'Rassegna ER · ' + longDate(current),
+            text: `Rassegna stampa dell'Emilia-Romagna di ${longDate(current)}${scope}: ${vis} notizie, anche da ascoltare.`,
+            url: pageUrl() + '#' + current });
+  };
+  main.addEventListener('click', e => { const b = e.target.closest('.sharebtn'); if (b) shareItem(+b.closest('.item').dataset.i); });
 
   /* ---------- Archivio edizioni ---------- */
   async function init(){
@@ -204,11 +319,33 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     sel.onchange = () => load(sel.value);
     $('#prevEd').onclick = () => step(1);
     $('#nextEd').onclick = () => step(-1);
-    const wanted = location.hash.slice(1);
+    prov = store.get('prov') || 'Tutte';
+    const [wanted, k] = location.hash.slice(1).split('/');
+    focusK = parseInt(k) || 0;
     load(editions.includes(wanted) ? wanted : editions[0]);
   }
+  const todayRome = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
+  function staleCheck(){
+    const hour = +new Date().toLocaleString('en-GB', { timeZone: 'Europe/Rome', hour: '2-digit', hour12: false });
+    const late = editions[0] < todayRome() && hour >= 8 && current === editions[0];
+    $('#staleBar').hidden = !late;
+    if (late) $('#staleTxt').textContent = "L'edizione di oggi non è ancora uscita: stai leggendo la più recente.";
+  }
   function step(d){ const i = editions.indexOf(current) + d; if (i >= 0 && i < editions.length) load(editions[i]); }
-  window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (h !== current && editions.includes(h)) load(h); });
+  window.addEventListener('hashchange', () => {
+    const [h, k] = location.hash.slice(1).split('/');
+    if (!editions.includes(h)) return;
+    focusK = parseInt(k) || 0;
+    if (h !== current) load(h); else if (focusK) focusItem();
+  });
+  function focusItem(){
+    const el = items[focusK - 1]; focusK = 0;
+    if (!el) return;
+    if (el.hidden){ setProv('Tutte', false); $('#q').value = ''; applyFilters(); }
+    el.classList.add('target');
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 60);
+    setTimeout(() => el.classList.remove('target'), 3500);
+  }
 
   /* ---------- Caricamento di un'edizione ---------- */
   async function load(date){
@@ -216,7 +353,8 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     $('#dateSel').value = date;
     $('#prevEd').disabled = editions.indexOf(date) >= editions.length - 1;
     $('#nextEd').disabled = editions.indexOf(date) <= 0;
-    if (location.hash.slice(1) !== date) history.replaceState(null, '', '#' + date);
+    const h = '#' + date + (focusK ? '/' + focusK : '');
+    if (location.hash !== h) history.replaceState(null, '', h);
     document.title = 'Rassegna ER · ' + longDate(date);
     $('#printDate').textContent = longDate(date).replace(/^./, c => c.toUpperCase());
     audio.pause(); setPlayIcon(false);
@@ -231,7 +369,9 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     }
     await loadAudio(date);
     updateStats();
+    staleCheck();
     window.scrollTo({ top: 0 });
+    if (focusK) focusItem();
   }
 
   /* Stessa logica di lettura di build_audio.py: l'indice di ogni notizia coincide con l'audio */
@@ -281,7 +421,8 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       }
       lastSub = it.sub;
       const el = document.createElement('article');
-      el.className = 'item'; el.dataset.i = i; el.dataset.prov = it.sub || ''; el.dataset.sub = it.sub ? '1' : '';
+      el.className = 'item'; el.dataset.i = i; el.dataset.sub = it.sub ? '1' : '';
+      el.dataset.prov = it.sec === 'Note' ? '' : (provOf(it.sub) || detectProv(it.node));
       el.innerHTML = `<button class="pbtn" type="button" aria-label="Ascolta da questa notizia"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><div class="txt">${it.node.innerHTML}</div>`;
       el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
       // vecchie edizioni: "(Fonte: X)" dentro il link diventa la riga delle fonti
@@ -296,6 +437,11 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       }
       el.querySelector('.pbtn').onclick = () => playFrom(i);
       el.dataset.text = el.textContent.toLowerCase();
+      if (it.sec !== 'Note'){
+        let src = el.querySelector('.src');
+        if (!src){ src = document.createElement('span'); src.className = 'src'; el.querySelector('.txt').appendChild(src); }
+        src.insertAdjacentHTML('beforeend', '<button class="sharebtn" type="button" aria-label="Condividi questa notizia"><svg viewBox="0 0 24 24"><path d="M14 9V5l7 7-7 7v-4.1c-5 0-8.5 1.6-11 5.1 1-5 4-10 11-11"/></svg>Condividi</button>');
+      }
       secEl.appendChild(el);
       items.push(el);
     });
@@ -315,27 +461,36 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       b.onclick = () => s.scrollIntoView({ behavior: 'smooth' });
       $('#secChips').appendChild(b);
     });
-    const order = ['Emilia-Romagna','Bologna','Modena','Reggio Emilia','Parma','Piacenza','Ferrara','Ravenna','Forlì-Cesena','Rimini'];
-    const present = new Set(items.map(i => i.dataset.prov).filter(Boolean));
-    const provs = ['Tutte', ...order.filter(p => present.has(p)), ...[...present].filter(p => !order.includes(p)).sort()];
-    if (!provs.includes(prov)) prov = 'Tutte';
+    const counts = {};
+    items.forEach(el => { const p = el.dataset.prov; if (p) counts[p] = (counts[p] || 0) + 1; });
+    const provs = ['Tutte', ...PROV_ORDER.filter(p => counts[p])];
+    // la provincia scelta resta memorizzata; se oggi non ha notizie si mostrano tutte
+    const wanted = store.get('prov') || 'Tutte';
+    prov = provs.includes(wanted) ? wanted : 'Tutte';
     $('#provChips').innerHTML = '';
     $('#provChips').hidden = provs.length <= 2;
     provs.forEach(p => {
       const b = document.createElement('button');
-      b.className = 'chip' + (p === prov ? ' on' : ''); b.type = 'button'; b.textContent = p;
-      b.onclick = () => { prov = p; [...$('#provChips').children].forEach(c => c.classList.toggle('on', c === b)); applyFilters(); };
+      b.className = 'chip' + (p === prov ? ' on' : ''); b.type = 'button'; b.dataset.p = p;
+      b.innerHTML = esc(p) + (p === 'Tutte' ? '' : `<small>${counts[p]}</small>`);
+      b.setAttribute('aria-pressed', p === prov);
+      b.onclick = () => { setProv(p); applyFilters(); if (p !== 'Tutte') toast(`Solo ${p}: la scelta resta memorizzata`); window.scrollTo({ top: 0, behavior: 'smooth' }); };
       $('#provChips').appendChild(b);
     });
     observeSections();
+    const on = $('#provChips .chip.on');
+    if (on && prov !== 'Tutte') requestAnimationFrame(() => on.scrollIntoView({ block: 'nearest', inline: 'center' }));
+  }
+  function setProv(p, save = true){
+    prov = p;
+    if (save) store.set('prov', p);
+    [...$('#provChips').children].forEach(c => { const on = c.dataset.p === p; c.classList.toggle('on', on); c.setAttribute('aria-pressed', on); });
   }
 
   function applyFilters(){
     const q = $('#q').value.trim().toLowerCase();
     items.forEach(el => {
-      // le notizie senza provincia (In evidenza, Da seguire) restano se ne parlano
-      const okProv = prov === 'Tutte' || el.dataset.prov === prov ||
-        (!el.dataset.sub && prov !== 'Emilia-Romagna' && el.dataset.text.includes(prov.toLowerCase().split('-')[0]));
+      const okProv = prov === 'Tutte' || el.dataset.prov === prov;
       el.hidden = !(okProv && (!q || el.dataset.text.includes(q)));
       const txt = el.querySelector('.txt');
       if (!txt.dataset.orig) txt.dataset.orig = txt.innerHTML;
@@ -358,6 +513,10 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     const none = items.length && !items.some(el => !el.hidden);
     if (none && !msg) main.insertAdjacentHTML('beforeend', '<p class="empty" id="noResults">Nessuna notizia corrisponde alla ricerca.</p>');
     if (!none && msg) msg.remove();
+    msg = $('#noResults');
+    if (msg) msg.textContent = prov !== 'Tutte' && !q ? `Nessuna notizia per ${prov} in questa edizione.` : 'Nessuna notizia corrisponde alla ricerca.';
+    updateStats();
+    updateNow();
   }
   function highlight(root, q){
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -401,12 +560,28 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     audio.src = meta.audio || `audio/${date}.mp3`;
     segs = (meta.segments || []).slice().sort((a, b) => a.t - b.t);
     syncOK = segs.length > 0 && meta.items === items.length;
-    $('#nowTxt').innerHTML = `<b>Ascolta la rassegna</b> · ${fmt(meta.duration)} · voce Paola`;
+    audioDur = meta.duration || 0;
+    updateNow();
     $('#nowPos').textContent = '0:00 / ' + fmt(meta.duration);
     const saved = parseFloat(store.get('pos-' + date));
     if (saved > 5) audio.addEventListener('loadedmetadata', () => { audio.currentTime = saved; }, { once: true });
     items.forEach(el => el.querySelector('.pbtn').hidden = !syncOK);
     setupMediaSession(date);
+  }
+
+  let audioDur = 0;
+  const filtering = () => prov !== 'Tutte' || !!$('#q').value.trim();
+  const visibleSeg = j => { const el = items[segs[j].i]; return el && !el.hidden; };
+  function nextVisibleSeg(from){ for (let j = Math.max(from, 0); j < segs.length; j++) if (visibleSeg(j)) return j; return -1; }
+  function prevVisibleSeg(from){ for (let j = from; j >= 0; j--) if (visibleSeg(j)) return j; return -1; }
+  // testo del lettore quando non sta leggendo una notizia precisa
+  function updateNow(){
+    if (!segs.length || (!audio.paused && curIdx >= 0)) return;
+    if (syncOK && filtering()){
+      const n = segs.filter((x, j) => visibleSeg(j)).length;
+      $('#nowTxt').innerHTML = n ? `<b>Ascolta solo ${esc(prov !== 'Tutte' ? prov : 'i risultati')}</b> · ${n} ${n === 1 ? 'notizia' : 'notizie'}`
+                                 : '<b>Nessuna notizia da ascoltare</b> con questo filtro';
+    } else $('#nowTxt').innerHTML = `<b>Ascolta la rassegna</b> · ${fmt(audioDur)} · voce Paola`;
   }
 
   function segIndexAt(t){
@@ -419,7 +594,13 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     if (!s) return;
     audio.currentTime = s.t; lastUserScroll = 0; play();
   }
-  function play(){ audio.play().then(() => setPlayIcon(true)).catch(() => {
+  function play(){
+    // con un filtro attivo si parte dalla prima notizia visibile
+    if (syncOK && filtering()){
+      const k = segIndexAt(audio.currentTime);
+      if (k < 0 || !visibleSeg(k)){ const j = nextVisibleSeg(k + 1); if (j < 0){ toast('Nessuna notizia da ascoltare con questo filtro'); return; } audio.currentTime = segs[j].t; }
+    }
+    audio.play().then(() => setPlayIcon(true)).catch(() => {
     $('#nowTxt').innerHTML = '<b>Audio non ancora pronto</b> · riprova tra qualche minuto'; }); }
   function setPlayIcon(on){ $('#playIco').innerHTML = on ? PAUSE : PLAY; $('#playBtn').setAttribute('aria-label', on ? 'Pausa' : 'Ascolta'); }
 
@@ -427,10 +608,13 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   audio.onpause = () => setPlayIcon(false);
   audio.onplay = () => setPlayIcon(true);
   audio.onended = () => { setPlayIcon(false); store.set('pos-' + current, 0); };
-  $('#prevItem').onclick = () => { const k = segIndexAt(audio.currentTime);
-    if (k >= 0 && audio.currentTime - segs[k].t > 3) audio.currentTime = segs[k].t;
-    else if (k > 0) audio.currentTime = segs[k - 1].t; else audio.currentTime = 0; };
-  $('#nextItem').onclick = () => { const k = segIndexAt(audio.currentTime); if (k + 1 < segs.length) audio.currentTime = segs[k + 1].t; };
+  $('#prevItem').onclick = () => { const k = segIndexAt(audio.currentTime), f = syncOK && filtering();
+    if (k >= 0 && audio.currentTime - segs[k].t > 3 && (!f || visibleSeg(k))) { audio.currentTime = segs[k].t; return; }
+    const j = f ? prevVisibleSeg(k - 1) : k - 1;
+    audio.currentTime = j >= 0 ? segs[j].t : (f ? audio.currentTime : 0); };
+  $('#nextItem').onclick = () => { const k = segIndexAt(audio.currentTime);
+    const j = syncOK && filtering() ? nextVisibleSeg(k + 1) : (k + 1 < segs.length ? k + 1 : -1);
+    if (j >= 0) audio.currentTime = segs[j].t; };
 
   let saveTick = 0;
   audio.ontimeupdate = () => {
@@ -440,6 +624,13 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     if (++saveTick % 8 === 0) store.set('pos-' + current, audio.currentTime);
     if (!syncOK) return;
     const k = segIndexAt(audio.currentTime);
+    // ascolto filtrato: salta le notizie nascoste
+    if (!audio.paused && filtering() && k >= 0 && !visibleSeg(k)){
+      const j = nextVisibleSeg(k + 1);
+      if (j < 0){ audio.pause(); toast(prov !== 'Tutte' ? `Fine delle notizie di ${prov}` : 'Fine dei risultati'); }
+      else audio.currentTime = segs[j].t;
+      return;
+    }
     const idx = k >= 0 ? segs[k].i : -1;
     if (idx === curIdx) return;
     if (items[curIdx]) items[curIdx].classList.remove('reading');
@@ -472,7 +663,8 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 
   function setupMediaSession(date){
     if (!('mediaSession' in navigator)) return;
-    navigator.mediaSession.metadata = new MediaMetadata({ title: 'Rassegna ER · ' + longDate(date), artist: 'Emilia-Romagna', album: 'Rassegna stampa' });
+    navigator.mediaSession.metadata = new MediaMetadata({ title: 'Rassegna ER · ' + longDate(date), artist: 'Emilia-Romagna', album: 'Rassegna stampa',
+      artwork: [{ src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' }] });
     const h = { play: play, pause: () => audio.pause(),
       previoustrack: () => $('#prevItem').click(), nexttrack: () => $('#nextItem').click(),
       seekbackward: () => { audio.currentTime -= 15; }, seekforward: () => { audio.currentTime += 15; } };
@@ -480,14 +672,35 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   }
 
   function updateStats(){
-    const n = items.length;
-    $('#stats').textContent = n ? `${n} notizie${segs.length ? ' · con audio' : ''}` : '';
+    const all = items.filter(el => !el.closest('.notes'));
+    const vis = all.filter(el => !el.hidden).length;
+    const n = all.length;
+    $('#stats').textContent = !n ? '' : vis < n ? `${vis} di ${n} notizie` : `${n} notizie` + (segs.length ? ' · con audio' : '');
   }
 
   $('#pdfBtn').onclick = () => { const q = $('#q'); const v = q.value; const p = prov;
     // in stampa tutte le notizie, senza filtri
-    q.value = ''; prov = 'Tutte'; applyFilters(); window.print();
-    setTimeout(() => { q.value = v; prov = p; [...$('#provChips').children].forEach(c => c.classList.toggle('on', c.textContent === p)); applyFilters(); }, 500); };
+    q.value = ''; setProv('Tutte', false); applyFilters(); window.print();
+    setTimeout(() => { q.value = v; setProv(p, false); applyFilters(); }, 500); };
+
+  /* ---------- App installabile ---------- */
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  let installEvt = null;
+  function showInstall(ios){
+    if (standalone || store.get('installNo')) return;
+    $('#installTxt').innerHTML = ios
+      ? 'Tienila sul telefono come un\'app: tocca <b>Condividi</b> e poi <b>Aggiungi alla schermata Home</b>.'
+      : 'Installa <b>Rassegna ER</b> sul telefono o sul computer: si apre come un\'app.';
+    $('#installGo').hidden = ios;
+    $('#installBar').hidden = false;
+  }
+  window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; showInstall(false); });
+  window.addEventListener('appinstalled', () => { $('#installBar').hidden = true; toast('Rassegna ER è installata'); });
+  $('#installGo').onclick = async () => { if (!installEvt) return; installEvt.prompt(); await installEvt.userChoice.catch(() => {}); installEvt = null; $('#installBar').hidden = true; };
+  $('#installX').onclick = () => { store.set('installNo', '1'); $('#installBar').hidden = true; };
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS && /safari/i.test(navigator.userAgent) && !/crios|fxios|edgios/i.test(navigator.userAgent)) setTimeout(() => showInstall(true), 2500);
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 
   init();
 })();

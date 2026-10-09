@@ -11,6 +11,7 @@ Rassegna stampa dell'Emilia-Romagna.
 
 import os
 import re
+import sys
 import json
 import time
 import html
@@ -58,18 +59,38 @@ RSS_FEEDS = [
     ("RiminiToday", "Rimini", "https://www.riminitoday.it/rss"),
     ("RavennaToday", "Ravenna", "https://www.ravennatoday.it/rss"),
     ("ParmaToday", "Parma", "https://www.parmatoday.it/rss"),
-    ("PiacenzaToday", "Piacenza", "https://www.piacenzatoday.it/rss"),
     ("ForlìToday", "Forlì-Cesena", "https://www.forlitoday.it/rss"),
-    ("Gazzetta di Parma", "Parma", "https://www.gazzettadiparma.it/rss/"),
     ("PiacenzaSera", "Piacenza", "https://www.piacenzasera.it/feed/"),
-    ("Corriere Romagna", "", "https://www.corriereromagna.it/feed/"),
     ("Estense", "Ferrara", "https://www.estense.com/feed/"),
-    ("Il Sole 24 Ore", "", "https://www.ilsole24ore.com/rss/italia--emilia-romagna.xml"),
+    # altre testate locali (feed verificati il 10/10/2026)
+    ("CesenaToday", "Forlì-Cesena", "https://www.cesenatoday.it/rss"),
+    ("FerraraToday", "Ferrara", "https://www.ferraratoday.it/rss"),
+    ("IlPiacenza", "Piacenza", "https://www.ilpiacenza.it/rss"),
+    ("Reggionline", "Reggio Emilia", "https://www.reggionline.com/feed/"),
+    ("ReggioSera", "Reggio Emilia", "https://cdn.reggiosera.it/feed"),
+    ("SulPanaro", "Modena", "https://www.sulpanaro.net/feed/"),
+    ("RavennaNotizie", "Ravenna", "https://cdn.ravennanotizie.it/feed"),
+    ("ParmaDaily", "Parma", "https://www.parmadaily.it/feed/"),
+    ("AltaRimini", "Rimini", "https://www.altarimini.it/feed/"),
     # Google News: riempie i vuoti su Regione e Protezione civile (i link portano all'articolo originale)
     ("Google News", "", "https://news.google.com/rss/search?q=%22Regione+Emilia-Romagna%22+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "", "https://news.google.com/rss/search?q=allerta+meteo+Emilia-Romagna+when:1d&hl=it&gl=IT&ceid=IT:it"),
-    ("Google News", "", "https://news.google.com/rss/search?q=Reggio+Emilia+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "Reggio Emilia", "https://news.google.com/rss/search?q=Reggio+Emilia+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    # Google News per testata: i titoli dei giornali il cui feed non risponde ai server di GitHub
+    ("Google News", "Parma", "https://news.google.com/rss/search?q=site:gazzettadiparma.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "Piacenza", "https://news.google.com/rss/search?q=site:liberta.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "", "https://news.google.com/rss/search?q=site:corriereromagna.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:corrieredibologna.corriere.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:bologna.repubblica.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "Reggio Emilia", "https://news.google.com/rss/search?q=site:gazzettadireggio.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "Modena", "https://news.google.com/rss/search?q=site:gazzettadimodena.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "Ferrara", "https://news.google.com/rss/search?q=site:lanuovaferrara.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "", "https://news.google.com/rss/search?q=site:dire.it+Emilia-Romagna+when:1d&hl=it&gl=IT&ceid=IT:it"),
 ]
+
+# nessuna testata può occupare più di questa quota delle notizie passate a Gemini
+# (prima il Resto del Carlino, con 9 feed, arrivava a metà della rassegna)
+MAX_SHARE = float(os.environ.get("MAX_SHARE", "0.28"))
 
 PROVINCE = ["Bologna", "Modena", "Reggio Emilia", "Parma", "Piacenza",
             "Ferrara", "Ravenna", "Forlì-Cesena", "Rimini"]
@@ -114,17 +135,46 @@ def clean(s, limit=None):
     return s[:limit] if limit else s
 
 
-def read_feed(name, prov, url):
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=15)
-        if r.status_code != 200:
-            return name, url, f"HTTP {r.status_code}", []
-        root = ET.fromstring(r.content)
-    except Exception as e:
-        return name, url, f"errore: {type(e).__name__}", []
+def _loose_items(content):
+    """Feed con XML rovinato (es. troncato o con caratteri non validi): recupera gli <item> uno per uno."""
+    text = content.decode("utf-8", errors="replace")
+    text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", "", text)
+    nodes = []
+    for chunk in re.findall(r"<item\b.*?</item>", text, flags=re.S | re.I):
+        try:
+            nodes.append(ET.fromstring(chunk))
+        except ET.ParseError:
+            # ultima spiaggia: entità HTML non dichiarate (&nbsp; ecc.)
+            try:
+                nodes.append(ET.fromstring(re.sub(r"&(?!(amp|lt|gt|quot|apos|#\d+|#x[0-9a-fA-F]+);)", "&amp;", chunk)))
+            except ET.ParseError:
+                pass
+    return nodes
 
-    nodes = (root.findall(".//item") or root.findall(".//atom:entry", NS)
-             or root.findall(".//rss1:item", NS))
+
+def read_feed(name, prov, url):
+    content = None
+    for attempt in range(2):  # un secondo tentativo per gli errori di rete momentanei
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=15)
+            if r.status_code == 200:
+                content = r.content
+                break
+            status = f"HTTP {r.status_code}"
+        except Exception as e:
+            status = f"errore: {type(e).__name__}"
+        time.sleep(2)
+    if content is None:
+        return name, url, status, []
+
+    try:
+        root = ET.fromstring(content)
+        nodes = (root.findall(".//item") or root.findall(".//atom:entry", NS)
+                 or root.findall(".//rss1:item", NS))
+    except ET.ParseError:
+        nodes = _loose_items(content)
+        if not nodes:
+            return name, url, "XML non valido", []
     out = []
     for it in nodes[:MAX_PER_FEED]:
         def txt(*tags):
@@ -178,9 +228,38 @@ def fetch_rss_articles():
         print(f"  {'✅' if kept else '⚠️'} {name:22} {status:14} {kept:3} notizie  {url[:70]}")
 
     articles.sort(key=lambda a: a["date"] or NOW, reverse=True)
-    articles = articles[:MAX_ARTICLES]
+    articles = balance_sources(articles)
     print(f"Totale: {len(articles)} notizie uniche delle ultime {MAX_AGE_HOURS} ore.")
     return articles
+
+
+def source_key(name):
+    """'Il Resto del Carlino' e 'Carlino Imola' contano come la stessa testata."""
+    k = name.lower()
+    if "carlino" in k:
+        return "carlino"
+    return re.sub(r"^(il|la|lo)\s+|^l'", "", k).strip()
+
+
+def balance_sources(articles):
+    """Tiene le notizie più recenti, ma nessuna testata supera MAX_SHARE del totale.
+    Le notizie di una testata già 'piena' vengono recuperate solo se avanza spazio."""
+    cap = max(20, int(MAX_ARTICLES * MAX_SHARE))
+    kept, extra, count = [], [], {}
+    for a in articles:
+        k = source_key(a["source"])
+        if count.get(k, 0) < cap:
+            count[k] = count.get(k, 0) + 1
+            kept.append(a)
+        else:
+            extra.append(a)
+    kept = kept[:MAX_ARTICLES]
+    if len(kept) < MAX_ARTICLES:
+        kept += extra[:MAX_ARTICLES - len(kept)]
+    kept.sort(key=lambda a: a["date"] or NOW, reverse=True)
+    top = sorted(count.items(), key=lambda kv: -kv[1])[:5]
+    print("Testate più presenti: " + ", ".join(f"{k} {n}" for k, n in top))
+    return kept
 
 
 # ---------------------------------------------------------------------------
@@ -215,6 +294,7 @@ MESI = ["", "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "lugli
         "agosto", "settembre", "ottobre", "novembre", "dicembre"]
 GIORNO = f"{GIORNI[NOW.weekday()]} {NOW.day} {MESI[NOW.month]}"
 FEED_REPORT = []
+USED_MODEL = None
 
 SYSTEM_INSTRUCTION = f"""
 Sei il caporedattore di una rassegna stampa quotidiana sull'Emilia-Romagna.
@@ -235,7 +315,11 @@ UNIRE E SCEGLIERE
 FORMATO (HTML, solo il frammento: niente <html>, <head>, <body>, <style>, <div>, <section>)
 - <h2> per le sezioni, <h3> per la provincia, <ul><li> per le notizie (una notizia per <li>).
 - Ogni <li> ha questa forma: <li><strong>Titolo breve e informativo</strong> — Luogo: testo di 1-3 frasi con i fatti. <cite>n</cite></li>
-  (il luogo è il comune; per le notizie di "In evidenza" è utile anche la provincia)
+  Il luogo è il comune seguito SEMPRE dalla provincia tra parentesi, in ogni sezione: "Sassuolo (Modena)",
+  "Cesenatico (Forlì-Cesena)"; per i capoluoghi basta il nome ("Bologna", "Forlì", "Cesena", "Reggio Emilia");
+  per i fatti che riguardano tutta la regione scrivi "Emilia-Romagna". Serve al filtro per provincia del sito.
+- Varietà: quando lo stesso fatto è riportato da più testate, cita tutte quelle disponibili; non privilegiare
+  una sola testata quando ce ne sono altre.
 - Le province vanno scritte esattamente così: {", ".join(PROVINCE)}; per notizie di tutta la regione usa <h3>Emilia-Romagna</h3>.
 - Metti una provincia solo se ha notizie: niente righe tipo "nessuna notizia".
 
@@ -326,6 +410,8 @@ def call_gemini(prompt):
                 if n < 25 and model != MODELS_TO_TRY[-1]:
                     print("⚠️ Troppo poche notizie: provo il modello successivo.")
                     break
+                global USED_MODEL
+                USED_MODEL = model
                 return text
             except Exception as e:
                 print(f"⚠️ {model}: {e}")
@@ -428,12 +514,31 @@ def update_indexes(n_items):
         json.dump({"latest": TODAY}, f)
 
 
+def write_status(n_articles, n_items, fallback):
+    """stato.json: lo legge il controllo finale del workflow (avviso di errore) e la pagina."""
+    feeds = [{"name": n, "prov": p, "status": st, "items": k} for n, p, st, k in FEED_REPORT]
+    status = {
+        "date": TODAY,
+        "generated": dt.datetime.now(ROME).isoformat(timespec="minutes"),
+        "articles": n_articles,
+        "items": n_items,
+        "model": USED_MODEL,
+        "fallback": fallback,
+        "feeds_ok": sum(1 for f in feeds if f["status"] == "ok" and f["items"]),
+        "feeds_total": len(feeds),
+        "feeds": feeds,
+    }
+    with open("stato.json", "w", encoding="utf-8") as f:
+        json.dump(status, f, ensure_ascii=False, indent=1)
+
+
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     articles = fetch_rss_articles()
     if not articles:
-        print("Nessuna notizia raccolta: interrompo.")
-        return
+        print("❌ Nessuna notizia raccolta: interrompo.")
+        write_status(0, 0, True)
+        sys.exit(1)
     add_fulltext(articles)
 
     raw = call_gemini(build_prompt(articles))
@@ -444,6 +549,7 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(f"<!-- Rassegna Emilia-Romagna {TODAY} - {len(articles)} notizie analizzate -->\n{body}\n")
     update_indexes(n_items)
+    write_status(len(articles), n_items, raw is None)
     print(f"✅ {OUTPUT_FILE}: {n_items} notizie in rassegna.")
 
 
