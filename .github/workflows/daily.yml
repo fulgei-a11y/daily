@@ -5,12 +5,18 @@ on:
     - cron: '0 4 * * *'   # 06:00 ora legale italiana (05:00 con l'ora solare)
   workflow_dispatch:
 
+# due esecuzioni insieme (es. una manuale durante quella programmata) si accodano invece di scontrarsi
+concurrency:
+  group: rassegna
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     permissions:
       contents: write
+      issues: write      # per l'avviso automatico in caso di errore
 
     steps:
       - name: Scarica il codice del repository
@@ -32,7 +38,7 @@ jobs:
 
       - name: Controlla che gli script siano completi
         run: |
-          for f in tools/fetch_and_analyze.py tools/build_audio.py; do
+          for f in tools/fetch_and_analyze.py tools/build_audio.py tools/check_health.py; do
             dos2unix -q "$f"
             python -m py_compile "$f" || { echo "❌ $f non è valido: ricaricalo per intero."; exit 1; }
             tail -3 "$f" | grep -q "main()" || { echo "❌ $f è incompleto: ricaricalo per intero."; exit 1; }
@@ -43,7 +49,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/fetch_and_analyze.py
 
+      # se l'audio non riesce, la rassegna scritta viene pubblicata lo stesso (e arriva l'avviso)
       - name: Genera l'audio MP3 con la voce Paola
+        continue-on-error: true
         run: |
           TODAY=$(TZ=Europe/Rome date +'%Y-%m-%d')
           if [ -f "edizioni/$TODAY.html" ]; then
@@ -55,4 +63,37 @@ jobs:
         with:
           commit_message: "Auto-update rassegna"
           branch: main
-          file_pattern: 'edizioni/* audio/* index.json'
+          file_pattern: 'edizioni/* audio/* index.json stato.json'
+
+      # ---------------------------------------------------------------------
+      # Avviso automatico: se qualcosa non va apre una "issue" nel repository
+      # (GitHub la manda per e-mail); al primo giorno riuscito la chiude da sola.
+      # ---------------------------------------------------------------------
+      - name: Controllo e avviso
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          set +e
+          python3 tools/check_health.py "$JOB_STATUS"
+          code=$?
+          set -e
+          cat health.md >> "$GITHUB_STEP_SUMMARY"
+          TITLE="⚠️ Rassegna: aggiornamento non riuscito"
+          OPEN=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number' 2>/dev/null || true)
+          if [ "$code" = "1" ]; then
+            {
+              echo "@${{ github.repository_owner }}"
+              echo
+              cat health.md
+            } > body.md
+            if [ -n "$OPEN" ]; then
+              gh issue comment "$OPEN" --body-file body.md
+            else
+              gh issue create --title "$TITLE" --body-file body.md
+            fi
+            exit 1
+          elif [ -n "$OPEN" ]; then
+            gh issue close "$OPEN" --comment "✅ Risolto: l'edizione del $(TZ=Europe/Rome date +'%d/%m/%Y') è stata pubblicata correttamente."
+          fi
