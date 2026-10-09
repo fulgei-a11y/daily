@@ -1,0 +1,246 @@
+{
+ "date": "2026-10-10",
+ "generated": "2026-10-10T00:22+02:00",
+ "articles": 260,
+ "items": 142,
+ "model": "gemini-2.5-flash",
+ "fallback": false,
+ "feeds_ok": 39,
+ "feeds_total": 39,
+ "feeds": [
+  {
+   "name": "Ansa",
+   "prov": "",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Modena",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Reggio Emilia",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Ferrara",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Ravenna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Forlì-Cesena",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Forlì-Cesena",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Rimini",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Il Resto del Carlino",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "BolognaToday",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "ModenaToday",
+   "prov": "Modena",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "RiminiToday",
+   "prov": "Rimini",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "RavennaToday",
+   "prov": "Ravenna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "ParmaToday",
+   "prov": "Parma",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "ForlìToday",
+   "prov": "Forlì-Cesena",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "PiacenzaSera",
+   "prov": "Piacenza",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "Estense",
+   "prov": "Ferrara",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "CesenaToday",
+   "prov": "Forlì-Cesena",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "FerraraToday",
+   "prov": "Ferrara",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "IlPiacenza",
+   "prov": "Piacenza",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Reggionline",
+   "prov": "Reggio Emilia",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "ReggioSera",
+   "prov": "Reggio Emilia",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "SulPanaro",
+   "prov": "Modena",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "RavennaNotizie",
+   "prov": "Ravenna",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "ParmaDaily",
+   "prov": "Parma",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "AltaRimini",
+   "prov": "Rimini",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Reggio Emilia",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Parma",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Piacenza",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Reggio Emilia",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Modena",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Ferrara",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 15
+  }
+ ]
+}
