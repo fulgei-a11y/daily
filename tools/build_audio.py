@@ -190,7 +190,11 @@ def main():
     ap.add_argument("--html", required=True)
     ap.add_argument("--date", required=True)
     ap.add_argument("--out", required=True)
+    # per gli aggiornamenti delle 13 e delle 19: nome del file (es. 2026-10-10-13) e frase iniziale
+    ap.add_argument("--name", default=None)
+    ap.add_argument("--intro", default=None)
     a = ap.parse_args()
+    name = a.name or a.date
 
     ensure_libs()
     root, vdir = ensure_engine()
@@ -202,7 +206,7 @@ def main():
     its = items_from_fragment(html_content)
     y, m, d = map(int, a.date.split("-"))
     wd = GIORNI[datetime.date(y, m, d).weekday()]
-    intro = f"Rassegna dell'Emilia-Romagna di {wd} {d} {MESI[m]} {y}."
+    intro = a.intro or f"Rassegna dell'Emilia-Romagna di {wd} {d} {MESI[m]} {y}."
     texts = [spoken(its[i - 1] if i else None, its[i]) for i in range(len(its))]
 
     tmp = tempfile.mkdtemp()
@@ -241,7 +245,7 @@ def main():
                 w.writeframes(b"\x00\x00" * int(rate * 0.15))
                 t += 0.15
 
-    mp3 = os.path.join(a.out, f"{a.date}.mp3")
+    mp3 = os.path.join(a.out, f"{name}.mp3")
     for br in ("40k", "32k", "24k"):
         subprocess.run([
             "ffmpeg", "-y", "-loglevel", "error", "-i", full, "-ac", "1", "-ar", "22050",
@@ -252,7 +256,8 @@ def main():
 
     meta = {
         "date": a.date,
-        "audio": f"audio/{a.date}.mp3",
+        "name": name,
+        "audio": f"audio/{name}.mp3",
         "duration": round(t, 1),
         "items": len(its),
         "segments": segs
@@ -262,7 +267,7 @@ def main():
     with open(meta_path, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False)
 
-    shutil.copy(meta_path, os.path.join(a.out, f"{a.date}.json"))
+    shutil.copy(meta_path, os.path.join(a.out, f"{name}.json"))
     shutil.rmtree(tmp, ignore_errors=True)
 
     print(f"OK {mp3} {os.path.getsize(mp3) // 1024} KB, {t / 60:.1f} min, {len(segs)} notizie")

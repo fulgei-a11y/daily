@@ -119,6 +119,16 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 .banner .go{flex:none;border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;height:34px;padding:0 14px;font-weight:600;cursor:pointer}
 .banner .x{flex:none;border:0;background:none;width:30px;height:30px;font-size:22px;line-height:1;color:var(--muted);cursor:pointer;padding:0}
 .banner.warn{background:var(--hl);border-color:transparent}
+/* ---------- Aggiornamenti delle 13 e delle 19 ---------- */
+.sec.update{margin:18px 0 6px;padding:2px 0 6px 14px;border-left:4px solid var(--accent)}
+.sec.update .sec-title{margin-top:12px;color:var(--ink);flex-wrap:wrap;row-gap:4px;font-size:24px}
+.sec.update .new{font-style:normal;font-family:var(--f-ui);font-size:12px;font-weight:700;letter-spacing:.04em;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:3px 9px;vertical-align:middle;text-transform:uppercase}
+.upd-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:2px 0 6px;font-family:var(--f-ui);font-size:13.5px;color:var(--muted)}
+.upd-play{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;height:32px;padding:0 14px 0 10px;font:inherit;font-weight:600;cursor:pointer}
+.upd-play svg{width:14px;height:14px;fill:currentColor}
+.sec.update .empty-upd{margin:6px 0}
+.chip.upd-chip{background:transparent;border:1.5px solid var(--accent);color:var(--accent);padding:5px 11px}
+.chip.upd-chip.on{background:var(--accent);color:var(--accent-ink)}
 .upd{display:flex;align-items:center;gap:8px;margin:4px 0 0;padding-left:2px;font-family:var(--f-ui);font-size:13.5px;line-height:1.35;color:var(--muted);min-height:20px}
 .upd b{color:var(--ink);font-weight:600}
 .upd .dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--muted)}
@@ -317,7 +327,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   /* ---------- Archivio edizioni ---------- */
   async function init(){
     let latest = null;
-    try { latest = (await (await fetch('index.json?v=' + Date.now())).json()).latest; } catch(e) {}
+    try { const j = await (await fetch('index.json?v=' + Date.now())).json(); latest = j.latest; knownUpdated = j.updated || ''; } catch(e) {}
     try { const list = await (await fetch('edizioni/index.json?v=' + Date.now())).json();
       list.forEach(e => { if (e && e.date) META[e.date] = e; });
       editions = list.map(e => e.date || e); } catch(e) {}
@@ -341,8 +351,10 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   const todayRome = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
   /* ---------- Ultimo aggiornamento ---------- */
   const META = {};
-  let lastCheck = 0;
-  const RUN_UTC_HOUR = 4, PUBLISH_MIN = 20;   // il workflow parte alle 04:00 UTC e pubblica in circa 20 minuti
+  let lastCheck = 0, knownUpdated = '', pendingRefresh = false;
+  // orari di pubblicazione: mattino = workflow alle 04:00 UTC; aggiornamenti alle 13 e 19 ora italiana;
+  // ogni pubblicazione arriva circa 20 minuti dopo la partenza
+  const PUBLISH_MIN = 20;
   const romeTime = d => d.toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome', hour: 'numeric', minute: '2-digit' });
   const romeDay = d => d.toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
   function dayWord(iso){
@@ -351,48 +363,87 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     if (iso === romeDay(new Date(Date.now() + 864e5))) return 'domani';
     return new Date(iso + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
   }
-  function nextPublish(){
-    const n = new Date(), d = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate(), RUN_UTC_HOUR, PUBLISH_MIN));
-    if (d <= n) d.setUTCDate(d.getUTCDate() + 1);
-    return d;
+  function romeAt(iso, h, mi){   // ora italiana → istante esatto (tiene conto di ora legale e solare)
+    const [y, mo, d] = iso.split('-').map(Number);
+    const guess = Date.UTC(y, mo - 1, d, h, mi);
+    const rh = +new Date(guess).toLocaleString('en-GB', { timeZone: 'Europe/Rome', hour: '2-digit', hour12: false }) % 24;
+    return new Date(guess - ((rh - new Date(guess).getUTCHours() + 24) % 24) * 3600e3);
+  }
+  function slotsOf(iso){
+    const [y, mo, d] = iso.split('-').map(Number);
+    return [
+      { key: 'mattina', at: new Date(Date.UTC(y, mo - 1, d, 4, PUBLISH_MIN)) },
+      { key: '13', at: romeAt(iso, 13, PUBLISH_MIN) },
+      { key: '19', at: romeAt(iso, 19, PUBLISH_MIN) },
+    ];
+  }
+  const slotName = k => k === 'mattina' ? "l'edizione del mattino" : `l'aggiornamento delle ${k}`;
+  function doneSlots(iso){
+    const s = new Set();
+    if (editions.includes(iso)) s.add('mattina');
+    ((META[iso] || {}).updates || []).forEach(u => s.add(u.slot));
+    return s;
+  }
+  function lastUpdated(iso){
+    const m = META[iso] || {};
+    const t = [m.updated, ...(m.updates || []).map(u => u.updated)].filter(Boolean).map(x => new Date(x)).filter(d => !isNaN(d));
+    return t.length ? new Date(Math.max(...t)) : null;
   }
   function staleCheck(){
-    const box = $('#upd'), m = META[current] || {}, latest = editions[0];
-    const up = m.updated ? new Date(m.updated) : null;
-    const when = up && !isNaN(up) ? `${dayWord(romeDay(up))} alle ${romeTime(up)}` : '';
-    let cls = '', txt;
+    const box = $('#upd'), latest = editions[0], now = Date.now(), today = todayRome();
+    const up = lastUpdated(current);
+    const when = up ? `${dayWord(romeDay(up))} alle ${romeTime(up)}` : '';
+    let cls = '', txt, btn = '';
     if (current === latest){
-      const next = nextPublish(), nextTxt = `${dayWord(romeDay(next))} verso le ${romeTime(next)}`;
-      if (latest === todayRome()){
-        cls = 'fresh';
-        txt = (when ? `<b>Aggiornata ${when}</b>` : '<b>Edizione di oggi</b>') + ` · prossima: ${nextTxt}`;
+      const done = doneSlots(today);
+      const all = [...slotsOf(today), ...slotsOf(romeDay(new Date(now + 864e5)))];
+      const overdue = slotsOf(today).filter(s => now - s.at > 40 * 60e3).pop();      // l'ultima già attesa
+      const pending = slotsOf(today).find(s => !done.has(s.key) && s.at <= now && now - s.at <= 40 * 60e3);
+      const next = all.find(s => s.at > now && !(romeDay(s.at) === today && done.has(s.key)));
+      const nextTxt = !next ? '' : next.key === 'mattina'
+        ? `prossima edizione ${dayWord(romeDay(next.at))} verso le ${romeTime(next.at)}`
+        : `prossimo aggiornamento ${romeDay(next.at) === today ? '' : dayWord(romeDay(next.at)) + ' '}verso le ${romeTime(next.at)}`;
+      const head = latest === today ? (when ? `<b>Aggiornata ${when}</b>` : '<b>Edizione di oggi</b>')
+                                    : `<b>Ultimo aggiornamento ${when || dayWord(latest)}</b>`;
+      if (overdue && !done.has(overdue.key)){
+        cls = 'late'; txt = `${head} · ${slotName(overdue.key)} è in ritardo`;
+      } else if (pending){
+        cls = latest === today ? 'fresh' : ''; txt = `${head} · ${slotName(pending.key)} è in arrivo`;
       } else {
-        // l'edizione di oggi non c'è ancora: "in arrivo" prima dell'orario previsto, "in ritardo" dopo
-        const late = romeDay(next) !== todayRome() && Date.now() - (next.getTime() - 864e5) > 40 * 60e3;
-        cls = late ? 'late' : '';
-        txt = `<b>Ultimo aggiornamento ${when || dayWord(latest)}</b> · ` +
-              (late ? "l'edizione di oggi è in ritardo" : `la nuova edizione arriva ${nextTxt}`);
+        cls = latest === today ? 'fresh' : ''; txt = head + (nextTxt ? ` · ${nextTxt}` : '');
       }
+      if (pendingRefresh) btn = 'Mostra';
     } else {
-      txt = `Edizione d'archivio${when ? `, pubblicata ${when}` : ` di ${dayWord(current)}`}`;
+      txt = `Edizione d'archivio${when ? `, ultimo aggiornamento ${when}` : ` di ${dayWord(current)}`}`;
+      btn = "Vai all'ultima";
     }
     box.className = 'upd ' + cls;
     $('#updTxt').innerHTML = txt;
-    $('#toLatest').hidden = current === latest;
+    $('#toLatest').hidden = !btn;
+    $('#toLatest').textContent = btn;
   }
-  $('#toLatest').onclick = () => load(editions[0]);
-  // app lasciata aperta: tornando sulla pagina controlla se nel frattempo è uscita una nuova edizione
+  $('#toLatest').onclick = () => { pendingRefresh = false; load(editions[0]); };
+  // app lasciata aperta: tornando sulla pagina controlla se nel frattempo è uscito qualcosa di nuovo
+  async function refreshMeta(){
+    const list = await (await fetch('edizioni/index.json?v=' + Date.now())).json();
+    list.forEach(e => { if (e && e.date) META[e.date] = e; });
+  }
   document.addEventListener('visibilitychange', async () => {
-    if (document.hidden || Date.now() - lastCheck < 5 * 60e3) return;
+    if (document.hidden || Date.now() - lastCheck < 3 * 60e3) return;
     lastCheck = Date.now();
     try {
       const j = await (await fetch('index.json?v=' + Date.now())).json();
-      if (j.latest && j.latest > editions[0]){
-        if (audio.paused && current === editions[0]){ history.replaceState(null, '', location.pathname); await init(); toast('È uscita la nuova edizione'); }
-        else { editions.unshift(j.latest); META[j.latest] = { updated: j.updated };
-          const o = document.createElement('option'); o.value = j.latest; o.textContent = shortDate(j.latest); $('#dateSel').prepend(o);
-          staleCheck(); toast("È uscita la nuova edizione: tocca «Vai all'ultima»"); }
-      } else staleCheck();
+      if (!j.updated || j.updated === knownUpdated){ staleCheck(); return; }
+      knownUpdated = j.updated;
+      await refreshMeta();
+      const isNewDay = j.latest && j.latest > editions[0];
+      if (isNewDay){
+        editions.unshift(j.latest);
+        const o = document.createElement('option'); o.value = j.latest; o.textContent = shortDate(j.latest); $('#dateSel').prepend(o);
+      }
+      const onLatest = current === editions[isNewDay ? 1 : 0];
+      if (onLatest && audio.paused){ await load(editions[0]); toast(isNewDay ? 'È uscita la nuova edizione' : 'È arrivato un nuovo aggiornamento'); }
+      else { pendingRefresh = onLatest; staleCheck(); if (onLatest) toast('È arrivato un nuovo aggiornamento: tocca «Mostra»'); }
     } catch(e) {}
   });
   setInterval(() => { if (!document.hidden) staleCheck(); }, 60e3);
@@ -424,21 +475,22 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     $('#printDate').textContent = longDate(date).replace(/^./, c => c.toUpperCase());
     wantPlay = false; audio.pause(); setPlayIcon(false);
     main.innerHTML = '<div class="skel"></div><div class="skel" style="width:80%"></div>';
-    try {
-      const r = await fetch(`edizioni/${date}.html?v=${Date.now()}`);
-      if (!r.ok) throw new Error(r.status);
-      render(await r.text());
-    } catch(e) {
-      main.innerHTML = `<p class="empty">Edizione non disponibile (${esc(e.message)}).</p>`;
-      items = [];
-    }
+    const get = async url => { const r = await fetch(url + '?v=' + Date.now()); if (!r.ok) throw new Error(r.status); return r.text(); };
+    const upMeta = ((META[date] || {}).updates || []).slice().sort((a, b) => a.slot.localeCompare(b.slot));
+    const [morning, ...upHtml] = await Promise.all([
+      get(`edizioni/${date}.html`).catch(e => e),
+      ...upMeta.map(u => get(`edizioni/${date}-${u.slot}.html`).catch(() => null)) ]);
+    const ups = upMeta.map((u, k) => Object.assign({ html: upHtml[k] }, u)).filter(u => u.html);
+    if (morning instanceof Error && !ups.length){
+      main.innerHTML = `<p class="empty">Edizione non disponibile (${esc(morning.message)}).</p>`;
+      items = []; RANGES = [];
+    } else render(morning instanceof Error ? null : morning, ups);
     await loadAudio(date);
     updateStats();
     staleCheck();
     window.scrollTo({ top: 0 });
     if (focusK) focusItem();
   }
-
   /* Stessa logica di lettura di build_audio.py: l'indice di ogni notizia coincide con l'audio */
   function walkFragment(root){
     const out = [], st = { sec: null, sub: null };
@@ -461,56 +513,92 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     return out;
   }
 
-  function render(html){
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    doc.querySelectorAll('style,script,link').forEach(n => n.remove());
-    const notes = [...doc.querySelectorAll('p.note')].map(n => n.outerHTML).join('');
-    const list = walkFragment(doc.body);
-    main.innerHTML = notes;
-    items = [];
-    let secEl = null, lastSec = null, lastSub = null;
-    list.forEach((it, i) => {
-      if (it.sec !== lastSec){
-        secEl = document.createElement('section');
-        secEl.className = 'sec' + (/evidenza/i.test(it.sec) ? ' evidenza' : '') + (it.sec === 'Note' ? ' notes' : '');
-        secEl.id = 'sec-' + i;
-        secEl.dataset.title = nice(it.sec);
-        secEl.innerHTML = `<h2 class="sec-title">${esc(nice(it.sec))} <small></small></h2>`;
-        main.appendChild(secEl);
-        lastSec = it.sec; lastSub = null;
+  function makeItem(it, i){
+    const el = document.createElement('article');
+    el.className = 'item'; el.dataset.i = i; el.dataset.sub = it.sub ? '1' : '';
+    el.dataset.prov = it.sec === 'Note' ? '' : (provOf(it.sub) || detectProv(it.node));
+    el.innerHTML = `<button class="pbtn" type="button" aria-label="Ascolta da questa notizia"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><div class="txt">${it.node.innerHTML}</div>`;
+    el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+    // vecchie edizioni: "(Fonte: X)" dentro il link diventa la riga delle fonti
+    if (!el.querySelector('.src')){
+      const links = [...el.querySelectorAll('.txt > a')].filter(a => /fonte/i.test(a.textContent));
+      if (links.length){
+        const span = document.createElement('span'); span.className = 'src';
+        links.forEach((a, k) => { a.textContent = a.textContent.replace(/[()]/g, '').replace(/^\s*Fonte:\s*/i, '');
+          span.append(k ? ', ' : 'Fonte: ', a); });
+        el.querySelector('.txt').appendChild(span);
       }
-      if (it.sub && it.sub !== lastSub){
-        const h = document.createElement('h3');
-        h.className = 'sub-title'; h.textContent = it.sub; h.dataset.prov = it.sub;
-        secEl.appendChild(h);
-      }
-      lastSub = it.sub;
-      const el = document.createElement('article');
-      el.className = 'item'; el.dataset.i = i; el.dataset.sub = it.sub ? '1' : '';
-      el.dataset.prov = it.sec === 'Note' ? '' : (provOf(it.sub) || detectProv(it.node));
-      el.innerHTML = `<button class="pbtn" type="button" aria-label="Ascolta da questa notizia"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><div class="txt">${it.node.innerHTML}</div>`;
-      el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
-      // vecchie edizioni: "(Fonte: X)" dentro il link diventa la riga delle fonti
-      if (!el.querySelector('.src')){
-        const links = [...el.querySelectorAll('.txt > a')].filter(a => /fonte/i.test(a.textContent));
-        if (links.length){
-          const span = document.createElement('span'); span.className = 'src';
-          links.forEach((a, k) => { a.textContent = a.textContent.replace(/[()]/g, '').replace(/^\s*Fonte:\s*/i, '');
-            span.append(k ? ', ' : 'Fonte: ', a); });
-          el.querySelector('.txt').appendChild(span);
+    }
+    el.querySelector('.pbtn').onclick = () => playFrom(i);
+    el.dataset.text = el.textContent.toLowerCase();
+    if (it.sec !== 'Note'){
+      let src = el.querySelector('.src');
+      if (!src){ src = document.createElement('span'); src.className = 'src'; el.querySelector('.txt').appendChild(src); }
+      src.insertAdjacentHTML('beforeend', '<button class="sharebtn" type="button" aria-label="Condividi questa notizia"><svg viewBox="0 0 24 24"><path d="M14 9V5l7 7-7 7v-4.1c-5 0-8.5 1.6-11 5.1 1-5 4-10 11-11"/></svg>Condividi</button>');
+    }
+    items.push(el);
+    return el;
+  }
+  const parse = html => { const doc = new DOMParser().parseFromString(html, 'text/html');
+    doc.querySelectorAll('style,script,link').forEach(n => n.remove()); return doc; };
+
+  /* L'edizione del mattino occupa sempre le prime posizioni (0…N-1): così il suo audio resta
+     sincronizzato. Le notizie degli aggiornamenti vengono dopo nella numerazione, ma in pagina
+     stanno in cima, il più recente per primo. */
+  let RANGES = [];   // [{key:'mattina'|'13'|'19', base, count}]
+  function render(html, ups = []){
+    items = []; RANGES = [];
+    const frag = document.createDocumentFragment();
+    let notes = '';
+    if (html !== null){
+      const doc = parse(html);
+      notes = [...doc.querySelectorAll('p.note')].map(n => n.outerHTML).join('');
+      let secEl = null, lastSec = null, lastSub = null;
+      walkFragment(doc.body).forEach((it, i) => {
+        if (it.sec !== lastSec){
+          secEl = document.createElement('section');
+          secEl.className = 'sec' + (/evidenza/i.test(it.sec) ? ' evidenza' : '') + (it.sec === 'Note' ? ' notes' : '');
+          secEl.id = 'sec-' + i;
+          secEl.dataset.title = nice(it.sec);
+          secEl.innerHTML = `<h2 class="sec-title">${esc(nice(it.sec))} <small></small></h2>`;
+          frag.appendChild(secEl);
+          lastSec = it.sec; lastSub = null;
         }
+        if (it.sub && it.sub !== lastSub){
+          const h = document.createElement('h3');
+          h.className = 'sub-title'; h.textContent = it.sub; h.dataset.prov = it.sub;
+          secEl.appendChild(h);
+        }
+        lastSub = it.sub;
+        secEl.appendChild(makeItem(it, items.length));
+      });
+      RANGES.push({ key: 'mattina', base: 0, count: items.length });
+    }
+    const upEls = [];
+    const newest = ups.length ? ups[ups.length - 1].slot : null;
+    ups.forEach(u => {
+      const doc = parse(u.html), base = items.length;
+      const t = u.updated ? new Date(u.updated) : null;
+      const sec = document.createElement('section');
+      sec.className = 'sec update'; sec.id = 'agg-' + u.slot;
+      sec.dataset.title = 'Aggiornamento delle ' + u.slot; sec.dataset.chip = 'Ore ' + u.slot;
+      const isNew = u.slot === newest && current === todayRome();
+      sec.innerHTML = `<div class="upd-head"><h2 class="sec-title">Aggiornamento delle ${u.slot}${isNew ? ' <i class="new">Nuovo</i>' : ''} <small></small></h2>
+        <p class="upd-meta">${t && !isNaN(t) ? 'Pubblicato alle ' + romeTime(t) + ' · ' : ''}notizie arrivate dopo ${u.slot === '13' ? "l'edizione del mattino" : "l'aggiornamento delle 13"}
+        <button class="upd-play" type="button" data-slot="${u.slot}" hidden><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>Ascolta</span></button></p></div>`;
+      walkFragment(doc.body).forEach(it => sec.appendChild(makeItem(it, items.length)));
+      if (items.length === base){
+        const n = doc.querySelector('p.note');
+        sec.insertAdjacentHTML('beforeend', `<p class="note empty-upd">${esc(n ? n.textContent : 'Nessuna novità rilevante.')}</p>`);
       }
-      el.querySelector('.pbtn').onclick = () => playFrom(i);
-      el.dataset.text = el.textContent.toLowerCase();
-      if (it.sec !== 'Note'){
-        let src = el.querySelector('.src');
-        if (!src){ src = document.createElement('span'); src.className = 'src'; el.querySelector('.txt').appendChild(src); }
-        src.insertAdjacentHTML('beforeend', '<button class="sharebtn" type="button" aria-label="Condividi questa notizia"><svg viewBox="0 0 24 24"><path d="M14 9V5l7 7-7 7v-4.1c-5 0-8.5 1.6-11 5.1 1-5 4-10 11-11"/></svg>Condividi</button>');
-      }
-      secEl.appendChild(el);
-      items.push(el);
+      RANGES.push({ key: u.slot, base, count: items.length - base });
+      upEls.unshift(sec);   // il più recente in cima
     });
-    if (!items.length) main.insertAdjacentHTML('beforeend', '<p class="empty">Questa edizione non contiene notizie.</p>');
+    main.innerHTML = notes;
+    upEls.forEach(s => main.appendChild(s));
+    main.appendChild(frag);
+    if (!items.length && !upEls.length) main.insertAdjacentHTML('beforeend', '<p class="empty">Questa edizione non contiene notizie.</p>');
+    main.querySelectorAll('.upd-play').forEach(b => b.onclick = () => playTrack(b.dataset.slot));
     buildChips();
     applyFilters();
   }
@@ -522,7 +610,8 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     secs.forEach(s => {
       const b = document.createElement('button');
       b.className = 'chip'; b.type = 'button'; b.dataset.target = s.id;
-      b.innerHTML = esc(s.dataset.title) + '<small></small>';
+      b.innerHTML = esc(s.dataset.chip || s.dataset.title) + '<small></small>';
+      if (s.classList.contains('update')) b.classList.add('upd-chip');
       b.onclick = () => s.scrollIntoView({ behavior: 'smooth' });
       $('#secChips').appendChild(b);
     });
@@ -564,10 +653,11 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     });
     main.querySelectorAll('.sec').forEach(s => {
       const n = s.querySelectorAll('.item:not([hidden])').length;
-      s.hidden = n === 0;
+      // un aggiornamento senza novità resta visibile (dice "nessuna novità") finché non si filtra
+      s.hidden = n === 0 && !(s.querySelector('.empty-upd') && prov === 'Tutte' && !q);
       s.querySelector('.sec-title small').textContent = n ? n + (n === 1 ? ' notizia' : ' notizie') : '';
       const chip = $(`#secChips [data-target="${s.id}"]`);
-      if (chip){ chip.hidden = n === 0; chip.querySelector('small').textContent = n; }
+      if (chip){ chip.hidden = s.hidden; chip.querySelector('small').textContent = n || ''; }
       s.querySelectorAll('.sub-title').forEach(h => {
         let el = h.nextElementSibling, any = false;
         while (el && el.classList.contains('item')){ if (!el.hidden) any = true; el = el.nextElementSibling; }
@@ -609,29 +699,56 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   }
 
   /* ---------- Audio sincronizzato ---------- */
+  /* Ogni pubblicazione ha la sua traccia: il mattino (date.mp3) e gli aggiornamenti (date-13.mp3, date-19.mp3).
+     Gli indici delle notizie nei segmenti sono spostati di "base" per corrispondere alla pagina. */
+  let TRACKS = [], track = null;
   async function loadAudio(date){
-    segs = []; syncOK = false; curIdx = -1;
-    $('#player').classList.remove('noaudio');
-    let meta = null;
-    try { const r = await fetch(`audio/${date}.json?v=${Date.now()}`); if (r.ok) meta = await r.json(); } catch(e) {}
-    if (!meta){
+    TRACKS = []; track = null; segs = []; syncOK = false; curIdx = -1;
+    const metas = await Promise.all(RANGES.map(async r => {
+      const name = r.key === 'mattina' ? date : `${date}-${r.key}`;
+      try { const x = await fetch(`audio/${name}.json?v=${Date.now()}`); return x.ok ? [r, name, await x.json()] : null; } catch(e) { return null; }
+    }));
+    metas.filter(Boolean).forEach(([r, name, meta]) => {
+      TRACKS.push({ key: r.key, name, src: meta.audio || `audio/${name}.mp3`, dur: meta.duration || 0,
+        label: r.key === 'mattina' ? 'Ascolta la rassegna' : `Aggiornamento delle ${r.key}`,
+        sync: (meta.segments || []).length > 0 && meta.items === r.count,
+        segs: (meta.segments || []).map(x => ({ i: x.i + r.base, t: x.t })).sort((a, b) => a.t - b.t),
+        range: r });
+    });
+    items.forEach(el => el.querySelector('.pbtn').hidden = !trackOf(+el.dataset.i)?.sync);
+    main.querySelectorAll('.upd-play').forEach(b => { const t = TRACKS.find(x => x.key === b.dataset.slot);
+      b.hidden = !t; if (t) b.querySelector('span').textContent = `Ascolta · ${Math.max(1, Math.round(t.dur / 60))} min`; });
+    if (!TRACKS.length){
       $('#player').classList.add('noaudio');
       $('#nowTxt').innerHTML = '<b>Audio non disponibile</b> per questa edizione';
       $('#nowPos').textContent = '';
       audio.removeAttribute('src');
-      items.forEach(el => el.querySelector('.pbtn').hidden = true);
       return;
     }
-    audio.src = meta.audio || `audio/${date}.mp3`;
-    segs = (meta.segments || []).slice().sort((a, b) => a.t - b.t);
-    syncOK = segs.length > 0 && meta.items === items.length;
-    audioDur = meta.duration || 0;
+    $('#player').classList.remove('noaudio');
+    setTrack(TRACKS.find(t => t.key === 'mattina') || TRACKS[TRACKS.length - 1]);
+  }
+  const trackOf = i => TRACKS.find(t => i >= t.range.base && i < t.range.base + t.range.count);
+  function setTrack(t){
+    if (track === t) return;
+    wantPlay = false; audio.pause();
+    track = t; segs = t.segs; syncOK = t.sync; audioDur = t.dur; curIdx = -1;
+    items.forEach(el => el.classList.remove('reading'));
+    audio.src = t.src;
+    $('#nowPos').textContent = '0:00 / ' + fmt(t.dur);
+    $('#barFill').style.width = '0';
+    const saved = parseFloat(store.get('pos-' + t.name));
+    if (saved > 5 && saved < t.dur - 5) audio.addEventListener('loadedmetadata', () => { if (audio.currentTime < 1) audio.currentTime = saved; }, { once: true });
+    applyRate();
     updateNow();
-    $('#nowPos').textContent = '0:00 / ' + fmt(meta.duration);
-    const saved = parseFloat(store.get('pos-' + date));
-    if (saved > 5) audio.addEventListener('loadedmetadata', () => { audio.currentTime = saved; }, { once: true });
-    items.forEach(el => el.querySelector('.pbtn').hidden = !syncOK);
-    setupMediaSession(date);
+    setupMediaSession(current);
+  }
+  function playTrack(key){
+    const t = TRACKS.find(x => x.key === key); if (!t) return;
+    if (track !== t){ setTrack(t); store.set('pos-' + t.name, 0); }
+    else if (!audio.paused){ userPause(); return; }
+    lastUserScroll = 0; play();
+    const sec = document.getElementById('agg-' + key); if (sec && follow) sec.scrollIntoView({ behavior: 'smooth' });
   }
 
   let audioDur = 0;
@@ -646,7 +763,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       const n = segs.filter((x, j) => visibleSeg(j)).length;
       $('#nowTxt').innerHTML = n ? `<b>Ascolta solo ${esc(prov !== 'Tutte' ? prov : 'i risultati')}</b> · ${n} ${n === 1 ? 'notizia' : 'notizie'}`
                                  : '<b>Nessuna notizia da ascoltare</b> con questo filtro';
-    } else $('#nowTxt').innerHTML = `<b>Ascolta la rassegna</b> · ${fmt(audioDur)} · voce Paola`;
+    } else $('#nowTxt').innerHTML = `<b>${esc(track ? track.label : 'Ascolta la rassegna')}</b> · ${fmt(audioDur)} · voce Paola`;
   }
 
   function segIndexAt(t){
@@ -655,8 +772,9 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     return ans;
   }
   function playFrom(i){
-    const s = segs.find(x => x.i === i);
-    if (!s) return;
+    const t = trackOf(i); if (!t) return;
+    const s = t.segs.find(x => x.i === i); if (!s) return;
+    if (track !== t) setTrack(t);
     audio.currentTime = s.t; lastUserScroll = 0; play();
   }
   function play(){
@@ -691,7 +809,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     audio.play().catch(() => {});
   }
   audio.onpause = () => {
-    setPlayIcon(false); setState('paused'); store.set('pos-' + current, audio.currentTime);
+    setPlayIcon(false); setState('paused'); store.set('pos-' + (track ? track.name : current), audio.currentTime);
     // riprende solo se la pausa è arrivata insieme allo spegnimento dello schermo
     // (non dopo una telefonata o se si staccano le cuffie)
     if (wantPlay && !audio.ended && hiddenAt && Date.now() - hiddenAt < 4000 && retries < 3){
@@ -700,7 +818,10 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   };
   audio.onplay = () => { setPlayIcon(true); setState('playing'); updatePosition(); };
   audio.addEventListener('playing', () => { setTimeout(() => { if (!audio.paused) retries = 0; }, 5000); });
-  audio.onended = () => { wantPlay = false; setPlayIcon(false); setState('none'); store.set('pos-' + current, 0); };
+  audio.onended = () => { wantPlay = false; setPlayIcon(false); setState('none'); store.set('pos-' + (track ? track.name : current), 0);
+    // finito un aggiornamento, il lettore torna pronto sulla rassegna del mattino
+    if (track && track.key !== 'mattina'){ const m = TRACKS.find(t => t.key === 'mattina');
+      toast(`Fine dell'aggiornamento delle ${track.key}`); if (m) setTrack(m); } };
   audio.addEventListener('error', () => { if (wantPlay) setTimeout(() => resume(true), 1500); });
   audio.addEventListener('ratechange', updatePosition);
   audio.addEventListener('seeked', updatePosition);
@@ -726,7 +847,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     const d = audio.duration || 0;
     $('#barFill').style.width = d ? (audio.currentTime / d * 100) + '%' : '0';
     $('#nowPos').textContent = fmt(audio.currentTime) + ' / ' + fmt(d);
-    if (++saveTick % 8 === 0) store.set('pos-' + current, audio.currentTime);
+    if (++saveTick % 8 === 0) store.set('pos-' + (track ? track.name : current), audio.currentTime);
     if (!syncOK) return;
     const k = segIndexAt(audio.currentTime);
     // ascolto filtrato: salta le notizie nascoste
@@ -744,7 +865,8 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     if (!el) return;
     el.classList.add('reading');
     const sec = el.closest('.sec').dataset.title, sub = el.dataset.prov;
-    $('#nowTxt').innerHTML = `<b>${esc(sec)}</b>${sub ? ' · ' + esc(sub) : ''} · ${idx + 1}/${items.length}`;
+    const r = track.range;
+    $('#nowTxt').innerHTML = `<b>${esc(track.key === 'mattina' ? sec : 'Aggiornamento delle ' + track.key)}</b>${sub ? ' · ' + esc(sub) : ''} · ${idx - r.base + 1}/${r.count}`;
     if ('mediaSession' in navigator && navigator.mediaSession.metadata) try { navigator.mediaSession.metadata.artist = sec + (sub ? ' · ' + sub : ''); } catch(e) {}
     if (follow && !el.hidden && Date.now() - lastUserScroll > 5000) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
@@ -768,7 +890,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 
   function setupMediaSession(date){
     if (!('mediaSession' in navigator)) return;
-    navigator.mediaSession.metadata = new MediaMetadata({ title: 'Rassegna ER · ' + longDate(date), artist: 'Emilia-Romagna', album: 'Rassegna stampa',
+    navigator.mediaSession.metadata = new MediaMetadata({ title: (track && track.key !== 'mattina' ? `Aggiornamento delle ${track.key} · ` : 'Rassegna ER · ') + longDate(date), artist: 'Emilia-Romagna', album: 'Rassegna stampa',
       artwork: [{ src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' }] });
     const h = { play: play, pause: userPause, stop: userPause,
       seekto: d => { if (d.seekTime != null) audio.currentTime = d.seekTime; },
