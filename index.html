@@ -206,7 +206,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   </div>
 </div>
 
-<audio id="audio" preload="metadata"></audio>
+<audio id="audio" preload="auto" playsinline></audio>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -357,7 +357,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     if (location.hash !== h) history.replaceState(null, '', h);
     document.title = 'Rassegna ER · ' + longDate(date);
     $('#printDate').textContent = longDate(date).replace(/^./, c => c.toUpperCase());
-    audio.pause(); setPlayIcon(false);
+    wantPlay = false; audio.pause(); setPlayIcon(false);
     main.innerHTML = '<div class="skel"></div><div class="skel" style="width:80%"></div>';
     try {
       const r = await fetch(`edizioni/${date}.html?v=${Date.now()}`);
@@ -600,14 +600,54 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       const k = segIndexAt(audio.currentTime);
       if (k < 0 || !visibleSeg(k)){ const j = nextVisibleSeg(k + 1); if (j < 0){ toast('Nessuna notizia da ascoltare con questo filtro'); return; } audio.currentTime = segs[j].t; }
     }
-    audio.play().then(() => setPlayIcon(true)).catch(() => {
+    wantPlay = true;
+    audio.play().then(() => setPlayIcon(true)).catch(() => { wantPlay = false;
     $('#nowTxt').innerHTML = '<b>Audio non ancora pronto</b> · riprova tra qualche minuto'; }); }
+  // pausa voluta dall'utente (pulsante, cuffie, schermata di blocco): solo questa ferma davvero l'ascolto
+  function userPause(){ wantPlay = false; audio.pause(); }
   function setPlayIcon(on){ $('#playIco').innerHTML = on ? PAUSE : PLAY; $('#playBtn').setAttribute('aria-label', on ? 'Pausa' : 'Ascolta'); }
 
-  $('#playBtn').onclick = () => audio.paused ? play() : audio.pause();
-  audio.onpause = () => setPlayIcon(false);
-  audio.onplay = () => setPlayIcon(true);
-  audio.onended = () => { setPlayIcon(false); store.set('pos-' + current, 0); };
+  $('#playBtn').onclick = () => audio.paused ? play() : userPause();
+
+  /* ---------- Ascolto a schermo spento ----------
+     Alcuni telefoni sospendono l'audio quando lo schermo si spegne o la rete cambia (Wi-Fi → dati).
+     Se la pausa non l'ha chiesta l'utente, l'ascolto riprende da solo dal punto in cui era. */
+  let wantPlay = false, lastT = -1, stuck = 0, hiddenAt = 0, retries = 0;
+  document.addEventListener('visibilitychange', () => { hiddenAt = document.hidden ? Date.now() : 0; });
+  const setState = st => { if ('mediaSession' in navigator) try { navigator.mediaSession.playbackState = st; } catch(e) {} };
+  function updatePosition(){
+    if (!('mediaSession' in navigator) || !navigator.mediaSession.setPositionState || !audio.duration) return;
+    try { navigator.mediaSession.setPositionState({ duration: audio.duration, playbackRate: audio.playbackRate, position: Math.min(audio.currentTime, audio.duration) }); } catch(e) {}
+  }
+  function resume(reload){
+    if (!wantPlay || audio.ended || !audio.src) return;
+    const t = audio.currentTime;
+    if (reload){ audio.src = audio.src.split('#')[0]; audio.addEventListener('loadedmetadata', () => { audio.currentTime = t; }, { once: true }); }
+    audio.play().catch(() => {});
+  }
+  audio.onpause = () => {
+    setPlayIcon(false); setState('paused'); store.set('pos-' + current, audio.currentTime);
+    // riprende solo se la pausa è arrivata insieme allo spegnimento dello schermo
+    // (non dopo una telefonata o se si staccano le cuffie)
+    if (wantPlay && !audio.ended && hiddenAt && Date.now() - hiddenAt < 4000 && retries < 3){
+      retries++; setTimeout(() => { if (audio.paused) resume(false); }, 600);
+    } else if (wantPlay) wantPlay = false;
+  };
+  audio.onplay = () => { setPlayIcon(true); setState('playing'); updatePosition(); };
+  audio.addEventListener('playing', () => { setTimeout(() => { if (!audio.paused) retries = 0; }, 5000); });
+  audio.onended = () => { wantPlay = false; setPlayIcon(false); setState('none'); store.set('pos-' + current, 0); };
+  audio.addEventListener('error', () => { if (wantPlay) setTimeout(() => resume(true), 1500); });
+  audio.addEventListener('ratechange', updatePosition);
+  audio.addEventListener('seeked', updatePosition);
+  // sorveglianza: se l'audio risulta "in riproduzione" ma resta fermo (rete persa), lo ricarica
+  setInterval(() => {
+    if (!wantPlay || audio.ended) { stuck = 0; return; }
+    if (audio.paused) return;
+    stuck = Math.abs(audio.currentTime - lastT) < 0.1 ? stuck + 1 : 0;
+    lastT = audio.currentTime;
+    if (stuck >= 3) { stuck = 0; resume(true); }
+  }, 4000);
+
   $('#prevItem').onclick = () => { const k = segIndexAt(audio.currentTime), f = syncOK && filtering();
     if (k >= 0 && audio.currentTime - segs[k].t > 3 && (!f || visibleSeg(k))) { audio.currentTime = segs[k].t; return; }
     const j = f ? prevVisibleSeg(k - 1) : k - 1;
@@ -627,7 +667,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     // ascolto filtrato: salta le notizie nascoste
     if (!audio.paused && filtering() && k >= 0 && !visibleSeg(k)){
       const j = nextVisibleSeg(k + 1);
-      if (j < 0){ audio.pause(); toast(prov !== 'Tutte' ? `Fine delle notizie di ${prov}` : 'Fine dei risultati'); }
+      if (j < 0){ userPause(); toast(prov !== 'Tutte' ? `Fine delle notizie di ${prov}` : 'Fine dei risultati'); }
       else audio.currentTime = segs[j].t;
       return;
     }
@@ -640,7 +680,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     el.classList.add('reading');
     const sec = el.closest('.sec').dataset.title, sub = el.dataset.prov;
     $('#nowTxt').innerHTML = `<b>${esc(sec)}</b>${sub ? ' · ' + esc(sub) : ''} · ${idx + 1}/${items.length}`;
-    if ('mediaSession' in navigator) navigator.mediaSession.metadata.artist = sec + (sub ? ' · ' + sub : '');
+    if ('mediaSession' in navigator && navigator.mediaSession.metadata) try { navigator.mediaSession.metadata.artist = sec + (sub ? ' · ' + sub : ''); } catch(e) {}
     if (follow && !el.hidden && Date.now() - lastUserScroll > 5000) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
   ['wheel', 'touchmove'].forEach(ev => window.addEventListener(ev, () => { lastUserScroll = Date.now(); }, { passive: true }));
@@ -665,7 +705,8 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     if (!('mediaSession' in navigator)) return;
     navigator.mediaSession.metadata = new MediaMetadata({ title: 'Rassegna ER · ' + longDate(date), artist: 'Emilia-Romagna', album: 'Rassegna stampa',
       artwork: [{ src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' }] });
-    const h = { play: play, pause: () => audio.pause(),
+    const h = { play: play, pause: userPause, stop: userPause,
+      seekto: d => { if (d.seekTime != null) audio.currentTime = d.seekTime; },
       previoustrack: () => $('#prevItem').click(), nexttrack: () => $('#nextItem').click(),
       seekbackward: () => { audio.currentTime -= 15; }, seekforward: () => { audio.currentTime += 15; } };
     for (const k in h) { try { navigator.mediaSession.setActionHandler(k, h[k]); } catch(e) {} }
