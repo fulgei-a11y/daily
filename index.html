@@ -119,6 +119,14 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 .banner .go{flex:none;border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;height:34px;padding:0 14px;font-weight:600;cursor:pointer}
 .banner .x{flex:none;border:0;background:none;width:30px;height:30px;font-size:22px;line-height:1;color:var(--muted);cursor:pointer;padding:0}
 .banner.warn{background:var(--hl);border-color:transparent}
+.upd{display:flex;align-items:center;gap:8px;margin:4px 0 0;padding-left:2px;font-family:var(--f-ui);font-size:13.5px;line-height:1.35;color:var(--muted);min-height:20px}
+.upd b{color:var(--ink);font-weight:600}
+.upd .dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.upd.fresh .dot{background:#2f8a4e;box-shadow:0 0 0 3px rgb(47 138 78 / .18)}
+.upd.late .dot{background:#d08a12;box-shadow:0 0 0 3px rgb(208 138 18 / .2)}
+.upd.late{color:var(--ink)}
+.upd span{flex:1;min-width:0}
+.upd button{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;height:28px;padding:0 11px;font:inherit;font-weight:600;color:var(--accent);cursor:pointer}
 .toast{position:fixed;left:50%;bottom:calc(var(--player-h) + 20px);transform:translateX(-50%);max-width:calc(100% - 32px);background:var(--ink);color:var(--bg);font-family:var(--f-ui);font-size:14px;padding:9px 16px;border-radius:999px;z-index:20;opacity:0;transition:opacity .2s;pointer-events:none;text-align:center}
 .toast.on{opacity:1}
 
@@ -147,7 +155,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 @media print{
   :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#444;--line:#ccc;--accent:#7a1f18;--active:#fff;--chip:#fff}
   body{font-size:10.5pt;line-height:1.45}
-  .top .toolbar,.top .search,.navbar,.chips,.player,.pbtn,.banner,.sharebtn,.toast{display:none!important}
+  .upd button,.top .toolbar,.top .search,.navbar,.chips,.player,.pbtn,.banner,.sharebtn,.toast{display:none!important}
   .printdate{display:block!important;font-family:var(--f-ui);font-weight:600;margin:4pt 0 0}
   .top{position:static;border:0}
   main{padding:0!important;max-width:none}
@@ -176,8 +184,8 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       <button class="icon" id="shareBtn" type="button" aria-label="Condividi l'edizione"><svg viewBox="0 0 24 24"><path d="M18 16.1c-.8 0-1.4.3-2 .8l-7.1-4.2c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.2c.5.5 1.2.8 2 .8a3 3 0 1 0-3-3c0 .2 0 .5.1.7L8 9.8A3 3 0 1 0 8 14.2l7.1 4.2c0 .2-.1.4-.1.6a2.9 2.9 0 1 0 3-2.9"/></svg></button>
       <button class="pdfbtn" id="pdfBtn" type="button"><svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"/></svg>PDF</button>
     </div>
-    <label class="search"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9"/></svg><input id="q" type="search" placeholder="Cerca nella rassegna (es. alluvione, Bologna, sanità)" autocomplete="off"></label>
-    <div class="banner warn" id="staleBar" hidden><span id="staleTxt"></span></div>
+    <p class="upd" id="upd" aria-live="polite"><i class="dot"></i><span id="updTxt">&nbsp;</span><button id="toLatest" type="button" hidden>Vai all'ultima</button></p>
+    <label class="search" style="margin-top:10px"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9"/></svg><input id="q" type="search" placeholder="Cerca nella rassegna (es. alluvione, Bologna, sanità)" autocomplete="off"></label>
     <div class="banner" id="installBar" hidden><img src="icons/icon-192.png" alt=""><span id="installTxt"></span><button class="go" id="installGo" type="button">Installa</button><button class="x" id="installX" type="button" aria-label="Chiudi">×</button></div>
   </div>
 </header>
@@ -310,7 +318,13 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   async function init(){
     let latest = null;
     try { latest = (await (await fetch('index.json?v=' + Date.now())).json()).latest; } catch(e) {}
-    try { editions = (await (await fetch('edizioni/index.json?v=' + Date.now())).json()).map(e => e.date || e); } catch(e) {}
+    try { const list = await (await fetch('edizioni/index.json?v=' + Date.now())).json();
+      list.forEach(e => { if (e && e.date) META[e.date] = e; });
+      editions = list.map(e => e.date || e); } catch(e) {}
+    // stato.json: orario dell'ultimo aggiornamento anche per le edizioni salvate prima di questa versione
+    try { const st = await (await fetch('stato.json?v=' + Date.now())).json();
+      if (st.date && st.generated) META[st.date] = Object.assign({ updated: st.generated }, META[st.date] || {}); } catch(e) {}
+    lastCheck = Date.now();
     if (latest && !editions.includes(latest)) editions.push(latest);
     editions = [...new Set(editions)].filter(Boolean).sort().reverse();
     if (!editions.length) { main.innerHTML = '<p class="empty">Nessuna edizione disponibile.</p>'; return; }
@@ -325,12 +339,63 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     load(editions.includes(wanted) ? wanted : editions[0]);
   }
   const todayRome = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
-  function staleCheck(){
-    const hour = +new Date().toLocaleString('en-GB', { timeZone: 'Europe/Rome', hour: '2-digit', hour12: false });
-    const late = editions[0] < todayRome() && hour >= 8 && current === editions[0];
-    $('#staleBar').hidden = !late;
-    if (late) $('#staleTxt').textContent = "L'edizione di oggi non è ancora uscita: stai leggendo la più recente.";
+  /* ---------- Ultimo aggiornamento ---------- */
+  const META = {};
+  let lastCheck = 0;
+  const RUN_UTC_HOUR = 4, PUBLISH_MIN = 20;   // il workflow parte alle 04:00 UTC e pubblica in circa 20 minuti
+  const romeTime = d => d.toLocaleTimeString('it-IT', { timeZone: 'Europe/Rome', hour: 'numeric', minute: '2-digit' });
+  const romeDay = d => d.toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
+  function dayWord(iso){
+    if (iso === todayRome()) return 'oggi';
+    if (iso === romeDay(new Date(Date.now() - 864e5))) return 'ieri';
+    if (iso === romeDay(new Date(Date.now() + 864e5))) return 'domani';
+    return new Date(iso + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
   }
+  function nextPublish(){
+    const n = new Date(), d = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate(), RUN_UTC_HOUR, PUBLISH_MIN));
+    if (d <= n) d.setUTCDate(d.getUTCDate() + 1);
+    return d;
+  }
+  function staleCheck(){
+    const box = $('#upd'), m = META[current] || {}, latest = editions[0];
+    const up = m.updated ? new Date(m.updated) : null;
+    const when = up && !isNaN(up) ? `${dayWord(romeDay(up))} alle ${romeTime(up)}` : '';
+    let cls = '', txt;
+    if (current === latest){
+      const next = nextPublish(), nextTxt = `${dayWord(romeDay(next))} verso le ${romeTime(next)}`;
+      if (latest === todayRome()){
+        cls = 'fresh';
+        txt = (when ? `<b>Aggiornata ${when}</b>` : '<b>Edizione di oggi</b>') + ` · prossima: ${nextTxt}`;
+      } else {
+        // l'edizione di oggi non c'è ancora: "in arrivo" prima dell'orario previsto, "in ritardo" dopo
+        const late = romeDay(next) !== todayRome() && Date.now() - (next.getTime() - 864e5) > 40 * 60e3;
+        cls = late ? 'late' : '';
+        txt = `<b>Ultimo aggiornamento ${when || dayWord(latest)}</b> · ` +
+              (late ? "l'edizione di oggi è in ritardo" : `la nuova edizione arriva ${nextTxt}`);
+      }
+    } else {
+      txt = `Edizione d'archivio${when ? `, pubblicata ${when}` : ` di ${dayWord(current)}`}`;
+    }
+    box.className = 'upd ' + cls;
+    $('#updTxt').innerHTML = txt;
+    $('#toLatest').hidden = current === latest;
+  }
+  $('#toLatest').onclick = () => load(editions[0]);
+  // app lasciata aperta: tornando sulla pagina controlla se nel frattempo è uscita una nuova edizione
+  document.addEventListener('visibilitychange', async () => {
+    if (document.hidden || Date.now() - lastCheck < 5 * 60e3) return;
+    lastCheck = Date.now();
+    try {
+      const j = await (await fetch('index.json?v=' + Date.now())).json();
+      if (j.latest && j.latest > editions[0]){
+        if (audio.paused && current === editions[0]){ history.replaceState(null, '', location.pathname); await init(); toast('È uscita la nuova edizione'); }
+        else { editions.unshift(j.latest); META[j.latest] = { updated: j.updated };
+          const o = document.createElement('option'); o.value = j.latest; o.textContent = shortDate(j.latest); $('#dateSel').prepend(o);
+          staleCheck(); toast("È uscita la nuova edizione: tocca «Vai all'ultima»"); }
+      } else staleCheck();
+    } catch(e) {}
+  });
+  setInterval(() => { if (!document.hidden) staleCheck(); }, 60e3);
   function step(d){ const i = editions.indexOf(current) + d; if (i >= 0 && i < editions.length) load(editions[i]); }
   window.addEventListener('hashchange', () => {
     const [h, k] = location.hash.slice(1).split('/');
