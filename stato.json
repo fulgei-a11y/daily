@@ -1,8 +1,8 @@
 {
  "date": "2026-10-10",
- "generated": "2026-10-10T00:22+02:00",
+ "generated": "2026-10-10T06:13+02:00",
  "articles": 260,
- "items": 142,
+ "items": 140,
  "model": "gemini-2.5-flash",
  "fallback": false,
  "feeds_ok": 39,
