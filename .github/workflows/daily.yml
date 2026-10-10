@@ -2,8 +2,20 @@ name: Rassegna Stampa Automatica
 
 on:
   schedule:
-    - cron: '0 4 * * *'   # 06:00 ora legale italiana (05:00 con l'ora solare)
+    - cron: '0 4 * * *'    # edizione del mattino: 06:00 ora legale (05:00 con l'ora solare)
+    # aggiornamenti: GitHub usa l'ora UTC, quindi ogni aggiornamento ha due orari
+    # (uno per l'ora legale, uno per l'ora solare); lo script parte solo con quello giusto
+    - cron: '0 11 * * *'   # 13:00 ora legale
+    - cron: '0 12 * * *'   # 13:00 ora solare
+    - cron: '0 17 * * *'   # 19:00 ora legale
+    - cron: '0 18 * * *'   # 19:00 ora solare
   workflow_dispatch:
+    inputs:
+      tipo:
+        description: 'Cosa generare'
+        type: choice
+        default: automatico
+        options: [automatico, mattina, '13', '19']
 
 # due esecuzioni insieme (es. una manuale durante quella programmata) si accodano invece di scontrarsi
 concurrency:
@@ -24,12 +36,42 @@ jobs:
         with:
           ref: main
 
+      # mattina, 13, 19 oppure "salta" (orario UTC che non corrisponde all'ora italiana di oggi)
+      - name: Decide cosa generare
+        id: slot
+        env:
+          TIPO: ${{ github.event.inputs.tipo }}
+          CRON: ${{ github.event.schedule }}
+        run: |
+          H=$(TZ=Europe/Rome date +'%-H')
+          TODAY=$(TZ=Europe/Rome date +'%Y-%m-%d')
+          if [ -n "$TIPO" ] && [ "$TIPO" != "automatico" ]; then
+            SLOT="$TIPO"
+          elif [ -n "$TIPO" ]; then
+            if   [ "$H" -lt 12 ]; then SLOT=mattina
+            elif [ "$H" -lt 18 ]; then SLOT=13
+            else SLOT=19; fi
+          elif [ "$CRON" = "0 4 * * *" ]; then
+            SLOT=mattina
+          elif [ "$H" -ge 13 ] && [ "$H" -le 14 ] && [ ! -f "edizioni/$TODAY-13.html" ]; then
+            SLOT=13
+          elif [ "$H" -ge 19 ] && [ "$H" -le 20 ] && [ ! -f "edizioni/$TODAY-19.html" ]; then
+            SLOT=19
+          else
+            SLOT=salta
+          fi
+          echo "Ora italiana: $H → $SLOT"
+          echo "slot=$SLOT" >> "$GITHUB_OUTPUT"
+          echo "today=$TODAY" >> "$GITHUB_OUTPUT"
+
       - name: Configura Python
+        if: steps.slot.outputs.slot != 'salta'
         uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
       - name: Installa dipendenze
+        if: steps.slot.outputs.slot != 'salta'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg dos2unix
@@ -37,6 +79,7 @@ jobs:
           pip install requests beautifulsoup4 google-genai trafilatura
 
       - name: Controlla che gli script siano completi
+        if: steps.slot.outputs.slot != 'salta'
         run: |
           for f in tools/fetch_and_analyze.py tools/build_audio.py tools/check_health.py; do
             dos2unix -q "$f"
@@ -45,38 +88,67 @@ jobs:
           done
 
       - name: Genera la rassegna (HTML)
+        if: steps.slot.outputs.slot != 'salta'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 tools/fetch_and_analyze.py
+        run: python3 tools/fetch_and_analyze.py --slot "${{ steps.slot.outputs.slot }}"
 
-      # se l'audio non riesce, la rassegna scritta viene pubblicata lo stesso (e arriva l'avviso)
+      # se l'audio non riesce, il testo viene pubblicato lo stesso (e arriva l'avviso)
       - name: Genera l'audio MP3 con la voce Paola
+        if: steps.slot.outputs.slot != 'salta'
         continue-on-error: true
         run: |
-          TODAY=$(TZ=Europe/Rome date +'%Y-%m-%d')
-          if [ -f "edizioni/$TODAY.html" ]; then
-            python3 tools/build_audio.py --html "edizioni/$TODAY.html" --date "$TODAY" --out audio
+          TODAY="${{ steps.slot.outputs.today }}"
+          SLOT="${{ steps.slot.outputs.slot }}"
+          if [ "$SLOT" = "mattina" ] || [ ! -f "edizioni/$TODAY-$SLOT.html" ]; then
+            # edizione del mattino (anche quando l'aggiornamento l'ha generata perché mancava)
+            if [ -f "edizioni/$TODAY.html" ] && { [ "$SLOT" = "mattina" ] || [ ! -f "audio/$TODAY.mp3" ]; }; then
+              python3 tools/build_audio.py --html "edizioni/$TODAY.html" --date "$TODAY" --out audio
+            fi
+          elif grep -q "<li" "edizioni/$TODAY-$SLOT.html"; then
+            python3 tools/build_audio.py --html "edizioni/$TODAY-$SLOT.html" --date "$TODAY" \
+              --name "$TODAY-$SLOT" --out audio \
+              --intro "Rassegna dell'Emilia-Romagna. Ecco le notizie arrivate dopo l'ultima edizione."
           fi
 
+      # GitHub Pages accetta al massimo circa 1 GB: l'audio più vecchio di 60 giorni viene tolto
+      # (i testi delle edizioni restano tutti in archivio)
+      - name: Toglie l'audio più vecchio di 60 giorni
+        if: steps.slot.outputs.slot == 'mattina'
+        run: |
+          LIMIT=$(TZ=Europe/Rome date -d '60 days ago' +'%Y-%m-%d')
+          for f in audio/????-??-??*.mp3 audio/????-??-??*.json; do
+            [ -e "$f" ] || continue
+            D=$(basename "$f" | cut -c1-10)
+            if [[ "$D" < "$LIMIT" ]]; then rm -f "$f"; echo "tolto $f"; fi
+          done
+
       - name: Pubblica
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Auto-update rassegna"
-          branch: main
-          file_pattern: 'edizioni/* audio/* index.json stato.json'
+        if: steps.slot.outputs.slot != 'salta'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A edizioni audio index.json stato.json
+          if git diff --cached --quiet; then echo "Niente da pubblicare."; exit 0; fi
+          git commit -q -m "Auto-update rassegna (${{ steps.slot.outputs.slot }})"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash origin main && git push -q origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "❌ Pubblicazione non riuscita"; exit 1
 
       # ---------------------------------------------------------------------
       # Avviso automatico: se qualcosa non va apre una "issue" nel repository
-      # (GitHub la manda per e-mail); al primo giorno riuscito la chiude da sola.
+      # (GitHub la manda per e-mail); al primo aggiornamento riuscito la chiude da sola.
       # ---------------------------------------------------------------------
       - name: Controllo e avviso
-        if: always()
+        if: always() && steps.slot.outputs.slot != 'salta'
         env:
           GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}
         run: |
           set +e
-          python3 tools/check_health.py "$JOB_STATUS"
+          python3 tools/check_health.py "$JOB_STATUS" "${{ steps.slot.outputs.slot }}"
           code=$?
           set -e
           cat health.md >> "$GITHUB_STEP_SUMMARY"
@@ -95,5 +167,5 @@ jobs:
             fi
             exit 1
           elif [ -n "$OPEN" ]; then
-            gh issue close "$OPEN" --comment "✅ Risolto: l'edizione del $(TZ=Europe/Rome date +'%d/%m/%Y') è stata pubblicata correttamente."
+            gh issue close "$OPEN" --comment "✅ Risolto: la pubblicazione delle $(TZ=Europe/Rome date +'%H:%M del %d/%m/%Y') è andata a buon fine."
           fi
