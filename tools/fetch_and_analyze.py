@@ -504,7 +504,7 @@ def fallback_html(articles):
 # ---------------------------------------------------------------------------
 # 4. Salvataggio e archivio
 # ---------------------------------------------------------------------------
-def update_indexes(n_items):
+def update_indexes(n_items, n_articles=0, n_sources=0):
     idx_path = os.path.join(OUTPUT_DIR, "index.json")
     editions = {}
     for name in os.listdir(OUTPUT_DIR):
@@ -518,12 +518,15 @@ def update_indexes(n_items):
                     editions[e["date"]].update(e)
     except Exception:
         pass
-    editions[TODAY]["items"] = n_items
+    updated = dt.datetime.now(ROME).isoformat(timespec="minutes")
+    # "updated" = quando è stata pubblicata l'edizione: la pagina lo mostra in alto
+    editions[TODAY].update({"items": n_items, "updated": updated,
+                            "articles": n_articles, "sources": n_sources})
     ordered = sorted(editions.values(), key=lambda e: e["date"], reverse=True)
     with open(idx_path, "w", encoding="utf-8") as f:
         json.dump(ordered, f, ensure_ascii=False, indent=1)
     with open("index.json", "w", encoding="utf-8") as f:
-        json.dump({"latest": TODAY}, f)
+        json.dump({"latest": TODAY, "updated": updated}, f)
 
 
 def write_status(n_articles, n_items, fallback):
@@ -560,7 +563,7 @@ def main():
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(f"<!-- Rassegna Emilia-Romagna {TODAY} - {len(articles)} notizie analizzate -->\n{body}\n")
-    update_indexes(n_items)
+    update_indexes(n_items, len(articles), len({a["source"] for a in articles}))
     write_status(len(articles), n_items, raw is None)
     print(f"✅ {OUTPUT_FILE}: {n_items} notizie in rassegna.")
 
