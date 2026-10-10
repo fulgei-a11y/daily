@@ -1,11 +1,12 @@
 {
  "date": "2026-10-10",
- "generated": "2026-10-10T09:59+02:00",
- "articles": 380,
- "items": 200,
+ "slot": "13",
+ "generated": "2026-10-10T13:58+02:00",
+ "articles": 182,
+ "items": 31,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 38,
+ "feeds_ok": 39,
  "feeds_total": 39,
  "feeds": [
   {
@@ -125,8 +126,8 @@
   {
    "name": "FerraraToday",
    "prov": "Ferrara",
-   "status": "HTTP 403",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "IlPiacenza",
