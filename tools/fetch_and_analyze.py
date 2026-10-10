@@ -7,6 +7,10 @@ Rassegna stampa dell'Emilia-Romagna.
 3. Gemini scrive la rassegna in HTML. Le fonti sono indicate con numeri [n] che lo script
    trasforma in link veri: nessun indirizzo può essere inventato.
 4. Salva edizioni/AAAA-MM-GG.html, edizioni/index.json (archivio) e index.json (ultima edizione).
+
+Aggiornamenti delle 13 e delle 19 (python3 tools/fetch_and_analyze.py --slot 13):
+legge solo le notizie uscite dopo l'ultima pubblicazione, scarta quelle già in rassegna e salva
+edizioni/AAAA-MM-GG-13.html. L'edizione del mattino non viene mai toccata.
 """
 
 import os
@@ -203,23 +207,31 @@ def read_feed(name, prov, url):
     return name, url, "ok", out
 
 
-def fetch_rss_articles():
+def link_key(url):
+    return html.unescape(url).split("?")[0].rstrip("/")
+
+
+def fetch_rss_articles(since=None, exclude=frozenset()):
+    """since: solo le notizie pubblicate dopo questo momento (aggiornamenti);
+    exclude: indirizzi già usati nelle pubblicazioni di oggi."""
     print(f"[{TODAY}] Lettura di {len(RSS_FEEDS)} feed...")
     with ThreadPoolExecutor(8) as ex:
         results = list(ex.map(lambda f: read_feed(*f), RSS_FEEDS))
     for (name, prov, url), (_, _, status, items) in zip(RSS_FEEDS, results):
         FEED_REPORT.append((name, prov, status, len(items)))
 
-    cutoff = NOW - dt.timedelta(hours=MAX_AGE_HOURS)
+    cutoff = since or NOW - dt.timedelta(hours=MAX_AGE_HOURS)
     articles, seen_links, seen_titles = [], set(), set()
     for name, url, status, items in results:
         kept = 0
         for a in items:
             if a["date"] and a["date"] < cutoff:
                 continue
+            if since and not a["date"]:
+                continue  # negli aggiornamenti servono notizie di cui si sa che sono nuove
             key_t = re.sub(r"\W+", " ", a["title"].lower()).strip()[:90]
-            key_l = a["link"].split("?")[0].rstrip("/")
-            if key_l in seen_links or key_t in seen_titles:
+            key_l = link_key(a["link"])
+            if key_l in seen_links or key_t in seen_titles or key_l in exclude:
                 continue
             seen_links.add(key_l)
             seen_titles.add(key_t)
@@ -229,7 +241,7 @@ def fetch_rss_articles():
 
     articles.sort(key=lambda a: a["date"] or NOW, reverse=True)
     articles = balance_sources(articles)
-    print(f"Totale: {len(articles)} notizie uniche delle ultime {MAX_AGE_HOURS} ore.")
+    print(f"Totale: {len(articles)} notizie uniche" + (f" uscite dopo le {since.astimezone(ROME):%H:%M}." if since else f" delle ultime {MAX_AGE_HOURS} ore."))
     return articles
 
 
@@ -375,7 +387,7 @@ def _finish_reason(resp):
         return ""
 
 
-def call_gemini(prompt):
+def call_gemini(prompt, system=None, min_items=25, min_len=300):
     """Scrive la rassegna; se la risposta si interrompe per lunghezza, chiede di continuare."""
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
@@ -383,7 +395,7 @@ def call_gemini(prompt):
     client = genai.Client(api_key=api_key)
 
     def config_for(model):
-        kw = dict(system_instruction=SYSTEM_INSTRUCTION, temperature=0.25, max_output_tokens=60000)
+        kw = dict(system_instruction=system or SYSTEM_INSTRUCTION, temperature=0.25, max_output_tokens=60000)
         # il "ragionamento" interno consuma lo stesso spazio della risposta: lo limitiamo
         if "flash" in model or "pro" in model:
             try:
@@ -399,7 +411,7 @@ def call_gemini(prompt):
                 cfg = config_for(model)
                 resp = client.models.generate_content(model=model, contents=prompt, config=cfg)
                 text = (resp.text or "").strip()
-                if len(text) < 300:
+                if len(text) < min_len:
                     print(f"⚠️ {model}: risposta troppo corta ({len(text)} caratteri)")
                     continue
                 # continuazioni se il testo è stato troncato
@@ -419,7 +431,7 @@ def call_gemini(prompt):
                     text += (resp.text or "")
                 n = len(re.findall(r"<li\b", text))
                 print(f"✅ Rassegna scritta con {model}: {n} notizie, {len(text)} caratteri")
-                if n < 25 and model != MODELS_TO_TRY[-1]:
+                if n < min_items and model != MODELS_TO_TRY[-1]:
                     print("⚠️ Troppo poche notizie: provo il modello successivo.")
                     break
                 global USED_MODEL
@@ -529,11 +541,12 @@ def update_indexes(n_items, n_articles=0, n_sources=0):
         json.dump({"latest": TODAY, "updated": updated}, f)
 
 
-def write_status(n_articles, n_items, fallback):
+def write_status(n_articles, n_items, fallback, slot="mattina"):
     """stato.json: lo legge il controllo finale del workflow (avviso di errore) e la pagina."""
     feeds = [{"name": n, "prov": p, "status": st, "items": k} for n, p, st, k in FEED_REPORT]
     status = {
         "date": TODAY,
+        "slot": slot,
         "generated": dt.datetime.now(ROME).isoformat(timespec="minutes"),
         "articles": n_articles,
         "items": n_items,
@@ -568,5 +581,135 @@ def main():
     print(f"✅ {OUTPUT_FILE}: {n_items} notizie in rassegna.")
 
 
+# ---------------------------------------------------------------------------
+# 5. Aggiornamenti delle 13 e delle 19
+# ---------------------------------------------------------------------------
+SLOTS = ("13", "19")
+
+
+def update_system(slot):
+    return f"""
+Sei il caporedattore di una rassegna stampa sull'Emilia-Romagna. Stai scrivendo l'AGGIORNAMENTO DELLE {slot}
+di {GIORNO}: va letto da chi ha già letto l'edizione del mattino{" e l'aggiornamento delle 13" if slot == "19" else ""}.
+Scrivi in italiano giornalistico, asciutto e preciso, con i fatti concreti (chi, cosa, dove, quando, cifre, nomi).
+Usa SOLO le informazioni presenti nelle notizie fornite. Non inventare nulla.
+
+COSA METTERE
+- Solo fatti NUOVI rispetto ai titoli già pubblicati oggi (elenco A).
+- Se una notizia è lo sviluppo di un fatto già pubblicato, includila solo se aggiunge fatti nuovi
+  (un arresto, una sentenza, un dato) e comincia il testo con "Sviluppi:".
+- Se più notizie parlano dello stesso fatto, scrivine UNA che le combina e cita tutti i numeri.
+- Scarta gossip, sport dilettantistico, oroscopi, pubblicità, eventi minori, notizie nazionali senza
+  legame con la regione. Meglio poche notizie importanti che tante notizie minori.
+
+FONTI
+- Ogni notizia nuova è numerata [n]. Alla fine di ogni notizia scrivi <cite>n</cite> o <cite>n,m</cite>.
+- Non scrivere mai URL o tag <a>.
+
+FORMATO (solo il frammento HTML, senza blocchi di codice)
+<h2>Aggiornamento delle {slot}</h2>
+<ul>
+<li><strong>Titolo breve e informativo</strong> — Luogo: testo di 1-3 frasi con i fatti. <cite>n</cite></li>
+</ul>
+- Notizie in ordine di importanza, al massimo 30.
+- Il luogo è il comune seguito dalla provincia tra parentesi ("Sassuolo (Modena)"); per i capoluoghi basta
+  il nome; per i fatti di tutta la regione scrivi "Emilia-Romagna". Province: {", ".join(PROVINCE)}.
+- Se non c'è nessuna novità rilevante scrivi solo:
+<h2>Aggiornamento delle {slot}</h2>
+<p class="note">Nessuna novità rilevante rispetto a quanto già pubblicato oggi.</p>
+"""
+
+
+def published_today(upto_slot):
+    """Indirizzi e titoli già pubblicati oggi (mattino ed eventuali aggiornamenti precedenti)."""
+    files = [f"{TODAY}.html"] + [f"{TODAY}-{s}.html" for s in SLOTS if s < upto_slot]
+    links, titles = set(), []
+    for name in files:
+        path = os.path.join(OUTPUT_DIR, name)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            txt = f.read()
+        links |= {link_key(h) for h in re.findall(r'href="([^"]+)"', txt)}
+        titles += [clean(t) for t in re.findall(r"<li>\s*<strong>(.*?)</strong>", txt, flags=re.S)]
+    return links, titles
+
+
+def last_publication(upto_slot):
+    """Momento dell'ultima pubblicazione di oggi prima di questo aggiornamento."""
+    try:
+        with open(os.path.join(OUTPUT_DIR, "index.json"), encoding="utf-8") as f:
+            today = next((e for e in json.load(f) if e.get("date") == TODAY), {})
+    except Exception:
+        today = {}
+    times = [today.get("updated")] + [u.get("updated") for u in today.get("updates", []) if u.get("slot", "") < upto_slot]
+    times = [dt.datetime.fromisoformat(t) for t in times if t]
+    if not times:
+        return NOW - dt.timedelta(hours=7)
+    # piccolo margine: alcune testate datano gli articoli qualche minuto prima di metterli in linea
+    return max(max(times) - dt.timedelta(minutes=30), NOW - dt.timedelta(hours=14))
+
+
+def register_update(slot, n_items, n_articles):
+    idx_path = os.path.join(OUTPUT_DIR, "index.json")
+    with open(idx_path, encoding="utf-8") as f:
+        editions = json.load(f)
+    updated = dt.datetime.now(ROME).isoformat(timespec="minutes")
+    for e in editions:
+        if e.get("date") == TODAY:
+            ups = [u for u in e.get("updates", []) if u.get("slot") != slot]
+            ups.append({"slot": slot, "updated": updated, "items": n_items, "articles": n_articles})
+            e["updates"] = sorted(ups, key=lambda u: u["slot"])
+    with open(idx_path, "w", encoding="utf-8") as f:
+        json.dump(editions, f, ensure_ascii=False, indent=1)
+    with open("index.json", "w", encoding="utf-8") as f:
+        json.dump({"latest": TODAY, "updated": updated}, f)
+
+
+def main_update(slot):
+    if not os.path.exists(OUTPUT_FILE):
+        # senza l'edizione del mattino non c'è niente da aggiornare: si fa l'edizione completa
+        print(f"⚠️ Manca l'edizione del mattino di {TODAY}: genero l'edizione completa.")
+        return main()
+    since = last_publication(slot)
+    links, titles = published_today(slot)
+    print(f"Aggiornamento delle {slot}: notizie dopo le {since.astimezone(ROME):%H:%M}, "
+          f"{len(titles)} titoli già pubblicati oggi.")
+    articles = fetch_rss_articles(since=since, exclude=links)
+    out_file = os.path.join(OUTPUT_DIR, f"{TODAY}-{slot}.html")
+    raw = None
+    if articles:
+        add_fulltext(articles)
+        known = "\n".join(f"- {t}" for t in titles[:400]) or "- (nessuno)"
+        prompt = (f"A) Titoli già pubblicati oggi (NON ripeterli):\n{known}\n\n"
+                  + build_prompt(articles).replace("Notizie raccolte per l'edizione del",
+                                                   "B) Notizie nuove uscite dopo l'ultima pubblicazione,"))
+        raw = call_gemini(prompt, system=update_system(slot), min_items=0, min_len=40)
+    if raw:
+        body = finalize_html(raw, articles)
+    elif articles:
+        body = (f"<h2>Aggiornamento delle {slot}</h2>\n<ul>\n" + "\n".join(
+            f'<li><strong>{html.escape(a["title"])}</strong> — {html.escape(a["desc"][:200])} '
+            f'<span class="src">Fonte: <a href="{html.escape(a["link"], quote=True)}" target="_blank" '
+            f'rel="noopener">{html.escape(a["source"])}</a></span></li>' for a in articles[:25]) + "\n</ul>")
+    else:
+        body = (f"<h2>Aggiornamento delle {slot}</h2>\n"
+                '<p class="note">Nessuna nuova notizia dalle testate dopo l\'ultima pubblicazione.</p>')
+    n_items = len(re.findall(r"<li\b", body))
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write(f"<!-- Rassegna Emilia-Romagna {TODAY} - aggiornamento delle {slot} - "
+                f"{len(articles)} notizie nuove analizzate -->\n{body}\n")
+    register_update(slot, n_items, len(articles))
+    write_status(len(articles), n_items, bool(articles) and raw is None, slot=slot)
+    print(f"✅ {out_file}: {n_items} notizie nell'aggiornamento.")
+
+
 if __name__ == "__main__":
-    main()
+    if "--slot" in sys.argv:
+        slot = sys.argv[sys.argv.index("--slot") + 1]
+        if slot in SLOTS:
+            main_update(slot)
+        else:
+            main()
+    else:
+        main()

@@ -18,14 +18,29 @@ TODAY = dt.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d")
 
 def main():
     job_status = (sys.argv[1] if len(sys.argv) > 1 else "success").lower()
+    slot = sys.argv[2] if len(sys.argv) > 2 else "mattina"     # "mattina", "13" o "19"
+    if slot == "salta":
+        sys.exit(0)
+    is_update = slot in ("13", "19")
     serious, minor = [], []
+    try:
+        with open("stato.json", encoding="utf-8") as f:
+            peek = json.load(f)
+    except Exception:
+        peek = {}
+    if is_update and peek.get("date") == TODAY and peek.get("slot") == "mattina":
+        # mancava l'edizione del mattino e lo script l'ha generata al posto dell'aggiornamento
+        slot, is_update = "mattina", False
 
     if job_status not in ("success", ""):
         serious.append(f"Il workflow si è concluso con stato **{job_status}**: uno dei passaggi è fallito.")
 
-    html_path = f"edizioni/{TODAY}.html"
+    name = f"{TODAY}-{slot}" if is_update else TODAY
+    what = f"L'aggiornamento delle {slot}" if is_update else "L'edizione di oggi"
+    html_path = f"edizioni/{name}.html"
     if not os.path.exists(html_path):
-        serious.append(f"L'edizione di oggi (`{html_path}`) non è stata creata.")
+        serious.append(f"{what} (`{html_path}`) non è stato creato." if is_update
+                       else f"L'edizione di oggi (`{html_path}`) non è stata creata.")
 
     try:
         with open("stato.json", encoding="utf-8") as f:
@@ -34,11 +49,13 @@ def main():
         st = {}
     if st.get("date") != TODAY:
         serious.append("Il file `stato.json` non è di oggi: lo script della rassegna non è arrivato in fondo.")
-    else:
+    elif st.get("slot", "mattina") != slot:
+        serious.append("Il file `stato.json` non corrisponde a questa esecuzione: lo script non è arrivato in fondo.")
+    if st.get("date") == TODAY and st.get("slot", "mattina") == slot:
         if st.get("fallback"):
             serious.append("Gemini non ha risposto: oggi è stato pubblicato solo l'elenco dei titoli "
                            "(controlla la chiave `GEMINI_API_KEY` e la quota del piano).")
-        if st.get("items", 0) < MIN_ITEMS:
+        if not is_update and st.get("items", 0) < MIN_ITEMS:
             serious.append(f"Edizione troppo povera: {st.get('items', 0)} notizie (minimo atteso {MIN_ITEMS}).")
         ko = [f for f in st.get("feeds", []) if f.get("status") != "ok" or not f.get("items")]
         if st.get("feeds_total") and len(ko) > st["feeds_total"] / 2:
@@ -46,10 +63,12 @@ def main():
         elif len(ko) >= 6:
             minor.append(f"{len(ko)} fonti su {st.get('feeds_total')} non hanno fornito notizie.")
 
-    if os.path.exists(html_path) and not os.path.exists(f"audio/{TODAY}.mp3"):
-        serious.append("L'audio MP3 di oggi non è stato generato (la rassegna scritta è comunque online).")
+    has_items = os.path.exists(html_path) and "<li" in open(html_path, encoding="utf-8").read()
+    if has_items and not os.path.exists(f"audio/{name}.mp3"):
+        serious.append(f"L'audio MP3 {'dell' + chr(39) + 'aggiornamento delle ' + slot if is_update else 'di oggi'} "
+                       "non è stato generato (il testo è comunque online).")
 
-    lines = [f"Controllo automatico dell'edizione del **{TODAY}**.", ""]
+    lines = [f"Controllo automatico {'dell' + chr(39) + 'aggiornamento delle ' + slot + ' del' if is_update else 'dell' + chr(39) + 'edizione del'} **{TODAY}**.", ""]
     for p in serious:
         lines.append(f"- ❌ {p}")
     for p in minor:
