@@ -40,7 +40,7 @@ OUTPUT_FILE = os.path.join(OUTPUT_DIR, f"{TODAY}.html")
 MAX_PER_FEED = int(os.environ.get("MAX_PER_FEED", "15"))
 MAX_AGE_HOURS = int(os.environ.get("MAX_AGE_HOURS", "36"))   # notizie più vecchie vengono scartate
 MAX_FULLTEXT = int(os.environ.get("MAX_FULLTEXT", "90"))     # articoli di cui leggere l'estratto
-MAX_ARTICLES = int(os.environ.get("MAX_ARTICLES", "260"))    # tetto alle notizie passate a Gemini
+MAX_ARTICLES = int(os.environ.get("MAX_ARTICLES", "380"))    # tetto alle notizie passate a Gemini
 
 # (nome della testata, provincia di riferimento o "", url del feed)
 RSS_FEEDS = [
@@ -242,23 +242,33 @@ def source_key(name):
 
 
 def balance_sources(articles):
-    """Tiene le notizie più recenti, ma nessuna testata supera MAX_SHARE del totale.
-    Le notizie di una testata già 'piena' vengono recuperate solo se avanza spazio."""
+    """Sceglie le notizie da passare a Gemini a turno tra le testate (la più recente di ciascuna,
+    poi la seconda, e così via), invece di prendere solo le più recenti in assoluto.
+    Così ogni testata conserva anche le notizie del giorno prima: prendendo solo le più recenti,
+    con tante fonti si finiva per coprire solo le ultime ore (la sera e la notte, piene di eventi
+    e sport) e la cronaca del mattino precedente restava fuori.
+    Nessuna testata supera comunque MAX_SHARE del totale."""
     cap = max(20, int(MAX_ARTICLES * MAX_SHARE))
-    kept, extra, count = [], [], {}
-    for a in articles:
-        k = source_key(a["source"])
-        if count.get(k, 0) < cap:
-            count[k] = count.get(k, 0) + 1
-            kept.append(a)
-        else:
-            extra.append(a)
-    kept = kept[:MAX_ARTICLES]
-    if len(kept) < MAX_ARTICLES:
-        kept += extra[:MAX_ARTICLES - len(kept)]
+    groups = {}
+    for a in articles:  # già in ordine dalla più recente
+        groups.setdefault(source_key(a["source"]), []).append(a)
+    kept, count, rnd = [], {}, 0
+    while len(kept) < MAX_ARTICLES:
+        added = False
+        for k, lst in groups.items():
+            if rnd < len(lst) and count.get(k, 0) < cap and len(kept) < MAX_ARTICLES:
+                kept.append(lst[rnd])
+                count[k] = count.get(k, 0) + 1
+                added = True
+        if not added:
+            break
+        rnd += 1
     kept.sort(key=lambda a: a["date"] or NOW, reverse=True)
     top = sorted(count.items(), key=lambda kv: -kv[1])[:5]
+    oldest = min((a["date"] for a in kept if a["date"]), default=None)
     print("Testate più presenti: " + ", ".join(f"{k} {n}" for k, n in top))
+    if oldest:
+        print(f"Notizia più vecchia inclusa: {oldest.astimezone(ROME):%d/%m %H:%M}")
     return kept
 
 
@@ -328,9 +338,11 @@ SEZIONI, in quest'ordine (ometti una sezione se è vuota):
 <h2>Politica e istituzioni</h2>
 <h2>Economia, lavoro e imprese</h2>
 <h2>Sanità, scuola e sociale</h2>
-<h2>Cronaca e giustizia</h2>
+<h2>Cronaca e giustizia</h2>  (TUTTI i fatti di cronaca di ogni provincia: incidenti, reati, arresti, indagini, processi,
+   sentenze, incendi, soccorsi, persone scomparse; è di norma una delle sezioni più ricche. Presentazioni di libri,
+   mostre, cortei annunciati e commemorazioni NON sono cronaca: vanno in "Cultura ed eventi" o "Da seguire oggi")
 <h2>Ambiente, territorio e protezione civile</h2>  (allerte meteo, alluvioni, frane, inquinamento, infrastrutture)
-<h2>Cultura ed eventi</h2>  (solo eventi rilevanti, al massimo 8 notizie)
+<h2>Cultura ed eventi</h2>  (solo eventi rilevanti, al massimo 15 notizie; niente partite di calcio dilettantistico)
 <h2>Da seguire oggi ({GIORNO})</h2>  (senza <h3>: appuntamenti, scioperi, udienze, consigli comunali, scadenze,
    strade chiuse, allerte e eventi di oggi e dei prossimi giorni ricavati dalle notizie; una riga ciascuno)
 
