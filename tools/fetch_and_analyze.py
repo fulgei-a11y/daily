@@ -585,6 +585,7 @@ def main():
 # 5. Aggiornamenti delle 13 e delle 19
 # ---------------------------------------------------------------------------
 SLOTS = ("13", "19")
+MAX_UPDATE_ITEMS = int(os.environ.get("MAX_UPDATE_ITEMS", "35"))
 
 
 def update_system(slot):
@@ -632,6 +633,15 @@ def published_today(upto_slot):
             txt = f.read()
         links |= {link_key(h) for h in re.findall(r'href="([^"]+)"', txt)}
         titles += [clean(t) for t in re.findall(r"<li>\s*<strong>(.*?)</strong>", txt, flags=re.S)]
+    # anche le notizie già passate oggi nell'Ultim'ora (solo agenzie, ogni 4 ore)
+    try:
+        with open("ultimora.json", encoding="utf-8") as f:
+            for it in json.load(f).get("items", []):
+                if it.get("t", "").startswith(TODAY):
+                    links |= set(it.get("links", []))
+                    titles.append(it.get("title", ""))
+    except Exception:
+        pass
     return links, titles
 
 
@@ -687,6 +697,12 @@ def main_update(slot):
         raw = call_gemini(prompt, system=update_system(slot), min_items=0, min_len=40)
     if raw:
         body = finalize_html(raw, articles)
+        # tetto fisso: Gemini a volte ne scrive più del richiesto
+        lis = re.findall(r"<li\b.*?</li>", body, flags=re.S)
+        if len(lis) > MAX_UPDATE_ITEMS:
+            for extra in lis[MAX_UPDATE_ITEMS:]:
+                body = body.replace(extra, "", 1)
+            print(f"   ✂️ Tenute le prime {MAX_UPDATE_ITEMS} notizie su {len(lis)}.")
     elif articles:
         body = (f"<h2>Aggiornamento delle {slot}</h2>\n<ul>\n" + "\n".join(
             f'<li><strong>{html.escape(a["title"])}</strong> — {html.escape(a["desc"][:200])} '
