@@ -8,14 +8,23 @@ on:
     - cron: '0 11 * * *'   # 13:00 ora legale
     - cron: '0 12 * * *'   # 13:00 ora solare
     - cron: '0 17 * * *'   # 19:00 ora legale
-    - cron: '0 18 * * *'   # 19:00 ora solare
+    - cron: '0 18 * * *'   # 19:00 ora solare  (e Ultim'ora delle 20 con l'ora legale)
+    # Ultim'ora (solo agenzie) alle 8, 12, 16, 20 e 24 ora italiana: anche qui due orari UTC per ciascuna
+    - cron: '0 6 * * *'
+    - cron: '0 7 * * *'
+    - cron: '0 10 * * *'   # (le 12 con l'ora solare usano il cron delle 11)
+    - cron: '0 14 * * *'
+    - cron: '0 15 * * *'
+    - cron: '0 19 * * *'
+    - cron: '0 22 * * *'
+    - cron: '0 23 * * *'
   workflow_dispatch:
     inputs:
       tipo:
         description: 'Cosa generare'
         type: choice
         default: automatico
-        options: [automatico, mattina, '13', '19']
+        options: [automatico, mattina, '13', '19', ultimora]
 
 # due esecuzioni insieme (es. una manuale durante quella programmata) si accodano invece di scontrarsi
 concurrency:
@@ -57,6 +66,8 @@ jobs:
             SLOT=13
           elif [ "$H" -ge 19 ] && [ "$H" -le 20 ] && [ ! -f "edizioni/$TODAY-19.html" ]; then
             SLOT=19
+          elif [ "$H" = 8 ] || [ "$H" = 12 ] || [ "$H" = 16 ] || [ "$H" = 20 ] || [ "$H" = 0 ]; then
+            SLOT=ultimora
           else
             SLOT=salta
           fi
@@ -81,7 +92,7 @@ jobs:
       - name: Controlla che gli script siano completi
         if: steps.slot.outputs.slot != 'salta'
         run: |
-          for f in tools/fetch_and_analyze.py tools/build_audio.py tools/check_health.py; do
+          for f in tools/fetch_and_analyze.py tools/build_audio.py tools/check_health.py tools/ultimora.py; do
             dos2unix -q "$f"
             python -m py_compile "$f" || { echo "❌ $f non è valido: ricaricalo per intero."; exit 1; }
             tail -3 "$f" | grep -q "main()" || { echo "❌ $f è incompleto: ricaricalo per intero."; exit 1; }
@@ -91,11 +102,16 @@ jobs:
         if: steps.slot.outputs.slot != 'salta'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 tools/fetch_and_analyze.py --slot "${{ steps.slot.outputs.slot }}"
+        run: |
+          if [ "${{ steps.slot.outputs.slot }}" = "ultimora" ]; then
+            python3 tools/ultimora.py
+          else
+            python3 tools/fetch_and_analyze.py --slot "${{ steps.slot.outputs.slot }}"
+          fi
 
       # se l'audio non riesce, il testo viene pubblicato lo stesso (e arriva l'avviso)
       - name: Genera l'audio MP3 con la voce Paola
-        if: steps.slot.outputs.slot != 'salta'
+        if: steps.slot.outputs.slot != 'salta' && steps.slot.outputs.slot != 'ultimora'
         continue-on-error: true
         run: |
           TODAY="${{ steps.slot.outputs.today }}"
@@ -128,7 +144,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A edizioni audio index.json stato.json
+          git add -A edizioni audio index.json stato.json ultimora.json 2>/dev/null || git add -A edizioni audio index.json stato.json
           if git diff --cached --quiet; then echo "Niente da pubblicare."; exit 0; fi
           git commit -q -m "Auto-update rassegna (${{ steps.slot.outputs.slot }})"
           for i in 1 2 3; do
