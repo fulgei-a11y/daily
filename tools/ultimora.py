@@ -7,7 +7,8 @@ dalle sole agenzie di stampa, solo cronaca ed economia, solo Emilia-Romagna.
   che nominano un comune dell'Emilia-Romagna (elenco in tools/comuni_er.txt).
 - Per ogni agenzia ci sono più canali (feed diretto e Google News): se uno non risponde ai server
   di GitHub, si usa l'altro. In ultimora.json resta scritto quali canali hanno funzionato.
-- Niente doppioni: si scartano le notizie già passate nell'Ultim'ora e quelle già nelle edizioni di oggi.
+- Niente doppioni: si scartano le notizie già passate nell'Ultim'ora. Le edizioni NON vengono escluse:
+  l'Ultim'ora è un filo continuo a sé; sono gli aggiornamenti delle 13 e 19 a saltare ciò che è già qui.
 - Gemini tiene solo cronaca ed economia e scrive una riga per fatto.
 
 Salva ultimora.json (le notizie delle ultime 36 ore; la pagina mostra le ultime 12).
@@ -29,7 +30,7 @@ ROME = R.ROME
 NOW = dt.datetime.now(ROME)
 STORE = "ultimora.json"
 KEEP_HOURS = 36          # quanto resta nel file
-WINDOW_HOURS = 6         # notizie più vecchie di così non entrano (i doppioni li toglie comunque l'elenco "seen")
+WINDOW_HOURS = 12        # come la finestra mostrata in pagina (i doppioni li toglie comunque l'elenco "seen")
 MAX_ITEMS_RUN = 25
 
 ER_QUERY = ('("Emilia-Romagna" OR Bologna OR Modena OR Parma OR "Reggio Emilia" OR Ferrara OR Ravenna '
@@ -128,7 +129,7 @@ TIENI SOLO notizie che riguardano l'Emilia-Romagna e che sono:
 - ECONOMIA: aziende, lavoro, licenziamenti e assunzioni, crisi industriali, investimenti, sindacati e scioperi,
   infortuni sul lavoro, dati economici, prezzi, banche, agricoltura e turismo come attività economiche.
 SCARTA tutto il resto: politica, sport, cultura, spettacolo, gossip, eventi, meteo senza danni,
-notizie che non riguardano l'Emilia-Romagna, e i fatti già pubblicati oggi (elenco A).
+notizie che non riguardano l'Emilia-Romagna, e i fatti già presenti nell'Ultim'ora (elenco A).
 Se più lanci parlano dello stesso fatto, scrivi UNA sola notizia che cita tutti i numeri.
 
 FORMATO: solo righe <li>, dalla più recente, al massimo {MAX_ITEMS_RUN}:
@@ -154,11 +155,13 @@ def main():
     store["items"] = [i for i in store.get("items", []) if dt.datetime.fromisoformat(i["t"]) >= limit]
     store["seen"] = {k: v for k, v in store.get("seen", {}).items() if dt.datetime.fromisoformat(v) >= limit}
 
-    pub_links, pub_titles = published_today()
-    seen = set(store["seen"]) | pub_links
+    if store.get("v") != 2:
+        # prima versione: escludeva anche le notizie delle edizioni; si riparte con l'elenco dei "già visti" vuoto
+        store["seen"], store["v"] = {}, 2
+    seen = set(store["seen"])
     for it in store["items"]:
         seen |= set(it.get("links", []))
-    known_titles = pub_titles + [it.get("title", "") for it in store["items"]]
+    known_titles = [it.get("title", "") for it in store["items"]]
 
     print(f"[{NOW:%Y-%m-%d %H:%M}] Ultim'ora: lettura di {len(AGENCY_FEEDS)} canali delle agenzie...")
     R.MAX_PER_FEED = 60   # i feed nazionali hanno molte notizie: quelle sulla regione sono poche
@@ -209,7 +212,7 @@ def main():
             if a.get("text"):
                 lines.append(f"Estratto: {a['text'][:700]}")
             lines.append("")
-        prompt = f"A) Fatti già pubblicati oggi (NON ripeterli):\n{known}\n\nB) Lanci di agenzia:\n\n" + "\n".join(lines)
+        prompt = f"A) Fatti già nell'Ultim'ora (NON ripeterli):\n{known}\n\nB) Lanci di agenzia:\n\n" + "\n".join(lines)
         raw = R.call_gemini(prompt, system=SYSTEM, min_items=0, min_len=6)
         if raw is None:
             fallback = True
