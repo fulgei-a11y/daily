@@ -1,0 +1,143 @@
+{
+ "items": [],
+ "seen": {
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/11/oliver-stone-saluta-ferrara-e-stata-una-settimana-esaltante-e-spero-di-tornare_cd243396-e253-4b12-a605-5c628ed01ef8.html": "2026-10-11T20:04+02:00",
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRUl5ZnhRLVk4TFlMMlpSTmNNLVNwZEpIdGF1bk9VYzJaRUFsdGdQY3lndzI3ZTR3YnZncWJpbXdBZjRTUzNoTFo1alNTUzlTRHBnTk03SC1hUjRKaUpTMEwycnVVVkZBdUNBeVZwX2RMNWVlelJ1eHlMR0lZZXJOb0UzMlQ0OU9SQjRzV3VCR1FaUjBMSUNWdW16MzBqcElrY2Z4di1fRQ": "2026-10-11T20:04+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/11/presunta-falsa-paternita-per-due-figli-marescialla-dei-carabinieri-indagata_f837c902-c57f-4d30-a7cf-cb2af751180e.html": "2026-10-11T20:04+02:00",
+  "https://news.google.com/rss/articles/CBMie0FVX3lxTE9QNWxPNGM4azRlSDNhb2dNcE1WazVzRmphRm5NblpJZW90c1Y0bFRCemduN1J6NHdyVGk1MEpIdUxPWG16VlQyTVhQa1dHZlY0M0hZUzhBV3JLVVVCc0UzeU5NX0RjS1JqU1JFN1oyLTc4NnBOUmxtcXRuMNIBgAFBVV95cUxQREVzR0REWjhBMUtEVkxfbGxCSTRyWHk0NV83VWpLdzJQNEhoaXk1U2dFVzh5cC1mdVFpTEFaYUNmMjJMVzl3clVhZTFVcjZ5Vm1Ydk5iVnVOaklhUTRxcTE5ckdPRzlnOXplQVoxTUcwVW4xVU5WUmNkVGZPUFYxag": "2026-10-11T20:04+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/11/prima-vittoria-per-il-bologna-2-1-al-lecce_3338ff16-6656-43d2-8eeb-0d9d87f1fb09.html": "2026-10-11T20:04+02:00",
+  "https://www.italpress.com/prima-gioia-per-il-bologna-vince-2-1-a-lecce": "2026-10-11T20:04+02:00",
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUk54bUtvYmtYeF8xXzVRbUpfRWQ2dmhyOWtTVXI1bmJqQVNDNjVrcFJXMmlReFVHQmhkMjBrOFRBY2JyMTNfdDdHZ1p3QThKMTFROXBnV0lqRi1FQVl4QTVfRzZsQXd2bWFBUm5sVDF2UURHdVY1LUp4MkQ5UWtnM2x3OElDSVl6cnFDTERFdjZsVXFzb3B2a0pwRE1mRDBtT1I1amNzcjJZMUdBS2dZa1ZJMXVSNUVkYWFXeGVoQVhqZkRwc1RhUWlRR1lYRFZyZmc": "2026-10-11T20:04+02:00",
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxQeXhsYW5sZmp2czdJa3UxX0x1N3JmSzRLeDd3YzlMc0s3TUlQc00xWlp6TWhwVzZkOFdBdFZZTTZpazRMc2hJUlRwRjd0aWpmelVocERjUjFaZ2ZsTXd5c2Nnc2t6VGxsazc1UzAwNS1GcHlsd3lJejlJRDE4dkVJcFluYXRYSVZUTkhPTW1wWmNocHJFUzkxWEJMQU5ZcGtoQThDcVdHelRxQ0VUT25YbW43ZWE0SWhzVWNMRE9VM2hfRkJRNW5UeXZn": "2026-10-11T20:04+02:00"
+ },
+ "updated": "2026-10-11T20:04+02:00",
+ "next": "alle 24",
+ "last_run": {
+  "at": "2026-10-11T20:04+02:00",
+  "articles": 8,
+  "items": 0,
+  "model": "gemini-2.5-flash",
+  "fallback": false,
+  "feeds": [
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 2
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 1
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 12,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 55,
+    "kept": 1
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 1
+   },
+   {
+    "agency": "askanews",
+    "channel": "feed diretto",
+    "status": "HTTP 403",
+    "items": 0,
+    "kept": 0
+   },
+   {
+    "agency": "askanews",
+    "channel": "feed diretto",
+    "status": "HTTP 403",
+    "items": 0,
+    "kept": 0
+   },
+   {
+    "agency": "askanews",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "Italpress",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 30,
+    "kept": 1
+   },
+   {
+    "agency": "Italpress",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 1
+   },
+   {
+    "agency": "Dire",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 10,
+    "kept": 0
+   },
+   {
+    "agency": "Dire",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 54,
+    "kept": 1
+   },
+   {
+    "agency": "Dagospia",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 1,
+    "kept": 0
+   }
+  ]
+ }
+}
