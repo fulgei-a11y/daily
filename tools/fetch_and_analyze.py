@@ -588,20 +588,48 @@ SLOTS = ("13", "19")
 MAX_UPDATE_ITEMS = int(os.environ.get("MAX_UPDATE_ITEMS", "35"))
 
 
+TEMI = ["Cronaca e giustizia", "Economia e lavoro", "Politica e istituzioni",
+        "Sanità e servizi", "Ambiente, trasporti e protezione civile"]
+
+# Sport: fuori dagli aggiornamenti e dall'Ultim'ora (filtro prima di Gemini, poi Gemini scarta il resto)
+SPORT_URL = re.compile(r"/(sport|sports|calcio|basket|volley|pallavolo|motori|ciclismo|rugby|tennis|motogp|formula-?1)(/|-|\.)", re.I)
+SPORT_TITLE = re.compile(
+    # solo parole quasi sempre sportive: "curva", "tifosi", "stadio" restano (possono essere cronaca)
+    r"\b(serie [abcd]|calcio|calciomercato|campionato|gol|goal|pareggio|derby|playoff|play-off|allenatore|"
+    r"basket|pallavolo|volley|rugby|tennis|motogp|formula 1|ciclismo|"
+    r"prima categoria|seconda categoria|terza categoria|under \d+)\b", re.I)
+
+
+def is_sport(a):
+    return bool(SPORT_URL.search(a.get("link", "")) or SPORT_TITLE.search(a.get("title", "")))
+
+
 def update_system(slot):
+    temi = "\n".join(f"<h3>{t}</h3>" for t in TEMI)
     return f"""
 Sei il caporedattore di una rassegna stampa sull'Emilia-Romagna. Stai scrivendo l'AGGIORNAMENTO DELLE {slot}
 di {GIORNO}: va letto da chi ha già letto l'edizione del mattino{" e l'aggiornamento delle 13" if slot == "19" else ""}.
 Scrivi in italiano giornalistico, asciutto e preciso, con i fatti concreti (chi, cosa, dove, quando, cifre, nomi).
 Usa SOLO le informazioni presenti nelle notizie fornite. Non inventare nulla.
 
-COSA METTERE
+COSA METTERE: solo notizie che contano, in questi temi
+- Cronaca e giustizia: incidenti, reati, arresti, indagini, processi, incendi, soccorsi, scomparsi.
+- Economia e lavoro: aziende, crisi, assunzioni e licenziamenti, investimenti, sindacati, scioperi, infortuni sul lavoro, prezzi.
+- Politica e istituzioni: decisioni di Regione e Comuni, consigli comunali, nomine, scontri politici su temi concreti.
+- Sanità e servizi: ospedali, liste d'attesa, scuole, trasporto pubblico, servizi ai cittadini.
+- Ambiente, trasporti e protezione civile: allerte, maltempo con danni, strade e autostrade chiuse, inquinamento.
+
+SCARTA SEMPRE: sport di ogni livello (anche Serie A), cultura, spettacoli, mostre, libri, premi, sagre e feste,
+eventi e inaugurazioni minori, aperture di negozi, curiosità, gossip, notizie nazionali senza legame con la regione.
+Nel dubbio, scarta: meglio 10 notizie importanti che 30 minori.
+
+REGOLE
 - Solo fatti NUOVI rispetto ai titoli già pubblicati oggi (elenco A).
 - Se una notizia è lo sviluppo di un fatto già pubblicato, includila solo se aggiunge fatti nuovi
   (un arresto, una sentenza, un dato) e comincia il testo con "Sviluppi:".
 - Se più notizie parlano dello stesso fatto, scrivine UNA che le combina e cita tutti i numeri.
-- Scarta gossip, sport dilettantistico, oroscopi, pubblicità, eventi minori, notizie nazionali senza
-  legame con la regione. Meglio poche notizie importanti che tante notizie minori.
+- Ogni fatto compare UNA sola volta.
+- Copri tutta la regione: se una provincia ha una notizia importante, non trascurarla.
 
 FONTI
 - Ogni notizia nuova è numerata [n]. Alla fine di ogni notizia scrivi <cite>n</cite> o <cite>n,m</cite>.
@@ -609,10 +637,10 @@ FONTI
 
 FORMATO (solo il frammento HTML, senza blocchi di codice)
 <h2>Aggiornamento delle {slot}</h2>
-<ul>
+poi, solo per i temi che hanno notizie e in quest'ordine, un <h3> seguito da <ul>:
+{temi}
 <li><strong>Titolo breve e informativo</strong> — Luogo: testo di 1-3 frasi con i fatti. <cite>n</cite></li>
-</ul>
-- Notizie in ordine di importanza, al massimo 30.
+- Dentro ogni tema, notizie in ordine di importanza; al massimo 30 notizie in tutto.
 - Il luogo è il comune seguito dalla provincia tra parentesi ("Sassuolo (Modena)"); per i capoluoghi basta
   il nome; per i fatti di tutta la regione scrivi "Emilia-Romagna". Province: {", ".join(PROVINCE)}.
 - Se non c'è nessuna novità rilevante scrivi solo:
@@ -686,6 +714,10 @@ def main_update(slot):
     print(f"Aggiornamento delle {slot}: notizie dopo le {since.astimezone(ROME):%H:%M}, "
           f"{len(titles)} titoli già pubblicati oggi.")
     articles = fetch_rss_articles(since=since, exclude=links)
+    n0 = len(articles)
+    articles = [a for a in articles if not is_sport(a)]
+    if n0 != len(articles):
+        print(f"   ⚽ Tolte {n0 - len(articles)} notizie sportive prima di Gemini.")
     out_file = os.path.join(OUTPUT_DIR, f"{TODAY}-{slot}.html")
     raw = None
     if articles:
@@ -697,6 +729,15 @@ def main_update(slot):
         raw = call_gemini(prompt, system=update_system(slot), min_items=0, min_len=40)
     if raw:
         body = finalize_html(raw, articles)
+        # niente doppioni: stesso titolo = stessa notizia
+        seen_t = set()
+        for li in re.findall(r"<li\b.*?</li>", body, flags=re.S):
+            t = re.sub(r"\W+", " ", clean((re.search(r"<strong>(.*?)</strong>", li, flags=re.S) or [None, li])[1]).lower()).strip()
+            if t in seen_t:
+                body = body.replace(li, "", 1)
+            seen_t.add(t)
+        body = re.sub(r"<ul>\s*</ul>", "", body)
+        body = re.sub(r"<h3>[^<]*</h3>\s*(?=<h[23]|$)", "", body)
         # tetto fisso: Gemini a volte ne scrive più del richiesto
         lis = re.findall(r"<li\b.*?</li>", body, flags=re.S)
         if len(lis) > MAX_UPDATE_ITEMS:
