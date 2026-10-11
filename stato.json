@@ -1,9 +1,9 @@
 {
  "date": "2026-10-11",
- "slot": "13",
- "generated": "2026-10-11T13:14+02:00",
- "articles": 281,
- "items": 64,
+ "slot": "19",
+ "generated": "2026-10-11T18:44+02:00",
+ "articles": 146,
+ "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
  "feeds_ok": 38,
@@ -175,7 +175,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 12
   },
   {
    "name": "Google News",
