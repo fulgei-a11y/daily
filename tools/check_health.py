@@ -16,11 +16,41 @@ MIN_ITEMS = int(os.environ.get("MIN_ITEMS", "40"))
 TODAY = dt.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d")
 
 
+def check_ultimora(job_status):
+    """Ultim'ora: deve essere stata scritta in questa esecuzione, con Gemini e almeno un'agenzia raggiungibile."""
+    problems = []
+    if job_status not in ("success", ""):
+        problems.append(f"Il workflow si è concluso con stato **{job_status}**.")
+    try:
+        with open("ultimora.json", encoding="utf-8") as f:
+            run = json.load(f).get("last_run", {})
+        at = dt.datetime.fromisoformat(run["at"])
+        if dt.datetime.now(ZoneInfo("Europe/Rome")) - at > dt.timedelta(minutes=90):
+            problems.append("`ultimora.json` non è stato aggiornato in questa esecuzione.")
+        if run.get("fallback"):
+            problems.append("Gemini non ha risposto: l'Ultim'ora non è stata aggiornata.")
+        feeds = run.get("feeds", [])
+        if feeds and not any(f.get("status") == "ok" for f in feeds):
+            problems.append("Nessuna agenzia di stampa ha risposto.")
+    except Exception:
+        problems.append("`ultimora.json` manca o non è leggibile.")
+    lines = ["Controllo automatico dell'**Ultim'ora**.", ""] + [f"- ❌ {p}" for p in problems]
+    repo, runid = os.environ.get("GITHUB_REPOSITORY", ""), os.environ.get("GITHUB_RUN_ID", "")
+    if repo and runid:
+        lines += ["", f"Dettagli del lavoro: https://github.com/{repo}/actions/runs/{runid}"]
+    with open("health.md", "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    print("\n".join(lines))
+    return 1 if problems else 0
+
+
 def main():
     job_status = (sys.argv[1] if len(sys.argv) > 1 else "success").lower()
     slot = sys.argv[2] if len(sys.argv) > 2 else "mattina"     # "mattina", "13" o "19"
     if slot == "salta":
         sys.exit(0)
+    if slot == "ultimora":
+        sys.exit(check_ultimora(job_status))
     is_update = slot in ("13", "19")
     serious, minor = [], []
     try:
