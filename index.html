@@ -633,7 +633,14 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       sec.innerHTML = `<div class="upd-head"><h2 class="sec-title">Aggiornamento delle ${u.slot}${isNew ? ' <i class="new">Nuovo</i>' : ''} <small></small></h2>
         <p class="upd-meta">${t && !isNaN(t) ? 'Pubblicato alle ' + romeTime(t) + ' · ' : ''}notizie arrivate dopo ${u.slot === '13' ? "l'edizione del mattino" : "l'aggiornamento delle 13"}
         <button class="upd-play" type="button" data-slot="${u.slot}" hidden><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>Ascolta</span></button></p></div>`;
-      walkFragment(doc.body).forEach(it => sec.appendChild(makeItem(it, items.length)));
+      let lastSub = null;
+      walkFragment(doc.body).forEach(it => {
+        if (it.sub && it.sub !== lastSub){   // temi: Cronaca e giustizia, Economia e lavoro, …
+          const h = document.createElement('h3'); h.className = 'sub-title'; h.textContent = it.sub; sec.appendChild(h);
+        }
+        lastSub = it.sub;
+        sec.appendChild(makeItem(it, items.length));
+      });
       if (items.length === base){
         const n = doc.querySelector('p.note');
         sec.insertAdjacentHTML('beforeend', `<p class="note empty-upd">${esc(n ? n.textContent : 'Nessuna novità rilevante.')}</p>`);
