@@ -180,6 +180,8 @@ def main():
                 continue
             if not regional and not about_er(a["title"] + " " + a.get("desc", "")):
                 continue
+            if R.is_sport(a):
+                continue
             a["source"] = agency
             seen_t.add(tk)
             articles.append(a)
