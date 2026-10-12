@@ -127,17 +127,36 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 .upd-play{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;height:32px;padding:0 14px 0 10px;font:inherit;font-weight:600;cursor:pointer}
 .upd-play svg{width:14px;height:14px;fill:currentColor}
 .sec.update .empty-upd{margin:6px 0}
-.sec.ultimora{margin:14px 0 6px;padding:2px 0 6px 14px;border-left:4px solid var(--ink)}
-.sec.ultimora .sec-title{margin-top:12px;color:var(--ink);font-size:24px;flex-wrap:wrap;row-gap:4px}
-.sec.ultimora .live{display:inline-block;width:10px;height:10px;border-radius:50%;background:#d23b2a;box-shadow:0 0 0 4px rgb(210 59 42 / .18);animation:pulse 1.4s infinite alternate;vertical-align:middle}
-.item .txt > .uo-tag + strong{font-family:var(--f-ui);font-weight:700}
-.uo-tag{display:block;font-family:var(--f-ui);font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.02em;margin-bottom:2px}
-.uo-tag b{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
-.sec.ultimora .item{grid-template-columns:minmax(0,1fr)}
-.sec.ultimora .item .pbtn{display:none!important}
-/* notizie senza audio: il pulsante sparisce ma la colonna resta, così il testo non si schiaccia */
-.item .pbtn[hidden]{display:grid!important;visibility:hidden}
-.chip.uo-chip{background:var(--ink);color:var(--bg)}
+/* ---------- In breve (agenzie) ---------- */
+.sec.brief{margin:14px 0 6px;padding:2px 0 4px 14px;border-left:4px solid var(--ink)}
+.sec.brief .sec-title,.sec.update .sec-title{margin-top:12px;color:var(--ink);font-size:24px;flex-wrap:wrap;row-gap:4px}
+.sec.brief .live{display:inline-block;width:10px;height:10px;border-radius:50%;background:#d23b2a;box-shadow:0 0 0 4px rgb(210 59 42 / .18);animation:pulse 1.4s infinite alternate;vertical-align:middle}
+.sec.brief .item{grid-template-columns:minmax(0,1fr);padding:9px 4px;cursor:pointer}
+.sec.brief .item .pbtn{display:none!important}
+.brief-head{display:flex;align-items:baseline;gap:10px;font-family:var(--f-ui);font-size:15.5px;line-height:1.35}
+.brief-head strong{flex:1;min-width:0;font-weight:700}
+.uo-time{flex:none;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums;min-width:38px}
+.uo-cat{flex:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.sec.brief .more{margin:6px 0 0 48px}
+.sec.brief .item:not(.open) .more{display:none}
+.sec.brief.all .item .more{display:block}
+.sec.brief:not(.all):not(.expanded) .item.extra{display:none}
+.brief-more{border:0;background:none;padding:10px 4px 4px;font-family:var(--f-ui);font-size:14.5px;font-weight:600;color:var(--accent);cursor:pointer}
+.sec.brief.all .brief-more{display:none}
+/* ---------- Aggiornamenti: un blocco, una scheda per orario ---------- */
+.tabs{display:flex;gap:6px;margin:4px 0 2px}
+.tab{position:relative;border:1.5px solid var(--accent);background:transparent;color:var(--accent);border-radius:999px;height:36px;padding:0 16px;font-family:var(--f-ui);font-size:15px;font-weight:700;cursor:pointer;font-variant-numeric:tabular-nums}
+.tab small{font-weight:500;opacity:.75;margin-left:6px}
+.tab.on{background:var(--accent);color:var(--accent-ink)}
+.tab .dot-new{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#d23b2a;border:2px solid var(--bg)}
+.sec.update:not(.all) .pane:not(.on){display:none}
+.pane-title{display:none;font-family:var(--f-display);font-size:19px;margin:16px 0 0}
+.sec.update.all .pane-title{display:block}
+/* ---------- Separatore dell'edizione del mattino ---------- */
+.ed-head{margin:34px 0 0;padding:14px 0 10px;border-top:3px double var(--ink);border-bottom:1px solid var(--line)}
+.ed-head h2{margin:0;font-family:var(--f-display);font-weight:700;font-size:28px;text-transform:uppercase;letter-spacing:.02em}
+.ed-head p{margin:2px 0 0;font-family:var(--f-ui);font-size:13.5px;color:var(--muted)}
+.chip.brief-chip{background:var(--ink);color:var(--bg)}
 .chip.upd-chip{background:transparent;border:1.5px solid var(--accent);color:var(--accent);padding:5px 11px}
 .chip.upd-chip.on{background:var(--accent);color:var(--accent-ink)}
 .upd{display:flex;align-items:center;gap:8px;margin:4px 0 0;padding-left:2px;font-family:var(--f-ui);font-size:13.5px;line-height:1.35;color:var(--muted);min-height:20px}
@@ -183,6 +202,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   .item{display:block;padding:5pt 0;break-inside:avoid;border-radius:0}
   .item[hidden]{display:block!important}
   .sec[hidden],.sub-title[hidden]{display:block!important}
+  .sec.update .pane,.sec.brief .item,.sec.brief .more,.pane-title{display:block!important}
   .sec.evidenza .item{border:0;border-bottom:1px solid var(--line);background:none;margin:0;padding:5pt 0}
   .sec-title{font-size:16pt;margin-top:14pt;break-after:avoid}
   .sub-title{font-size:12.5pt;break-after:avoid}
@@ -477,6 +497,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     const el = items[focusK - 1]; focusK = 0;
     if (!el) return;
     if (el.hidden){ setProv('Tutte', false); $('#q').value = ''; applyFilters(); }
+    reveal(el);
     el.classList.add('target');
     setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 60);
     setTimeout(() => el.classList.remove('target'), 3500);
@@ -570,33 +591,99 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
   async function loadUO(){
     try { const r = await fetch('ultimora.json?v=' + Date.now()); UO = r.ok ? await r.json() : null; } catch(e) { UO = null; }
   }
-  // Ultim'ora: solo sull'edizione più recente, notizie delle ultime 12 ore, la più nuova in cima
+  // IN BREVE: notizie di agenzia (ex Ultim'ora), una riga ciascuna; si tocca per leggerle.
+  // Solo sull'edizione più recente, ultime 12 ore, la più nuova in cima; le prime 5 visibili.
+  const BRIEF_SHOWN = 5;
   function renderUO(){
     if (!UO || current !== editions[0]) return null;
     const since = Date.now() - 12 * 3600e3, base = items.length;
     const list = (UO.items || []).filter(x => new Date(x.t).getTime() >= since);
     const sec = document.createElement('section');
-    sec.className = 'sec ultimora'; sec.id = 'ultimora';
-    sec.dataset.title = "Ultim'ora"; sec.dataset.chip = "Ultim'ora";
+    sec.className = 'sec brief'; sec.id = 'inbreve';
+    sec.dataset.title = 'In breve'; sec.dataset.chip = 'In breve';
     const up = UO.updated ? new Date(UO.updated) : null;
-    sec.innerHTML = `<div class="upd-head"><h2 class="sec-title"><i class="live" aria-hidden="true"></i> Ultim'ora <small></small></h2>
-      <p class="upd-meta">Solo agenzie di stampa · cronaca ed economia · ultime 12 ore${up && !isNaN(up) ? ` · aggiornata ${dayWord(romeDay(up)) === 'oggi' ? '' : dayWord(romeDay(up)) + ' '}alle ${romeTime(up)}` : ''}${UO.next ? ` · prossima ${esc(UO.next)}` : ''}</p></div>`;
-    list.forEach(x => {
+    sec.innerHTML = `<div class="upd-head"><h2 class="sec-title"><i class="live" aria-hidden="true"></i> In breve <small></small></h2>
+      <p class="upd-meta">Dalle agenzie di stampa · cronaca ed economia · ultime 12 ore${up && !isNaN(up) ? ` · aggiornato ${dayWord(romeDay(up)) === 'oggi' ? '' : dayWord(romeDay(up)) + ' '}alle ${romeTime(up)}` : ''}${UO.next ? ` · prossimo ${esc(UO.next)}` : ''}</p></div>`;
+    list.forEach((x, k) => {
       const li = document.createElement('li'); li.innerHTML = x.html;
-      const el = makeItem({ sec: "Ultim'ora", sub: null, node: li }, items.length);
+      const el = makeItem({ sec: 'In breve', sub: null, node: li }, items.length);
+      const txt = el.querySelector('.txt'), strong = txt.querySelector('strong');
       const t = new Date(x.t);
-      el.querySelector('.txt').insertAdjacentHTML('afterbegin',
-        `<span class="uo-tag">${isNaN(t) ? '' : romeTime(t)}${x.cat ? ` · <b>${esc(x.cat)}</b>` : ''}</span>`);
+      const head = document.createElement('span'); head.className = 'brief-head';
+      head.innerHTML = `<span class="uo-time">${isNaN(t) ? '' : romeTime(t)}</span>`;
+      if (strong) head.appendChild(strong);
+      if (x.cat) head.insertAdjacentHTML('beforeend', ` <b class="uo-cat">${esc(x.cat)}</b>`);
+      const more = document.createElement('div'); more.className = 'more';
+      while (txt.firstChild) more.appendChild(txt.firstChild);
+      const first = more.firstChild;
+      if (first && first.nodeType === 3) first.nodeValue = first.nodeValue.replace(/^\s*[—–-]\s*/, '');
+      txt.append(head, more);
+      el.classList.add('brief-item'); if (k >= BRIEF_SHOWN) el.classList.add('extra');
+      el.setAttribute('aria-expanded', 'false');
+      el.addEventListener('click', e => { if (e.target.closest('a,button')) return;
+        el.classList.toggle('open'); el.setAttribute('aria-expanded', el.classList.contains('open')); });
       sec.appendChild(el);
     });
-    if (!list.length) sec.insertAdjacentHTML('beforeend', '<p class="note empty-upd">Nessuna notizia di cronaca o economia dalle agenzie nelle ultime 12 ore.</p>');
+    if (list.length > BRIEF_SHOWN)
+      sec.insertAdjacentHTML('beforeend', `<button class="brief-more" type="button">▸ altre ${list.length - BRIEF_SHOWN} notizie di oggi</button>`);
+    if (!list.length) sec.insertAdjacentHTML('beforeend', '<p class="note empty-upd">Nessuna novità dalle agenzie oltre a quanto già in rassegna.</p>');
     RANGES.push({ key: 'ultimora', base, count: items.length - base });
     return sec;
   }
+
+  // AGGIORNAMENTI: un solo blocco con un pulsante per orario (aperto sul più recente)
+  function renderUpdates(ups){
+    if (!ups.length) return null;
+    const sec = document.createElement('section');
+    sec.className = 'sec update'; sec.id = 'aggiornamenti';
+    sec.dataset.title = 'Aggiornamenti'; sec.dataset.chip = 'Aggiornamenti';
+    const newest = ups[ups.length - 1].slot, today = current === todayRome();
+    const tabs = ups.slice().reverse().map(u =>
+      `<button class="tab${u.slot === newest ? ' on' : ''}" type="button" role="tab" data-slot="${u.slot}" aria-selected="${u.slot === newest}">${u.slot}:00${u.slot === newest && today ? '<i class="dot-new" aria-label="nuovo"></i>' : ''}<small></small></button>`).join('');
+    sec.innerHTML = `<div class="upd-head"><h2 class="sec-title">Aggiornamenti <small></small></h2>
+      <div class="tabs" role="tablist">${tabs}</div></div>`;
+    ups.forEach(u => {
+      const doc = parse(u.html), base = items.length;
+      const t = u.updated ? new Date(u.updated) : null;
+      const pane = document.createElement('div');
+      pane.className = 'pane' + (u.slot === newest ? ' on' : ''); pane.dataset.slot = u.slot; pane.id = 'agg-' + u.slot;
+      pane.innerHTML = `<h3 class="pane-title">Aggiornamento delle ${u.slot}</h3>
+        <p class="upd-meta">${t && !isNaN(t) ? 'Pubblicato alle ' + romeTime(t) + ' · ' : ''}notizie arrivate dopo ${u.slot === '13' ? "l'edizione del mattino" : "l'aggiornamento delle 13"}
+        <button class="upd-play" type="button" data-slot="${u.slot}" hidden><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>Ascolta</span></button></p>`;
+      let lastSub = null;
+      walkFragment(doc.body).forEach(it => {
+        if (it.sub && it.sub !== lastSub){   // temi: Cronaca e giustizia, Economia e lavoro, …
+          const h = document.createElement('h3'); h.className = 'sub-title'; h.textContent = it.sub; pane.appendChild(h);
+        }
+        lastSub = it.sub;
+        pane.appendChild(makeItem(it, items.length));
+      });
+      if (items.length === base){
+        const n = doc.querySelector('p.note');
+        pane.insertAdjacentHTML('beforeend', `<p class="note empty-upd">${esc(n ? n.textContent : 'Nessuna novità rilevante.')}</p>`);
+      }
+      RANGES.push({ key: u.slot, base, count: items.length - base });
+      sec.appendChild(pane);
+    });
+    sec.querySelectorAll('.tab').forEach(b => b.onclick = () => showPane(b.dataset.slot));
+    return sec;
+  }
+  function showPane(slot){
+    const sec = document.getElementById('aggiornamenti'); if (!sec) return;
+    sec.querySelectorAll('.pane').forEach(p => p.classList.toggle('on', p.dataset.slot === slot));
+    sec.querySelectorAll('.tab').forEach(b => { const on = b.dataset.slot === slot; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
+  }
+  // rende visibile una notizia nascosta da una scheda chiusa o dalla lista "In breve" ridotta
+  function reveal(el){
+    const pane = el.closest('.pane'); if (pane && !pane.classList.contains('on')) showPane(pane.dataset.slot);
+    if (el.classList.contains('extra')) el.closest('.sec').classList.add('expanded');
+    if (el.classList.contains('brief-item')) el.classList.add('open');
+  }
+
   function render(html, ups = []){
     items = []; RANGES = [];
     const frag = document.createDocumentFragment();
-    let notes = '';
+    let notes = '', morningCount = 0;
     if (html !== null){
       const doc = parse(html);
       notes = [...doc.querySelectorAll('p.note')].map(n => n.outerHTML).join('');
@@ -618,43 +705,27 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
         }
         lastSub = it.sub;
         secEl.appendChild(makeItem(it, items.length));
+        if (it.sec !== 'Note') morningCount++;
       });
       RANGES.push({ key: 'mattina', base: 0, count: items.length });
     }
-    const upEls = [];
-    const newest = ups.length ? ups[ups.length - 1].slot : null;
-    ups.forEach(u => {
-      const doc = parse(u.html), base = items.length;
-      const t = u.updated ? new Date(u.updated) : null;
-      const sec = document.createElement('section');
-      sec.className = 'sec update'; sec.id = 'agg-' + u.slot;
-      sec.dataset.title = 'Aggiornamento delle ' + u.slot; sec.dataset.chip = 'Ore ' + u.slot;
-      const isNew = u.slot === newest && current === todayRome();
-      sec.innerHTML = `<div class="upd-head"><h2 class="sec-title">Aggiornamento delle ${u.slot}${isNew ? ' <i class="new">Nuovo</i>' : ''} <small></small></h2>
-        <p class="upd-meta">${t && !isNaN(t) ? 'Pubblicato alle ' + romeTime(t) + ' · ' : ''}notizie arrivate dopo ${u.slot === '13' ? "l'edizione del mattino" : "l'aggiornamento delle 13"}
-        <button class="upd-play" type="button" data-slot="${u.slot}" hidden><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>Ascolta</span></button></p></div>`;
-      let lastSub = null;
-      walkFragment(doc.body).forEach(it => {
-        if (it.sub && it.sub !== lastSub){   // temi: Cronaca e giustizia, Economia e lavoro, …
-          const h = document.createElement('h3'); h.className = 'sub-title'; h.textContent = it.sub; sec.appendChild(h);
-        }
-        lastSub = it.sub;
-        sec.appendChild(makeItem(it, items.length));
-      });
-      if (items.length === base){
-        const n = doc.querySelector('p.note');
-        sec.insertAdjacentHTML('beforeend', `<p class="note empty-upd">${esc(n ? n.textContent : 'Nessuna novità rilevante.')}</p>`);
-      }
-      RANGES.push({ key: u.slot, base, count: items.length - base });
-      upEls.unshift(sec);   // il più recente in cima
-    });
+    const updEl = renderUpdates(ups);
     const uoEl = renderUO();
     main.innerHTML = notes;
     if (uoEl) main.appendChild(uoEl);
-    upEls.forEach(s => main.appendChild(s));
+    if (updEl) main.appendChild(updEl);
+    if (html !== null && (uoEl || updEl)){
+      // separatore: da qui comincia la rassegna completa del mattino
+      const m = META[current] || {}, t = m.updated ? new Date(m.updated) : null;
+      main.insertAdjacentHTML('beforeend', `<div class="ed-head" id="mattino"><h2>Edizione del mattino</h2>
+        <p>${t && !isNaN(t) ? 'Pubblicata alle ' + romeTime(t) + ' · ' : ''}${morningCount} notizie da tutte le province · si ascolta dal lettore in basso</p></div>`);
+    }
     main.appendChild(frag);
-    if (!items.length && !upEls.length) main.insertAdjacentHTML('beforeend', '<p class="empty">Questa edizione non contiene notizie.</p>');
+    if (!items.length && !updEl) main.insertAdjacentHTML('beforeend', '<p class="empty">Questa edizione non contiene notizie.</p>');
     main.querySelectorAll('.upd-play').forEach(b => b.onclick = () => playTrack(b.dataset.slot));
+    const bm = main.querySelector('.brief-more');
+    if (bm) bm.onclick = () => { const s = bm.closest('.sec'); s.classList.toggle('expanded');
+      bm.textContent = s.classList.contains('expanded') ? '▴ mostra meno' : `▸ altre ${s.querySelectorAll('.item.extra').length} notizie di oggi`; };
     buildChips();
     applyFilters();
   }
@@ -668,7 +739,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       b.className = 'chip'; b.type = 'button'; b.dataset.target = s.id;
       b.innerHTML = esc(s.dataset.chip || s.dataset.title) + '<small></small>';
       if (s.classList.contains('update')) b.classList.add('upd-chip');
-      if (s.classList.contains('ultimora')) b.classList.add('uo-chip');
+      if (s.classList.contains('brief')) b.classList.add('brief-chip');
       b.onclick = () => s.scrollIntoView({ behavior: 'smooth' });
       $('#secChips').appendChild(b);
     });
@@ -700,6 +771,8 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 
   function applyFilters(){
     const q = $('#q').value.trim().toLowerCase();
+    // con un filtro o una ricerca si vedono tutte le schede degli aggiornamenti e tutto "In breve"
+    main.querySelectorAll('.sec.update,.sec.brief').forEach(s => s.classList.toggle('all', !!q || prov !== 'Tutte'));
     items.forEach(el => {
       const okProv = prov === 'Tutte' || el.dataset.prov === prov;
       el.hidden = !(okProv && (!q || el.dataset.text.includes(q)));
@@ -715,6 +788,12 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
       s.querySelector('.sec-title small').textContent = n ? n + (n === 1 ? ' notizia' : ' notizie') : '';
       const chip = $(`#secChips [data-target="${s.id}"]`);
       if (chip){ chip.hidden = s.hidden; chip.querySelector('small').textContent = n || ''; }
+      if (s.classList.contains('update')){
+        // il numero va sulle schede (13:00 · 35), non sul titolo del blocco
+        s.querySelector('.sec-title small').textContent = '';
+        s.querySelectorAll('.pane').forEach(p => { const t = s.querySelector(`.tab[data-slot="${p.dataset.slot}"] small`);
+          if (t) t.textContent = p.querySelectorAll('.item:not([hidden])').length; });
+      }
       s.querySelectorAll('.sub-title').forEach(h => {
         let el = h.nextElementSibling, any = false;
         while (el && el.classList.contains('item')){ if (!el.hidden) any = true; el = el.nextElementSibling; }
@@ -805,7 +884,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     if (track !== t){ setTrack(t); store.set('pos-' + t.name, 0); }
     else if (!audio.paused){ userPause(); return; }
     lastUserScroll = 0; play();
-    const sec = document.getElementById('agg-' + key); if (sec && follow) sec.scrollIntoView({ behavior: 'smooth' });
+    showPane(key); const sec = document.getElementById('aggiornamenti'); if (sec && follow) sec.scrollIntoView({ behavior: 'smooth' });
   }
 
   let audioDur = 0;
@@ -925,7 +1004,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
     const r = track.range;
     $('#nowTxt').innerHTML = `<b>${esc(track.key === 'mattina' ? sec : 'Aggiornamento delle ' + track.key)}</b>${sub ? ' · ' + esc(sub) : ''} · ${idx - r.base + 1}/${r.count}`;
     if ('mediaSession' in navigator && navigator.mediaSession.metadata) try { navigator.mediaSession.metadata.artist = sec + (sub ? ' · ' + sub : ''); } catch(e) {}
-    if (follow && !el.hidden && Date.now() - lastUserScroll > 5000) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (follow && !el.hidden && Date.now() - lastUserScroll > 5000){ reveal(el); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
   };
   ['wheel', 'touchmove'].forEach(ev => window.addEventListener(ev, () => { lastUserScroll = Date.now(); }, { passive: true }));
 
