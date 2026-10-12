@@ -1,6 +1,24 @@
 {
  "items": [
   {
+   "t": "2026-10-12T20:05+02:00",
+   "cat": "Cronaca",
+   "title": "Incidente mortale nel Parmense",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/finisce-con-lauto-fuori-strada-90enne-morto-nel-parmense_d1e7f721-d1e7-4ff1-b592-a6891780dbfa.html"
+   ],
+   "html": "<strong>Incidente mortale nel Parmense</strong> — Felino (Parma): un uomo di 90 anni è deceduto e la moglie di 87 anni è rimasta ferita dopo che la loro auto è finita fuori strada in via Calestano. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/12/finisce-con-lauto-fuori-strada-90enne-morto-nel-parmense_d1e7f721-d1e7-4ff1-b592-a6891780dbfa.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-12T20:05+02:00",
+   "cat": "Cronaca",
+   "title": "Ritardi ferroviari sulla Bologna-Rimini",
+   "links": [
+    "https://www.adnkronos.com/economia/linea-bologna-rimini-ritardi-treni_10TQ49GBdFmCAxWrgBL1vv"
+   ],
+   "html": "<strong>Ritardi ferroviari sulla Bologna-Rimini</strong> — Gambettola (Forlì-Cesena): la circolazione dei treni è fortemente rallentata, con ritardi fino a due ore, a causa dell'investimento di una persona in prossimità della località. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/economia/linea-bologna-rimini-ritardi-treni_10TQ49GBdFmCAxWrgBL1vv\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
    "t": "2026-10-12T16:16+02:00",
    "cat": "",
    "title": "Denunce e delitti in aumento in Emilia-Romagna",
@@ -165,14 +183,21 @@
   "https://www.adnkronos.com/economia/turismo-moby-tirrenia-e-toremar-presentano-la-nuova-stagione-al-ttg-di-rimini_5nWBZAX6uZ5XoJ5brVo9Z6": "2026-10-12T16:16+02:00",
   "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZEtLbEtvMTZzSWhMNEE1dTNDcWNYUUpydUNtakJTUzF1MWp0VWtjYzZsa083N1oyN1NtWnVVcm1ZajVpbFNZaXdKdGpZWTdROWNsUkgzUGhxQ0x2TURWemFUaHZzekNBb0JiREd5bDlaZDhYQjlMZEFMR3Bwbzlsekk2bVZRNUo5Q2hlMkhuMUo2Rk1xT1pYaEZNNFZPeGFXVDdfMkdmRHhlUQ": "2026-10-12T16:16+02:00",
   "https://news.google.com/rss/articles/CBMipgFBVV95cUxNOVoxT280Z3p1NnQwSlZ0azQtZEY4QlZIcEl1cGh4SjV5eWphS2ZfbXc1SmV1LWhkNDZzdmVONnA0M2cyekFCRlpVLUF5NzI2ODRqTFZlbWJlUFp2R3RwLV9MQzZzTXpXTjJ4UVZNZl82YlhEbE5Ya3ZNZWROVGREUXBHTUR0Vy1KWGVHcTNKX3BkS19SS2hjUTRNVTRGRU1ZRnBaOER3": "2026-10-12T16:16+02:00",
-  "https://news.google.com/rss/articles/CBMizgFBVV95cUxQUU5mUUo2X1ZUS3ZlOWxsQU44YnJUSnRzMlhpUEFTWVJzM1BrVDhYS0ZIcjlyNVNUVzVVMEtwOTJqWnhCOElRdVhSc2xTOGh6TWJrZ20zQ053RjU3MDZJOGZEczFDYmxBekt6Smk1UlZnYzhrRERsTzV3bW92XzE5WlJDWUhtTlVDUDdlNzkwSTd6amZMZ3JTUTNWTzVWajhxRGNlOVQ2WGZIZEpSdnA1TjQ3RFZkWklUNEF2d2QyeV8weFdrT0dYZWJqd3NQZw": "2026-10-12T16:16+02:00"
+  "https://news.google.com/rss/articles/CBMizgFBVV95cUxQUU5mUUo2X1ZUS3ZlOWxsQU44YnJUSnRzMlhpUEFTWVJzM1BrVDhYS0ZIcjlyNVNUVzVVMEtwOTJqWnhCOElRdVhSc2xTOGh6TWJrZ20zQ053RjU3MDZJOGZEczFDYmxBekt6Smk1UlZnYzhrRERsTzV3bW92XzE5WlJDWUhtTlVDUDdlNzkwSTd6amZMZ3JTUTNWTzVWajhxRGNlOVQ2WGZIZEpSdnA1TjQ3RFZkWklUNEF2d2QyeV8weFdrT0dYZWJqd3NQZw": "2026-10-12T16:16+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/finisce-con-lauto-fuori-strada-90enne-morto-nel-parmense_d1e7f721-d1e7-4ff1-b592-a6891780dbfa.html": "2026-10-12T20:05+02:00",
+  "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWVdoYV85WjJUMnVDeUhndGtMRVlNeDZKOG15N0dwd0tUUlhsbTNXenlCazJfczN0TWpRdWhRWGRFVHVVOGVYNnRDc0lCem15TzlkaTRTXzBJUmo4b3o1cGdLdzh5VFV2YU1FeDUyTmdYNVpZOE85ckZhUS1uZXVWVjlrc0RDNEE": "2026-10-12T20:05+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/de-pascale-parole-gravissime-di-meghnagi-contro-reggio-emilia_5ff87889-17a6-452d-9b51-aaf1e3bad4a1.html": "2026-10-12T20:05+02:00",
+  "https://www.adnkronos.com/economia/linea-bologna-rimini-ritardi-treni_10TQ49GBdFmCAxWrgBL1vv": "2026-10-12T20:05+02:00",
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxQeXVMcXJnRk5BVlZfSklwQllVVzl5b29BNFQtaVU5cW9EUmgzVlo4YXZ4bWxDNkM0dzhQUWNHZGw5dVFlMU15RVZySm1BR1oyRDNINGt3aC1SSDF3ZDZlMXBaZlB1U1N3UTJ3enB0OGNEd09nUE1QWXFIclpTS0VaMzlJMlVwSGI1T3NWYkFlTHMxWWtQMEpRTHp2VWtUWlFuZlBiUHhTSQ": "2026-10-12T20:05+02:00",
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMHE2bVNMY3JOZnRhSS1DeVM0S3FxbFNGZ256eVQ2c3d3S2xqMWRlVzYxSFNOM3d2LXBrOV8xdkFMd1c3UW9zWkY4YURrQ2RhWVY4OGhwNG1Tc0ZqVXBOSjNsZlp6d0Jpckg3cWdNYlRYWWRZNU5GRXo0Yzl3cWgxVE9UdEo0bDFNQTJWVkF3SmRNSzNCSGhrSDhURmRIV1pjdnZWckJBRG1NQWdWQ1dWeDk4M0pHdjhQUnZEUnhwcw": "2026-10-12T20:05+02:00",
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNZW1DalBoazJTSjBwVHN5V09XVmVIdmdZaWxLQXJXWUUyVWU4RHZ0bXRwZ2hHZ3BhTktUM1lDZkNVUlE1ZGRhQXNZNDItc1lzbk04SG5QUXR4eDFQa01leG82S3F6WlprR0hzaVp3WDNTR0VkWTZRNlZqekJhRXBWbzFPVGRSS2tTLU14MFNKandVNGJ3ZnNsRXlLcG9OS0tFcFlVZ1dzV0JiNENrd091T3kwSktOeWw0elJPTFZWZ1Frc051N2EtMTlSUk5ReVZH": "2026-10-12T20:05+02:00"
  },
- "updated": "2026-10-12T16:16+02:00",
- "next": "alle 20",
+ "updated": "2026-10-12T20:05+02:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-12T16:16+02:00",
-  "articles": 17,
-  "items": 6,
+  "at": "2026-10-12T20:05+02:00",
+  "articles": 7,
+  "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -180,69 +205,69 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 25,
-    "kept": 7
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 49,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 1
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
+    "items": 23,
     "kept": 2
    },
    {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 58,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 1
+   },
+   {
     "agency": "Adnkronos",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "askanews",
     "channel": "feed diretto",
-    "status": "HTTP 403",
+    "status": "errore: ReadTimeout",
     "items": 0,
     "kept": 0
    },
@@ -258,35 +283,35 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Dagospia",
