@@ -1,6 +1,33 @@
 {
  "items": [
   {
+   "t": "2026-10-12T12:08+02:00",
+   "cat": "Cronaca",
+   "title": "Disagi sull'Alta Velocità",
+   "links": [
+    "https://www.dire.it/12-10-2026/1275451-treni-mattinata-di-disagi-sullalta-velocita-a-bologna-ritardi-di-oltre-60-minuti-verso-milano"
+   ],
+   "html": "<strong>Disagi sull'Alta Velocità</strong> — Bologna: ritardi di oltre 60 minuti per i treni diretti a Milano a causa di un inconveniente tecnico sulla linea Roma-Napoli. <span class=\"src\">Fonte: <a href=\"https://www.dire.it/12-10-2026/1275451-treni-mattinata-di-disagi-sullalta-velocita-a-bologna-ritardi-di-oltre-60-minuti-verso-milano/\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
+   "t": "2026-10-12T12:08+02:00",
+   "cat": "Cronaca",
+   "title": "Multe annullate per errore di trascrizione",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/cambia-auto-e-prende-165-multe-in-4-mesi-ma-e-un-errore-annullate_20b65f92-b6d1-40dc-b192-57b33566ec45.html"
+   ],
+   "html": "<strong>Multe annullate per errore di trascrizione</strong> — Bologna: una donna con contrassegno disabili ha ricevuto 165 multe per un totale di 10.800 euro a causa di un errore di trascrizione della targa della sua nuova auto, poi annullate dal giudice di pace. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/12/cambia-auto-e-prende-165-multe-in-4-mesi-ma-e-un-errore-annullate_20b65f92-b6d1-40dc-b192-57b33566ec45.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-12T12:08+02:00",
+   "cat": "Cronaca",
+   "title": "Confisca definitiva di immobile della 'Ndrangheta",
+   "links": [
+    "https://www.italpress.com/ndrangheta-confisca-definitiva-di-un-immobile-da-650-mila-euro-nel-bolognese"
+   ],
+   "html": "<strong>Confisca definitiva di immobile della 'Ndrangheta</strong> — Bentivoglio (Bologna): un immobile di pregio del valore di 650 mila euro, riconducibile a un narcotrafficante internazionale, è stato confiscato definitivamente. <span class=\"src\">Fonte: <a href=\"https://www.italpress.com/ndrangheta-confisca-definitiva-di-un-immobile-da-650-mila-euro-nel-bolognese/\" target=\"_blank\" rel=\"noopener\">Italpress</a></span>"
+  },
+  {
    "t": "2026-10-12T08:15+02:00",
    "cat": "Cronaca",
    "title": "Calciatore Berardi e la moglie soccorrono una persona",
@@ -62,23 +89,27 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/11/due-pmi-romagnole-curano-infrastruttura-tecncologica-gp-singapore_aab66eb4-fb3c-47ec-880a-0cbc2028eb31.html": "2026-10-12T00:13+02:00",
   "https://news.google.com/rss/articles/CBMiygFBVV95cUxQeXhsYW5sZmp2czdJa3UxX0x1N3JmSzRLeDd3YzlMc0s3TUlQc00xWlp6TWhwVzZkOFdBdFZZTTZpazRMc2hJUlRwRjd0aWpmelVocERjUjFaZ2ZsTXd5c2Nnc2t6VGxsazc1UzAwNS1GcHlsd3lJejlJRDE4dkVJcFluYXRYSVZUTkhPTW1wWmNocHJFUzkxWEJMQU5ZcGtoQThDcVdHelRxQ0VUT25YbW43ZWE0SWhzVWNMRE9VM2hfRkJRNW5UeXZn": "2026-10-12T00:13+02:00",
   "https://news.google.com/rss/articles/CBMib0FVX3lxTE1tN2N3WVZJeXh0WDRMNHBGMm0wa3lsY21ucHQ4LW1xNjJBVzV5Q0JsRUstU3NsM181Y3hhWmdnRUN3Y2Q5RDdqcFAwRTN4VU9EX0FHODJZcG9iZUFnSjlrOW5wQmw5Q1B1c3YtS29Qbw": "2026-10-12T08:15+02:00",
-  "https://news.google.com/rss/articles/CBMikwFBVV95cUxOa0YwdE9MU05nUmhMdE1LaUpCc0RUZDFWMVVUT3FnUkRQbXY3MVhxdC1tdnFJWUs3MnFzMHhBY2x4ZnA3dFBNa21qT3J4S0lPaUY0SHM1X2lPSTRCM2hVZ0RrQk1yaU5hNnRoekxsMjEwNDdXT3dCa1ZvbUhCRG1FUXhkYjM0S0wxV01VYmh6RXpISDQ": "2026-10-12T08:15+02:00"
+  "https://news.google.com/rss/articles/CBMikwFBVV95cUxOa0YwdE9MU05nUmhMdE1LaUpCc0RUZDFWMVVUT3FnUkRQbXY3MVhxdC1tdnFJWUs3MnFzMHhBY2x4ZnA3dFBNa21qT3J4S0lPaUY0SHM1X2lPSTRCM2hVZ0RrQk1yaU5hNnRoekxsMjEwNDdXT3dCa1ZvbUhCRG1FUXhkYjM0S0wxV01VYmh6RXpISDQ": "2026-10-12T08:15+02:00",
+  "https://www.italpress.com/ndrangheta-confisca-definitiva-di-un-immobile-da-650-mila-euro-nel-bolognese": "2026-10-12T12:08+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/cambia-auto-e-prende-165-multe-in-4-mesi-ma-e-un-errore-annullate_20b65f92-b6d1-40dc-b192-57b33566ec45.html": "2026-10-12T12:08+02:00",
+  "https://www.dire.it/12-10-2026/1275451-treni-mattinata-di-disagi-sullalta-velocita-a-bologna-ritardi-di-oltre-60-minuti-verso-milano": "2026-10-12T12:08+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/mostra-darte-quasi-dautore-ospiti-casa-di-riposo-reinterpretano-grandi-opere_d9767271-dba6-498d-b584-312311716ab8.html": "2026-10-12T12:08+02:00"
  },
- "updated": "2026-10-12T08:15+02:00",
- "next": "alle 12",
+ "updated": "2026-10-12T12:08+02:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-12T08:15+02:00",
-  "articles": 2,
-  "items": 1,
-  "model": "gemini-3.5-flash-lite",
+  "at": "2026-10-12T12:08+02:00",
+  "articles": 4,
+  "items": 3,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 21,
-    "kept": 0
+    "items": 24,
+    "kept": 2
    },
    {
     "agency": "ANSA",
@@ -91,7 +122,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 13,
+    "items": 35,
     "kept": 0
    },
    {
@@ -162,27 +193,27 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
-    "items": 51,
+    "items": 59,
     "kept": 0
    },
    {
@@ -190,7 +221,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 1,
-    "kept": 1
+    "kept": 0
    }
   ]
  },
