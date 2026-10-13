@@ -1,6 +1,33 @@
 {
  "items": [
   {
+   "t": "2026-10-13T12:07+02:00",
+   "cat": "",
+   "title": "Cassazione annulla sospensione per dottoresse indagate",
+   "links": [
+    "https://www.ansa.it/sito/notizie/cronaca/2026/10/13/certificati-e-cpr-cassazione-annulla-la-sospensione-per-tre-dottoresse_304de9d7-9050-4e68-8717-1ff9d953873c.html"
+   ],
+   "html": "<strong>Cassazione annulla sospensione per dottoresse indagate</strong> — Bologna: la Corte di Cassazione ha annullato, con rinvio ad un nuovo giudizio del tribunale del Riesame di Bologna, il provvedimento sulle misure cautelari interdittive per tre dottoresse indagate dalla Procura di Ravenna nell'inchiesta sui certificati per evitare il Centro di permanenza per il rimpatrio. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/sito/notizie/cronaca/2026/10/13/certificati-e-cpr-cassazione-annulla-la-sospensione-per-tre-dottoresse_304de9d7-9050-4e68-8717-1ff9d953873c.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-13T12:07+02:00",
+   "cat": "",
+   "title": "Hera fornirà energia verde al supercomputer Leonardo",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/13/da-hera-energia-verde-per-il-supercomputer-leonardo-di-bologna_ab3a5f8b-0543-4a40-9623-9c21b9ee38bf.html"
+   ],
+   "html": "<strong>Hera fornirà energia verde al supercomputer Leonardo</strong> — Bologna: il supercomputer Leonardo del Cineca al Tecnopolo Dama sarà alimentato in parte dall'energia rinnovabile prodotta dall'impianto agrivoltaico dell'Energy Park del Gruppo Hera, che si è aggiudicata la gara da 73,5 milioni di euro. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/13/da-hera-energia-verde-per-il-supercomputer-leonardo-di-bologna_ab3a5f8b-0543-4a40-9623-9c21b9ee38bf.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-13T12:07+02:00",
+   "cat": "",
+   "title": "Humanizing Health Awards: premiato progetto di sostegno psicologico",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/13/a-milano-gli-humanizing-health-awards-per-cure-piu-umane_fcbf3591-f458-4322-98ac-b786a2bad384.html"
+   ],
+   "html": "<strong>Humanizing Health Awards: premiato progetto di sostegno psicologico</strong> — Ravenna: un progetto di sostegno psicologico ai caregiver attraverso la vela è stato premiato a Milano con 10mila euro agli Humanizing Health Awards. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/13/a-milano-gli-humanizing-health-awards-per-cure-piu-umane_fcbf3591-f458-4322-98ac-b786a2bad384.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-13T00:13+02:00",
    "cat": "Economia",
    "title": "Italo espande la rete intermodale",
@@ -224,36 +251,45 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/scontro-fra-auto-e-camion-nel-bolognese-morto-un-52enne_d1c16db3-9611-45b5-bd32-02d8ca2b9b69.html": "2026-10-13T00:13+02:00",
   "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdGpQbDFycTZjQ3FlcnVWNkFWRlh4WWVmNmdQcDQ1Wk1icjg2OGg1XzlIeEVwdk5FYmVTQ0RjZjBlMkVZTm9Hc1VRbGdpMHhBWFhYcVdvMTg3ODEwRi11Qm1DdTBxOUhvcW5CU1lZRE1lRlMtakliNzZCVDFET2lFMkhxbHYzZVNBZHZEYUp4WERtVzYwSzZz": "2026-10-13T00:13+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/la-moglie-di-dassilva-accusata-da-manuela-bianchi-cadono-alcuni-reati_c9eb6bb6-c079-480e-8555-a5a263fc2dbb.html": "2026-10-13T00:13+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/riempi-il-piatto-vuoto-3.000-piatti-in-piazza-maggiore-a-bologna-contro-la-fame_d0fcf150-8cbe-479a-af95-48c1583ed963.html": "2026-10-13T00:13+02:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/riempi-il-piatto-vuoto-3.000-piatti-in-piazza-maggiore-a-bologna-contro-la-fame_d0fcf150-8cbe-479a-af95-48c1583ed963.html": "2026-10-13T00:13+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/13/da-hera-energia-verde-per-il-supercomputer-leonardo-di-bologna_ab3a5f8b-0543-4a40-9623-9c21b9ee38bf.html": "2026-10-13T12:07+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/13/certificati-e-cpr-cassazione-annulla-la-sospensione-per-tre-dottoresse_304de9d7-9050-4e68-8717-1ff9d953873c.html": "2026-10-13T12:07+02:00",
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOcnhBeDJYYVFOYVNDNXZUNmFUVVI2TG5JRkgwN1RzRnQyY2p1Mm9DZ3ZpMUZnWEo0TVZjdVR1ZmVvQzJVZklNXzgtT0ZJckozRW1aTUVIa2xnaTRCeUQ5UktubWlGeFRNYjZhQXRCN2R4dl8xOWNFNzZPY3BycGxHZlJFT3RxdzF2RndTYWhsZnRGandZcnFNdXk2VmloQ1hNNFpSR01rdzhqb0VIUEl3YkxhcEpLbWxUcVpRbnZUdEtqNXZETi1VU3JsdjlsTjdNVWpldTUtcw": "2026-10-13T12:07+02:00",
+  "https://news.google.com/rss/articles/CBMijgJBVV95cUxQU1RRV3RhMHFJRktXazB5LWJ0OXhkOFMzZEdUOFJwSU1aZ080S3BqczN3VzF0dzY0cHlmX2hDdlotNm1IbUJUT05zNDNDckUtcVpQUExsM2FQaTZZbUtidU51ODAxa3NicnhHWFd0clhRbnJKVm5RbGlxWGVmeWd5dkw5QVI4dlNfZDZ4dUFvWDRHazJVMnJfOEp1Q01jTmhwcldvWlJMb2FqM1pVWXl0V3pQYUNsSUZzUVhmTG5ObUpyaUF1YkNlZzFERWpqNWdmOXNmUGxfeENBcHZseTdENlVZVkl6QVZfQ0xJalg4WUczc3RnNVE0NklNRGQ0Tk5TU0RaOTh3VXY5YU1aNGc": "2026-10-13T12:07+02:00",
+  "https://news.google.com/rss/articles/CBMioAJBVV95cUxOYmRLTmRUTXlmSUNncjhLN2I4T0JLNGpjcUw4N1dWSmdNZUd4Q0tjN0hSZmt1ZXhfeEwwSS1QbTJyS2Q2LTlLcnBRMmhNMDZBei0zVTR3MGNGblE1RXdOYVpmdlBZSFdCaTd5dUdHYVdMRk5sTnBDVTZEVlRnMzNEWW9qa1BNTmdlRERWSTE3Y192V0I1cEwwcWhiMmJ0dE5BNkNRSFQ4ZUtRV1pRN1lJb2JHNGY4TFNQN3BQRWJxOWtHdG9VY1pLT1VxcGVWcXlKYWhoVjVwTXZTSlpSUUxiVkFNNkx1YWs2NG5uTVZOeTZjSmoyU21KV3VZVVpjYkFReXhIZkYxdHk2ZEhQaXNtcWNqMlBUQ0RsTGtETmkzQko": "2026-10-13T12:07+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/13/a-milano-gli-humanizing-health-awards-per-cure-piu-umane_fcbf3591-f458-4322-98ac-b786a2bad384.html": "2026-10-13T12:07+02:00",
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxQNHRnX3FZTXc3anJ1LTk2cGtUVDJZZkhBZzkyQ2RaTXByektqUkEza3ZwRzZ3UGVVMThDUUt6RGktZXpienNXOHc2eEJPclNYSGUxcWItcGhPa05GclpiYTEzZEJ2WG1ZMW9kZE1MZktNZFNKZHFNdlBQdWNGQm5EdHhLRW5LcjFSSWgzUlJnMTdySnRrNmpPWTZJcw": "2026-10-13T12:07+02:00",
+  "https://www.italpress.com/il-mediterraneo-guarda-al-futuro-ravenna-ospita-omc-med-energy-2027": "2026-10-13T12:07+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/13/certificati-e-cpr-cassazione-annulla-la-sospensione-per-tre-dottoresse_a3ce8359-8cf7-4013-92b8-e462dd010fe1.html": "2026-10-13T12:07+02:00"
  },
- "updated": "2026-10-13T08:13+02:00",
- "next": "alle 12",
+ "updated": "2026-10-13T12:07+02:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-13T08:13+02:00",
-  "articles": 0,
-  "items": 0,
-  "model": null,
+  "at": "2026-10-13T12:07+02:00",
+  "articles": 9,
+  "items": 3,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 23,
-    "kept": 0
+    "items": 25,
+    "kept": 3
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 60,
+    "items": 58,
     "kept": 0
    },
    {
@@ -274,7 +310,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 51,
+    "items": 43,
     "kept": 0
    },
    {
@@ -296,7 +332,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 3
    },
    {
     "agency": "askanews",
@@ -317,14 +353,14 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
