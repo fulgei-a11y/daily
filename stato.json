@@ -1,12 +1,12 @@
 {
- "date": "2026-10-12",
- "slot": "19",
- "generated": "2026-10-12T19:09+02:00",
- "articles": 244,
- "items": 35,
+ "date": "2026-10-13",
+ "slot": "mattina",
+ "generated": "2026-10-13T06:17+02:00",
+ "articles": 327,
+ "items": 204,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 38,
+ "feeds_ok": 26,
  "feeds_total": 39,
  "feeds": [
   {
@@ -174,74 +174,74 @@
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Reggio Emilia",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Parma",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Piacenza",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Reggio Emilia",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Modena",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Ferrara",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   }
  ]
 }
