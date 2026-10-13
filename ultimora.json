@@ -226,13 +226,13 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/la-moglie-di-dassilva-accusata-da-manuela-bianchi-cadono-alcuni-reati_c9eb6bb6-c079-480e-8555-a5a263fc2dbb.html": "2026-10-13T00:13+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/12/riempi-il-piatto-vuoto-3.000-piatti-in-piazza-maggiore-a-bologna-contro-la-fame_d0fcf150-8cbe-479a-af95-48c1583ed963.html": "2026-10-13T00:13+02:00"
  },
- "updated": "2026-10-13T00:13+02:00",
- "next": "alle 8",
+ "updated": "2026-10-13T08:13+02:00",
+ "next": "alle 12",
  "last_run": {
-  "at": "2026-10-13T00:13+02:00",
-  "articles": 7,
-  "items": 3,
-  "model": "gemini-2.5-flash",
+  "at": "2026-10-13T08:13+02:00",
+  "articles": 0,
+  "items": 0,
+  "model": null,
   "fallback": false,
   "feeds": [
    {
@@ -240,7 +240,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 23,
-    "kept": 4
+    "kept": 0
    },
    {
     "agency": "ANSA",
@@ -274,7 +274,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 59,
+    "items": 51,
     "kept": 0
    },
    {
@@ -296,7 +296,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -324,7 +324,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Italpress",
