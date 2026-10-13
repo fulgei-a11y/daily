@@ -1,12 +1,12 @@
 {
  "date": "2026-10-13",
- "slot": "mattina",
- "generated": "2026-10-13T06:17+02:00",
- "articles": 327,
- "items": 204,
+ "slot": "13",
+ "generated": "2026-10-13T13:17+02:00",
+ "articles": 282,
+ "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 26,
+ "feeds_ok": 38,
  "feeds_total": 39,
  "feeds": [
   {
@@ -174,74 +174,74 @@
   {
    "name": "Google News",
    "prov": "",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 10
   },
   {
    "name": "Google News",
    "prov": "Reggio Emilia",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Parma",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Piacenza",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Reggio Emilia",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Modena",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Ferrara",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "HTTP 503",
-   "items": 0
+   "status": "ok",
+   "items": 15
   }
  ]
 }
