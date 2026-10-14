@@ -1,12 +1,12 @@
 {
- "date": "2026-10-13",
- "slot": "19",
- "generated": "2026-10-13T19:10+02:00",
- "articles": 255,
- "items": 35,
+ "date": "2026-10-14",
+ "slot": "mattina",
+ "generated": "2026-10-14T06:26+02:00",
+ "articles": 380,
+ "items": 239,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 38,
+ "feeds_ok": 39,
  "feeds_total": 39,
  "feeds": [
   {
@@ -126,8 +126,8 @@
   {
    "name": "FerraraToday",
    "prov": "Ferrara",
-   "status": "HTTP 403",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "IlPiacenza",
@@ -181,7 +181,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 9
+   "items": 15
   },
   {
    "name": "Google News",
