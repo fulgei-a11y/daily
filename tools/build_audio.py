@@ -106,6 +106,8 @@ def items_from_fragment(html):
                 if "note" in (n.get("class") or []):
                     continue
                 add(n)
+            elif t == "li":  # notizia senza <ul> (stessa regola della pagina)
+                add(n)
             elif t in ("ol", "ul"):
                 for li in n.find_all("li", recursive=False):
                     add(li)
@@ -246,13 +248,11 @@ def main():
                 t += 0.15
 
     mp3 = os.path.join(a.out, f"{name}.mp3")
-    for br in ("40k", "32k", "24k"):
-        subprocess.run([
-            "ffmpeg", "-y", "-loglevel", "error", "-i", full, "-ac", "1", "-ar", "22050",
-            "-codec:a", "libmp3lame", "-b:a", br, mp3
-        ], check=True)
-        if os.path.getsize(mp3) < 14 * 1024 * 1024:
-            break
+    # 24 kbps mono: per una voce sintetica non si sente differenza e i file pesano circa un terzo in meno
+    subprocess.run([
+        "ffmpeg", "-y", "-loglevel", "error", "-i", full, "-ac", "1", "-ar", "22050",
+        "-codec:a", "libmp3lame", "-b:a", os.environ.get("AUDIO_BITRATE", "24k"), mp3
+    ], check=True)
 
     meta = {
         "date": a.date,

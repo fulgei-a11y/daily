@@ -76,6 +76,15 @@ RSS_FEEDS = [
     ("RavennaNotizie", "Ravenna", "https://cdn.ravennanotizie.it/feed"),
     ("ParmaDaily", "Parma", "https://www.parmadaily.it/feed/"),
     ("AltaRimini", "Rimini", "https://www.altarimini.it/feed/"),
+    # altre testate e tv locali (verificate il 14/10/2026)
+    ("Teleromagna", "Forlì-Cesena", "https://www.teleromagna.it/feed"),
+    ("Forlì24ore", "Forlì-Cesena", "https://www.forli24ore.it/feed/"),
+    ("Ravenna&Dintorni", "Ravenna", "https://www.ravennaedintorni.it/feed/"),
+    ("ReggioReport", "Reggio Emilia", "https://www.reggioreport.it/feed/"),
+    ("Bologna2000", "Bologna", "https://www.bologna2000.com/feed/"),
+    ("Sassuolo2000", "Modena", "https://www.sassuolo2000.it/feed/"),
+    ("Icaro TV", "Rimini", "https://www.icaro.tv/feed/"),
+    ("Modena in diretta", "Modena", "https://www.modenaindiretta.it/feed/"),
     # Google News: riempie i vuoti su Regione e Protezione civile (i link portano all'articolo originale)
     ("Google News", "", "https://news.google.com/rss/search?q=%22Regione+Emilia-Romagna%22+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "", "https://news.google.com/rss/search?q=allerta+meteo+Emilia-Romagna+when:1d&hl=it&gl=IT&ceid=IT:it"),
@@ -90,6 +99,13 @@ RSS_FEEDS = [
     ("Google News", "Modena", "https://news.google.com/rss/search?q=site:gazzettadimodena.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "Ferrara", "https://news.google.com/rss/search?q=site:lanuovaferrara.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "", "https://news.google.com/rss/search?q=site:dire.it+Emilia-Romagna+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    # fonti ufficiali (i loro siti non hanno feed utilizzabili: passano da Google News)
+    ("Google News", "", "https://news.google.com/rss/search?q=site:notizie.regione.emilia-romagna.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "", "https://news.google.com/rss/search?q=site:assemblea.emr.it+when:2d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:comune.bologna.it+when:2d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "", "https://news.google.com/rss/search?q=site:rainews.it+%22Emilia-Romagna%22+OR+Bologna+OR+Modena+OR+Parma+OR+Rimini+when:1d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "", "https://news.google.com/rss/search?q=site:questure.poliziadistato.it+(Bologna+OR+Modena+OR+Parma+OR+Reggio+OR+Ferrara+OR+Ravenna+OR+Forl%C3%AC+OR+Rimini+OR+Piacenza)+when:2d&hl=it&gl=IT&ceid=IT:it"),
+    ("Google News", "", "https://news.google.com/rss/search?q=site:arpae.it+when:3d&hl=it&gl=IT&ceid=IT:it"),
 ]
 
 # nessuna testata può occupare più di questa quota delle notizie passate a Gemini
@@ -223,6 +239,8 @@ def fetch_rss_articles(since=None, exclude=frozenset()):
     cutoff = since or NOW - dt.timedelta(hours=MAX_AGE_HOURS)
     articles, seen_links, seen_titles = [], set(), set()
     for name, url, status, items in results:
+        for a in items:
+            a["feed"] = url   # il turno nella scelta delle notizie è per feed (ogni edizione locale conta)
         kept = 0
         for a in items:
             if a["date"] and a["date"] < cutoff:
@@ -254,25 +272,27 @@ def source_key(name):
 
 
 def balance_sources(articles):
-    """Sceglie le notizie da passare a Gemini a turno tra le testate (la più recente di ciascuna,
-    poi la seconda, e così via), invece di prendere solo le più recenti in assoluto.
-    Così ogni testata conserva anche le notizie del giorno prima: prendendo solo le più recenti,
-    con tante fonti si finiva per coprire solo le ultime ore (la sera e la notte, piene di eventi
-    e sport) e la cronaca del mattino precedente restava fuori.
+    """Sceglie le notizie da passare a Gemini a turno tra i FEED (la più recente di ciascuno, poi la
+    seconda, e così via), invece di prendere solo le più recenti in assoluto: così si coprono tutte le
+    36 ore. Il turno è per feed e non per testata, perché il Resto del Carlino ha 9 edizioni locali:
+    contandolo come una sola testata finiva schiacciato (9 notizie su 380).
     Nessuna testata supera comunque MAX_SHARE del totale."""
     cap = max(20, int(MAX_ARTICLES * MAX_SHARE))
     groups = {}
     for a in articles:  # già in ordine dalla più recente
-        groups.setdefault(source_key(a["source"]), []).append(a)
+        groups.setdefault(a.get("feed") or source_key(a["source"]), []).append(a)
     kept, count, rnd = [], {}, 0
     while len(kept) < MAX_ARTICLES:
         added = False
-        for k, lst in groups.items():
-            if rnd < len(lst) and count.get(k, 0) < cap and len(kept) < MAX_ARTICLES:
-                kept.append(lst[rnd])
-                count[k] = count.get(k, 0) + 1
-                added = True
-        if not added:
+        for lst in groups.values():
+            if rnd < len(lst) and len(kept) < MAX_ARTICLES:
+                a = lst[rnd]
+                k = source_key(a["source"])
+                if count.get(k, 0) < cap:
+                    kept.append(a)
+                    count[k] = count.get(k, 0) + 1
+                    added = True
+        if not added and all(rnd >= len(l) for l in groups.values()):
             break
         rnd += 1
     kept.sort(key=lambda a: a["date"] or NOW, reverse=True)
@@ -346,6 +366,8 @@ FORMATO (HTML, solo il frammento: niente <html>, <head>, <body>, <style>, <div>,
 - Metti una provincia solo se ha notizie: niente righe tipo "nessuna notizia".
 
 SEZIONI, in quest'ordine (ometti una sezione se è vuota):
+<h2>Il punto del giorno</h2>  (UN SOLO paragrafo <p> di 4-5 frasi, senza <cite>: i fatti principali della giornata
+   raccontati come un buon direttore li riassumerebbe in apertura del giornale radio; niente commenti)
 <h2>In evidenza</h2>  (le 5-7 notizie più importanti della giornata, senza <h3>, poi NON ripeterle sotto)
 <h2>Politica e istituzioni</h2>
 <h2>Economia, lavoro e imprese</h2>
@@ -443,6 +465,22 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
     return None
 
 
+def wrap_orphan_li(s):
+    """Gemini a volte scrive le <li> senza la <ul> che le contiene: le notizie diventerebbero
+    invisibili per la pagina e per l'audio (successo il 13/10 alle 13). Qui le racchiudiamo."""
+    parts = re.split(r"(<ul\b[^>]*>|</ul>|<ol\b[^>]*>|</ol>)", s, flags=re.I)
+    depth, out = 0, []
+    for p in parts:
+        if re.match(r"<(ul|ol)\b", p, flags=re.I):
+            depth += 1
+        elif re.match(r"</(ul|ol)>", p, flags=re.I):
+            depth = max(0, depth - 1)
+        elif depth == 0:
+            p = re.sub(r"((?:\s*<li\b.*?</li>)+)", r"\n<ul>\1\n</ul>", p, flags=re.S | re.I)
+        out.append(p)
+    return "".join(out)
+
+
 def finalize_html(raw, articles):
     """Pulisce l'HTML del modello e trasforma <cite>n</cite> in link alle fonti."""
     s = re.sub(r"^```(?:html)?\s*|\s*```$", "", raw.strip())
@@ -454,6 +492,7 @@ def finalize_html(raw, articles):
     i = s.find("<h2")
     if i > 0:
         s = s[i:]
+    s = wrap_orphan_li(s)
 
     def repl(m):
         nums = []
