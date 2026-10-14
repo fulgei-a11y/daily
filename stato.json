@@ -1,12 +1,12 @@
 {
  "date": "2026-10-14",
- "slot": "13",
- "generated": "2026-10-14T13:28+02:00",
- "articles": 274,
+ "slot": "19",
+ "generated": "2026-10-14T19:21+02:00",
+ "articles": 242,
  "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 36,
+ "feeds_ok": 38,
  "feeds_total": 39,
  "feeds": [
   {
@@ -78,8 +78,8 @@
   {
    "name": "ModenaToday",
    "prov": "Modena",
-   "status": "HTTP 403",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "RiminiToday",
@@ -102,8 +102,8 @@
   {
    "name": "ForlìToday",
    "prov": "Forlì-Cesena",
-   "status": "HTTP 403",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "PiacenzaSera",
@@ -181,7 +181,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 11
   },
   {
    "name": "Google News",
