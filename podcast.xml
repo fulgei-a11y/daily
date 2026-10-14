@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rassegna ER</title>
+    <link>https://fulgei-a11y.github.io/rassegna/</link>
+    <atom:link href="https://fulgei-a11y.github.io/rassegna/podcast.xml" rel="self" type="application/rss+xml"/>
+    <language>it</language>
+    <description>La rassegna stampa quotidiana dell'Emilia-Romagna letta da Paola: l'edizione del mattino e gli aggiornamenti delle 13 e delle 19, provincia per provincia.</description>
+    <itunes:summary>La rassegna stampa quotidiana dell'Emilia-Romagna: ogni mattina e alle 13 e alle 19.</itunes:summary>
+    <itunes:author>Rassegna ER</itunes:author>
+    <itunes:image href="https://fulgei-a11y.github.io/rassegna/icons/podcast-1400.png"/>
+    <image><url>https://fulgei-a11y.github.io/rassegna/icons/podcast-1400.png</url><title>Rassegna ER</title><link>https://fulgei-a11y.github.io/rassegna/</link></image>
+    <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <lastBuildDate>Wed, 14 Oct 2026 22:46:10 +0200</lastBuildDate>
+    <item>
+      <title>Aggiornamento delle 19 · mercoledì 14 ottobre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente mortale in A1; Sviluppi: Condannato per scontri dopo morte Fakir; Raffica di incidenti stradali; Rapina impropria con coltello; Donna ustionata in casa; Anziani soccorsi nel solaio.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-14</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-14-19</guid>
+      <pubDate>Wed, 14 Oct 2026 19:21:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-14-19.mp3" length="2893811" type="audio/mpeg"/>
+      <itunes:duration>578</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 13 · mercoledì 14 ottobre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Truffa con carta di credito; Omicidio a Cervia, esclusa caduta accidentale; Uomo investito e ucciso; Due anziani soccorsi in casa dopo una caduta; Auto rubata intercettata, due denunciati; Persecuzione dopo la separazione.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-14</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-14-13</guid>
+      <pubDate>Wed, 14 Oct 2026 13:28:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-14-13.mp3" length="3037745" type="audio/mpeg"/>
+      <itunes:duration>607</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · mercoledì 14 ottobre 2026</title>
+      <description>240 notizie dall&#x27;Emilia-Romagna. In apertura: Regione Emilia-Romagna rafforza controlli antimafia con 18 specialisti; Ospedale Maggiore di Parma nella top ten dei policlinici italiani; Liceo Laura Bassi occupato a Bologna, prima mobilitazione dell&#x27;anno; Cassazione annulla sospensioni cautelari per medici indagati sui certificati per i Cpr; Regione Emilia-Romagna stanzia 27 milioni per riqualificazione alberghiera; Piacenza: firmato protocollo per contrastare il fenomeno Neet.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-14</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-14</guid>
+      <pubDate>Wed, 14 Oct 2026 06:26:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-14.mp3" length="14629425" type="audio/mpeg"/>
+      <itunes:duration>3657</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 19 · martedì 13 ottobre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Antimafia, personale regionale alle prefetture; Furto di rame all&#x27;acquedotto sventato; Rissa in via Mazzini, ferito un bambino; Rissa alla stazione degli autobus; Incidente con droga nello scooter; Razzia di metalli nell&#x27;isola ecologica.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-13</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-13-19</guid>
+      <pubDate>Tue, 13 Oct 2026 19:10:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-13-19.mp3" length="2884406" type="audio/mpeg"/>
+      <itunes:duration>576</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 13 · martedì 13 ottobre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Rapina a mano armata in gioielleria; Tentato furto di monopattino con spray urticante; Aggressione su autobus; Sospensione revocata per dottoresse indagate; Indagini sul terzo telefono di Fakir; Bus bloccato da passeggero senza biglietto.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-13</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-13-13</guid>
+      <pubDate>Tue, 13 Oct 2026 13:17:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-13-13.mp3" length="1598059" type="audio/mpeg"/>
+      <itunes:duration>532</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · martedì 13 ottobre 2026</title>
+      <description>205 notizie dall&#x27;Emilia-Romagna. In apertura: Screening neonatale per la Leucodistrofia Metacromatica; Allarme trasporto pubblico locale: perdite per 10 milioni di euro; Criminalità in Emilia-Romagna: denunce in aumento, Bologna quarta in Italia; Rapina a mano armata alla gioielleria Stroili Oro; Incidente al Rallylegend di San Marino: due feriti gravi, governo avvia verifiche; Tragedia all&#x27;Interporto: muore 52enne in scontro auto-camion.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-13</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-13</guid>
+      <pubDate>Tue, 13 Oct 2026 06:17:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-13.mp3" length="11042030" type="audio/mpeg"/>
+      <itunes:duration>3680</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 19 · lunedì 12 ottobre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente mortale a Bentivoglio; Rapine in casa con adescamento online; Minacce a Manuela Bianchi, cade accusa di diffamazione; Nonno a processo per stalking dopo tragedia via delle Piante; Motociclista grave dopo scontro sulla Statale 45; Incendio in casa di riposo a Guastalla.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-12</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-12-19</guid>
+      <pubDate>Mon, 12 Oct 2026 19:09:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-12-19.mp3" length="3097957" type="audio/mpeg"/>
+      <itunes:duration>619</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 13 · lunedì 12 ottobre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente domestico fatale a Verucchio; Tredici incidenti stradali nel weekend; Guida in stato di ebbrezza a Fiorenzuola; Donna morta in incendio domestico; Truffa ad anziana con finti medici; Aumento denunce di reato a Ravenna.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-12</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-12-13</guid>
+      <pubDate>Mon, 12 Oct 2026 13:17:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-12-13.mp3" length="2825500" type="audio/mpeg"/>
+      <itunes:duration>565</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · lunedì 12 ottobre 2026</title>
+      <description>154 notizie dall&#x27;Emilia-Romagna. In apertura: Bufera su Reggio Children per la visita di insegnanti ebrei; Aumentano gli infortuni sul lavoro, calano i decessi nel Ferrarese e Modenese; Papa Leone XIV annuncia operazione per nodulo al polmone; Nave Amerigo Vespucci a Marina di Ravenna: boom di richieste e sito in tilt; Asili nido, la Regione Emilia-Romagna stanzia 37,2 milioni di euro; Oliver Stone saluta Ferrara dopo una settimana di rassegna cinematografica.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-12</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-12</guid>
+      <pubDate>Mon, 12 Oct 2026 06:16:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-12.mp3" length="11764080" type="audio/mpeg"/>
+      <itunes:duration>2352</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 19 · domenica 11 ottobre 2026</title>
+      <description>27 notizie dall&#x27;Emilia-Romagna. In apertura: Arresti per spaccio e denuncia per tentata rapina; Donna grave dopo incidente stradale; Rissa tra gruppi di giovani; Controlli straordinari del territorio; Escursionisti punti da calabroni; Infortunio in gara di mountain bike.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-11</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-11-19</guid>
+      <pubDate>Sun, 11 Oct 2026 19:07:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-11-19.mp3" length="2505762" type="audio/mpeg"/>
+      <itunes:duration>501</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 13 · domenica 11 ottobre 2026</title>
+      <description>64 notizie dall&#x27;Emilia-Romagna. In apertura: Indagata marescialla dei Carabinieri per falsa paternità; Reggio Children: educatori ebrei annullano visita per richiesta di presa di distanza da occupazione Gaza; Sviluppi: Sindaco Lepore commenta il ritiro di Casini dalla politica; Incidente stradale a Chiavenna Landi, donna ferita; Chiusure notturne A14 tra Cesena nord e Forlì; Chiusure notturne D14 Diramazione per Ravenna.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-11</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-11-13</guid>
+      <pubDate>Sun, 11 Oct 2026 13:14:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-11-13.mp3" length="4993664" type="audio/mpeg"/>
+      <itunes:duration>998</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · domenica 11 ottobre 2026</title>
+      <description>176 notizie dall&#x27;Emilia-Romagna. In apertura: Cadavere nel laghetto di Osteria Grande; Scontro tra due ultraleggeri a Sassuolo, un ferito; Corteo pro Palestina a Bologna; Legionella nelle scuole di Copparo; Ex prefetto Rinaldo Argentieri è deceduto; Crisi abitativa a Bologna: proposte del sindaco Lepore.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-11</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-11</guid>
+      <pubDate>Sun, 11 Oct 2026 06:13:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-11.mp3" length="12474349" type="audio/mpeg"/>
+      <itunes:duration>2494</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 19 · sabato 10 ottobre 2026</title>
+      <description>40 notizie dall&#x27;Emilia-Romagna. In apertura: Scontro aereo ultraleggero; Cadavere nel laghetto; Proteste contro delegazione israeliana; Manifestazione pro-Palestina e contro aggressioni omofobe; Furto in villa; Carabinieri feriti in Appennino.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-10</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-10-19</guid>
+      <pubDate>Sat, 10 Oct 2026 19:06:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-10-19.mp3" length="3501680" type="audio/mpeg"/>
+      <itunes:duration>700</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Aggiornamento delle 13 · sabato 10 ottobre 2026</title>
+      <description>31 notizie dall&#x27;Emilia-Romagna. In apertura: Dimissioni Sovrintendente Teatro Comunale; Sicurezza sul lavoro e appalti irregolari; Assalto a bancomat con esplosivo; Aggressione autista bus e &quot;Panic Button&quot;; Infortuni sul lavoro in Romagna; Chiusura strada San Martino di Mugnano.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-10</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-10-13</guid>
+      <pubDate>Sat, 10 Oct 2026 13:58:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-10-13.mp3" length="3545435" type="audio/mpeg"/>
+      <itunes:duration>709</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · sabato 10 ottobre 2026</title>
+      <description>201 notizie dall&#x27;Emilia-Romagna. In apertura: Corte Costituzionale boccia legge regionale sugli affitti brevi; Stop ad abbattimenti di alberi al Bosco Ospizio; Incendio in appartamento a San Lazzaro di Savena; Bologna omaggia Francesco Guccini con eventi e luminarie; Astra Veicoli Industriali celebra 80 anni di attività; Mercato ortofrutticolo di Cesena riqualificato con fondi Pnrr.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-10</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-10</guid>
+      <pubDate>Sat, 10 Oct 2026 09:59:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-10.mp3" length="13481370" type="audio/mpeg"/>
+      <itunes:duration>2696</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · venerdì 9 ottobre 2026</title>
+      <description>196 notizie dall&#x27;Emilia-Romagna. In apertura: Maxi sequestro di hashish a Bologna: sei arresti; Municipio di Sant&#x27;Agata sul Santerno riapre dopo l&#x27;alluvione; Cassazione conferma ergastolo per duplice femminicidio a Cavazzona; Sospesa amministrazione giudiziaria per Gruppo 8 a Forlì; Allerta meteo arancione in Emilia-Romagna per venerdì 9 ottobre; Nuovo ospedale di Mirandola: posti letto ridotti e carenza di personale.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-09</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-09</guid>
+      <pubDate>Fri, 09 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-09.mp3" length="13350496" type="audio/mpeg"/>
+      <itunes:duration>2670</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · giovedì 8 ottobre 2026</title>
+      <description>159 notizie dall&#x27;Emilia-Romagna. In apertura: Fondo regionale per la non autosufficienza 2026: quasi 594 milioni di euro; Campagna vaccinale antinfluenzale e anti-Covid al via dal 12 ottobre; Electrolux: esuberi a 1.250, Forlì tra gli stabilimenti più colpiti; Duplice femminicidio a Castelfranco Emilia: confermato l&#x27;ergastolo in Cassazione; Energy Dome inaugura hub manifatturiero a Piacenza con 6,5 milioni di investimenti; Bologna: arriva il &quot;bici velox&quot; per controllare le e-bike modificate.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-08</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-08</guid>
+      <pubDate>Thu, 08 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-08.mp3" length="12667655" type="audio/mpeg"/>
+      <itunes:duration>2533</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · mercoledì 7 ottobre 2026</title>
+      <description>104 notizie dall&#x27;Emilia-Romagna.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-07</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-07</guid>
+      <pubDate>Wed, 07 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-07.mp3" length="4917517" type="audio/mpeg"/>
+      <itunes:duration>983</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · martedì 6 ottobre 2026</title>
+      <description>126 notizie dall&#x27;Emilia-Romagna.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-06</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-06</guid>
+      <pubDate>Tue, 06 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-06.mp3" length="5373223" type="audio/mpeg"/>
+      <itunes:duration>1074</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · lunedì 5 ottobre 2026</title>
+      <description>95 notizie dall&#x27;Emilia-Romagna.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-05</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-05</guid>
+      <pubDate>Mon, 05 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-05.mp3" length="5037941" type="audio/mpeg"/>
+      <itunes:duration>1007</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · domenica 4 ottobre 2026</title>
+      <description>86 notizie dall&#x27;Emilia-Romagna.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-04</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-04</guid>
+      <pubDate>Sun, 04 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-04.mp3" length="4857304" type="audio/mpeg"/>
+      <itunes:duration>971</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · sabato 3 ottobre 2026</title>
+      <description>86 notizie dall&#x27;Emilia-Romagna. In apertura: Strage di via Emilia, El Koudri capace di intendere e di volere; Liceo Ariosto, il 22enne resta in carcere; Bologna, corteo per «Lince» senza scontri; de Pascale attacca il Viminale sul Cpr; Morto in cantiere a Faenza, ha un nome la vittima; Trevi, Webuild non rilancia ma abbassa la soglia; Giro dell&#x27;Emilia.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-03</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-03</guid>
+      <pubDate>Sat, 03 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-03.mp3" length="8195753" type="audio/mpeg"/>
+      <itunes:duration>1639</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · venerdì 2 ottobre 2026</title>
+      <description>90 notizie dall&#x27;Emilia-Romagna. In apertura: Morto sul lavoro a Faenza; Bosco di Ospizio a Reggio Emilia; Un Cpr a Bologna?; Accoltellamento al liceo Ariosto di Ferrara; Coperion di Ferrara verso una chiusura gestita; Sciopero nazionale plurisettoriale (CSLE).</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-02</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-02</guid>
+      <pubDate>Fri, 02 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-02.mp3" length="7565027" type="audio/mpeg"/>
+      <itunes:duration>1512</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Rassegna del mattino · giovedì 1 ottobre 2026</title>
+      <description>116 notizie dall&#x27;Emilia-Romagna. In apertura: Ferrara, studente di 15 anni accoltellato nei bagni del liceo Ariosto.; Bologna, accordo BolognaFiere–Bologna FC per il nuovo stadio in Fiera.; Strage di Ustica, la Procura di Roma ritira la richiesta di archiviazione.; Modena, 21enne in fuga dalla Polizia passa col rosso e travolge due auto: 5 feriti, fra cui un 13enne.; Carburanti a prezzo calmierato, distributori a secco e gestori in perdita in tutta la regione.; Quartesana:.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-01</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-01</guid>
+      <pubDate>Thu, 01 Oct 2026 06:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-01.mp3" length="7736651" type="audio/mpeg"/>
+      <itunes:duration>1547</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+  </channel>
+</rss>
