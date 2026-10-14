@@ -2,7 +2,7 @@
    - Pagina, archivio ed edizioni: prima la rete (sempre l'ultima versione), la copia salvata solo senza connessione.
    - Icone e caratteri: dalla copia salvata (cambiano di rado).
    - Audio MP3: sempre dalla rete (file grandi, letti a pezzi dal lettore). */
-const VERSION = 'rassegna-v1';
+const VERSION = 'rassegna-v2';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/favicon-64.png'];
 
 self.addEventListener('install', e => {

@@ -7,8 +7,8 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f6f4f1",
-  "theme_color": "#f6f4f1",
+  "background_color": "#F3F1EC",
+  "theme_color": "#F3F1EC",
   "categories": [
     "news"
   ],
