@@ -1,13 +1,13 @@
 {
- "date": "2026-10-14",
- "slot": "19",
- "generated": "2026-10-14T19:21+02:00",
- "articles": 242,
- "items": 35,
+ "date": "2026-10-15",
+ "slot": "mattina",
+ "generated": "2026-10-15T06:26+02:00",
+ "articles": 380,
+ "items": 181,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 38,
- "feeds_total": 39,
+ "feeds_ok": 48,
+ "feeds_total": 53,
  "feeds": [
   {
    "name": "Ansa",
@@ -172,6 +172,54 @@
    "items": 15
   },
   {
+   "name": "Teleromagna",
+   "prov": "Forlì-Cesena",
+   "status": "ok",
+   "items": 6
+  },
+  {
+   "name": "Forlì24ore",
+   "prov": "Forlì-Cesena",
+   "status": "HTTP 403",
+   "items": 0
+  },
+  {
+   "name": "Ravenna&Dintorni",
+   "prov": "Ravenna",
+   "status": "HTTP 403",
+   "items": 0
+  },
+  {
+   "name": "ReggioReport",
+   "prov": "Reggio Emilia",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "Bologna2000",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "Sassuolo2000",
+   "prov": "Modena",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Icaro TV",
+   "prov": "Rimini",
+   "status": "XML non valido",
+   "items": 0
+  },
+  {
+   "name": "Modena in diretta",
+   "prov": "Modena",
+   "status": "errore: ConnectTimeout",
+   "items": 0
+  },
+  {
    "name": "Google News",
    "prov": "",
    "status": "ok",
@@ -181,7 +229,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 11
+   "items": 10
   },
   {
    "name": "Google News",
@@ -234,6 +282,42 @@
   {
    "name": "Google News",
    "prov": "Ferrara",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 2
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 7
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "",
    "status": "ok",
    "items": 15
   },
