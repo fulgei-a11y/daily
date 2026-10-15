@@ -1,6 +1,42 @@
 {
  "items": [
   {
+   "t": "2026-10-15T20:18+02:00",
+   "cat": "Cronaca",
+   "title": "Attentato di Modena, prima dell'agguato El Koudri postò bandiera Isis",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/15/prima-dellattentato-di-modena-el-koudri-posto-una-bandiera-dellisis_d22c8f49-9140-42fe-8de5-80b5dad462ec.html"
+   ],
+   "html": "<strong>Attentato di Modena, prima dell'agguato El Koudri postò bandiera Isis</strong> — Bologna: l'avvocato di Giovanni Esposito, fratello della vittima, ha chiesto che gli atti vadano alla Dda dopo il ritrovamento di una bandiera Isis sul telefono dell'aggressore. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/15/prima-dellattentato-di-modena-el-koudri-posto-una-bandiera-dellisis_d22c8f49-9140-42fe-8de5-80b5dad462ec.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-15T20:18+02:00",
+   "cat": "Cronaca",
+   "title": "Morti sospette in ambulanza, slitta il processo a Luca Spada",
+   "links": [
+    "https://www.adnkronos.com/cronaca/morti-ambulanza-forli-luca-spada-processo-selfie_3bFt8RLZ40qbXE5MLZckPj"
+   ],
+   "html": "<strong>Morti sospette in ambulanza, slitta il processo a Luca Spada</strong> — Forlì: il processo all'ex autista della Croce Rossa, accusato della morte di Deanna Mambelli durante un trasporto, è stato rinviato al 22 ottobre. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/cronaca/morti-ambulanza-forli-luca-spada-processo-selfie_3bFt8RLZ40qbXE5MLZckPj\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
+   "t": "2026-10-15T20:18+02:00",
+   "cat": "Cronaca",
+   "title": "Strage di Bologna, la difesa Cavallini chiede nuove analisi sul Dna",
+   "links": [
+    "https://www.ansa.it/sito/notizie/cronaca/2026/10/15/la-difesa-cavallini-ribadisce-la-richiesta-sul-dna-giudici-si-riservano_3fe0e37d-16c6-42f9-bf6d-52dadcb0e0eb.html"
+   ],
+   "html": "<strong>Strage di Bologna, la difesa Cavallini chiede nuove analisi sul Dna</strong> — Bologna: la difesa dell'ex Nar Gilberto Cavallini ha ribadito la richiesta di analisi sul Dna dei resti di Maria Fresu, una delle vittime, ma i giudici si sono riservati la decisione. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/sito/notizie/cronaca/2026/10/15/la-difesa-cavallini-ribadisce-la-richiesta-sul-dna-giudici-si-riservano_3fe0e37d-16c6-42f9-bf6d-52dadcb0e0eb.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-15T20:18+02:00",
+   "cat": "Economia",
+   "title": "Deisa Ebano, a Bologna un museo in fabbrica per 100 anni di Made in Italy",
+   "links": [
+    "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaFVkRzhnU29XZW52SUxsSC1iOXQzUW05UkMxMTVVdlRpc3d4QlRiZzJsMVMybjRsYjUzUVlUTWsxQ0tZWUZLb2JCRERoNjU2NHFkOXp3T2ZpZU5uUVU5VGM4YmVWbWpKRE0teDh2cUJiQU0wc241Mk05NXJvU2lPRXBxQVdEWDVEWUVDd3NVbmZObEw0U21OWlVFYWtpNEs3WThxUzZpZ25YaFBtR3prNWhkX0RFLWhsWjFITW4wZ3otYjlCSGc"
+   ],
+   "html": "<strong>Deisa Ebano, a Bologna un museo in fabbrica per 100 anni di Made in Italy</strong> — Bologna: l'azienda Deisa Ebano aprirà un museo all'interno della sua fabbrica per celebrare un secolo di storia del Made in Italy. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNaFVkRzhnU29XZW52SUxsSC1iOXQzUW05UkMxMTVVdlRpc3d4QlRiZzJsMVMybjRsYjUzUVlUTWsxQ0tZWUZLb2JCRERoNjU2NHFkOXp3T2ZpZU5uUVU5VGM4YmVWbWpKRE0teDh2cUJiQU0wc241Mk05NXJvU2lPRXBxQVdEWDVEWUVDd3NVbmZObEw0U21OWlVFYWtpNEs3WThxUzZpZ25YaFBtR3prNWhkX0RFLWhsWjFITW4wZ3otYjlCSGc?oc=5\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
    "t": "2026-10-15T16:24+02:00",
    "cat": "Cronaca",
    "title": "Nuovo processo per il padre di Saman Abbas",
@@ -301,13 +337,23 @@
   "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZkNIelB2dUFxMlRhZUpWR1F5M2dGdEhlZXlGLUQ0dGRwbnRTRHVVQTBvbjd1dUFQcC0xWGRxdUhQSldQeVZhcXNKbndUbmlpRUdKQ1NnTGlxWVdKeDZUZTl3cDR5SmZSVC1MdTlIY0toWEthMmpNRTB5QWJaREZOWG9NbDBrTmN4NFhVd2FhdGUwSU51WFpNdm1PUy1XcGp6OXQ3U3pMbkVFblNXU1hvU1RTY0xCTnRzREFuR29rSG56cEZnRDBz": "2026-10-15T16:24+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/15/cambio-alla-guida-degli-stabilimenti-italiani-di-pg-nuovo-plant-manager_50eb38bb-01c3-4f99-b315-594e19aad57b.html": "2026-10-15T16:24+02:00",
   "https://news.google.com/rss/articles/CBMilAFBVV95cUxOaEZlTjRoMExQNndFMW1nakpjc1phSHljM0hzYXZJM21JX296MmY4dHhRX3FzT2dyZTlIcnlnSTlxMFphZTVJa1NCNS1yS0xpeGdWTFIzWmdtYkFiaFdRMFNYemNhQ1hJUXl1ZEdUdHdfZjRUM2ZTRF9JMlRNY1BIYXVGb3NuRVI1LTF0d3UxQUdpSWpD0gGUAUFVX3lxTE5oRmVONGgwTFA2d0UxbWdqSmNzWmFIeWMzSHNhdkkzbUlfb3oyZjh0eFFfcXNPZ3JlOUhyeWdJOXEwWmFlNUlrU0I1LXJLTGl4Z1ZMUjNaZ21iQWJoV1EwU1h6Y2FDWElReXVkR1R0d19mNFQzZlNEX0kyVE1jUEhhdUZvc25FUjUtMXR3dTFBR2lJakM": "2026-10-15T16:24+02:00",
-  "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcVZaRmhyT0x3Vm1iYTNWSHRyU1VmSlBhVXZpdVRhRXNnZ3RoODNZU1VLWGZlSjZURjNQVTBoLWJ3WGNRVDZhaDVaMjRldDR6bDQ1OXdNRUQ1YjlXWVFsTnlzOGE0M05ldk9IODBHeURkYWdpY1dtcG5hRnRlNDN0bFNJM0luWVZWRDRhMjNtMTNYcmJtaEYxbTZkQldwTENYaElkTUNVaGc5VTFpUFlGUnZJRjhyR3JqeW5XT3RpTW9IWHM": "2026-10-15T16:24+02:00"
+  "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcVZaRmhyT0x3Vm1iYTNWSHRyU1VmSlBhVXZpdVRhRXNnZ3RoODNZU1VLWGZlSjZURjNQVTBoLWJ3WGNRVDZhaDVaMjRldDR6bDQ1OXdNRUQ1YjlXWVFsTnlzOGE0M05ldk9IODBHeURkYWdpY1dtcG5hRnRlNDN0bFNJM0luWVZWRDRhMjNtMTNYcmJtaEYxbTZkQldwTENYaElkTUNVaGc5VTFpUFlGUnZJRjhyR3JqeW5XT3RpTW9IWHM": "2026-10-15T16:24+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/15/universita-sapienza-e-bologna-al-primo-posto-per-attrattivita-studio_ad0db4ce-a4b3-4bb5-824c-0d323fb01540.html": "2026-10-15T20:18+02:00",
+  "https://www.dire.it/15-10-2026/1276914-il-padre-di-saman-a-processo-per-tentata-costrizione-al-matrimonio": "2026-10-15T20:18+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/15/addio-al-maiale-nelle-mense-scolastiche-di-pordenone-e-a-piacenza-torna-la-coppa_b0d20950-7fc8-4b9f-91e4-a34cbe65152a.html": "2026-10-15T20:18+02:00",
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcHNMRGVRMEpST1g4bDFwZ3ZUR2pZN2V3MnFVMzR1YjlkbFNoLXg2WFhYcXRiSTdDSnlidUY4cXc4dzRTdkFFak5oZkYzZURUUU1jZ3liODJWSGtFanlfclpfamRBanBRbEc0bUwwRldEVTZqUDV6SHZmUnJNRHNQdk9kU09qZjVSckt6VlhMSXd1U3MzOGZF": "2026-10-15T20:18+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/15/prima-dellattentato-di-modena-el-koudri-posto-una-bandiera-dellisis_d22c8f49-9140-42fe-8de5-80b5dad462ec.html": "2026-10-15T20:18+02:00",
+  "https://www.adnkronos.com/cronaca/morti-ambulanza-forli-luca-spada-processo-selfie_3bFt8RLZ40qbXE5MLZckPj": "2026-10-15T20:18+02:00",
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTzhneXZ3ZkFDVHpmTjg2RVFZcEI0eGdXczEtTW5FSnNUWmJpY1B2cHhQUEp0bGd4S21RVF9NaUdlMjdpX2ZRRFpZdjVwcVVsU2VISHFkdUJhTXc4eFBCOVVLMExvMDlxNjBQdUZxdmpaX2x5VWRibF94TFFaVWNRWXNBUjFkRXhHeFNnZEtzaTA4c2Y4d1VIWVU5LU4wVHJMN1NKellnbjM": "2026-10-15T20:18+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/15/dopo-la-falsa-partenza-gilardino-cerca-i-primi-punti-per-il-parma_a5c244a2-49cf-4c47-9bb0-88928a08e7a2.html": "2026-10-15T20:18+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/15/la-difesa-cavallini-ribadisce-la-richiesta-sul-dna-giudici-si-riservano_3fe0e37d-16c6-42f9-bf6d-52dadcb0e0eb.html": "2026-10-15T20:18+02:00",
+  "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaFVkRzhnU29XZW52SUxsSC1iOXQzUW05UkMxMTVVdlRpc3d4QlRiZzJsMVMybjRsYjUzUVlUTWsxQ0tZWUZLb2JCRERoNjU2NHFkOXp3T2ZpZU5uUVU5VGM4YmVWbWpKRE0teDh2cUJiQU0wc241Mk05NXJvU2lPRXBxQVdEWDVEWUVDd3NVbmZObEw0U21OWlVFYWtpNEs3WThxUzZpZ25YaFBtR3prNWhkX0RFLWhsWjFITW4wZ3otYjlCSGc": "2026-10-15T20:18+02:00"
  },
- "updated": "2026-10-15T16:24+02:00",
- "next": "alle 20",
+ "updated": "2026-10-15T20:18+02:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-15T16:24+02:00",
-  "articles": 13,
+  "at": "2026-10-15T20:18+02:00",
+  "articles": 10,
   "items": 4,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -316,85 +362,85 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 41,
-    "kept": 5
+    "items": 44,
+    "kept": 2
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 1
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 58,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 9,
-    "kept": 1
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "askanews",
-    "channel": "feed diretto",
-    "status": "HTTP 403",
-    "items": 0,
-    "kept": 0
-   },
-   {
-    "agency": "askanews",
-    "channel": "feed diretto",
-    "status": "HTTP 403",
-    "items": 0,
-    "kept": 0
-   },
-   {
-    "agency": "askanews",
-    "channel": "Google News",
     "status": "ok",
     "items": 60,
     "kept": 3
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 55,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 4,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 1
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 1
+   },
+   {
+    "agency": "askanews",
+    "channel": "feed diretto",
+    "status": "HTTP 403",
+    "items": 0,
+    "kept": 0
+   },
+   {
+    "agency": "askanews",
+    "channel": "feed diretto",
+    "status": "HTTP 403",
+    "items": 0,
+    "kept": 0
+   },
+   {
+    "agency": "askanews",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 1
    },
    {
     "agency": "Italpress",
@@ -408,7 +454,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
