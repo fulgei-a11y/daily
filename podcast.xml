@@ -13,7 +13,17 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 15 Oct 2026 00:23:38 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 06:29:41 +0200</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · giovedì 15 ottobre 2026</title>
+      <description>182 notizie dall&#x27;Emilia-Romagna. In apertura: Caso Reggio Children: il sindaco Massari si scusa per la richiesta di dichiarazione su Gaza; Parmigiano Reggiano: approvato il piano per frenare la produzione; Incidente mortale sull&#x27;A1 nel Bolognese: camionista 52enne deceduto; Turismo in Emilia-Romagna: 35 milioni di presenze in otto mesi; Furto di farmaci oncologici all&#x27;ospedale di Piacenza; Caro carburanti: metano a +42%, Gpl meno caro.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-15</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-15</guid>
+      <pubDate>Thu, 15 Oct 2026 06:26:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-15.mp3" length="7903261" type="audio/mpeg"/>
+      <itunes:duration>2634</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · mercoledì 14 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente mortale in A1; Sviluppi: Condannato per scontri dopo morte Fakir; Raffica di incidenti stradali; Rapina impropria con coltello; Donna ustionata in casa; Anziani soccorsi nel solaio.</description>
