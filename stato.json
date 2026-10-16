@@ -1,12 +1,12 @@
 {
  "date": "2026-10-16",
- "slot": "13",
- "generated": "2026-10-16T13:27+02:00",
- "articles": 344,
+ "slot": "19",
+ "generated": "2026-10-16T19:20+02:00",
+ "articles": 290,
  "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 47,
+ "feeds_ok": 48,
  "feeds_total": 53,
  "feeds": [
   {
@@ -229,7 +229,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 7
+   "items": 6
   },
   {
    "name": "Google News",
@@ -295,7 +295,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 0
+   "items": 5
   },
   {
    "name": "Google News",

@@ -13,7 +13,17 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 16 Oct 2026 16:22:46 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 19:21:03 +0200</lastBuildDate>
+    <item>
+      <title>Aggiornamento delle 19 · venerdì 16 ottobre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Duplice omicidio a Mirandola (Modena); Sviluppi: Aggressione e minaccia a militari a Fusignano (Ravenna); Sviluppi: Tentato omicidio a Reggio Emilia, arrestato 57enne; Sviluppi: Agenti della Polizia Locale di Rimini indagati; Incidente stradale a Bologna, auto della Polizia investe due donne; Maxi coltivazione di marijuana scoperta in Appennino (Bologna).</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-16</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-16-19</guid>
+      <pubDate>Fri, 16 Oct 2026 19:20:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-16-19.mp3" length="2051963" type="audio/mpeg"/>
+      <itunes:duration>683</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 13 · venerdì 16 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Duplice omicidio a Mirandola (Modena); Sperona auto Carabinieri e tenta di investire militare; Accoltellamento in bar per lite su autocarro; Furto aggravato in supermercato; Arresto per detenzione di droga a Imola; Arresto per violazione divieto di avvicinamento.</description>
