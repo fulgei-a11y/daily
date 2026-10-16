@@ -1,12 +1,12 @@
 {
- "date": "2026-10-15",
- "slot": "19",
- "generated": "2026-10-15T19:23+02:00",
- "articles": 272,
- "items": 35,
+ "date": "2026-10-16",
+ "slot": "mattina",
+ "generated": "2026-10-16T06:26+02:00",
+ "articles": 380,
+ "items": 220,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 48,
+ "feeds_ok": 49,
  "feeds_total": 53,
  "feeds": [
   {
@@ -180,8 +180,8 @@
   {
    "name": "Forlì24ore",
    "prov": "Forlì-Cesena",
-   "status": "HTTP 403",
-   "items": 0
+   "status": "ok",
+   "items": 10
   },
   {
    "name": "Ravenna&Dintorni",
@@ -229,7 +229,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 8
+   "items": 9
   },
   {
    "name": "Google News",
@@ -295,7 +295,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 7
+   "items": 2
   },
   {
    "name": "Google News",
