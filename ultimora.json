@@ -1,6 +1,33 @@
 {
  "items": [
   {
+   "t": "2026-10-16T12:19+02:00",
+   "cat": "Cronaca",
+   "title": "Incidente mortale a Bologna",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/16/scontro-fra-due-auto-a-bologna-morto-un-44enne-e-due-feriti_5936908c-2ce9-4b44-8b4e-58d7d0febe14.html"
+   ],
+   "html": "<strong>Incidente mortale a Bologna</strong> — Bologna: scontro tra due auto all'incrocio tra via Calamosco e via San Donato provoca la morte di un 44enne di origine marocchina e il ferimento grave di un 59enne italiano. L'automobilista 22enne dell'altra auto è rimasta ferita lievemente. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/16/scontro-fra-due-auto-a-bologna-morto-un-44enne-e-due-feriti_5936908c-2ce9-4b44-8b4e-58d7d0febe14.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-16T12:19+02:00",
+   "cat": "Cronaca",
+   "title": "Discarica abusiva scoperta a Reggio Emilia",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/16/scoperta-discarica-abusiva-a-reggio-emilia-indagati-in-10-e-una-societa_74a38c86-9637-47c9-b9f2-1af36c6efa0e.html"
+   ],
+   "html": "<strong>Discarica abusiva scoperta a Reggio Emilia</strong> — Reggio Emilia: i Carabinieri Forestali hanno scoperto una discarica abusiva in aree agricole, indagando dieci persone e una società per reati ambientali. Nel sito venivano sversati e bruciati rifiuti speciali. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/16/scoperta-discarica-abusiva-a-reggio-emilia-indagati-in-10-e-una-societa_74a38c86-9637-47c9-b9f2-1af36c6efa0e.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-16T12:19+02:00",
+   "cat": "Economia",
+   "title": "Bontiamo acquisisce caseificio di Gavasseto",
+   "links": [
+    "https://www.adnkronos.com/economia/agroalimentare-bontiamo-presenta-il-marchio-e-annuncia-lacquisizione-del-caseificio-di-gavasseto_25LL83WNZQKTb7nMkqfCZq"
+   ],
+   "html": "<strong>Bontiamo acquisisce caseificio di Gavasseto</strong> — Bibbiano (Reggio Emilia): l'azienda Bontiamo, produttrice di Parmigiano Reggiano, burro e snack, ha annunciato l'acquisizione del caseificio di Gavasseto e Roncadella, con ingresso operativo dal 1° gennaio 2027. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/economia/agroalimentare-bontiamo-presenta-il-marchio-e-annuncia-lacquisizione-del-caseificio-di-gavasseto_25LL83WNZQKTb7nMkqfCZq\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
    "t": "2026-10-16T00:24+02:00",
    "cat": "Cronaca",
    "title": "Anziani coniugi trovati decapitati in casa",
@@ -271,14 +298,25 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/15/insulti-razzisti-a-studentessa-in-tirocinio-in-pronto-soccorso-bolognese_57fe45c0-781c-4ad6-9d4f-f5cd5c7287c7.html": "2026-10-16T00:24+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/15/mazzi-il-22-ottobre-salvini-presenta-a-stato-regioni-il-bando-tipo-per-i-balneari_4e569f27-0025-4c32-b904-995d451ae8d5.html": "2026-10-16T00:24+02:00",
   "https://www.dire.it/16-10-2026/1277003-anziani-decapitati-a-mirandola-il-figlio-interrogato-fa-scena-muta": "2026-10-16T08:23+02:00",
-  "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBkTVctNmhaakRnTGhzeHpyZVlDTHhRWXUxbDlqOFRVcjhqQnk5bmdWWERWNXJwNFdfNVEwVXU2dkNKb3h0RWhPYnZBbVlCZHNkMG5qT0wzX21KbTJsR09obA": "2026-10-16T08:23+02:00"
+  "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBkTVctNmhaakRnTGhzeHpyZVlDTHhRWXUxbDlqOFRVcjhqQnk5bmdWWERWNXJwNFdfNVEwVXU2dkNKb3h0RWhPYnZBbVlCZHNkMG5qT0wzX21KbTJsR09obA": "2026-10-16T08:23+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/16/scontro-fra-due-auto-a-bologna-morto-un-44enne-e-due-feriti_5936908c-2ce9-4b44-8b4e-58d7d0febe14.html": "2026-10-16T12:19+02:00",
+  "https://www.dire.it/16-10-2026/1277089-piazza-ambrosio-bologna-intitola-una-piazza-della-stazione-al-capotreno-ucciso": "2026-10-16T12:19+02:00",
+  "https://www.adnkronos.com/cronaca/melanoma-in-italia-oltre-12900-casi-lanno-imi-personalizzare-prevenzione-e-cure_Sm40xVJBj7t5WXvNQxm8J": "2026-10-16T12:19+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/16/scoperta-discarica-abusiva-a-reggio-emilia-indagati-in-10-e-una-societa_74a38c86-9637-47c9-b9f2-1af36c6efa0e.html": "2026-10-16T12:19+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/16/piazzale-ovest-della-stazione-di-bologna-sara-intitolato-a-capotreno-ucciso_94117ef4-1129-4488-8ac5-52612e971409.html": "2026-10-16T12:19+02:00",
+  "https://www.dire.it/16-10-2026/1277076-la-protesta-degli-studenti-blocca-le-citta-a-roma-e-bologna-cortei-in-centro-e-disagi-alla-viabilita": "2026-10-16T12:19+02:00",
+  "https://www.italpress.com/la-nato-potenzia-in-italia-il-centro-di-addestramento-per-il-comando-e-il-controllo-aereo": "2026-10-16T12:19+02:00",
+  "https://www.adnkronos.com/economia/agroalimentare-bontiamo-presenta-il-marchio-e-annuncia-lacquisizione-del-caseificio-di-gavasseto_25LL83WNZQKTb7nMkqfCZq": "2026-10-16T12:19+02:00",
+  "https://www.adnkronos.com/cronaca/decapitati-mirandola-modena-fermo-omicidio_3Cl1CoZ5GUDHF6U4D4Mja8": "2026-10-16T12:19+02:00",
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdzdHWUNOaTh6R3pVVjdJTDNNcFM2S2o0ZkV0cGtkTHJsclc3ckRveW5nUVY2TXpyRVdTbzM2bEE5MzNiYmdZdUlqU1FTTzF3djRPRDFMU0NXWXpxRmNCZnV5bFdMZUJuS2lLYi1uNy1jdmdxR0ZQejNGbnZhRlY1Tk5FUzdtVlBQNmh3Wm41bFBzbjllS3pIb2szMDJ1dU9s": "2026-10-16T12:19+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/16/coniugi-decapitati-nel-modenese-fermato-il-figlio-della-donna_776d63d7-f3ab-4b13-8e94-1670ae64f67d.html": "2026-10-16T12:19+02:00"
  },
- "updated": "2026-10-16T08:23+02:00",
- "next": "alle 12",
+ "updated": "2026-10-16T12:19+02:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-16T08:23+02:00",
-  "articles": 2,
-  "items": 0,
+  "at": "2026-10-16T12:19+02:00",
+  "articles": 11,
+  "items": 3,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -286,8 +324,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 43,
-    "kept": 0
+    "items": 46,
+    "kept": 4
    },
    {
     "agency": "ANSA",
@@ -321,7 +359,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 6,
+    "items": 7,
     "kept": 0
    },
    {
@@ -329,14 +367,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Adnkronos",
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -371,7 +409,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
@@ -385,7 +423,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Dire",
@@ -398,7 +436,7 @@
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 0,
+    "items": 1,
     "kept": 0
    }
   ]
