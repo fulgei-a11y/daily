@@ -1,6 +1,20 @@
 {
  "items": [
   {
+   "t": "2026-10-17T20:09+02:00",
+   "cat": "Cronaca",
+   "title": "Scontri e violenze in piazza a Bologna",
+   "links": [
+    "https://www.agi.it/economia/news/2026-10-17/caro-vita-proteste-manifestazioni-39583412",
+    "https://www.ansa.it/sito/notizie/cronaca/2026/10/17/scontri-davanti-stazione-bologna-tra-giovani-manifestanti-e-forze-ordine_0145aa9f-8f3f-4060-98f5-07d40e566824.html",
+    "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUm5nTUFrNVdRV05Ka0I5RGZFbERWOURaZzdYSzJOOWNCUk1oXzBKZ0tZTndzSXVUUEpPMDN3dVhMSUtJb2NzbzVlcWVIQU81X3dDYklrazgzR3FueG9uX2NCX0h3VjlzOWR0MHMxNzktQ29oYkJlWEJQanRxRk1TcU0zT3psNHRDdzlLVXJzcGgxM3M4Q2tB",
+    "https://www.dire.it/17-10-2026/1277507-scontri-in-piazza-a-milano-e-torino-lancio-di-sassi-contro-gli-agenti",
+    "https://www.italpress.com/scontri-manifestazioni-oggi-17-ottobre-2026-aggiornamenti",
+    "https://www.adnkronos.com/cronaca/italia-in-piazza-corteo-milano-news_2g0DvXqkKaB31neIzdyOjb"
+   ],
+   "html": "<strong>Scontri e violenze in piazza a Bologna</strong> — Bologna: Sette manifestanti sono stati fermati dopo scontri con le forze dell'ordine davanti alla stazione, con lancio di sassi e oggetti, uso di idranti e lacrimogeni. Decine di Mobike sono state buttate a terra e la Basilica di San Petronio è stata imbrattata. Il sindaco Lepore ha condannato la \"devastazione e violenza\". <span class=\"src\">Fonti: <a href=\"https://www.agi.it/economia/news/2026-10-17/caro-vita-proteste-manifestazioni-39583412/\" target=\"_blank\" rel=\"noopener\">AGI</a>, <a href=\"https://www.ansa.it/sito/notizie/cronaca/2026/10/17/scontri-davanti-stazione-bologna-tra-giovani-manifestanti-e-forze-ordine_0145aa9f-8f3f-4060-98f5-07d40e566824.html\" target=\"_blank\" rel=\"noopener\">ANSA</a>, <a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNUm5nTUFrNVdRV05Ka0I5RGZFbERWOURaZzdYSzJOOWNCUk1oXzBKZ0tZTndzSXVUUEpPMDN3dVhMSUtJb2NzbzVlcWVIQU81X3dDYklrazgzR3FueG9uX2NCX0h3VjlzOWR0MHMxNzktQ29oYkJlWEJQanRxRk1TcU0zT3psNHRDdzlLVXJzcGgxM3M4Q2tB?oc=5\" target=\"_blank\" rel=\"noopener\">askanews</a>, <a href=\"https://www.dire.it/17-10-2026/1277507-scontri-in-piazza-a-milano-e-torino-lancio-di-sassi-contro-gli-agenti/\" target=\"_blank\" rel=\"noopener\">Dire</a>, <a href=\"https://www.italpress.com/scontri-manifestazioni-oggi-17-ottobre-2026-aggiornamenti/\" target=\"_blank\" rel=\"noopener\">Italpress</a>, <a href=\"https://www.adnkronos.com/cronaca/italia-in-piazza-corteo-milano-news_2g0DvXqkKaB31neIzdyOjb\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
    "t": "2026-10-17T16:14+02:00",
    "cat": "",
    "title": "Allevamento abusivo di cani maltrattati",
@@ -177,14 +191,26 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/pnrr-con-624mila-euro-si-rinnova-la-casa-della-comunita-del-pilastro_d203def4-84c0-47cb-bce9-16b6a707ef3b.html": "2026-10-17T16:14+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/meloni-possiamo-costruire-una-via-italiana-allintelligenza-artificiale_22849155-5f85-42b7-a84b-a8fc0af28222.html": "2026-10-17T16:14+02:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/17/allevamento-abusivo-con-piu-di-100-cani-maltrattati-scatta-il-sequestro_805d6d98-b27a-4bfe-8bc6-ae0f6138914d.html": "2026-10-17T16:14+02:00",
-  "https://news.google.com/rss/articles/CBMijwFBVV95cUxOUEtlNl9OalRDb1I0N2haaWpQbXQ1a1RTRGVCeEVPUlpHbUNIMXRXWDFXWDh4YmlOSnd3Tk1lNkVkTFRSVmFXUnhkRHZHXzBPNUd6ZUk2QnFOWEhBYWRBNFpxcjFNWlZFR2lobHNWU0U0eVJ6d2QxTl9CN092SzIxeWVmYTRhRDhKZjRsM1B4dw": "2026-10-17T16:14+02:00"
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxOUEtlNl9OalRDb1I0N2haaWpQbXQ1a1RTRGVCeEVPUlpHbUNIMXRXWDFXWDh4YmlOSnd3Tk1lNkVkTFRSVmFXUnhkRHZHXzBPNUd6ZUk2QnFOWEhBYWRBNFpxcjFNWlZFR2lobHNWU0U0eVJ6d2QxTl9CN092SzIxeWVmYTRhRDhKZjRsM1B4dw": "2026-10-17T16:14+02:00",
+  "https://news.google.com/rss/articles/CBMilAFBVV95cUxNRGMwRFh0RjREaWJPSFRENm1UNTJXdW9tLTFvdVRZWTByZGQ4aENZYzY3aEw3dHFCYTNLTTdwNGJETW1zNERISWc2bDh0b3h3elBxUjQ3YkJRd3QzNnZsOFJCam5hOWdLTmhwRVh2WEFSbTI1dmJpSGNoZFk0VUlWWDI4NlYwQU41aldlcGt3eFVPdFBN": "2026-10-17T20:09+02:00",
+  "https://news.google.com/rss/articles/CBMikAFBVV95cUxQR1Q3MGctT1Z3ZGQzUGN2VVBsRlEzSGVrUGVFZjZ4RjR4eC16QmJXSmZsSnJGZ0IwejR6dFZrWFFCMVVqOUdfcE1ZZzd0V2hfSmV0UVZvZV9SMHdKYjMyLTMyaTJvUzktRHJjWWFvRnA4VnFJR3A5SHZkenpZek1aRW1QcGZpcGxRVzRGSTFRZ2s": "2026-10-17T20:09+02:00",
+  "https://www.agi.it/economia/news/2026-10-17/caro-vita-proteste-manifestazioni-39583412": "2026-10-17T20:09+02:00",
+  "https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ3dIYlhCZERYSTZmUE1iS3MycFNuVEg1WF9tamJDVEVHU1lmWHJob21iQjZ5TEU2cm83Rm5GSEN3SVNzcEtfUHdwVUdpMlI3YV95Y3k5UTFpRDFsWHBlNGdiU1g5MUF3dXdqNGpRRVFTNU1UVm1nS1FGMW9FUzhyWm5tSFhDQ2kwVDVJRGw5bzdfSGg4NHc": "2026-10-17T20:09+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/17/scontri-davanti-stazione-bologna-tra-giovani-manifestanti-e-forze-ordine_0145aa9f-8f3f-4060-98f5-07d40e566824.html": "2026-10-17T20:09+02:00",
+  "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRWxJSjc5V0xnSU1BcXhlUzBUMlhiSTd5clVMdHlQV1RCNElCSGZ4bVJIVV9zaHZELUFySXJ0TWl4WWZ4NlRLdEJQeXJ5amIta2J3RkhwM01IcVZjMzlLbXBLMDViWWE1STFhbkRjdHc1MV9WZEM0T2lTVFJKOVBZbHpkTFdRak9ySVFWODA4REjSAZYBQVVfeXFMTVEtbC1uWDJYbUQ3R241Tmk3TTYtcFVKd1cwRGJYSXB3UkNWZFBHRzFlcjNkOWlac01zSndFS2RZZjZCMzYxLXFpZjROclR3dU5NVU5BY1Y4elVxdnUxVTdWekQxaXZyUDUycWlmbkJDZFgycno0RUJKYV81c2hVQVk0NTJPak9ieURrV0NLS1RqRDVnRUJn": "2026-10-17T20:09+02:00",
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUm5nTUFrNVdRV05Ka0I5RGZFbERWOURaZzdYSzJOOWNCUk1oXzBKZ0tZTndzSXVUUEpPMDN3dVhMSUtJb2NzbzVlcWVIQU81X3dDYklrazgzR3FueG9uX2NCX0h3VjlzOWR0MHMxNzktQ29oYkJlWEJQanRxRk1TcU0zT3psNHRDdzlLVXJzcGgxM3M4Q2tB": "2026-10-17T20:09+02:00",
+  "https://www.dire.it/17-10-2026/1277507-scontri-in-piazza-a-milano-e-torino-lancio-di-sassi-contro-gli-agenti": "2026-10-17T20:09+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/parmitano-lo-spazio-non-e-lontano-ma-nelle-nostre-tasche_98e2aa48-5eea-446a-b062-33ab6c006698.html": "2026-10-17T20:09+02:00",
+  "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbUdhN0Z3enEyRXQ4VFo4Y1FjVlYxQzJJMFFnd3JyeUtKVWpvRE52cTJveTk0azBmVTcyMlVsdjMwYnpzOTRVQ2d4QUxiMjRXcGh1OW9DdjRDamF2WWVjeTBqb2NEVjZTQ0JKWUEyQmZDSVh0dG9IWmIwazdkRFpSWDVWcw": "2026-10-17T20:09+02:00",
+  "https://www.italpress.com/scontri-manifestazioni-oggi-17-ottobre-2026-aggiornamenti": "2026-10-17T20:09+02:00",
+  "https://www.adnkronos.com/cronaca/italia-in-piazza-corteo-milano-news_2g0DvXqkKaB31neIzdyOjb": "2026-10-17T20:09+02:00"
  },
- "updated": "2026-10-17T16:14+02:00",
- "next": "alle 20",
+ "updated": "2026-10-17T20:09+02:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-17T16:14+02:00",
-  "articles": 5,
-  "items": 2,
+  "at": "2026-10-17T20:09+02:00",
+  "articles": 12,
+  "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -192,8 +218,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 41,
-    "kept": 3
+    "items": 36,
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -206,13 +232,6 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 29,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
     "items": 20,
     "kept": 0
    },
@@ -222,20 +241,27 @@
     "status": "ok",
     "items": 20,
     "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 1
    },
    {
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -249,7 +275,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "askanews",
@@ -270,28 +296,28 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
@@ -304,7 +330,7 @@
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 0,
+    "items": 1,
     "kept": 0
    }
   ]
