@@ -1,6 +1,17 @@
 {
  "items": [
   {
+   "t": "2026-10-18T00:18+02:00",
+   "cat": "",
+   "title": "Scontri a Bologna, 4 minorenni arrestati e 36 agenti feriti",
+   "links": [
+    "https://www.dire.it/17-10-2026/1277590-quasi-cinquanta-minori-fermati-tra-milano-torino-e-bologna-tiktok-e-la-miccia-social-di-italiainpiazza",
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/scontri-a-bologna-4-minorenni-arrestati-36-feriti-tra-le-forze-dellordine_c4be7b43-95c5-4490-9263-f6742baf5fb4.html",
+    "https://www.italpress.com/scontri-durante-la-manifestazione-a-bologna-lepore-isolare-i-violenti"
+   ],
+   "html": "<strong>Scontri a Bologna, 4 minorenni arrestati e 36 agenti feriti</strong> — Bologna: Quattro minorenni sono stati arrestati con l'accusa di resistenza aggravata, sette persone denunciate e 36 agenti delle forze dell'ordine sono rimasti feriti o contusi durante gli scontri avvenuti nei pressi della stazione ferroviaria. <span class=\"src\">Fonti: <a href=\"https://www.dire.it/17-10-2026/1277590-quasi-cinquanta-minori-fermati-tra-milano-torino-e-bologna-tiktok-e-la-miccia-social-di-italiainpiazza/\" target=\"_blank\" rel=\"noopener\">Dire</a>, <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/17/scontri-a-bologna-4-minorenni-arrestati-36-feriti-tra-le-forze-dellordine_c4be7b43-95c5-4490-9263-f6742baf5fb4.html\" target=\"_blank\" rel=\"noopener\">ANSA</a>, <a href=\"https://www.italpress.com/scontri-durante-la-manifestazione-a-bologna-lepore-isolare-i-violenti/\" target=\"_blank\" rel=\"noopener\">Italpress</a></span>"
+  },
+  {
    "t": "2026-10-17T20:09+02:00",
    "cat": "Cronaca",
    "title": "Scontri e violenze in piazza a Bologna",
@@ -124,8 +135,6 @@
   }
  ],
  "seen": {
-  "https://www.dire.it/16-10-2026/1277003-anziani-decapitati-a-mirandola-il-figlio-interrogato-fa-scena-muta": "2026-10-16T08:23+02:00",
-  "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBkTVctNmhaakRnTGhzeHpyZVlDTHhRWXUxbDlqOFRVcjhqQnk5bmdWWERWNXJwNFdfNVEwVXU2dkNKb3h0RWhPYnZBbVlCZHNkMG5qT0wzX21KbTJsR09obA": "2026-10-16T08:23+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/16/scontro-fra-due-auto-a-bologna-morto-un-44enne-e-due-feriti_5936908c-2ce9-4b44-8b4e-58d7d0febe14.html": "2026-10-16T12:19+02:00",
   "https://www.dire.it/16-10-2026/1277089-piazza-ambrosio-bologna-intitola-una-piazza-della-stazione-al-capotreno-ucciso": "2026-10-16T12:19+02:00",
   "https://www.adnkronos.com/cronaca/melanoma-in-italia-oltre-12900-casi-lanno-imi-personalizzare-prevenzione-e-cure_Sm40xVJBj7t5WXvNQxm8J": "2026-10-16T12:19+02:00",
@@ -203,13 +212,24 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/parmitano-lo-spazio-non-e-lontano-ma-nelle-nostre-tasche_98e2aa48-5eea-446a-b062-33ab6c006698.html": "2026-10-17T20:09+02:00",
   "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbUdhN0Z3enEyRXQ4VFo4Y1FjVlYxQzJJMFFnd3JyeUtKVWpvRE52cTJveTk0azBmVTcyMlVsdjMwYnpzOTRVQ2d4QUxiMjRXcGh1OW9DdjRDamF2WWVjeTBqb2NEVjZTQ0JKWUEyQmZDSVh0dG9IWmIwazdkRFpSWDVWcw": "2026-10-17T20:09+02:00",
   "https://www.italpress.com/scontri-manifestazioni-oggi-17-ottobre-2026-aggiornamenti": "2026-10-17T20:09+02:00",
-  "https://www.adnkronos.com/cronaca/italia-in-piazza-corteo-milano-news_2g0DvXqkKaB31neIzdyOjb": "2026-10-17T20:09+02:00"
+  "https://www.adnkronos.com/cronaca/italia-in-piazza-corteo-milano-news_2g0DvXqkKaB31neIzdyOjb": "2026-10-17T20:09+02:00",
+  "https://www.dire.it/17-10-2026/1277590-quasi-cinquanta-minori-fermati-tra-milano-torino-e-bologna-tiktok-e-la-miccia-social-di-italiainpiazza": "2026-10-18T00:18+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/scontri-a-bologna-4-minorenni-arrestati-36-feriti-tra-le-forze-dellordine_c4be7b43-95c5-4490-9263-f6742baf5fb4.html": "2026-10-18T00:18+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/scontri-a-milano-circa-50-fermati-quasi-la-meta-minorenni_13cb281a-bc5c-47cf-a0c6-c24cd274b32b.html": "2026-10-18T00:18+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/17/la-protesta-per-il-carovita-diventa-guerriglia-milano-un-campo-di-battaglia_a783ef65-c2c2-4fb9-8d99-7c64d791f43c.html": "2026-10-18T00:18+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/scontri-davanti-stazione-bologna-tra-giovani-manifestanti-e-forze-ordine_8a1bdbd6-9549-4b05-a9b1-4d17c88de5f5.html": "2026-10-18T00:18+02:00",
+  "https://www.dire.it/scontri-a-milano-una-cinquantina-di-fermati-quasi-la-meta-sono-minorenni-salvini-marciume-sinistro-avariato-a-bologna-9-poliziotti-feriti-e-scene-di-devastazione-in-stazione": "2026-10-18T00:18+02:00",
+  "https://www.italpress.com/scontri-durante-la-manifestazione-a-bologna-lepore-isolare-i-violenti": "2026-10-18T00:18+02:00",
+  "https://news.google.com/rss/articles/CBMif0FVX3lxTE0wYXFvY0lneFZocHJBLWxTU1FNZWRrLUpfQ010X0oxY1NHRFAzQURWYzFXVmpxbnlVczdzOVc4SGItX0NuSnVNTm5aWnU0ZHU4OFd3X1N6OTFvLTEzeWM4Q283VGxzRkduT2l5aXY2NG5ERzI4aXY4ZTJpUHJDbmvSAYQBQVVfeXFMTjhDbHc1WVE2a01MVFNLX0VOUVczT0pmc2xmUGRwX3ZfSXVoQzVmek1EV1I4OXJZSFFqNUpCWlFCQ1UxZk5aVTVyRjR0bmstOTFpOE1FeFAtYmhObmdpY1k5M09qLVhNNGh4ZFlST045ZE9CQmFjei1BVzRqR2F4eFhZV0do": "2026-10-18T00:18+02:00",
+  "https://www.italpress.com/tabellino-voti-bologna-inter-1-3-cronaca-partita-e-marcatori": "2026-10-18T00:18+02:00",
+  "https://www.dire.it/17-10-2026/1277545-meloni-le-opposizioni-non-siano-ambigue-sulle-violenze": "2026-10-18T00:18+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/allevamento-abusivo-con-piu-di-100-cani-maltrattati-scatta-il-sequestro_ea5c81bb-5ada-4f66-b858-ba3f4604fdb3.html": "2026-10-18T00:18+02:00"
  },
- "updated": "2026-10-17T20:09+02:00",
- "next": "alle 24",
+ "updated": "2026-10-18T00:18+02:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-10-17T20:09+02:00",
-  "articles": 12,
+  "at": "2026-10-18T00:18+02:00",
+  "articles": 11,
   "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -218,8 +238,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 36,
-    "kept": 1
+    "items": 38,
+    "kept": 4
    },
    {
     "agency": "ANSA",
@@ -232,7 +252,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 20,
+    "items": 18,
     "kept": 0
    },
    {
@@ -247,7 +267,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "AGI",
@@ -261,7 +281,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -275,7 +295,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -296,41 +316,41 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 3
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
-    "items": 60,
+    "items": 48,
     "kept": 0
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 1,
+    "items": 2,
     "kept": 0
    }
   ]
