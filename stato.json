@@ -1,9 +1,9 @@
 {
  "date": "2026-10-17",
- "slot": "mattina",
- "generated": "2026-10-17T06:23+02:00",
- "articles": 380,
- "items": 172,
+ "slot": "13",
+ "generated": "2026-10-17T13:22+02:00",
+ "articles": 292,
+ "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
  "feeds_ok": 48,
@@ -180,7 +180,7 @@
   {
    "name": "Forlì24ore",
    "prov": "Forlì-Cesena",
-   "status": "HTTP 202",
+   "status": "errore: ConnectionError",
    "items": 0
   },
   {
@@ -229,7 +229,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 13
+   "items": 14
   },
   {
    "name": "Google News",
@@ -295,13 +295,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 2
+   "items": 1
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 13
+   "items": 5
   },
   {
    "name": "Google News",
@@ -325,7 +325,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 10
   }
  ]
 }
