@@ -13,7 +13,17 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 17 Oct 2026 00:23:57 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 06:27:08 +0200</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · sabato 17 ottobre 2026</title>
+      <description>173 notizie dall&#x27;Emilia-Romagna. In apertura: Duplice omicidio a Mirandola, fermato il figlio della donna; Nautica, Forlì-Cesena secondo distretto in Italia per fatturato; AI.DEA Forum di Varignana: PMI cauti sull&#x27;Intelligenza Artificiale; Nuovi servizi e Case della Comunità inaugurate nel Parmense; Aeroporti: Bologna boccia il piano regionale, Rimini invita alla sinergia; Nuova caserma Carabinieri intitolata al brigadiere Iscaro ad Albinea.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-17</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-17</guid>
+      <pubDate>Sat, 17 Oct 2026 06:23:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-17.mp3" length="8532942" type="audio/mpeg"/>
+      <itunes:duration>2844</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · venerdì 16 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Duplice omicidio a Mirandola (Modena); Sviluppi: Aggressione e minaccia a militari a Fusignano (Ravenna); Sviluppi: Tentato omicidio a Reggio Emilia, arrestato 57enne; Sviluppi: Agenti della Polizia Locale di Rimini indagati; Incidente stradale a Bologna, auto della Polizia investe due donne; Maxi coltivazione di marijuana scoperta in Appennino (Bologna).</description>
