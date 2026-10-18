@@ -13,15 +13,15 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 18 Oct 2026 16:54:03 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 16:58:36 +0200</lastBuildDate>
     <item>
       <title>Rassegna del mattino · domenica 18 ottobre 2026</title>
-      <description>88 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri alla manifestazione &quot;Italia in piazza&quot;; Incidente mortale in via Libia; Dottorando di Fisica e commenti sui poliziotti; Donna investita da bus in via Ugo Bassi; Denuncia per guida senza patente e false generalità; Spaccio di cocaina a Imola.</description>
+      <description>83 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri durante la manifestazione &quot;Italia in piazza&quot;; Incidente mortale in via Libia; Donna investita da bus in via Ugo Bassi non risarcita; Allevamento abusivo di cani sequestrato; Spintona Carabinieri e lancia cocaina; Guida senza patente e fornisce false generalità.</description>
       <link>https://fulgei-a11y.github.io/rassegna/#2026-10-18</link>
       <guid isPermaLink="false">rassegna-er-2026-10-18</guid>
-      <pubDate>Sun, 18 Oct 2026 16:34:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-18.mp3" length="3374177" type="audio/mpeg"/>
-      <itunes:duration>1124</itunes:duration>
+      <pubDate>Sun, 18 Oct 2026 16:57:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-18.mp3" length="4471241" type="audio/mpeg"/>
+      <itunes:duration>1490</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
     <item>
