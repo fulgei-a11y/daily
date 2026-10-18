@@ -5,7 +5,7 @@
     <link>https://fulgei-a11y.github.io/rassegna/</link>
     <atom:link href="https://fulgei-a11y.github.io/rassegna/podcast.xml" rel="self" type="application/rss+xml"/>
     <language>it</language>
-    <description>La rassegna stampa quotidiana dell'Emilia-Romagna letta da Paola: l'edizione del mattino e gli aggiornamenti delle 13 e delle 19, provincia per provincia.</description>
+    <description>La rassegna stampa quotidiana dell'Emilia-Romagna letta da Paola: l'edizione del mattino e gli aggiornamenti delle 13 e delle 19, con Bologna in primo piano e il resto della regione.</description>
     <itunes:summary>La rassegna stampa quotidiana dell'Emilia-Romagna: ogni mattina e alle 13 e alle 19.</itunes:summary>
     <itunes:author>Rassegna ER</itunes:author>
     <itunes:image href="https://fulgei-a11y.github.io/rassegna/icons/podcast-1400.png"/>
@@ -13,7 +13,7 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 18 Oct 2026 16:14:59 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 16:22:00 +0200</lastBuildDate>
     <item>
       <title>Aggiornamento delle 13 · domenica 18 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Scontri a Bologna, bilancio aggiornato e danni; Omicidio di Mirandola, indagini sui telefoni; Incidente mortale sul ponte di via Libia; Rapina e aggressione a Ravenna, tre denunciati; Violazione divieto di avvicinamento alla madre; Tentato furto e danneggiamenti all&#x27;Ospedale Maggiore.</description>
