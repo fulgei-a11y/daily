@@ -13,15 +13,15 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 18 Oct 2026 17:41:33 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 17:47:01 +0200</lastBuildDate>
     <item>
       <title>Rassegna del mattino · domenica 18 ottobre 2026</title>
-      <description>83 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri durante la manifestazione &quot;Italia in piazza&quot;; Incidente mortale in via Libia; Donna investita da bus in via Ugo Bassi non risarcita; Allevamento abusivo di cani sequestrato; Spintona Carabinieri e lancia cocaina; Guida senza patente e fornisce false generalità.</description>
+      <description>94 notizie dall&#x27;Emilia-Romagna. In apertura: Guerriglia urbana a Bologna durante la manifestazione &quot;Italia in piazza&quot;: 5 arresti e 75 feriti tra le forze dell&#x27;ordine; Incidente mortale in via Libia: motociclista 68enne travolto da un&#x27;auto; Scontri tra tifosi Fortitudo Fossa dei Leoni e Manigoldi; Sequestrati 110 cani Alaskan Malamute in un allevamento abusivo; Dottorando dell&#x27;Alma Mater sotto bufera per commenti sui poliziotti; Donna investita da bus in via Ugo Bassi vive senza una gamba, Procura indaga.</description>
       <link>https://fulgei-a11y.github.io/rassegna/#2026-10-18</link>
       <guid isPermaLink="false">rassegna-er-2026-10-18</guid>
-      <pubDate>Sun, 18 Oct 2026 16:57:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-18.mp3" length="4471241" type="audio/mpeg"/>
-      <itunes:duration>1490</itunes:duration>
+      <pubDate>Sun, 18 Oct 2026 17:44:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-18.mp3" length="5800665" type="audio/mpeg"/>
+      <itunes:duration>1933</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
     <item>
