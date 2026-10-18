@@ -145,6 +145,14 @@ main{max-width:760px;margin:0 auto;padding:4px 16px calc(var(--player-h) + 48px)
 .sec[data-theme="sanita"]{--th:var(--t-sanita);--th-bg:var(--t-sanita-bg)}
 .sec[data-theme="ambiente"]{--th:var(--t-ambiente);--th-bg:var(--t-ambiente-bg)}
 .sec[data-theme="cultura"]{--th:var(--t-cultura);--th-bg:var(--t-cultura-bg)}
+/* aree: Bologna (focus) e resto della regione */
+.sec.area .sec-title{font-size:34px;margin-top:40px;padding-bottom:8px;border-bottom:3px solid var(--ink)}
+.sec.area .sec-title::before{width:6px;height:28px;border-radius:2px;transform:translateY(3px)}
+.sec.area .area-kicker{display:block;font-family:var(--f-mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:34px 0 -30px}
+.sec.area.bo .sec-title::before{background:var(--accent)}
+.sec.area.er .sec-title::before{background:var(--gold)}
+.sec.area .sub-title{font-size:13px;margin-top:26px}
+.bo-tag{flex:none;font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;color:var(--accent-ink);background:var(--accent)}
 .sec.evidenza .item{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:14px 12px 14px 8px;box-shadow:var(--shadow)}
 .sub-title{font-family:var(--f-mono);font-weight:500;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--th,var(--ink-soft));margin:20px 0 2px;padding-bottom:5px;border-bottom:1px solid var(--line)}
 .item{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;padding:13px 6px 13px 2px;border-bottom:1px solid var(--line);border-radius:10px;scroll-margin-top:120px;transition:background .25s}
@@ -179,6 +187,7 @@ mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
 .sec.punto .item{border:0;padding-top:4px;grid-template-columns:minmax(0,1fr)}
 .sec.punto .item .pbtn{display:none!important}
 .sec.punto .sec-title small{display:none}
+.sec.punto .item.lead-only{display:block}
 .sec.punto .txt{font-size:19.5px;line-height:1.55;color:var(--ink)}
 .sec.punto .src:empty{display:none}
 
@@ -390,7 +399,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
   /* ---------- Province: ogni notizia riceve la sua, dal titoletto o dal luogo ("Sassuolo (Modena):") ---------- */
-  const PROV_ORDER = ['Emilia-Romagna','Bologna','Modena','Reggio Emilia','Parma','Piacenza','Ferrara','Ravenna','Forlì-Cesena','Rimini'];
+  const PROV_ORDER = ['Bologna','Emilia-Romagna','Modena','Reggio Emilia','Parma','Piacenza','Ferrara','Ravenna','Forlì-Cesena','Rimini'];
   const SIGLE = { BO:'Bologna', MO:'Modena', RE:'Reggio Emilia', PR:'Parma', PC:'Piacenza', FE:'Ferrara', RA:'Ravenna', FC:'Forlì-Cesena', RN:'Rimini' };
   const norm = t => String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’`]/g, "'").replace(/\s+/g, ' ').trim();
   const PLACE = new Map();
@@ -467,11 +476,11 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   /* ---------- Colore per tema ---------- */
   function themeOf(t){
     t = String(t || '').toLowerCase();
-    if (/cronaca|giustizia/.test(t)) return 'cronaca';
+    if (/cronaca|giustizia|sicurezza/.test(t)) return 'cronaca';
     if (/econom|lavoro|impres/.test(t)) return 'economia';
-    if (/politic|istituzion/.test(t)) return 'politica';
-    if (/sanit|scuola|sociale|servizi/.test(t)) return 'sanita';
-    if (/ambient|territorio|protezione|trasport/.test(t)) return 'ambiente';
+    if (/allert|ambient|territorio|protezione|trasport|mobilit|cantier/.test(t)) return 'ambiente';
+    if (/politic|istituzion|comune|regione/.test(t)) return 'politica';
+    if (/sanit|scuola|sociale|servizi|universit/.test(t)) return 'sanita';
     if (/cultura|eventi/.test(t)) return 'cultura';
     return '';
   }
@@ -491,7 +500,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     if (f[k]) { delete f[k]; toast('Tolta dalle notizie salvate'); }
     else {
       const t = el.querySelector('.txt').cloneNode(true);
-      t.querySelectorAll('.src,.uo-time,.uo-cat').forEach(n => n.remove());
+      t.querySelectorAll('.src,.uo-time,.uo-cat,.bo-tag').forEach(n => n.remove());
       const title = (t.querySelector('strong,b') || {}).textContent || '';
       const a = el.querySelector('.src a[href^="http"]');
       f[k] = { d: current, t: title.trim(), x: t.textContent.replace(title, '').replace(/^\s*[—–-]\s*/, '').replace(/\s+/g, ' ').trim().slice(0, 400),
@@ -744,7 +753,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   function makeItem(it, i){
     const el = document.createElement('article');
     el.className = 'item'; el.dataset.i = i; el.dataset.sub = it.sub ? '1' : '';
-    el.dataset.prov = it.sec === 'Note' ? '' : (provOf(it.sub) || detectProv(it.node));
+    el.dataset.prov = it.sec === 'Note' ? '' : ((themeOf(it.sub) ? '' : provOf(it.sub)) || detectProv(it.node) || (/^bologna$/i.test(it.sec) ? 'Bologna' : ''));
     el.innerHTML = `<button class="pbtn" type="button" aria-label="Ascolta da questa notizia"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><div class="txt">${it.node.innerHTML}</div>`;
     el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
     // vecchie edizioni: "(Fonte: X)" dentro il link diventa la riga delle fonti
@@ -785,7 +794,9 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   function renderUO(){
     if (!UO || current !== editions[0]) return null;
     const since = Date.now() - 12 * 3600e3, base = items.length;
-    const list = (UO.items || []).filter(x => new Date(x.t).getTime() >= since);
+    const isBo = x => x.bo || (() => { const li = document.createElement('li'); li.innerHTML = x.html; return detectProv(li) === 'Bologna'; })();
+    const all = (UO.items || []).filter(x => new Date(x.t).getTime() >= since).map(x => ({ ...x, bo: isBo(x) }));
+    const list = [...all.filter(x => x.bo), ...all.filter(x => !x.bo)];   // Bologna in cima, poi il resto (dalla più recente)
     const sec = document.createElement('section');
     sec.className = 'sec brief'; sec.id = 'inbreve';
     sec.dataset.title = 'In breve'; sec.dataset.chip = 'In breve';
@@ -800,7 +811,8 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       const head = document.createElement('span'); head.className = 'brief-head';
       head.innerHTML = `<span class="uo-time">${isNaN(t) ? '' : romeTime(t)}</span>`;
       if (strong) head.appendChild(strong);
-      if (x.cat) head.insertAdjacentHTML('beforeend', ` <b class="uo-cat ${x.cat.toLowerCase()}">${esc(x.cat)}</b>`);
+      if (x.bo) head.insertAdjacentHTML('beforeend', ' <b class="bo-tag">Bologna</b>');
+      else if (x.cat) head.insertAdjacentHTML('beforeend', ` <b class="uo-cat ${x.cat.toLowerCase()}">${esc(x.cat)}</b>`);
       const more = document.createElement('div'); more.className = 'more';
       while (txt.firstChild) more.appendChild(txt.firstChild);
       const first = more.firstChild;
@@ -843,6 +855,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
         if (it.sub && it.sub !== lastSub){   // temi: Cronaca e giustizia, Economia e lavoro, …
           const h = document.createElement('h3'); h.className = 'sub-title'; h.textContent = it.sub;
           if (themeOf(it.sub)) h.style.color = `var(--t-${themeOf(it.sub)})`;
+          else if (/^bologna/i.test(it.sub)) h.style.color = 'var(--accent)';
           pane.appendChild(h);
         }
         lastSub = it.sub;
@@ -877,23 +890,37 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     if (html !== null){
       const doc = parse(html);
       notes = [...doc.querySelectorAll('p.note')].map(n => n.outerHTML).join('');
+      // edizioni 15-18 ottobre: Il punto del giorno scritto come testo nudo (non letto dall'audio):
+      // lo mostriamo lo stesso, fuori dalla numerazione delle notizie
+      let lead = '';
+      doc.querySelectorAll('h2').forEach(h => { const n = h.nextSibling;
+        if (/punto del giorno/i.test(h.textContent) && n && n.nodeType === 3 && n.nodeValue.trim()) lead = n.nodeValue.trim(); });
+      if (lead){
+        const ps = document.createElement('section');
+        ps.className = 'sec punto'; ps.id = 'punto'; ps.dataset.title = 'Il punto del giorno'; ps.dataset.chip = 'Il punto';
+        ps.innerHTML = `<h2 class="sec-title">Il punto del giorno <small></small></h2><div class="item lead-only"><div class="txt">${esc(lead)}</div></div>`;
+        frag.appendChild(ps);
+      }
       let secEl = null, lastSec = null, lastSub = null;
       walkFragment(doc.body).forEach((it, i) => {
         if (it.sec !== lastSec){
           secEl = document.createElement('section');
+          const area = /^bologna$/i.test(it.sec) ? 'bo' : /^emilia.romagna$/i.test(it.sec) ? 'er' : '';
           secEl.className = 'sec' + (/evidenza/i.test(it.sec) ? ' evidenza' : '') + (it.sec === 'Note' ? ' notes' : '')
-            + (/punto del giorno/i.test(it.sec) ? ' punto' : '');
+            + (/punto del giorno/i.test(it.sec) ? ' punto' : '') + (area ? ' area ' + area : '');
           secEl.dataset.theme = themeOf(it.sec);
           if (/punto del giorno/i.test(it.sec)) secEl.dataset.chip = 'Il punto';
           secEl.id = 'sec-' + i;
           secEl.dataset.title = nice(it.sec);
-          secEl.innerHTML = `<h2 class="sec-title">${esc(nice(it.sec))} <small></small></h2>`;
+          secEl.innerHTML = (area ? `<span class="area-kicker">${area === 'bo' ? 'Città e area metropolitana' : 'Il resto della regione'}</span>` : '')
+            + `<h2 class="sec-title">${esc(nice(it.sec))} <small></small></h2>`;
           frag.appendChild(secEl);
           lastSec = it.sec; lastSub = null;
         }
         if (it.sub && it.sub !== lastSub){
           const h = document.createElement('h3');
           h.className = 'sub-title'; h.textContent = it.sub; h.dataset.prov = it.sub;
+          if (themeOf(it.sub)) h.style.color = `var(--t-${themeOf(it.sub)})`;
           secEl.appendChild(h);
         }
         lastSub = it.sub;
@@ -911,7 +938,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       // separatore: da qui comincia la rassegna completa del mattino
       const m = META[current] || {}, t = m.updated ? new Date(m.updated) : null;
       main.insertAdjacentHTML('beforeend', `<div class="ed-head" id="mattino"><h2>Edizione del mattino</h2>
-        <p>${t && !isNaN(t) ? 'Pubblicata alle ' + romeTime(t) + ' · ' : ''}${morningCount} notizie da tutte le province · si ascolta dal lettore in basso</p></div>`);
+        <p>${t && !isNaN(t) ? 'Pubblicata alle ' + romeTime(t) + ' · ' : ''}${morningCount} notizie: Bologna e il resto della regione · si ascolta dal lettore in basso</p></div>`);
     }
     main.appendChild(frag);
     if (!items.length && !updEl) main.insertAdjacentHTML('beforeend', '<p class="empty">Questa edizione non contiene notizie.</p>');
@@ -978,7 +1005,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     main.querySelectorAll('.sec').forEach(s => {
       const n = s.querySelectorAll('.item:not([hidden])').length;
       // un aggiornamento senza novità resta visibile (dice "nessuna novità") finché non si filtra
-      s.hidden = n === 0 && !(s.querySelector('.empty-upd') && prov === 'Tutte' && !q);
+      s.hidden = n === 0 && !((s.querySelector('.empty-upd') || s.querySelector('.lead-only')) && prov === 'Tutte' && !q);
       s.querySelector('.sec-title small').textContent = n ? n + (n === 1 ? ' notizia' : ' notizie') : '';
       const chip = $(`#secChips [data-target="${s.id}"]`);
       if (chip){ chip.hidden = s.hidden; chip.querySelector('small').textContent = n || ''; }
@@ -1050,7 +1077,9 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       b.hidden = !t; if (t) b.querySelector('span').textContent = `Ascolta · ${Math.max(1, Math.round(t.dur / 60))} min`; });
     if (!TRACKS.length){
       $('#player').classList.add('noaudio');
-      $('#nowTxt').innerHTML = '<b>Audio non disponibile</b> per questa edizione';
+      const old = current < new Date(Date.parse(todayRome()) - 19 * 864e5).toISOString().slice(0, 10);
+      $('#nowTxt').innerHTML = old ? '<b>Audio non più disponibile</b> · si tengono gli ultimi 19 giorni'
+                                   : '<b>Audio non disponibile</b> per questa edizione';
       $('#nowPos').textContent = '';
       audio.removeAttribute('src');
       return;
