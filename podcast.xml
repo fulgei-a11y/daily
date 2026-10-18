@@ -13,7 +13,17 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 18 Oct 2026 18:00:32 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 19:16:31 +0200</lastBuildDate>
+    <item>
+      <title>Aggiornamento delle 19 · domenica 18 ottobre 2026</title>
+      <description>11 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri a Bologna: bilancio danni e feriti aggiornato, arresti e dettagli su un episodio; Automobilista arrestato per droga; Poliziotto investito e morto nel Cesenate; Aggressione con spray al peperoncino in locale; Arrestata 34enne per droga; Frana di Ca’ Lita: monitoraggio e nuovi interventi.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-18</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-18-19</guid>
+      <pubDate>Sun, 18 Oct 2026 19:16:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-18-19.mp3" length="777161" type="audio/mpeg"/>
+      <itunes:duration>258</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Rassegna del mattino · domenica 18 ottobre 2026</title>
       <description>85 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri e guerriglia urbana a Bologna: bilancio di danni e feriti; Incidente mortale in via Libia; Sequestro di 110 Alaskan Malamute in allevamento abusivo; Spaccio di droga a Imola: arrestato 57enne; Uomo alla guida senza patente a Imola, fornisce false generalità; Tentativo di fuga e spaccio a Imola: 24enne denunciato.</description>
