@@ -36,7 +36,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  AUDIO_DAYS: '45'   # giorni di audio tenuti online (i testi restano tutti)
+  AUDIO_DAYS: '19'   # giorni di audio tenuti online (i testi restano tutti)
 
 jobs:
   build:
