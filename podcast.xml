@@ -13,7 +13,17 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 18 Oct 2026 00:18:30 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 06:27:22 +0200</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · domenica 18 ottobre 2026</title>
+      <description>165 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri e guerriglia urbana a Bologna durante corteo studentesco; Maxi sequestro di cani Alaskan Malamute malnutriti a Baricella; Regione Emilia-Romagna ottiene certificazione GSTC per turismo sostenibile; Mixomatosi, Regione sospende caccia alle lepri nel Ferrarese; Inaugurato il nuovo laboratorio ceramico Tiles Lab di Sacmi; Chiusura di 5 giorni per la discoteca King di Pinarella di Cervia.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-18</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-18</guid>
+      <pubDate>Sun, 18 Oct 2026 06:24:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-18.mp3" length="7091767" type="audio/mpeg"/>
+      <itunes:duration>2363</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · sabato 17 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri e fermi a Bologna; Sviluppi: Duplice omicidio a Mirandola; Allevamento abusivo di cani; Rissa e atti vandalici in centro; Incendio in cantiere; Arresto per maltrattamenti in famiglia.</description>
