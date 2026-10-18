@@ -471,7 +471,9 @@ COMPLETA: DEVI scrivere ALMENO 50 notizie (meglio 60-80). Includi ogni fatto con
 locale, economia, lavoro, mobilità, sanità, scuola e università; scarta solo ciò che è davvero irrilevante.
 Obiettivi indicativi per tema: Cronaca e sicurezza 15-25 · Comune e politica 10-20 · Economia e lavoro 8-15 ·
 Mobilità, cantieri e trasporti 5-10 · Sanità, scuola e università 5-10 · Cultura ed eventi al massimo 6.
-Fatti diversi = notizie diverse: non accorpare in una sola notizia fatti distinti solo perché simili.
+Fatti diversi = notizie diverse: non accorpare fatti distinti solo perché simili. Ma UNO STESSO fatto, con i suoi
+sviluppi (bilancio, arresti, danni, reazioni politiche), resta UNA sola notizia completa.
+Solo fatti di Bologna e dei comuni dell'area metropolitana: se il fatto è in un'altra provincia, scartalo.
 {_COMMON}
 SEZIONI, in quest'ordine:
 <h2>Bologna</h2>
@@ -797,8 +799,14 @@ def _split_agenda(s):
     return (s[:m.start()] + s[m.end():]).strip(), re.findall(r"<li\b.*?</li>", m.group(1), flags=re.S)
 
 
-AGENDA_NO = re.compile(r"\b(sagr[ae]|fest[ae]\b|mercatin|concert|mostra|laborator|presentazion|libr[oi]\b|"
-                       r"spettacol|teatro|gara|torneo|camminata|previsioni meteo|previsioni del tempo|degustazion)", re.I)
+AGENDA_NO = re.compile(r"\b(sagr[ae]|fest[ae]\b|mercatin|concert|mostra|laborator|presentazion|libr[oi]\b|marcia|"
+                       r"spettacol|teatro|gara|torneo|camminata|classic|autodromo|previsioni meteo|degustazion)", re.I)
+
+
+AGENDA_OK = re.compile(r"scioper|chius|cantier|lavori|strad|tangenzial|autostrad|traffic|treni|bus\b|tram\b|tper|"
+                       r"consiglio|giunta|seduta|delibera|bilancio|udienz|processo|sentenz|tribunal|allert|scadenz|"
+                       r"bando|domand|iscrizion|tavolo|vertice|incontro in regione|sindacat|presidio|elezion|voto|"
+                       r"referendum|assemblea|ordinanz|divieto|blocco|ztl|vaccinazion|cassa integrazione", re.I)
 
 
 def clean_agenda(lis, sections):
@@ -808,10 +816,26 @@ def clean_agenda(lis, sections):
     for li in lis:
         title = clean((re.search(r"<strong>(.*?)</strong>", li, flags=re.S) or [None, li])[1]).lower()
         text = clean(li)
-        if title in seen or AGENDA_NO.search(text) and not re.search(r"allert|sciopero|chius", text, re.I):
+        if title in seen or not AGENDA_OK.search(text) or AGENDA_NO.search(title):
             continue
         seen.add(title)
         out.append(li)
+    return out
+
+
+def drop_other_provinces(sec):
+    """Toglie dalla sezione Bologna le notizie che Gemini stesso colloca in un'altra provincia
+    ("Massa Finalese (Modena)", "Ravenna (Ravenna)")."""
+    altre = [p for p in PROVINCE if p != "Bologna"]
+    out, n = sec, 0
+    for li in re.findall(r"<li\b.*?</li>", sec, flags=re.S):
+        m = re.search(r"</strong>\s*[—–-]\s*([^:<]{2,80}):", li)
+        place = m.group(1) if m else ""
+        if any(re.search(rf"\({re.escape(p)}\)|^{re.escape(p)}\b", place.strip()) for p in altre):
+            out = out.replace(li, "", 1); n += 1
+    if n:
+        out = re.sub(r"<h3>[^<]*</h3>\s*<ul>\s*</ul>", "", out)
+        print(f"   🧹 Tolte dalla sezione Bologna {n} notizie di altre province.")
     return out
 
 
@@ -828,7 +852,8 @@ def complete_bologna(sec, bo):
               "\nScrivi ADESSO SOLO le notizie di Bologna e area metropolitana che mancano: tutti i fatti concreti non "
               "ancora coperti (cronaca, Comune e politica, consigli comunali, economia e lavoro, mobilità, sanità, scuola). "
               "Stesso formato, con i <h3> dei temi, SENZA <h2> e senza la sezione Da seguire. "
-              "Se non manca nulla di rilevante scrivi solo: NESSUNA")
+              "NON scrivere sviluppi, bilanci, reazioni o dettagli di fatti già scritti: devono essere fatti NUOVI e diversi. "
+              "Niente sport, sagre, feste, notizie di altre province. Se non manca nulla di rilevante scrivi solo: NESSUNA")
     raw = call_gemini(prompt, system=SYSTEM_BO, min_items=0, min_len=6)
     if not raw or "<li" not in raw:
         return sec
@@ -871,6 +896,7 @@ def write_edition(articles):
         sec_er = fallback_html(er).replace("<h2>Notizie del giorno</h2>", "<h2>Emilia-Romagna</h2>")
     if raw_bo:
         sec_bo = complete_bologna(sec_bo, bo)
+        sec_bo = drop_other_provinces(sec_bo)
     sec_bo = cap_h3(sec_bo, "Bologna", "Cultura", int(os.environ.get("MAX_CULTURA_BO", "6")))
     agenda = (clean_agenda(ag_bo, sec_bo + sec_er)[:int(os.environ.get("MAX_AGENDA_BO", "14"))]
               + clean_agenda(ag_er, sec_bo + sec_er)[:int(os.environ.get("MAX_AGENDA_ER", "8"))])
@@ -880,8 +906,16 @@ def write_edition(articles):
     punto = call_gemini(f"SEZIONE BOLOGNA:\n{titoli(sec_bo)}\n\nSEZIONE EMILIA-ROMAGNA:\n{titoli(sec_er)}",
                         system=SYSTEM_PUNTO, min_items=0, min_len=80)
     punto = re.sub(r"^```(?:html)?\s*|\s*```$", "", (punto or "").strip())
-    m = re.search(r"<p>.*?</p>", punto, flags=re.S)
-    parts = [f"<h2>Il punto del giorno</h2>\n{m.group(0)}"] if m else []
+    # Gemini a volte risponde senza <p> o in markdown: teniamo il testo, qualunque sia la forma
+    txt = re.sub(r"<h2>.*?</h2>", "", punto, flags=re.S)
+    txt = re.sub(r"^\W*il punto del giorno\W*", "", clean(txt), flags=re.I).strip(" *#")
+    if len(txt) < 40:   # niente risposta: apertura costruita dai primi titoli
+        tb = [clean(t) for t in re.findall(r"<strong>(.*?)</strong>", sec_bo, flags=re.S)[:3]]
+        te = [clean(t) for t in re.findall(r"<strong>(.*?)</strong>", sec_er, flags=re.S)[:2]]
+        txt = ("In primo piano a Bologna: " + "; ".join(tb) + "." if tb else "") + \
+              (" Nel resto della regione: " + "; ".join(te) + "." if te else "")
+        print("   ⚠️ Il punto del giorno costruito dai titoli (Gemini non ha risposto).")
+    parts = [f"<h2>Il punto del giorno</h2>\n<p>{html.escape(txt, quote=False)}</p>"] if txt.strip() else []
     parts += [sec_bo, sec_er]
     if agenda:
         parts.append(f"<h2>Da seguire oggi ({GIORNO})</h2>\n<ul>\n" + "\n".join(agenda) + "\n</ul>")
