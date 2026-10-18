@@ -227,9 +227,12 @@ def main():
                 inner = m.group(2).strip()
                 title = R.clean((re.search(r"<strong>(.*?)</strong>", inner, flags=re.S) or [None, inner[:80]])[1])
                 links = [R.link_key(h) for h in re.findall(r'href="([^"]+)"', inner)]
+                # Bologna e area metropolitana: il luogo scritto prima dei due punti ("Imola (Bologna):")
+                place = re.search(r"[—–-]\s*([^:]{2,80}?)\s*:", R.clean(re.sub(r"<strong>.*?</strong>", "", inner, flags=re.S)))
+                bo = bool(place) and R.is_bologna({"title": place.group(1), "desc": ""})
                 new_items.append({"t": NOW.isoformat(timespec="minutes"),
                                   "cat": cat if cat in ("Cronaca", "Economia") else "",
-                                  "title": title, "links": links, "html": inner})
+                                  "bo": bo, "title": title, "links": links, "html": inner})
 
     store["items"] = new_items + store["items"]
     store["updated"] = NOW.isoformat(timespec="minutes")

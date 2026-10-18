@@ -93,7 +93,7 @@ def main():
     <link>{SITE}</link>
     <atom:link href="{SITE}podcast.xml" rel="self" type="application/rss+xml"/>
     <language>it</language>
-    <description>La rassegna stampa quotidiana dell'Emilia-Romagna letta da Paola: l'edizione del mattino e gli aggiornamenti delle 13 e delle 19, provincia per provincia.</description>
+    <description>La rassegna stampa quotidiana dell'Emilia-Romagna letta da Paola: l'edizione del mattino e gli aggiornamenti delle 13 e delle 19, con Bologna in primo piano e il resto della regione.</description>
     <itunes:summary>La rassegna stampa quotidiana dell'Emilia-Romagna: ogni mattina e alle 13 e alle 19.</itunes:summary>
     <itunes:author>Rassegna ER</itunes:author>
     <itunes:image href="{SITE}icons/podcast-1400.png"/>
