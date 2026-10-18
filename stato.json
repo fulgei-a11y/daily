@@ -1,12 +1,12 @@
 {
  "date": "2026-10-18",
  "slot": "mattina",
- "generated": "2026-10-18T16:57+02:00",
- "articles": 380,
- "items": 81,
+ "generated": "2026-10-18T17:44+02:00",
+ "articles": 440,
+ "items": 93,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 70,
+ "feeds_ok": 71,
  "feeds_total": 79,
  "feeds": [
   {
@@ -126,8 +126,8 @@
   {
    "name": "FerraraToday",
    "prov": "Ferrara",
-   "status": "HTTP 403",
-   "items": 0
+   "status": "ok",
+   "items": 15
   },
   {
    "name": "IlPiacenza",
@@ -180,7 +180,7 @@
   {
    "name": "Forlì24ore",
    "prov": "Forlì-Cesena",
-   "status": "HTTP 202",
+   "status": "errore: ConnectionError",
    "items": 0
   },
   {
@@ -283,7 +283,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 20
+   "items": 22
   },
   {
    "name": "Google News",
@@ -313,7 +313,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 1
+   "items": 2
   },
   {
    "name": "Google News",
@@ -343,7 +343,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 5
+   "items": 4
   },
   {
    "name": "Google News",
@@ -361,7 +361,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 10
+   "items": 9
   },
   {
    "name": "Google News",
@@ -373,7 +373,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 38
+   "items": 40
   },
   {
    "name": "Google News",
@@ -391,7 +391,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 21
+   "items": 22
   },
   {
    "name": "Google News",
@@ -403,7 +403,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 11
+   "items": 10
   },
   {
    "name": "Google News",
@@ -427,7 +427,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
+   "items": 39
   },
   {
    "name": "Google News",
@@ -439,7 +439,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 17
+   "items": 18
   },
   {
    "name": "Google News",
