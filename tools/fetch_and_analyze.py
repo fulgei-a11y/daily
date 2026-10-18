@@ -41,7 +41,7 @@ TODAY = NOW.strftime("%Y-%m-%d")
 OUTPUT_DIR = "edizioni"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, f"{TODAY}.html")
 
-MAX_PER_FEED = int(os.environ.get("MAX_PER_FEED", "15"))
+MAX_PER_FEED = int(os.environ.get("MAX_PER_FEED", "20"))
 MAX_PER_FEED_BO = int(os.environ.get("MAX_PER_FEED_BO", "40"))   # Bologna è il focus: dai suoi feed si leggono più notizie
 MAX_AGE_HOURS = int(os.environ.get("MAX_AGE_HOURS", "36"))   # notizie più vecchie vengono scartate
 MAX_FULLTEXT = int(os.environ.get("MAX_FULLTEXT", "120"))     # articoli di cui leggere l'estratto
@@ -69,7 +69,6 @@ RSS_FEEDS = [
     ("Estense", "Ferrara", "https://www.estense.com/feed/"),
     # altre testate locali (feed verificati il 10/10/2026)
     ("CesenaToday", "Forlì-Cesena", "https://www.cesenatoday.it/rss"),
-    ("FerraraToday", "Ferrara", "https://www.ferraratoday.it/rss"),
     ("IlPiacenza", "Piacenza", "https://www.ilpiacenza.it/rss"),
     ("Reggionline", "Reggio Emilia", "https://www.reggionline.com/feed/"),
     ("ReggioSera", "Reggio Emilia", "https://cdn.reggiosera.it/feed"),
@@ -79,17 +78,14 @@ RSS_FEEDS = [
     ("AltaRimini", "Rimini", "https://www.altarimini.it/feed/"),
     # altre testate e tv locali (verificate il 14/10/2026)
     ("Teleromagna", "Forlì-Cesena", "https://www.teleromagna.it/feed"),
-    ("Forlì24ore", "Forlì-Cesena", "https://www.forli24ore.it/feed/"),
-    ("Ravenna&Dintorni", "Ravenna", "https://www.ravennaedintorni.it/feed/"),
     ("ReggioReport", "Reggio Emilia", "https://www.reggioreport.it/feed/"),
+    ("24Emilia", "Reggio Emilia", "https://www.24emilia.com/feed/"),
     ("Bologna2000", "Bologna", "https://www.bologna2000.com/feed/"),
     # area metropolitana di Bologna (feed verificati il 18/10/2026)
     ("Sabato Sera", "Bologna", "https://www.sabatosera.it/feed/"),          # Imola e circondario
     ("Leggilanotizia", "Bologna", "https://www.leggilanotizia.it/feed/"),    # Imola
     ("RenoNews", "Bologna", "https://www.renonews.it/feed/"),                # Casalecchio, valle del Reno, Reno Galliera
     ("Sassuolo2000", "Modena", "https://www.sassuolo2000.it/feed/"),
-    ("Icaro TV", "Rimini", "https://www.icaro.tv/feed/"),
-    ("Modena in diretta", "Modena", "https://www.modenaindiretta.it/feed/"),
     # Google News: riempie i vuoti su Regione e Protezione civile (i link portano all'articolo originale)
     ("Google News", "", "https://news.google.com/rss/search?q=%22Regione+Emilia-Romagna%22+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "", "https://news.google.com/rss/search?q=allerta+meteo+Emilia-Romagna+when:1d&hl=it&gl=IT&ceid=IT:it"),
@@ -117,8 +113,8 @@ RSS_FEEDS = [
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=Tper+OR+tram+OR+%22Passante+di+Bologna%22+Bologna+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=Bologna+-calcio+-Serie+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=Imola+when:1d&hl=it&gl=IT&ceid=IT:it"),
-    ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:nuovodiario.com+when:1d&hl=it&gl=IT&ceid=IT:it"),   # Il Nuovo Diario Messaggero, Imola: il feed non è leggibile dai server
-    ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:telesanterno.com+when:1d&hl=it&gl=IT&ceid=IT:it"),   # Telesanterno, Imola
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:nuovodiario.com+when:3d&hl=it&gl=IT&ceid=IT:it"),   # Il Nuovo Diario Messaggero, Imola: il feed non è leggibile dai server
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:telesanterno.com+when:2d&hl=it&gl=IT&ceid=IT:it"),   # Telesanterno, Imola
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:ausl.bologna.it+OR+site:aosp.bo.it+when:3d&hl=it&gl=IT&ceid=IT:it"),   # Ausl e Policlinico Sant'Orsola
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=Casalecchio+OR+%22San+Lazzaro+di+Savena%22+OR+%22Zola+Predosa%22+OR+Valsamoggia+OR+Pianoro+-calcio+when:1d&hl=it&gl=IT&ceid=IT:it"),   # cintura
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=%22San+Giovanni+in+Persiceto%22+OR+Budrio+OR+Molinella+OR+Castenaso+OR+%22Castel+Maggiore%22+OR+Medicina+Bologna+-calcio+when:1d&hl=it&gl=IT&ceid=IT:it"),   # pianura
@@ -130,12 +126,19 @@ RSS_FEEDS = [
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=%22consiglio+comunale%22+(Imola+OR+Casalecchio+OR+%22San+Lazzaro%22+OR+Valsamoggia+OR+Budrio+OR+Persiceto+OR+%22Castel+Maggiore%22+OR+Pianoro+OR+Zola+OR+Castenaso+OR+Molinella+OR+Medicina)+when:3d&hl=it&gl=IT&ceid=IT:it"),   # consigli comunali dell'area
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=%22consiglio+comunale%22+Bologna+(%22ordine+del+giorno%22+OR+delibera+OR+approvato+OR+seduta)+when:2d&hl=it&gl=IT&ceid=IT:it"),   # consiglio comunale di Bologna
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=%22consiglio+metropolitano%22+Bologna+when:3d&hl=it&gl=IT&ceid=IT:it"),   # Città metropolitana
+    # altre province: cronaca ed economia (aggiunte il 18/10/2026)
+    ("Google News", "Rimini", "https://news.google.com/rss/search?q=site:newsrimini.it+when:1d&hl=it&gl=IT&ceid=IT:it"),   # NewsRimini
+    ("Google News", "Rimini", "https://news.google.com/rss/search?q=site:chiamamicitta.it+when:1d&hl=it&gl=IT&ceid=IT:it"),   # ChiamamiCittà, Rimini
+    ("Google News", "Modena", "https://news.google.com/rss/search?q=site:lapressa.it+when:1d&hl=it&gl=IT&ceid=IT:it"),   # La Pressa, Modena
+    ("Google News", "Modena", "https://news.google.com/rss/search?q=site:trc.tv+when:1d&hl=it&gl=IT&ceid=IT:it"),   # TRC, Modena
+    ("Google News", "Ferrara", "https://news.google.com/rss/search?q=site:telestense.it+when:1d&hl=it&gl=IT&ceid=IT:it"),   # Telestense, Ferrara
+    ("Google News", "Ravenna", "https://news.google.com/rss/search?q=site:settesere.it+when:2d&hl=it&gl=IT&ceid=IT:it"),   # Sette Sere Qui, Faenza e Lugo
+    ("Google News", "", "https://news.google.com/rss/search?q=Emilia-Romagna+(sindacati+OR+%22cassa+integrazione%22+OR+licenziamenti+OR+%22crisi+aziendale%22+OR+sciopero+OR+esuberi)+-calcio+when:1d&hl=it&gl=IT&ceid=IT:it"),   # economia e lavoro in regione
+    ("Google News", "", "https://news.google.com/rss/search?q=(arrestato+OR+carabinieri+OR+%22polizia+di+stato%22+OR+incidente)+(Modena+OR+Parma+OR+%22Reggio+Emilia%22+OR+Ferrara+OR+Ravenna+OR+Forl%C3%AC+OR+Cesena+OR+Rimini+OR+Piacenza)+-calcio+when:1d&hl=it&gl=IT&ceid=IT:it"),   # cronaca nelle province
     # riserva per le testate il cui feed blocca i server di GitHub (verificato il 18/10/2026)
     ("Google News", "Ferrara", "https://news.google.com/rss/search?q=site:ferraratoday.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "Ravenna", "https://news.google.com/rss/search?q=site:ravennaedintorni.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "Forlì-Cesena", "https://news.google.com/rss/search?q=site:forli24ore.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
-    ("Google News", "Rimini", "https://news.google.com/rss/search?q=site:icaro.tv+when:1d&hl=it&gl=IT&ceid=IT:it"),
-    ("Google News", "Modena", "https://news.google.com/rss/search?q=site:modenaindiretta.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
 ]
 
 # nessuna testata può occupare più di questa quota delle notizie passate a Gemini
@@ -492,7 +495,8 @@ SEZIONI, in quest'ordine:
 SYSTEM_ER = f"""
 Sei il caporedattore della sezione EMILIA-ROMAGNA di una rassegna stampa quotidiana: copre il RESTO della
 regione (Bologna e la sua area metropolitana hanno una sezione a parte, già scritta: non trattarle).
-Di norma 40-60 notizie, SOLO sui temi qui sotto. NIENTE cultura, eventi, sagre, inaugurazioni minori, curiosità.
+Di norma 40-60 notizie, SOLO sui temi qui sotto. NIENTE cultura, eventi, sagre, inaugurazioni minori, curiosità,
+iniziative di beneficenza, feste, raccolte fondi, premiazioni.
 Copri tutte le province: un fatto importante di una provincia piccola non va trascurato.
 {_COMMON}
 SEZIONI, in quest'ordine:
@@ -956,7 +960,8 @@ SPORT_URL = re.compile(r"/(sport|sports|calcio|basket|volley|pallavolo|motori|ci
 SPORT_TITLE = re.compile(
     # solo parole quasi sempre sportive: "curva", "tifosi", "stadio" restano (possono essere cronaca)
     r"\b(serie [abcd]|calcio|calciomercato|campionato|gol|goal|pareggio|derby|playoff|play-off|allenatore|"
-    r"basket|pallavolo|volley|rugby|tennis|motogp|formula 1|ciclismo|"
+    r"basket|pallavolo|volley|rugby|tennis|motogp|formula 1|ciclismo|orienteering|podismo|maratona|"
+    r"autodromo|rally|classic series|nuoto|atletica|"
     r"prima categoria|seconda categoria|terza categoria|under \d+)\b", re.I)
 
 
