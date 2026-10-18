@@ -100,6 +100,7 @@ def main():
     <image><url>{SITE}icons/podcast-1400.png</url><title>Rassegna ER</title><link>{SITE}</link></image>
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
+    <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
     <lastBuildDate>{now}</lastBuildDate>
 {chr(10).join(x[1] for x in episodes[:MAX_EPISODES])}
