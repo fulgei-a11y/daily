@@ -128,13 +128,18 @@
   "https://www.dire.it/17-10-2026/1277545-meloni-le-opposizioni-non-siano-ambigue-sulle-violenze": "2026-10-18T00:18+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/17/allevamento-abusivo-con-piu-di-100-cani-maltrattati-scatta-il-sequestro_ea5c81bb-5ada-4f66-b858-ba3f4604fdb3.html": "2026-10-18T00:18+02:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/17/scontri-a-milano-circa-50-fermati-quasi-la-meta-minorenni_9d805d44-257a-4f88-a28d-cfe6a2994a8b.html": "2026-10-18T08:18+02:00",
-  "https://news.google.com/rss/articles/CBMinwJBVV95cUxPbjRpY0dHOWZHcDQ2WFlzREw5cWZYY3NHb2xZV2FQNTdETDBZNll4a291N09WYURqZHNSRVc5UEZCZ1lwS2ktME1oWWl3cVFHVU1NZUc0NDRkcEZ5UzJsOGduVUlUV1dNWU8yUnE1NF92aEZIMEE2NTJyckliUlgwdlhjci15Zms0R1JVeGs0dWMyUVZ2a0ZEQzAxWmxtQVRnQ2RzOW1KckZldnpNNk1mTU1ua185STNXVk1XMHJ6MVNtZVZkeVFxU3NkTnY2bElkTUNCVklIMlNnQUZwSWpZLUlDN3F4V094eVR2WllIR20xMU1ueEFETGl2b3Z6Ykpjd0kxcG9FX0JuTnY5d3NkUDhwaURvZ1JGVEhVbFAzNA": "2026-10-18T08:18+02:00"
+  "https://news.google.com/rss/articles/CBMinwJBVV95cUxPbjRpY0dHOWZHcDQ2WFlzREw5cWZYY3NHb2xZV2FQNTdETDBZNll4a291N09WYURqZHNSRVc5UEZCZ1lwS2ktME1oWWl3cVFHVU1NZUc0NDRkcEZ5UzJsOGduVUlUV1dNWU8yUnE1NF92aEZIMEE2NTJyckliUlgwdlhjci15Zms0R1JVeGs0dWMyUVZ2a0ZEQzAxWmxtQVRnQ2RzOW1KckZldnpNNk1mTU1ua185STNXVk1XMHJ6MVNtZVZkeVFxU3NkTnY2bElkTUNCVklIMlNnQUZwSWpZLUlDN3F4V094eVR2WllIR20xMU1ueEFETGl2b3Z6Ykpjd0kxcG9FX0JuTnY5d3NkUDhwaURvZ1JGVEhVbFAzNA": "2026-10-18T08:18+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/18/incidente-su-un-ponte-a-bologna-muore-motociclista-67enne_3ce454b9-71e4-49d5-897e-2e5377321ddc.html": "2026-10-18T12:12+02:00",
+  "https://www.dire.it/18-10-2026/1277645-il-bilancio-del-sabato-di-violenze-in-strada-oltre-1-200-arresti-in-francia-con-record-a-parigi-e-50-minori-fermati-tra-milano-torino-e-bologna": "2026-10-18T12:12+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/18/danni-in-stazione-a-bologna-dopo-gli-scontri-fast-food-vandalizzato_c71882e7-3aff-4d8b-a74e-d5071ba2b779.html": "2026-10-18T12:12+02:00",
+  "https://www.italpress.com/ucraina-droni-russi-su-poltava-un-morto-e-quattro-feriti": "2026-10-18T12:12+02:00",
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSFF0bmJXSzNJS3g0Mk9qeE1LNGROWTQ0OFRxdmhma2pSU3JzZXBDYWFOaEVBQmZ0SzZselN2QzFrSlNnT1B5WnJqWndjdU5Ocl92ckhrQl80QmZaeWFSdkR2QlU4S09PWGpkaWpJeGZNOFFlVHRoMmJxSlZsdzdzNWpXWHVZRnRxTGh1aFh4emEyLUVLNlNDNHNuRW9VbzVtWEtjQ2JfNnMtV2c": "2026-10-18T12:12+02:00"
  },
- "updated": "2026-10-18T08:18+02:00",
- "next": "alle 12",
+ "updated": "2026-10-18T12:12+02:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-18T08:18+02:00",
-  "articles": 2,
+  "at": "2026-10-18T12:12+02:00",
+  "articles": 5,
   "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -143,64 +148,64 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 38,
+    "items": 37,
+    "kept": 2
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
     "kept": 0
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
+    "status": "ok",
+    "items": 9,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "Google News",
     "status": "ok",
     "items": 60,
     "kept": 1
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 18,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
    },
    {
     "agency": "askanews",
@@ -228,7 +233,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
@@ -242,20 +247,20 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
-    "items": 48,
-    "kept": 1
+    "items": 50,
+    "kept": 0
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 3,
+    "items": 4,
     "kept": 0
    }
   ]
