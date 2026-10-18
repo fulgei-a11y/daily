@@ -44,7 +44,7 @@ OUTPUT_FILE = os.path.join(OUTPUT_DIR, f"{TODAY}.html")
 MAX_PER_FEED = int(os.environ.get("MAX_PER_FEED", "15"))
 MAX_PER_FEED_BO = int(os.environ.get("MAX_PER_FEED_BO", "40"))   # Bologna è il focus: dai suoi feed si leggono più notizie
 MAX_AGE_HOURS = int(os.environ.get("MAX_AGE_HOURS", "36"))   # notizie più vecchie vengono scartate
-MAX_FULLTEXT = int(os.environ.get("MAX_FULLTEXT", "90"))     # articoli di cui leggere l'estratto
+MAX_FULLTEXT = int(os.environ.get("MAX_FULLTEXT", "120"))     # articoli di cui leggere l'estratto
 MAX_ARTICLES = int(os.environ.get("MAX_ARTICLES", "380"))    # tetto alle notizie passate a Gemini
 
 # (nome della testata, provincia di riferimento o "", url del feed)
@@ -126,6 +126,10 @@ RSS_FEEDS = [
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=%22aeroporto+di+Bologna%22+OR+%22aeroporto+Marconi%22+OR+%22stazione+di+Bologna%22+when:1d&hl=it&gl=IT&ceid=IT:it"),   # aeroporto e stazione
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=Bologna+(Comune+OR+Lepore+OR+%22consiglio+comunale%22)+-calcio+when:1d&hl=it&gl=IT&ceid=IT:it"),   # Comune e politica
     ("Google News", "Bologna", "https://news.google.com/rss/search?q=Bologna+(lavoro+OR+sindacati+OR+azienda+OR+sciopero)+-calcio+when:1d&hl=it&gl=IT&ceid=IT:it"),   # economia e lavoro
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=site:bo.it+when:2d&hl=it&gl=IT&ceid=IT:it"),   # siti dei comuni dell'area metropolitana (comune.imola.bo.it, comune.casalecchio.bo.it...)
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=%22consiglio+comunale%22+(Imola+OR+Casalecchio+OR+%22San+Lazzaro%22+OR+Valsamoggia+OR+Budrio+OR+Persiceto+OR+%22Castel+Maggiore%22+OR+Pianoro+OR+Zola+OR+Castenaso+OR+Molinella+OR+Medicina)+when:3d&hl=it&gl=IT&ceid=IT:it"),   # consigli comunali dell'area
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=%22consiglio+comunale%22+Bologna+(%22ordine+del+giorno%22+OR+delibera+OR+approvato+OR+seduta)+when:2d&hl=it&gl=IT&ceid=IT:it"),   # consiglio comunale di Bologna
+    ("Google News", "Bologna", "https://news.google.com/rss/search?q=%22consiglio+metropolitano%22+Bologna+when:3d&hl=it&gl=IT&ceid=IT:it"),   # Città metropolitana
     # riserva per le testate il cui feed blocca i server di GitHub (verificato il 18/10/2026)
     ("Google News", "Ferrara", "https://news.google.com/rss/search?q=site:ferraratoday.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
     ("Google News", "Ravenna", "https://news.google.com/rss/search?q=site:ravennaedintorni.it+when:1d&hl=it&gl=IT&ceid=IT:it"),
@@ -387,7 +391,8 @@ def balance_sources(articles):
 def add_fulltext(articles):
     if not trafilatura or MAX_FULLTEXT <= 0:
         return
-    targets = [a for a in articles if "news.google.com" not in a["link"]][:MAX_FULLTEXT]
+    readable = [a for a in articles if "news.google.com" not in a["link"]]
+    targets = ([a for a in readable if a.get("bo")] + [a for a in readable if not a.get("bo")])[:MAX_FULLTEXT]  # prima Bologna
 
     def grab(a):
         try:
@@ -419,13 +424,10 @@ BO_TEMI = ["Cronaca e sicurezza", "Comune e politica", "Economia e lavoro", "Mob
            "Sanità, scuola e università", "Cultura ed eventi"]
 ER_TEMI = ["Cronaca e giustizia", "Economia e lavoro", "Regione e istituzioni", "Ambiente, allerte e protezione civile"]
 
-SYSTEM_INSTRUCTION = f"""
-Sei il caporedattore di una rassegna stampa quotidiana con un FOCUS PRINCIPALE SU BOLOGNA (città e area
-metropolitana) e uno sguardo essenziale sul resto dell'Emilia-Romagna.
+_COMMON = f"""
 Scrivi in italiano giornalistico, asciutto e preciso: ogni notizia deve contenere i fatti concreti
 (chi, cosa, dove, quando, cifre, nomi, ruoli). Niente frasi vaghe o commenti tuoi.
 Usa SOLO le informazioni presenti nelle notizie fornite. Non inventare nulla.
-Le notizie di Bologna e area metropolitana sono marcate "| BOLOGNA".
 
 FONTI
 - Ogni notizia è numerata [n]. Alla fine di ogni notizia scrivi le fonti usate così: <cite>n</cite>,
@@ -434,7 +436,7 @@ FONTI
 
 UNIRE E SCEGLIERE
 - Se più notizie parlano dello stesso fatto, scrivi UNA sola notizia che le combina e cita tutti i numeri.
-- Ogni fatto compare UNA sola volta in tutta la rassegna.
+- Ogni fatto compare UNA sola volta.
 - Scarta sempre: sport (di ogni livello), gossip, oroscopi, pubblicità, notizie nazionali senza legame con la regione.
 
 FORMATO (HTML, solo il frammento: niente <html>, <head>, <body>, <style>, <div>, <section>)
@@ -443,33 +445,64 @@ FORMATO (HTML, solo il frammento: niente <html>, <head>, <body>, <style>, <div>,
   Il luogo è il comune seguito dalla provincia tra parentesi ("Casalecchio di Reno (Bologna)", "Sassuolo (Modena)");
   per i capoluoghi basta il nome ("Bologna", "Forlì", "Reggio Emilia"); per i fatti di tutta la regione "Emilia-Romagna".
   Province: {", ".join(PROVINCE)}.
-- Metti un tema solo se ha notizie.
+- Metti un tema solo se ha notizie. Dentro ogni tema, notizie in ordine di importanza.
+- Restituisci solo il frammento HTML, senza blocchi di codice.
+"""
 
+AGENDA_RULES = f"""<h2>Da seguire oggi ({GIORNO})</h2>  (senza <h3>, una riga ciascuno, nella stessa forma delle notizie:
+   scioperi, cantieri e strade chiuse, consigli comunali e metropolitani con i punti all'ordine del giorno,
+   udienze, scadenze, allerte, appuntamenti importanti di oggi e dei prossimi giorni)"""
+
+# L'edizione del mattino si scrive in tre passaggi: Bologna (solo notizie di Bologna e area metropolitana),
+# il resto della regione, e infine Il punto del giorno dai titoli. Così Gemini dedica a Bologna tutta
+# la sua attenzione e tutto lo spazio di risposta, invece di riassumere tutto insieme.
+SYSTEM_BO = f"""
+Sei il caporedattore della sezione BOLOGNA di una rassegna stampa quotidiana: Bologna città e i 55 comuni
+dell'area metropolitana (Imola, Casalecchio di Reno, San Lazzaro di Savena, Castel Maggiore, Budrio,
+San Giovanni in Persiceto, Valsamoggia, Appennino...). È la parte più importante della rassegna: deve essere
+COMPLETA, di norma 50-80 notizie. Includi ogni fatto concreto di cronaca, politica locale, economia,
+lavoro, mobilità, sanità, scuola e università; scarta solo ciò che è davvero irrilevante.
+{_COMMON}
 SEZIONI, in quest'ordine:
-<h2>Il punto del giorno</h2>
-<p>UN SOLO paragrafo di 4-5 frasi, senza <cite>: prima i fatti principali di Bologna, poi in una o due frasi
-i più importanti del resto della regione. Come l'apertura di un giornale radio; niente commenti.</p>
-
-<h2>Bologna</h2>  (LA SEZIONE PRINCIPALE: completa e ricca, di norma 50-80 notizie. Bologna città e area metropolitana:
-   Imola, Casalecchio, San Lazzaro, Castel Maggiore, Budrio, Appennino... Notizie in ordine di importanza dentro ogni tema)
+<h2>Bologna</h2>
 {chr(10).join(f"<h3>{t}</h3>" for t in BO_TEMI)}
-   - "Comune e politica": decisioni del Comune, della Città metropolitana e dei comuni dell'area, consiglio comunale, partiti.
+   - "Cronaca e sicurezza": incidenti, reati, arresti, indagini, processi, incendi, soccorsi, ordine pubblico.
+   - "Comune e politica": decisioni e delibere del Comune di Bologna, della Città metropolitana e dei comuni dell'area;
+     CONSIGLI COMUNALI (di Bologna e di tutti i comuni dell'area): quando la notizia lo riporta, elenca i
+     punti principali all'ordine del giorno o le decisioni prese; partiti e scontri politici su temi concreti.
    - "Mobilità, cantieri e trasporti": tram, Passante, cantieri, chiusure di strade, Tper, treni, aeroporto, scioperi dei trasporti.
    - "Cultura ed eventi": solo gli eventi davvero rilevanti, al massimo 10.
+{AGENDA_RULES}
+   (solo Bologna e area metropolitana, al massimo 14 righe)
+"""
 
-<h2>Emilia-Romagna</h2>  (il RESTO della regione, senza Bologna e la sua area: SOLO questi temi, di norma 40-60 notizie)
+SYSTEM_ER = f"""
+Sei il caporedattore della sezione EMILIA-ROMAGNA di una rassegna stampa quotidiana: copre il RESTO della
+regione (Bologna e la sua area metropolitana hanno una sezione a parte, già scritta: non trattarle).
+Di norma 40-60 notizie, SOLO sui temi qui sotto. NIENTE cultura, eventi, sagre, inaugurazioni minori, curiosità.
+Copri tutte le province: un fatto importante di una provincia piccola non va trascurato.
+{_COMMON}
+SEZIONI, in quest'ordine:
+<h2>Emilia-Romagna</h2>
 {chr(10).join(f"<h3>{t}</h3>" for t in ER_TEMI)}
    - "Cronaca e giustizia": incidenti, reati, arresti, indagini, processi, incendi, soccorsi, scomparsi.
    - "Economia e lavoro": aziende, crisi, assunzioni e licenziamenti, investimenti, sindacati, scioperi, infortuni sul lavoro, prezzi.
    - "Regione e istituzioni": decisioni della Regione e dell'Assemblea legislativa, sanità regionale, fatti istituzionali rilevanti.
    - "Ambiente, allerte e protezione civile": allerte meteo, maltempo con danni, frane, alluvioni, inquinamento.
-   NIENTE cultura, eventi, sagre, inaugurazioni minori, curiosità per le altre province.
-
-<h2>Da seguire oggi ({GIORNO})</h2>  (senza <h3>, al massimo 20 righe, prima Bologna: scioperi, cantieri e strade chiuse,
-   consigli comunali, udienze, scadenze, allerte, appuntamenti importanti di oggi e dei prossimi giorni; una riga ciascuno)
-
-Restituisci solo il frammento HTML, senza blocchi di codice.
+{AGENDA_RULES}
+   (solo il resto della regione, al massimo 8 righe, solo appuntamenti importanti)
 """
+
+SYSTEM_PUNTO = """
+Sei il caporedattore di una rassegna stampa con il focus su Bologna. Ricevi i titoli già scritti della
+sezione Bologna e della sezione Emilia-Romagna. Scrivi IL PUNTO DEL GIORNO: UN SOLO paragrafo di 4-5 frasi,
+come l'apertura di un giornale radio: prima i fatti principali di Bologna, poi in una o due frasi i più
+importanti del resto della regione. Solo fatti presenti nei titoli, niente commenti, niente <cite>.
+Restituisci solo: <h2>Il punto del giorno</h2><p>...</p>
+"""
+
+SYSTEM_INSTRUCTION = SYSTEM_BO   # predefinito di call_gemini
+
 
 
 def build_prompt(articles):
@@ -745,6 +778,45 @@ def write_status(n_articles, n_items, fallback, slot="mattina"):
         json.dump(status, f, ensure_ascii=False, indent=1)
 
 
+def _split_agenda(s):
+    """Separa la sezione 'Da seguire' dal resto; restituisce (resto, righe dell'agenda)."""
+    m = re.search(r"<h2>\s*Da seguire[^<]*</h2>(.*?)(?=<h2>|$)", s, flags=re.S | re.I)
+    if not m:
+        return s, []
+    return (s[:m.start()] + s[m.end():]).strip(), re.findall(r"<li\b.*?</li>", m.group(1), flags=re.S)
+
+
+def write_edition(articles):
+    """Edizione del mattino in tre passaggi. Restituisce (html, True se almeno una parte è di Gemini)."""
+    bo = [a for a in articles if a.get("bo")]
+    er = [a for a in articles if not a.get("bo")]
+    print(f"Sezione Bologna: {len(bo)} notizie a Gemini · resto della regione: {len(er)}")
+    raw_bo = call_gemini(build_prompt(bo), system=SYSTEM_BO, min_items=30) if bo else None
+    raw_er = call_gemini(build_prompt(er), system=SYSTEM_ER, min_items=20) if er else None
+    if not raw_bo and not raw_er:
+        return fallback_html(articles), False
+    sec_bo, ag_bo = _split_agenda(finalize_html(raw_bo, bo)) if raw_bo else ("", [])
+    sec_er, ag_er = _split_agenda(finalize_html(raw_er, er)) if raw_er else ("", [])
+    if not raw_bo:
+        sec_bo = fallback_html(bo).replace("<h2>Notizie del giorno</h2>", "<h2>Bologna</h2>")
+    if not raw_er:
+        sec_er = fallback_html(er).replace("<h2>Notizie del giorno</h2>", "<h2>Emilia-Romagna</h2>")
+    sec_bo = cap_h3(sec_bo, "Bologna", "Cultura", int(os.environ.get("MAX_CULTURA_BO", "10")))
+    agenda = ag_bo[:int(os.environ.get("MAX_AGENDA_BO", "14"))] + ag_er[:int(os.environ.get("MAX_AGENDA_ER", "8"))]
+
+    # Il punto del giorno: dai titoli appena scritti (richiesta breve)
+    titoli = lambda s: "\n".join("- " + clean(t) for t in re.findall(r"<strong>(.*?)</strong>", s, flags=re.S)[:40])
+    punto = call_gemini(f"SEZIONE BOLOGNA:\n{titoli(sec_bo)}\n\nSEZIONE EMILIA-ROMAGNA:\n{titoli(sec_er)}",
+                        system=SYSTEM_PUNTO, min_items=0, min_len=80)
+    punto = re.sub(r"^```(?:html)?\s*|\s*```$", "", (punto or "").strip())
+    m = re.search(r"<p>.*?</p>", punto, flags=re.S)
+    parts = [f"<h2>Il punto del giorno</h2>\n{m.group(0)}"] if m else []
+    parts += [sec_bo, sec_er]
+    if agenda:
+        parts.append(f"<h2>Da seguire oggi ({GIORNO})</h2>\n<ul>\n" + "\n".join(agenda) + "\n</ul>")
+    return "\n\n".join(p for p in parts if p.strip()), True
+
+
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     articles = fetch_rss_articles()
@@ -754,20 +826,14 @@ def main():
         sys.exit(1)
     add_fulltext(articles)
 
-    raw = call_gemini(build_prompt(articles))
-    body = finalize_html(raw, articles) if raw else fallback_html(articles)
-    if raw:
-        # Gemini ignora i limiti scritti: cultura ed eventi e agenda li tagliamo noi, a turno tra le province
-        body = cap_section(body, "Cultura ed eventi", int(os.environ.get("MAX_CULTURA", "15")))  # vecchio schema
-        body = cap_h3(body, "Bologna", "Cultura", int(os.environ.get("MAX_CULTURA_BO", "10")))
-        body = cap_section(body, "Da seguire", int(os.environ.get("MAX_AGENDA", "20")))
+    body, raw = write_edition(articles)
     body += "\n" + sources_note(articles)
     n_items = len(re.findall(r"<li\b", body))
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(f"<!-- Rassegna Emilia-Romagna {TODAY} - {len(articles)} notizie analizzate -->\n{body}\n")
     update_indexes(n_items, len(articles), len({a["source"] for a in articles}))
-    write_status(len(articles), n_items, raw is None)
+    write_status(len(articles), n_items, not raw)
     print(f"✅ {OUTPUT_FILE}: {n_items} notizie in rassegna.")
 
 
