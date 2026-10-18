@@ -1,13 +1,13 @@
 {
  "date": "2026-10-18",
  "slot": "mattina",
- "generated": "2026-10-18T16:34+02:00",
+ "generated": "2026-10-18T16:57+02:00",
  "articles": 380,
- "items": 86,
+ "items": 81,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 67,
- "feeds_total": 75,
+ "feeds_ok": 70,
+ "feeds_total": 79,
  "feeds": [
   {
    "name": "Ansa",
@@ -126,8 +126,8 @@
   {
    "name": "FerraraToday",
    "prov": "Ferrara",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 403",
+   "items": 0
   },
   {
    "name": "IlPiacenza",
@@ -180,7 +180,7 @@
   {
    "name": "Forlì24ore",
    "prov": "Forlì-Cesena",
-   "status": "errore: ConnectionError",
+   "status": "HTTP 202",
    "items": 0
   },
   {
@@ -283,7 +283,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 22
+   "items": 20
   },
   {
    "name": "Google News",
@@ -349,7 +349,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 35
+   "items": 36
   },
   {
    "name": "Google News",
@@ -373,7 +373,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 37
+   "items": 38
   },
   {
    "name": "Google News",
@@ -397,13 +397,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 9
+   "items": 8
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 12
+   "items": 11
   },
   {
    "name": "Google News",
@@ -428,6 +428,30 @@
    "prov": "Bologna",
    "status": "ok",
    "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 17
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 13
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 3
   },
   {
    "name": "Google News",
