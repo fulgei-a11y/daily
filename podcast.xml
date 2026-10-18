@@ -13,7 +13,17 @@
     <itunes:category text="News"><itunes:category text="Daily News"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 18 Oct 2026 12:12:27 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 13:22:47 +0200</lastBuildDate>
+    <item>
+      <title>Aggiornamento delle 13 · domenica 18 ottobre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Scontri a Bologna, bilancio aggiornato e danni; Omicidio di Mirandola, indagini sui telefoni; Incidente mortale sul ponte di via Libia; Rapina e aggressione a Ravenna, tre denunciati; Violazione divieto di avvicinamento alla madre; Tentato furto e danneggiamenti all&#x27;Ospedale Maggiore.</description>
+      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-18</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-18-13</guid>
+      <pubDate>Sun, 18 Oct 2026 13:22:00 +0200</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-18-13.mp3" length="1511698" type="audio/mpeg"/>
+      <itunes:duration>503</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Rassegna del mattino · domenica 18 ottobre 2026</title>
       <description>165 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri e guerriglia urbana a Bologna durante corteo studentesco; Maxi sequestro di cani Alaskan Malamute malnutriti a Baricella; Regione Emilia-Romagna ottiene certificazione GSTC per turismo sostenibile; Mixomatosi, Regione sospende caccia alle lepri nel Ferrarese; Inaugurato il nuovo laboratorio ceramico Tiles Lab di Sacmi; Chiusura di 5 giorni per la discoteca King di Pinarella di Cervia.</description>
