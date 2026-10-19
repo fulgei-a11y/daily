@@ -436,10 +436,12 @@ MESI = ["", "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "lugli
         "agosto", "settembre", "ottobre", "novembre", "dicembre"]
 GIORNO = f"{GIORNI[NOW.weekday()]} {NOW.day} {MESI[NOW.month]}"
 FEED_REPORT = []
+PASS_LOG = []      # un elemento per ogni risposta di Gemini: finisce in stato.json, per capire cosa è successo
 USED_MODEL = None
 
-BO_TEMI = ["Cronaca e sicurezza", "Comune e politica", "Economia e lavoro", "Mobilità, cantieri e trasporti",
-           "Sanità, scuola e università", "Cultura ed eventi"]
+BO_TEMI = ["Cronaca", "Giustizia e indagini", "Comune di Bologna e politica", "Economia, imprese e lavoro",
+           "Mobilità, cantieri e trasporti", "Sanità e sociale", "Scuola e università", "Imola e circondario",
+           "Area metropolitana", "Cultura ed eventi"]
 ER_TEMI = ["Cronaca e giustizia", "Economia e lavoro", "Regione e istituzioni", "Ambiente, allerte e protezione civile"]
 
 _COMMON = f"""
@@ -478,19 +480,24 @@ AGENDA_RULES = f"""<h2>Da seguire oggi ({GIORNO})</h2>  (senza <h3>, una riga ci
 # il resto della regione, e infine Il punto del giorno dai titoli. Così Gemini dedica a Bologna tutta
 # la sua attenzione e tutto lo spazio di risposta, invece di riassumere tutto insieme.
 BO_DESC = {
-    "Cronaca e sicurezza": "incidenti, reati, arresti, indagini, processi, incendi, soccorsi, ordine pubblico. Obiettivo 15-25 notizie.",
-    "Comune e politica": ("decisioni e delibere del Comune di Bologna, della Città metropolitana e dei comuni dell'area; "
-                          "CONSIGLI COMUNALI (di Bologna e di tutti i comuni dell'area): quando la notizia lo riporta, elenca i punti "
-                          "principali all'ordine del giorno o le decisioni prese; partiti e scontri politici su temi concreti. Obiettivo 12-20."),
-    "Economia e lavoro": "aziende, crisi, cassa integrazione, assunzioni, investimenti, sindacati, scioperi, commercio, prezzi. Obiettivo 10-15.",
-    "Mobilità, cantieri e trasporti": "tram, Passante, cantieri, chiusure di strade, Tper, treni, aeroporto, scioperi dei trasporti. Obiettivo 5-12.",
-    "Sanità, scuola e università": "ospedali, Ausl, Sant'Orsola, liste d'attesa, scuole, Università di Bologna, servizi sociali. Obiettivo 6-12.",
+    "Cronaca": "incidenti, incendi, soccorsi, furti, rapine, aggressioni, arresti, ordine pubblico a Bologna città.",
+    "Giustizia e indagini": "inchieste, processi, sentenze, Procura, tribunale, indagini su fatti di Bologna città.",
+    "Comune di Bologna e politica": ("giunta, delibere, consiglio comunale (con i punti all'ordine del giorno o le decisioni, "
+                                     "quando la notizia li riporta), quartieri, Città metropolitana, partiti, elezioni."),
+    "Economia, imprese e lavoro": "aziende, crisi, cassa integrazione, assunzioni, investimenti, sindacati, scioperi, commercio, casa e prezzi.",
+    "Mobilità, cantieri e trasporti": "tram, Passante, cantieri, chiusure di strade, Tper, treni, aeroporto, Città 30, scioperi dei trasporti.",
+    "Sanità e sociale": "ospedali, Ausl, Sant'Orsola, liste d'attesa, Case di comunità, servizi sociali, emergenza abitativa.",
+    "Scuola e università": "scuole, Università di Bologna, studenti, ricerca.",
+    "Imola e circondario": ("TUTTI i fatti di Imola e del circondario imolese (Castel San Pietro, Medicina, Dozza, Mordano, "
+                            "Borgo Tossignano, Castel Guelfo...), di qualunque tema: cronaca, Comune, aziende, sanità."),
+    "Area metropolitana": ("TUTTI i fatti degli altri comuni dell'area (Casalecchio, San Lazzaro, Castel Maggiore, Budrio, "
+                           "Persiceto, Valsamoggia, pianura, Appennino...), di qualunque tema, compresi i consigli comunali."),
     "Cultura ed eventi": "solo gli eventi davvero rilevanti (grandi mostre, concerti, rassegne), al massimo 6. Niente sagre, feste, mercatini, laboratori.",
 }
-# Bologna si scrive in due parti (gli stessi articoli, temi diversi): con meno temi per volta Gemini
-# riassume meno e la sezione arriva a 60-80 notizie invece di fermarsi a 35-40.
-BO_GRUPPI = [["Cronaca e sicurezza", "Comune e politica", "Mobilità, cantieri e trasporti"],
-             ["Economia e lavoro", "Sanità, scuola e università", "Cultura ed eventi"]]
+# Bologna si scrive in due parti (gli stessi articoli, "cassetti" diversi): più cassetti e meno lavoro per volta
+# fanno sì che Gemini elenchi i fatti invece di riassumerli.
+BO_GRUPPI = [["Cronaca", "Giustizia e indagini", "Comune di Bologna e politica", "Mobilità, cantieri e trasporti", "Area metropolitana"],
+             ["Economia, imprese e lavoro", "Sanità e sociale", "Scuola e università", "Imola e circondario", "Cultura ed eventi"]]
 
 
 def system_bo(temi, agenda):
@@ -503,9 +510,13 @@ dell'area metropolitana (Imola, Casalecchio di Reno, San Lazzaro di Savena, Cast
 San Giovanni in Persiceto, Valsamoggia, Appennino...). È la parte più importante della rassegna.
 In questa parte scrivi SOLO i temi indicati qui sotto: per questi temi devi essere COMPLETO, includendo OGNI
 fatto concreto presente nelle notizie; scarta solo ciò che è irrilevante.{altri}
+I fatti di Imola e circondario vanno SOLO in "Imola e circondario"; quelli degli altri comuni dell'area
+SOLO in "Area metropolitana"; gli altri temi sono per Bologna città.
 Fatti diversi = notizie diverse: non accorpare fatti distinti solo perché simili. Ma UNO STESSO fatto, con i suoi
 sviluppi (bilancio, arresti, danni, reazioni politiche), resta UNA sola notizia completa.
 Solo fatti di Bologna e dei comuni dell'area metropolitana: se il fatto è in un'altra provincia, scartalo.
+COMPLETEZZA: di norma 6-15 notizie per ogni tema che ha notizie, 35-50 in questa parte. Non fermarti alle
+notizie principali: chi legge vuole sapere tutto quello che è successo.
 {_COMMON}
 SEZIONI, in quest'ordine:
 <h2>Bologna</h2>
@@ -514,30 +525,31 @@ SEZIONI, in quest'ordine:
    (solo Bologna e area metropolitana, al massimo 14 righe)""" if agenda else "\nNON scrivere la sezione Da seguire.") + "\n"
 
 
-ER_DESC = {
-    "Cronaca e giustizia": "incidenti, reati, arresti, indagini, processi, incendi, soccorsi, scomparsi.",
-    "Economia e lavoro": "aziende, crisi, assunzioni e licenziamenti, investimenti, sindacati, scioperi, infortuni sul lavoro, prezzi.",
-    "Regione e istituzioni": "decisioni della Regione, dell'Assemblea legislativa e dei Comuni capoluogo, sanità, fatti istituzionali rilevanti.",
-    "Ambiente, allerte e protezione civile": "allerte meteo, maltempo con danni, frane, alluvioni, inquinamento.",
-}
-# il resto della regione in due parti: Emilia e Romagna, ciascuna con la sua attenzione
+# il resto della regione in due parti, Emilia e Romagna, con un <h3> per provincia: Gemini scorre provincia per
+# provincia e non tralascia le più piccole
 ER_GRUPPI = [("EMILIA", ["Piacenza", "Parma", "Reggio Emilia", "Modena", "Ferrara"]),
              ("ROMAGNA", ["Ravenna", "Forlì-Cesena", "Rimini"])]
+ER_H3 = ["Emilia-Romagna", "Piacenza", "Parma", "Reggio Emilia", "Modena", "Ferrara", "Ravenna", "Forlì-Cesena", "Rimini"]
 
 
 def system_er(nome, province, regionali):
+    h3 = (["Emilia-Romagna"] if regionali else []) + province
     return f"""
 Sei il caporedattore di una rassegna stampa quotidiana sull'Emilia-Romagna. Scrivi la parte {nome} della
 sezione Emilia-Romagna: SOLO le province di {", ".join(province)}{" e i fatti che riguardano tutta la regione" if regionali else ""}.
 (Bologna e la sua area, e le altre province, le scrivono dei colleghi: non trattarle.)
-SOLO cronaca, economia e lavoro, istituzioni, ambiente: NIENTE cultura, eventi, sagre, inaugurazioni minori,
-curiosità, beneficenza, feste, raccolte fondi, premiazioni.
-Devi essere COMPLETO: ogni provincia deve avere i suoi fatti importanti, di norma 8-15 notizie per provincia
-quando le notizie ci sono. Fatti diversi = notizie diverse; uno stesso fatto con i suoi sviluppi resta UNA notizia.
+Per ogni provincia scrivi TUTTI i fatti di questi tipi:
+- cronaca e giustizia: incidenti, reati, arresti, indagini, processi, incendi, soccorsi, scomparsi;
+- economia e lavoro: aziende, crisi, assunzioni e licenziamenti, investimenti, sindacati, scioperi, infortuni sul lavoro, prezzi;
+- istituzioni: decisioni importanti di Regione, Comuni capoluogo e Province, sanità e ospedali;
+- ambiente: allerte meteo, maltempo con danni, frane, inquinamento.
+NIENTE cultura, eventi, sagre, inaugurazioni minori, curiosità, beneficenza, feste, raccolte fondi, premiazioni.
+COMPLETEZZA: di norma 8-15 notizie per provincia, prima la cronaca poi l'economia, in ordine di importanza.
+Non fermarti alle notizie principali. Fatti diversi = notizie diverse; uno stesso fatto con i suoi sviluppi resta UNA notizia.
 {_COMMON}
 SEZIONI, in quest'ordine:
 <h2>Emilia-Romagna</h2>
-""" + "\n".join(f'<h3>{t}</h3>\n   - "{t}": {ER_DESC[t]}' for t in ER_TEMI) + f"""
+""" + "\n".join(f"<h3>{p}</h3>" for p in h3) + ("\n   (in <h3>Emilia-Romagna</h3> solo i fatti di tutta la regione: Regione, allerte, dati regionali)" if regionali else "") + f"""
 {AGENDA_RULES}
    (solo queste province, al massimo 5 righe, solo appuntamenti importanti)
 """
@@ -627,9 +639,11 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
                     break
                 global USED_MODEL
                 USED_MODEL = model
+                PASS_LOG.append({"modello": model, "notizie": n, "caratteri": len(text)})
                 return text
             except Exception as e:
                 print(f"⚠️ {model}: {e}")
+                PASS_LOG.append({"modello": model, "errore": str(e)[:160]})
                 # quota al minuto superata (ora le richieste del mattino sono cinque): si aspetta e si riprova
                 time.sleep(40 if re.search(r"429|RESOURCE_EXHAUSTED|quota", str(e), re.I) else 4)
     return None
@@ -823,6 +837,7 @@ def write_status(n_articles, n_items, fallback, slot="mattina"):
         "fallback": fallback,
         "feeds_ok": sum(1 for f in feeds if f["status"] == "ok" and f["items"]),
         "feeds_total": len(feeds),
+        "passaggi": PASS_LOG,
         "feeds": feeds,
     }
     with open("stato.json", "w", encoding="utf-8") as f:
@@ -880,19 +895,20 @@ def drop_other_provinces(sec):
 def complete_bologna(sec, bo):
     """Se la sezione Bologna è più corta del dovuto, chiede a Gemini le notizie rimaste fuori e le aggiunge
     ai temi giusti. Così la completezza non dipende da quanto Gemini decide di riassumere."""
-    want = int(os.environ.get("MIN_BOLOGNA", "55"))
+    want = int(os.environ.get("MIN_BOLOGNA", "60"))
     have = len(re.findall(r"<li\b", sec))
     if have >= want:
         return sec
     written = "\n".join("- " + clean(t) for t in re.findall(r"<strong>(.*?)</strong>", sec, flags=re.S))
     print(f"   ➕ Sezione Bologna con {have} notizie: chiedo a Gemini quelle rimaste fuori...")
+    PASS_LOG.append({"parte": f"Bologna completamento (erano {have})"})
     prompt = (f"NOTIZIE GIÀ SCRITTE nella sezione Bologna (NON ripeterle):\n{written}\n\n" + build_prompt(bo) +
               "\nScrivi ADESSO SOLO le notizie di Bologna e area metropolitana che mancano: tutti i fatti concreti non "
               "ancora coperti (cronaca, Comune e politica, consigli comunali, economia e lavoro, mobilità, sanità, scuola). "
               "Stesso formato, con i <h3> dei temi, SENZA <h2> e senza la sezione Da seguire. "
               "NON scrivere sviluppi, bilanci, reazioni o dettagli di fatti già scritti: devono essere fatti NUOVI e diversi. "
               "Niente sport, sagre, feste, notizie di altre province. Se non manca nulla di rilevante scrivi solo: NESSUNA")
-    raw = call_gemini(prompt, system=system_bo(BO_TEMI[:5], agenda=False), min_items=0, min_len=6)
+    raw = call_gemini(prompt, system=system_bo(BO_TEMI[:-1], agenda=False), min_items=0, min_len=6)
     if not raw or "<li" not in raw:
         return sec
     extra = finalize_html("<h2>x</h2>" + re.sub(r"</?h2[^>]*>", "", raw), bo)
@@ -914,6 +930,7 @@ def complete_bologna(sec, bo):
             sec = sec[:nxt.start()] + new + sec[nxt.start():] if nxt else sec + "\n" + new
         added += len(lis)
     print(f"   ➕ Aggiunte {added} notizie alla sezione Bologna.")
+    PASS_LOG.append({"aggiunte": added})
     return sec
 
 
@@ -945,6 +962,7 @@ def write_edition(articles):
     # Bologna: due parti con gli stessi articoli e temi diversi
     pieces_bo, ag_bo = [], []
     for k, temi in enumerate(BO_GRUPPI):
+        PASS_LOG.append({"parte": f"Bologna {k + 1}: " + ", ".join(temi), "articoli": len(bo)})
         raw = call_gemini(build_prompt(bo), system=system_bo(temi, agenda=(k == 0)), min_items=10) if bo else None
         if raw:
             sec, ag = _split_agenda(finalize_html(raw, bo))
@@ -957,6 +975,7 @@ def write_edition(articles):
         romagna = nome == "ROMAGNA"
         part = [a for a in er if (a["prov"] in province) or
                 (not a["prov"] and any(p in _norm(a["title"] + " " + a.get("desc", "")) for p in ROMAGNA_PLACES) == romagna)]
+        PASS_LOG.append({"parte": nome, "articoli": len(part)})
         raw = call_gemini(build_prompt(part), system=system_er(nome, province, not romagna), min_items=10) if part else None
         print(f"   {nome}: {len(part)} notizie a Gemini" + ("" if raw else " (nessuna risposta)"))
         if raw:
@@ -965,9 +984,10 @@ def write_edition(articles):
         else:
             missing.append(part)
     raw_er = bool(pieces_er)
-    sec_er = merge_sections("Emilia-Romagna", ER_TEMI, pieces_er)
+    sec_er = merge_sections("Emilia-Romagna", ER_H3, pieces_er)
     if raw_er and missing:   # una parte non è riuscita: per quelle province almeno i titoli, divisi per provincia
         extra = "\n".join(re.sub(r"^.*?</p>", "", fallback_html(p[:60]), count=1, flags=re.S) for p in missing)
+        extra = re.sub(r"<h3>Emilia-Romagna</h3>\s*<ul>.*?</ul>", "", extra, flags=re.S)   # già nella parte riuscita
         sec_er += "\n" + re.sub(r"<h2>.*?</h2>", "", extra)
     if not raw_bo and not raw_er:
         return fallback_html(articles), False
@@ -982,6 +1002,8 @@ def write_edition(articles):
     agenda = (clean_agenda(ag_bo, sec_bo + sec_er)[:int(os.environ.get("MAX_AGENDA_BO", "14"))]
               + clean_agenda(ag_er, sec_bo + sec_er)[:int(os.environ.get("MAX_AGENDA_ER", "8"))])
     print(f"   Sezioni: Bologna {len(re.findall('<li', sec_bo))} notizie · Emilia-Romagna {len(re.findall('<li', sec_er))} · agenda {len(agenda)}")
+    PASS_LOG.append({"sezioni": {"Bologna": len(re.findall('<li', sec_bo)), "Emilia-Romagna": len(re.findall('<li', sec_er)),
+                                 "agenda": len(agenda)}})
 
     # Il punto del giorno: dai titoli appena scritti (richiesta breve)
     titoli = lambda s: "\n".join("- " + clean(t) for t in re.findall(r"<strong>(.*?)</strong>", s, flags=re.S)[:40])
