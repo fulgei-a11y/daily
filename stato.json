@@ -1,19 +1,19 @@
 {
- "date": "2026-10-18",
- "slot": "19",
- "generated": "2026-10-18T19:16+02:00",
- "articles": 42,
- "items": 11,
+ "date": "2026-10-19",
+ "slot": "mattina",
+ "generated": "2026-10-19T06:29+02:00",
+ "articles": 440,
+ "items": 92,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 70,
- "feeds_total": 79,
+ "feeds_ok": 77,
+ "feeds_total": 81,
  "feeds": [
   {
    "name": "Ansa",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Il Resto del Carlino",
@@ -25,49 +25,49 @@
    "name": "Il Resto del Carlino",
    "prov": "Modena",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Il Resto del Carlino",
    "prov": "Reggio Emilia",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Il Resto del Carlino",
    "prov": "Ferrara",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Il Resto del Carlino",
    "prov": "Ravenna",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Il Resto del Carlino",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Il Resto del Carlino",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Il Resto del Carlino",
    "prov": "Rimini",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Il Resto del Carlino",
    "prov": "Bologna",
    "status": "ok",
-   "items": 33
+   "items": 25
   },
   {
    "name": "BolognaToday",
@@ -79,31 +79,31 @@
    "name": "ModenaToday",
    "prov": "Modena",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "RiminiToday",
    "prov": "Rimini",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "RavennaToday",
    "prov": "Ravenna",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "ParmaToday",
    "prov": "Parma",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "ForlìToday",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "PiacenzaSera",
@@ -115,25 +115,19 @@
    "name": "Estense",
    "prov": "Ferrara",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "CesenaToday",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 15
-  },
-  {
-   "name": "FerraraToday",
-   "prov": "Ferrara",
-   "status": "HTTP 403",
-   "items": 0
+   "items": 20
   },
   {
    "name": "IlPiacenza",
    "prov": "Piacenza",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Reggionline",
@@ -163,13 +157,13 @@
    "name": "ParmaDaily",
    "prov": "Parma",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "AltaRimini",
    "prov": "Rimini",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Teleromagna",
@@ -178,19 +172,13 @@
    "items": 6
   },
   {
-   "name": "Forlì24ore",
-   "prov": "Forlì-Cesena",
-   "status": "errore: ConnectionError",
-   "items": 0
-  },
-  {
-   "name": "Ravenna&Dintorni",
-   "prov": "Ravenna",
-   "status": "HTTP 403",
-   "items": 0
-  },
-  {
    "name": "ReggioReport",
+   "prov": "Reggio Emilia",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "24Emilia",
    "prov": "Reggio Emilia",
    "status": "ok",
    "items": 10
@@ -223,55 +211,43 @@
    "name": "Sassuolo2000",
    "prov": "Modena",
    "status": "ok",
-   "items": 15
-  },
-  {
-   "name": "Icaro TV",
-   "prov": "Rimini",
-   "status": "XML non valido",
-   "items": 0
-  },
-  {
-   "name": "Modena in diretta",
-   "prov": "Modena",
-   "status": "errore: ConnectTimeout",
-   "items": 0
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 18
   },
   {
    "name": "Google News",
    "prov": "Reggio Emilia",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "Parma",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "Piacenza",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
@@ -283,43 +259,145 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 22
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "Reggio Emilia",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "Modena",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "Ferrara",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 2
+   "items": 1
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 4
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 34
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
    "items": 3
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 26
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 4
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 9
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 0
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 0
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 16
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 5
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 9
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 9
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 37
   },
   {
    "name": "Google News",
@@ -329,42 +407,6 @@
   },
   {
    "name": "Google News",
-   "prov": "",
-   "status": "ok",
-   "items": 15
-  },
-  {
-   "name": "Google News",
-   "prov": "",
-   "status": "ok",
-   "items": 15
-  },
-  {
-   "name": "Google News",
-   "prov": "",
-   "status": "ok",
-   "items": 4
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 32
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 4
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 10
-  },
-  {
-   "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
    "items": 40
@@ -373,101 +415,17 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
+   "items": 17
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 0
+   "items": 8
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 0
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 19
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 7
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 10
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 11
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 12
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 18
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 13
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 3
-  },
-  {
-   "name": "Google News",
-   "prov": "Ferrara",
-   "status": "ok",
-   "items": 15
-  },
-  {
-   "name": "Google News",
-   "prov": "Ravenna",
-   "status": "ok",
-   "items": 15
-  },
-  {
-   "name": "Google News",
-   "prov": "Forlì-Cesena",
    "status": "ok",
    "items": 2
   },
@@ -475,13 +433,67 @@
    "name": "Google News",
    "prov": "Rimini",
    "status": "ok",
-   "items": 0
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "Rimini",
+   "status": "ok",
+   "items": 17
+  },
+  {
+   "name": "Google News",
+   "prov": "Modena",
+   "status": "ok",
+   "items": 17
   },
   {
    "name": "Google News",
    "prov": "Modena",
    "status": "ok",
    "items": 0
+  },
+  {
+   "name": "Google News",
+   "prov": "Ferrara",
+   "status": "ok",
+   "items": 0
+  },
+  {
+   "name": "Google News",
+   "prov": "Ravenna",
+   "status": "ok",
+   "items": 14
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 9
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "Ferrara",
+   "status": "ok",
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "Ravenna",
+   "status": "ok",
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "Forlì-Cesena",
+   "status": "ok",
+   "items": 5
   }
  ]
 }
