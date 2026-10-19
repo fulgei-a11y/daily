@@ -1,13 +1,20 @@
 {
  "date": "2026-10-19",
- "slot": "mattina",
- "generated": "2026-10-19T07:47+02:00",
- "articles": 520,
- "items": 87,
- "model": "gemini-3.5-flash",
+ "slot": "13",
+ "generated": "2026-10-19T13:29+02:00",
+ "articles": 453,
+ "items": 35,
+ "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 76,
+ "feeds_ok": 77,
  "feeds_total": 77,
+ "passaggi": [
+  {
+   "modello": "gemini-2.5-flash",
+   "notizie": 56,
+   "caratteri": 19801
+  }
+ ],
  "feeds": [
   {
    "name": "Ansa",
@@ -204,8 +211,8 @@
   {
    "name": "RenoNews",
    "prov": "Bologna",
-   "status": "errore: ReadTimeout",
-   "items": 0
+   "status": "ok",
+   "items": 10
   },
   {
    "name": "Sassuolo2000",
@@ -223,7 +230,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 17
+   "items": 20
   },
   {
    "name": "Google News",
@@ -259,7 +266,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 20
+   "items": 15
   },
   {
    "name": "Google News",
@@ -289,7 +296,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 1
+   "items": 5
   },
   {
    "name": "Google News",
@@ -301,7 +308,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 34
+   "items": 25
   },
   {
    "name": "Google News",
@@ -325,7 +332,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 26
+   "items": 23
   },
   {
    "name": "Google News",
@@ -337,31 +344,43 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
+   "items": 8
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 12
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
    "items": 9
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 16
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 5
+   "items": 11
   },
   {
    "name": "Google News",
@@ -373,19 +392,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 10
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 9
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 37
+   "items": 40
   },
   {
    "name": "Google News",
@@ -427,25 +434,25 @@
    "name": "Google News",
    "prov": "Rimini",
    "status": "ok",
-   "items": 17
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "Modena",
    "status": "ok",
-   "items": 17
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "Ravenna",
    "status": "ok",
-   "items": 14
+   "items": 13
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 8
+   "items": 11
   },
   {
    "name": "Google News",
