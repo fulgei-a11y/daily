@@ -468,7 +468,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   }
   $('#shareBtn').onclick = () => {
     const vis = items.filter(el => !el.hidden && !el.closest('.notes')).length;
-    const scope = prov !== 'Tutte' ? ' · ' + prov : '';
+    const scope = prov !== 'Tutte' ? ' · ' + provLabel(prov) : '';
     share({ title: 'Rassegna ER · ' + longDate(current),
             text: `Rassegna stampa dell'Emilia-Romagna di ${longDate(current)}${scope}: ${vis} notizie, anche da ascoltare.`,
             url: pageUrl() + '#' + current });
@@ -954,6 +954,9 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   }
 
   /* ---------- Sezioni, province e ricerca ---------- */
+  // il filtro "Emilia-Romagna" raccoglie solo i fatti di tutta la regione (allerte, decisioni della Regione):
+  // con questo nome si confondeva con la sezione Emilia-Romagna, che copre le altre province
+  const provLabel = p => p === 'Emilia-Romagna' ? 'Tutta la regione' : p;
   function buildChips(){
     const secs = [...main.querySelectorAll('.sec')];
     $('#secChips').innerHTML = '';
@@ -977,9 +980,9 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     provs.forEach(p => {
       const b = document.createElement('button');
       b.className = 'chip' + (p === prov ? ' on' : ''); b.type = 'button'; b.dataset.p = p;
-      b.innerHTML = esc(p) + (p === 'Tutte' ? '' : `<small>${counts[p]}</small>`);
+      b.innerHTML = esc(provLabel(p)) + (p === 'Tutte' ? '' : `<small>${counts[p]}</small>`);
       b.setAttribute('aria-pressed', p === prov);
-      b.onclick = () => { setProv(p); applyFilters(); if (p !== 'Tutte') toast(`Solo ${p}: la scelta resta memorizzata`); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+      b.onclick = () => { setProv(p); applyFilters(); if (p !== 'Tutte') toast(`Solo ${provLabel(p)}: la scelta resta memorizzata`); window.scrollTo({ top: 0, behavior: 'smooth' }); };
       $('#provChips').appendChild(b);
     });
     observeSections();
@@ -1132,20 +1135,36 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     while (lo <= hi){ const m = (lo + hi) >> 1; if (segs[m].t <= t + 0.05){ ans = m; lo = m + 1; } else hi = m - 1; }
     return ans;
   }
+  /* Spostarsi in un punto dell'audio. Su iPhone e su alcuni Android lo spostamento fatto prima che l'audio
+     sia caricato viene ignorato: l'ascolto ripartiva dall'inizio (Il punto e Bologna) e con un filtro su
+     un'altra provincia non si sentiva nulla. Qui lo spostamento resta in sospeso e viene riapplicato appena
+     il telefono lo accetta (metadati caricati, audio partito). */
+  let pendingSeek = null, pendingAt = 0;
+  function seekTo(t){
+    pendingSeek = t; pendingAt = Date.now();
+    try { audio.currentTime = t; } catch(e) {}
+  }
+  function applySeek(){
+    if (pendingSeek === null) return;
+    if (Date.now() - pendingAt > 10000){ pendingSeek = null; return; }   // il telefono non lo accetta: si lascia stare
+    if (Math.abs(audio.currentTime - pendingSeek) > 1.5){ try { audio.currentTime = pendingSeek; } catch(e) {} }
+    else pendingSeek = null;
+  }
+  ['loadedmetadata', 'canplay', 'playing', 'seeked'].forEach(ev => audio.addEventListener(ev, applySeek));
   function playFrom(i){
     const t = trackOf(i); if (!t) return;
     const s = t.segs.find(x => x.i === i); if (!s) return;
     if (track !== t) setTrack(t);
-    audio.currentTime = s.t; lastUserScroll = 0; play();
+    seekTo(s.t); lastUserScroll = 0; play();
   }
   function play(){
     // con un filtro attivo si parte dalla prima notizia visibile
     if (syncOK && filtering()){
-      const k = segIndexAt(audio.currentTime);
-      if (k < 0 || !visibleSeg(k)){ const j = nextVisibleSeg(k + 1); if (j < 0){ toast('Nessuna notizia da ascoltare con questo filtro'); return; } audio.currentTime = segs[j].t; }
+      const k = segIndexAt(pendingSeek !== null ? pendingSeek : audio.currentTime);
+      if (k < 0 || !visibleSeg(k)){ const j = nextVisibleSeg(k + 1); if (j < 0){ toast('Nessuna notizia da ascoltare con questo filtro'); return; } seekTo(segs[j].t); }
     }
     wantPlay = true;
-    audio.play().then(() => setPlayIcon(true)).catch(() => { wantPlay = false;
+    audio.play().then(() => { setPlayIcon(true); applySeek(); }).catch(() => { wantPlay = false;
     $('#nowTxt').innerHTML = '<b>Audio non ancora pronto</b> · riprova tra qualche minuto'; }); }
   // pausa voluta dall'utente (pulsante, cuffie, schermata di blocco): solo questa ferma davvero l'ascolto
   function userPause(){ wantPlay = false; audio.pause(); }
@@ -1196,12 +1215,12 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   }, 4000);
 
   $('#prevItem').onclick = () => { const k = segIndexAt(audio.currentTime), f = syncOK && filtering();
-    if (k >= 0 && audio.currentTime - segs[k].t > 3 && (!f || visibleSeg(k))) { audio.currentTime = segs[k].t; return; }
+    if (k >= 0 && audio.currentTime - segs[k].t > 3 && (!f || visibleSeg(k))) { seekTo(segs[k].t); return; }
     const j = f ? prevVisibleSeg(k - 1) : k - 1;
-    audio.currentTime = j >= 0 ? segs[j].t : (f ? audio.currentTime : 0); };
+    seekTo(j >= 0 ? segs[j].t : (f ? audio.currentTime : 0)); };
   $('#nextItem').onclick = () => { const k = segIndexAt(audio.currentTime);
     const j = syncOK && filtering() ? nextVisibleSeg(k + 1) : (k + 1 < segs.length ? k + 1 : -1);
-    if (j >= 0) audio.currentTime = segs[j].t; };
+    if (j >= 0) seekTo(segs[j].t); };
 
   let saveTick = 0;
   audio.ontimeupdate = () => {
@@ -1212,10 +1231,11 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     if (!syncOK) return;
     const k = segIndexAt(audio.currentTime);
     // ascolto filtrato: salta le notizie nascoste
+    if (pendingSeek !== null){ applySeek(); if (pendingSeek !== null) return; }
     if (!audio.paused && filtering() && k >= 0 && !visibleSeg(k)){
       const j = nextVisibleSeg(k + 1);
       if (j < 0){ userPause(); toast(prov !== 'Tutte' ? `Fine delle notizie di ${prov}` : 'Fine dei risultati'); }
-      else audio.currentTime = segs[j].t;
+      else seekTo(segs[j].t);
       return;
     }
     const idx = k >= 0 ? segs[k].i : -1;
