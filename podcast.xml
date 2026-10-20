@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 20 Oct 2026 20:19:46 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 00:25:09 +0200</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · martedì 20 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente mortale a Sasso Marconi: colonnello della Finanza deceduto; Sviluppi: Scontri di sabato, obbligo di firma per 21enne e provvedimenti di prevenzione; Bologna e Casalecchio di Reno tra le città più smart d&#x27;Italia; Nuova tecnica di trapianto corneale al Sant&#x27;Orsola: cornea ibrida; Allagamenti via Saffi: Comune e Regione condannati al risarcimento; Allarme via social: falsi messaggi di minacce nelle scuole.</description>
@@ -423,16 +423,6 @@
       <pubDate>Fri, 02 Oct 2026 06:20:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-02.mp3" length="7565027" type="audio/mpeg"/>
       <itunes:duration>1512</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · giovedì 1 ottobre 2026</title>
-      <description>116 notizie dall&#x27;Emilia-Romagna. In apertura: Ferrara, studente di 15 anni accoltellato nei bagni del liceo Ariosto.; Bologna, accordo BolognaFiere–Bologna FC per il nuovo stadio in Fiera.; Strage di Ustica, la Procura di Roma ritira la richiesta di archiviazione.; Modena, 21enne in fuga dalla Polizia passa col rosso e travolge due auto: 5 feriti, fra cui un 13enne.; Carburanti a prezzo calmierato, distributori a secco e gestori in perdita in tutta la regione.; Quartesana:.</description>
-      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-01</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-01</guid>
-      <pubDate>Thu, 01 Oct 2026 06:20:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-01.mp3" length="7736651" type="audio/mpeg"/>
-      <itunes:duration>1547</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
