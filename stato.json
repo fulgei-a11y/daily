@@ -1,8 +1,8 @@
 {
  "date": "2026-10-21",
- "slot": "13",
- "generated": "2026-10-21T13:27+02:00",
- "articles": 515,
+ "slot": "19",
+ "generated": "2026-10-21T19:21+02:00",
+ "articles": 435,
  "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
@@ -11,8 +11,8 @@
  "passaggi": [
   {
    "modello": "gemini-2.5-flash",
-   "notizie": 41,
-   "caratteri": 16245
+   "notizie": 47,
+   "caratteri": 17112
   }
  ],
  "feeds": [
@@ -74,7 +74,7 @@
    "name": "Il Resto del Carlino",
    "prov": "Bologna",
    "status": "ok",
-   "items": 27
+   "items": 28
   },
   {
    "name": "BolognaToday",
@@ -266,7 +266,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 26
+   "items": 20
   },
   {
    "name": "Google News",
@@ -296,13 +296,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 4
+   "items": 6
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 15
+   "items": 13
   },
   {
    "name": "Google News",
@@ -326,7 +326,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 5
+   "items": 8
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 12
   },
   {
    "name": "Google News",
@@ -344,49 +350,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 12
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
    "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 23
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 16
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 22
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 8
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 4
   },
   {
    "name": "Google News",
@@ -404,19 +368,55 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 23
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 8
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 2
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
    "items": 40
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 16
+   "items": 38
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 22
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 19
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 24
   },
   {
    "name": "Google News",
