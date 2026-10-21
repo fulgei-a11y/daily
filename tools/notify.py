@@ -5,7 +5,10 @@ Dopo ogni pubblicazione manda un avviso al "topic" scritto nel segreto NTFY_TOPI
 - edizione del mattino: numero di notizie e l'inizio di "Il punto del giorno";
 - aggiornamenti delle 13 e delle 19: i primi titoli, prima quelli di Bologna;
 - In breve: solo se sono arrivate notizie nuove, con priorità bassa (senza suono);
-- se qualcosa va storto: un avviso con priorità alta.
+- se qualcosa va storto: un avviso con priorità alta;
+- SENTINELLA: se una notizia appena pubblicata contiene una delle parole scritte nel segreto SENTINELLE
+  (separate da virgole, es. «Lepore, Casalecchio, sciopero, Tper»), arriva un avviso a parte, con priorità
+  alta, che porta dritto a quella notizia.
 Toccando la notifica si apre la rassegna.
 
 Uso: python3 tools/notify.py <slot> <esito del job>     (slot: mattina, 13, 19, ultimora)
@@ -17,6 +20,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 import urllib.request
 from zoneinfo import ZoneInfo
 
@@ -67,10 +71,80 @@ def read(path):
         return ""
 
 
+# ------------------------------------------------------------------ sentinella
+def _norm(t):
+    t = unicodedata.normalize("NFD", str(t or "").lower())
+    return " " + re.sub(r"[^a-z0-9]+", " ", "".join(c for c in t if unicodedata.category(c) != "Mn")).strip() + " "
+
+
+def parole_sentinella():
+    return [p.strip() for p in re.split(r"[,;\n]", os.environ.get("SENTINELLE", "")) if len(p.strip()) >= 2]
+
+
+def _items(path):
+    """Notizie di un file nell'ordine della pagina (stessa logica dell'audio): [(testo, titolo)]."""
+    page = read(path)
+    if not page:
+        return []
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from build_audio import items_from_fragment
+    out = []
+    for _sec, _sub, node in items_from_fragment(page):
+        strong = node.find(["strong", "b"]) if hasattr(node, "find") else None
+        out.append((node.get_text(" ", strip=True), strong.get_text(" ", strip=True) if strong else ""))
+    return out
+
+
+def sentinella(slot):
+    """Avviso a parte per le notizie nuove che contengono una parola sorvegliata."""
+    parole = parole_sentinella()
+    if not parole:
+        return
+    files = [f"edizioni/{TODAY}.html", f"edizioni/{TODAY}-13.html", f"edizioni/{TODAY}-19.html"]
+    lists = [_items(f) for f in files]
+    # le notizie nuove di questo giro e la loro posizione nella pagina (per il link diretto: #data/numero)
+    if slot == "mattina":
+        new = [(i, t) for i, t in enumerate(lists[0])]
+    elif slot in ("13", "19"):
+        k = 1 if slot == "13" else 2
+        base = len(lists[0]) + (len(lists[1]) if k == 2 else 0)
+        new = [(base + i, t) for i, t in enumerate(lists[k])]
+    elif slot == "ultimora":
+        try:
+            store = json.load(open("ultimora.json", encoding="utf-8"))
+        except Exception:
+            return
+        n = (store.get("last_run") or {}).get("items", 0)
+        new = [(None, (text(x.get("html", "")), x.get("title", ""))) for x in store.get("items", [])[:n]]
+    else:
+        return
+    hits = []
+    for pos, (testo, titolo) in new:
+        t = _norm(testo)
+        trovate = [p for p in parole if " " + _norm(p).strip() in t]   # a inizio di parola: «sciop» trova sciopero e scioperi
+        if trovate:
+            hits.append((pos, titolo or testo[:90], trovate))
+    if not hits:
+        return
+    parole_viste = list(dict.fromkeys(p for _, _, ps in hits for p in ps))
+    righe = [f"«{', '.join(ps)}» → {tit}" for _, tit, ps in hits[:8]]
+    if len(hits) > 8:
+        righe.append(f"… e altre {len(hits) - 8}")
+    first = hits[0][0]
+    send("🔔 Sentinella: " + ", ".join(parole_viste)[:80], "\n".join(righe), priority=4, tags=["rotating_light"],
+         click=f"{SITE}#{TODAY}" + (f"/{first + 1}" if first is not None else ""))
+
+
 def main():
     slot = sys.argv[1] if len(sys.argv) > 1 else "mattina"
     esito = sys.argv[2] if len(sys.argv) > 2 else "success"
     link = f"{SITE}#{TODAY}"
+
+    if esito == "success":
+        try:
+            sentinella(slot)
+        except Exception as e:   # la sentinella non deve mai bloccare le altre notifiche
+            print(f"⚠️ Sentinella: {e}")
 
     if esito != "success":
         nomi = {"mattina": "l'edizione del mattino", "13": "l'aggiornamento delle 13",

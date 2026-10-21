@@ -229,6 +229,7 @@ jobs:
         if: always() && steps.slot.outputs.slot != 'salta' && steps.slot.outputs.slot != 'sito'
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          SENTINELLE: ${{ secrets.SENTINELLE }}
         run: python3 tools/notify.py "${{ steps.slot.outputs.slot }}" "${{ job.status }}" || true
 
       # ---------------------------------------------------------------------
