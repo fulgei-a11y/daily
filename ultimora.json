@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-10-21T20:19+02:00",
+   "cat": "",
+   "bo": false,
+   "title": "Truffa sui camici Covid, imprenditrice condannata",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/truffa-sui-camici-in-epoca-covid-imprenditrice-condannata-a-modena_ad3538f1-108c-4c9d-8fec-efebbd0f01b7.html"
+   ],
+   "html": "<strong>Truffa sui camici Covid, imprenditrice condannata</strong> — Modena: La giudice ha condannato a un anno e cinque mesi e 3.000 euro di multa un'imprenditrice modenese per truffa e frode nella pubbliche forniture di camici scadenti all'azienda ospedaliera di Parma, destinati alle Ausl regionali. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/21/truffa-sui-camici-in-epoca-covid-imprenditrice-condannata-a-modena_ad3538f1-108c-4c9d-8fec-efebbd0f01b7.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-21T20:19+02:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Logistica automatizzata, debutta Agv Expo",
+   "links": [
+    "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQWkVVWEpBc1BLQWE5R2JPUnRGU0JPOFFvcUFwNVlvUnNoNmFEaUlUU2JBSzBvYVl3ck9JTW9ab3BGRFJpdHNZWTBkaFF6bnRqNkNsc3g2U1ZLNXlxVzRRZlY1SzZaM0gxTGVReExROUtMQmRXSVZDcUxxT3kxdF96M1VXNW1SQzNnMjR6RlMzT0ZyUndkUFVXRk1pM2djcGxucEdKbDdJT05SdUlYUGpIRV9rcm41UlQ2UzZBbkU4WU9xWXJORVB2TkR1TTJmSTRlOTlzZWRSVnJuUjNqRy1xWFRDSkRWYTRPbG90ZnZB"
+   ],
+   "html": "<strong>Logistica automatizzata, debutta Agv Expo</strong> — Piacenza: Al via la prima edizione di Agv Expo, evento dedicato alla logistica automatizzata e all'allestimento di veicoli industriali, con un focus sulla transizione ecologica. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxQWkVVWEpBc1BLQWE5R2JPUnRGU0JPOFFvcUFwNVlvUnNoNmFEaUlUU2JBSzBvYVl3ck9JTW9ab3BGRFJpdHNZWTBkaFF6bnRqNkNsc3g2U1ZLNXlxVzRRZlY1SzZaM0gxTGVReExROUtMQmRXSVZDcUxxT3kxdF96M1VXNW1SQzNnMjR6RlMzT0ZyUndkUFVXRk1pM2djcGxucEdKbDdJT05SdUlYUGpIRV9rcm41UlQ2UzZBbkU4WU9xWXJORVB2TkR1TTJmSTRlOTlzZWRSVnJuUjNqRy1xWFRDSkRWYTRPbG90ZnZB?oc=5\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
    "t": "2026-10-21T16:24+02:00",
    "cat": "Economia",
    "bo": true,
@@ -244,14 +264,19 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/daniele-rustioni-dirige-la-messa-da-requiem-al-festival-verdi-di-parma_55dc95f0-f99f-4aac-852a-34a5d31ba269.html": "2026-10-21T16:24+02:00",
   "https://www.adnkronos.com/economia/inps-la-proattivita-al-servizio-di-famiglie-e-imprese-progetto-per-digitalizzare-domande-congedo-maternita_77Mw3dIvSCB7XlIcWvC3n6": "2026-10-21T16:24+02:00",
   "https://www.adnkronos.com/economia/inps-dangelo-sulla-maternita-meno-burocrazia-grazie-ai-dati-gia-disponibili_4QrzfaNz7D9DH9IZXrdjMg": "2026-10-21T16:24+02:00",
-  "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZk5nUHBqRjB2SWtDbXBkOFZ6ZUJZQmxROWI2THZLS1B6eXBxUXdXdnRSSHRFQWdpWjEzQXhTVEtwYm9DLVlwcWdEd0tTMk5VT2lIdHd3LXp3MU05RWdpT0ZST3FPYkFiaENxeVpUc0NZTEZYcDZzTGtJaE44UHFMMTJjN2x3SkVvVWJIdmluak1WaTI4UE1fN3ZaaVdHUEVTQjNYdFBlV3NJMTlVUDRfZUd1U2xEdDRNYU1LblZXUHVyT3VKZ05ZWGNVWHQzQkU": "2026-10-21T16:24+02:00"
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZk5nUHBqRjB2SWtDbXBkOFZ6ZUJZQmxROWI2THZLS1B6eXBxUXdXdnRSSHRFQWdpWjEzQXhTVEtwYm9DLVlwcWdEd0tTMk5VT2lIdHd3LXp3MU05RWdpT0ZST3FPYkFiaENxeVpUc0NZTEZYcDZzTGtJaE44UHFMMTJjN2x3SkVvVWJIdmluak1WaTI4UE1fN3ZaaVdHUEVTQjNYdFBlV3NJMTlVUDRfZUd1U2xEdDRNYU1LblZXUHVyT3VKZ05ZWGNVWHQzQkU": "2026-10-21T16:24+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/truffa-sui-camici-in-epoca-covid-imprenditrice-condannata-a-modena_ad3538f1-108c-4c9d-8fec-efebbd0f01b7.html": "2026-10-21T20:19+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/barilla-confermata-continuita-occupazione-e-produttiva-marcianise_07661b6d-f233-4dbc-8e85-3beb67a317a6.html": "2026-10-21T20:19+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/primo-ok-unesco-a-riconoscimento-della-via-francigena-come-patrimonio-mondiale_9bccffed-5e21-4414-aec6-e677d517df08.html": "2026-10-21T20:19+02:00",
+  "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQWkVVWEpBc1BLQWE5R2JPUnRGU0JPOFFvcUFwNVlvUnNoNmFEaUlUU2JBSzBvYVl3ck9JTW9ab3BGRFJpdHNZWTBkaFF6bnRqNkNsc3g2U1ZLNXlxVzRRZlY1SzZaM0gxTGVReExROUtMQmRXSVZDcUxxT3kxdF96M1VXNW1SQzNnMjR6RlMzT0ZyUndkUFVXRk1pM2djcGxucEdKbDdJT05SdUlYUGpIRV9rcm41UlQ2UzZBbkU4WU9xWXJORVB2TkR1TTJmSTRlOTlzZWRSVnJuUjNqRy1xWFRDSkRWYTRPbG90ZnZB": "2026-10-21T20:19+02:00",
+  "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTTNyMktIbDRxUzdVckUwem9HOGgwU21kS3Y0aGZKdFhicjNzR2pPTGtyeS1wNVVlN2JlRXlBUFE2X2NJSlkxekhuX1NRc3NyaXBtYTF6WW9taThtdjdNSUUwTFNoNmI1dUYwTjl4a3NfVUJDM2o1SWdhSDVmTnc3aEF6WjZIdHdHSmIwV0JLRXJldnJaMWtuNTY5UENCVTRtLTA5SjRTM09qX2U0OGh6VDRQaWVCMmFMdTdyT2Vvdm5zR1ZmSm5OaVhSM3ZMLUZQdmt1X3A3OWpxUGVZODd1cA": "2026-10-21T20:19+02:00"
  },
- "updated": "2026-10-21T16:24+02:00",
- "next": "alle 20",
+ "updated": "2026-10-21T20:19+02:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-21T16:24+02:00",
-  "articles": 13,
-  "items": 3,
+  "at": "2026-10-21T20:19+02:00",
+  "articles": 5,
+  "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -259,8 +284,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 32,
-    "kept": 7
+    "items": 36,
+    "kept": 3
    },
    {
     "agency": "ANSA",
@@ -294,13 +319,6 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 30,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
     "items": 20,
     "kept": 0
    },
@@ -309,14 +327,21 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 4
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "askanews",
@@ -344,7 +369,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
