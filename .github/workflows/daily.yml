@@ -224,6 +224,13 @@ jobs:
           git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
           echo "✅ Sito pubblicato su gh-pages ($(du -sh . | cut -f1))"
 
+      # Notifica sul telefono (app ntfy): il topic è nel segreto NTFY_TOPIC del repository
+      - name: Notifica sul telefono
+        if: always() && steps.slot.outputs.slot != 'salta' && steps.slot.outputs.slot != 'sito'
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python3 tools/notify.py "${{ steps.slot.outputs.slot }}" "${{ job.status }}" || true
+
       # ---------------------------------------------------------------------
       # Avviso automatico: se qualcosa non va apre una "issue" nel repository
       # (GitHub la manda per e-mail); al primo aggiornamento riuscito la chiude da sola.
