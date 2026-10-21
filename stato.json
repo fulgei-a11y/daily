@@ -1,61 +1,18 @@
 {
  "date": "2026-10-21",
- "slot": "mattina",
- "generated": "2026-10-21T06:28+02:00",
- "articles": 520,
- "items": 158,
+ "slot": "13",
+ "generated": "2026-10-21T13:27+02:00",
+ "articles": 515,
+ "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 75,
+ "feeds_ok": 76,
  "feeds_total": 77,
  "passaggi": [
   {
-   "parte": "Bologna 1: Cronaca, Giustizia e indagini, Comune di Bologna e politica, Mobilità, cantieri e trasporti, Area metropolitana",
-   "articoli": 286
-  },
-  {
-   "modello": "gemini-2.5-flash",
-   "notizie": 40,
-   "caratteri": 14524
-  },
-  {
-   "parte": "Bologna 2: Economia, imprese e lavoro, Sanità e sociale, Scuola e università, Imola e circondario, Cultura ed eventi",
-   "articoli": 286
-  },
-  {
-   "modello": "gemini-2.5-flash",
-   "notizie": 53,
-   "caratteri": 19830
-  },
-  {
-   "parte": "EMILIA",
-   "articoli": 138
-  },
-  {
    "modello": "gemini-2.5-flash",
    "notizie": 41,
-   "caratteri": 12431
-  },
-  {
-   "parte": "ROMAGNA",
-   "articoli": 96
-  },
-  {
-   "modello": "gemini-2.5-flash",
-   "notizie": 28,
-   "caratteri": 11630
-  },
-  {
-   "sezioni": {
-    "Bologna": 90,
-    "Emilia-Romagna": 67,
-    "agenda": 1
-   }
-  },
-  {
-   "modello": "gemini-2.5-flash",
-   "notizie": 0,
-   "caratteri": 762
+   "caratteri": 16245
   }
  ],
  "feeds": [
@@ -117,7 +74,7 @@
    "name": "Il Resto del Carlino",
    "prov": "Bologna",
    "status": "ok",
-   "items": 28
+   "items": 27
   },
   {
    "name": "BolognaToday",
@@ -309,7 +266,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 24
+   "items": 26
   },
   {
    "name": "Google News",
@@ -339,13 +296,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 0
+   "items": 4
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 16
+   "items": 15
   },
   {
    "name": "Google News",
@@ -369,55 +326,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 7
+   "items": 5
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 16
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 9
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 13
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 19
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 19
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 17
+   "items": 12
   },
   {
    "name": "Google News",
@@ -429,7 +344,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 7
+   "items": 12
   },
   {
    "name": "Google News",
@@ -442,6 +357,48 @@
    "prov": "Bologna",
    "status": "ok",
    "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 23
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 16
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 22
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 8
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 4
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 25
   },
   {
    "name": "Google News",
@@ -459,7 +416,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 21
+   "items": 22
   },
   {
    "name": "Google News",
@@ -519,7 +476,7 @@
    "name": "Google News",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 9
+   "items": 8
   }
  ]
 }
