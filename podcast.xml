@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 21 Oct 2026 20:19:16 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 00:25:37 +0200</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · mercoledì 21 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Morte Fakir, slitta relazione autopsia; Ecomafia: Bologna 49esima in Italia per reati ambientali; Nuova manifestazione sabato 24 ottobre; Il sindaco Lepore scrive al Governo sul decreto Sicurezza; Assemblea pubblica sul futuro dello stadio Dall&#x27;Ara; Ambulatorio solidale al Pilastro con 10 luminari.</description>
@@ -443,16 +443,6 @@
       <pubDate>Sat, 03 Oct 2026 06:20:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-03.mp3" length="8195753" type="audio/mpeg"/>
       <itunes:duration>1639</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · venerdì 2 ottobre 2026</title>
-      <description>90 notizie dall&#x27;Emilia-Romagna. In apertura: Morto sul lavoro a Faenza; Bosco di Ospizio a Reggio Emilia; Un Cpr a Bologna?; Accoltellamento al liceo Ariosto di Ferrara; Coperion di Ferrara verso una chiusura gestita; Sciopero nazionale plurisettoriale (CSLE).</description>
-      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-02</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-02</guid>
-      <pubDate>Fri, 02 Oct 2026 06:20:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-02.mp3" length="7565027" type="audio/mpeg"/>
-      <itunes:duration>1512</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
