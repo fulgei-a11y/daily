@@ -214,13 +214,13 @@
   "https://www.italpress.com/cremonini-riparte-da-amateur-a-londra-il-debutto-di-una-nuova-identita-musicale-2": "2026-10-21T08:24+02:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/20/scontri-al-corteo-a-bologna-convalidati-gli-arresti-dei-quattro-minori_23e5c230-41cf-4595-b901-3092c3d67ac9.html": "2026-10-21T08:24+02:00"
  },
- "updated": "2026-10-21T08:24+02:00",
+ "updated": "2026-10-21T09:04+02:00",
  "next": "alle 12",
  "last_run": {
-  "at": "2026-10-21T08:24+02:00",
-  "articles": 2,
+  "at": "2026-10-21T09:04+02:00",
+  "articles": 0,
   "items": 0,
-  "model": "gemini-2.5-flash",
+  "model": null,
   "fallback": false,
   "feeds": [
    {
@@ -235,13 +235,13 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 56,
+    "items": 57,
     "kept": 0
    },
    {
@@ -262,7 +262,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 30,
+    "items": 31,
     "kept": 0
    },
    {
@@ -312,7 +312,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
