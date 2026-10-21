@@ -4,7 +4,15 @@
   "items": 158,
   "updated": "2026-10-21T06:28+02:00",
   "articles": 520,
-  "sources": 142
+  "sources": 142,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-21T13:27+02:00",
+    "items": 35,
+    "articles": 515
+   }
+  ]
  },
  {
   "date": "2026-10-20",
