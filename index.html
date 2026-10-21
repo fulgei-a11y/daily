@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
 <title>Rassegna ER</title>
 <meta name="description" content="La rassegna stampa quotidiana dell'Emilia-Romagna: le notizie di tutte le province, ogni mattina, da leggere o da ascoltare.">
 <!-- anteprima dei link (WhatsApp, Telegram, Facebook, X) -->
@@ -517,7 +518,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     $('#favList').innerHTML = list.length ? list.map(([k, v]) => `<li>
         <span class="fdate">${esc(longDate(v.d))}</span><span class="ftitle">${esc(v.t)}</span>
         <span class="ftext">${esc(v.x)}</span>
-        <span class="fact"><button type="button" data-go="${esc(v.d)}/${v.i + 1}">Apri nella rassegna</button>${v.l ? `<a href="${esc(v.l)}" target="_blank" rel="noopener">${esc(v.s || 'Fonte')}</a>` : ''}<button type="button" data-del="${esc(k)}">Togli</button></span></li>`).join('')
+        <span class="fact"><button type="button" data-go="${esc(v.d)}/${v.i + 1}">Apri nella rassegna</button>${v.l ? `<a href="${esc(v.l)}" target="_blank" rel="noopener noreferrer">${esc(v.s || 'Fonte')}</a>` : ''}<button type="button" data-del="${esc(k)}">Togli</button></span></li>`).join('')
       : '<li class="ftext">Nessuna notizia salvata. Tocca ☆ Salva sotto una notizia per ritrovarla qui, anche nei giorni successivi.</li>';
     $('#favDlg').showModal();
   }
@@ -757,7 +758,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     el.className = 'item'; el.dataset.i = i; el.dataset.sub = it.sub ? '1' : '';
     el.dataset.prov = it.sec === 'Note' ? '' : ((themeOf(it.sub) ? '' : provOf(it.sub)) || detectProv(it.node) || (/^bologna$/i.test(it.sec) ? 'Bologna' : ''));
     el.innerHTML = `<button class="pbtn" type="button" aria-label="Ascolta da questa notizia"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><div class="txt">${it.node.innerHTML}</div>`;
-    el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+    el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener noreferrer'; });
     // vecchie edizioni: "(Fonte: X)" dentro il link diventa la riga delle fonti
     if (!el.querySelector('.src')){
       const links = [...el.querySelectorAll('.txt > a')].filter(a => /fonte/i.test(a.textContent));
