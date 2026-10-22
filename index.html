@@ -466,7 +466,8 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     let body = t.textContent.replace(/\s+/g, ' ').trim();
     if (body.length > 300) body = body.slice(0, 297).replace(/\s\S*$/, '') + '…';
     // nessun riferimento alla rassegna: solo la notizia e il link all'articolo originale del giornale
-    const a = el.querySelector('.src a[href^="http"]');
+    const links = [...el.querySelectorAll('.src a[href^="http"]')];
+    const a = links.find(x => !/news\.google\./.test(x.href)) || links[0];   // meglio il link diretto al giornale
     share({ title, text: body + (a ? '\n\nFonte: ' + a.textContent.trim() : ''), url: a ? a.href : undefined });
   }
   $('#shareBtn').onclick = () => {
