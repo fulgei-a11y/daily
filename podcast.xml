@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 22 Oct 2026 20:17:57 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 00:25:19 +0200</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · giovedì 22 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Nuovo negozio Garmin in via Rizzoli; Decesso uomo dopo minaccia e lancio dal ponte; Corteo studentesco contro il caro affitti; Richiesta di condanna per professore Unibo accusato di molestie; Ospedale Sant&#x27;Orsola tra i migliori &quot;smart hospitals&quot; al mondo; Ritardi e corse saltate per gli autobus Tper.</description>
@@ -463,16 +463,6 @@
       <pubDate>Sun, 04 Oct 2026 06:20:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-04.mp3" length="4857304" type="audio/mpeg"/>
       <itunes:duration>971</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · sabato 3 ottobre 2026</title>
-      <description>86 notizie dall&#x27;Emilia-Romagna. In apertura: Strage di via Emilia, El Koudri capace di intendere e di volere; Liceo Ariosto, il 22enne resta in carcere; Bologna, corteo per «Lince» senza scontri; de Pascale attacca il Viminale sul Cpr; Morto in cantiere a Faenza, ha un nome la vittima; Trevi, Webuild non rilancia ma abbassa la soglia; Giro dell&#x27;Emilia.</description>
-      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-03</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-03</guid>
-      <pubDate>Sat, 03 Oct 2026 06:20:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-03.mp3" length="8195753" type="audio/mpeg"/>
-      <itunes:duration>1639</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
