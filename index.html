@@ -455,7 +455,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   async function share(data){
     if (navigator.share){ try { await navigator.share(data); } catch(e) {} return; }
     const txt = [data.text, data.url].filter(Boolean).join('\n');
-    try { await navigator.clipboard.writeText(txt); toast('Link copiato: incollalo su WhatsApp o dove vuoi'); }
+    try { await navigator.clipboard.writeText(txt); toast((data.url ? 'Link copiato' : 'Testo copiato') + ': incollalo su WhatsApp o dove vuoi'); }
     catch(e) { window.open('https://wa.me/?text=' + encodeURIComponent(txt), '_blank', 'noopener'); }
   }
   function shareItem(i){
@@ -465,7 +465,9 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     const title = (t.querySelector('strong,b') || {}).textContent || 'Notizia';
     let body = t.textContent.replace(/\s+/g, ' ').trim();
     if (body.length > 300) body = body.slice(0, 297).replace(/\s\S*$/, '') + '…';
-    share({ title, text: body + '\n\n— Rassegna ER, ' + longDate(current), url: pageUrl() + '#' + current + '/' + (i + 1) });
+    // nessun riferimento alla rassegna: solo la notizia e il link all'articolo originale del giornale
+    const a = el.querySelector('.src a[href^="http"]');
+    share({ title, text: body + (a ? '\n\nFonte: ' + a.textContent.trim() : ''), url: a ? a.href : undefined });
   }
   $('#shareBtn').onclick = () => {
     const vis = items.filter(el => !el.hidden && !el.closest('.notes')).length;
