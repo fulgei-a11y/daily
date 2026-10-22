@@ -205,30 +205,35 @@
   "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSWdfY043ek9nb3ltWjgzbURuYWI0UGplTExXYmVKZW94dGhRczlZZEZGS2p4cHZPZHdtWVhzN2FzR0d4Nks5a1FQdGoyNXFlV2NwZmcwRjF5VlpMa0ZhUmlkeUhQaHlvMFRqNnh6Qy1JUFJNNEluc3BrOHYxUjF6aVdjSHFmSzlUZnNsWDNXRXJRRmQ5cGgyOFIyTFVyRXdLZ29rdXQtVXh5eVRGODNhMkVMclBrckRfa2paWDlmQklIMWVTWHdj": "2026-10-22T00:25+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/ecomafie-le-r-decima-in-italia-per-reati-ambientali-leggero-calo-nel-2025_7d9ac451-6542-4066-a08d-5e1df6457472.html": "2026-10-22T00:25+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/fakir-slitta-alla-prossima-settimana-il-deposito-della-relazione-su-autopsia_8198c543-60a8-4a7d-bc6f-7c11035a09f1.html": "2026-10-22T00:25+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/molestie-ad-una-studentessa-a-scuola-condannato-tecnico-di-laboratorio_378eb408-5409-41c6-9ac2-4a20fc4eeb14.html": "2026-10-22T00:25+02:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/21/molestie-ad-una-studentessa-a-scuola-condannato-tecnico-di-laboratorio_378eb408-5409-41c6-9ac2-4a20fc4eeb14.html": "2026-10-22T00:25+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/22/ustica-bonfietti-querelo-giovanardi-gip-si-riserva-la-decisione_0466312d-af51-4ee5-aa26-bb3890701594.html": "2026-10-22T12:22+02:00",
+  "https://www.italpress.com/bologna-capitale-europea-con-nereus-i-leader-dello-spazio-a-confronto": "2026-10-22T12:22+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/22/con-edizioni-bignami-arriva-la-prima-enciclopedia-della-pasta_880d22a0-e53d-42f5-a380-83b6da668aeb.html": "2026-10-22T12:22+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/22/e-r-cambia-i-requisiti-per-le-case-popolari-stop-a-storicita-residenza_f513adb4-189e-487d-a391-c193d85a356a.html": "2026-10-22T12:22+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/22/minorenne-picchiata-da-coetanee-nel-modenese-il-video-virale-su-social_3a28d9a5-e3ab-4c63-9053-fdb9a74a4d02.html": "2026-10-22T12:22+02:00"
  },
- "updated": "2026-10-22T08:26+02:00",
- "next": "alle 12",
+ "updated": "2026-10-22T12:22+02:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-22T08:26+02:00",
-  "articles": 0,
+  "at": "2026-10-22T12:22+02:00",
+  "articles": 5,
   "items": 0,
-  "model": null,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 30,
-    "kept": 0
+    "items": 27,
+    "kept": 3
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -255,7 +260,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 14,
+    "items": 9,
     "kept": 0
    },
    {
@@ -305,7 +310,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
