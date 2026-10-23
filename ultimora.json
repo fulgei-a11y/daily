@@ -116,13 +116,20 @@
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/23/paolo-fresu-i-giovani-vanno-ascoltati-li-incontrero-nei-licei-a-bologna_2e664d3e-5c31-4a35-824c-8cb3ccecc3d7.html": "2026-10-23T16:27+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/torna-il-frecciarosa-la-prevenzione-a-bordo-dei-treni-anche-in-e-r_4965363c-b237-478f-9e9e-2deec9184db8.html": "2026-10-23T16:27+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/alluvione-a-sogliano-una-rete-metallica-per-proteggere-il-centro-storico_2b7f8341-97ad-4cd3-912d-70c2db45df69.html": "2026-10-23T16:27+02:00",
-  "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeTJhWUZoNV9MWmJPWWh2aFJrc1lRajk5bFNvaERkT2ZkV0RHUkRTVW1ackpDUGgwSkNaNl81YjRZdGx1ZnV4aHM0ZmdOejV3NE1udnhVME1IT09Oa253YlRMVFRhN29HcTN0QTBXSm45MWZ2aGR6SU5nVFc1VGk5ODNiZWJlNTFYZjNwUjZtX203Nk9pbkhhdzZNZlBpWUd6N3NjSTE1MDJ3OWxxSVdGLUdIcEZuMDlVT1J2dGxBQVpMUQ": "2026-10-23T16:27+02:00"
+  "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeTJhWUZoNV9MWmJPWWh2aFJrc1lRajk5bFNvaERkT2ZkV0RHUkRTVW1ackpDUGgwSkNaNl81YjRZdGx1ZnV4aHM0ZmdOejV3NE1udnhVME1IT09Oa253YlRMVFRhN29HcTN0QTBXSm45MWZ2aGR6SU5nVFc1VGk5ODNiZWJlNTFYZjNwUjZtX203Nk9pbkhhdzZNZlBpWUd6N3NjSTE1MDJ3OWxxSVdGLUdIcEZuMDlVT1J2dGxBQVpMUQ": "2026-10-23T16:27+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/mantovano-vigilare-su-normative-ue-a-rischio-elusione-le-restrizioni-su-cannabis_d6768745-eff7-49db-927e-dc7f270a1662.html": "2026-10-23T20:17+02:00",
+  "https://www.agi.it/cronaca/news/2026-10-23/milano-roma-proteste-movimento-17-ottobre-revoca-piazze-39679652": "2026-10-23T20:17+02:00",
+  "https://www.italpress.com/distretto-manifatturiero-del-nord-rafforzata-alleanza-con-industria-e-banche": "2026-10-23T20:17+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/meloni-ai-giovani-di-san-patrignano-fieri-di-voi-siete-diventati-un-esempio_8c4a5e40-4042-4512-9c30-4d0d9a568bf7.html": "2026-10-23T20:17+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/il-ritorno-e-reale-ronaldinho-il-15-novembre-in-campo-per-ravenna-forli_1ae63791-549d-4cce-9616-21c3fe1c77ad.html": "2026-10-23T20:17+02:00",
+  "https://www.adnkronos.com/economia/t3-expo-e-agv-expo-seconda-giornata-su-decarbonizzazione-e-automazione_3Wn5RBbQekIXUDcIZDjsag": "2026-10-23T20:17+02:00",
+  "https://www.dire.it/23-10-2026/1279863-rabbia-giovani-presidente-carcere-minorile-malcontento-odio": "2026-10-23T20:17+02:00"
  },
- "updated": "2026-10-23T16:27+02:00",
- "next": "alle 20",
+ "updated": "2026-10-23T20:17+02:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-23T16:27+02:00",
-  "articles": 4,
+  "at": "2026-10-23T20:17+02:00",
+  "articles": 7,
   "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -131,21 +138,21 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 30,
-    "kept": 2
+    "items": 24,
+    "kept": 3
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 59,
+    "items": 60,
     "kept": 0
    },
    {
@@ -153,7 +160,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "AGI",
@@ -166,7 +173,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 16,
+    "items": 12,
     "kept": 0
    },
    {
@@ -181,7 +188,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -216,7 +223,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
@@ -230,14 +237,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dagospia",
