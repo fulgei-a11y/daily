@@ -1,6 +1,36 @@
 {
  "items": [
   {
+   "t": "2026-10-24T00:24+02:00",
+   "cat": "",
+   "bo": false,
+   "title": "Aggredita impiegata Trenitalia in stazione",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/impiegata-di-trenitalia-aggredita-in-stazione-denunciato-un-36enne_3bab2023-ed4e-4265-b397-b1eca38b3b21.html"
+   ],
+   "html": "<strong>Aggredita impiegata Trenitalia in stazione</strong> — Reggio Emilia: un 36enne gambiano è stato denunciato per aver molestato e aggredito fisicamente una dipendente di Trenitalia in stazione il 20 ottobre. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/23/impiegata-di-trenitalia-aggredita-in-stazione-denunciato-un-36enne_3bab2023-ed4e-4265-b397-b1eca38b3b21.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-24T00:24+02:00",
+   "cat": "",
+   "bo": true,
+   "title": "Riapertura indagini sul \"mostro di Modena\"",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/mostro-di-modena-nuove-analisi-rivedono-gli-orari-dellultima-morte_64721a2f-bfc6-4823-9d10-14a06fefd4c5.html"
+   ],
+   "html": "<strong>Riapertura indagini sul \"mostro di Modena\"</strong> — Bologna: nuove analisi medico-legali suggeriscono che il corpo di Monica Abate, ultima vittima del \"mostro di Modena\", fu spostato 6-8 ore dopo il decesso, una \"messinscena\" che potrebbe riscrivere gli orari del delitto e incidere sugli alibi. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/23/mostro-di-modena-nuove-analisi-rivedono-gli-orari-dellultima-morte_64721a2f-bfc6-4823-9d10-14a06fefd4c5.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-24T00:24+02:00",
+   "cat": "",
+   "bo": true,
+   "title": "Morto Alberto Masotti, ex presidente de La Perla",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/e-morto-a-90-anni-alberto-masotti-ex-presidente-de-la-perla_d5947c06-4e14-449c-8324-fded9a0094e9.html"
+   ],
+   "html": "<strong>Morto Alberto Masotti, ex presidente de La Perla</strong> — Bologna: è deceduto a 90 anni Alberto Masotti, che guidò il marchio di lingerie La Perla dal 1981 al 2007. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/23/e-morto-a-90-anni-alberto-masotti-ex-presidente-de-la-perla_d5947c06-4e14-449c-8324-fded9a0094e9.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-23T12:20+02:00",
    "cat": "",
    "bo": true,
@@ -74,11 +104,6 @@
   }
  ],
  "seen": {
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/22/ustica-bonfietti-querelo-giovanardi-gip-si-riserva-la-decisione_0466312d-af51-4ee5-aa26-bb3890701594.html": "2026-10-22T12:22+02:00",
-  "https://www.italpress.com/bologna-capitale-europea-con-nereus-i-leader-dello-spazio-a-confronto": "2026-10-22T12:22+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/22/con-edizioni-bignami-arriva-la-prima-enciclopedia-della-pasta_880d22a0-e53d-42f5-a380-83b6da668aeb.html": "2026-10-22T12:22+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/22/e-r-cambia-i-requisiti-per-le-case-popolari-stop-a-storicita-residenza_f513adb4-189e-487d-a391-c193d85a356a.html": "2026-10-22T12:22+02:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/22/minorenne-picchiata-da-coetanee-nel-modenese-il-video-virale-su-social_3a28d9a5-e3ab-4c63-9053-fdb9a74a4d02.html": "2026-10-22T12:22+02:00",
   "https://www.dire.it/22-10-2026/1279363-svolta-alla-festa-della-mortadella-di-bologna-arrivano-taglieri-e-ragu-vegani": "2026-10-22T16:26+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/22/stop-al-caro-gasolio-anche-in-e-r-pescatori-in-sciopero-da-goro-a-cesenatico_b0b663ac-6511-4f56-9e6a-95a572e907ae.html": "2026-10-22T16:26+02:00",
   "https://www.adnkronos.com/cronaca/social-e-intelligenza-artificiale-il-futuro-del-marketing-si-gioca-su-fiducia_7epMJdhfuhYJzj1vqDPbFO": "2026-10-22T16:26+02:00",
@@ -123,14 +148,21 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/meloni-ai-giovani-di-san-patrignano-fieri-di-voi-siete-diventati-un-esempio_8c4a5e40-4042-4512-9c30-4d0d9a568bf7.html": "2026-10-23T20:17+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/il-ritorno-e-reale-ronaldinho-il-15-novembre-in-campo-per-ravenna-forli_1ae63791-549d-4cce-9616-21c3fe1c77ad.html": "2026-10-23T20:17+02:00",
   "https://www.adnkronos.com/economia/t3-expo-e-agv-expo-seconda-giornata-su-decarbonizzazione-e-automazione_3Wn5RBbQekIXUDcIZDjsag": "2026-10-23T20:17+02:00",
-  "https://www.dire.it/23-10-2026/1279863-rabbia-giovani-presidente-carcere-minorile-malcontento-odio": "2026-10-23T20:17+02:00"
+  "https://www.dire.it/23-10-2026/1279863-rabbia-giovani-presidente-carcere-minorile-malcontento-odio": "2026-10-23T20:17+02:00",
+  "https://www.adnkronos.com/cronaca/cortei-oggi-24-ottobre-movimento-17-ottobre_5FDpj5SJF8zmIc6pt1sgJK": "2026-10-24T00:24+02:00",
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxQbTZodmxCWHd0NXUtdGlLNU9FX3dzc2d2dVc0TlBMeV9DWVBOal9SU2JlY1oyWlVpbWM1SUdUaDRqU09WZHpxQ3BpdkFCTTBocVlnODAtU2JSRVd2dlJDQ3JkZDJLcDlWT1kxV09GbGZRQkY0R3M4ZGFYWEdJQ2V0bWFQSXZwWEdzRU9kWHpudk16VzlZTHByLXktZi04VlBXanY2cg": "2026-10-24T00:24+02:00",
+  "https://www.italpress.com/distretto-manifatturiero-del-nord-rafforza-lalleanza-con-banche-e-industrie": "2026-10-24T00:24+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/impiegata-di-trenitalia-aggredita-in-stazione-denunciato-un-36enne_3bab2023-ed4e-4265-b397-b1eca38b3b21.html": "2026-10-24T00:24+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/e-morto-a-90-anni-alberto-masotti-ex-presidente-de-la-perla_d5947c06-4e14-449c-8324-fded9a0094e9.html": "2026-10-24T00:24+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/i-pooh-celebrano-sessantanni-di-successi-a-bologna-con-una-notte-a-sorpresa_29fc7d45-46ff-4d98-9743-765f54672c93.html": "2026-10-24T00:24+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/mostro-di-modena-nuove-analisi-rivedono-gli-orari-dellultima-morte_64721a2f-bfc6-4823-9d10-14a06fefd4c5.html": "2026-10-24T00:24+02:00"
  },
- "updated": "2026-10-23T20:17+02:00",
- "next": "alle 24",
+ "updated": "2026-10-24T00:24+02:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-10-23T20:17+02:00",
+  "at": "2026-10-24T00:24+02:00",
   "articles": 7,
-  "items": 0,
+  "items": 3,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -139,7 +171,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 24,
-    "kept": 3
+    "kept": 4
    },
    {
     "agency": "ANSA",
@@ -160,7 +192,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "AGI",
@@ -173,14 +205,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 12,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
+    "items": 3,
     "kept": 0
    },
    {
@@ -189,6 +214,13 @@
     "status": "ok",
     "items": 20,
     "kept": 1
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -230,14 +262,14 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
-    "status": "ok",
-    "items": 10,
-    "kept": 1
+    "status": "XML non valido",
+    "items": 0,
+    "kept": 0
    },
    {
     "agency": "Dire",
