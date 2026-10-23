@@ -1,6 +1,38 @@
 {
  "items": [
   {
+   "t": "2026-10-23T12:20+02:00",
+   "cat": "",
+   "bo": true,
+   "title": "Scontri e saccheggi a Bologna, si teme il bis",
+   "links": [
+    "https://www.dire.it/23-10-2026/1279703-guerriglia-saccheggi-incidenti-17-18-ottobre-cosa-e-successo-milano-torino-e-bologna",
+    "https://www.adnkronos.com/cronaca/milano-manifestazione-scontri-proteste-news_Z8btKRH2qcnpD2v80IyXB",
+    "https://www.agi.it/cronaca/news/2026-10-23/bari-milano-allerta-saccheggi-39668840"
+   ],
+   "html": "<strong>Scontri e saccheggi a Bologna, si teme il bis</strong> — Bologna: dopo gli episodi di guerriglia urbana e assalti ai negozi del 17 ottobre, l'allerta è massima per il prossimo weekend. <span class=\"src\">Fonti: <a href=\"https://www.dire.it/23-10-2026/1279703-guerriglia-saccheggi-incidenti-17-18-ottobre-cosa-e-successo-milano-torino-e-bologna/\" target=\"_blank\" rel=\"noopener\">Dire</a>, <a href=\"https://www.adnkronos.com/cronaca/milano-manifestazione-scontri-proteste-news_Z8btKRH2qcnpD2v80IyXB\" target=\"_blank\" rel=\"noopener\">Adnkronos</a>, <a href=\"https://www.agi.it/cronaca/news/2026-10-23/bari-milano-allerta-saccheggi-39668840/\" target=\"_blank\" rel=\"noopener\">AGI</a></span>"
+  },
+  {
+   "t": "2026-10-23T12:20+02:00",
+   "cat": "",
+   "bo": false,
+   "title": "Droga in capannone, sequestrati 130 kg di hascisc e 2 kg di cocaina",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/droga-in-un-capannone-sequestrati-130-chili-di-hascisc-e-due-di-cocaina_9247fde1-7f4e-45f7-826f-d6959886862f.html"
+   ],
+   "html": "<strong>Droga in capannone, sequestrati 130 kg di hascisc e 2 kg di cocaina</strong> — Modena: due persone sono state arrestate dai Carabinieri dopo il ritrovamento di un ingente quantitativo di droga in un capannone. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/23/droga-in-un-capannone-sequestrati-130-chili-di-hascisc-e-due-di-cocaina_9247fde1-7f4e-45f7-826f-d6959886862f.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-23T12:20+02:00",
+   "cat": "",
+   "bo": true,
+   "title": "Squadra di calcio lascia il campo per insulto razzista",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/squadra-lascia-il-campo-dopo-insulto-razzista-e-perde-la-partita-a-tavolino_29fb55d4-097d-4811-9553-ec92f93b9725.html"
+   ],
+   "html": "<strong>Squadra di calcio lascia il campo per insulto razzista</strong> — Mascarino (Bologna): la squadra Mascarino Fc ha abbandonato la partita di terza categoria contro Vigor Pieve 1925 dopo un insulto razzista a un proprio giocatore, perdendo poi a tavolino. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/23/squadra-lascia-il-campo-dopo-insulto-razzista-e-perde-la-partita-a-tavolino_29fb55d4-097d-4811-9553-ec92f93b9725.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-23T00:25+02:00",
    "cat": "Cronaca",
    "bo": false,
@@ -98,14 +130,20 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/22/e-partito-il-corteo-studentesco-verso-sede-della-regione-emilia-romagna_d0479be9-1bc3-439c-8a32-3687b6a940d1.html": "2026-10-23T00:25+02:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/22/il-comune-di-ferrara-lancia-il-nucleo-anti-maranza_3126936e-e9a0-4fc7-b9f0-6521dee019ec.html": "2026-10-23T00:25+02:00",
   "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOTHRERFRzd3NTMkxDSkJVb1lIdXAtd0ctNW5POGpjUzJzZ0hVbWpSYlFhYTE3U2wzRUZGNmdDakF5UmhiWEFHNmF4NlJQR0s5WGoyVTV1eGZZSTNRWVdrVnE3TjRESG5hZnZQNG5ZUVduc3JvZ2h3SFN0bFl1anNwRDV0S21vS3BOd2JvVTdNZWhQcExlX2k1Y2JzWWtYaFZNN09VeDQ2ZGl5eW00MDU5WWw2cXNNdXZjSjZMcEhZcWphYkt1SGFWVngzX25qZEZX": "2026-10-23T00:25+02:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/23/trenta-giovani-perquisiti-a-como-si-indaga-per-istigazione-al-saccheggio_c2fa35ab-2fe5-4c25-85ae-1c73f3ba723b.html": "2026-10-23T08:25+02:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/23/trenta-giovani-perquisiti-a-como-si-indaga-per-istigazione-al-saccheggio_c2fa35ab-2fe5-4c25-85ae-1c73f3ba723b.html": "2026-10-23T08:25+02:00",
+  "https://www.dire.it/23-10-2026/1279703-guerriglia-saccheggi-incidenti-17-18-ottobre-cosa-e-successo-milano-torino-e-bologna": "2026-10-23T12:20+02:00",
+  "https://www.ansa.it/sito/notizie/economia/2026/10/23/confcom-quasi-mezzo-milione-di-locali-sfitti-piccoli-comuni-e-borghi-senza_10352607-159b-4a13-8052-50867bfa6b9d.html": "2026-10-23T12:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/squadra-lascia-il-campo-dopo-insulto-razzista-e-perde-la-partita-a-tavolino_29fb55d4-097d-4811-9553-ec92f93b9725.html": "2026-10-23T12:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/droga-in-un-capannone-sequestrati-130-chili-di-hascisc-e-due-di-cocaina_9247fde1-7f4e-45f7-826f-d6959886862f.html": "2026-10-23T12:20+02:00",
+  "https://www.adnkronos.com/cronaca/milano-manifestazione-scontri-proteste-news_Z8btKRH2qcnpD2v80IyXB": "2026-10-23T12:20+02:00",
+  "https://www.agi.it/cronaca/news/2026-10-23/bari-milano-allerta-saccheggi-39668840": "2026-10-23T12:20+02:00"
  },
- "updated": "2026-10-23T08:25+02:00",
- "next": "alle 12",
+ "updated": "2026-10-23T12:20+02:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-23T08:25+02:00",
-  "articles": 1,
-  "items": 0,
+  "at": "2026-10-23T12:20+02:00",
+  "articles": 6,
+  "items": 3,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -114,6 +152,13 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 28,
+    "kept": 2
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
     "kept": 0
    },
    {
@@ -124,18 +169,11 @@
     "kept": 1
    },
    {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
     "agency": "AGI",
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "AGI",
@@ -148,7 +186,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 44,
+    "items": 26,
     "kept": 0
    },
    {
@@ -156,7 +194,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -212,7 +250,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
