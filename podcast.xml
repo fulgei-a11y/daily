@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 23 Oct 2026 20:17:25 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 00:25:10 +0200</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · venerdì 23 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Manifestazioni del 24 ottobre: strategia &quot;a sorpresa&quot; e preoccupazione; Addio ad Alberto Masotti, ex presidente de La Perla; Carceri minorili in sofferenza, ipotesi ampliamento del Pratello; Contrasto allo spaccio di droga: 14 arresti e 212 kg di stupefacenti sequestrati in un mese; Furto di gasolio in galleria A1, arrestato 43enne; Teatro Mazzacorati 1763 aperto sette giorni su sette.</description>
@@ -483,16 +483,6 @@
       <pubDate>Mon, 05 Oct 2026 06:20:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-05.mp3" length="5037941" type="audio/mpeg"/>
       <itunes:duration>1007</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · domenica 4 ottobre 2026</title>
-      <description>86 notizie dall&#x27;Emilia-Romagna.</description>
-      <link>https://fulgei-a11y.github.io/rassegna/#2026-10-04</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-04</guid>
-      <pubDate>Sun, 04 Oct 2026 06:20:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/rassegna/audio/2026-10-04.mp3" length="4857304" type="audio/mpeg"/>
-      <itunes:duration>971</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
