@@ -14,7 +14,7 @@ import re
 from zoneinfo import ZoneInfo
 
 ROME = ZoneInfo("Europe/Rome")
-repo = os.environ.get("GITHUB_REPOSITORY", "fulgei-a11y/rassegna")
+repo = os.environ.get("GITHUB_REPOSITORY", "fulgei-a11y/daily")
 owner, name = repo.split("/")
 SITE = os.environ.get("SITE_URL", f"https://{owner.lower()}.github.io/{name}/")
 GIORNI = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]

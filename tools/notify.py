@@ -27,7 +27,7 @@ from zoneinfo import ZoneInfo
 ROME = ZoneInfo("Europe/Rome")
 TOPIC = os.environ.get("NTFY_TOPIC", "").strip()
 SERVER = os.environ.get("NTFY_SERVER", "https://ntfy.sh").rstrip("/")
-repo = os.environ.get("GITHUB_REPOSITORY", "fulgei-a11y/rassegna")
+repo = os.environ.get("GITHUB_REPOSITORY", "fulgei-a11y/daily")
 owner, name = repo.split("/")
 SITE = os.environ.get("SITE_URL", f"https://{owner.lower()}.github.io/{name}/")
 TODAY = dt.datetime.now(ROME).strftime("%Y-%m-%d")
