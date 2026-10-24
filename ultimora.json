@@ -1,6 +1,46 @@
 {
  "items": [
   {
+   "t": "2026-10-24T12:14+02:00",
+   "cat": "",
+   "bo": false,
+   "title": "Raid ladri in casa di due magistrati",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/raid-dei-ladri-in-casa-di-due-magistrati-nel-reggiano-rubati-gioielli_2ebaa632-b813-4f39-a4fe-b09ec401e735.html"
+   ],
+   "html": "<strong>Raid ladri in casa di due magistrati</strong> — Reggio Emilia (Reggio Emilia): ignoti hanno rubato gioielli e altri beni dall'abitazione di una PM della procura di Reggio Emilia e di un togato in Cassazione, approfittando della loro assenza. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/24/raid-dei-ladri-in-casa-di-due-magistrati-nel-reggiano-rubati-gioielli_2ebaa632-b813-4f39-a4fe-b09ec401e735.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-24T12:14+02:00",
+   "cat": "",
+   "bo": true,
+   "title": "Negozi del centro schermano le vetrine per manifestazioni",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/nel-centro-di-bologna-i-negozi-schermano-le-vetrine-con-pannelli_95cda3bb-3483-4352-868b-19a7018e57cf.html"
+   ],
+   "html": "<strong>Negozi del centro schermano le vetrine per manifestazioni</strong> — Bologna: in vista delle manifestazioni annunciate per il pomeriggio, alcuni negozi del centro, incluse grandi firme in Galleria Cavour e attività in via d'Azeglio e via Ugo Bassi, hanno posizionato pannelli a protezione delle vetrine. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/24/nel-centro-di-bologna-i-negozi-schermano-le-vetrine-con-pannelli_95cda3bb-3483-4352-868b-19a7018e57cf.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-24T12:14+02:00",
+   "cat": "",
+   "bo": false,
+   "title": "Latitante ricercato dal 2015 arrestato in Spagna",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/latitante-irreperibile-dal-2015-arrestato-in-spagna-dalla-squadra-mobile-di-rimini_de7a8e5e-f39c-4305-a1b5-18bb2d914606.html"
+   ],
+   "html": "<strong>Latitante ricercato dal 2015 arrestato in Spagna</strong> — Rimini: la Squadra Mobile di Rimini, in collaborazione internazionale, ha arrestato a Madrid un cittadino albanese di 34 anni, latitante dal 2015 e ricercato per traffico di droga. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/24/latitante-irreperibile-dal-2015-arrestato-in-spagna-dalla-squadra-mobile-di-rimini_de7a8e5e-f39c-4305-a1b5-18bb2d914606.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-24T12:14+02:00",
+   "cat": "",
+   "bo": true,
+   "title": "Progetto 'Mobilità Sicura': 148 patenti ritirate in 18 giorni",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/progetto-mobilita-sicura-a-bologna-148-patenti-ritirate-dall1-al-1810_35b54512-5323-4809-bda3-d20b7ecfd6d7.html"
+   ],
+   "html": "<strong>Progetto 'Mobilità Sicura': 148 patenti ritirate in 18 giorni</strong> — Bologna: la Polizia Stradale ha ritirato 148 patenti e decurtato 3.403 punti in diciotto giorni (1-18 ottobre) nell'ambito del progetto 'Mobilità sicura', con 3.972 persone e 2.708 veicoli controllati. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/24/progetto-mobilita-sicura-a-bologna-148-patenti-ritirate-dall1-al-1810_35b54512-5323-4809-bda3-d20b7ecfd6d7.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-24T08:21+02:00",
    "cat": "Cronaca",
    "bo": true,
@@ -124,14 +164,21 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/e-morto-a-90-anni-alberto-masotti-ex-presidente-de-la-perla_d5947c06-4e14-449c-8324-fded9a0094e9.html": "2026-10-24T00:24+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/i-pooh-celebrano-sessantanni-di-successi-a-bologna-con-una-notte-a-sorpresa_29fc7d45-46ff-4d98-9743-765f54672c93.html": "2026-10-24T00:24+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/mostro-di-modena-nuove-analisi-rivedono-gli-orari-dellultima-morte_64721a2f-bfc6-4823-9d10-14a06fefd4c5.html": "2026-10-24T00:24+02:00",
-  "https://www.adnkronos.com/cronaca/cortei-proteste-oggi-24-ottobre-roma-milano_1IqLufT8WAMcjtEVI4kvTF": "2026-10-24T08:21+02:00"
+  "https://www.adnkronos.com/cronaca/cortei-proteste-oggi-24-ottobre-roma-milano_1IqLufT8WAMcjtEVI4kvTF": "2026-10-24T08:21+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/raid-dei-ladri-in-casa-di-due-magistrati-nel-reggiano-rubati-gioielli_2ebaa632-b813-4f39-a4fe-b09ec401e735.html": "2026-10-24T12:14+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/furto-e-ricettazione-di-carte-pokemon-one-piece-e-pocket-monster-denunciato-giovane_4bb7c749-8b1a-4bb6-983a-815871640822.html": "2026-10-24T12:14+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/nel-centro-di-bologna-i-negozi-schermano-le-vetrine-con-pannelli_95cda3bb-3483-4352-868b-19a7018e57cf.html": "2026-10-24T12:14+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/latitante-irreperibile-dal-2015-arrestato-in-spagna-dalla-squadra-mobile-di-rimini_de7a8e5e-f39c-4305-a1b5-18bb2d914606.html": "2026-10-24T12:14+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/progetto-mobilita-sicura-a-bologna-148-patenti-ritirate-dall1-al-1810_35b54512-5323-4809-bda3-d20b7ecfd6d7.html": "2026-10-24T12:14+02:00",
+  "https://www.italpress.com/lega-pro-marani-riforma-zola-per-valorizzare-i-giovani-e-rilanciare-i-vivai": "2026-10-24T12:14+02:00",
+  "https://www.dire.it/24-10-2026/1280038-accordo-trump-putin-una-petroliera-con-40mila-tonnellate-di-diesel-in-arrivo-a-new-york": "2026-10-24T12:14+02:00"
  },
- "updated": "2026-10-24T08:21+02:00",
- "next": "alle 12",
+ "updated": "2026-10-24T12:14+02:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-24T08:21+02:00",
-  "articles": 1,
-  "items": 1,
+  "at": "2026-10-24T12:14+02:00",
+  "articles": 7,
+  "items": 4,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -139,8 +186,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 24,
-    "kept": 0
+    "items": 26,
+    "kept": 5
    },
    {
     "agency": "ANSA",
@@ -153,7 +200,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 60,
+    "items": 39,
     "kept": 0
    },
    {
@@ -182,7 +229,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -224,7 +271,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
@@ -238,7 +285,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
