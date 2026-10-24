@@ -257,6 +257,13 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
 .btnrow{display:flex;flex-wrap:wrap;gap:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-weight:600;font-size:14px;text-decoration:none;cursor:pointer}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.qall{display:flex;align-items:center;gap:8px;margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+.qall button{border:0;background:none;padding:4px 0;color:var(--accent);font-weight:700;font-size:13.5px;cursor:pointer}
+.sres-status{font-size:13.5px;color:var(--muted);margin:0 0 6px}
+.sres-day{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:16px 0 0;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.sres-day small{color:var(--muted);margin-left:6px}
+.sres li{cursor:pointer}
+.sres li:hover .ftitle{color:var(--accent)}
 .favlist{list-style:none;margin:0;padding:0}
 .favlist li{padding:12px 0;border-bottom:1px solid var(--line)}
 .favlist .fdate{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);letter-spacing:.04em}
@@ -330,7 +337,8 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       <button class="icon" id="shareBtn" type="button" aria-label="Condividi l'edizione"><svg viewBox="0 0 24 24"><path d="M18 16.1c-.8 0-1.4.3-2 .8l-7.1-4.2c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.2c.5.5 1.2.8 2 .8a3 3 0 1 0-3-3c0 .2 0 .5.1.7L8 9.8A3 3 0 1 0 8 14.2l7.1 4.2c0 .2-.1.4-.1.6a2.9 2.9 0 1 0 3-2.9"/></svg></button>
       <button class="pdfbtn" id="pdfBtn" type="button"><svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"/></svg>PDF</button>
     </div>
-    <label class="search"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9"/></svg><input id="q" type="search" placeholder="Cerca nella rassegna (es. alluvione, Bologna, sanità)" autocomplete="off"></label>
+    <label class="search"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9"/></svg><input id="q" type="search" placeholder="Cerca nella rassegna (es. alluvione, Bologna, sanità)" autocomplete="off" enterkeyhint="search"></label>
+    <div class="qall" id="qAll" hidden><span id="qAllTxt"></span><button type="button" id="qAllBtn">Cerca in tutti i giorni →</button></div>
     <div class="banner" id="installBar" hidden><img src="icons/icon-192.png" alt=""><span id="installTxt"></span><button class="go" id="installGo" type="button">Installa</button><button class="x" id="installX" type="button" aria-label="Chiudi">×</button></div>
   </div>
 </header>
@@ -371,6 +379,11 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">Con altre app (Podcast Addict, Overcast…): «Aggiungi podcast tramite indirizzo / URL» e incolla l'indirizzo.</p>
   </div>
 </dialog>
+<dialog class="sheet" id="searchDlg" aria-labelledby="searchTitle">
+  <div class="sheet-head"><h2 id="searchTitle">Ricerca in tutti i giorni</h2><button type="button" data-close aria-label="Chiudi">×</button></div>
+  <div class="sheet-body"><p class="sres-status" id="sresStatus"></p><div id="sresList"></div></div>
+</dialog>
+
 <dialog class="sheet" id="favDlg" aria-labelledby="favTitle">
   <div class="sheet-head"><h2 id="favTitle">Notizie salvate</h2><button type="button" data-close aria-label="Chiudi">×</button></div>
   <div class="sheet-body"><ul class="favlist" id="favList"></ul></div>
@@ -1000,12 +1013,12 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   }
 
   function applyFilters(){
-    const q = $('#q').value.trim().toLowerCase();
+    const q = $('#q').value.trim().toLowerCase(), nq = norm(q);   // senza badare ad accenti e apostrofi
     // con un filtro o una ricerca si vedono tutte le schede degli aggiornamenti e tutto "In breve"
     main.querySelectorAll('.sec.update,.sec.brief').forEach(s => s.classList.toggle('all', !!q || prov !== 'Tutte'));
     items.forEach(el => {
       const okProv = prov === 'Tutte' || el.dataset.prov === prov;
-      el.hidden = !(okProv && (!q || el.dataset.text.includes(q)));
+      el.hidden = !(okProv && (!q || (el._n || (el._n = norm(el.dataset.text))).includes(nq)));
       const txt = el.querySelector('.txt');
       if (!txt.dataset.orig) txt.dataset.orig = txt.innerHTML;
       txt.innerHTML = txt.dataset.orig;
@@ -1036,6 +1049,12 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     if (!none && msg) msg.remove();
     msg = $('#noResults');
     if (msg) msg.textContent = prov !== 'Tutte' && !q ? `Nessuna notizia per ${prov} in questa edizione.` : 'Nessuna notizia corrisponde alla ricerca.';
+    const qa = $('#qAll');
+    if (q.length >= 2){
+      const vis = items.filter(el => !el.hidden && !el.closest('.notes')).length;
+      $('#qAllTxt').textContent = `${vis} ${vis === 1 ? 'notizia' : 'notizie'} in questo giorno ·`;
+      qa.hidden = false;
+    } else qa.hidden = true;
     updateStats();
     updateNow();
   }
@@ -1051,6 +1070,87 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     });
   }
   let qTimer; $('#q').addEventListener('input', () => { clearTimeout(qTimer); qTimer = setTimeout(applyFilters, 150); });
+
+  /* ---------- Ricerca in tutti i giorni ----------
+     Legge le edizioni dell'archivio (mattino e aggiornamenti) e cerca le parole in tutte; ogni risultato porta
+     alla notizia nel suo giorno. Le edizioni lette restano in memoria finché la pagina è aperta. */
+  const ARCH = new Map();
+  async function archiveDay(d){
+    if (ARCH.has(d)) return ARCH.get(d);
+    const get = url => fetch(url).then(r => r.ok ? r.text() : null).catch(() => null);
+    const ups = ((META[d] || {}).updates || []).slice().sort((a, b) => a.slot.localeCompare(b.slot));
+    const [m, ...uh] = await Promise.all([get(`edizioni/${d}.html`), ...ups.map(u => get(`edizioni/${d}-${u.slot}.html`))]);
+    const out = []; let k = 0;
+    // stesso ordine e stessa numerazione della pagina: prima il mattino, poi gli aggiornamenti
+    [[m, ''], ...uh.map((h, j) => [h, ups[j].slot])].forEach(([h, slot]) => {
+      if (!h) return;
+      walkFragment(parse(h).body).forEach(it => {
+        const i = k++;
+        if (it.sec === 'Note') return;
+        const t = it.node.cloneNode(true); t.querySelectorAll('.src').forEach(n => n.remove());
+        const title = ((t.querySelector('strong,b') || {}).textContent || '').trim();
+        const text = t.textContent.replace(/\s+/g, ' ').trim();
+        out.push({ d, k: i, slot, title, text, n: norm(text) });
+      });
+    });
+    ARCH.set(d, out);
+    return out;
+  }
+  // evidenzia le parole senza badare ad accenti e maiuscole (città = citta)
+  function markWords(text, words){
+    let n = '', map = [];
+    [...text].forEach((c, i) => { const x = c.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); for (const ch of x){ n += ch; map.push(i); } });
+    const chars = [...text], on = new Array(chars.length).fill(false);
+    words.forEach(w => { let p = n.indexOf(w); while (p >= 0){ for (let j = p; j < p + w.length; j++) on[map[j]] = true; p = n.indexOf(w, p + w.length); } });
+    let out = '', open = false;
+    chars.forEach((c, i) => { if (on[i] && !open){ out += '<mark>'; open = true; } if (!on[i] && open){ out += '</mark>'; open = false; } out += esc(c); });
+    return out + (open ? '</mark>' : '');
+  }
+  function snippet(text, words){
+    const n = norm(text), w = words.find(x => n.includes(x)) || '';
+    const i = Math.max(0, n.indexOf(w) - 60);
+    return (i ? '…' : '') + markWords(text.slice(i, i + 220), words) + (text.length > i + 220 ? '…' : '');
+  }
+  let searchRun = 0;
+  async function searchAll(){
+    const q = $('#q').value.trim();
+    const words = norm(q).split(/\s+/).filter(w => w.length >= 2);
+    if (!words.length) return;
+    const run = ++searchRun;
+    $('#searchTitle').textContent = `«${q}» in tutti i giorni`;
+    $('#sresList').innerHTML = '';
+    $('#searchDlg').showModal();
+    const days = editions.slice();
+    const found = [];
+    let done = 0;
+    const status = () => { $('#sresStatus').textContent = done < days.length
+      ? `Cerco in ${days.length} giorni… ${done}/${days.length} · ${found.length} notizie trovate`
+      : (found.length ? `${found.length} ${found.length === 1 ? 'notizia trovata' : 'notizie trovate'} in ${new Set(found.map(f => f.d)).size} giorni` : 'Nessuna notizia trovata in nessun giorno.'); };
+    status();
+    const draw = () => {
+      const by = new Map();
+      found.slice().sort((a, b) => b.d.localeCompare(a.d) || a.k - b.k).slice(0, 300).forEach(f => { if (!by.has(f.d)) by.set(f.d, []); by.get(f.d).push(f); });
+      $('#sresList').innerHTML = [...by].map(([d, list]) => `<h3 class="sres-day">${esc(longDate(d))}<small>${list.length}</small></h3>
+        <ul class="favlist sres">${list.map(f => `<li data-go="${f.d}/${f.k + 1}"><span class="fdate">${f.slot ? 'Aggiornamento delle ' + f.slot : 'Edizione del mattino'}</span>
+        <span class="ftitle">${markWords(f.title || f.text.slice(0, 80), words)}</span><span class="ftext">${snippet(f.text.replace(f.title, '').replace(/^\s*[—–-]\s*/, ''), words)}</span></li>`).join('')}</ul>`).join('');
+    };
+    let next = 0;
+    const worker = async () => {
+      while (next < days.length && run === searchRun){
+        const d = days[next++];
+        (await archiveDay(d)).forEach(f => { if (words.every(w => f.n.includes(w))) found.push(f); });
+        done++; status(); draw();
+      }
+    };
+    await Promise.all([1, 2, 3, 4, 5, 6].map(worker));
+  }
+  $('#qAllBtn').onclick = searchAll;
+  $('#q').addEventListener('keydown', e => { if (e.key === 'Enter' && $('#q').value.trim().length >= 2){ e.preventDefault(); $('#q').blur(); searchAll(); } });
+  $('#sresList').addEventListener('click', e => {
+    const li = e.target.closest('[data-go]'); if (!li) return;
+    $('#searchDlg').close();
+    if (location.hash.slice(1) === li.dataset.go) window.dispatchEvent(new HashChangeEvent('hashchange')); else location.hash = li.dataset.go;
+  });
 
   let io;
   function observeSections(){
