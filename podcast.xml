@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 24 Oct 2026 20:11:59 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 00:20:18 +0200</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · sabato 24 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri al corteo &quot;Movimento 17 ottobre&quot;; Indagato il fondatore del &quot;Movimento 17 ottobre&quot;; Donna fermata con passamontagna e pistola finta; Bologna vince a Cagliari; Laurea Bachelor of Arts in European Studies; Addio a Bruno Spaggiari.</description>
@@ -503,16 +503,6 @@
       <pubDate>Tue, 06 Oct 2026 06:20:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-06.mp3" length="5373223" type="audio/mpeg"/>
       <itunes:duration>1074</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · lunedì 5 ottobre 2026</title>
-      <description>95 notizie dall&#x27;Emilia-Romagna.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-05</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-05</guid>
-      <pubDate>Mon, 05 Oct 2026 06:20:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-05.mp3" length="5037941" type="audio/mpeg"/>
-      <itunes:duration>1007</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>

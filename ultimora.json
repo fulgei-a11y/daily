@@ -1,6 +1,27 @@
 {
  "items": [
   {
+   "t": "2026-10-25T00:20+02:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Scontri a Bologna: bus e vetrina distrutti, manifestante soccorso",
+   "links": [
+    "https://www.dire.it/24-10-2026/1280370-a-bologna-danni-scontri-vetrina-nike-distrutta-manifestante-ambulanza",
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/corteo-bologna-ragazzo-fermato-a-terra-si-sente-male-arriva-lambulanza_6e5df372-5066-4eb7-8763-c35bc448ca1f.html"
+   ],
+   "html": "<strong>Scontri a Bologna: bus e vetrina distrutti, manifestante soccorso</strong> — Bologna: Dopo gli scontri in centro, un bus ha i finestrini distrutti e la vetrina del negozio Nike in via Rizzoli è danneggiata. Un manifestante, bloccato a terra dagli agenti in via Marconi, si è sentito male ed è stato soccorso da un'ambulanza. Durante le proteste sono stati incendiati cassonetti, allestite barricate e devastato un distributore di tabacchi. <span class=\"src\">Fonti: <a href=\"https://www.dire.it/24-10-2026/1280370-a-bologna-danni-scontri-vetrina-nike-distrutta-manifestante-ambulanza/\" target=\"_blank\" rel=\"noopener\">Dire</a>, <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/24/corteo-bologna-ragazzo-fermato-a-terra-si-sente-male-arriva-lambulanza_6e5df372-5066-4eb7-8763-c35bc448ca1f.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-25T00:20+02:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Incidente mortale a Ravenna, denunciato 53enne",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/scontro-frontale-tra-due-auto-a-ravenna-morto-un-29enne_c3579aff-ec22-469c-b222-eb67917b7fb5.html"
+   ],
+   "html": "<strong>Incidente mortale a Ravenna, denunciato 53enne</strong> — Ravenna: Un giovane di 29 anni è morto in uno scontro frontale in via Dismano. L'uomo di 53 anni alla guida dell'altra auto, risultato positivo all'alcol test, è stato denunciato per omicidio stradale e guida in stato di ebbrezza. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/24/scontro-frontale-tra-due-auto-a-ravenna-morto-un-29enne_c3579aff-ec22-469c-b222-eb67917b7fb5.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-24T16:15+02:00",
    "cat": "",
    "bo": true,
@@ -110,48 +131,9 @@
     "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/e-morto-a-90-anni-alberto-masotti-ex-presidente-de-la-perla_d5947c06-4e14-449c-8324-fded9a0094e9.html"
    ],
    "html": "<strong>Morto Alberto Masotti, ex presidente de La Perla</strong> — Bologna: è deceduto a 90 anni Alberto Masotti, che guidò il marchio di lingerie La Perla dal 1981 al 2007. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/23/e-morto-a-90-anni-alberto-masotti-ex-presidente-de-la-perla_d5947c06-4e14-449c-8324-fded9a0094e9.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-10-23T12:20+02:00",
-   "cat": "",
-   "bo": true,
-   "title": "Scontri e saccheggi a Bologna, si teme il bis",
-   "links": [
-    "https://www.dire.it/23-10-2026/1279703-guerriglia-saccheggi-incidenti-17-18-ottobre-cosa-e-successo-milano-torino-e-bologna",
-    "https://www.adnkronos.com/cronaca/milano-manifestazione-scontri-proteste-news_Z8btKRH2qcnpD2v80IyXB",
-    "https://www.agi.it/cronaca/news/2026-10-23/bari-milano-allerta-saccheggi-39668840"
-   ],
-   "html": "<strong>Scontri e saccheggi a Bologna, si teme il bis</strong> — Bologna: dopo gli episodi di guerriglia urbana e assalti ai negozi del 17 ottobre, l'allerta è massima per il prossimo weekend. <span class=\"src\">Fonti: <a href=\"https://www.dire.it/23-10-2026/1279703-guerriglia-saccheggi-incidenti-17-18-ottobre-cosa-e-successo-milano-torino-e-bologna/\" target=\"_blank\" rel=\"noopener\">Dire</a>, <a href=\"https://www.adnkronos.com/cronaca/milano-manifestazione-scontri-proteste-news_Z8btKRH2qcnpD2v80IyXB\" target=\"_blank\" rel=\"noopener\">Adnkronos</a>, <a href=\"https://www.agi.it/cronaca/news/2026-10-23/bari-milano-allerta-saccheggi-39668840/\" target=\"_blank\" rel=\"noopener\">AGI</a></span>"
-  },
-  {
-   "t": "2026-10-23T12:20+02:00",
-   "cat": "",
-   "bo": false,
-   "title": "Droga in capannone, sequestrati 130 kg di hascisc e 2 kg di cocaina",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/droga-in-un-capannone-sequestrati-130-chili-di-hascisc-e-due-di-cocaina_9247fde1-7f4e-45f7-826f-d6959886862f.html"
-   ],
-   "html": "<strong>Droga in capannone, sequestrati 130 kg di hascisc e 2 kg di cocaina</strong> — Modena: due persone sono state arrestate dai Carabinieri dopo il ritrovamento di un ingente quantitativo di droga in un capannone. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/23/droga-in-un-capannone-sequestrati-130-chili-di-hascisc-e-due-di-cocaina_9247fde1-7f4e-45f7-826f-d6959886862f.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-10-23T12:20+02:00",
-   "cat": "",
-   "bo": true,
-   "title": "Squadra di calcio lascia il campo per insulto razzista",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/squadra-lascia-il-campo-dopo-insulto-razzista-e-perde-la-partita-a-tavolino_29fb55d4-097d-4811-9553-ec92f93b9725.html"
-   ],
-   "html": "<strong>Squadra di calcio lascia il campo per insulto razzista</strong> — Mascarino (Bologna): la squadra Mascarino Fc ha abbandonato la partita di terza categoria contro Vigor Pieve 1925 dopo un insulto razzista a un proprio giocatore, perdendo poi a tavolino. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/23/squadra-lascia-il-campo-dopo-insulto-razzista-e-perde-la-partita-a-tavolino_29fb55d4-097d-4811-9553-ec92f93b9725.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
   }
  ],
  "seen": {
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/23/trenta-giovani-perquisiti-a-como-si-indaga-per-istigazione-al-saccheggio_c2fa35ab-2fe5-4c25-85ae-1c73f3ba723b.html": "2026-10-23T08:25+02:00",
-  "https://www.dire.it/23-10-2026/1279703-guerriglia-saccheggi-incidenti-17-18-ottobre-cosa-e-successo-milano-torino-e-bologna": "2026-10-23T12:20+02:00",
-  "https://www.ansa.it/sito/notizie/economia/2026/10/23/confcom-quasi-mezzo-milione-di-locali-sfitti-piccoli-comuni-e-borghi-senza_10352607-159b-4a13-8052-50867bfa6b9d.html": "2026-10-23T12:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/squadra-lascia-il-campo-dopo-insulto-razzista-e-perde-la-partita-a-tavolino_29fb55d4-097d-4811-9553-ec92f93b9725.html": "2026-10-23T12:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/droga-in-un-capannone-sequestrati-130-chili-di-hascisc-e-due-di-cocaina_9247fde1-7f4e-45f7-826f-d6959886862f.html": "2026-10-23T12:20+02:00",
-  "https://www.adnkronos.com/cronaca/milano-manifestazione-scontri-proteste-news_Z8btKRH2qcnpD2v80IyXB": "2026-10-23T12:20+02:00",
-  "https://www.agi.it/cronaca/news/2026-10-23/bari-milano-allerta-saccheggi-39668840": "2026-10-23T12:20+02:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/23/paolo-fresu-i-giovani-vanno-ascoltati-li-incontrero-nei-licei-a-bologna_2e664d3e-5c31-4a35-824c-8cb3ccecc3d7.html": "2026-10-23T16:27+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/torna-il-frecciarosa-la-prevenzione-a-bordo-dei-treni-anche-in-e-r_4965363c-b237-478f-9e9e-2deec9184db8.html": "2026-10-23T16:27+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/alluvione-a-sogliano-una-rete-metallica-per-proteggere-il-centro-storico_2b7f8341-97ad-4cd3-912d-70c2db45df69.html": "2026-10-23T16:27+02:00",
@@ -197,14 +179,32 @@
   "https://news.google.com/rss/articles/CBMi5AFBVV95cUxONktuSTQ3MUd1aFNlN3VWNzBMOEI2OHJwY1hRUGpBZnpFTUpIUDJyUndNNFZ3NXJtc1JUVDZKSk02ak5ScjVheHBmbk13ZG50UUppd0FDZl83bk5vS0Z4eU1YRUNlMUdwN1JXbnhpTUQzYllmRW9qeG5JdWYxVjNGMG42XzNSd3RQb1lOZmtjS2YwWFd5TmhodXZlZHlqa29WaXhFVmxEZUd1cnhOVDU4UXozaU5KRHR5cDFIX1dEOUl6UHBGNkJ6eWY1dFdFQVVxYzhKOWZUbnJZQm51YS1WUFlMb3g": "2026-10-24T20:11+02:00",
   "https://www.dire.it/24-10-2026/1280193-cortei-24-ottobre-milano-firenze-bologna-bologna-napoli": "2026-10-24T20:11+02:00",
   "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSlliMFJEVlhmY0xJemo1dmtPc0FGMG1ZU1V3bC1sMzdGQUw4LURDQ2xoQVN5Ml85ZnhlTHdUdE5INVVVR2swd0FYT3dOZGd1M1FVRkVOU1BZdG4zSXdxNE5TWVdEenJreXNmdDd2amt1QjU3bkxWYjJ6ZkVOeHExWkNMdlhrZ1lOOHhwaWhQOXdWSjc2cTE5SGtWbTZaNVBmZDhwTmtYdDgzNjR6OHBXYjZkeHA4SUR5cXVQYQ": "2026-10-24T20:11+02:00",
-  "https://www.italpress.com/cortei-manifestazioni-sabato-24-ottobre-aggiornamenti-notizie-perquisizioni-disordini-scorso-weekend": "2026-10-24T20:11+02:00"
+  "https://www.italpress.com/cortei-manifestazioni-sabato-24-ottobre-aggiornamenti-notizie-perquisizioni-disordini-scorso-weekend": "2026-10-24T20:11+02:00",
+  "https://www.dire.it/24-10-2026/1280370-a-bologna-danni-scontri-vetrina-nike-distrutta-manifestante-ambulanza": "2026-10-25T00:20+02:00",
+  "https://www.italpress.com/lazio-capolista-per-una-notte-parma-battuto-2-1-allolimpico-2": "2026-10-25T00:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/la-lazio-batte-il-parma-e-balza-in-testa-alla-classifica_06f02df3-4842-4325-9002-6ff6967ca675.html": "2026-10-25T00:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/corteo-bologna-ragazzo-fermato-a-terra-si-sente-male-arriva-lambulanza_6e5df372-5066-4eb7-8763-c35bc448ca1f.html": "2026-10-25T00:20+02:00",
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdl90MTNjRnB1UGlXeWg4VXRnMmY0QmFJUE90aVV6dk5qTUtCQVFKM2VMczJDcXgzaWdBVG82MzdKNUJwOTh1cVdpY09sODN5b0VsRzVhNW5KakIyVnJ0WHN5d1pkYVJ2UGZ1cDJUYk9vRS1odjVqaXlLeUo1bGpqVEY3VGp2M29PRXFpbkFGMTVNNEtWdzExUUF6WXhzYmxwR0xCekxzd0swTlhBZGZyaw": "2026-10-25T00:20+02:00",
+  "https://news.google.com/rss/articles/CBMijgFBVV95cUxNdkNWc3ZPeHdRVzZaaUd6NVQxM2Z6OWxSVGdaY1dZcXg3MnVWR2kzc2hCY2pOZVRFQW9obnZESFRvYVZ0eHo5OW5rbzJ5Z1pUOVd1UjV4RE1nUDE5NFc0THhUdnMyQTFMd3JzU2NLOUo0VV9ibWo3SktPdDRmanFmaWdkOHd6YUx4dUczeFlR": "2026-10-25T00:20+02:00",
+  "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5aM1oyUHUtZUhCY3E0UXBsVEUzSVVpblU3RkVHYm9uSFJCWHViVWd0a1gzdU14YzNUU1dIdGNGQkh3NXNMQmwxUHMzWTJuUQ": "2026-10-25T00:20+02:00",
+  "https://www.italpress.com/federalismo-fiscale-la-regione-emilia-romagna-ricorre-alla-corte-costituzionale-contro-il-decreto-legislativo-del-governo": "2026-10-25T00:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/corteo-bologna-altre-cariche-e-alcuni-manifestanti-bloccati-da-agenti_ff5d1c11-8362-420f-b999-de9131b29e6b.html": "2026-10-25T00:20+02:00",
+  "https://www.dire.it/24-10-2026/1280328-video-a-bologna-una-ragazza-affronta-un-agente-vuoi-picchiarmi-potrei-essere-tua-figlia": "2026-10-25T00:20+02:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/24/a-bologna-proseguono-le-tensioni-tra-manifestanti-e-forze-dellordine_e282bb96-5769-4e5f-b855-7967f68533aa.html": "2026-10-25T00:20+02:00",
+  "https://news.google.com/rss/articles/CBMif0FVX3lxTE9ldEpSZHV3N2l4VWVhdTZhNVBWcjNPbGI5UGtmbU1lTTVhWmVGaVk2bE9pSWhROEtTVTNiVEs3bHVpc1pZaUU5ZnE5RE1YOFZTa2FhbW9iRlM1NmVRTllWa0tUV2NoVWs0eHdPa1pXNEJaMlE0ZUIzdFRTUTU4RFU": "2026-10-25T00:20+02:00",
+  "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRWRpNExRNXJxTXBDN1RnenRSTm9kTTktTFNCWWtfb2NZQ3c2RWFDaDBoU211aTZ5akZRSXdSSDV0MlN3ZG9GUV9qRWhPaDVzOUNVTmMwc2ZWRkl3dGE5ZUhMZnBRdFlvQ2d1VEctaVdDVTF5ejAwdUp0SGlzamN0Mkd3Nm1jVGM": "2026-10-25T00:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/palladino-tre-punti-importantissimi-ottima-prestazione_a15cc887-0530-4601-b0d0-852abb5f3523.html": "2026-10-25T00:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/a-bologna-la-cerimonia-di-laurea-del-bachelor-of-arts-in-european-studies_d7506d96-d930-481b-a5fa-91c12bd3652a.html": "2026-10-25T00:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/aci-e-aci-storico-assegnano-a-giampaolo-dallara-il-premio-eccellenza-2026_4f0bbc4c-b0d3-4a7a-a34f-5f989f72d2de.html": "2026-10-25T00:20+02:00",
+  "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQNWJQd05SMENXUVFoRXlNem1IRU13RXJHZWFIdHVYb0FuVGc4RUQ2a3lEUWY5TzA3N2lfdFpiN3Zwak0yQUtCYndBaENTNlpYbHJieGZwd2lVZ0dYdTllQ2lxY0RLZm8xTGgtT01XblUwNHA2VmZicC15MEUxb05VZGtRV3RMSjdhQ3hNWUZRekltRy0xMlc3Yi1TRzZBOGljMDVkek91NzhSN1hCTjlkODlkU0MtSUxkUXVzOUltLWgtdmpnaFk2U1VwUjJWV1FubE5vSF9xZGUxd21ISXVhNFFObUFKNVJJRXZBUU1CanNRQQ": "2026-10-25T00:20+02:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/scontro-frontale-tra-due-auto-a-ravenna-morto-un-29enne_c3579aff-ec22-469c-b222-eb67917b7fb5.html": "2026-10-25T00:20+02:00"
  },
- "updated": "2026-10-24T20:11+02:00",
- "next": "alle 24",
+ "updated": "2026-10-25T00:20+02:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-10-24T20:11+02:00",
-  "articles": 14,
-  "items": 0,
+  "at": "2026-10-25T00:20+02:00",
+  "articles": 18,
+  "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -212,8 +212,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 26,
-    "kept": 2
+    "items": 28,
+    "kept": 7
    },
    {
     "agency": "ANSA",
@@ -226,7 +226,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 15,
+    "items": 14,
     "kept": 0
    },
    {
@@ -234,7 +234,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "AGI",
@@ -247,8 +247,8 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 23,
-    "kept": 0
+    "items": 52,
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -297,28 +297,28 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 4
+    "kept": 2
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 3
+    "kept": 1
    },
    {
     "agency": "Dagospia",
