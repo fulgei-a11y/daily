@@ -134,17 +134,6 @@
   }
  ],
  "seen": {
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/23/paolo-fresu-i-giovani-vanno-ascoltati-li-incontrero-nei-licei-a-bologna_2e664d3e-5c31-4a35-824c-8cb3ccecc3d7.html": "2026-10-23T16:27+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/torna-il-frecciarosa-la-prevenzione-a-bordo-dei-treni-anche-in-e-r_4965363c-b237-478f-9e9e-2deec9184db8.html": "2026-10-23T16:27+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/alluvione-a-sogliano-una-rete-metallica-per-proteggere-il-centro-storico_2b7f8341-97ad-4cd3-912d-70c2db45df69.html": "2026-10-23T16:27+02:00",
-  "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeTJhWUZoNV9MWmJPWWh2aFJrc1lRajk5bFNvaERkT2ZkV0RHUkRTVW1ackpDUGgwSkNaNl81YjRZdGx1ZnV4aHM0ZmdOejV3NE1udnhVME1IT09Oa253YlRMVFRhN29HcTN0QTBXSm45MWZ2aGR6SU5nVFc1VGk5ODNiZWJlNTFYZjNwUjZtX203Nk9pbkhhdzZNZlBpWUd6N3NjSTE1MDJ3OWxxSVdGLUdIcEZuMDlVT1J2dGxBQVpMUQ": "2026-10-23T16:27+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/mantovano-vigilare-su-normative-ue-a-rischio-elusione-le-restrizioni-su-cannabis_d6768745-eff7-49db-927e-dc7f270a1662.html": "2026-10-23T20:17+02:00",
-  "https://www.agi.it/cronaca/news/2026-10-23/milano-roma-proteste-movimento-17-ottobre-revoca-piazze-39679652": "2026-10-23T20:17+02:00",
-  "https://www.italpress.com/distretto-manifatturiero-del-nord-rafforzata-alleanza-con-industria-e-banche": "2026-10-23T20:17+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/meloni-ai-giovani-di-san-patrignano-fieri-di-voi-siete-diventati-un-esempio_8c4a5e40-4042-4512-9c30-4d0d9a568bf7.html": "2026-10-23T20:17+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/23/il-ritorno-e-reale-ronaldinho-il-15-novembre-in-campo-per-ravenna-forli_1ae63791-549d-4cce-9616-21c3fe1c77ad.html": "2026-10-23T20:17+02:00",
-  "https://www.adnkronos.com/economia/t3-expo-e-agv-expo-seconda-giornata-su-decarbonizzazione-e-automazione_3Wn5RBbQekIXUDcIZDjsag": "2026-10-23T20:17+02:00",
-  "https://www.dire.it/23-10-2026/1279863-rabbia-giovani-presidente-carcere-minorile-malcontento-odio": "2026-10-23T20:17+02:00",
   "https://www.adnkronos.com/cronaca/cortei-oggi-24-ottobre-movimento-17-ottobre_5FDpj5SJF8zmIc6pt1sgJK": "2026-10-24T00:24+02:00",
   "https://news.google.com/rss/articles/CBMipAFBVV95cUxQbTZodmxCWHd0NXUtdGlLNU9FX3dzc2d2dVc0TlBMeV9DWVBOal9SU2JlY1oyWlVpbWM1SUdUaDRqU09WZHpxQ3BpdkFCTTBocVlnODAtU2JSRVd2dlJDQ3JkZDJLcDlWT1kxV09GbGZRQkY0R3M4ZGFYWEdJQ2V0bWFQSXZwWEdzRU9kWHpudk16VzlZTHByLXktZi04VlBXanY2cg": "2026-10-24T00:24+02:00",
   "https://www.italpress.com/distretto-manifatturiero-del-nord-rafforza-lalleanza-con-banche-e-industrie": "2026-10-24T00:24+02:00",
@@ -197,14 +186,19 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/a-bologna-la-cerimonia-di-laurea-del-bachelor-of-arts-in-european-studies_d7506d96-d930-481b-a5fa-91c12bd3652a.html": "2026-10-25T00:20+02:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/aci-e-aci-storico-assegnano-a-giampaolo-dallara-il-premio-eccellenza-2026_4f0bbc4c-b0d3-4a7a-a34f-5f989f72d2de.html": "2026-10-25T00:20+02:00",
   "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQNWJQd05SMENXUVFoRXlNem1IRU13RXJHZWFIdHVYb0FuVGc4RUQ2a3lEUWY5TzA3N2lfdFpiN3Zwak0yQUtCYndBaENTNlpYbHJieGZwd2lVZ0dYdTllQ2lxY0RLZm8xTGgtT01XblUwNHA2VmZicC15MEUxb05VZGtRV3RMSjdhQ3hNWUZRekltRy0xMlc3Yi1TRzZBOGljMDVkek91NzhSN1hCTjlkODlkU0MtSUxkUXVzOUltLWgtdmpnaFk2U1VwUjJWV1FubE5vSF9xZGUxd21ISXVhNFFObUFKNVJJRXZBUU1CanNRQQ": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/scontro-frontale-tra-due-auto-a-ravenna-morto-un-29enne_c3579aff-ec22-469c-b222-eb67917b7fb5.html": "2026-10-25T00:20+02:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/scontro-frontale-tra-due-auto-a-ravenna-morto-un-29enne_c3579aff-ec22-469c-b222-eb67917b7fb5.html": "2026-10-25T00:20+02:00",
+  "https://www.agi.it/cronaca/news/2026-10-25/scontri-cortei-17-ottobre-39699063": "2026-10-25T08:28+01:00",
+  "https://www.italpress.com/antonelli-in-pole-ad-austin-con-vista-mondiale-leclerc-in-seconda-fila": "2026-10-25T08:28+01:00",
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZjdCZVJRUERYb2VKa3FUOGxPczdITENVOEIweVVpdjZVTXh4R2kyV3JZM3RHV1phT2loeklidWViTDhoR2lXVFpsVjlkTGxZNWc0TWwwOTVwNTRsM29DQ2FZZ0d3aG81NWNUTVRzQTgwU1hmelREdWtwWGlLTXdDaDRHZHNpWmFZaVQwRmxDMHdMWmhXUzRpQk56R3o5dG5DSXQ3Y2Y3UVljQ1VEc0E": "2026-10-25T08:28+01:00",
+  "https://www.italpress.com/lazio-capolista-per-una-notte-parma-battuto-2-1-allolimpico": "2026-10-25T08:28+01:00",
+  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOc0M0WTdGQ3FaM1VmNTNKSG1SaVpNY1BnQ182VzhVMkRDNDF3WG1kN2xmYjRHdjE2N0ZmeHg1cVBycVREN1hZYmNDa3FKR3RINlE1Y0xVMUc1NTlFRzJkYkZjanE2aEUxdnZLaUlQSWY0Y3hoMUt5YklPcUZUWm92czFWWEdjZHpiUkZoVlI1V2d4emJrZnNWakJIcVI5OFJDblJyc0hXTGZuVWZNZ3diVVRpWEdkU2Q3MDBha3NtT2JOcEthT1lxaEZSZ21kVzRfeXA5ZXBhQjVJaHJjNDc2OU1R": "2026-10-25T08:28+01:00"
  },
- "updated": "2026-10-25T00:20+02:00",
- "next": "alle 8",
+ "updated": "2026-10-25T08:28+01:00",
+ "next": "alle 12",
  "last_run": {
-  "at": "2026-10-25T00:20+02:00",
-  "articles": 18,
-  "items": 2,
+  "at": "2026-10-25T08:28+01:00",
+  "articles": 5,
+  "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -213,14 +207,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 28,
-    "kept": 7
+    "kept": 0
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "ANSA",
@@ -234,23 +228,23 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 52,
     "kept": 1
    },
    {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 47,
+    "kept": 0
+   },
+   {
     "agency": "Adnkronos",
     "channel": "feed diretto",
     "status": "ok",
@@ -290,7 +284,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Italpress",
@@ -304,14 +298,14 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Dire",
