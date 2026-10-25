@@ -191,13 +191,16 @@
   "https://www.italpress.com/antonelli-in-pole-ad-austin-con-vista-mondiale-leclerc-in-seconda-fila": "2026-10-25T08:28+01:00",
   "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZjdCZVJRUERYb2VKa3FUOGxPczdITENVOEIweVVpdjZVTXh4R2kyV3JZM3RHV1phT2loeklidWViTDhoR2lXVFpsVjlkTGxZNWc0TWwwOTVwNTRsM29DQ2FZZ0d3aG81NWNUTVRzQTgwU1hmelREdWtwWGlLTXdDaDRHZHNpWmFZaVQwRmxDMHdMWmhXUzRpQk56R3o5dG5DSXQ3Y2Y3UVljQ1VEc0E": "2026-10-25T08:28+01:00",
   "https://www.italpress.com/lazio-capolista-per-una-notte-parma-battuto-2-1-allolimpico": "2026-10-25T08:28+01:00",
-  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOc0M0WTdGQ3FaM1VmNTNKSG1SaVpNY1BnQ182VzhVMkRDNDF3WG1kN2xmYjRHdjE2N0ZmeHg1cVBycVREN1hZYmNDa3FKR3RINlE1Y0xVMUc1NTlFRzJkYkZjanE2aEUxdnZLaUlQSWY0Y3hoMUt5YklPcUZUWm92czFWWEdjZHpiUkZoVlI1V2d4emJrZnNWakJIcVI5OFJDblJyc0hXTGZuVWZNZ3diVVRpWEdkU2Q3MDBha3NtT2JOcEthT1lxaEZSZ21kVzRfeXA5ZXBhQjVJaHJjNDc2OU1R": "2026-10-25T08:28+01:00"
+  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOc0M0WTdGQ3FaM1VmNTNKSG1SaVpNY1BnQ182VzhVMkRDNDF3WG1kN2xmYjRHdjE2N0ZmeHg1cVBycVREN1hZYmNDa3FKR3RINlE1Y0xVMUc1NTlFRzJkYkZjanE2aEUxdnZLaUlQSWY0Y3hoMUt5YklPcUZUWm92czFWWEdjZHpiUkZoVlI1V2d4emJrZnNWakJIcVI5OFJDblJyc0hXTGZuVWZNZ3diVVRpWEdkU2Q3MDBha3NtT2JOcEthT1lxaEZSZ21kVzRfeXA5ZXBhQjVJaHJjNDc2OU1R": "2026-10-25T08:28+01:00",
+  "https://www.dire.it/25-10-2026/1280491-hacker-russi-proteste-in-italia-putin-attacca-leader-deboli-incapaci": "2026-10-25T12:21+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/25/cortei-a-verona-22-persone-in-questura-anche-un-12enne.-a-bologna-32-interventi-del-118_e6f2e536-b22f-4e74-8412-045f5ebbbe8e.html": "2026-10-25T12:21+01:00",
+  "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZ1RKYWRBMVdoQTJXR2pReXhrLVl5WFZkc0FPQ2xiVGlRX01ad1VoOWpQcGFZdnF4SVZQWi1TUDZIYklwLUlaaUZtdmtnOTZERGttSExSclpJYVZ5NWtiMm51UHZONk43QlZJNmlrOUI5TlBxZWZVVVVvOXA4M1czMmY5eVNBSER0S21YVV9OcVVtUQ": "2026-10-25T12:21+01:00"
  },
- "updated": "2026-10-25T08:28+01:00",
- "next": "alle 12",
+ "updated": "2026-10-25T12:21+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-25T08:28+01:00",
-  "articles": 5,
+  "at": "2026-10-25T12:21+01:00",
+  "articles": 3,
   "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -214,13 +217,13 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 14,
+    "items": 9,
     "kept": 0
    },
    {
@@ -228,7 +231,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "AGI",
@@ -241,7 +244,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 47,
+    "items": 60,
     "kept": 0
    },
    {
@@ -291,7 +294,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Italpress",
@@ -305,20 +308,20 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 0,
+    "items": 1,
     "kept": 0
    }
   ]
