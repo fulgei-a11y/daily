@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 25 Oct 2026 00:20:18 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 05:33:20 +0100</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · domenica 25 ottobre 2026</title>
+      <description>189 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri e guerriglia urbana in centro; Sequestro di pistola finta e machete prima della manifestazione; Operazione antidroga dei Carabinieri; Arresto per spaccio al Pilastro; Perquisizioni dopo gli scontri in stazione; Furto di gasolio in galleria autostradale.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-10-25</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-25</guid>
+      <pubDate>Sun, 25 Oct 2026 05:29:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-25.mp3" length="10130617" type="audio/mpeg"/>
+      <itunes:duration>3376</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · sabato 24 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri al corteo &quot;Movimento 17 ottobre&quot;; Indagato il fondatore del &quot;Movimento 17 ottobre&quot;; Donna fermata con passamontagna e pistola finta; Bologna vince a Cagliari; Laurea Bachelor of Arts in European Studies; Addio a Bruno Spaggiari.</description>
