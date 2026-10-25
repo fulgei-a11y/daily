@@ -180,21 +180,21 @@
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUFZXeU1JWndnRkptM3QwdGJyX3ExanVwWkFmYy1IeU9NaTRGc3R2aE5namd6dkFSNThkd0RPVmk1dHZqUXUtZ09KUF8zUWJGSmlXTUZ1QndLWDcydzJ1QklKZVliSEpIREpDOGJkUkU0MlpvTm0xS09jUWpReFc3MHJocFI2Mkx3Wkt3eXBB": "2026-10-25T16:15+01:00",
   "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZHY4SGVYa0NfSjFjR3RLN01XaFdoZ2tnMUlIN1FkV2tkc2xiLW13azVOdzNWVUlndU5JQXJIRWpPLXpaUGJXSDYxbHJrU1NIZkhhU1JBdFRxbHB5Ul9SZ0JoSUlyV1M4TlFnRkFJbVJ1eURkZkl1eU45QXdOMnJyYTFTWnpGZVZ3QTJWT3d1YV9IUUNYV04tN9IBngFBVV95cUxPcERKSFdSd09QTThzSmRpREtENnEyTnkwQjJmTE1IQUlxTjVnQjlaRl9vZGp2ZEFMMzRsRzVFOVRUTHNxTDB3OS15LWlRbGJHazZOa0N6SVp3M2Y4TWlubEJTOENId2lxRVFCZXFGOWlUZWxadFFYYVhlSjJsOUN6YlVqREJOOVd1bzdqTU5aQVZod2dMd25ya3FqckZXQQ": "2026-10-25T16:15+01:00"
  },
- "updated": "2026-10-25T16:15+01:00",
- "next": "alle 20",
+ "updated": "2026-10-25T20:20+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-25T16:15+01:00",
-  "articles": 11,
-  "items": 1,
-  "model": "gemini-2.5-flash",
+  "at": "2026-10-25T20:20+01:00",
+  "articles": 0,
+  "items": 0,
+  "model": null,
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 27,
-    "kept": 6
+    "items": 24,
+    "kept": 0
    },
    {
     "agency": "ANSA",
@@ -228,8 +228,8 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 60,
-    "kept": 1
+    "items": 59,
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -292,20 +292,20 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
-    "items": 56,
-    "kept": 3
+    "items": 57,
+    "kept": 0
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 1,
+    "items": 0,
     "kept": 0
    }
   ]
