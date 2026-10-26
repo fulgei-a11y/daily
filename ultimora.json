@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-10-26T12:34+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Traffico di cocaina, 15 arresti e sequestri per 16 milioni",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/traffico-di-cocaina-15-arresti-e-sequestri-per-16-milioni_ef72844d-6cb7-4ad6-bc5c-2c5cdfcfaa3b.html"
+   ],
+   "html": "<strong>Traffico di cocaina, 15 arresti e sequestri per 16 milioni</strong> — Rimini (Rimini): la Guardia di Finanza di Rimini, nell'ambito di un'indagine della Procura distrettuale antimafia di Bologna, ha sgominato un'associazione per delinquere dedita al traffico di droga, eseguendo 15 arresti e sequestrando beni per oltre 16 milioni di euro. L'operazione ha coinvolto diverse province, tra cui Bologna, Forlì-Cesena e Ravenna. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/26/traffico-di-cocaina-15-arresti-e-sequestri-per-16-milioni_ef72844d-6cb7-4ad6-bc5c-2c5cdfcfaa3b.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-25T16:15+01:00",
    "cat": "",
    "bo": false,
@@ -9,48 +19,9 @@
     "https://www.ansa.it/emiliaromagna/notizie/2026/10/25/auto-fuori-strada-a-parma-muore-un-35enne_209e0440-9f20-49da-8b45-1d1038e40de3.html"
    ],
    "html": "<strong>Incidente mortale a Parma</strong> — Carignano (Parma): un uomo di 35 anni è deceduto ieri sera in ospedale dopo essere uscito di strada con la sua auto nel pomeriggio, finendo in un fosso e contro un albero. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/25/auto-fuori-strada-a-parma-muore-un-35enne_209e0440-9f20-49da-8b45-1d1038e40de3.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-10-25T00:20+02:00",
-   "cat": "Cronaca",
-   "bo": true,
-   "title": "Scontri a Bologna: bus e vetrina distrutti, manifestante soccorso",
-   "links": [
-    "https://www.dire.it/24-10-2026/1280370-a-bologna-danni-scontri-vetrina-nike-distrutta-manifestante-ambulanza",
-    "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/corteo-bologna-ragazzo-fermato-a-terra-si-sente-male-arriva-lambulanza_6e5df372-5066-4eb7-8763-c35bc448ca1f.html"
-   ],
-   "html": "<strong>Scontri a Bologna: bus e vetrina distrutti, manifestante soccorso</strong> — Bologna: Dopo gli scontri in centro, un bus ha i finestrini distrutti e la vetrina del negozio Nike in via Rizzoli è danneggiata. Un manifestante, bloccato a terra dagli agenti in via Marconi, si è sentito male ed è stato soccorso da un'ambulanza. Durante le proteste sono stati incendiati cassonetti, allestite barricate e devastato un distributore di tabacchi. <span class=\"src\">Fonti: <a href=\"https://www.dire.it/24-10-2026/1280370-a-bologna-danni-scontri-vetrina-nike-distrutta-manifestante-ambulanza/\" target=\"_blank\" rel=\"noopener\">Dire</a>, <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/24/corteo-bologna-ragazzo-fermato-a-terra-si-sente-male-arriva-lambulanza_6e5df372-5066-4eb7-8763-c35bc448ca1f.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-10-25T00:20+02:00",
-   "cat": "Cronaca",
-   "bo": false,
-   "title": "Incidente mortale a Ravenna, denunciato 53enne",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/scontro-frontale-tra-due-auto-a-ravenna-morto-un-29enne_c3579aff-ec22-469c-b222-eb67917b7fb5.html"
-   ],
-   "html": "<strong>Incidente mortale a Ravenna, denunciato 53enne</strong> — Ravenna: Un giovane di 29 anni è morto in uno scontro frontale in via Dismano. L'uomo di 53 anni alla guida dell'altra auto, risultato positivo all'alcol test, è stato denunciato per omicidio stradale e guida in stato di ebbrezza. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/24/scontro-frontale-tra-due-auto-a-ravenna-morto-un-29enne_c3579aff-ec22-469c-b222-eb67917b7fb5.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
   }
  ],
  "seen": {
-  "https://www.dire.it/24-10-2026/1280370-a-bologna-danni-scontri-vetrina-nike-distrutta-manifestante-ambulanza": "2026-10-25T00:20+02:00",
-  "https://www.italpress.com/lazio-capolista-per-una-notte-parma-battuto-2-1-allolimpico-2": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/la-lazio-batte-il-parma-e-balza-in-testa-alla-classifica_06f02df3-4842-4325-9002-6ff6967ca675.html": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/corteo-bologna-ragazzo-fermato-a-terra-si-sente-male-arriva-lambulanza_6e5df372-5066-4eb7-8763-c35bc448ca1f.html": "2026-10-25T00:20+02:00",
-  "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdl90MTNjRnB1UGlXeWg4VXRnMmY0QmFJUE90aVV6dk5qTUtCQVFKM2VMczJDcXgzaWdBVG82MzdKNUJwOTh1cVdpY09sODN5b0VsRzVhNW5KakIyVnJ0WHN5d1pkYVJ2UGZ1cDJUYk9vRS1odjVqaXlLeUo1bGpqVEY3VGp2M29PRXFpbkFGMTVNNEtWdzExUUF6WXhzYmxwR0xCekxzd0swTlhBZGZyaw": "2026-10-25T00:20+02:00",
-  "https://news.google.com/rss/articles/CBMijgFBVV95cUxNdkNWc3ZPeHdRVzZaaUd6NVQxM2Z6OWxSVGdaY1dZcXg3MnVWR2kzc2hCY2pOZVRFQW9obnZESFRvYVZ0eHo5OW5rbzJ5Z1pUOVd1UjV4RE1nUDE5NFc0THhUdnMyQTFMd3JzU2NLOUo0VV9ibWo3SktPdDRmanFmaWdkOHd6YUx4dUczeFlR": "2026-10-25T00:20+02:00",
-  "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5aM1oyUHUtZUhCY3E0UXBsVEUzSVVpblU3RkVHYm9uSFJCWHViVWd0a1gzdU14YzNUU1dIdGNGQkh3NXNMQmwxUHMzWTJuUQ": "2026-10-25T00:20+02:00",
-  "https://www.italpress.com/federalismo-fiscale-la-regione-emilia-romagna-ricorre-alla-corte-costituzionale-contro-il-decreto-legislativo-del-governo": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/corteo-bologna-altre-cariche-e-alcuni-manifestanti-bloccati-da-agenti_ff5d1c11-8362-420f-b999-de9131b29e6b.html": "2026-10-25T00:20+02:00",
-  "https://www.dire.it/24-10-2026/1280328-video-a-bologna-una-ragazza-affronta-un-agente-vuoi-picchiarmi-potrei-essere-tua-figlia": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/24/a-bologna-proseguono-le-tensioni-tra-manifestanti-e-forze-dellordine_e282bb96-5769-4e5f-b855-7967f68533aa.html": "2026-10-25T00:20+02:00",
-  "https://news.google.com/rss/articles/CBMif0FVX3lxTE9ldEpSZHV3N2l4VWVhdTZhNVBWcjNPbGI5UGtmbU1lTTVhWmVGaVk2bE9pSWhROEtTVTNiVEs3bHVpc1pZaUU5ZnE5RE1YOFZTa2FhbW9iRlM1NmVRTllWa0tUV2NoVWs0eHdPa1pXNEJaMlE0ZUIzdFRTUTU4RFU": "2026-10-25T00:20+02:00",
-  "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRWRpNExRNXJxTXBDN1RnenRSTm9kTTktTFNCWWtfb2NZQ3c2RWFDaDBoU211aTZ5akZRSXdSSDV0MlN3ZG9GUV9qRWhPaDVzOUNVTmMwc2ZWRkl3dGE5ZUhMZnBRdFlvQ2d1VEctaVdDVTF5ejAwdUp0SGlzamN0Mkd3Nm1jVGM": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/palladino-tre-punti-importantissimi-ottima-prestazione_a15cc887-0530-4601-b0d0-852abb5f3523.html": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/a-bologna-la-cerimonia-di-laurea-del-bachelor-of-arts-in-european-studies_d7506d96-d930-481b-a5fa-91c12bd3652a.html": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/aci-e-aci-storico-assegnano-a-giampaolo-dallara-il-premio-eccellenza-2026_4f0bbc4c-b0d3-4a7a-a34f-5f989f72d2de.html": "2026-10-25T00:20+02:00",
-  "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQNWJQd05SMENXUVFoRXlNem1IRU13RXJHZWFIdHVYb0FuVGc4RUQ2a3lEUWY5TzA3N2lfdFpiN3Zwak0yQUtCYndBaENTNlpYbHJieGZwd2lVZ0dYdTllQ2lxY0RLZm8xTGgtT01XblUwNHA2VmZicC15MEUxb05VZGtRV3RMSjdhQ3hNWUZRekltRy0xMlc3Yi1TRzZBOGljMDVkek91NzhSN1hCTjlkODlkU0MtSUxkUXVzOUltLWgtdmpnaFk2U1VwUjJWV1FubE5vSF9xZGUxd21ISXVhNFFObUFKNVJJRXZBUU1CanNRQQ": "2026-10-25T00:20+02:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/24/scontro-frontale-tra-due-auto-a-ravenna-morto-un-29enne_c3579aff-ec22-469c-b222-eb67917b7fb5.html": "2026-10-25T00:20+02:00",
   "https://www.agi.it/cronaca/news/2026-10-25/scontri-cortei-17-ottobre-39699063": "2026-10-25T08:28+01:00",
   "https://www.italpress.com/antonelli-in-pole-ad-austin-con-vista-mondiale-leclerc-in-seconda-fila": "2026-10-25T08:28+01:00",
   "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZjdCZVJRUERYb2VKa3FUOGxPczdITENVOEIweVVpdjZVTXh4R2kyV3JZM3RHV1phT2loeklidWViTDhoR2lXVFpsVjlkTGxZNWc0TWwwOTVwNTRsM29DQ2FZZ0d3aG81NWNUTVRzQTgwU1hmelREdWtwWGlLTXdDaDRHZHNpWmFZaVQwRmxDMHdMWmhXUzRpQk56R3o5dG5DSXQ3Y2Y3UVljQ1VEc0E": "2026-10-25T08:28+01:00",
@@ -70,23 +41,30 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/25/scontri-a-bologna-3-arresti-e-24-feriti-tra-le-forze-dellordine_a5bdeb8e-8037-4411-94d0-ef8fd151c523.html": "2026-10-25T16:15+01:00",
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUFZXeU1JWndnRkptM3QwdGJyX3ExanVwWkFmYy1IeU9NaTRGc3R2aE5namd6dkFSNThkd0RPVmk1dHZqUXUtZ09KUF8zUWJGSmlXTUZ1QndLWDcydzJ1QklKZVliSEpIREpDOGJkUkU0MlpvTm0xS09jUWpReFc3MHJocFI2Mkx3Wkt3eXBB": "2026-10-25T16:15+01:00",
   "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZHY4SGVYa0NfSjFjR3RLN01XaFdoZ2tnMUlIN1FkV2tkc2xiLW13azVOdzNWVUlndU5JQXJIRWpPLXpaUGJXSDYxbHJrU1NIZkhhU1JBdFRxbHB5Ul9SZ0JoSUlyV1M4TlFnRkFJbVJ1eURkZkl1eU45QXdOMnJyYTFTWnpGZVZ3QTJWT3d1YV9IUUNYV04tN9IBngFBVV95cUxPcERKSFdSd09QTThzSmRpREtENnEyTnkwQjJmTE1IQUlxTjVnQjlaRl9vZGp2ZEFMMzRsRzVFOVRUTHNxTDB3OS15LWlRbGJHazZOa0N6SVp3M2Y4TWlubEJTOENId2lxRVFCZXFGOWlUZWxadFFYYVhlSjJsOUN6YlVqREJOOVd1bzdqTU5aQVZod2dMd25ya3FqckZXQQ": "2026-10-25T16:15+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/25/youssef-siher-in-carcere-aveva-un-progetto-eversivo.-indagata-anche-la-moglie_dde34ca0-69ba-4c10-86ed-1c191da76dca.html": "2026-10-26T00:19+01:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/25/youssef-siher-in-carcere-aveva-un-progetto-eversivo.-indagata-anche-la-moglie_dde34ca0-69ba-4c10-86ed-1c191da76dca.html": "2026-10-26T00:19+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/su-trc-bologna-un-viaggio-nei-luoghi-della-tradizione-musicale-cittadina_29aae1f5-ba87-4568-8da0-267619c8a422.html": "2026-10-26T12:34+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/traffico-di-cocaina-15-arresti-e-sequestri-per-16-milioni_ef72844d-6cb7-4ad6-bc5c-2c5cdfcfaa3b.html": "2026-10-26T12:34+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/arrestato-a-bologna-il-17-ottobre-21enne-presenta-denuncia_f8c90e78-a0d7-43ab-bcfa-a641e8ed6473.html": "2026-10-26T12:34+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/il-chitarrista-al-di-meola-al-bologna-jazz-festival-col-suo-acustic-trio_191f9b3a-0a90-4176-9221-c2c52102f908.html": "2026-10-26T12:34+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/i-pianisti-kissin-e-schiff-a-bologna-per-il-debutto-italiano-in-duo_73c09f1c-bfa8-42a1-98a3-0d1ccccf45a3.html": "2026-10-26T12:34+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/a-johannesburg-una-mostra-sui-legami-tra-italia-e-sudafrica_b98fa976-d7b5-4a61-9ec6-f9b11f4e2868.html": "2026-10-26T12:34+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/doppio-appuntamento-italiano-per-niall-horan-dagli-one-direction-a-dinner_34048f58-10a5-4f98-a5d0-1d5becccf80b.html": "2026-10-26T12:34+01:00"
  },
- "updated": "2026-10-26T08:41+01:00",
- "next": "alle 12",
+ "updated": "2026-10-26T12:34+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-26T08:41+01:00",
-  "articles": 0,
-  "items": 0,
-  "model": null,
+  "at": "2026-10-26T12:34+01:00",
+  "articles": 7,
+  "items": 1,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 24,
-    "kept": 0
+    "items": 25,
+    "kept": 7
    },
    {
     "agency": "ANSA",
@@ -99,7 +77,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 14,
+    "items": 27,
     "kept": 0
    },
    {
@@ -120,7 +98,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 46,
+    "items": 41,
     "kept": 0
    },
    {
