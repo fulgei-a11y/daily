@@ -1,6 +1,36 @@
 {
  "items": [
   {
+   "t": "2026-10-26T16:55+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Pedinò e abusò di 12enne in ascensore, condannato a 4 anni e 8 mesi",
+   "links": [
+    "https://www.ansa.it/sito/notizie/cronaca/2026/10/26/pedino-e-abuso-di-una-12enne-in-ascensore-condanna-a-4-anni-e-8-mesi_94d6678e-fdb0-47cb-8815-84738b276259.html"
+   ],
+   "html": "<strong>Pedinò e abusò di 12enne in ascensore, condannato a 4 anni e 8 mesi</strong> — Bologna: un 32enne è stato condannato in abbreviato per aver pedinato e molestato sessualmente una ragazzina di 12 anni in un ascensore, e per aver seguito un'altra coetanea. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/sito/notizie/cronaca/2026/10/26/pedino-e-abuso-di-una-12enne-in-ascensore-condanna-a-4-anni-e-8-mesi_94d6678e-fdb0-47cb-8815-84738b276259.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-26T16:55+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Peste suina, ridotte le restrizioni in 6 Comuni tra Reggiano e Piacentino",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/peste-suina-ridotte-le-restrizioni-in-6-comuni-del-reggiano-e-del-piacentino_9e6a4066-01a6-4d23-a242-7d2981d3c18b.html"
+   ],
+   "html": "<strong>Peste suina, ridotte le restrizioni in 6 Comuni tra Reggiano e Piacentino</strong> — Albinea (Reggio Emilia), Scandiano (Reggio Emilia), Castel San Giovanni (Piacenza), Calendasco (Piacenza): la Commissione europea ha accolto la richiesta di revisione delle zone di restrizione, con 4 Comuni che escono dal sistema di sicurezza e altri due (Borgonovo Val Tidone e Ziano Piacentino) che passano dalla zona II alla zona I, alleggerendo le misure contro il virus e favorendo le prospettive economiche locali. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/26/peste-suina-ridotte-le-restrizioni-in-6-comuni-del-reggiano-e-del-piacentino_9e6a4066-01a6-4d23-a242-7d2981d3c18b.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-26T16:55+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Ristorazione collettiva, Legacoop Agroalimentare: \"Rivedere i Cam per valorizzare l'agricoltura\"",
+   "links": [
+    "https://www.adnkronos.com/economia/ristorazione-collettiva-guidelli-legacoop-agroalimentare-rivedere-i-cam-per-valorizzare-lagricoltura_2by7SbzZl3YXj5CbtdwCyd"
+   ],
+   "html": "<strong>Ristorazione collettiva, Legacoop Agroalimentare: \"Rivedere i Cam per valorizzare l'agricoltura\"</strong> — Reggio Emilia: Sara Guidelli, direttore generale di Legacoop Agroalimentare, ha proposto al quarto Summit della ristorazione collettiva di rafforzare la collaborazione tra cooperative agricole e ristorazione collettiva per favorire stabilità dei redditi e valorizzazione delle produzioni italiane. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/economia/ristorazione-collettiva-guidelli-legacoop-agroalimentare-rivedere-i-cam-per-valorizzare-lagricoltura_2by7SbzZl3YXj5CbtdwCyd\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
    "t": "2026-10-26T12:34+01:00",
    "cat": "",
    "bo": false,
@@ -56,14 +86,19 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/pedino-e-abuso-di-una-12enne-in-ascensore-condanna-a-4-anni-e-8-mesi_4118edcb-725e-467a-aa64-7612aa0a4d11.html": "2026-10-26T16:28+01:00",
   "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOb1M3OUpiTTZqaUdXOFVyRmptdVd0U2RYSDNLYWFucDhCa2JHdzRTaFhBWmJUeE5LMHg2eGFvUHFramQ5RzZXZnJlNUNrYzZJU1ZRNXRkNGVoRkhwNjJ3bFRQWG5MVXZ4Y1U3U0p5QU1hZmo5YnpWQjFuN2ZOV3VuOUtLNmtZQWZDZ1hFdFNJUUFwTGE5aFZrVXE1OVFtQ19sNXAwejhDdl90Zw": "2026-10-26T16:28+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/neonati-sepolti-il-4-marzo-il-processo-dappello-per-chiara-petrolini_bad9cf75-760e-48a7-81bb-8eec507e3afb.html": "2026-10-26T16:28+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/26/arrestato-a-bologna-il-17-ottobre-21enne-presenta-denuncia_8ed8b086-1da2-4782-8885-bbbf12185625.html": "2026-10-26T16:28+01:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/26/arrestato-a-bologna-il-17-ottobre-21enne-presenta-denuncia_8ed8b086-1da2-4782-8885-bbbf12185625.html": "2026-10-26T16:28+01:00",
+  "https://www.adnkronos.com/economia/ristorazione-collettiva-guidelli-legacoop-agroalimentare-rivedere-i-cam-per-valorizzare-lagricoltura_2by7SbzZl3YXj5CbtdwCyd": "2026-10-26T16:55+01:00",
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNaF9hZEpVdThHUVhLT1FqRWpDeUo1bEhIS3NaMUlKM0N5Nnh6ci1ST2ZLeUdqR0c1dURqVGpHTjFTSDFTSjJFdWxtR1dGS0YxMEgzaURPT0ItLXZZbVA4ZElRUVFoWWo1UEUxY29pRFJfdkZjbE5xOHFnUzJlZVRxMDVITDhZRFZrNXBYTzcxa2U1dlV5LTBaUWc0WTVDdnVKOW9zOTJvbV9VV2ExWlI0UnZ0b21lNTNSdW1kOWpsd1FQWUdQcGlwNjRmQlJ3NDA0YlpWdm9Qcw": "2026-10-26T16:55+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/peste-suina-ridotte-le-restrizioni-in-6-comuni-del-reggiano-e-del-piacentino_9e6a4066-01a6-4d23-a242-7d2981d3c18b.html": "2026-10-26T16:55+01:00",
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWE9XZE1OV2M1MHM4TkJ3SmlGTVRaT0NVZUdibWZnQm51ZGh5UVNBNko5TWxjUGw0VGRKZkZiV2EzQ0xGUVhWUjNPZEk0cktnWnpZWnBKY0hLNTloRHBPelFkTzFMd1d5MDF2VUVrZVNaNEZ3MWltYU5OVk5EV0NuR0xiR3dXZDFLWWtYblo2VHl3LVhOaW5Ub1pTdFJ4a0pQQmUzelJkT2wySVE5OFJEMklWTV9fMzQ3YXpKd1IyWDF6Wjc4SDVzMHJvYm56VkNEWXc": "2026-10-26T16:55+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/26/pedino-e-abuso-di-una-12enne-in-ascensore-condanna-a-4-anni-e-8-mesi_94d6678e-fdb0-47cb-8815-84738b276259.html": "2026-10-26T16:55+01:00"
  },
- "updated": "2026-10-26T16:28+01:00",
+ "updated": "2026-10-26T16:55+01:00",
  "next": "alle 20",
  "last_run": {
-  "at": "2026-10-26T16:28+01:00",
-  "articles": 8,
-  "items": 0,
+  "at": "2026-10-26T16:55+01:00",
+  "articles": 5,
+  "items": 3,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -71,8 +106,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 25,
-    "kept": 3
+    "items": 26,
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -85,7 +120,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 39,
+    "items": 41,
     "kept": 0
    },
    {
@@ -106,7 +141,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 41,
+    "items": 39,
     "kept": 0
    },
    {
@@ -121,7 +156,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -170,7 +205,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Dire",
