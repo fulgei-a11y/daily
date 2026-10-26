@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 26 Oct 2026 20:35:52 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 00:24:40 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · lunedì 26 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi scontri: convalidati due arresti, uno studente denuncia lesioni; Sviluppi scontri: il sindaco Lepore annuncia denunce e risarcimenti; Riscaldamento acceso in anticipo per il freddo; Laboratorio tessile con 12 lavoratori in nero sospeso; Condannato per abusi su dodicenni in ascensore; Truffa del finto carabiniere: donna denunciata.</description>
@@ -533,16 +533,6 @@
       <pubDate>Thu, 08 Oct 2026 06:20:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-08.mp3" length="12667655" type="audio/mpeg"/>
       <itunes:duration>2533</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · mercoledì 7 ottobre 2026</title>
-      <description>104 notizie dall&#x27;Emilia-Romagna.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-07</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-07</guid>
-      <pubDate>Wed, 07 Oct 2026 06:20:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-07.mp3" length="4917517" type="audio/mpeg"/>
-      <itunes:duration>983</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
