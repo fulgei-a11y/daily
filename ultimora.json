@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-10-27T00:24+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Convalidati tre arresti dopo scontri",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/convalidati-due-arresti-a-bologna-per-uno-obbligo-di-firma-laltro-libero_3bc2096e-4e1e-44dd-ab1a-0c7b8177b655.html"
+   ],
+   "html": "<strong>Convalidati tre arresti dopo scontri</strong> — Bologna: la giudice ha convalidato i tre arresti eseguiti sabato scorso durante gli scontri tra manifestanti e forze dell'ordine; per uno è stato disposto l'obbligo di firma, il secondo è stato rimesso in libertà. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/26/convalidati-due-arresti-a-bologna-per-uno-obbligo-di-firma-laltro-libero_3bc2096e-4e1e-44dd-ab1a-0c7b8177b655.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-26T20:35+01:00",
    "cat": "",
    "bo": false,
@@ -72,9 +82,6 @@
   }
  ],
  "seen": {
-  "https://www.dire.it/25-10-2026/1280491-hacker-russi-proteste-in-italia-putin-attacca-leader-deboli-incapaci": "2026-10-25T12:21+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/25/cortei-a-verona-22-persone-in-questura-anche-un-12enne.-a-bologna-32-interventi-del-118_e6f2e536-b22f-4e74-8412-045f5ebbbe8e.html": "2026-10-25T12:21+01:00",
-  "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZ1RKYWRBMVdoQTJXR2pReXhrLVl5WFZkc0FPQ2xiVGlRX01ad1VoOWpQcGFZdnF4SVZQWi1TUDZIYklwLUlaaUZtdmtnOTZERGttSExSclpJYVZ5NWtiMm51UHZONk43QlZJNmlrOUI5TlBxZWZVVVVvOXA4M1czMmY5eVNBSER0S21YVV9OcVVtUQ": "2026-10-25T12:21+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/25/auto-fuori-strada-a-parma-muore-un-35enne_209e0440-9f20-49da-8b45-1d1038e40de3.html": "2026-10-25T16:15+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/25/cartello-affisso-su-sede-fdi-a-cesena-siete-lo-stesso-complici_6e8cde93-f4a0-446e-9e49-706b661ca6ef.html": "2026-10-25T16:15+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/25/vigili-indagati-a-rimini-gip-accoglie-richiesta-interdizione-per-8-agenti_ac2b510c-7179-48ae-80b2-933b176a5d6a.html": "2026-10-25T16:15+01:00",
@@ -111,14 +118,16 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/laumento-di-unipol-per-mps-sottoscritto-al-984_91e6c80b-30fd-4bd5-bb63-1ebc70c12ac6.html": "2026-10-26T20:35+01:00",
   "https://www.dire.it/26-10-2026/1281025-neonati-di-traversetolo-il-4-marzo-il-processo-dappello-a-petrolini": "2026-10-26T20:35+01:00",
   "https://www.adnkronos.com/cronaca/larte-come-medicina-e-il-valore-della-prescrizione-sociale-al-centro-di-una-giornata-di-studio-alluniversita-cattolica-di-milano_6Jas4mgHsP1qSAUMuCLfH3": "2026-10-26T20:35+01:00",
-  "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPTGpyQmw1RTNWWjJZOU1WU0ZXaERrYTBIYWoybVIzZEMxZUVBQ0tjRXlDOGZ3WjJfdzUzWUhQY2tHRHVaN3FoeXRhTTFnUVRVSE5UUU9YczdEWEJ5eEpiU2EzYnJOQklRZ19BaTlKaVc2QnE2UmtwN2pCaTJ5bmVFYVJjTW83SEV5U2dSTDFadXQwQlJSOWJFWHN4c1gycUcxWXhsVGFVNUpLY0tDWnVGNWV0MGhPOVJITk0tbFZ0M0VMT19FM2dxNzI4em16c3JaUjRjZmtqOVkwTGRFb0w1MVFad3JwY3NlQXdwdkdSdjM": "2026-10-26T20:35+01:00"
+  "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPTGpyQmw1RTNWWjJZOU1WU0ZXaERrYTBIYWoybVIzZEMxZUVBQ0tjRXlDOGZ3WjJfdzUzWUhQY2tHRHVaN3FoeXRhTTFnUVRVSE5UUU9YczdEWEJ5eEpiU2EzYnJOQklRZ19BaTlKaVc2QnE2UmtwN2pCaTJ5bmVFYVJjTW83SEV5U2dSTDFadXQwQlJSOWJFWHN4c1gycUcxWXhsVGFVNUpLY0tDWnVGNWV0MGhPOVJITk0tbFZ0M0VMT19FM2dxNzI4em16c3JaUjRjZmtqOVkwTGRFb0w1MVFad3JwY3NlQXdwdkdSdjM": "2026-10-26T20:35+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/convalidati-due-arresti-a-bologna-per-uno-obbligo-di-firma-laltro-libero_3bc2096e-4e1e-44dd-ab1a-0c7b8177b655.html": "2026-10-27T00:24+01:00",
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaUdKd1pYUExhY0ZJeERzWHZUTDFPOVh3UFBINEZCT010Q1NPTHdSNEhLYmhaY1RHYmdsZkozRkZyTkRKRlB4VkR1dDlnSFJQSU1Bc0Q5RnQwSXFUN2JpX2RpZU1UdTVuYUZvNzEwTmRIcm9VQnAzQmpLNm9LcVFTZ252NGVSczc3UXZNM3lzWnpGOXh6VWZpYU5qV3hDdFBNUkF4VVA0b1pVMUk": "2026-10-27T00:24+01:00"
  },
- "updated": "2026-10-26T20:35+01:00",
- "next": "alle 24",
+ "updated": "2026-10-27T00:24+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-10-26T20:35+01:00",
-  "articles": 5,
-  "items": 2,
+  "at": "2026-10-27T00:24+01:00",
+  "articles": 2,
+  "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -127,7 +136,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 22,
-    "kept": 2
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -161,7 +170,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 38,
+    "items": 34,
     "kept": 0
    },
    {
@@ -169,7 +178,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -183,7 +192,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -225,14 +234,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dagospia",
