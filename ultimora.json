@@ -48,14 +48,22 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/il-chitarrista-al-di-meola-al-bologna-jazz-festival-col-suo-acustic-trio_191f9b3a-0a90-4176-9221-c2c52102f908.html": "2026-10-26T12:34+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/i-pianisti-kissin-e-schiff-a-bologna-per-il-debutto-italiano-in-duo_73c09f1c-bfa8-42a1-98a3-0d1ccccf45a3.html": "2026-10-26T12:34+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/a-johannesburg-una-mostra-sui-legami-tra-italia-e-sudafrica_b98fa976-d7b5-4a61-9ec6-f9b11f4e2868.html": "2026-10-26T12:34+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/doppio-appuntamento-italiano-per-niall-horan-dagli-one-direction-a-dinner_34048f58-10a5-4f98-a5d0-1d5becccf80b.html": "2026-10-26T12:34+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/doppio-appuntamento-italiano-per-niall-horan-dagli-one-direction-a-dinner_34048f58-10a5-4f98-a5d0-1d5becccf80b.html": "2026-10-26T12:34+01:00",
+  "https://news.google.com/rss/articles/CBMirwFBVV95cUxNallYeUI3SVBFVHVvV2ZsNGNTSXNnekRRVmx2QS1CQzJkaGN5QU0zd0xOM0psaExCVTYwMEpyMlMxcEZickY0b2RiUk1Qbmc5SmtlaFJjdExKQzQySFJvQ3c4WlpkR1FwTl9UM0NQZVN3clNvOC1yZmFEeXRVbHp4TDBxTmJKS2k2ZTN0TWU4cm9MNmdwTlJpUTZuU3U5Y1B1MUxZLXN1b09TQ1RhVHAw": "2026-10-26T16:28+01:00",
+  "https://www.dire.it/26-10-2026/1280908-lepore-brutta-giornata-sabato-24-ottobre-bologna-tra-scontri-e-idranti": "2026-10-26T16:28+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/a-bologna-sfida-al-pianoforte-tra-roberto-prosseda-e-il-robot-teotronico_51da166f-b08b-4b1f-b9af-4b852449d103.html": "2026-10-26T16:28+01:00",
+  "https://www.dire.it/26-10-2026/1280930-la-coppa-davis-torna-in-emilia-romagna-il-trofeo-esposto-nella-sede-della-regione-fino-a-giovedi": "2026-10-26T16:28+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/pedino-e-abuso-di-una-12enne-in-ascensore-condanna-a-4-anni-e-8-mesi_4118edcb-725e-467a-aa64-7612aa0a4d11.html": "2026-10-26T16:28+01:00",
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOb1M3OUpiTTZqaUdXOFVyRmptdVd0U2RYSDNLYWFucDhCa2JHdzRTaFhBWmJUeE5LMHg2eGFvUHFramQ5RzZXZnJlNUNrYzZJU1ZRNXRkNGVoRkhwNjJ3bFRQWG5MVXZ4Y1U3U0p5QU1hZmo5YnpWQjFuN2ZOV3VuOUtLNmtZQWZDZ1hFdFNJUUFwTGE5aFZrVXE1OVFtQ19sNXAwejhDdl90Zw": "2026-10-26T16:28+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/neonati-sepolti-il-4-marzo-il-processo-dappello-per-chiara-petrolini_bad9cf75-760e-48a7-81bb-8eec507e3afb.html": "2026-10-26T16:28+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/26/arrestato-a-bologna-il-17-ottobre-21enne-presenta-denuncia_8ed8b086-1da2-4782-8885-bbbf12185625.html": "2026-10-26T16:28+01:00"
  },
- "updated": "2026-10-26T12:34+01:00",
- "next": "alle 16",
+ "updated": "2026-10-26T16:28+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-10-26T12:34+01:00",
-  "articles": 7,
-  "items": 1,
+  "at": "2026-10-26T16:28+01:00",
+  "articles": 8,
+  "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -64,20 +72,20 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 25,
-    "kept": 7
+    "kept": 3
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 27,
+    "items": 39,
     "kept": 0
    },
    {
@@ -155,21 +163,21 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dagospia",
