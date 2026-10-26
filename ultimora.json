@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-10-26T20:35+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Allarme rincari luce e gas per le imprese",
+   "links": [
+    "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPTGpyQmw1RTNWWjJZOU1WU0ZXaERrYTBIYWoybVIzZEMxZUVBQ0tjRXlDOGZ3WjJfdzUzWUhQY2tHRHVaN3FoeXRhTTFnUVRVSE5UUU9YczdEWEJ5eEpiU2EzYnJOQklRZ19BaTlKaVc2QnE2UmtwN2pCaTJ5bmVFYVJjTW83SEV5U2dSTDFadXQwQlJSOWJFWHN4c1gycUcxWXhsVGFVNUpLY0tDWnVGNWV0MGhPOVJITk0tbFZ0M0VMT19FM2dxNzI4em16c3JaUjRjZmtqOVkwTGRFb0w1MVFad3JwY3NlQXdwdkdSdjM"
+   ],
+   "html": "<strong>Allarme rincari luce e gas per le imprese</strong> — Parma: le aziende potrebbero affrontare aumenti fino a 3.500 euro, con un incremento del 900% sulla quota fissa del gas. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMi8AFBVV95cUxPTGpyQmw1RTNWWjJZOU1WU0ZXaERrYTBIYWoybVIzZEMxZUVBQ0tjRXlDOGZ3WjJfdzUzWUhQY2tHRHVaN3FoeXRhTTFnUVRVSE5UUU9YczdEWEJ5eEpiU2EzYnJOQklRZ19BaTlKaVc2QnE2UmtwN2pCaTJ5bmVFYVJjTW83SEV5U2dSTDFadXQwQlJSOWJFWHN4c1gycUcxWXhsVGFVNUpLY0tDWnVGNWV0MGhPOVJITk0tbFZ0M0VMT19FM2dxNzI4em16c3JaUjRjZmtqOVkwTGRFb0w1MVFad3JwY3NlQXdwdkdSdjM?oc=5\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
+   "t": "2026-10-26T20:35+01:00",
+   "cat": "",
+   "bo": true,
+   "title": "Processo d'appello per il caso dei neonati di Traversetolo",
+   "links": [
+    "https://www.dire.it/26-10-2026/1281025-neonati-di-traversetolo-il-4-marzo-il-processo-dappello-a-petrolini"
+   ],
+   "html": "<strong>Processo d'appello per il caso dei neonati di Traversetolo</strong> — Bologna: il 4 marzo 2027 inizierà il processo di secondo grado per Chiara Petrolini, condannata per l'omicidio del secondo figlio e assolta per il primo; la Procura di Parma ha impugnato l'assoluzione. <span class=\"src\">Fonte: <a href=\"https://www.dire.it/26-10-2026/1281025-neonati-di-traversetolo-il-4-marzo-il-processo-dappello-a-petrolini/\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
    "t": "2026-10-26T16:55+01:00",
    "cat": "Cronaca",
    "bo": true,
@@ -52,11 +72,6 @@
   }
  ],
  "seen": {
-  "https://www.agi.it/cronaca/news/2026-10-25/scontri-cortei-17-ottobre-39699063": "2026-10-25T08:28+01:00",
-  "https://www.italpress.com/antonelli-in-pole-ad-austin-con-vista-mondiale-leclerc-in-seconda-fila": "2026-10-25T08:28+01:00",
-  "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZjdCZVJRUERYb2VKa3FUOGxPczdITENVOEIweVVpdjZVTXh4R2kyV3JZM3RHV1phT2loeklidWViTDhoR2lXVFpsVjlkTGxZNWc0TWwwOTVwNTRsM29DQ2FZZ0d3aG81NWNUTVRzQTgwU1hmelREdWtwWGlLTXdDaDRHZHNpWmFZaVQwRmxDMHdMWmhXUzRpQk56R3o5dG5DSXQ3Y2Y3UVljQ1VEc0E": "2026-10-25T08:28+01:00",
-  "https://www.italpress.com/lazio-capolista-per-una-notte-parma-battuto-2-1-allolimpico": "2026-10-25T08:28+01:00",
-  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOc0M0WTdGQ3FaM1VmNTNKSG1SaVpNY1BnQ182VzhVMkRDNDF3WG1kN2xmYjRHdjE2N0ZmeHg1cVBycVREN1hZYmNDa3FKR3RINlE1Y0xVMUc1NTlFRzJkYkZjanE2aEUxdnZLaUlQSWY0Y3hoMUt5YklPcUZUWm92czFWWEdjZHpiUkZoVlI1V2d4emJrZnNWakJIcVI5OFJDblJyc0hXTGZuVWZNZ3diVVRpWEdkU2Q3MDBha3NtT2JOcEthT1lxaEZSZ21kVzRfeXA5ZXBhQjVJaHJjNDc2OU1R": "2026-10-25T08:28+01:00",
   "https://www.dire.it/25-10-2026/1280491-hacker-russi-proteste-in-italia-putin-attacca-leader-deboli-incapaci": "2026-10-25T12:21+01:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/25/cortei-a-verona-22-persone-in-questura-anche-un-12enne.-a-bologna-32-interventi-del-118_e6f2e536-b22f-4e74-8412-045f5ebbbe8e.html": "2026-10-25T12:21+01:00",
   "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZ1RKYWRBMVdoQTJXR2pReXhrLVl5WFZkc0FPQ2xiVGlRX01ad1VoOWpQcGFZdnF4SVZQWi1TUDZIYklwLUlaaUZtdmtnOTZERGttSExSclpJYVZ5NWtiMm51UHZONk43QlZJNmlrOUI5TlBxZWZVVVVvOXA4M1czMmY5eVNBSER0S21YVV9OcVVtUQ": "2026-10-25T12:21+01:00",
@@ -91,14 +106,19 @@
   "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNaF9hZEpVdThHUVhLT1FqRWpDeUo1bEhIS3NaMUlKM0N5Nnh6ci1ST2ZLeUdqR0c1dURqVGpHTjFTSDFTSjJFdWxtR1dGS0YxMEgzaURPT0ItLXZZbVA4ZElRUVFoWWo1UEUxY29pRFJfdkZjbE5xOHFnUzJlZVRxMDVITDhZRFZrNXBYTzcxa2U1dlV5LTBaUWc0WTVDdnVKOW9zOTJvbV9VV2ExWlI0UnZ0b21lNTNSdW1kOWpsd1FQWUdQcGlwNjRmQlJ3NDA0YlpWdm9Qcw": "2026-10-26T16:55+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/peste-suina-ridotte-le-restrizioni-in-6-comuni-del-reggiano-e-del-piacentino_9e6a4066-01a6-4d23-a242-7d2981d3c18b.html": "2026-10-26T16:55+01:00",
   "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWE9XZE1OV2M1MHM4TkJ3SmlGTVRaT0NVZUdibWZnQm51ZGh5UVNBNko5TWxjUGw0VGRKZkZiV2EzQ0xGUVhWUjNPZEk0cktnWnpZWnBKY0hLNTloRHBPelFkTzFMd1d5MDF2VUVrZVNaNEZ3MWltYU5OVk5EV0NuR0xiR3dXZDFLWWtYblo2VHl3LVhOaW5Ub1pTdFJ4a0pQQmUzelJkT2wySVE5OFJEMklWTV9fMzQ3YXpKd1IyWDF6Wjc4SDVzMHJvYm56VkNEWXc": "2026-10-26T16:55+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/26/pedino-e-abuso-di-una-12enne-in-ascensore-condanna-a-4-anni-e-8-mesi_94d6678e-fdb0-47cb-8815-84738b276259.html": "2026-10-26T16:55+01:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/26/pedino-e-abuso-di-una-12enne-in-ascensore-condanna-a-4-anni-e-8-mesi_94d6678e-fdb0-47cb-8815-84738b276259.html": "2026-10-26T16:55+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/lepore-denunceremo-chi-fa-danni-i-bolognesi-sono-contro-la-violenza_c2ffb865-86a2-434b-a800-99c166266e14.html": "2026-10-26T20:35+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/laumento-di-unipol-per-mps-sottoscritto-al-984_91e6c80b-30fd-4bd5-bb63-1ebc70c12ac6.html": "2026-10-26T20:35+01:00",
+  "https://www.dire.it/26-10-2026/1281025-neonati-di-traversetolo-il-4-marzo-il-processo-dappello-a-petrolini": "2026-10-26T20:35+01:00",
+  "https://www.adnkronos.com/cronaca/larte-come-medicina-e-il-valore-della-prescrizione-sociale-al-centro-di-una-giornata-di-studio-alluniversita-cattolica-di-milano_6Jas4mgHsP1qSAUMuCLfH3": "2026-10-26T20:35+01:00",
+  "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPTGpyQmw1RTNWWjJZOU1WU0ZXaERrYTBIYWoybVIzZEMxZUVBQ0tjRXlDOGZ3WjJfdzUzWUhQY2tHRHVaN3FoeXRhTTFnUVRVSE5UUU9YczdEWEJ5eEpiU2EzYnJOQklRZ19BaTlKaVc2QnE2UmtwN2pCaTJ5bmVFYVJjTW83SEV5U2dSTDFadXQwQlJSOWJFWHN4c1gycUcxWXhsVGFVNUpLY0tDWnVGNWV0MGhPOVJITk0tbFZ0M0VMT19FM2dxNzI4em16c3JaUjRjZmtqOVkwTGRFb0w1MVFad3JwY3NlQXdwdkdSdjM": "2026-10-26T20:35+01:00"
  },
- "updated": "2026-10-26T16:55+01:00",
- "next": "alle 20",
+ "updated": "2026-10-26T20:35+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-26T16:55+01:00",
+  "at": "2026-10-26T20:35+01:00",
   "articles": 5,
-  "items": 3,
+  "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -106,21 +126,21 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 26,
-    "kept": 1
+    "items": 22,
+    "kept": 2
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 41,
+    "items": 50,
     "kept": 0
    },
    {
@@ -141,14 +161,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 39,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
+    "items": 38,
     "kept": 0
    },
    {
@@ -160,10 +173,17 @@
    },
    {
     "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "askanews",
@@ -198,27 +218,27 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 2,
+    "items": 1,
     "kept": 0
    }
   ]
