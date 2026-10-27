@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-10-27T12:30+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Tenta di violentare addetta pulizie in centro commerciale: arrestato 22enne",
+   "links": [
+    "https://www.adnkronos.com/cronaca/reggio-emilia-tentata-violenza-centro-commerciale-arrestato_5C5z0cvogHbYJVtRXLgSZQ"
+   ],
+   "html": "<strong>Tenta di violentare addetta pulizie in centro commerciale: arrestato 22enne</strong> — Reggio Emilia: un uomo di 22 anni, già noto alle forze dell'ordine e sottoposto a divieto di dimora, è stato arrestato dalla Polizia di Stato per aver tentato di violentare un'addetta alle pulizie in un centro commerciale di via Kennedy. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/cronaca/reggio-emilia-tentata-violenza-centro-commerciale-arrestato_5C5z0cvogHbYJVtRXLgSZQ\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
    "t": "2026-10-27T00:24+01:00",
    "cat": "Cronaca",
    "bo": true,
@@ -72,7 +82,6 @@
   }
  ],
  "seen": {
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/25/youssef-siher-in-carcere-aveva-un-progetto-eversivo.-indagata-anche-la-moglie_dde34ca0-69ba-4c10-86ed-1c191da76dca.html": "2026-10-26T00:19+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/su-trc-bologna-un-viaggio-nei-luoghi-della-tradizione-musicale-cittadina_29aae1f5-ba87-4568-8da0-267619c8a422.html": "2026-10-26T12:34+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/traffico-di-cocaina-15-arresti-e-sequestri-per-16-milioni_ef72844d-6cb7-4ad6-bc5c-2c5cdfcfaa3b.html": "2026-10-26T12:34+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/arrestato-a-bologna-il-17-ottobre-21enne-presenta-denuncia_f8c90e78-a0d7-43ab-bcfa-a641e8ed6473.html": "2026-10-26T12:34+01:00",
@@ -102,14 +111,20 @@
   "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaUdKd1pYUExhY0ZJeERzWHZUTDFPOVh3UFBINEZCT010Q1NPTHdSNEhLYmhaY1RHYmdsZkozRkZyTkRKRlB4VkR1dDlnSFJQSU1Bc0Q5RnQwSXFUN2JpX2RpZU1UdTVuYUZvNzEwTmRIcm9VQnAzQmpLNm9LcVFTZ252NGVSczc3UXZNM3lzWnpGOXh6VWZpYU5qV3hDdFBNUkF4VVA0b1pVMUk": "2026-10-27T00:24+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/27/ferretti-stabili-i-ricavi-ma-scendono-i-margini-rivede-la-guidance-per-il-2026_da821b55-bcbb-4f07-885d-99aa96cb61cd.html": "2026-10-27T08:36+01:00",
   "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZmFBYl9GQy13OWF6OVBoLWdEZHl5WUVkZ3dnNHhmZ18yTEJ0SmpCNS05SERCQndCNXV1TGFTb2tjRGMxd1RySWtHTF9udEN4R1lhOXhMLVlPajc4cXk1cUxXbkVkUkk3Q1NzSHhHZXQ2SVFfc09aY0tNWFpsM0F2d1l1ODhnM0x5Sk5WS2VBWkR2aGdIdDNLQWdtMXNiLW1fZFUzUE9SYUhLbVQ2djFBampmMFVuRlY1VHB2azJtYUo": "2026-10-27T08:36+01:00",
-  "https://www.dire.it/27-10-2026/1281106-i-fontaines-d-c-live-a-bologna-poche-parole-e-molta-sostanza": "2026-10-27T08:36+01:00"
+  "https://www.dire.it/27-10-2026/1281106-i-fontaines-d-c-live-a-bologna-poche-parole-e-molta-sostanza": "2026-10-27T08:36+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/27/banco-bpm-non-partecipera-allassemblea-di-mps_0309d521-4b14-4a5b-820f-91350943aec6.html": "2026-10-27T12:30+01:00",
+  "https://www.adnkronos.com/cronaca/reggio-emilia-tentata-violenza-centro-commerciale-arrestato_5C5z0cvogHbYJVtRXLgSZQ": "2026-10-27T12:30+01:00",
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxNdXpHWHNueVU5c1hNVl9HOFlvanE1bF9heWVXUnBKWnl3NVBNWWtiVTVpU0FqY1lqV2FBLVVfV042M21rakpEaHpDbFpnVHdHMThqYkJweHJucnBwLUEwUDh2UXJsNDF1SmFhb3BOT2FnVDJRUFpqOXNzdlFINEIwVGRRNURFQldJRUN3LU5JZVQwMjNaR2RESUpEdEgwM3hvX0dEc3lSQUFZUkp1b1hsQjg3U1V1UGM": "2026-10-27T12:30+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/27/il-musicista-arto-lindsay-torna-in-italia-con-the-ghost-of-unity_3a4f1d49-1f9a-4e2d-863f-2d9bb49ed433.html": "2026-10-27T12:30+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/27/crif-sistema-finanziario-pronto-a-sostenere-nuova-fase-di-crescita-economia_87f553d5-4ff9-4ba5-bfaf-30054bc27bc2.html": "2026-10-27T12:30+01:00",
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxPU1dMdE1zdWF6NWl0N2U5NlRTenRvWlkxanBLbTZobG5uVmxGNHlJVHAtaDZRTnN5Y2VqMWdNMEVHTkI2RlZtaWE5NXJNZXA2SGVBRHJLbVFjV3dhWXNIT3RFTmlUYmdIeU1CM2J0MDFYUWE5bm9DcEN1TTNRZzdiRzd2NzYwRFFiV0VhSVhKZkswLS1YbG5mOF9jWHptbERUS0E": "2026-10-27T12:30+01:00"
  },
- "updated": "2026-10-27T08:36+01:00",
- "next": "alle 12",
+ "updated": "2026-10-27T12:30+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-27T08:36+01:00",
-  "articles": 3,
-  "items": 0,
+  "at": "2026-10-27T12:30+01:00",
+  "articles": 6,
+  "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -117,8 +132,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 21,
-    "kept": 1
+    "items": 24,
+    "kept": 3
    },
    {
     "agency": "ANSA",
@@ -131,7 +146,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 49,
+    "items": 57,
     "kept": 0
    },
    {
@@ -152,7 +167,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 41,
+    "items": 52,
     "kept": 0
    },
    {
@@ -160,7 +175,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -214,22 +229,22 @@
    {
     "agency": "Dire",
     "channel": "feed diretto",
-    "status": "ok",
-    "items": 10,
-    "kept": 1
+    "status": "errore: ReadTimeout",
+    "items": 0,
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 1,
+    "items": 0,
     "kept": 0
    }
   ]
