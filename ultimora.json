@@ -196,13 +196,21 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/va-in-pensione-viale-infettivologo-in-prima-linea-dallaids-al-covid_3adfa0b7-a79c-4121-8707-267910d7a2e1.html": "2026-10-28T16:38+01:00",
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxON09IYWQ4cV92eHVacG9CYXFlZC1nUUgzX0Y5SF9VbGFVeEd0bVY5aUxjamZfTV9KTHB6OU9PT2R1NmZReW1pRVoyalZtT2ZNVndMQ2Nja182SEhlOU5pSGdBMjk3Qko5T0FRTGFIcXlGUjJuSnM5OU53Ymc2Z21Fd0NOOEMyQnpwY2EwY3ZoTnZFWEU": "2026-10-28T20:39+01:00",
   "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQLU43blRsLVU2N2wwOGtZUkYwQzBreDNoTENWYm9HWUQ4Wms3cDlrejQwR2dTQnl1UUd6VVBwQldpbUxLWEJNcFItNzYtRmJDX0ZWNkZ5aWZHODZTNHNUTEhNV2h0OXY5dkNnVnN1eFc2TE5wMS1GdE9DYThxd3BBYURQVmRhRGdVREt1RGNVSFgxaXBxenlORFVJLWhPY3JaUncwcGVNNElpeW9ERWRIRHd4NzJab0pCQ0YwM0RHTWpWRUIxbjJjOWhmYktJRmVUTEVQcW84VVJfMjk1SlpDbjNRMjUtdw": "2026-10-28T20:39+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/cadavere-nel-pozzo-un-uomo-fermato-dai-carabinieri_1d7eb80b-792a-43bb-936e-fb80bf02b002.html": "2026-10-28T20:39+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/cadavere-nel-pozzo-un-uomo-fermato-dai-carabinieri_1d7eb80b-792a-43bb-936e-fb80bf02b002.html": "2026-10-28T20:39+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/palladino-grande-bologna-sempre-bello-vincere-a-san-siro_0f64f1f4-2ac0-4543-9d47-3a11d3c8082b.html": "2026-10-29T00:29+01:00",
+  "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQc3h5MThUVUQwa0gyVnFfV2FndFA2Q29TdGlBb0UtNTkyeUxHWnhfMUs2bktQU18yNFBFWThkaUxSSEJqR3gySzNueGwtZWloRG80MDREMGxIY3R0aldhMkhvQ2JLMWFLMEo4QzAyQXZHNXJQcmVIakRUWVBnYXRnRUxPVDlNcDh40gGOAUFVX3lxTE9BNnVTb2ZkeEppYlJOQk56N2dIMjIxQ3hzWGNYTUJNZE9aczhBemkxaTlmQV95ZlZ2dnZZTHFIZEVHWmlzQlRwN2dETVVTd3J6aEdPM3RZbW5qWXdzUWlKM0R3RjZ0dWNDS1pyS1E5OFJOUVN2VDVzVVFyczhlN3BiZWZqWEw4aUtBRW03dXc": "2026-10-29T00:29+01:00",
+  "https://www.italpress.com/poche-emozioni-e-pari-fra-parma-e-udinese-okoye-para-un-rigore": "2026-10-29T00:29+01:00",
+  "https://www.italpress.com/pagelle-voti-tabellino-milan-bologna-gol-marcatori-serie-a": "2026-10-29T00:29+01:00",
+  "https://www.italpress.com/pagelle-voti-tabellino-parma-udinese-gol-marcatori-serie-a": "2026-10-29T00:29+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/28/cadavere-nel-pozzo-un-uomo-fermato-dai-carabinieri_636d3a00-de7e-4d91-aa9d-b87af8494b97.html": "2026-10-29T00:29+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/il-fascicolo-sanitario-elettronico-ha-una-nuova-app-in-e-r_f5247b4d-37a8-4b25-a392-3678f8269376.html": "2026-10-29T00:29+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/infermiere-aggredito-da-un-paziente-al-pronto-soccorso-del-s.orsola-di-bologna_6fb0c351-41bc-4e52-8524-d8335d6426c5.html": "2026-10-29T00:29+01:00"
  },
- "updated": "2026-10-28T20:39+01:00",
- "next": "alle 24",
+ "updated": "2026-10-29T00:29+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-10-28T20:39+01:00",
-  "articles": 3,
+  "at": "2026-10-29T00:29+01:00",
+  "articles": 8,
   "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -212,14 +220,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 35,
-    "kept": 1
+    "kept": 3
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -246,8 +254,8 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 3,
-    "kept": 0
+    "items": 30,
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -268,7 +276,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -296,14 +304,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 3
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
