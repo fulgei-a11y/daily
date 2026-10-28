@@ -1,6 +1,36 @@
 {
  "items": [
   {
+   "t": "2026-10-28T12:35+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Auto incastrata in voragine stradale",
+   "links": [
+    "https://www.dire.it/28-10-2026/1281716-foto-si-apre-una-voragine-nellasfalto-unauto-ci-passa-sopra-e-resta-incastrata-shock-per-il-conducente"
+   ],
+   "html": "<strong>Auto incastrata in voragine stradale</strong> — Reggio Emilia: una profonda voragine si è aperta all'alba in via Galileo Galilei, un'auto in transito è rimasta incastrata. Il conducente è illeso, la strada è stata chiusa per verifiche. <span class=\"src\">Fonte: <a href=\"https://www.dire.it/28-10-2026/1281716-foto-si-apre-una-voragine-nellasfalto-unauto-ci-passa-sopra-e-resta-incastrata-shock-per-il-conducente/\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
+   "t": "2026-10-28T12:35+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Giovani denunciati per pietre sui binari",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/mettono-pietre-sui-binari-tre-giovani-denunciati-nel-bolognese_51d50704-22c8-4cd0-bd80-0b9ee8e61556.html"
+   ],
+   "html": "<strong>Giovani denunciati per pietre sui binari</strong> — Budrio (Bologna): tre giovani, un 19enne e due minorenni, sono stati denunciati per aver posizionato pietre sui binari di un passaggio a livello, poco prima dell'arrivo di un treno passeggeri. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/28/mettono-pietre-sui-binari-tre-giovani-denunciati-nel-bolognese_51d50704-22c8-4cd0-bd80-0b9ee8e61556.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-28T12:35+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Morte Fakir: prime chiamate di soccorso, \"non ci sono ambulanze\"",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/le-prime-chiamate-alla-centrale-per-fakir-non-ci-sono-ambulanze_0029f2ec-4684-4e85-9a14-10e3f1e7ca84.html"
+   ],
+   "html": "<strong>Morte Fakir: prime chiamate di soccorso, \"non ci sono ambulanze\"</strong> — Bologna: dalle registrazioni delle telefonate emerge che i poliziotti intervenuti per Abderrahim Fakir chiesero un'ambulanza e poi un'automedica, ma fu risposto che le ambulanze erano occupate. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/28/le-prime-chiamate-alla-centrale-per-fakir-non-ci-sono-ambulanze_0029f2ec-4684-4e85-9a14-10e3f1e7ca84.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-28T08:45+01:00",
    "cat": "Economia",
    "bo": false,
@@ -70,21 +100,9 @@
     "https://www.adnkronos.com/cronaca/reggio-emilia-tentata-violenza-centro-commerciale-arrestato_5C5z0cvogHbYJVtRXLgSZQ"
    ],
    "html": "<strong>Tenta di violentare addetta pulizie in centro commerciale: arrestato 22enne</strong> — Reggio Emilia: un uomo di 22 anni, già noto alle forze dell'ordine e sottoposto a divieto di dimora, è stato arrestato dalla Polizia di Stato per aver tentato di violentare un'addetta alle pulizie in un centro commerciale di via Kennedy. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/cronaca/reggio-emilia-tentata-violenza-centro-commerciale-arrestato_5C5z0cvogHbYJVtRXLgSZQ\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
-  },
-  {
-   "t": "2026-10-27T00:24+01:00",
-   "cat": "Cronaca",
-   "bo": true,
-   "title": "Convalidati tre arresti dopo scontri",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/convalidati-due-arresti-a-bologna-per-uno-obbligo-di-firma-laltro-libero_3bc2096e-4e1e-44dd-ab1a-0c7b8177b655.html"
-   ],
-   "html": "<strong>Convalidati tre arresti dopo scontri</strong> — Bologna: la giudice ha convalidato i tre arresti eseguiti sabato scorso durante gli scontri tra manifestanti e forze dell'ordine; per uno è stato disposto l'obbligo di firma, il secondo è stato rimesso in libertà. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/26/convalidati-due-arresti-a-bologna-per-uno-obbligo-di-firma-laltro-libero_3bc2096e-4e1e-44dd-ab1a-0c7b8177b655.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
   }
  ],
  "seen": {
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/26/convalidati-due-arresti-a-bologna-per-uno-obbligo-di-firma-laltro-libero_3bc2096e-4e1e-44dd-ab1a-0c7b8177b655.html": "2026-10-27T00:24+01:00",
-  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaUdKd1pYUExhY0ZJeERzWHZUTDFPOVh3UFBINEZCT010Q1NPTHdSNEhLYmhaY1RHYmdsZkozRkZyTkRKRlB4VkR1dDlnSFJQSU1Bc0Q5RnQwSXFUN2JpX2RpZU1UdTVuYUZvNzEwTmRIcm9VQnAzQmpLNm9LcVFTZ252NGVSczc3UXZNM3lzWnpGOXh6VWZpYU5qV3hDdFBNUkF4VVA0b1pVMUk": "2026-10-27T00:24+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/27/ferretti-stabili-i-ricavi-ma-scendono-i-margini-rivede-la-guidance-per-il-2026_da821b55-bcbb-4f07-885d-99aa96cb61cd.html": "2026-10-27T08:36+01:00",
   "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZmFBYl9GQy13OWF6OVBoLWdEZHl5WUVkZ3dnNHhmZ18yTEJ0SmpCNS05SERCQndCNXV1TGFTb2tjRGMxd1RySWtHTF9udEN4R1lhOXhMLVlPajc4cXk1cUxXbkVkUkk3Q1NzSHhHZXQ2SVFfc09aY0tNWFpsM0F2d1l1ODhnM0x5Sk5WS2VBWkR2aGdIdDNLQWdtMXNiLW1fZFUzUE9SYUhLbVQ2djFBampmMFVuRlY1VHB2azJtYUo": "2026-10-27T08:36+01:00",
   "https://www.dire.it/27-10-2026/1281106-i-fontaines-d-c-live-a-bologna-poche-parole-e-molta-sostanza": "2026-10-27T08:36+01:00",
@@ -123,14 +141,18 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/27/aggressione-sessuale-a-unaddetta-alle-pulizie-arrestato_e9c3c126-4604-4559-b82b-567fd3ab99e5.html": "2026-10-28T00:26+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/27/al-via-i-lavori-per-ripulire-il-lago-di-castel-dellalpi_9705e759-3e87-4eeb-92f1-5bc9ae1fe893.html": "2026-10-28T00:26+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/stellantis-il-10-dicembre-il-maserati-day-a-modena_3f05262d-fe9b-4baa-80f0-565f5688a7ca.html": "2026-10-28T08:45+01:00",
-  "https://news.google.com/rss/articles/CBMingFBVV95cUxQMVNmd3EyWkM0WUZDM1V4Yk9pam9tdzRQQlh3M1Q4TXY4ZGY4Wk5EdHFwN3ViZ0p6MWloWUUxTS1OcldGbzl5dUNna195OFlWa2hscVQ2MnJuNWpMTHRsc0M1SWc4WGI0WjhaUDBwNlR1eEdsSzQ1UGRZcnpkQW1HNThNbi1veS1yRHVLYTVFVlpLbTYzNkpLOHo4WkFhZw": "2026-10-28T08:45+01:00"
+  "https://news.google.com/rss/articles/CBMingFBVV95cUxQMVNmd3EyWkM0WUZDM1V4Yk9pam9tdzRQQlh3M1Q4TXY4ZGY4Wk5EdHFwN3ViZ0p6MWloWUUxTS1OcldGbzl5dUNna195OFlWa2hscVQ2MnJuNWpMTHRsc0M1SWc4WGI0WjhaUDBwNlR1eEdsSzQ1UGRZcnpkQW1HNThNbi1veS1yRHVLYTVFVlpLbTYzNkpLOHo4WkFhZw": "2026-10-28T08:45+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/le-prime-chiamate-alla-centrale-per-fakir-non-ci-sono-ambulanze_0029f2ec-4684-4e85-9a14-10e3f1e7ca84.html": "2026-10-28T12:35+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/mettono-pietre-sui-binari-tre-giovani-denunciati-nel-bolognese_51d50704-22c8-4cd0-bd80-0b9ee8e61556.html": "2026-10-28T12:35+01:00",
+  "https://www.dire.it/28-10-2026/1281716-foto-si-apre-una-voragine-nellasfalto-unauto-ci-passa-sopra-e-resta-incastrata-shock-per-il-conducente": "2026-10-28T12:35+01:00",
+  "https://www.ansa.it/sito/notizie/economia/2026/10/28/stellantis-il-10-dicembre-il-maserati-day-a-modena_57ca3852-b4a9-4262-a577-0172c59595f6.html": "2026-10-28T12:35+01:00"
  },
- "updated": "2026-10-28T08:45+01:00",
- "next": "alle 12",
+ "updated": "2026-10-28T12:35+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-10-28T08:45+01:00",
-  "articles": 2,
-  "items": 1,
+  "at": "2026-10-28T12:35+01:00",
+  "articles": 4,
+  "items": 3,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -138,22 +160,22 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 32,
+    "items": 28,
+    "kept": 2
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 57,
     "kept": 1
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
    },
    {
     "agency": "AGI",
@@ -173,7 +195,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 26,
+    "items": 14,
     "kept": 0
    },
    {
@@ -230,14 +252,14 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
@@ -250,7 +272,7 @@
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 2,
+    "items": 1,
     "kept": 0
    }
   ]
