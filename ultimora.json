@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-10-30T00:29+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Maxisequestro per cantine con muffe e uve marce",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/cantine-con-muffe-uve-marce-e-vini-fasulli-maxisequestro-dei-nas_ce360d0b-bea0-44ae-a67a-e4b5633e4cb2.html"
+   ],
+   "html": "<strong>Maxisequestro per cantine con muffe e uve marce</strong> — Bolognese, Faentino (Ravenna) e bassa Romagna: i Carabinieri del Nas hanno sequestrato centinaia di chili di uva in decomposizione e riscontrato muffe, escrementi di roditori e scarafaggi in diverse aziende vinicole. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/29/cantine-con-muffe-uve-marce-e-vini-fasulli-maxisequestro-dei-nas_ce360d0b-bea0-44ae-a67a-e4b5633e4cb2.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-30T00:29+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Morte Fakir: consulente famiglia contesta perizia",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/consulente-famiglia-fakir-la-contenzione-ha-avuto-un-ruolo-determinante_8a62f2e8-9372-41fa-bb29-d9e1bd2e54ed.html"
+   ],
+   "html": "<strong>Morte Fakir: consulente famiglia contesta perizia</strong> — Bologna: il consulente della famiglia di Abderrahim Fakir, morto a luglio durante un intervento di Polizia, sostiene che la contenzione fisica ha avuto un ruolo determinante nel decesso, contestando l'attribuzione principale all'intossicazione da cocaina. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/29/consulente-famiglia-fakir-la-contenzione-ha-avuto-un-ruolo-determinante_8a62f2e8-9372-41fa-bb29-d9e1bd2e54ed.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-29T20:42+01:00",
    "cat": "",
    "bo": false,
@@ -130,21 +150,9 @@
     "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/le-prime-chiamate-alla-centrale-per-fakir-non-ci-sono-ambulanze_0029f2ec-4684-4e85-9a14-10e3f1e7ca84.html"
    ],
    "html": "<strong>Morte Fakir: prime chiamate di soccorso, \"non ci sono ambulanze\"</strong> — Bologna: dalle registrazioni delle telefonate emerge che i poliziotti intervenuti per Abderrahim Fakir chiesero un'ambulanza e poi un'automedica, ma fu risposto che le ambulanze erano occupate. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/28/le-prime-chiamate-alla-centrale-per-fakir-non-ci-sono-ambulanze_0029f2ec-4684-4e85-9a14-10e3f1e7ca84.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-10-28T08:45+01:00",
-   "cat": "Economia",
-   "bo": false,
-   "title": "Maserati Day a Modena",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/stellantis-il-10-dicembre-il-maserati-day-a-modena_3f05262d-fe9b-4baa-80f0-565f5688a7ca.html"
-   ],
-   "html": "<strong>Maserati Day a Modena</strong> — Modena: Stellantis terrà il \"Maserati Day\" il 10 dicembre per illustrare il ruolo del brand nel gruppo. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/28/stellantis-il-10-dicembre-il-maserati-day-a-modena_3f05262d-fe9b-4baa-80f0-565f5688a7ca.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
   }
  ],
  "seen": {
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/stellantis-il-10-dicembre-il-maserati-day-a-modena_3f05262d-fe9b-4baa-80f0-565f5688a7ca.html": "2026-10-28T08:45+01:00",
-  "https://news.google.com/rss/articles/CBMingFBVV95cUxQMVNmd3EyWkM0WUZDM1V4Yk9pam9tdzRQQlh3M1Q4TXY4ZGY4Wk5EdHFwN3ViZ0p6MWloWUUxTS1OcldGbzl5dUNna195OFlWa2hscVQ2MnJuNWpMTHRsc0M1SWc4WGI0WjhaUDBwNlR1eEdsSzQ1UGRZcnpkQW1HNThNbi1veS1yRHVLYTVFVlpLbTYzNkpLOHo4WkFhZw": "2026-10-28T08:45+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/le-prime-chiamate-alla-centrale-per-fakir-non-ci-sono-ambulanze_0029f2ec-4684-4e85-9a14-10e3f1e7ca84.html": "2026-10-28T12:35+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/28/mettono-pietre-sui-binari-tre-giovani-denunciati-nel-bolognese_51d50704-22c8-4cd0-bd80-0b9ee8e61556.html": "2026-10-28T12:35+01:00",
   "https://www.dire.it/28-10-2026/1281716-foto-si-apre-una-voragine-nellasfalto-unauto-ci-passa-sopra-e-resta-incastrata-shock-per-il-conducente": "2026-10-28T12:35+01:00",
@@ -198,14 +206,19 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/samuele-lodi-e-il-nuovo-segretario-generale-della-fiom-cgil_9891de5e-7765-4ebd-ab2c-9848d4918ef1.html": "2026-10-29T20:42+01:00",
   "https://www.adnkronos.com/cronaca/argenta-un-defibrillatore-in-memoria-della-dolce-federica-salva-vite-a-scuola_4aHybdpXXyLCkRDAbXfg0V": "2026-10-29T20:42+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/parma-primo-punto-ma-per-gilardino-la-crisi-non-e-superata_c3e0ec08-b6b5-40f6-9529-b2dddf6f054d.html": "2026-10-29T20:42+01:00",
-  "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPc2FkWHhfZ0liYlBSZ2pPQ0NLUWlSVWhrZjMtMUZxUnpIeFdTUDFsTDFFWl8xRktaUHJLNDZaVTZpaDFhejB2dk96VklKZDRQdkF0MWdKMUUzSGpNcXpkU2hCNENnRjBlbFkyN0NfWUhRNE5iaGhnblNxQkM4RXZhbk1NRmt4YjVpUnVtd09Da0RWa2dRVVNWYWM5UGF6RHo4RFhXOUpXV1JLN3JpMXpXd0VCendqZ1E1SEZaMFM0RjRZRWhKNUl3WHJGVHF1ajR1N3RldW82M18zZlFnRHoxSlJtdXpyTnc": "2026-10-29T20:42+01:00"
+  "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPc2FkWHhfZ0liYlBSZ2pPQ0NLUWlSVWhrZjMtMUZxUnpIeFdTUDFsTDFFWl8xRktaUHJLNDZaVTZpaDFhejB2dk96VklKZDRQdkF0MWdKMUUzSGpNcXpkU2hCNENnRjBlbFkyN0NfWUhRNE5iaGhnblNxQkM4RXZhbk1NRmt4YjVpUnVtd09Da0RWa2dRVVNWYWM5UGF6RHo4RFhXOUpXV1JLN3JpMXpXd0VCendqZ1E1SEZaMFM0RjRZRWhKNUl3WHJGVHF1ajR1N3RldW82M18zZlFnRHoxSlJtdXpyTnc": "2026-10-29T20:42+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/consulente-famiglia-fakir-la-contenzione-ha-avuto-un-ruolo-determinante_8a62f2e8-9372-41fa-bb29-d9e1bd2e54ed.html": "2026-10-30T00:29+01:00",
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMXpuWVpTT1JkMFBpb0QtaklNbVFHbDhaMXFjUUlaNzNMV1ZWUHAtZXZMd1NkdVFJajNJTEpQN2luM0ZVc09ieEVkc3FPMWpzVUZDZ2tFTzFsZmhuMVk3RmxRM2U0cFVMNEFBZmllU1UxN2FZUXM1SkJiT0IzQTRYNHY2MEEyTkRmeWUxTGZ6dUQybVl6YmVTcG1aNDM4eF9waXBZQUVqVzZBSVVTWVhhQVppVTVwcUY1dmdSS0puWUhGNWpUNW5qZ2E2Sll5bEk": "2026-10-30T00:29+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/bologna-in-vista-del-match-col-monza-torna-in-gruppo-orsolini_578b5aef-29c0-40da-bc91-c39a5c5d79ca.html": "2026-10-30T00:29+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/la-coppa-davis-a-bologna-abodi-difenderemo-i-risultati-ottenuti_14d92942-a9fe-44ab-bd32-ef09761cad26.html": "2026-10-30T00:29+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/cantine-con-muffe-uve-marce-e-vini-fasulli-maxisequestro-dei-nas_ce360d0b-bea0-44ae-a67a-e4b5633e4cb2.html": "2026-10-30T00:29+01:00"
  },
- "updated": "2026-10-29T20:42+01:00",
- "next": "alle 24",
+ "updated": "2026-10-30T00:29+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-10-29T20:42+01:00",
-  "articles": 6,
-  "items": 3,
+  "at": "2026-10-30T00:29+01:00",
+  "articles": 5,
+  "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -214,7 +227,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 43,
-    "kept": 3
+    "kept": 4
    },
    {
     "agency": "ANSA",
@@ -248,7 +261,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 60,
+    "items": 57,
     "kept": 0
    },
    {
@@ -256,21 +269,21 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
     "kept": 1
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
    },
    {
     "agency": "askanews",
@@ -305,7 +318,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
@@ -319,7 +332,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dagospia",
