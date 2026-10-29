@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 29 Oct 2026 20:42:27 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 00:30:02 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · giovedì 29 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi Caso Fakir: la controperizia della famiglia contesta la causa della morte; Sviluppi Sciopero generale del 30 ottobre: Usb conferma la mobilitazione nonostante la precettazione; Inchiesta sulla morte di Lucia Pennisi: la Procura apre un fascicolo; Furto di carrozzina elettrica a turista finlandese in Piazza Maggiore; Esoscheletri per la movimentazione bagagli all&#x27;Aeroporto Marconi; Nuovo tunnel sospeso per la sicurezza dei lavoratori Toyota a Borgo Panigale.</description>
@@ -573,36 +573,6 @@
       <pubDate>Sun, 11 Oct 2026 06:13:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-11.mp3" length="12474349" type="audio/mpeg"/>
       <itunes:duration>2494</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · sabato 10 ottobre 2026</title>
-      <description>40 notizie dall&#x27;Emilia-Romagna. In apertura: Scontro aereo ultraleggero; Cadavere nel laghetto; Proteste contro delegazione israeliana; Manifestazione pro-Palestina e contro aggressioni omofobe; Furto in villa; Carabinieri feriti in Appennino.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-10</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-10-19</guid>
-      <pubDate>Sat, 10 Oct 2026 19:06:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-10-19.mp3" length="3501680" type="audio/mpeg"/>
-      <itunes:duration>700</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · sabato 10 ottobre 2026</title>
-      <description>31 notizie dall&#x27;Emilia-Romagna. In apertura: Dimissioni Sovrintendente Teatro Comunale; Sicurezza sul lavoro e appalti irregolari; Assalto a bancomat con esplosivo; Aggressione autista bus e &quot;Panic Button&quot;; Infortuni sul lavoro in Romagna; Chiusura strada San Martino di Mugnano.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-10</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-10-13</guid>
-      <pubDate>Sat, 10 Oct 2026 13:58:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-10-13.mp3" length="3545435" type="audio/mpeg"/>
-      <itunes:duration>709</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · sabato 10 ottobre 2026</title>
-      <description>201 notizie dall&#x27;Emilia-Romagna. In apertura: Corte Costituzionale boccia legge regionale sugli affitti brevi; Stop ad abbattimenti di alberi al Bosco Ospizio; Incendio in appartamento a San Lazzaro di Savena; Bologna omaggia Francesco Guccini con eventi e luminarie; Astra Veicoli Industriali celebra 80 anni di attività; Mercato ortofrutticolo di Cesena riqualificato con fondi Pnrr.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-10</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-10</guid>
-      <pubDate>Sat, 10 Oct 2026 09:59:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-10.mp3" length="13481370" type="audio/mpeg"/>
-      <itunes:duration>2696</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
