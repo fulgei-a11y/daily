@@ -1,6 +1,36 @@
 {
  "items": [
   {
+   "t": "2026-10-29T20:42+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Samuele Lodi è il nuovo segretario generale della Fiom-Cgil",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/samuele-lodi-e-il-nuovo-segretario-generale-della-fiom-cgil_9891de5e-7765-4ebd-ab2c-9848d4918ef1.html"
+   ],
+   "html": "<strong>Samuele Lodi è il nuovo segretario generale della Fiom-Cgil</strong> — (Nazionale, ma la notizia è di interesse per l'Emilia-Romagna): Samuele Lodi, dal 2023 in segreteria con responsabilità su automotive, navalmeccanica e ferroviario, è stato nominato nuovo segretario generale della Fiom-Cgil. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/29/samuele-lodi-e-il-nuovo-segretario-generale-della-fiom-cgil_9891de5e-7765-4ebd-ab2c-9848d4918ef1.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-29T20:42+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Defibrillatore donato alla scuola di Argenta in memoria di Federica",
+   "links": [
+    "https://www.adnkronos.com/cronaca/argenta-un-defibrillatore-in-memoria-della-dolce-federica-salva-vite-a-scuola_4aHybdpXXyLCkRDAbXfg0V"
+   ],
+   "html": "<strong>Defibrillatore donato alla scuola di Argenta in memoria di Federica</strong> — Argenta (Ferrara): L'associazione Family's Smard - La Dolce Federica Odv ha donato un defibrillatore semiautomatico (DAE) alla comunità di Argenta, che sarà installato nell'area esterna della scuola dell'infanzia 'Bruno Munari' e accessibile h24. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/cronaca/argenta-un-defibrillatore-in-memoria-della-dolce-federica-salva-vite-a-scuola_4aHybdpXXyLCkRDAbXfg0V\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
+   "t": "2026-10-29T20:42+01:00",
+   "cat": "",
+   "bo": true,
+   "title": "Esoscheletro per facchini all'Aeroporto di Bologna",
+   "links": [
+    "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPc2FkWHhfZ0liYlBSZ2pPQ0NLUWlSVWhrZjMtMUZxUnpIeFdTUDFsTDFFWl8xRktaUHJLNDZaVTZpaDFhejB2dk96VklKZDRQdkF0MWdKMUUzSGpNcXpkU2hCNENnRjBlbFkyN0NfWUhRNE5iaGhnblNxQkM4RXZhbk1NRmt4YjVpUnVtd09Da0RWa2dRVVNWYWM5UGF6RHo4RFhXOUpXV1JLN3JpMXpXd0VCendqZ1E1SEZaMFM0RjRZRWhKNUl3WHJGVHF1ajR1N3RldW82M18zZlFnRHoxSlJtdXpyTnc"
+   ],
+   "html": "<strong>Esoscheletro per facchini all'Aeroporto di Bologna</strong> — Bologna: Un esoscheletro indossabile come uno zaino è stato introdotto per aiutare i facchini dell'Aeroporto di Bologna, dimezzando il peso dei bagagli da movimentare. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxPc2FkWHhfZ0liYlBSZ2pPQ0NLUWlSVWhrZjMtMUZxUnpIeFdTUDFsTDFFWl8xRktaUHJLNDZaVTZpaDFhejB2dk96VklKZDRQdkF0MWdKMUUzSGpNcXpkU2hCNENnRjBlbFkyN0NfWUhRNE5iaGhnblNxQkM4RXZhbk1NRmt4YjVpUnVtd09Da0RWa2dRVVNWYWM5UGF6RHo4RFhXOUpXV1JLN3JpMXpXd0VCendqZ1E1SEZaMFM0RjRZRWhKNUl3WHJGVHF1ajR1N3RldW82M18zZlFnRHoxSlJtdXpyTnc?oc=5\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
    "t": "2026-10-29T12:36+01:00",
    "cat": "Economia",
    "bo": true,
@@ -162,14 +192,20 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/macbeth-di-giuseppe-verdi-apre-stagione-lirica-del-teatro-comunale-modena_d52b332e-3fdc-472c-a3cf-cf70ef092a07.html": "2026-10-29T16:39+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/cadavere-in-pozzo-nel-cesenate-ucciso-per-debito-di-mille-euro-per_5632a309-5111-4f91-ae57-ebe5a263c96f.html": "2026-10-29T16:39+01:00",
   "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNRzVFZ0V2MGZwR3A5SHJtV0FYcHlVMGpFbXhFcnJGM1k1TjdyemNWcmdMQ01SaTZyZVExM3c2RTJNSUVhaFZuU21aSHNXNER0QVhQSHVsQ3RZT1dvYXhvNTZ0SjVUOXRxcXNHTEJVcGpUWThFeXRJOHFRQi1LU3A0aHVybjJxMXZSSWVVUUI0N3NkMVQ5d01FcDU2Z0dQRzQ1dlFWQ09wZV9lU3hZUVBqV1d1TDdVMElTRnRiVjdXaHVqdlc4U0hBSmJUOFBOZHh5N2hjcUROYmpBYTQ": "2026-10-29T16:39+01:00",
-  "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNjhhWVlCbXNTLVlRS2VMSGxZbENsVFpwNnNJRlpkMjQxWDd5MlhLNnl0bU9iMy1sZXU3d0RCRl9Kb2c1VnZib3NBVVI1RlZZU09LM0Q4X0dMVG1WaWpmVTFlcEFYRi1ISFpzUTV1VVo1Q0hLaUNvYURyYW9ueFRlSE9JU2NzQWp4ckdzdlRXdXZkMHpk": "2026-10-29T16:39+01:00"
+  "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNjhhWVlCbXNTLVlRS2VMSGxZbENsVFpwNnNJRlpkMjQxWDd5MlhLNnl0bU9iMy1sZXU3d0RCRl9Kb2c1VnZib3NBVVI1RlZZU09LM0Q4X0dMVG1WaWpmVTFlcEFYRi1ISFpzUTV1VVo1Q0hLaUNvYURyYW9ueFRlSE9JU2NzQWp4ckdzdlRXdXZkMHpk": "2026-10-29T16:39+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/tela-autografata-da-vasco-e-don-ciotti-al-factory-grisu-di-ferrara_121f2d3e-84dc-470e-ab7f-642818b10cc3.html": "2026-10-29T20:42+01:00",
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMFc1T0xxWU1SOWE2SkVTdUQybW5MdGZlb1g4SkYxWnZXdVp2OUFvMWxTbkJfbHU5M0QxVWJxeUNDVHdBSFJWU3BLc2wtX24yV0g4a2d5TlpmU3huMTd3bTA5dHplS0Z2SlZ5YzVfeWdEQ253Sjc4V1NaMVdwMWFBUnRNTjlvTnFtd1JYaDNVVExIay05akFHbkhmRmZnVUpOd3p4czFVM01RTGp5TFRQMmd2QlIwdzVHOVFEYXEwOGNscTNFU203RA": "2026-10-29T20:42+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/samuele-lodi-e-il-nuovo-segretario-generale-della-fiom-cgil_9891de5e-7765-4ebd-ab2c-9848d4918ef1.html": "2026-10-29T20:42+01:00",
+  "https://www.adnkronos.com/cronaca/argenta-un-defibrillatore-in-memoria-della-dolce-federica-salva-vite-a-scuola_4aHybdpXXyLCkRDAbXfg0V": "2026-10-29T20:42+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/parma-primo-punto-ma-per-gilardino-la-crisi-non-e-superata_c3e0ec08-b6b5-40f6-9529-b2dddf6f054d.html": "2026-10-29T20:42+01:00",
+  "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPc2FkWHhfZ0liYlBSZ2pPQ0NLUWlSVWhrZjMtMUZxUnpIeFdTUDFsTDFFWl8xRktaUHJLNDZaVTZpaDFhejB2dk96VklKZDRQdkF0MWdKMUUzSGpNcXpkU2hCNENnRjBlbFkyN0NfWUhRNE5iaGhnblNxQkM4RXZhbk1NRmt4YjVpUnVtd09Da0RWa2dRVVNWYWM5UGF6RHo4RFhXOUpXV1JLN3JpMXpXd0VCendqZ1E1SEZaMFM0RjRZRWhKNUl3WHJGVHF1ajR1N3RldW82M18zZlFnRHoxSlJtdXpyTnc": "2026-10-29T20:42+01:00"
  },
- "updated": "2026-10-29T16:39+01:00",
- "next": "alle 20",
+ "updated": "2026-10-29T20:42+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-29T16:39+01:00",
-  "articles": 15,
-  "items": 0,
+  "at": "2026-10-29T20:42+01:00",
+  "articles": 6,
+  "items": 3,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -177,8 +213,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 38,
-    "kept": 11
+    "items": 43,
+    "kept": 3
    },
    {
     "agency": "ANSA",
@@ -220,7 +256,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -262,7 +298,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
@@ -276,7 +312,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
@@ -289,7 +325,7 @@
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 2,
+    "items": 1,
     "kept": 0
    }
   ]
