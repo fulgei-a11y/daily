@@ -1,6 +1,79 @@
 {
  "items": [
   {
+   "t": "2026-10-30T16:38+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Due morti per monossido di carbonio, neonata grave",
+   "links": [
+    "https://www.agi.it/cronaca/news/2026-10-30/fuga-monossido-parma-morti-39786149",
+    "https://www.ansa.it/sito/notizie/cronaca/2026/10/30/due-morti-per-monossido-e-una-neonata-grave-nel-parmense_2c7b7cee-2629-40ef-b76b-7e338f20334b.html",
+    "https://www.adnkronos.com/cronaca/coppia-morta-parma-grave-bambina_1oWlaRtCKntxq7HsIGJqOl"
+   ],
+   "html": "<strong>Due morti per monossido di carbonio, neonata grave</strong> — Mezzani (Parma): un uomo di 35 anni e una donna di 32, marito e moglie, sono deceduti in un casolare a Bocca d'Enza, probabilmente a causa di un braciere lasciato acceso. Una neonata di sette mesi è ricoverata in condizioni gravissime. <span class=\"src\">Fonti: <a href=\"https://www.agi.it/cronaca/news/2026-10-30/fuga-monossido-parma-morti-39786149/\" target=\"_blank\" rel=\"noopener\">AGI</a>, <a href=\"https://www.ansa.it/sito/notizie/cronaca/2026/10/30/due-morti-per-monossido-e-una-neonata-grave-nel-parmense_2c7b7cee-2629-40ef-b76b-7e338f20334b.html\" target=\"_blank\" rel=\"noopener\">ANSA</a>, <a href=\"https://www.adnkronos.com/cronaca/coppia-morta-parma-grave-bambina_1oWlaRtCKntxq7HsIGJqOl\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
+   "t": "2026-10-30T16:38+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "IEG festeggia 10 anni dalla fusione delle fiere di Rimini e Vicenza",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/ieg-festeggia-10-anni-dalla-fusione-delle-fiere-di-rimini-e-vicenza_8b29a647-05ce-4a3e-b9fe-2d917f92fccd.html"
+   ],
+   "html": "<strong>IEG festeggia 10 anni dalla fusione delle fiere di Rimini e Vicenza</strong> — Rimini: Italian Exhibition Group, nata dalla fusione dei poli espositivi di Rimini e Vicenza, celebra dieci anni di attività con una crescita economica continua e un fatturato atteso oltre i 360 milioni di euro per il 2030. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/30/ieg-festeggia-10-anni-dalla-fusione-delle-fiere-di-rimini-e-vicenza_8b29a647-05ce-4a3e-b9fe-2d917f92fccd.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-30T16:38+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Morte dopo intervento al pancreas: marito chiede risposte",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/mia-moglie-mori-a-45-anni-dopo-intervento-al-pancreas-mai-avuto-risposte_c634b698-b800-438d-8268-f077cd176d6c.html"
+   ],
+   "html": "<strong>Morte dopo intervento al pancreas: marito chiede risposte</strong> — Bologna: un uomo racconta la morte della moglie a 45 anni nel 2018, dopo un intervento al pancreas al Sant'Orsola/Maggiore, chiedendo risposte sulla vicenda simile a quella della maestra di Argelato. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/30/mia-moglie-mori-a-45-anni-dopo-intervento-al-pancreas-mai-avuto-risposte_c634b698-b800-438d-8268-f077cd176d6c.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-30T16:38+01:00",
+   "cat": "Economia",
+   "bo": true,
+   "title": "Transizione ecologica per la ceramica: evento a Bologna",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/la-transizione-ecologica-per-la-ceramica-appuntamento-a-bologna_3a501dbe-04e9-46ee-b3a4-316ca9343e89.html"
+   ],
+   "html": "<strong>Transizione ecologica per la ceramica: evento a Bologna</strong> — Bologna: il 10 novembre al Tecnopolo Cnr si terrà un appuntamento conclusivo del progetto CCS4CER, per presentare i risultati e le soluzioni innovative per la riduzione delle emissioni di CO₂ nel settore ceramico. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/30/la-transizione-ecologica-per-la-ceramica-appuntamento-a-bologna_3a501dbe-04e9-46ee-b3a4-316ca9343e89.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-30T16:38+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Parto in autobus a Bologna",
+   "links": [
+    "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTDY3c3ZHQ1pYbW1KTmFUWFFuSkpxSkhkU2pnOW9IWDNiUHZPcDJlbWhvQ0JWZVFfeGp6ekNvbkx6ODRabEQ0aElTWFJpc0xvdjZWUGFRRzBveDl0YUZ3ZURXSXAtV0pXUHNnSE1kcDNrX1NJZ1poelZqVDFBU0RuSzljRzlHbjJWR014Mg",
+    "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/parto-in-bus-a-bologna-donna-aiutata-dalla-conducente-e-dalle-passeggere_bc649cf5-5265-4df4-a8d3-5a275299a66f.html"
+   ],
+   "html": "<strong>Parto in autobus a Bologna</strong> — Bologna: una donna ha partorito il suo bambino a bordo di un mezzo della linea 39 in via Saffi, assistita dalla conducente e da alcune passeggere. <span class=\"src\">Fonti: <a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxPTDY3c3ZHQ1pYbW1KTmFUWFFuSkpxSkhkU2pnOW9IWDNiUHZPcDJlbWhvQ0JWZVFfeGp6ekNvbkx6ODRabEQ0aElTWFJpc0xvdjZWUGFRRzBveDl0YUZ3ZURXSXAtV0pXUHNnSE1kcDNrX1NJZ1poelZqVDFBU0RuSzljRzlHbjJWR014Mg?oc=5\" target=\"_blank\" rel=\"noopener\">Dire</a>, <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/30/parto-in-bus-a-bologna-donna-aiutata-dalla-conducente-e-dalle-passeggere_bc649cf5-5265-4df4-a8d3-5a275299a66f.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-10-30T16:38+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Giocatore di poker evade il fisco con residenza fittizia a Malta",
+   "links": [
+    "https://news.google.com/rss/articles/CBMixAFBVV95cUxQREhpZG5aaHdVMUxvSV9mYnFMak5sM3UzWVZvelpFbUpmbVhpR21mVE1NTTIyVDl6Yjl6dnJjYzRaNXM3Z1dtZkFHbjFoRk9jdm5OZ2d0cVFfcnBaSkF1YklyUXBOeTNjZ00wVEM2U2RrUVlxZE1RekJESDExNnRVODNiSFd5QUU4aDdzck9Jd09Tb1dWUU5nbmxaSVdRcXY4UHV0ODNKS3NPeWRqYWxSNXFEdlItUTR1SUx3Slo0WGtjbUlf"
+   ],
+   "html": "<strong>Giocatore di poker evade il fisco con residenza fittizia a Malta</strong> — Bologna: il \"re del poker\" Enrico Camosci è nei guai per aver dichiarato una residenza fittizia a Malta pur vivendo a Bologna, evadendo il fisco. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQREhpZG5aaHdVMUxvSV9mYnFMak5sM3UzWVZvelpFbUpmbVhpR21mVE1NTTIyVDl6Yjl6dnJjYzRaNXM3Z1dtZkFHbjFoRk9jdm5OZ2d0cVFfcnBaSkF1YklyUXBOeTNjZ00wVEM2U2RrUVlxZE1RekJESDExNnRVODNiSFd5QUU4aDdzck9Jd09Tb1dWUU5nbmxaSVdRcXY4UHV0ODNKS3NPeWRqYWxSNXFEdlItUTR1SUx3Slo0WGtjbUlf?oc=5\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
+   "t": "2026-10-30T16:38+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Uccide il cugino disabile con un bombolone",
+   "links": [
+    "https://news.google.com/rss/articles/CBMitgFBVV95cUxNODc2OWVuMW1Jbks4NzlhWENMUmtqT1p5N2RYaTJSZ2lYYXVSX3Zac2dVbDV0dGgtcjN5Q09RUmoySG1qMDNnSVpLQVRjQ1RzRElQRjlIRmRTOWo0Nnc1UUt0Y2xaU3ktemgzWXJQM2ViVEtDNHVPa2MwelgtV21oR3hLU2hKR3hGWjBuOHVDUkIzY2RBMGpNelZfUWxUT3VOcGdKQzk0ZGdSRUpuTEpDTEFEejhXQQ"
+   ],
+   "html": "<strong>Uccide il cugino disabile con un bombolone</strong> — Reggio Emilia: Elico Fantuzzi, 76 anni, è accusato di aver ucciso il cugino disabile di 74 anni. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNODc2OWVuMW1Jbks4NzlhWENMUmtqT1p5N2RYaTJSZ2lYYXVSX3Zac2dVbDV0dGgtcjN5Q09RUmoySG1qMDNnSVpLQVRjQ1RzRElQRjlIRmRTOWo0Nnc1UUt0Y2xaU3ktemgzWXJQM2ViVEtDNHVPa2MwelgtV21oR3hLU2hKR3hGWjBuOHVDUkIzY2RBMGpNelZfUWxUT3VOcGdKQzk0ZGdSRUpuTEpDTEFEejhXQQ?oc=5\" target=\"_blank\" rel=\"noopener\">Dagospia</a></span>"
+  },
+  {
    "t": "2026-10-30T12:30+01:00",
    "cat": "",
    "bo": true,
@@ -167,14 +240,36 @@
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/30/le-madri-dei-liceali-a-bologna-in-sciopero-per-i-loro-diritti_b1397a95-6c8d-4a0d-8ea5-74223c030a3c.html": "2026-10-30T12:30+01:00",
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxOcnBYOElVWTRBSzNKYkFZWC1jQzJFa1l2LTllUjE2OERsMFB1WHNpR1BhVVE2S01YYjdCbnlmWGVOX0E5UGpMaDVrWUNCRHFKY3dqejBWOF9PREdsc3JPRE1uMExJOTh4RVZxYnBTeXVHcmF6bkhyTEt6YUs0ODYyVTBSQ3RSOFd4Tkpqa0ZnZU5zNWM": "2026-10-30T12:30+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/nuovi-guai-per-campione-di-poker-la-gdf-scopre-falsa-residenza-a-malta_b13d3b8f-4ad3-4f7c-99cb-60ea8f240618.html": "2026-10-30T12:30+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/sciopero-a-bologna-bloccati-gli-ingressi-di-diverse-scuole-superiori_29c12d21-74cc-47bb-8022-eae33e3a1d2c.html": "2026-10-30T12:30+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/sciopero-a-bologna-bloccati-gli-ingressi-di-diverse-scuole-superiori_29c12d21-74cc-47bb-8022-eae33e3a1d2c.html": "2026-10-30T12:30+01:00",
+  "https://www.agi.it/cronaca/news/2026-10-30/cortei-oggi-zone-rischio-39779394": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/ieg-festeggia-10-anni-dalla-fusione-delle-fiere-di-rimini-e-vicenza_8b29a647-05ce-4a3e-b9fe-2d917f92fccd.html": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/mia-moglie-mori-a-45-anni-dopo-intervento-al-pancreas-mai-avuto-risposte_c634b698-b800-438d-8268-f077cd176d6c.html": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/maserati-rafforza-la-presenza-in-india-inaugurato-a-mumbai-nuovo-showroom-navnit_0f4c49f3-238e-4df5-b925-a3dffcff64a3.html": "2026-10-30T16:38+01:00",
+  "https://www.agi.it/cronaca/news/2026-10-30/fuga-monossido-parma-morti-39786149": "2026-10-30T16:38+01:00",
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxQU3M5V1BneTl4dElxdXlqX1JwM1FrWm9TbHh4ZHpXZ2VhZE5zdmtVSTNXbjgwTnZGbElWSVBodktzdEpGSVI2MTJudk8yWlhIelVPWGlOaF95N3FLZVZjZ2N3d1hjcEhnTU9rbEJRS2lEWlp6T3ZmUkFWdzVYVVN4Q1dQTF84QdIBiwFBVV95cUxOOExILWRydlBDTkgwSEpuamhpVHF3bHNfU2xNaVZJbXliMTExbThXUVE5M096bWxRZ195cXVzUWRndHFDVTNqNGRlS0VmMkJtb2N3bGNkanNrRE1vb0hGZFhtX2luY2NBa2ZzMzFMX2JNNjluR1lLeENmR2d5WVVNZnhQbWt2c1dGaW5r": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/30/due-morti-per-monossido-e-una-neonata-grave-nel-parmense_2c7b7cee-2629-40ef-b76b-7e338f20334b.html": "2026-10-30T16:38+01:00",
+  "https://news.google.com/rss/articles/CBMimAFBVV95cUxNeDRyVnNhb1RpZk5hdXJNNlhwNkVvVXFZM1B4RVlPV1oxckNIZG1BcTdEbDNKQ1hDcXVJU29hX2lKVTJhTXIwNEpfTG1rcXhHSXR1ME1fNmlBbDFJc2x0c2Zvd2daSHVtUnFXaVdybnhrR2thUnJxSDdXUmxFRTVFLUdNVG1DRVpad1J3NUdmZkpZME9NY0Z0dA": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/torre-garisenda-inizia-linstallazione-per-le-macchine-di-tiro_5041b7a8-2a4f-4680-b970-7ce96ebcf572.html": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/la-transizione-ecologica-per-la-ceramica-appuntamento-a-bologna_3a501dbe-04e9-46ee-b3a4-316ca9343e89.html": "2026-10-30T16:38+01:00",
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxQREhpZG5aaHdVMUxvSV9mYnFMak5sM3UzWVZvelpFbUpmbVhpR21mVE1NTTIyVDl6Yjl6dnJjYzRaNXM3Z1dtZkFHbjFoRk9jdm5OZ2d0cVFfcnBaSkF1YklyUXBOeTNjZ00wVEM2U2RrUVlxZE1RekJESDExNnRVODNiSFd5QUU4aDdzck9Jd09Tb1dWUU5nbmxaSVdRcXY4UHV0ODNKS3NPeWRqYWxSNXFEdlItUTR1SUx3Slo0WGtjbUlf": "2026-10-30T16:38+01:00",
+  "https://www.adnkronos.com/cronaca/coppia-morta-parma-grave-bambina_1oWlaRtCKntxq7HsIGJqOl": "2026-10-30T16:38+01:00",
+  "https://news.google.com/rss/articles/CBMitAFBVV95cUxPa0hCSU96X3VvT2xUQ2hOb0YySHdjQTlKdTdsM3U2RVlGdllUZUdHZzktbWhncEQ0M0s5UzNPNWtXWEZydEN4TGhXU0hPbnNlNmpxbE1iVE1aeUZXSy0zTGJtSlh4TE5ORlFZbDFXMnVPYlRDXzJjNWxZZGVKNTliNVVMS0Z3YWc0YVJpRC1VTm94cFljR3ZjelZRY3dFX2tOMWU2TnpjVGpCUGY5X01uLWR5VEI": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/enel-accende-il-novembre-dellunipol-arena-a-bologna-da-pausini-a-cremonini_4d8b2609-00f9-46ad-9dc8-c23b610b551c.html": "2026-10-30T16:38+01:00",
+  "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTDY3c3ZHQ1pYbW1KTmFUWFFuSkpxSkhkU2pnOW9IWDNiUHZPcDJlbWhvQ0JWZVFfeGp6ekNvbkx6ODRabEQ0aElTWFJpc0xvdjZWUGFRRzBveDl0YUZ3ZURXSXAtV0pXUHNnSE1kcDNrX1NJZ1poelZqVDFBU0RuSzljRzlHbjJWR014Mg": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/a-bologna-il-corteo-entra-in-tangenziale_224f2178-8beb-4fba-9419-2b81672c2961.html": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/le-madri-dei-liceali-a-bologna-in-sciopero-per-i-loro-diritti_7d8575cf-2751-4490-b242-5bfd83dabb57.html": "2026-10-30T16:38+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/parto-in-bus-a-bologna-donna-aiutata-dalla-conducente-e-dalle-passeggere_bc649cf5-5265-4df4-a8d3-5a275299a66f.html": "2026-10-30T16:38+01:00",
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxNODc2OWVuMW1Jbks4NzlhWENMUmtqT1p5N2RYaTJSZ2lYYXVSX3Zac2dVbDV0dGgtcjN5Q09RUmoySG1qMDNnSVpLQVRjQ1RzRElQRjlIRmRTOWo0Nnc1UUt0Y2xaU3ktemgzWXJQM2ViVEtDNHVPa2MwelgtV21oR3hLU2hKR3hGWjBuOHVDUkIzY2RBMGpNelZfUWxUT3VOcGdKQzk0ZGdSRUpuTEpDTEFEejhXQQ": "2026-10-30T16:38+01:00",
+  "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSWdGb0M3dWl0cThFVTU4emtpYkNHaGo0eGhsdktXYk5rQmotbVhfVE1FcU9SdC1YZi1VbGtnbWJKWUtwTzhHVjYzbzhCQ3FfNEtmbG1QeTEyM0MzTVMwZnNvYlpiaVM3Ri02MXpWZzdKQ25mZG5INHNMajZEUTVlWVl1MA": "2026-10-30T16:38+01:00",
+  "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSGlDRVY1RjIySWhTeFd5aGRGQ2R0X1VMUjFULWpLSmFPbjBhc1dtenE0b1BqUm44RXBXaWV6ZTJvOVNZU1lnSFFQRWJYTzVKeDRtNDlNcDlqXzNybzhmenI2MmtTZzhheG9pYXNuRVpTM0h1YzBPUTN0ZENtYU1BMnhfNFEyWUlvb1RFQmVxMkNHRzMtd2dXUGt3YWQxbXRsOWF2RU5rSWgtOWpS": "2026-10-30T16:38+01:00",
+  "https://www.italpress.com/sciopero-generale-italia-si-ferma-tornano-piazza-studenti": "2026-10-30T16:38+01:00"
  },
- "updated": "2026-10-30T12:30+01:00",
- "next": "alle 16",
+ "updated": "2026-10-30T16:38+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-10-30T12:30+01:00",
-  "articles": 10,
-  "items": 4,
+  "at": "2026-10-30T16:38+01:00",
+  "articles": 22,
+  "items": 7,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -182,8 +277,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 44,
-    "kept": 4
+    "items": 45,
+    "kept": 9
    },
    {
     "agency": "ANSA",
@@ -204,7 +299,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "AGI",
@@ -217,15 +312,15 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 20,
-    "kept": 0
+    "items": 22,
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -274,28 +369,28 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 3
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 0,
-    "kept": 0
+    "items": 1,
+    "kept": 1
    }
   ]
  },
