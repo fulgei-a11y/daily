@@ -214,22 +214,9 @@
     "https://www.dire.it/29-10-2026/1282164-clausola-multe-a-chi-parla-con-i-giornalisti-nel-bando-il-comune-di-ravenna-segnalato-allanticorruzione"
    ],
    "html": "<strong>Comune di Ravenna segnalato all'ANAC per clausola \"multe a chi parla con i giornalisti\"</strong> — Ravenna: l'Associazione stampa Emilia-Romagna ha segnalato il Comune all'Autorità Nazionale Anticorruzione per una clausola in un bando sui servizi di contrasto alla povertà estrema che prevede sanzioni economiche per chi parla con i giornalisti. <span class=\"src\">Fonte: <a href=\"https://www.dire.it/29-10-2026/1282164-clausola-multe-a-chi-parla-con-i-giornalisti-nel-bando-il-comune-di-ravenna-segnalato-allanticorruzione/\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
-  },
-  {
-   "t": "2026-10-29T08:48+01:00",
-   "cat": "Cronaca",
-   "bo": false,
-   "title": "Arrestato 76enne per omicidio del cugino disabile",
-   "links": [
-    "https://www.adnkronos.com/cronaca/omicidio-disabile-bomboloni-crema-reggio-emilia_6Lr458GxoDx0zH0A9AoPnj",
-    "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/uccise-il-cugino-per-leredita-bomba-alla-crema-larma-del-delitto_a13092ee-0db2-415e-a692-9cbf6676e2f5.html"
-   ],
-   "html": "<strong>Arrestato 76enne per omicidio del cugino disabile</strong> — Reggio Emilia: un uomo di 76 anni è stato arrestato e posto ai domiciliari, sospettato di aver ucciso il cugino disabile di 74 anni lo scorso giugno, soffocandolo con dei bomboloni alla crema per motivi ereditari. <span class=\"src\">Fonti: <a href=\"https://www.adnkronos.com/cronaca/omicidio-disabile-bomboloni-crema-reggio-emilia_6Lr458GxoDx0zH0A9AoPnj\" target=\"_blank\" rel=\"noopener\">Adnkronos</a>, <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/10/29/uccise-il-cugino-per-leredita-bomba-alla-crema-larma-del-delitto_a13092ee-0db2-415e-a692-9cbf6676e2f5.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
   }
  ],
  "seen": {
-  "https://www.adnkronos.com/cronaca/omicidio-disabile-bomboloni-crema-reggio-emilia_6Lr458GxoDx0zH0A9AoPnj": "2026-10-29T08:48+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/29/uccise-il-cugino-per-leredita-bomba-alla-crema-larma-del-delitto_a13092ee-0db2-415e-a692-9cbf6676e2f5.html": "2026-10-29T08:48+01:00",
   "https://www.dire.it/29-10-2026/1282164-clausola-multe-a-chi-parla-con-i-giornalisti-nel-bando-il-comune-di-ravenna-segnalato-allanticorruzione": "2026-10-29T12:36+01:00",
   "https://www.dire.it/29-10-2026/1282153-lo-zecchino-doro-torna-in-prima-serata-e-in-onda-da-roma": "2026-10-29T12:36+01:00",
   "https://www.italpress.com/emilia-romagna-porta-la-food-valley-toronto-per-spingere-export": "2026-10-29T12:36+01:00",
@@ -300,14 +287,22 @@
   "https://www.dire.it/30-10-2026/1282990-bologna-lo-stabilimento-e-dismesso-ma-produzione-e-fiorente-di-marijuana": "2026-10-30T20:39+01:00",
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxNMWVwMjA4MUp0blZIb3FhWWJFUk5BdFdIRXgxU1FLbnhxTjBEY2J1cE5pcmdNTWpnZW9SaGxjLVJ4WExBeUVhcVZjYzZFX0h2YTVIZ2lkYkZRMDF0dXdFZnpoU0lBc2dzTTdRdGw2eXRzQVdObUJtYW85M3pWS0VvQk1OelJsQjhpNjVqUDB0MWNoTnM": "2026-10-30T20:39+01:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/10/30/a-bologna-il-corteo-entra-in-tangenziale_067cdebe-6022-4320-a477-693799479ea9.html": "2026-10-30T20:39+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/10/30/parto-in-bus-a-bologna-donna-aiutata-dalla-conducente-e-dalle-passeggere_c9810a87-68ce-45ff-aa1b-f4ba16519701.html": "2026-10-30T20:39+01:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/30/parto-in-bus-a-bologna-donna-aiutata-dalla-conducente-e-dalle-passeggere_c9810a87-68ce-45ff-aa1b-f4ba16519701.html": "2026-10-30T20:39+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/f1-messicoferrari-leclerc-domina-seconde-libere-quarto-tempo-per-mercedes-antonelli_a2b75389-c6a1-4871-83bd-770a999889a9.html": "2026-10-31T00:28+01:00",
+  "https://www.dire.it/30-10-2026/1283047-zelensky-dai-russi-non-un-solo-passo-verso-de-escalation-energetica": "2026-10-31T00:28+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/f1-messico-ferrari-leclerc-davanti-in-prime-libere-poi-mercedes-antonelli_68e4567b-5d2c-412f-896c-e590aeb79cd0.html": "2026-10-31T00:28+01:00",
+  "https://www.italpress.com/ti-accompagno-in-europa": "2026-10-31T00:28+01:00",
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUEVNZ1oyX1ZKa1RncHFFVnN3WUw2VUp5aFVpVWFWNHUwVU5peWx5RmpPejV4S08xUmtEemxuSWhydjJabXBDUlVDMGNEaTJxdDBRWlg0dzJ6WFJtTzctcTUwdmhybHJPblFTZXpaMDIyUWN6cEl4U2lUb2xwenVrRG54WWVWN3M5WW9pbWpOcEg0X2RkRDhKcnhuZEpDWTRoMy0waW5ycnZCV1dKa2hHNFh3": "2026-10-31T00:28+01:00",
+  "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOOExILWRydlBDTkgwSEpuamhpVHF3bHNfU2xNaVZJbXliMTExbThXUVE5M096bWxRZ195cXVzUWRndHFDVTNqNGRlS0VmMkJtb2N3bGNkanNrRE1vb0hGZFhtX2luY2NBa2ZzMzFMX2JNNjluR1lLeENmR2d5WVVNZnhQbWt2c1dGaW5r0gGLAUFVX3lxTE44TEgtZHJ2UENOSDBISm5qaGlUcXdsc19TbE1pVklteWIxMTFtOFdRUTkzT3ptbFFnX3lxdXNRZGd0cUNVM2o0ZGVLRWYyQm1vY3dsY2Rqc2tETW9vSEZkWG1faW5jY0FrZnMzMUxfYk02OW5HWUt4Q2ZHZ3lZVU1meFBta3ZzV0Zpbms": "2026-10-31T00:28+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/due-morti-per-monossido-e-una-neonata-grave-nel-parmense_13936678-5d3a-4020-b055-949ace009095.html": "2026-10-31T00:28+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/30/morte-di-fakir-controperizie-entro-il-15-novembre-poi-la-salma-in-marocco_18efa174-2b4c-467f-a0ad-c756662f3eac.html": "2026-10-31T00:28+01:00"
  },
- "updated": "2026-10-30T20:39+01:00",
- "next": "alle 24",
+ "updated": "2026-10-31T00:28+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-10-30T20:39+01:00",
+  "at": "2026-10-31T00:28+01:00",
   "articles": 8,
-  "items": 3,
+  "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -315,21 +310,21 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 41,
-    "kept": 2
+    "items": 42,
+    "kept": 4
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 55,
+    "items": 52,
     "kept": 0
    },
    {
@@ -350,8 +345,8 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 11,
-    "kept": 0
+    "items": 13,
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -372,7 +367,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -400,7 +395,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",

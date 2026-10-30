@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 30 Oct 2026 20:39:20 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 00:28:50 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · venerdì 30 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Maxi piantagione di marijuana scoperta ad Altedo; Sviluppi: Sciopero generale, corteo in tangenziale e disagi per la polizia; Sviluppi: Nascita in autobus sulla linea 39; Sviluppi: Via Zoccoli, il Comune incontrerà i residenti; Sviluppi: Morte di Abderrahim Fakir, la nipote denuncia &quot;orrore inqualificabile&quot;; Donna di 76 anni morta in un canale a Minerbio.</description>
@@ -573,36 +573,6 @@
       <pubDate>Mon, 12 Oct 2026 06:16:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-12.mp3" length="11764080" type="audio/mpeg"/>
       <itunes:duration>2352</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · domenica 11 ottobre 2026</title>
-      <description>27 notizie dall&#x27;Emilia-Romagna. In apertura: Arresti per spaccio e denuncia per tentata rapina; Donna grave dopo incidente stradale; Rissa tra gruppi di giovani; Controlli straordinari del territorio; Escursionisti punti da calabroni; Infortunio in gara di mountain bike.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-11</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-11-19</guid>
-      <pubDate>Sun, 11 Oct 2026 19:07:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-11-19.mp3" length="2505762" type="audio/mpeg"/>
-      <itunes:duration>501</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · domenica 11 ottobre 2026</title>
-      <description>64 notizie dall&#x27;Emilia-Romagna. In apertura: Indagata marescialla dei Carabinieri per falsa paternità; Reggio Children: educatori ebrei annullano visita per richiesta di presa di distanza da occupazione Gaza; Sviluppi: Sindaco Lepore commenta il ritiro di Casini dalla politica; Incidente stradale a Chiavenna Landi, donna ferita; Chiusure notturne A14 tra Cesena nord e Forlì; Chiusure notturne D14 Diramazione per Ravenna.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-11</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-11-13</guid>
-      <pubDate>Sun, 11 Oct 2026 13:14:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-11-13.mp3" length="4993664" type="audio/mpeg"/>
-      <itunes:duration>998</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · domenica 11 ottobre 2026</title>
-      <description>176 notizie dall&#x27;Emilia-Romagna. In apertura: Cadavere nel laghetto di Osteria Grande; Scontro tra due ultraleggeri a Sassuolo, un ferito; Corteo pro Palestina a Bologna; Legionella nelle scuole di Copparo; Ex prefetto Rinaldo Argentieri è deceduto; Crisi abitativa a Bologna: proposte del sindaco Lepore.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-11</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-11</guid>
-      <pubDate>Sun, 11 Oct 2026 06:13:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-11.mp3" length="12474349" type="audio/mpeg"/>
-      <itunes:duration>2494</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
