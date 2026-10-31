@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 31 Oct 2026 00:28:50 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 05:41:12 +0100</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · sabato 31 ottobre 2026</title>
+      <description>180 notizie dall&#x27;Emilia-Romagna. In apertura: Parto in autobus; Sciopero generale e blocco tangenziale; Arresto per porto abusivo di armi; Inchiesta morte Fakir; Rapper Inoki in tribunale; Sala giochi vicina a clinica.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-10-31</link>
+      <guid isPermaLink="false">rassegna-er-2026-10-31</guid>
+      <pubDate>Sat, 31 Oct 2026 05:37:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-31.mp3" length="7907806" type="audio/mpeg"/>
+      <itunes:duration>2635</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · venerdì 30 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Maxi piantagione di marijuana scoperta ad Altedo; Sviluppi: Sciopero generale, corteo in tangenziale e disagi per la polizia; Sviluppi: Nascita in autobus sulla linea 39; Sviluppi: Via Zoccoli, il Comune incontrerà i residenti; Sviluppi: Morte di Abderrahim Fakir, la nipote denuncia &quot;orrore inqualificabile&quot;; Donna di 76 anni morta in un canale a Minerbio.</description>
