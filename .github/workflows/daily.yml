@@ -190,6 +190,11 @@ jobs:
           tar --exclude=./.git --exclude=./.github --exclude=./tools --exclude='__pycache__' -cf - . | tar -xf - -C "$SITE"
           touch "$SITE/.nojekyll"
           rm -f "$SITE/.gitignore"   # nel sito pubblicato gli MP3 devono esserci
+          # niente motori di ricerca anche per i testi delle edizioni (solo nella copia pubblicata:
+          # i file in main restano come sono, perché li leggono gli altri programmi)
+          for f in "$SITE"/edizioni/*.html; do
+            [ -f "$f" ] && sed -i '1i <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">' "$f"
+          done
           echo "Fotografia del sito: $(ls "$SITE"/audio/*.mp3 2>/dev/null | wc -l) audio"
 
           # 1) ramo main: testi, indici e dati (gli MP3 solo finché il sito non è servito da gh-pages)
