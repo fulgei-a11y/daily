@@ -234,14 +234,21 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/halloween-monsterland-festival-a-imola-35mila-biglietti-in-prevendita_70283ef9-8d97-4bb0-ac88-e4435e031f66.html": "2026-10-31T16:22+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/a-bologna-quasi-1.400-firme-per-intitolare-piazza-verdi-a-francesco-lorusso_3a4f451f-65c3-462e-b8aa-f031c401a796.html": "2026-10-31T16:22+01:00",
   "https://www.italpress.com/sisma-centro-italia-papa-leone-xiv-servono-risposte-urgenti": "2026-10-31T16:22+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/attentato-di-modena-lavvocato-della-vittima-attacca-la-pm-di-bologna_56ff50d6-b52c-4d32-a95e-07fd785dcef5.html": "2026-10-31T16:22+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/attentato-di-modena-lavvocato-della-vittima-attacca-la-pm-di-bologna_56ff50d6-b52c-4d32-a95e-07fd785dcef5.html": "2026-10-31T16:22+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/greenrock-2026-torna-a-rimini-donata-tele-autogragata-da-vasco-e-don-ciotti_b410466e-0d96-40e1-b397-f9f769af3dc3.html": "2026-10-31T20:30+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/10/31/il-parto-sul-bus-lautista-racconta-un-abbraccio-di-umanita_b4627c5c-04d2-4f71-88a3-39ad3f7e5360.html": "2026-10-31T20:30+01:00",
+  "https://news.google.com/rss/articles/CBMiggFBVV95cUxPcExRa3U3MmZ6UUlXdE5OTm5FdVc5RkxvU1BDT25rZlJQWEVpTURpTnRfUWJlb0xQVUZ2eWwxWm5mMzQxWkhuSm0wQVJpUXRrY2t0TjZ2bXdtV1VXR1l0b2JvOHJDalE5VWpZcnZRZGgzTVQyTmtmVmtCMVpueVU2VFJn0gGCAUFVX3lxTE9wTFFrdTcyZnpRSVd0Tk5ObkV1VzlGTG9TUENPbmtmUlBYRWlNRGlOdF9RYmVvTFBVRnZ5bDFabmYzNDFaSG5KbTBBUmlRdGtja3RONnZtd21XVVdHWXRvYm84ckNqUTlVallydlFkaDNNVDJOa2ZWa0IxWm55VTZUUmc": "2026-10-31T20:30+01:00",
+  "https://www.italpress.com/il-bologna-torna-a-vincere-al-dallara-monza-battuto-per-2-1": "2026-10-31T20:30+01:00",
+  "https://www.italpress.com/bologna-monza-2-1-voti-tabellino-gol-cronaca-serie-a": "2026-10-31T20:30+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/benji-fede-diventano-maxisculture-di-cioccolato-del-gabon-a-sciocola_8477f529-7a15-4cfc-ac07-87be0d294137.html": "2026-10-31T20:30+01:00",
+  "https://www.italpress.com/emilia-romagna-presenta-le-proprie-eccellenze-agroalimentari-a-montreal": "2026-10-31T20:30+01:00"
  },
- "updated": "2026-10-31T16:22+01:00",
- "next": "alle 20",
+ "updated": "2026-10-31T20:30+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-10-31T16:22+01:00",
-  "articles": 6,
-  "items": 2,
+  "at": "2026-10-31T20:30+01:00",
+  "articles": 7,
+  "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -249,21 +256,21 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 39,
-    "kept": 4
+    "items": 30,
+    "kept": 2
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 37,
+    "items": 33,
     "kept": 0
    },
    {
@@ -284,8 +291,8 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 7,
-    "kept": 0
+    "items": 10,
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -334,14 +341,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 3
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
