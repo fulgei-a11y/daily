@@ -241,13 +241,18 @@
   "https://www.italpress.com/il-bologna-torna-a-vincere-al-dallara-monza-battuto-per-2-1": "2026-10-31T20:30+01:00",
   "https://www.italpress.com/bologna-monza-2-1-voti-tabellino-gol-cronaca-serie-a": "2026-10-31T20:30+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/benji-fede-diventano-maxisculture-di-cioccolato-del-gabon-a-sciocola_8477f529-7a15-4cfc-ac07-87be0d294137.html": "2026-10-31T20:30+01:00",
-  "https://www.italpress.com/emilia-romagna-presenta-le-proprie-eccellenze-agroalimentari-a-montreal": "2026-10-31T20:30+01:00"
+  "https://www.italpress.com/emilia-romagna-presenta-le-proprie-eccellenze-agroalimentari-a-montreal": "2026-10-31T20:30+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/il-parto-sul-bus-lautista-racconta-un-abbraccio-di-umanita_b484745e-4baf-4421-989f-e29d23a25c38.html": "2026-11-01T00:28+01:00",
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxQa25JUjVka2d3R2JPN0VCSHI5RlZYdU5rTGVBd2V3VnlyMWVCdlNKd3Z5MWUzOFlWN05zQnczN1RpbEJDMDBGMXctZmtpclFTWl9mNFBURENXSXloeUxFRDBMSm8tVVdoaENpUEJteWVNbzZtbjJ4VDNDZkRRazFEUDVYZlRTdw": "2026-11-01T00:28+01:00",
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeXdvaXdCTVQtWFpPN3BDOFNiUGlwaDZpTzJkS21OQ3UwZF9nRXJWVDduemJ3UWdjbDl2RE4tVUk2MlVpdFA4UDI1Z2hubk03R1FYbEMtc2VIOWZTN0J5cnVJMmxtMDR5NjJMLU96QXFxdnZQT29icDl1VDhNQmc3ZDc4ZDJxbVE0b3pOUXlhOA": "2026-11-01T00:28+01:00",
+  "https://news.google.com/rss/articles/CBMifEFVX3lxTFA0d2o4OEpTVXVCdWdBNmljdDNiZGxobkNQbVpxT2RJVkJQM0J0YVlpUlJ2aHFXTElxT2o5X2lheHpycEliSmM4cl9vQWEyWjFCZTQ4RlozRVEwQVNSOHQ3NXktU2k0X1NjNVRNRFFHcDVWU29KU2FOWXp1dnXSAYIBQVVfeXFMT3BMUWt1NzJmelFJV3ROTk5uRXVXOUZMb1NQQ09ua2ZSUFhFaU1EaU50X1FiZW9MUFVGdnlsMVpuZjM0MVpIbkptMEFSaVF0a2NrdE42dm13bVdVV0dZdG9ibzhyQ2pROVVqWXJ2UWRoM01UMk5rZlZrQjFabnlVNlRSZw": "2026-11-01T00:28+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/sciopero-bologna-la-questura-300-identificati-e-nessuno-scontro_1a41253c-32da-4652-9307-d406e6016373.html": "2026-11-01T00:28+01:00"
  },
- "updated": "2026-10-31T20:30+01:00",
- "next": "alle 24",
+ "updated": "2026-11-01T00:28+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-10-31T20:30+01:00",
-  "articles": 7,
+  "at": "2026-11-01T00:28+01:00",
+  "articles": 5,
   "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -264,13 +269,13 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 33,
+    "items": 32,
     "kept": 0
    },
    {
@@ -291,7 +296,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 10,
+    "items": 9,
     "kept": 1
    },
    {
@@ -341,14 +346,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 3
+    "kept": 0
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Dire",
@@ -361,7 +366,7 @@
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
-    "items": 60,
+    "items": 52,
     "kept": 0
    },
    {

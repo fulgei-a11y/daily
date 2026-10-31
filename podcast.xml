@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 31 Oct 2026 20:30:52 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 00:28:24 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · sabato 31 ottobre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Parto sul bus, il racconto dell&#x27;autista; Futuro dello Stadio Dall&#x27;Ara; Arresto per atti persecutori a Medicina; Maxirissa in centro accoglienza minori; Incendio auto a Castelfranco Emilia; Perquisizioni per incitazione alla violenza.</description>
@@ -573,36 +573,6 @@
       <pubDate>Tue, 13 Oct 2026 06:17:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-13.mp3" length="11042030" type="audio/mpeg"/>
       <itunes:duration>3680</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · lunedì 12 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente mortale a Bentivoglio; Rapine in casa con adescamento online; Minacce a Manuela Bianchi, cade accusa di diffamazione; Nonno a processo per stalking dopo tragedia via delle Piante; Motociclista grave dopo scontro sulla Statale 45; Incendio in casa di riposo a Guastalla.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-12</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-12-19</guid>
-      <pubDate>Mon, 12 Oct 2026 19:09:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-12-19.mp3" length="3097957" type="audio/mpeg"/>
-      <itunes:duration>619</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · lunedì 12 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente domestico fatale a Verucchio; Tredici incidenti stradali nel weekend; Guida in stato di ebbrezza a Fiorenzuola; Donna morta in incendio domestico; Truffa ad anziana con finti medici; Aumento denunce di reato a Ravenna.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-12</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-12-13</guid>
-      <pubDate>Mon, 12 Oct 2026 13:17:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-12-13.mp3" length="2825500" type="audio/mpeg"/>
-      <itunes:duration>565</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · lunedì 12 ottobre 2026</title>
-      <description>154 notizie dall&#x27;Emilia-Romagna. In apertura: Bufera su Reggio Children per la visita di insegnanti ebrei; Aumentano gli infortuni sul lavoro, calano i decessi nel Ferrarese e Modenese; Papa Leone XIV annuncia operazione per nodulo al polmone; Nave Amerigo Vespucci a Marina di Ravenna: boom di richieste e sito in tilt; Asili nido, la Regione Emilia-Romagna stanzia 37,2 milioni di euro; Oliver Stone saluta Ferrara dopo una settimana di rassegna cinematografica.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-12</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-12</guid>
-      <pubDate>Mon, 12 Oct 2026 06:16:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-12.mp3" length="11764080" type="audio/mpeg"/>
-      <itunes:duration>2352</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
