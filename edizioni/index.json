@@ -1,0 +1,481 @@
+[
+ {
+  "date": "2026-10-31",
+  "items": 178,
+  "updated": "2026-10-31T05:37+01:00",
+  "articles": 520,
+  "sources": 140,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-31T13:24+01:00",
+    "items": 35,
+    "articles": 496
+   }
+  ]
+ },
+ {
+  "date": "2026-10-30",
+  "items": 136,
+  "updated": "2026-10-30T05:40+01:00",
+  "articles": 520,
+  "sources": 140,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-30T13:27+01:00",
+    "items": 35,
+    "articles": 520
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-30T19:29+01:00",
+    "items": 35,
+    "articles": 420
+   }
+  ]
+ },
+ {
+  "date": "2026-10-29",
+  "items": 175,
+  "updated": "2026-10-29T05:41+01:00",
+  "articles": 520,
+  "sources": 139,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-29T13:28+01:00",
+    "items": 35,
+    "articles": 520
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-29T19:31+01:00",
+    "items": 35,
+    "articles": 425
+   }
+  ]
+ },
+ {
+  "date": "2026-10-28",
+  "items": 153,
+  "updated": "2026-10-28T05:39+01:00",
+  "articles": 520,
+  "sources": 156,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-28T13:29+01:00",
+    "items": 35,
+    "articles": 520
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-28T19:30+01:00",
+    "items": 35,
+    "articles": 448
+   }
+  ]
+ },
+ {
+  "date": "2026-10-27",
+  "items": 137,
+  "updated": "2026-10-27T05:29+01:00",
+  "articles": 520,
+  "sources": 130,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-27T13:24+01:00",
+    "items": 35,
+    "articles": 520
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-27T19:39+01:00",
+    "items": 35,
+    "articles": 434
+   }
+  ]
+ },
+ {
+  "date": "2026-10-26",
+  "items": 133,
+  "updated": "2026-10-26T05:31+01:00",
+  "articles": 520,
+  "sources": 129,
+  "updates": [
+   {
+    "slot": "19",
+    "updated": "2026-10-26T19:26+01:00",
+    "items": 35,
+    "articles": 520
+   }
+  ]
+ },
+ {
+  "date": "2026-10-25",
+  "items": 187,
+  "updated": "2026-10-25T05:29+01:00",
+  "articles": 458,
+  "sources": 26,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-25T13:13+01:00",
+    "items": 30,
+    "articles": 400
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-25T19:13+01:00",
+    "items": 34,
+    "articles": 207
+   }
+  ]
+ },
+ {
+  "date": "2026-10-24",
+  "items": 157,
+  "updated": "2026-10-24T06:24+02:00",
+  "articles": 520,
+  "sources": 145,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-24T13:22+02:00",
+    "items": 35,
+    "articles": 453
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-24T19:16+02:00",
+    "items": 35,
+    "articles": 331
+   }
+  ]
+ },
+ {
+  "date": "2026-10-23",
+  "items": 153,
+  "updated": "2026-10-23T06:28+02:00",
+  "articles": 520,
+  "sources": 147,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-23T13:28+02:00",
+    "items": 35,
+    "articles": 520
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-23T19:21+02:00",
+    "items": 35,
+    "articles": 435
+   }
+  ]
+ },
+ {
+  "date": "2026-10-22",
+  "items": 191,
+  "updated": "2026-10-22T06:29+02:00",
+  "articles": 520,
+  "sources": 138,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-22T13:29+02:00",
+    "items": 35,
+    "articles": 520
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-22T19:21+02:00",
+    "items": 35,
+    "articles": 468
+   }
+  ]
+ },
+ {
+  "date": "2026-10-21",
+  "items": 158,
+  "updated": "2026-10-21T06:28+02:00",
+  "articles": 520,
+  "sources": 142,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-21T13:27+02:00",
+    "items": 35,
+    "articles": 515
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-21T19:21+02:00",
+    "items": 35,
+    "articles": 435
+   }
+  ]
+ },
+ {
+  "date": "2026-10-20",
+  "items": 139,
+  "updated": "2026-10-20T06:27+02:00",
+  "articles": 520,
+  "sources": 151,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-20T13:27+02:00",
+    "items": 35,
+    "articles": 520
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-20T19:26+02:00",
+    "items": 35,
+    "articles": 451
+   }
+  ]
+ },
+ {
+  "date": "2026-10-19",
+  "items": 87,
+  "updated": "2026-10-19T07:47+02:00",
+  "articles": 520,
+  "sources": 148,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-19T13:29+02:00",
+    "items": 35,
+    "articles": 453
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-19T19:20+02:00",
+    "items": 35,
+    "articles": 485
+   }
+  ]
+ },
+ {
+  "date": "2026-10-18",
+  "items": 83,
+  "updated": "2026-10-18T17:58+02:00",
+  "articles": 440,
+  "sources": 129,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-18T13:22+02:00",
+    "items": 35,
+    "articles": 257
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-18T19:16+02:00",
+    "items": 11,
+    "articles": 42
+   }
+  ]
+ },
+ {
+  "date": "2026-10-17",
+  "items": 172,
+  "updated": "2026-10-17T06:23+02:00",
+  "articles": 380,
+  "sources": 49,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-17T13:22+02:00",
+    "items": 35,
+    "articles": 292
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-17T19:15+02:00",
+    "items": 35,
+    "articles": 203
+   }
+  ]
+ },
+ {
+  "date": "2026-10-16",
+  "items": 220,
+  "updated": "2026-10-16T06:26+02:00",
+  "articles": 380,
+  "sources": 56,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-16T13:27+02:00",
+    "items": 35,
+    "articles": 344
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-16T19:20+02:00",
+    "items": 35,
+    "articles": 290
+   }
+  ]
+ },
+ {
+  "date": "2026-10-15",
+  "items": 181,
+  "updated": "2026-10-15T06:26+02:00",
+  "articles": 380,
+  "sources": 51,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-15T13:27+02:00",
+    "items": 35,
+    "articles": 367
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-15T19:23+02:00",
+    "items": 35,
+    "articles": 272
+   }
+  ]
+ },
+ {
+  "date": "2026-10-14",
+  "items": 239,
+  "updated": "2026-10-14T06:26+02:00",
+  "articles": 380,
+  "sources": 48,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-14T13:28+02:00",
+    "items": 35,
+    "articles": 274
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-14T19:21+02:00",
+    "items": 35,
+    "articles": 242
+   }
+  ]
+ },
+ {
+  "date": "2026-10-13",
+  "items": 204,
+  "updated": "2026-10-13T06:17+02:00",
+  "articles": 327,
+  "sources": 18,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-13T13:17+02:00",
+    "items": 35,
+    "articles": 282
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-13T19:10+02:00",
+    "items": 35,
+    "articles": 255
+   }
+  ]
+ },
+ {
+  "date": "2026-10-12",
+  "items": 153,
+  "updated": "2026-10-12T06:16+02:00",
+  "articles": 380,
+  "sources": 52,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-12T13:17+02:00",
+    "items": 35,
+    "articles": 255
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-12T19:09+02:00",
+    "items": 35,
+    "articles": 244
+   }
+  ]
+ },
+ {
+  "date": "2026-10-11",
+  "items": 175,
+  "updated": "2026-10-11T06:13+02:00",
+  "articles": 380,
+  "sources": 46,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-11T13:14+02:00",
+    "items": 64,
+    "articles": 281
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-11T19:07+02:00",
+    "items": 27,
+    "articles": 128
+   }
+  ]
+ },
+ {
+  "date": "2026-10-10",
+  "items": 200,
+  "updated": "2026-10-10T09:59+02:00",
+  "articles": 380,
+  "sources": 43,
+  "updates": [
+   {
+    "slot": "13",
+    "updated": "2026-10-10T13:58+02:00",
+    "items": 31,
+    "articles": 182
+   },
+   {
+    "slot": "19",
+    "updated": "2026-10-10T19:06+02:00",
+    "items": 40,
+    "articles": 160
+   }
+  ]
+ },
+ {
+  "date": "2026-10-09",
+  "items": 195
+ },
+ {
+  "date": "2026-10-08",
+  "items": 158
+ },
+ {
+  "date": "2026-10-07"
+ },
+ {
+  "date": "2026-10-06"
+ },
+ {
+  "date": "2026-10-05"
+ },
+ {
+  "date": "2026-10-04"
+ },
+ {
+  "date": "2026-10-03"
+ },
+ {
+  "date": "2026-10-02"
+ },
+ {
+  "date": "2026-10-01"
+ }
+]
