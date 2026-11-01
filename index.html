@@ -251,6 +251,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
 .sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 10px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface)}
 .sheet-head h2{margin:0;font-family:var(--f-serif);font-size:22px}
 .sheet-head button{border:0;background:var(--chip);width:34px;height:34px;border-radius:50%;font-size:20px;line-height:1;cursor:pointer;color:var(--ink)}
+.sheet-head .pdfbtn{margin-left:auto;width:auto;height:34px;border-radius:17px;padding:0 14px;font-size:13.5px;font-weight:700;font-family:inherit;background:var(--accent);color:var(--accent-ink)}
 .sheet-body{padding:14px 18px 18px;font-size:15px;line-height:1.5}
 .sheet-body p{margin:0 0 12px}
 .feedurl{display:block;width:100%;font-family:var(--f-mono);font-size:12.5px;padding:10px;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);overflow-wrap:anywhere;margin:0 0 12px}
@@ -385,7 +386,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
 </dialog>
 
 <dialog class="sheet" id="favDlg" aria-labelledby="favTitle">
-  <div class="sheet-head"><h2 id="favTitle">Notizie salvate</h2><button type="button" data-close aria-label="Chiudi">×</button></div>
+  <div class="sheet-head"><h2 id="favTitle">Notizie salvate</h2><button type="button" class="pdfbtn" id="favPdf" title="Salva le notizie in un documento PDF">Salva PDF</button><button type="button" data-close aria-label="Chiudi">×</button></div>
   <div class="sheet-body"><ul class="favlist" id="favList"></ul></div>
 </dialog>
 
@@ -536,6 +537,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
         <span class="ftext">${esc(v.x)}</span>
         <span class="fact"><button type="button" data-go="${esc(v.d)}/${v.i + 1}">Apri nella rassegna</button>${v.l ? `<a href="${esc(v.l)}" target="_blank" rel="noopener noreferrer">${esc(v.s || 'Fonte')}</a>` : ''}<button type="button" data-del="${esc(k)}">Togli</button></span></li>`).join('')
       : '<li class="ftext">Nessuna notizia salvata. Tocca ☆ Salva sotto una notizia per ritrovarla qui, anche nei giorni successivi.</li>';
+    $('#favPdf').hidden = !list.length;
     $('#favDlg').showModal();
   }
   $('#favList').addEventListener('click', e => {
@@ -544,6 +546,111 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     if (g){ $('#favDlg').close(); location.hash = g.dataset.go; }
   });
   $('#favBtn').onclick = openFavs;
+
+  /* ---------- Notizie salvate in PDF (creato qui sul dispositivo, senza librerie esterne) ---------- */
+  const PDF_W = {
+    r: [278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584],
+    b: [278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,333,333,584,584,584,611,975,722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611,333,278,333,584,556,333,556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500,389,280,389,584]
+  };
+  const PDF_SPECIAL = {'€':128,'‚':130,'„':132,'…':133,'Œ':140,'‘':145,'’':146,'“':147,'”':148,'•':149,'–':150,'—':151,'™':153,'œ':156};
+  // testo -> elenco di caratteri WinAnsi (codice + larghezza di riferimento)
+  function pdfChars(s, bold){
+    const W = bold ? PDF_W.b : PDF_W.r, out = [];
+    for (const ch of String(s).replace(/[   ]/g, ' ').replace(/\s+/g, ' ')) {
+      let c = ch.codePointAt(0), w;
+      if (c >= 32 && c < 127) w = W[c - 32];
+      else if (PDF_SPECIAL[ch]) { c = PDF_SPECIAL[ch]; w = c === 151 || c === 133 ? 1000 : c === 140 || c === 156 ? 1000 : c === 150 || c === 128 ? 556 : c === 149 ? 350 : c === 153 ? 1000 : bold ? 500 : 333; }
+      else if (c >= 160 && c < 256) { const base = ch.normalize('NFD')[0].codePointAt(0); w = base >= 32 && base < 127 && base !== c ? W[base - 32] : 556; }
+      else { const base = ch.normalize('NFD').replace(/[̀-ͯ]/g, ''); if (base && base.codePointAt(0) < 127) { c = base.codePointAt(0); w = W[c - 32]; } else continue; }
+      out.push([c, w]);
+    }
+    return out;
+  }
+  const pdfStr = chars => '(' + chars.map(([c]) => c === 40 || c === 41 || c === 92 ? '\\' + String.fromCharCode(c) : c < 127 ? String.fromCharCode(c) : '\\' + c.toString(8)).join('') + ')';
+  const pdfWidth = (chars, size) => chars.reduce((a, [, w]) => a + w, 0) * size / 1000;
+  // spezza il testo in righe che stanno nella larghezza data
+  function pdfWrap(s, bold, size, maxW){
+    const words = String(s).trim().split(/\s+/).filter(Boolean), lines = []; let line = '';
+    for (const w of words) {
+      const t = line ? line + ' ' + w : w;
+      if (pdfWidth(pdfChars(t, bold), size) <= maxW || !line) line = t; else { lines.push(line); line = w; }
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+  function buildFavPdf(list){
+    const PW = 595.28, PH = 841.89, M = 54, TW = PW - 2 * M, BOTTOM = 64;
+    const pages = []; let ops, annots, y;
+    const n2 = v => (Math.round(v * 100) / 100).toString();
+    const newPage = () => { ops = []; annots = []; pages.push({ ops, annots }); y = PH - M; };
+    const text = (s, x, yy, size, bold, rgb) => ops.push(`BT /${bold ? 'F2' : 'F1'} ${size} Tf ${rgb || '0.1 0.1 0.12'} rg ${n2(x)} ${n2(yy)} Td ${pdfStr(pdfChars(s, bold))} Tj ET`);
+    const need = h => { if (y - h < BOTTOM) newPage(); };
+    const oggi = new Date(); const oggiIso = oggi.getFullYear() + '-' + String(oggi.getMonth() + 1).padStart(2, '0') + '-' + String(oggi.getDate()).padStart(2, '0');
+    newPage();
+    text('Rassegna ER · Notizie salvate', M, y - 20, 20, true, '0.55 0.12 0.10'); y -= 40;
+    text(`Creato il ${longDate(oggiIso)} · ${list.length} ${list.length === 1 ? 'notizia' : 'notizie'}`, M, y, 10, false, '0.42 0.42 0.45'); y -= 14;
+    ops.push(`0.8 0.8 0.82 RG 0.8 w ${M} ${n2(y)} m ${n2(PW - M)} ${n2(y)} l S`); y -= 24;
+    list.forEach(([, v], idx) => {
+      const tl = pdfWrap(v.t || '(senza titolo)', true, 12.5, TW), xl = v.x ? pdfWrap(v.x, false, 10.5, TW) : [];
+      need(14 + Math.min(tl.length, 3) * 16 + Math.min(xl.length, 2) * 14 + 10);
+      text(longDate(v.d).toUpperCase(), M, y, 8.5, true, '0.45 0.45 0.48'); y -= 16;
+      tl.forEach(l => { need(16); text(l, M, y, 12.5, true); y -= 16; });
+      y -= 2;
+      xl.forEach(l => { need(14); text(l, M, y, 10.5, false, '0.22 0.22 0.25'); y -= 14; });
+      if (v.l) {
+        let host = ''; try { host = new URL(v.l).hostname.replace(/^www\./, ''); } catch(e) {}
+        const label = 'Fonte: ' + (v.s || host || 'apri l\'articolo') + (host && v.s && !v.s.toLowerCase().includes(host.split('.')[0]) ? ' (' + host + ')' : '');
+        need(18); y -= 4;
+        text(label, M, y, 9.5, false, '0.10 0.32 0.70');
+        const w = pdfWidth(pdfChars(label, false), 9.5);
+        annots.push(`<< /Type /Annot /Subtype /Link /Border [0 0 0] /Rect [${n2(M)} ${n2(y - 3)} ${n2(M + w)} ${n2(y + 10)}] /A << /S /URI /URI ${pdfStr(pdfChars(v.l, false))} >> >>`);
+        y -= 14;
+      }
+      y -= 8;
+      if (idx < list.length - 1) { need(12); ops.push(`0.88 0.88 0.9 RG 0.5 w ${M} ${n2(y + 4)} m ${n2(PW - M)} ${n2(y + 4)} l S`); y -= 14; }
+    });
+    pages.forEach((p, i) => p.ops.push(`BT /F1 8.5 Tf 0.5 0.5 0.53 rg ${n2(M)} 36 Td ${pdfStr(pdfChars('Rassegna ER · ' + location.host + location.pathname.replace(/index\.html$/, ''), false))} Tj ET`,
+      `BT /F1 8.5 Tf 0.5 0.5 0.53 rg ${n2(PW - M - 60)} 36 Td ${pdfStr(pdfChars(`Pagina ${i + 1} di ${pages.length}`, false))} Tj ET`));
+    // assemblaggio del file PDF
+    const objs = [];
+    const add = s => (objs.push(s), objs.length);
+    add('<< /Type /Catalog /Pages 2 0 R >>');
+    add('');  // segnaposto per l'elenco delle pagine
+    add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');
+    add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');
+    add(`<< /Title ${pdfStr(pdfChars('Rassegna ER - Notizie salvate', false))} /Producer (Rassegna ER) >>`);
+    const kids = pages.map(p => {
+      const body = p.ops.join('\n');
+      const c = add(`<< /Length ${body.length} >>\nstream\n${body}\nendstream`);
+      return add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PW} ${PH}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${c} 0 R${p.annots.length ? ' /Annots [' + p.annots.join(' ') + ']' : ''} >>`);
+    });
+    objs[1] = `<< /Type /Pages /Kids [${kids.map(k => k + ' 0 R').join(' ')}] /Count ${kids.length} >>`;
+    let out = '%PDF-1.4\n%âãÏÓ\n'; const offs = [];
+    objs.forEach((o, i) => { offs.push(out.length); out += `${i + 1} 0 obj\n${o}\nendobj\n`; });
+    const xref = out.length;
+    out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n` + offs.map(o => String(o).padStart(10, '0') + ' 00000 n \n').join('');
+    out += `trailer\n<< /Size ${objs.length + 1} /Root 1 0 R /Info 5 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
+    const bytes = new Uint8Array(out.length); for (let i = 0; i < out.length; i++) bytes[i] = out.charCodeAt(i) & 255;
+    return { bytes, name: `notizie-salvate-${oggiIso}.pdf` };
+  }
+  async function saveFavPdf(){
+    const list = Object.entries(getFavs()).sort((a, b) => b[1].d.localeCompare(a[1].d));
+    if (!list.length) { toast('Nessuna notizia salvata da esportare'); return; }
+    const { bytes, name } = buildFavPdf(list);
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    // sul telefono: menu Condividi (Salva su File, Drive, WhatsApp, e-mail…); sul computer: scaricamento
+    try {
+      const file = new File([blob], name, { type: 'application/pdf' });
+      if (matchMedia('(pointer:coarse)').matches && navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: 'Notizie salvate' }); return;
+      }
+    } catch(e) { if (e && e.name === 'AbortError') return; }
+    const url = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+    toast('PDF creato: ' + name);
+  }
+  $('#favPdf').onclick = saveFavPdf;
   document.querySelectorAll('dialog [data-close]').forEach(b => b.onclick = () => b.closest('dialog').close());
   document.querySelectorAll('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
 
