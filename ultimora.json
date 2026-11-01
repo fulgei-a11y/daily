@@ -1,6 +1,46 @@
 {
  "items": [
   {
+   "t": "2026-11-01T12:27+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Allerta arancione per mare agitato e vento forte",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/allerta-arancione-per-lo-stato-del-mare-lungo-la-costa-romagnola_d534b346-dbb2-4456-ade6-910941fd34b3.html"
+   ],
+   "html": "<strong>Allerta arancione per mare agitato e vento forte</strong> — Costa Romagnola (Rimini, Forlì-Cesena, Ravenna): Allerta arancione per lo stato del mare, con onde superiori a 3,2 metri e venti di burrasca moderata, e allerta gialla per vento forte su costa e collina. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/01/allerta-arancione-per-lo-stato-del-mare-lungo-la-costa-romagnola_d534b346-dbb2-4456-ade6-910941fd34b3.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-01T12:27+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Maxi tamponamento sulla A14 per grandinata, un ferito grave",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/forte-grandinata-e-maxi-tamponamento-con-12-auto-coinvolte-sulla-a14_de3d5c6a-54fb-4cf0-90f0-d5de8d804a56.html"
+   ],
+   "html": "<strong>Maxi tamponamento sulla A14 per grandinata, un ferito grave</strong> — Cesena (Forlì-Cesena): Un tamponamento che ha coinvolto circa dodici auto, causato da una forte grandinata, ha portato alla chiusura di un tratto dell'A14 in direzione Sud, con una persona estratta in gravi condizioni e trasportata in elicottero all'ospedale Bufalini. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/01/forte-grandinata-e-maxi-tamponamento-con-12-auto-coinvolte-sulla-a14_de3d5c6a-54fb-4cf0-90f0-d5de8d804a56.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-01T12:27+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Cacciatore scivola in una scarpata, soccorso nella notte",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/cacciatore-scivola-in-una-scarpata-nel-cesenate-soccorso-nella-notte_00c397b1-1aee-4de9-be97-39f42c3d9e39.html"
+   ],
+   "html": "<strong>Cacciatore scivola in una scarpata, soccorso nella notte</strong> — Cesenate (Forlì-Cesena): Un cacciatore è scivolato in una scarpata riportando escoriazioni e una sospetta frattura a una costola, soccorso nella notte da Saer, Carabinieri e Vigili del Fuoco. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/01/cacciatore-scivola-in-una-scarpata-nel-cesenate-soccorso-nella-notte_00c397b1-1aee-4de9-be97-39f42c3d9e39.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-01T12:27+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Ruba offerte in camera mortuaria, fermato e arrestato",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/ruba-le-offerte-nella-camera-mortuaria-fermato-da-familiare-di-un-defunto-e-arrestato_a1f480d0-d411-46d7-ad7e-f6f17d3a62b0.html"
+   ],
+   "html": "<strong>Ruba offerte in camera mortuaria, fermato e arrestato</strong> — Forlì: Un uomo, già noto alle forze dell'ordine, ha rubato la cassetta delle offerte dalla camera mortuaria dell'ospedale Morgagni-Pierantoni, ma è stato fermato da un familiare di un defunto e arrestato dalla Polizia. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/01/ruba-le-offerte-nella-camera-mortuaria-fermato-da-familiare-di-un-defunto-e-arrestato_a1f480d0-d411-46d7-ad7e-f6f17d3a62b0.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-10-31T16:22+01:00",
    "cat": "",
    "bo": false,
@@ -61,23 +101,30 @@
   "https://news.google.com/rss/articles/CBMihgFBVV95cUxQa25JUjVka2d3R2JPN0VCSHI5RlZYdU5rTGVBd2V3VnlyMWVCdlNKd3Z5MWUzOFlWN05zQnczN1RpbEJDMDBGMXctZmtpclFTWl9mNFBURENXSXloeUxFRDBMSm8tVVdoaENpUEJteWVNbzZtbjJ4VDNDZkRRazFEUDVYZlRTdw": "2026-11-01T00:28+01:00",
   "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeXdvaXdCTVQtWFpPN3BDOFNiUGlwaDZpTzJkS21OQ3UwZF9nRXJWVDduemJ3UWdjbDl2RE4tVUk2MlVpdFA4UDI1Z2hubk03R1FYbEMtc2VIOWZTN0J5cnVJMmxtMDR5NjJMLU96QXFxdnZQT29icDl1VDhNQmc3ZDc4ZDJxbVE0b3pOUXlhOA": "2026-11-01T00:28+01:00",
   "https://news.google.com/rss/articles/CBMifEFVX3lxTFA0d2o4OEpTVXVCdWdBNmljdDNiZGxobkNQbVpxT2RJVkJQM0J0YVlpUlJ2aHFXTElxT2o5X2lheHpycEliSmM4cl9vQWEyWjFCZTQ4RlozRVEwQVNSOHQ3NXktU2k0X1NjNVRNRFFHcDVWU29KU2FOWXp1dnXSAYIBQVVfeXFMT3BMUWt1NzJmelFJV3ROTk5uRXVXOUZMb1NQQ09ua2ZSUFhFaU1EaU50X1FiZW9MUFVGdnlsMVpuZjM0MVpIbkptMEFSaVF0a2NrdE42dm13bVdVV0dZdG9ibzhyQ2pROVVqWXJ2UWRoM01UMk5rZlZrQjFabnlVNlRSZw": "2026-11-01T00:28+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/sciopero-bologna-la-questura-300-identificati-e-nessuno-scontro_1a41253c-32da-4652-9307-d406e6016373.html": "2026-11-01T00:28+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/10/31/sciopero-bologna-la-questura-300-identificati-e-nessuno-scontro_1a41253c-32da-4652-9307-d406e6016373.html": "2026-11-01T00:28+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/allerta-arancione-per-lo-stato-del-mare-lungo-la-costa-romagnola_d534b346-dbb2-4456-ade6-910941fd34b3.html": "2026-11-01T12:27+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/forte-grandinata-e-maxi-tamponamento-con-12-auto-coinvolte-sulla-a14_de3d5c6a-54fb-4cf0-90f0-d5de8d804a56.html": "2026-11-01T12:27+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/cacciatore-scivola-in-una-scarpata-nel-cesenate-soccorso-nella-notte_00c397b1-1aee-4de9-be97-39f42c3d9e39.html": "2026-11-01T12:27+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/ruba-le-offerte-nella-camera-mortuaria-fermato-da-familiare-di-un-defunto-e-arrestato_a1f480d0-d411-46d7-ad7e-f6f17d3a62b0.html": "2026-11-01T12:27+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/minaccia-la-moglie-e-le-impedisce-di-uscire-arrestato_ab96cb95-410f-4a46-ac95-6cf1267b88cc.html": "2026-11-01T12:27+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/scontro-tra-auto-e-moto-nel-bolognese-morta-coppia-di-centauri_70e66668-1e3c-44fa-aec2-5e568c40c3c7.html": "2026-11-01T12:27+01:00",
+  "https://www.italpress.com/episodi-di-violenza-37-daspo-per-tifosi-di-carpi-pergolettese-e-varese": "2026-11-01T12:27+01:00"
  },
- "updated": "2026-11-01T08:45+01:00",
- "next": "alle 12",
+ "updated": "2026-11-01T12:27+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-11-01T08:45+01:00",
-  "articles": 0,
-  "items": 0,
-  "model": null,
+  "at": "2026-11-01T12:27+01:00",
+  "articles": 7,
+  "items": 4,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 30,
-    "kept": 0
+    "items": 32,
+    "kept": 6
    },
    {
     "agency": "ANSA",
@@ -90,7 +137,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 30,
+    "items": 20,
     "kept": 0
    },
    {
@@ -111,7 +158,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 10,
+    "items": 12,
     "kept": 0
    },
    {
@@ -161,7 +208,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
@@ -173,8 +220,8 @@
    {
     "agency": "Dire",
     "channel": "feed diretto",
-    "status": "errore: ReadTimeout",
-    "items": 0,
+    "status": "ok",
+    "items": 10,
     "kept": 0
    },
    {
