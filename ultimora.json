@@ -106,12 +106,18 @@
   "https://www.dire.it/01-11-2026/1283465-foto-grandine-e-maxi-tamponamento-in-autostrada-a-cesena-tratto-a14-chiuso-per-tutta-la-mattinata": "2026-11-01T16:22+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/aborto-illegale-in-casa-33enne-indagata-a-rimini_910a937a-dcd6-4e25-b9fb-8612e0e5fbe5.html": "2026-11-01T16:22+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/anm-e-r-basta-ricostruzioni-strumentali-storia-personale-e-professionale-magistrato_5d1780ad-3200-4fa5-a1fc-5cf76a553d3d.html": "2026-11-01T16:22+01:00",
-  "https://news.google.com/rss/articles/CBMingFBVV95cUxNd2xvdE1MeU9SREJmSXZpLVBFQS1XekU0azc4VFFqeFZFWDJkWFk1QnlXUDY3Y3BZbURQOTlOTDFpM2FjdWFWVllfNW5JRjJmSzlLdEE2enRSRFlRWlJPVFZpMXZ1OWJkYU1Qa1haVVcxNXUzX2hCUzVGY3VDNFh5NFotZUF6S3l3bi1SUkQ4aG95d3g2bEY5S0loa1VPZw": "2026-11-01T16:22+01:00"
+  "https://news.google.com/rss/articles/CBMingFBVV95cUxNd2xvdE1MeU9SREJmSXZpLVBFQS1XekU0azc4VFFqeFZFWDJkWFk1QnlXUDY3Y3BZbURQOTlOTDFpM2FjdWFWVllfNW5JRjJmSzlLdEE2enRSRFlRWlJPVFZpMXZ1OWJkYU1Qa1haVVcxNXUzX2hCUzVGY3VDNFh5NFotZUF6S3l3bi1SUkQ4aG95d3g2bEY5S0loa1VPZw": "2026-11-01T16:22+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/gp-messico-antonelli-faro-del-mio-meglio-per-portare-in-alto-il-tricolore_d7721c6f-d37a-4be9-b35a-553c0a292dde.html": "2026-11-01T20:30+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/01/la-figlia-di-guccini-mio-padre-per-quanto-schivo-si-sarebbe-commosso_5d14b965-34f4-4c7c-afb9-8fdd593cb119.html": "2026-11-01T20:30+01:00",
+  "https://www.dire.it/01-11-2026/1283531-video-a-bologna-in-migliaia-alla-cantata-collettiva-per-guccini-le-immagini-di-piazza-maggiore": "2026-11-01T20:30+01:00",
+  "https://www.dire.it/01-11-2026/1283520-video-foto-prima-neve-inverno-abruzzo-da-campo-imperatore-borghi-appennino-immagini-webcam-social": "2026-11-01T20:30+01:00",
+  "https://www.ansa.it/sito/notizie/economia/2026/11/01/manovra-17-milioni-per-le-alluvioni-in-emilia-romagna-marche-e-toscana_e0eb0e9e-6f5c-410b-988c-0b0d6587b596.html": "2026-11-01T20:30+01:00",
+  "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOY1RVM1NHbTlGWXNOczJCRFZGX2d2MV91V2Y1bHlBYkdlNXJ4dWF0MFpPVEZjVXZZTlFHRklianpIZnpjZHZJZjFuYVBFdVJJM082dDYwQmRFX3pQS1JjeHhzN3Nfa0ZPcldfa3cwNVlGTXVNcXllWU9uQlpIWXV3WFpMcFJPQmlkQ1JfdDJPLV9kQWxqY3R0c25GSXZGNzZacmpxMmd1RWNkdElhXzY0ZVFvQ0ktUTFORm15dFh3NXJndk9maUJpZVhuUmtidm90b3FR": "2026-11-01T20:30+01:00"
  },
- "updated": "2026-11-01T16:22+01:00",
- "next": "alle 20",
+ "updated": "2026-11-01T20:30+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-11-01T16:22+01:00",
+  "at": "2026-11-01T20:30+01:00",
   "articles": 6,
   "items": 0,
   "model": "gemini-2.5-flash",
@@ -121,8 +127,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 27,
-    "kept": 3
+    "items": 28,
+    "kept": 2
    },
    {
     "agency": "ANSA",
@@ -135,8 +141,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 21,
-    "kept": 0
+    "items": 20,
+    "kept": 1
    },
    {
     "agency": "AGI",
@@ -156,7 +162,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 16,
+    "items": 9,
     "kept": 0
    },
    {
@@ -198,7 +204,7 @@
     "agency": "askanews",
     "channel": "Google News",
     "status": "ok",
-    "items": 50,
+    "items": 31,
     "kept": 0
    },
    {
@@ -213,21 +219,21 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dagospia",
