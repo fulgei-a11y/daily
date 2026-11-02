@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 02 Nov 2026 00:29:34 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 05:56:27 +0100</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · lunedì 2 novembre 2026</title>
+      <description>148 notizie dall&#x27;Emilia-Romagna. In apertura: Parto su autobus Tper; Statua di Salvo D’Acquisto danneggiata da skater; Furto di offerte dalla camera mortuaria; Furto di liquore; Maxi-rissa in centro di accoglienza per minori stranieri; Schianto frontale sulla Via Emilia: morti marito e moglie.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-11-02</link>
+      <guid isPermaLink="false">rassegna-er-2026-11-02</guid>
+      <pubDate>Mon, 02 Nov 2026 05:53:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-11-02.mp3" length="7417618" type="audio/mpeg"/>
+      <itunes:duration>2472</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · domenica 1 novembre 2026</title>
       <description>28 notizie dall&#x27;Emilia-Romagna. In apertura: Cantata per Guccini in Piazza Maggiore; Controlli di Halloween: denunce e sequestri; Ticket sanitari non riscossi; Emergenza medici di famiglia; Piscina Gualandi (Ortignola) riapre; Protocollo d&#x27;intenti per il lavoro.</description>
