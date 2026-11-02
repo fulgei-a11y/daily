@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 02 Nov 2026 20:46:15 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 00:32:06 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · lunedì 2 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Arrestato 30enne per furto e resistenza a pubblico ufficiale; Nuova comandante dei Carabinieri Forestali Emilia-Romagna; Voto fuori sede per elezioni nazionali; Nuovi assessori e programma per Alberto Zanni; Rider, scoppia il caso dei falsi Gps; Consiglio comunale, seduta speciale in carcere.</description>
@@ -573,36 +573,6 @@
       <pubDate>Thu, 15 Oct 2026 06:26:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-15.mp3" length="7903261" type="audio/mpeg"/>
       <itunes:duration>2634</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · mercoledì 14 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente mortale in A1; Sviluppi: Condannato per scontri dopo morte Fakir; Raffica di incidenti stradali; Rapina impropria con coltello; Donna ustionata in casa; Anziani soccorsi nel solaio.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-14</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-14-19</guid>
-      <pubDate>Wed, 14 Oct 2026 19:21:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-14-19.mp3" length="2893811" type="audio/mpeg"/>
-      <itunes:duration>578</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · mercoledì 14 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Truffa con carta di credito; Omicidio a Cervia, esclusa caduta accidentale; Uomo investito e ucciso; Due anziani soccorsi in casa dopo una caduta; Auto rubata intercettata, due denunciati; Persecuzione dopo la separazione.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-14</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-14-13</guid>
-      <pubDate>Wed, 14 Oct 2026 13:28:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-14-13.mp3" length="3037745" type="audio/mpeg"/>
-      <itunes:duration>607</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · mercoledì 14 ottobre 2026</title>
-      <description>240 notizie dall&#x27;Emilia-Romagna. In apertura: Regione Emilia-Romagna rafforza controlli antimafia con 18 specialisti; Ospedale Maggiore di Parma nella top ten dei policlinici italiani; Liceo Laura Bassi occupato a Bologna, prima mobilitazione dell&#x27;anno; Cassazione annulla sospensioni cautelari per medici indagati sui certificati per i Cpr; Regione Emilia-Romagna stanzia 27 milioni per riqualificazione alberghiera; Piacenza: firmato protocollo per contrastare il fenomeno Neet.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-14</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-14</guid>
-      <pubDate>Wed, 14 Oct 2026 06:26:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-14.mp3" length="14629425" type="audio/mpeg"/>
-      <itunes:duration>3657</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
