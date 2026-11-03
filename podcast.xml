@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 03 Nov 2026 20:45:48 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 00:34:38 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · martedì 3 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Ascom apre sportello cyber security; Disagi ferroviari per lavori a Ferrara; Nuovo studentato &quot;La Pilla&quot; nel Navile; Manifestazione contro il carovita; Ammonimento per atti persecutori; Aggressione a agente di Polizia Locale.</description>
@@ -573,36 +573,6 @@
       <pubDate>Fri, 16 Oct 2026 06:26:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-16.mp3" length="8652531" type="audio/mpeg"/>
       <itunes:duration>2884</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · giovedì 15 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Arrestati padre e figlio con 14 chili di marijuana; Tentato furto su auto in sosta, arrestato 61enne; Spacciatore italo-dominicano arrestato con 130 grammi di cocaina; Incendio in garage, abitazione evacuata; Incidente sul lavoro a Soragna; Automobilista aggredisce donna per una frenata.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-15</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-15-19</guid>
-      <pubDate>Thu, 15 Oct 2026 19:23:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-15-19.mp3" length="2178918" type="audio/mpeg"/>
-      <itunes:duration>726</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · giovedì 15 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Rapina sventata e banda arrestata; Furto con destrezza a un anziano; Processo per le &quot;morti in ambulanza&quot;; Minacce per imporre il velo; Stalking all&#x27;ex compagna; Detenzione abusiva di armi.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-15</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-15-13</guid>
-      <pubDate>Thu, 15 Oct 2026 13:27:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-15-13.mp3" length="1665690" type="audio/mpeg"/>
-      <itunes:duration>555</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · giovedì 15 ottobre 2026</title>
-      <description>182 notizie dall&#x27;Emilia-Romagna. In apertura: Caso Reggio Children: il sindaco Massari si scusa per la richiesta di dichiarazione su Gaza; Parmigiano Reggiano: approvato il piano per frenare la produzione; Incidente mortale sull&#x27;A1 nel Bolognese: camionista 52enne deceduto; Turismo in Emilia-Romagna: 35 milioni di presenze in otto mesi; Furto di farmaci oncologici all&#x27;ospedale di Piacenza; Caro carburanti: metano a +42%, Gpl meno caro.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-15</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-15</guid>
-      <pubDate>Thu, 15 Oct 2026 06:26:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-15.mp3" length="7903261" type="audio/mpeg"/>
-      <itunes:duration>2634</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>

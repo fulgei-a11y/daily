@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-11-04T00:34+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Violenza sessuale su vigilessa",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/03/sollevo-sulle-spalle-una-vigilessa-per-il-riesame-e-violenza-sessuale_628e501b-47ab-49e6-ba6a-d341d616711b.html"
+   ],
+   "html": "<strong>Violenza sessuale su vigilessa</strong> — Rimini: il Tribunale della Libertà di Bologna ha riconosciuto il reato di violenza sessuale, seppur attenuata, per un 55enne che aveva sollevato una vigilessa mettendosela a cavalcioni sulle spalle, disponendo l'obbligo di firma. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/03/sollevo-sulle-spalle-una-vigilessa-per-il-riesame-e-violenza-sessuale_628e501b-47ab-49e6-ba6a-d341d616711b.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-04T00:34+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Rapporto Responsible Care sulla chimica",
+   "links": [
+    "https://www.italpress.com/responsible-care-chimica-settore-sicuro-e-cruciale-per-la-transizione-ecologica"
+   ],
+   "html": "<strong>Rapporto Responsible Care sulla chimica</strong> — Rimini: presentato il 32° Rapporto annuale Responsible Care, che evidenzia come il settore chimico sia sicuro, attento alla salute dei lavoratori e leader nell’economia circolare. <span class=\"src\">Fonte: <a href=\"https://www.italpress.com/responsible-care-chimica-settore-sicuro-e-cruciale-per-la-transizione-ecologica/\" target=\"_blank\" rel=\"noopener\">Italpress</a></span>"
+  },
+  {
    "t": "2026-11-02T20:45+01:00",
    "cat": "",
    "bo": false,
@@ -145,15 +165,20 @@
   "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNSmpSdHY1OU41cElvRVNPUXd3UkU2dWtvN3E1dXN6dHNvUjNNT3BOOTN6RDcyNzlSMGdoMGY1dzR2aWdVTWZtWnktWjFxUUs4WUVLRDBkN3BXWGVlbTFNbHczVDVLc0RzdXBuMG1vd0QzNWdTd3prMlpUUXV4M1hpek0wS3UzUFBCejlnM2M4Q1BsV1FqWWswUmhIQU9Cc25NdDZGOFRuczRTRkVuMTdURjVWV1ljdEtTenhFM2ttSnlHeVFYTW9HQlc3bHRHV2xnbDN4LU1FSjBhOEhsSjNPQUM2R014QQ": "2026-11-03T20:45+01:00",
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObTB2RHJ1VmdJVmtMdk43SzQtZlZBQjdCTXVfZnNsRWlkTWYtcTQ0X2I0cUpfUk9qdzJUZTB4UXBUbGVXZC1Jblk5akZiZXhkUlNVTU5OdTU3Zy10UzcxelZ5OHF1Z0lrQ0dvRzFYNWNfenVBTVpvWFhFMnlFZGlTYnU1b2hLTktjTWswTGczdFFLRHlyQW15anZ2RmtUdnhkd1hraFpzdXE": "2026-11-03T20:45+01:00",
   "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQ1NvMGtoeFJuNWVib3diV2pxWmNXNTY5U1hzUVlBREdkeXViVl9fZkU4XzlXZkM5VXZhQXUwYU1mRDBnTmhNb1hpSmd0TVU1aml5dTBtMU11R2d2N0NkTEFDMC1jc2h0YXFYTVRjTk1tSGJiYjcxRUhPSmFVZ0M2VEc5QlN2TmNGazAxSVVBN0ZxYUZxSlR5b3RqUmQ2R2NBcmpZYVo1NnB6RmlhVHZKQkNKdWMydzZtaDBVaFBPQzBkOWFFeWJ1RA": "2026-11-03T20:45+01:00",
-  "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZFBrSlltVHR4UC0wVmZhTlM5WDViUmcxd0gwd0JmcTdtTkJtSEhXYWVBUDNqVC1od1FPRlFDck8za3ljVU5GVDdpNkxtalZqWjJkM3pOZHpOYVZvVHI2QWZXcU1yQnFmQ0pOa3gzOXlmc0t3c29vYzNpMUk1cUJlVNIBhgFBVV95cUxPSmFfWU9ORWY0d3VPNGFHUmFOXzI2X1VVSjU4eVRpSm9qOUhtdUxlcFVsdHFWRFlrV0d4aVZmamszVHhNSlpod3dIR0lZcmxsQWROQ1lrVy14N0JlVzdLX0ZxcTFtWkFPRWFNZC1IbHlZeEp3aVVBSGlRamxkZVdiNWZCTmI5dw": "2026-11-03T20:45+01:00"
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZFBrSlltVHR4UC0wVmZhTlM5WDViUmcxd0gwd0JmcTdtTkJtSEhXYWVBUDNqVC1od1FPRlFDck8za3ljVU5GVDdpNkxtalZqWjJkM3pOZHpOYVZvVHI2QWZXcU1yQnFmQ0pOa3gzOXlmc0t3c29vYzNpMUk1cUJlVNIBhgFBVV95cUxPSmFfWU9ORWY0d3VPNGFHUmFOXzI2X1VVSjU4eVRpSm9qOUhtdUxlcFVsdHFWRFlrV0d4aVZmamszVHhNSlpod3dIR0lZcmxsQWROQ1lrVy14N0JlVzdLX0ZxcTFtWkFPRWFNZC1IbHlZeEp3aVVBSGlRamxkZVdiNWZCTmI5dw": "2026-11-03T20:45+01:00",
+  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1TYURnMUpYOWQ4WjBFZFc3TDF2QnZubElJODFWb0UxQlppR2xtcnkwS2pxRjB1NHBJb0N2NGR4SG9qSlYydE9iN056OG5fTzVf": "2026-11-04T00:34+01:00",
+  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE90NVdpdl9ydHZPc2FRaFlOU0d4UmFfeXQ4Z3RhdFhNQ3JYYldselIwM09KTERGWjE2X01BT2xNT3JST0I3NHVOMUJKNU42TGxr": "2026-11-04T00:34+01:00",
+  "https://www.italpress.com/responsible-care-chimica-settore-sicuro-e-cruciale-per-la-transizione-ecologica": "2026-11-04T00:34+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/03/prosegue-il-confronto-a-oltranza-al-mimit-su-electrolux_5ec6ad42-4b4b-4403-b79b-a58e5a7daab6.html": "2026-11-04T00:34+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/03/sollevo-sulle-spalle-una-vigilessa-per-il-riesame-e-violenza-sessuale_628e501b-47ab-49e6-ba6a-d341d616711b.html": "2026-11-04T00:34+01:00"
  },
- "updated": "2026-11-03T20:45+01:00",
- "next": "alle 24",
+ "updated": "2026-11-04T00:34+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-11-03T20:45+01:00",
-  "articles": 9,
-  "items": 0,
-  "model": "gemini-3.5-flash",
+  "at": "2026-11-04T00:34+01:00",
+  "articles": 5,
+  "items": 2,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
@@ -161,65 +186,65 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 40,
-    "kept": 1
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 1
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
     "kept": 2
    },
    {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
     "agency": "askanews",
     "channel": "feed diretto",
     "status": "HTTP 403",
@@ -238,21 +263,21 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 3
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Dire",
