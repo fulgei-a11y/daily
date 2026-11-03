@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 03 Nov 2026 00:32:06 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 05:49:26 +0100</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · martedì 3 novembre 2026</title>
+      <description>151 notizie dall&#x27;Emilia-Romagna. In apertura: Ruba al supermercato e ferisce un agente; Rapina impropria e resistenza a pubblico ufficiale; Bimbo nasce su un bus Tper; Nuove indagini sull&#x27;omicidio Pasolini; Questore di Bologna insignito del Premio Paolo Borsellino; Voto fuori sede per elezioni nazionali ed europee.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-11-03</link>
+      <guid isPermaLink="false">rassegna-er-2026-11-03</guid>
+      <pubDate>Tue, 03 Nov 2026 05:47:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-11-03.mp3" length="6724616" type="audio/mpeg"/>
+      <itunes:duration>2241</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · lunedì 2 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Arrestato 30enne per furto e resistenza a pubblico ufficiale; Nuova comandante dei Carabinieri Forestali Emilia-Romagna; Voto fuori sede per elezioni nazionali; Nuovi assessori e programma per Alberto Zanni; Rider, scoppia il caso dei falsi Gps; Consiglio comunale, seduta speciale in carcere.</description>
