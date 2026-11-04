@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 04 Nov 2026 19:42:45 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 23:02:08 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · mercoledì 4 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Trapianti di rene con farmaco innovativo; Incendio alla Recter di Imola; Tram: cambio ditta e ritardi; Bologna prima per laureati in Italia; Cgil contro la manovra finanziaria; Aggressione a commerciante.</description>
@@ -573,36 +573,6 @@
       <pubDate>Sat, 17 Oct 2026 06:23:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-17.mp3" length="8532942" type="audio/mpeg"/>
       <itunes:duration>2844</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · venerdì 16 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Duplice omicidio a Mirandola (Modena); Sviluppi: Aggressione e minaccia a militari a Fusignano (Ravenna); Sviluppi: Tentato omicidio a Reggio Emilia, arrestato 57enne; Sviluppi: Agenti della Polizia Locale di Rimini indagati; Incidente stradale a Bologna, auto della Polizia investe due donne; Maxi coltivazione di marijuana scoperta in Appennino (Bologna).</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-16</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-16-19</guid>
-      <pubDate>Fri, 16 Oct 2026 19:20:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-16-19.mp3" length="2051963" type="audio/mpeg"/>
-      <itunes:duration>683</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · venerdì 16 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Duplice omicidio a Mirandola (Modena); Sperona auto Carabinieri e tenta di investire militare; Accoltellamento in bar per lite su autocarro; Furto aggravato in supermercato; Arresto per detenzione di droga a Imola; Arresto per violazione divieto di avvicinamento.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-16</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-16-13</guid>
-      <pubDate>Fri, 16 Oct 2026 13:27:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-16-13.mp3" length="1809337" type="audio/mpeg"/>
-      <itunes:duration>603</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · venerdì 16 ottobre 2026</title>
-      <description>221 notizie dall&#x27;Emilia-Romagna. In apertura: Duplice omicidio a Mirandola, anziani coniugi decapitati; Ryanair apre nuova base a Rimini, malumore a Bologna; Accordo su sicurezza nei cantieri in Emilia-Romagna; Comune di Riccione condannato a 15,5 milioni per lungomare; Sindaco Lepore denuncia minacce e deep fake; Processo per omicidio in ambulanza a Forlì.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-16</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-16</guid>
-      <pubDate>Fri, 16 Oct 2026 06:26:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-16.mp3" length="8652531" type="audio/mpeg"/>
-      <itunes:duration>2884</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
