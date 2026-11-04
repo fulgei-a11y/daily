@@ -1,6 +1,47 @@
 {
  "items": [
   {
+   "t": "2026-11-04T16:42+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Operaio travolto e ucciso mentre lavorava in un tombino",
+   "links": [
+    "https://www.ansa.it/sito/notizie/cronaca/2026/11/04/quattro-incidenti-mortali-sul-lavoro-in-diversi-cantieri-e-citta_3e1891b9-86e6-400b-9c46-e49c201d2e84.html",
+    "https://www.dire.it/04-11-2026/1284871-morti-lavoro-piacenza-operaio-tombino-investito-salento-benevento"
+   ],
+   "html": "<strong>Operaio travolto e ucciso mentre lavorava in un tombino</strong> — San Nicolò (Piacenza): un operaio di 54 anni, tecnico di una ditta affidataria di Iren, è morto dopo essere stato investito da un'auto mentre effettuava la lettura di contatori dell'acqua in un tombino. <span class=\"src\">Fonti: <a href=\"https://www.ansa.it/sito/notizie/cronaca/2026/11/04/quattro-incidenti-mortali-sul-lavoro-in-diversi-cantieri-e-citta_3e1891b9-86e6-400b-9c46-e49c201d2e84.html\" target=\"_blank\" rel=\"noopener\">ANSA</a>, <a href=\"https://www.dire.it/04-11-2026/1284871-morti-lavoro-piacenza-operaio-tombino-investito-salento-benevento/\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
+   "t": "2026-11-04T16:42+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Risarcimento di 100.000 euro alle vittime dell'attentato di via Emilia Centro",
+   "links": [
+    "https://www.dire.it/04-11-2026/1284887-modena-alle-vittime-di-el-koudri-100-000-euro-da-cittadini-imprese-e-comune-segno-di-concreta-solidarieta"
+   ],
+   "html": "<strong>Risarcimento di 100.000 euro alle vittime dell'attentato di via Emilia Centro</strong> — Modena: la Giunta comunale ha assegnato 100.000 euro, frutto di una raccolta fondi civica, a cinque beneficiari individuati dopo l'attacco del 16 maggio scorso in cui un'auto investì gravemente cinque persone. <span class=\"src\">Fonte: <a href=\"https://www.dire.it/04-11-2026/1284887-modena-alle-vittime-di-el-koudri-100-000-euro-da-cittadini-imprese-e-comune-segno-di-concreta-solidarieta/\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
+   "t": "2026-11-04T16:42+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Primi trapianti di rene al mondo con nuovo farmaco anti-rigetto",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/i-pazienti-trapiantati-al-santorsola-dopo-la-dialisi-viviamo-di-nuovo_d6478ccb-a12d-4e0b-98ec-401b4ba46e64.html"
+   ],
+   "html": "<strong>Primi trapianti di rene al mondo con nuovo farmaco anti-rigetto</strong> — Bologna: al Policlinico Sant'Orsola due pazienti con scarse possibilità di trapianto hanno ricevuto un rene con successo grazie all'uso sperimentale del farmaco innovativo Cizutamig, aprendo nuove prospettive per iperimmuni. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/04/i-pazienti-trapiantati-al-santorsola-dopo-la-dialisi-viviamo-di-nuovo_d6478ccb-a12d-4e0b-98ec-401b4ba46e64.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-04T16:42+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Iren Ambiente presenta piano industriale con 2,2 miliardi di investimenti",
+   "links": [
+    "https://www.italpress.com/a-ecomondo-piano-industriale-di-iren-ambiente-al-2035-investimenti-da-22-mld"
+   ],
+   "html": "<strong>Iren Ambiente presenta piano industriale con 2,2 miliardi di investimenti</strong> — Rimini: a Ecomondo è stato presentato il piano industriale di Iren Ambiente al 2035, che prevede 2,2 miliardi di euro di investimenti per lo sviluppo nella gestione dei rifiuti, recupero di materia e servizi ambientali. <span class=\"src\">Fonte: <a href=\"https://www.italpress.com/a-ecomondo-piano-industriale-di-iren-ambiente-al-2035-investimenti-da-22-mld/\" target=\"_blank\" rel=\"noopener\">Italpress</a></span>"
+  },
+  {
    "t": "2026-11-04T12:51+01:00",
    "cat": "Economia",
    "bo": false,
@@ -109,14 +150,26 @@
   "https://www.adnkronos.com/economia/ecomondo-ermeti-dal-1997-una-manifestazione-che-ha-anticipato-i-tempi_4sw4sruemx6tu45Y44Yyjm": "2026-11-04T12:51+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/molesta-una-ragazza-di-18-anni-fermato-e-condotto-in-carcere_2390b5f7-84d8-42c8-9af2-370a185e3a75.html": "2026-11-04T12:51+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/mimit-intesa-su-electrolux-100-milioni-investimenti-e-salvaguardia-stabilimenti_aa898ad7-fe9f-453f-8a79-ea15c7d46462.html": "2026-11-04T12:51+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/de-pascale-quella-su-electrolux-non-e-una-vittoria-ma-abbiamo-resistito_83027a2e-680b-4f71-86d0-5144f27deb6c.html": "2026-11-04T12:51+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/de-pascale-quella-su-electrolux-non-e-una-vittoria-ma-abbiamo-resistito_83027a2e-680b-4f71-86d0-5144f27deb6c.html": "2026-11-04T12:51+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/04/quattro-incidenti-mortali-sul-lavoro-in-diversi-cantieri-e-citta_3e1891b9-86e6-400b-9c46-e49c201d2e84.html": "2026-11-04T16:42+01:00",
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxQWHBkaVoxMjhVNnBnMjZIVjA0d2NLOU1vTXdxLUhBRlVvZk9vQUJTdWtRbXU3eFhPekhSOXlpeWd4dFNrSkkyVFp2UjU3VXB2X3ZZMk5pMV9kd050Q1E0NHBKMlp6UFVGY3p4RENzS3p3SldHb3ZYX2ZRM0pyaHhmNA": "2026-11-04T16:42+01:00",
+  "https://www.dire.it/04-11-2026/1284887-modena-alle-vittime-di-el-koudri-100-000-euro-da-cittadini-imprese-e-comune-segno-di-concreta-solidarieta": "2026-11-04T16:42+01:00",
+  "https://www.dire.it/04-11-2026/1284871-morti-lavoro-piacenza-operaio-tombino-investito-salento-benevento": "2026-11-04T16:42+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/i-pazienti-trapiantati-al-santorsola-dopo-la-dialisi-viviamo-di-nuovo_d6478ccb-a12d-4e0b-98ec-401b4ba46e64.html": "2026-11-04T16:42+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/il-mare-dinverno-si-accende-a-rimini-con-presepi-ghiaccio-e-100km-di-luci_bebb99a2-93a4-4758-9ddc-58fcb7fdd7b2.html": "2026-11-04T16:42+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/istat-bologna-e-la-citta-capoluogo-con-piu-laureati-in-italia_9cc7cbba-09dd-4e28-a13f-e05cf0b4f038.html": "2026-11-04T16:42+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/a-bologna-i-primi-trapianti-di-rene-al-mondo-con-nuovo-farmaco-anti-rigetto_663ea179-62b1-4fe2-9b90-500869b34dca.html": "2026-11-04T16:42+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/04/lavora-nel-tombino-e-viene-travolto-da-unauto-morto-un-operaio_d1ff5427-43f7-450e-8a87-e92cbab4102b.html": "2026-11-04T16:42+01:00",
+  "https://www.italpress.com/oltre-106-milioni-di-ricerche-online-per-i-borghi-italiani-otranto-il-piu-cercato": "2026-11-04T16:42+01:00",
+  "https://www.italpress.com/ecomondo-saviola-il-riciclo-incontra-leccellenza-del-design-italiano": "2026-11-04T16:42+01:00",
+  "https://www.italpress.com/a-ecomondo-piano-industriale-di-iren-ambiente-al-2035-investimenti-da-22-mld": "2026-11-04T16:42+01:00"
  },
- "updated": "2026-11-04T12:51+01:00",
- "next": "alle 16",
+ "updated": "2026-11-04T16:42+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-04T12:51+01:00",
-  "articles": 5,
-  "items": 3,
+  "at": "2026-11-04T16:42+01:00",
+  "articles": 12,
+  "items": 4,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -124,15 +177,15 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 36,
-    "kept": 3
+    "items": 35,
+    "kept": 5
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -159,7 +212,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 36,
+    "items": 9,
     "kept": 0
    },
    {
@@ -174,7 +227,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -202,14 +255,14 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 3
    },
    {
     "agency": "Italpress",
@@ -223,7 +276,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Dire",
