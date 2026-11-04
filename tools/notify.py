@@ -7,7 +7,7 @@ Dopo ogni pubblicazione manda un avviso al "topic" scritto nel segreto NTFY_TOPI
 - In breve: solo se sono arrivate notizie nuove, con priorità bassa (senza suono);
 - se qualcosa va storto: un avviso con priorità alta;
 - SENTINELLA: se una notizia appena pubblicata contiene una delle parole scritte nel segreto SENTINELLE
-  (separate da virgole, es. «Lepore, Casalecchio, sciopero, Tper»), arriva un avviso a parte, con priorità
+  (separate da virgole, es. «parola1, parola2, parola3»), arriva un avviso a parte, con priorità
   alta, che porta dritto a quella notizia.
 Toccando la notifica si apre la rassegna.
 
