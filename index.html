@@ -258,12 +258,31 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
 .btnrow{display:flex;flex-wrap:wrap;gap:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-weight:600;font-size:14px;text-decoration:none;cursor:pointer}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.qall{display:flex;align-items:center;gap:8px;margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+.qall{display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;margin:6px 0 0;font-size:13.5px;color:var(--muted)}
 .qall button{border:0;background:none;padding:4px 0;color:var(--accent);font-weight:700;font-size:13.5px;cursor:pointer}
 .sres-status{font-size:13.5px;color:var(--muted);margin:0 0 6px}
 .sres-day{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:16px 0 0;padding-bottom:4px;border-bottom:1px solid var(--line)}
 .sres-day small{color:var(--muted);margin-left:6px}
 .sres li{cursor:pointer}
+.sres .fsrc{display:inline-block;margin-top:4px;font-size:13px;font-weight:600}
+.qall .sep{color:var(--line)}
+/* pulsante per tornare ai risultati della ricerca dopo aver aperto una notizia */
+.backsearch{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 10px);transform:translateX(-50%);z-index:25;display:flex;align-items:center;max-width:calc(100% - 24px);background:var(--accent);color:var(--accent-ink);border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:14px;font-weight:700}
+.backsearch[hidden]{display:none}
+.backsearch button{border:0;background:none;color:inherit;font:inherit;cursor:pointer;padding:9px 6px 9px 16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.backsearch button.x{padding:9px 14px 9px 8px;font-size:18px;line-height:1;opacity:.85}
+/* notizie salvate divise per materia */
+.favchips{display:flex;gap:6px;overflow-x:auto;padding:0 0 10px;margin:0 0 4px;scrollbar-width:none}
+.favchips::-webkit-scrollbar{display:none}
+.favchips button{flex:none;border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:16px;padding:5px 12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.favchips button small{color:var(--muted);margin-left:5px;font-weight:500}
+.favchips button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.favchips button.on small{color:inherit;opacity:.75}
+.fav-subj{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:14px 0 0;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.fav-subj small{color:var(--muted);margin-left:6px}
+.favlist .fact{flex-wrap:wrap;align-items:center;gap:6px 14px}
+.favlist .fact button,.favlist .fact a{white-space:nowrap}
+.favlist .fact select{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:6px;font:inherit;font-size:12.5px;padding:1px 4px;max-width:150px}
 .sres li:hover .ftitle{color:var(--accent)}
 .favlist{list-style:none;margin:0;padding:0}
 .favlist li{padding:12px 0;border-bottom:1px solid var(--line)}
@@ -313,6 +332,11 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   .sec-title{font-size:16pt;margin-top:14pt;break-after:avoid}
   .sub-title{break-after:avoid}
   .item .src a{text-decoration:none;color:#000}
+  .qall,.backsearch,#noResults{display:none!important}
+  /* stampa di una ricerca: solo le notizie trovate, con la parola cercata in testa */
+  body.printsel .item[hidden],body.printsel .sec[hidden],body.printsel .sub-title[hidden],body.printsel .notes{display:none!important}
+  body.printsel .printq{display:block!important;margin:2pt 0 0;font-size:10pt}
+  mark{background:none;font-weight:700;text-decoration:underline}
 }
 </style>
 </head>
@@ -322,7 +346,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   <div class="wrap">
     <p class="eyebrow">Emilia-Romagna · ogni giorno</p>
     <div class="masthead">
-      <div><h1 class="brand">Rassegna <span>ER</span></h1><p class="printdate" id="printDate" hidden></p></div>
+      <div><h1 class="brand">Rassegna <span>ER</span></h1><p class="printdate" id="printDate" hidden></p><p class="printq" id="printQ" hidden></p></div>
       <div class="head-actions">
         <button class="roundbtn" id="podBtn" type="button" aria-label="Ascolta come podcast" title="Podcast"><svg viewBox="0 0 24 24"><path d="M12 1a9 9 0 0 0-9 9v7a3 3 0 0 0 3 3h3v-8H5v-2a7 7 0 0 1 14 0v2h-4v8h3a3 3 0 0 0 3-3v-7a9 9 0 0 0-9-9"/></svg></button>
         <button class="roundbtn fav" id="favBtn" type="button" aria-label="Notizie salvate" title="Salvate"><svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg><span class="count" id="favCount" hidden></span></button>
@@ -339,7 +363,8 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       <button class="pdfbtn" id="pdfBtn" type="button"><svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"/></svg>PDF</button>
     </div>
     <label class="search"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9"/></svg><input id="q" type="search" placeholder="Cerca nella rassegna (es. alluvione, Bologna, sanità)" autocomplete="off" enterkeyhint="search"></label>
-    <div class="qall" id="qAll" hidden><span id="qAllTxt"></span><button type="button" id="qAllBtn">Cerca in tutti i giorni →</button></div>
+    <div class="qall" id="qAll" hidden><span id="qAllTxt"></span><button type="button" id="qPrint">Stampa questi risultati</button><span class="sep">·</span><button type="button" id="qAllBtn">Cerca in tutti i giorni →</button></div>
+    <div class="backsearch" id="backSearch" hidden><button type="button" id="backSearchGo">‹ Torna alla ricerca</button><button type="button" class="x" id="backSearchX" aria-label="Chiudi">×</button></div>
     <div class="banner" id="installBar" hidden><img src="icons/icon-192.png" alt=""><span id="installTxt"></span><button class="go" id="installGo" type="button">Installa</button><button class="x" id="installX" type="button" aria-label="Chiudi">×</button></div>
   </div>
 </header>
@@ -381,13 +406,13 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   </div>
 </dialog>
 <dialog class="sheet" id="searchDlg" aria-labelledby="searchTitle">
-  <div class="sheet-head"><h2 id="searchTitle">Ricerca in tutti i giorni</h2><button type="button" data-close aria-label="Chiudi">×</button></div>
+  <div class="sheet-head"><h2 id="searchTitle">Ricerca in tutti i giorni</h2><button type="button" class="pdfbtn" id="sresPdf" title="Salva i risultati in un documento PDF da stampare o condividere" hidden>Salva PDF</button><button type="button" data-close aria-label="Chiudi">×</button></div>
   <div class="sheet-body"><p class="sres-status" id="sresStatus"></p><div id="sresList"></div></div>
 </dialog>
 
 <dialog class="sheet" id="favDlg" aria-labelledby="favTitle">
   <div class="sheet-head"><h2 id="favTitle">Notizie salvate</h2><button type="button" class="pdfbtn" id="favPdf" title="Salva le notizie in un documento PDF">Salva PDF</button><button type="button" data-close aria-label="Chiudi">×</button></div>
-  <div class="sheet-body"><ul class="favlist" id="favList"></ul></div>
+  <div class="sheet-body"><div class="favchips" id="favChips" hidden></div><div id="favList"></div></div>
 </dialog>
 
 <audio id="audio" preload="auto" playsinline></audio>
@@ -511,10 +536,53 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   const setFavs = f => store.set('favs', JSON.stringify(f));
   function favCount(){ const n = Object.keys(getFavs()).length; $('#favCount').hidden = !n; $('#favCount').textContent = n; }
   function markFavs(){
-    const f = getFavs();
+    const f = getFavs(); let changed = false;
     items.forEach(el => { const b = el.querySelector('.favitem'); if (!b) return;
-      const on = !!f[favKey(el)]; b.classList.toggle('on', on); b.querySelector('span').textContent = on ? 'Salvata' : 'Salva'; });
+      const k = favKey(el), on = !!f[k]; b.classList.toggle('on', on); b.querySelector('span').textContent = on ? 'Salvata' : 'Salva';
+      if (on && !f[k].m){ f[k].m = subjOfEl(el); changed = true; } });
+    if (changed) setFavs(f);
   }
+  /* materia di una notizia: dal titoletto della rassegna (Cronaca, Sanità e sociale…) o, se manca,
+     dalle parole del testo. Si può sempre cambiare a mano nella finestra delle salvate. */
+  const SUBJ = [['cronaca','Cronaca e giustizia'],['politica','Politica e istituzioni'],['economia','Economia e lavoro'],
+    ['mobilita','Mobilità e trasporti'],['ambiente','Ambiente, meteo e territorio'],['sanita','Sanità e sociale'],
+    ['scuola','Scuola e università'],['cultura','Cultura ed eventi'],['sport','Sport'],['altro','Altro']];
+  const SUBJ_NAME = Object.fromEntries(SUBJ);
+  const SUBJ_WORDS = {
+    cronaca: /\b(arrest|carabinier|polizia|poliziott|questur|rapin|furt|ladr|aggredit|aggression|aggress|omicid|uccis|accoltell|coltell|violenz|maltratt|stalking|truff|spaccio|droga|stupefacent|denunciat|indagat|indagin|inchiesta|procur|pm\b|gip\b|giudice|tribunal|processo|condann|sentenz|carcere|detenut|sequestr|incidente|investit|schiant|vittima|cadavere|morto|morta|incendi|vigili del fuoco|soccors|scompars|riss[ae]\b|baby gang|banda)/g,
+    politica: /\b(sindac|giunta|consiglio comunale|consiglio regionale|consiglier|assessor|elezion|elettoral|partit|pd\b|fdi\b|fratelli d'italia|lega\b|m5s|forza italia|avs\b|centrodestra|centrosinistra|opposizion|maggioranza|ministr|governo|parlament|deputat|senator|delibera|mozione|ordinanza|referendum|de pascale|lepore|prefett)/g,
+    economia: /\b(aziend|impres|industria|fabbric|stabiliment|lavorator|dipendent|sindacat|cgil|cisl|uil|fiom|sciopero|presidio|vertenz|cassa integrazione|licenzi|esuber|assunzion|occupazion|disoccupaz|contratt|salari|stipend|fatturato|bilancio|utili|export|investiment|mercato|commerci|negozi|botteg|turism|alberghi|prezz|carovita|inflazion|banc|credito|mutui|fiera|bonus|tasse|tribut|tariff|bollett|startup|agricol|vendemmia|coldiretti|confcommercio|confartigianato|legacoop)/g,
+    mobilita: /\b(tram\b|tranvi|autobus|bus\b|filobus|tper|seta\b|start romagna|tren[oi]\b|ferrovi|trenitalia|rfi\b|stazion|binari|autostrad|a1\b|a14\b|casello|tangenzial|passante|traffico|viabilit|strad|cantier|lavori|rotond|ciclabil|bici|monopattin|parchegg|ztl|aeroport|vol[oi]\b|marconi|taxi|pendolar|metropolitana|people mover|citta 30)/g,
+    ambiente: /\b(maltempo|allert|meteo|piogg|temporal|nubifragi|grandin|alluvion|esondaz|frana|smottament|fium|torrent|argin|neve|gelo|vento|mareggiat|caldo|siccit|temperatur|clima|smog|inquinament|pm10|qualita dell'aria|rifiut|raccolta differenziata|discarica|hera|iren|verde pubblico|alberi|parco|bosco|fauna|lup[oi]\b|cinghial|terremot|scossa|protezione civile|energia|fotovoltaic|ambiental)/g,
+    sanita: /\b(ospedal|sanit|medic|pronto soccorso|ausl|asl\b|policlinico|sant'orsola|rizzoli|pazient|cure|liste d'attesa|infermier|malatt|tumor|vaccin|farmac|salute|cau\b|welfare|social|anzian|disabil|assistenza|povert|senza dimora|senzatetto|mensa|caritas|emergenza abitativa|alloggi|case popolari|acer\b|affitt|sfratt|migranti|accoglienz|profughi|famiglie fragili)/g,
+    scuola: /\b(scuol|universit|unibo|alma mater|ateneo|studen|insegnant|docent|professor|liceo|istituto tecnico|maturit|esami|asil[oi]\b|nido|materna|elementar|medie\b|rettor|ricerca|dottorat|campus|aul[ae]\b|didattica|mense scolastiche)/g,
+    cultura: /\b(mostr|teatr|concert|festival|cinema|film|museo|musei|libr|scrittor|spettacol|rassegna|musica|cantant|arte\b|artist|opera\b|biblioteca|sagra|fiera del|eventi|evento|tradizion|anniversari|premio|cultur|celebrazion|natale|carnevale|halloween)/g,
+    sport: /\b(calcio|bologna fc|rossobl|virtus|fortitudo|partita|campionato|serie a\b|serie b\b|serie c\b|allenator|squadr|gol\b|stadio|dall'ara|basket|pallavolo|volley|ciclism|giro d'italia|motogp|formula 1|autodromo|maratona|olimpi|calciator|tifos|derby|sportiv|piscin|palestr|palazzetto|sassuolo calcio|parma calcio|modena fc|spal\b|cesena fc|rimini fc)/g
+  };
+  function subjOf(head, text, cat){
+    const h = norm(head || '');
+    if (h && !/regione e allerte/.test(h)){
+      if (/cronaca|giustizia|indagin|sicurezza/.test(h)) return 'cronaca';
+      if (/politic|istituzion|comune di/.test(h)) return 'politica';
+      if (/econom|lavoro|impres/.test(h)) return 'economia';
+      if (/mobilit|trasport|cantier/.test(h)) return 'mobilita';
+      if (/ambient|meteo|territorio/.test(h)) return 'ambiente';
+      if (/sanit|sociale/.test(h)) return 'sanita';
+      if (/scuola|universit/.test(h)) return 'scuola';
+      if (/cultura|eventi/.test(h)) return 'cultura';
+      if (/sport/.test(h)) return 'sport';
+    }
+    const n = ' ' + norm(text || '') + ' ';
+    let best = 'altro', top = 0;
+    for (const [k] of SUBJ){ const re = SUBJ_WORDS[k]; if (!re) continue;
+      const c = (n.match(re) || []).length; if (c > top){ top = c; best = k; } }
+    // notizie delle agenzie: la loro categoria (cronaca o economia) vale solo se il testo non dice altro
+    if (best === 'altro' && /cronaca/i.test(cat || '')) return 'cronaca';
+    if (best === 'altro' && /econom/i.test(cat || '')) return 'economia';
+    if (best === 'altro' && /regione e allerte/.test(h)) return 'ambiente';
+    return best;
+  }
+  const subjOfEl = el => subjOf(el.dataset.head, ((el.querySelector('.txt strong, .txt b') || {}).textContent || '') + ' ' + el.dataset.text, el.dataset.cat);
   function toggleFav(el){
     const f = getFavs(), k = favKey(el);
     if (f[k]) { delete f[k]; toast('Tolta dalle notizie salvate'); }
@@ -523,26 +591,58 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       t.querySelectorAll('.src,.uo-time,.uo-cat,.bo-tag').forEach(n => n.remove());
       const title = (t.querySelector('strong,b') || {}).textContent || '';
       const a = el.querySelector('.src a[href^="http"]');
+      const m = subjOfEl(el);
       f[k] = { d: current, t: title.trim(), x: t.textContent.replace(title, '').replace(/^\s*[—–-]\s*/, '').replace(/\s+/g, ' ').trim().slice(0, 400),
-               l: a ? a.href : '', s: a ? a.textContent : '', i: +el.dataset.i };
-      toast('Notizia salvata: la trovi nella stella in alto');
+               l: a ? a.href : '', s: a ? a.textContent : '', i: +el.dataset.i, m };
+      toast(`Notizia salvata in «${SUBJ_NAME[m]}»: la trovi nella stella in alto`);
     }
     setFavs(f); markFavs(); favCount();
   }
   main.addEventListener('click', e => { const b = e.target.closest('.favitem'); if (b) toggleFav(b.closest('.item')); });
+  // le notizie salvate prima di questa versione non hanno la materia: la si calcola una volta e si memorizza
+  function favSubjects(f){
+    let changed = false;
+    for (const k in f){ if (!f[k].m || !SUBJ_NAME[f[k].m]){ f[k].m = subjOf('', (f[k].t || '') + ' ' + (f[k].x || '')); changed = true; } }
+    if (changed) setFavs(f);
+    return f;
+  }
+  let favSubj = '';   // materia scelta nella finestra delle salvate ('' = tutte)
+  const favSorted = f => Object.entries(f).sort((a, b) => b[1].d.localeCompare(a[1].d));
+  // elenco diviso per materia, nell'ordine fisso delle materie; dentro ogni materia dalla più recente
+  function favGroups(f, only){
+    const list = favSorted(f);
+    return SUBJ.map(([k, name]) => ({ k, name, list: list.filter(([, v]) => v.m === k) }))
+      .filter(g => g.list.length && (!only || g.k === only));
+  }
   function openFavs(){
-    const f = getFavs(), list = Object.entries(f).sort((a, b) => b[1].d.localeCompare(a[1].d));
-    $('#favList').innerHTML = list.length ? list.map(([k, v]) => `<li>
+    const f = favSubjects(getFavs()), total = Object.keys(f).length;
+    const all = favGroups(f);
+    if (favSubj && !all.some(g => g.k === favSubj)) favSubj = '';
+    $('#favChips').hidden = all.length < 2;
+    $('#favChips').innerHTML = `<button type="button" data-subj=""${favSubj ? '' : ' class="on"'}>Tutte<small>${total}</small></button>` +
+      all.map(g => `<button type="button" data-subj="${g.k}"${favSubj === g.k ? ' class="on"' : ''}>${esc(g.name)}<small>${g.list.length}</small></button>`).join('');
+    const opts = cur => SUBJ.map(([k, n]) => `<option value="${k}"${k === cur ? ' selected' : ''}>${esc(n)}</option>`).join('');
+    const groups = favGroups(f, favSubj);
+    $('#favList').innerHTML = total ? groups.map(g => `<h3 class="fav-subj">${esc(g.name)}<small>${g.list.length}</small></h3>
+      <ul class="favlist">${g.list.map(([k, v]) => `<li>
         <span class="fdate">${esc(longDate(v.d))}</span><span class="ftitle">${esc(v.t)}</span>
         <span class="ftext">${esc(v.x)}</span>
-        <span class="fact"><button type="button" data-go="${esc(v.d)}/${v.i + 1}">Apri nella rassegna</button>${v.l ? `<a href="${esc(v.l)}" target="_blank" rel="noopener noreferrer">${esc(v.s || 'Fonte')}</a>` : ''}<button type="button" data-del="${esc(k)}">Togli</button></span></li>`).join('')
-      : '<li class="ftext">Nessuna notizia salvata. Tocca ☆ Salva sotto una notizia per ritrovarla qui, anche nei giorni successivi.</li>';
-    $('#favPdf').hidden = !list.length;
-    $('#favDlg').showModal();
+        <span class="fact"><button type="button" data-go="${esc(v.d)}/${v.i + 1}">Apri nella rassegna</button>${v.l ? `<a href="${esc(v.l)}" target="_blank" rel="noopener noreferrer">${esc(v.s || 'Fonte')}</a>` : ''}<select data-subj-of="${esc(k)}" aria-label="Materia">${opts(v.m)}</select><button type="button" data-del="${esc(k)}">Togli</button></span></li>`).join('')}</ul>`).join('')
+      : '<ul class="favlist"><li class="ftext">Nessuna notizia salvata. Tocca ☆ Salva sotto una notizia per ritrovarla qui, anche nei giorni successivi. Le notizie vengono divise per materia (cronaca, politica, sanità…).</li></ul>';
+    $('#favPdf').hidden = !total;
+    $('#favPdf').textContent = favSubj ? 'PDF di questa materia' : 'Salva PDF';
+    if (!$('#favDlg').open) $('#favDlg').showModal();
   }
+  $('#favChips').addEventListener('click', e => { const b = e.target.closest('[data-subj]'); if (!b) return; favSubj = b.dataset.subj; openFavs(); $('#favDlg').scrollTop = 0; });
+  $('#favList').addEventListener('change', e => {
+    const s = e.target.closest('[data-subj-of]'); if (!s) return;
+    const f = getFavs(), v = f[s.dataset.subjOf]; if (!v) return;
+    v.m = s.value; setFavs(f); toast(`Spostata in «${SUBJ_NAME[v.m]}»`);
+    const top = $('#favDlg').scrollTop; openFavs(); $('#favDlg').scrollTop = top;
+  });
   $('#favList').addEventListener('click', e => {
     const d = e.target.closest('[data-del]'), g = e.target.closest('[data-go]');
-    if (d){ const f = getFavs(); delete f[d.dataset.del]; setFavs(f); favCount(); markFavs(); openFavs(); }
+    if (d){ const f = getFavs(); delete f[d.dataset.del]; setFavs(f); favCount(); markFavs(); const top = $('#favDlg').scrollTop; openFavs(); $('#favDlg').scrollTop = top; }
     if (g){ $('#favDlg').close(); location.hash = g.dataset.go; }
   });
   $('#favBtn').onclick = openFavs;
@@ -578,7 +678,8 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     if (line) lines.push(line);
     return lines;
   }
-  function buildFavPdf(list){
+  // opts: { title, info, groups: [{ name, list: [{ d, slot, t, x, l, s }] }], file }
+  function buildPdf(opts){
     const PW = 595.28, PH = 841.89, M = 54, TW = PW - 2 * M, BOTTOM = 64;
     const pages = []; let ops, annots, y;
     const n2 = v => (Math.round(v * 100) / 100).toString();
@@ -587,13 +688,23 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     const need = h => { if (y - h < BOTTOM) newPage(); };
     const oggi = new Date(); const oggiIso = oggi.getFullYear() + '-' + String(oggi.getMonth() + 1).padStart(2, '0') + '-' + String(oggi.getDate()).padStart(2, '0');
     newPage();
-    text('Rassegna ER · Notizie salvate', M, y - 20, 20, true, '0.55 0.12 0.10'); y -= 40;
-    text(`Creato il ${longDate(oggiIso)} · ${list.length} ${list.length === 1 ? 'notizia' : 'notizie'}`, M, y, 10, false, '0.42 0.42 0.45'); y -= 14;
+    const tot = opts.groups.reduce((a, g) => a + g.list.length, 0);
+    pdfWrap(opts.title, true, 20, TW).forEach((l, j) => { text(l, M, y - 20, 20, true, '0.55 0.12 0.10'); y -= j ? 24 : 26; });
+    y -= 14;
+    text(`Creato il ${longDate(oggiIso)} · ${tot} ${tot === 1 ? 'notizia' : 'notizie'}${opts.info ? ' · ' + opts.info : ''}`, M, y, 10, false, '0.42 0.42 0.45'); y -= 14;
     ops.push(`0.8 0.8 0.82 RG 0.8 w ${M} ${n2(y)} m ${n2(PW - M)} ${n2(y)} l S`); y -= 24;
-    list.forEach(([, v], idx) => {
+    opts.groups.forEach((g, gi) => {
+    if (g.name){
+      need(60);
+      if (gi) y -= 8;
+      text(g.name.toUpperCase() + `  (${g.list.length})`, M, y, 11, true, '0.55 0.12 0.10'); y -= 6;
+      ops.push(`0.55 0.12 0.10 RG 0.8 w ${M} ${n2(y)} m ${n2(PW - M)} ${n2(y)} l S`); y -= 20;
+    }
+    const list = g.list;
+    list.forEach((v, idx) => {
       const tl = pdfWrap(v.t || '(senza titolo)', true, 12.5, TW), xl = v.x ? pdfWrap(v.x, false, 10.5, TW) : [];
       need(14 + Math.min(tl.length, 3) * 16 + Math.min(xl.length, 2) * 14 + 10);
-      text(longDate(v.d).toUpperCase(), M, y, 8.5, true, '0.45 0.45 0.48'); y -= 16;
+      text((longDate(v.d) + (v.slot ? ' · aggiornamento delle ' + v.slot : '')).toUpperCase(), M, y, 8.5, true, '0.45 0.45 0.48'); y -= 16;
       tl.forEach(l => { need(16); text(l, M, y, 12.5, true); y -= 16; });
       y -= 2;
       xl.forEach(l => { need(14); text(l, M, y, 10.5, false, '0.22 0.22 0.25'); y -= 14; });
@@ -609,6 +720,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       y -= 8;
       if (idx < list.length - 1) { need(12); ops.push(`0.88 0.88 0.9 RG 0.5 w ${M} ${n2(y + 4)} m ${n2(PW - M)} ${n2(y + 4)} l S`); y -= 14; }
     });
+    });
     pages.forEach((p, i) => p.ops.push(`BT /F1 8.5 Tf 0.5 0.5 0.53 rg ${n2(M)} 36 Td ${pdfStr(pdfChars('Rassegna ER · ' + location.host + location.pathname.replace(/index\.html$/, ''), false))} Tj ET`,
       `BT /F1 8.5 Tf 0.5 0.5 0.53 rg ${n2(PW - M - 60)} 36 Td ${pdfStr(pdfChars(`Pagina ${i + 1} di ${pages.length}`, false))} Tj ET`));
     // assemblaggio del file PDF
@@ -618,7 +730,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     add('');  // segnaposto per l'elenco delle pagine
     add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');
     add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');
-    add(`<< /Title ${pdfStr(pdfChars('Rassegna ER - Notizie salvate', false))} /Producer (Rassegna ER) >>`);
+    add(`<< /Title ${pdfStr(pdfChars(opts.title.replace(' · ', ' - '), false))} /Producer (Rassegna ER) >>`);
     const kids = pages.map(p => {
       const body = p.ops.join('\n');
       const c = add(`<< /Length ${body.length} >>\nstream\n${body}\nendstream`);
@@ -631,18 +743,25 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n` + offs.map(o => String(o).padStart(10, '0') + ' 00000 n \n').join('');
     out += `trailer\n<< /Size ${objs.length + 1} /Root 1 0 R /Info 5 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
     const bytes = new Uint8Array(out.length); for (let i = 0; i < out.length; i++) bytes[i] = out.charCodeAt(i) & 255;
-    return { bytes, name: `notizie-salvate-${oggiIso}.pdf` };
+    return { bytes, name: `${opts.file}-${oggiIso}.pdf` };
   }
-  async function saveFavPdf(){
-    const list = Object.entries(getFavs()).sort((a, b) => b[1].d.localeCompare(a[1].d));
-    if (!list.length) { toast('Nessuna notizia salvata da esportare'); return; }
-    const { bytes, name } = buildFavPdf(list);
+  const slug = t => norm(t).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'ricerca';
+  function saveFavPdf(){
+    const f = favSubjects(getFavs());
+    const groups = favGroups(f, favSubj).map(g => ({ name: g.name, list: g.list.map(([, v]) => v) }));
+    if (!groups.length) { toast('Nessuna notizia salvata da esportare'); return; }
+    const one = favSubj ? SUBJ_NAME[favSubj] : '';
+    sharePdf(buildPdf({ title: 'Rassegna ER · Notizie salvate' + (one ? ' · ' + one : ''),
+      info: one ? '' : `divise in ${groups.length} ${groups.length === 1 ? 'materia' : 'materie'}`,
+      groups, file: 'notizie-salvate' + (one ? '-' + slug(one) : '') }), 'Notizie salvate');
+  }
+  async function sharePdf({ bytes, name }, title){
     const blob = new Blob([bytes], { type: 'application/pdf' });
     // sul telefono: menu Condividi (Salva su File, Drive, WhatsApp, e-mail…); sul computer: scaricamento
     try {
       const file = new File([blob], name, { type: 'application/pdf' });
       if (matchMedia('(pointer:coarse)').matches && navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], title: 'Notizie salvate' }); return;
+        await navigator.share({ files: [file], title }); return;
       }
     } catch(e) { if (e && e.name === 'AbortError') return; }
     const url = URL.createObjectURL(blob), a = document.createElement('a');
@@ -698,7 +817,8 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     prov = store.get('prov') || 'Tutte';
     const [wanted, k] = location.hash.slice(1).split('/');
     focusK = parseInt(k) || 0;
-    load(editions.includes(wanted) ? wanted : editions[0]);
+    await load(editions.includes(wanted) ? wanted : editions[0]);
+    restoreSearch();
   }
   const todayRome = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
   /* ---------- Ultimo aggiornamento ---------- */
@@ -878,7 +998,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
 
   function makeItem(it, i){
     const el = document.createElement('article');
-    el.className = 'item'; el.dataset.i = i; el.dataset.sub = it.sub ? '1' : '';
+    el.className = 'item'; el.dataset.i = i; el.dataset.sub = it.sub ? '1' : ''; el.dataset.head = it.sub || '';
     el.dataset.prov = it.sec === 'Note' ? '' : ((themeOf(it.sub) ? '' : provOf(it.sub)) || detectProv(it.node) || (/^bologna$/i.test(it.sec) ? 'Bologna' : ''));
     el.innerHTML = `<button class="pbtn" type="button" aria-label="Ascolta da questa notizia"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><div class="txt">${it.node.innerHTML}</div>`;
     el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener noreferrer'; });
@@ -932,6 +1052,7 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     list.forEach((x, k) => {
       const li = document.createElement('li'); li.innerHTML = x.html;
       const el = makeItem({ sec: 'In breve', sub: null, node: li }, items.length);
+      if (x.cat) el.dataset.cat = x.cat;
       const txt = el.querySelector('.txt'), strong = txt.querySelector('strong');
       const t = new Date(x.t);
       const head = document.createElement('span'); head.className = 'brief-head';
@@ -1194,10 +1315,13 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       walkFragment(parse(h).body).forEach(it => {
         const i = k++;
         if (it.sec === 'Note') return;
+        const a = it.node.querySelector('.src a[href^="http"]') || [...it.node.querySelectorAll('a[href^="http"]')].find(x => /fonte/i.test(x.textContent));
+        const l = a ? a.getAttribute('href') : '', s = a ? a.textContent.replace(/[()]/g, '').replace(/^\s*Fonte:\s*/i, '').trim() : '';
         const t = it.node.cloneNode(true); t.querySelectorAll('.src').forEach(n => n.remove());
+        t.querySelectorAll('a').forEach(x => { if (/fonte/i.test(x.textContent)) x.remove(); });
         const title = ((t.querySelector('strong,b') || {}).textContent || '').trim();
         const text = t.textContent.replace(/\s+/g, ' ').trim();
-        out.push({ d, k: i, slot, title, text, n: norm(text) });
+        out.push({ d, k: i, slot, title, text, n: norm(text), l, s });
       });
     });
     ARCH.set(d, out);
@@ -1218,28 +1342,39 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
     const i = Math.max(0, n.indexOf(w) - 60);
     return (i ? '…' : '') + markWords(text.slice(i, i + 220), words) + (text.length > i + 220 ? '…' : '');
   }
-  let searchRun = 0;
-  async function searchAll(){
+  let searchRun = 0, sFound = [], sQuery = '';
+  /* la ricerca resta memorizzata (per un'ora): se si apre un articolo e la pagina si ricarica,
+     tornando nell'app si ritrovano la parola cercata e i risultati */
+  const SKEY = 'lastSearch';
+  const getS = () => { try { const v = JSON.parse(store.get(SKEY) || 'null'); return v && Date.now() - v.t < 36e5 ? v : null; } catch(e) { return null; } };
+  const setS = v => { const m = v ? { ...(getS() || {}), ...v, t: Date.now() } : null;
+    store.set(SKEY, m && m.q ? JSON.stringify(m) : ''); };
+  async function searchAll(keepScroll){
     const q = $('#q').value.trim();
     const words = norm(q).split(/\s+/).filter(w => w.length >= 2);
     if (!words.length) return;
     const run = ++searchRun;
+    sQuery = q; sFound = [];
+    setS({ q, all: true, open: true, back: false, from: location.hash, scroll: keepScroll ? (getS() || {}).scroll || 0 : 0 });
     $('#searchTitle').textContent = `«${q}» in tutti i giorni`;
     $('#sresList').innerHTML = '';
-    $('#searchDlg').showModal();
+    $('#sresPdf').hidden = true;
+    hideBack();
+    if (!$('#searchDlg').open) $('#searchDlg').showModal();
+    $('#searchDlg').scrollTop = 0;
     const days = editions.slice();
-    const found = [];
+    const found = sFound;
     let done = 0;
     const status = () => { $('#sresStatus').textContent = done < days.length
       ? `Cerco in ${days.length} giorni… ${done}/${days.length} · ${found.length} notizie trovate`
-      : (found.length ? `${found.length} ${found.length === 1 ? 'notizia trovata' : 'notizie trovate'} in ${new Set(found.map(f => f.d)).size} giorni` : 'Nessuna notizia trovata in nessun giorno.'); };
+      : (found.length ? `${found.length} ${found.length === 1 ? 'notizia trovata' : 'notizie trovate'} in ${new Set(found.map(f => f.d)).size} giorni${found.length > 300 ? ' · qui le 300 più recenti, nel PDF tutte' : ''}` : 'Nessuna notizia trovata in nessun giorno.'); };
     status();
     const draw = () => {
       const by = new Map();
       found.slice().sort((a, b) => b.d.localeCompare(a.d) || a.k - b.k).slice(0, 300).forEach(f => { if (!by.has(f.d)) by.set(f.d, []); by.get(f.d).push(f); });
       $('#sresList').innerHTML = [...by].map(([d, list]) => `<h3 class="sres-day">${esc(longDate(d))}<small>${list.length}</small></h3>
         <ul class="favlist sres">${list.map(f => `<li data-go="${f.d}/${f.k + 1}"><span class="fdate">${f.slot ? 'Aggiornamento delle ' + f.slot : 'Edizione del mattino'}</span>
-        <span class="ftitle">${markWords(f.title || f.text.slice(0, 80), words)}</span><span class="ftext">${snippet(f.text.replace(f.title, '').replace(/^\s*[—–-]\s*/, ''), words)}</span></li>`).join('')}</ul>`).join('');
+        <span class="ftitle">${markWords(f.title || f.text.slice(0, 80), words)}</span><span class="ftext">${snippet(f.text.replace(f.title, '').replace(/^\s*[—–-]\s*/, ''), words)}</span>${f.l ? `<a class="fsrc" href="${esc(f.l)}" target="_blank" rel="noopener noreferrer">Leggi su ${esc(f.s || 'giornale')} ↗</a>` : ''}</li>`).join('')}</ul>`).join('');
     };
     let next = 0;
     const worker = async () => {
@@ -1250,14 +1385,71 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
       }
     };
     await Promise.all([1, 2, 3, 4, 5, 6].map(worker));
+    if (run !== searchRun) return;
+    $('#sresPdf').hidden = !found.length;
+    const st = getS();
+    if (keepScroll && st && st.scroll) $('#searchDlg').scrollTop = st.scroll;
   }
-  $('#qAllBtn').onclick = searchAll;
+  // PDF dei risultati: tutte le notizie trovate, divise per giorno, con il link al giornale
+  $('#sresPdf').onclick = () => {
+    if (!sFound.length) return;
+    const by = new Map();
+    sFound.slice().sort((a, b) => b.d.localeCompare(a.d) || a.k - b.k).forEach(f => {
+      if (!by.has(f.d)) by.set(f.d, []);
+      by.get(f.d).push({ d: f.d, slot: f.slot, t: f.title || f.text.slice(0, 80), x: f.text.replace(f.title, '').replace(/^\s*[—–-]\s*/, '').slice(0, 600), l: f.l, s: f.s });
+    });
+    sharePdf(buildPdf({ title: `Rassegna ER · Ricerca «${sQuery}»`, info: `in ${by.size} ${by.size === 1 ? 'giorno' : 'giorni'} dell'archivio`,
+      groups: [...by].map(([d, list]) => ({ name: longDate(d), list })), file: 'ricerca-' + slug(sQuery) }), `Ricerca «${sQuery}»`);
+  };
+  $('#qAllBtn').onclick = () => searchAll();
   $('#q').addEventListener('keydown', e => { if (e.key === 'Enter' && $('#q').value.trim().length >= 2){ e.preventDefault(); $('#q').blur(); searchAll(); } });
+  // si ricorda dove si era arrivati nell'elenco, anche se si apre un articolo
+  let scrollT; $('#searchDlg').addEventListener('scroll', () => { clearTimeout(scrollT); scrollT = setTimeout(() => { if (getS() && $('#searchDlg').open) setS({ scroll: $('#searchDlg').scrollTop }); }, 250); }, { passive: true });
+  $('#searchDlg').addEventListener('close', () => { const st = getS(); if (st && !st.back) setS({ all: false, open: false }); });
   $('#sresList').addEventListener('click', e => {
+    if (e.target.closest('a')) return;   // il link al giornale si apre a parte, la ricerca resta qui
     const li = e.target.closest('[data-go]'); if (!li) return;
+    setS({ back: true, open: false, from: location.hash, scroll: $('#searchDlg').scrollTop });
     $('#searchDlg').close();
+    showBack();
     if (location.hash.slice(1) === li.dataset.go) window.dispatchEvent(new HashChangeEvent('hashchange')); else location.hash = li.dataset.go;
   });
+  // pulsante «Torna alla ricerca»: riapre i risultati dove li si era lasciati
+  function showBack(){ const st = getS(); if (!st) return; $('#backSearchGo').textContent = `‹ Torna alla ricerca «${st.q}»`; $('#backSearch').hidden = false; }
+  function hideBack(){ $('#backSearch').hidden = true; }
+  function backToSearch(){
+    const st = getS(); hideBack(); if (!st) return;
+    if ($('#q').value.trim() !== st.q){ $('#q').value = st.q; applyFilters(); }
+    if (st.all && sQuery === st.q && $('#sresList').innerHTML){
+      setS({ back: false, open: true });
+      $('#searchDlg').showModal(); $('#searchDlg').scrollTop = st.scroll || 0;
+    } else if (st.all) searchAll(true);
+  }
+  $('#backSearchGo').onclick = backToSearch;
+  $('#backSearchX').onclick = () => { hideBack(); setS({ back: false, all: false }); };
+  // tasto «indietro» del telefono o del browser dopo aver aperto un risultato
+  window.addEventListener('hashchange', () => { const st = getS(); if (st && st.back && st.from === location.hash) backToSearch(); });
+  // all'avvio: se la pagina si è ricaricata nel mezzo di una ricerca, la si ritrova com'era
+  function restoreSearch(){
+    const st = getS(); if (!st) return;
+    $('#q').value = st.q; applyFilters();
+    if (st.open && st.all) searchAll(true);
+    else if (st.back) showBack();
+  }
+  // ricerca nel giorno: la parola resta memorizzata; cancellandola si cancella anche la ricerca salvata
+  $('#q').addEventListener('input', () => { const q = $('#q').value.trim(); if (!q){ setS(null); hideBack(); } else setS({ q, all: false, back: false, open: false }); });
+
+  // stampa della ricerca nel giorno: solo le notizie trovate
+  function printFiltered(){
+    const q = $('#q').value.trim();
+    const vis = items.filter(el => !el.hidden && !el.closest('.notes')).length;
+    if (!vis){ toast('Nessuna notizia da stampare'); return; }
+    $('#printQ').textContent = [q ? `Ricerca: «${q}»` : '', prov !== 'Tutte' ? 'Provincia: ' + provLabel(prov) : '', `${vis} ${vis === 1 ? 'notizia' : 'notizie'}`].filter(Boolean).join(' · ');
+    document.body.classList.add('printsel');
+    window.print();
+  }
+  window.addEventListener('afterprint', () => document.body.classList.remove('printsel'));
+  $('#qPrint').onclick = printFiltered;
 
   let io;
   function observeSections(){
@@ -1499,7 +1691,9 @@ dialog.sheet::backdrop{background:rgba(15,17,25,.45)}
   }
 
   $('#pdfBtn').onclick = () => { const q = $('#q'); const v = q.value; const p = prov;
-    // in stampa tutte le notizie, senza filtri
+    // con una ricerca o una provincia scelta si stampa solo quello che si vede
+    if (filtering()){ printFiltered(); return; }
+    document.body.classList.remove('printsel');
     q.value = ''; setProv('Tutte', false); applyFilters(); window.print();
     setTimeout(() => { q.value = v; setProv(p, false); applyFilters(); }, 500); };
 
