@@ -152,9 +152,9 @@ HEADERS = {
     "Accept-Language": "it-IT,it;q=0.9",
 }
 
-# Prima i modelli più nuovi del piano gratuito; il 2.5 (ad accesso sempre più limitato) resta in coda
-MODELS_TO_TRY = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite",
-                 "gemini-3.1-flash-lite", "gemini-2.5-flash"]
+# Prima il 2.5, che ha sempre funzionato; se non risponde, i modelli più nuovi del piano gratuito
+MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite",
+                 "gemini-3.1-flash-lite"]
 GEMINI_SKIP = set()   # modelli senza quota o non disponibili: non si riprovano nello stesso aggiornamento
 
 NS = {
