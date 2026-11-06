@@ -152,7 +152,10 @@ HEADERS = {
     "Accept-Language": "it-IT,it;q=0.9",
 }
 
-MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-3.5-flash", "gemini-2.5-pro", "gemini-3.5-flash-lite"]
+# Prima il 2.5, che ha sempre funzionato; se non risponde, i modelli più nuovi del piano gratuito
+MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite",
+                 "gemini-3.1-flash-lite"]
+GEMINI_SKIP = set()   # modelli senza quota o non disponibili: non si riprovano nello stesso aggiornamento
 
 NS = {
     "atom": "http://www.w3.org/2005/Atom",
@@ -608,6 +611,8 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
         return types.GenerateContentConfig(**kw)
 
     for model in MODELS_TO_TRY:
+        if model in GEMINI_SKIP:
+            continue
         for attempt in range(2):
             try:
                 print(f"Gemini: {model} (tentativo {attempt + 1})...")
@@ -634,7 +639,8 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
                     text += (resp.text or "")
                 n = len(re.findall(r"<li\b", text))
                 print(f"✅ Rassegna scritta con {model}: {n} notizie, {len(text)} caratteri")
-                if n < min_items and model != MODELS_TO_TRY[-1]:
+                rest = [m for m in MODELS_TO_TRY[MODELS_TO_TRY.index(model) + 1:] if m not in GEMINI_SKIP]
+                if n < min_items and rest:
                     print("⚠️ Troppo poche notizie: provo il modello successivo.")
                     break
                 global USED_MODEL
@@ -644,8 +650,16 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
             except Exception as e:
                 print(f"⚠️ {model}: {e}")
                 PASS_LOG.append({"modello": model, "errore": str(e)[:160]})
+                msg = str(e)
+                if re.search(r"404|NOT_FOUND|not found|not supported|not enabled", msg, re.I):
+                    GEMINI_SKIP.add(model)   # modello ritirato o non abilitato: si passa al successivo
+                    break
+                quota = re.search(r"429|RESOURCE_EXHAUSTED|quota", msg, re.I)
+                if quota and re.search(r"per ?day|PerDay", msg, re.I):
+                    GEMINI_SKIP.add(model)   # quota del giorno finita: inutile riprovarlo in questo aggiornamento
+                    break
                 # quota al minuto superata (ora le richieste del mattino sono cinque): si aspetta e si riprova
-                time.sleep(40 if re.search(r"429|RESOURCE_EXHAUSTED|quota", str(e), re.I) else 4)
+                time.sleep(40 if quota else 4)
     return None
 
 
