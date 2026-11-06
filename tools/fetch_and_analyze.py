@@ -655,8 +655,8 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
                     GEMINI_SKIP.add(model)   # modello ritirato o non abilitato: si passa al successivo
                     break
                 quota = re.search(r"429|RESOURCE_EXHAUSTED|quota", msg, re.I)
-                if quota and (attempt or re.search(r"per ?day", msg, re.I)):
-                    GEMINI_SKIP.add(model)   # quota finita anche dopo l'attesa: inutile riprovarlo oggi
+                if quota and re.search(r"per ?day|PerDay", msg, re.I):
+                    GEMINI_SKIP.add(model)   # quota del giorno finita: inutile riprovarlo in questo aggiornamento
                     break
                 # quota al minuto superata (ora le richieste del mattino sono cinque): si aspetta e si riprova
                 time.sleep(40 if quota else 4)
