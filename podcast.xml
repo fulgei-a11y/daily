@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 06 Nov 2026 12:59:16 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 14:46:03 +0100</lastBuildDate>
+    <item>
+      <title>Aggiornamento delle 13 · venerdì 6 novembre 2026</title>
+      <description>18 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi rapina in centro; Operaio schiacciato da un muletto; Donazione per la ricerca sui sarcomi; Dibattito sul nome di piazza Verdi; Maltrattamenti e tre aborti provocati; Disboscamento abusivo per parco fotovoltaico.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-11-06</link>
+      <guid isPermaLink="false">rassegna-er-2026-11-06-13</guid>
+      <pubDate>Fri, 06 Nov 2026 14:45:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-11-06-13.mp3" length="904116" type="audio/mpeg"/>
+      <itunes:duration>301</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Rassegna del mattino · venerdì 6 novembre 2026</title>
       <description>122 notizie dall&#x27;Emilia-Romagna. In apertura: Tentata estorsione a un negoziante; Violenta rapina a un&#x27;anziana nell&#x27;androne di casa; Tensione sulla manifestazione contro il carovita; Custodia cautelare per la banda dell&#x27;esplosivo; Maxi multe per le scritte su San Petronio e in zona universitaria; Fermata sull&#x27;A1 coppia con 200mila euro di gioielli rubati.</description>
