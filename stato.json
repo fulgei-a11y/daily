@@ -1,18 +1,140 @@
 {
- "date": "2026-11-05",
- "slot": "19",
- "generated": "2026-11-05T20:16+01:00",
- "articles": 382,
- "items": 35,
- "model": "gemini-2.5-flash",
+ "date": "2026-11-06",
+ "slot": "mattina",
+ "generated": "2026-11-06T10:27+01:00",
+ "articles": 520,
+ "items": 116,
+ "model": "gemini-3.5-flash",
  "fallback": false,
- "feeds_ok": 76,
+ "feeds_ok": 77,
  "feeds_total": 77,
  "passaggi": [
   {
+   "parte": "Bologna 1: Cronaca, Giustizia e indagini, Comune di Bologna e politica, Mobilità, cantieri e trasporti, Area metropolitana",
+   "articoli": 286
+  },
+  {
    "modello": "gemini-2.5-flash",
-   "notizie": 57,
-   "caratteri": 20075
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "notizie": 31,
+   "caratteri": 11566
+  },
+  {
+   "parte": "Bologna 2: Economia, imprese e lavoro, Sanità e sociale, Scuola e università, Imola e circondario, Cultura ed eventi",
+   "articoli": 286
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "errore": "500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}"
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+  },
+  {
+   "modello": "gemini-2.5-pro",
+   "errore": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on"
+  },
+  {
+   "modello": "gemini-2.5-pro",
+   "errore": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on"
+  },
+  {
+   "modello": "gemini-3.5-flash-lite",
+   "notizie": 29,
+   "caratteri": 10590
+  },
+  {
+   "parte": "EMILIA",
+   "articoli": 137
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "notizie": 34,
+   "caratteri": 11465
+  },
+  {
+   "parte": "ROMAGNA",
+   "articoli": 97
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "notizie": 25,
+   "caratteri": 7710
+  },
+  {
+   "parte": "Bologna completamento (erano 56)"
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "notizie": 7,
+   "caratteri": 2333
+  },
+  {
+   "aggiunte": 5
+  },
+  {
+   "sezioni": {
+    "Bologna": 61,
+    "Emilia-Romagna": 53,
+    "agenda": 2
+   }
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "notizie": 0,
+   "caratteri": 1036
   }
  ],
  "feeds": [
@@ -74,7 +196,7 @@
    "name": "Il Resto del Carlino",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
+   "items": 36
   },
   {
    "name": "BolognaToday",
@@ -260,13 +382,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 25
+   "items": 34
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 21
+   "items": 19
   },
   {
    "name": "Google News",
@@ -296,13 +418,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 5
+   "items": 1
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 13
+   "items": 20
   },
   {
    "name": "Google News",
@@ -326,73 +448,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 14
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 16
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 21
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 7
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 32
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 16
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 24
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 5
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 8
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 29
+   "items": 17
   },
   {
    "name": "Google News",
@@ -404,19 +460,85 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
+   "items": 23
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 5
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
    "items": 40
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 21
+   "items": 35
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 24
+   "items": 31
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 17
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 17
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 4
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 8
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 31
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 30
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 17
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 23
   },
   {
    "name": "Google News",
@@ -446,13 +568,13 @@
    "name": "Google News",
    "prov": "Ravenna",
    "status": "ok",
-   "items": 19
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 14
+   "items": 12
   },
   {
    "name": "Google News",
@@ -464,7 +586,7 @@
    "name": "Google News",
    "prov": "Ferrara",
    "status": "ok",
-   "items": 0
+   "items": 20
   },
   {
    "name": "Google News",
@@ -476,7 +598,7 @@
    "name": "Google News",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 17
+   "items": 12
   }
  ]
 }
