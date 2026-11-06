@@ -1,9 +1,9 @@
 {
  "date": "2026-11-06",
  "slot": "mattina",
- "generated": "2026-11-06T10:27+01:00",
+ "generated": "2026-11-06T12:56+01:00",
  "articles": 520,
- "items": 116,
+ "items": 120,
  "model": "gemini-3.5-flash",
  "fallback": false,
  "feeds_ok": 77,
@@ -23,8 +23,12 @@
   },
   {
    "modello": "gemini-3.5-flash",
-   "notizie": 31,
-   "caratteri": 11566
+   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+  },
+  {
+   "modello": "gemini-3.5-flash",
+   "notizie": 30,
+   "caratteri": 10072
   },
   {
    "parte": "Bologna 2: Economia, imprese e lavoro, Sanità e sociale, Scuola e università, Imola e circondario, Cultura ed eventi",
@@ -40,24 +44,8 @@
   },
   {
    "modello": "gemini-3.5-flash",
-   "errore": "500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}"
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-2.5-pro",
-   "errore": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on"
-  },
-  {
-   "modello": "gemini-2.5-pro",
-   "errore": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on"
-  },
-  {
-   "modello": "gemini-3.5-flash-lite",
    "notizie": 29,
-   "caratteri": 10590
+   "caratteri": 9371
   },
   {
    "parte": "EMILIA",
@@ -73,8 +61,8 @@
   },
   {
    "modello": "gemini-3.5-flash",
-   "notizie": 34,
-   "caratteri": 11465
+   "notizie": 36,
+   "caratteri": 10788
   },
   {
    "parte": "ROMAGNA",
@@ -90,51 +78,47 @@
   },
   {
    "modello": "gemini-3.5-flash",
-   "notizie": 25,
-   "caratteri": 7710
+   "notizie": 24,
+   "caratteri": 7901
   },
   {
-   "parte": "Bologna completamento (erano 56)"
-  },
-  {
-   "modello": "gemini-2.5-flash",
-   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+   "parte": "Bologna completamento (erano 57)"
   },
   {
    "modello": "gemini-2.5-flash",
    "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
   },
   {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+   "modello": "gemini-2.5-flash",
+   "errore": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on"
   },
   {
    "modello": "gemini-3.5-flash",
-   "notizie": 7,
-   "caratteri": 2333
+   "notizie": 12,
+   "caratteri": 4913
   },
   {
    "aggiunte": 5
   },
   {
    "sezioni": {
-    "Bologna": 61,
-    "Emilia-Romagna": 53,
-    "agenda": 2
+    "Bologna": 62,
+    "Emilia-Romagna": 54,
+    "agenda": 4
    }
   },
   {
    "modello": "gemini-2.5-flash",
-   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+   "errore": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on"
   },
   {
    "modello": "gemini-2.5-flash",
-   "errore": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': '"
+   "errore": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on"
   },
   {
    "modello": "gemini-3.5-flash",
    "notizie": 0,
-   "caratteri": 1036
+   "caratteri": 938
   }
  ],
  "feeds": [
@@ -352,7 +336,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 20
+   "items": 18
   },
   {
    "name": "Google News",
@@ -382,13 +366,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 34
+   "items": 33
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 19
+   "items": 21
   },
   {
    "name": "Google News",
@@ -448,37 +432,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 17
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 28
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 23
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 5
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 35
+   "items": 15
   },
   {
    "name": "Google News",
@@ -490,19 +444,49 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 17
+   "items": 22
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 17
+   "items": 8
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 4
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 36
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 31
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 18
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 15
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 7
   },
   {
    "name": "Google News",
@@ -520,7 +504,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 30
+   "items": 29
   },
   {
    "name": "Google News",
@@ -538,7 +522,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 23
+   "items": 24
   },
   {
    "name": "Google News",
@@ -568,13 +552,13 @@
    "name": "Google News",
    "prov": "Ravenna",
    "status": "ok",
-   "items": 20
+   "items": 18
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 12
+   "items": 15
   },
   {
    "name": "Google News",
@@ -598,7 +582,7 @@
    "name": "Google News",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 12
+   "items": 11
   }
  ]
 }
