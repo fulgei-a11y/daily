@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 06 Nov 2026 20:18:21 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 00:43:31 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · venerdì 6 novembre 2026</title>
       <description>24 notizie dall&#x27;Emilia-Romagna. In apertura: Lavori del tram, riaperture e modifiche al traffico; Manifestazione del 7 novembre, definita la piazza; Morte dell&#x27;operaio Hussain Muzammal, due indagati; Assalti con esplosivo, nuova ordinanza di custodia cautelare; Rapina a 71enne nell&#x27;androne, eseguito un arresto; Perdita idrica e strada allagata in centro.</description>
@@ -573,36 +573,6 @@
       <pubDate>Mon, 19 Oct 2026 07:47:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-19.mp3" length="4858768" type="audio/mpeg"/>
       <itunes:duration>1619</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · domenica 18 ottobre 2026</title>
-      <description>11 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri a Bologna: bilancio danni e feriti aggiornato, arresti e dettagli su un episodio; Automobilista arrestato per droga; Poliziotto investito e morto nel Cesenate; Aggressione con spray al peperoncino in locale; Arrestata 34enne per droga; Frana di Ca’ Lita: monitoraggio e nuovi interventi.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-18</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-18-19</guid>
-      <pubDate>Sun, 18 Oct 2026 19:16:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-18-19.mp3" length="777161" type="audio/mpeg"/>
-      <itunes:duration>258</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · domenica 18 ottobre 2026</title>
-      <description>85 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri e guerriglia urbana a Bologna: bilancio di danni e feriti; Incidente mortale in via Libia; Sequestro di 110 Alaskan Malamute in allevamento abusivo; Spaccio di droga a Imola: arrestato 57enne; Uomo alla guida senza patente a Imola, fornisce false generalità; Tentativo di fuga e spaccio a Imola: 24enne denunciato.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-18</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-18</guid>
-      <pubDate>Sun, 18 Oct 2026 17:58:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-18.mp3" length="4870209" type="audio/mpeg"/>
-      <itunes:duration>1623</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · domenica 18 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Scontri a Bologna, bilancio aggiornato e danni; Omicidio di Mirandola, indagini sui telefoni; Incidente mortale sul ponte di via Libia; Rapina e aggressione a Ravenna, tre denunciati; Violazione divieto di avvicinamento alla madre; Tentato furto e danneggiamenti all&#x27;Ospedale Maggiore.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-18</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-18-13</guid>
-      <pubDate>Sun, 18 Oct 2026 13:22:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-18-13.mp3" length="1511698" type="audio/mpeg"/>
-      <itunes:duration>503</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
