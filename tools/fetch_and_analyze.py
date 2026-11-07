@@ -152,9 +152,10 @@ HEADERS = {
     "Accept-Language": "it-IT,it;q=0.9",
 }
 
-# gemini-2.5-flash è stato ritirato da Google (dal 7/11/2026 risponde "no longer available"):
-# prima i modelli Flash più nuovi, poi i "lite", più leggeri e quasi sempre disponibili
-MODELS_TO_TRY = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite",
+# Prima gemini-2.5-flash: Google lo nega alle chiavi nuove ("no longer available to new users"),
+# ma con la chiave storica (rimessa il 7/11/2026) funziona. Se non risponde, si passa da soli
+# ai modelli Flash più nuovi e poi ai "lite", più leggeri e quasi sempre disponibili
+MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite",
                  "gemini-3.1-flash-lite"]
 GEMINI_SKIP = set()   # modelli senza quota o non disponibili: non si riprovano nello stesso aggiornamento
 
