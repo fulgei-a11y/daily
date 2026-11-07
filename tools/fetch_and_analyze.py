@@ -598,7 +598,12 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise ValueError("GEMINI_API_KEY non impostata.")
-    client = genai.Client(api_key=api_key)
+    # v1beta esplicita: con la v1 (predefinita nelle versioni recenti della libreria) gemini-2.5-flash
+    # rifiuta le istruzioni di sistema ("Developer instruction is not enabled for api version v1")
+    try:
+        client = genai.Client(api_key=api_key, http_options=types.HttpOptions(api_version="v1beta"))
+    except Exception:
+        client = genai.Client(api_key=api_key)
 
     def config_for(model):
         kw = dict(system_instruction=system or SYSTEM_INSTRUCTION, temperature=0.25, max_output_tokens=60000)
@@ -659,7 +664,8 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
                     GEMINI_SKIP.add(model)   # quota del giorno finita: inutile riprovarlo in questo aggiornamento
                     break
                 # quota al minuto superata (ora le richieste del mattino sono cinque): si aspetta e si riprova
-                time.sleep(40 if quota else 4)
+                busy = re.search(r"503|UNAVAILABLE|500|INTERNAL", msg)
+                time.sleep(40 if quota else 15 if busy else 4)   # modello sovraccarico: si aspetta un po' di più
     return None
 
 

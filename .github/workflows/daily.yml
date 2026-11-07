@@ -2,22 +2,11 @@ name: Rassegna Stampa Automatica
 
 on:
   schedule:
-    - cron: '0 4 * * *'    # edizione del mattino: 06:00 ora legale (05:00 con l'ora solare)
-    # aggiornamenti: GitHub usa l'ora UTC, quindi ogni appuntamento ha due orari
-    # (uno per l'ora legale, uno per l'ora solare); lo script parte solo con quello giusto
-    - cron: '0 11 * * *'   # 13:00 ora legale
-    - cron: '0 12 * * *'   # 13:00 ora solare
-    - cron: '0 17 * * *'   # 19:00 ora legale
-    - cron: '0 18 * * *'   # 19:00 ora solare  (e In breve delle 20 con l'ora legale)
-    # In breve (solo agenzie) alle 8, 12, 16, 20 e 24 ora italiana
-    - cron: '0 6 * * *'
-    - cron: '0 7 * * *'
-    - cron: '0 10 * * *'   # (le 12 con l'ora solare usano il cron delle 11)
-    - cron: '0 14 * * *'
-    - cron: '0 15 * * *'
-    - cron: '0 19 * * *'
-    - cron: '0 22 * * *'
-    - cron: '0 23 * * *'
+    # GitHub fa partire gli orari programmati anche con ore di ritardo (e a volte li salta),
+    # soprattutto quelli allo scoccare dell'ora. Per questo il workflow parte ogni ora a un minuto
+    # "tranquillo" e lo script decide che cosa manca: mattina (dalle 5), 13, 19, In breve.
+    - cron: '23 * * * *'
+    - cron: '53 3,4 * * *'   # due tentativi in più per l'edizione del mattino
   # quando carichi a mano un file (pagina, icone...) il sito si ripubblica da solo
   push:
     branches: [main]
@@ -71,16 +60,37 @@ jobs:
             if   [ "$H" -lt 12 ]; then SLOT=mattina
             elif [ "$H" -lt 18 ]; then SLOT=13
             else SLOT=19; fi
-          elif [ "$CRON" = "0 4 * * *" ]; then
-            SLOT=mattina
-          elif [ "$H" -ge 13 ] && [ "$H" -le 14 ] && [ ! -f "edizioni/$TODAY-13.html" ]; then
-            SLOT=13
-          elif [ "$H" -ge 19 ] && [ "$H" -le 20 ] && [ ! -f "edizioni/$TODAY-19.html" ]; then
-            SLOT=19
-          elif [ "$H" = 8 ] || [ "$H" = 12 ] || [ "$H" = 16 ] || [ "$H" = 20 ] || [ "$H" = 0 ]; then
-            SLOT=ultimora
           else
-            SLOT=salta
+            # programmato: si fa la prima cosa che manca (così un ritardo di GitHub non fa saltare niente
+            # e non si rifà mai un'edizione già pubblicata)
+            SLOT=$(H="$H" TODAY="$TODAY" python3 - <<'PY'
+          import datetime as dt, json, os
+          from zoneinfo import ZoneInfo
+          now = dt.datetime.now(ZoneInfo("Europe/Rome"))
+          h, today = int(os.environ["H"]), os.environ["TODAY"]
+          has = lambda f: os.path.exists(f"edizioni/{f}.html")
+          slot = "salta"
+          if 5 <= h <= 12 and not has(today):
+              slot = "mattina"
+          elif 13 <= h <= 18 and not has(f"{today}-13"):
+              slot = "13"
+          elif h >= 19 and not has(f"{today}-19"):
+              slot = "19"
+          else:
+              # In breve alle 8, 12, 16, 20 e 24: si fa se dall'ultimo orario previsto non è ancora stato
+              # fatto (entro 3 ore; oltre quell'orario si aspetta il successivo)
+              mid = now.replace(hour=0, minute=0, second=0, microsecond=0)
+              due = [t for t in (mid + dt.timedelta(hours=x) for x in (0, 8, 12, 16, 20))
+                     if t <= now < t + dt.timedelta(hours=3)]
+              try:
+                  last = dt.datetime.fromisoformat(json.load(open("ultimora.json"))["last_run"]["at"])
+              except Exception:
+                  last = None
+              if due and (last is None or last < due[-1]):
+                  slot = "ultimora"
+          print(slot)
+          PY
+            )
           fi
           AUDIO=no
           case "$SLOT" in mattina|13|19) AUDIO=si ;; esac
