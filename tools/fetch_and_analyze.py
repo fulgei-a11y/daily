@@ -152,8 +152,9 @@ HEADERS = {
     "Accept-Language": "it-IT,it;q=0.9",
 }
 
-# Prima il 2.5, che ha sempre funzionato; se non risponde, i modelli più nuovi del piano gratuito
-MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite",
+# gemini-2.5-flash è stato ritirato da Google (dal 7/11/2026 risponde "no longer available"):
+# prima i modelli Flash più nuovi, poi i "lite", più leggeri e quasi sempre disponibili
+MODELS_TO_TRY = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite",
                  "gemini-3.1-flash-lite"]
 GEMINI_SKIP = set()   # modelli senza quota o non disponibili: non si riprovano nello stesso aggiornamento
 
