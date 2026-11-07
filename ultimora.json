@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-11-07T16:06+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Vigilessa uccisa ad Anzola Emilia, al via l'appello per l'ex comandante",
+   "links": [
+    "https://www.ansa.it/sito/notizie/cronaca/2026/11/07/vigilessa-uccisa-gli-avvocati-dei-familiari-e-un-caso-di-femminicidio-relazionale_cdd8ea0d-3a59-4a60-bfb9-6bc3f25b279b.html"
+   ],
+   "html": "<strong>Vigilessa uccisa ad Anzola Emilia, al via l'appello per l'ex comandante</strong> — Bologna: lunedì prende il via il processo d'appello per l'omicidio di Sofia Stefani, la vigilessa 33enne uccisa il 16 maggio 2024, per cui in primo grado è stato condannato all'ergastolo l'ex comandante Giampiero Gualandi. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/sito/notizie/cronaca/2026/11/07/vigilessa-uccisa-gli-avvocati-dei-familiari-e-un-caso-di-femminicidio-relazionale_cdd8ea0d-3a59-4a60-bfb9-6bc3f25b279b.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-07T16:06+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Lavoro, in Emilia-Romagna l'80% dei giovani adulti occupati",
+   "links": [
+    "https://www.adnkronos.com/economia/lavoro-manageritalia-in-emilia-romagna-l80-dei-giovani-adulti-occupati_3AvmLgBivgnHHalNms50jo"
+   ],
+   "html": "<strong>Lavoro, in Emilia-Romagna l'80% dei giovani adulti occupati</strong> — Emilia-Romagna: il tasso di occupazione tra i 25 e i 34 anni raggiunge il 79,5%, oltre 11 punti sopra la media italiana, con Modena leader regionale sull'occupazione giovanile. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/economia/lavoro-manageritalia-in-emilia-romagna-l80-dei-giovani-adulti-occupati_3AvmLgBivgnHHalNms50jo\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
    "t": "2026-11-07T12:06+01:00",
    "cat": "",
    "bo": false,
@@ -153,13 +173,18 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/07/furto-da-mezzo-milione-nella-villa-del-calciatore-del-parma-el-bilal_f0d5a73a-4c3f-40c8-9fcf-a0c8663f071b.html": "2026-11-07T11:04+01:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/11/07/picchiato-a-morte-a-cervia-chiesto-il-giudizio-immediato-per-5-giovani_8c8835bc-94ce-4668-b2ba-42fdbad216fc.html": "2026-11-07T12:06+01:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/11/07/furto-da-mezzo-milione-nella-villa-del-calciatore-del-parma-el-bilal_e8617f75-e8bd-42f2-8a86-04c95f9732bb.html": "2026-11-07T12:06+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/07/sfonda-la-porta-e-tenta-di-strangolare-la-moglie-davanti-ai-figli_5aad1401-e48c-4296-a5ef-5249632da078.html": "2026-11-07T12:06+01:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/07/sfonda-la-porta-e-tenta-di-strangolare-la-moglie-davanti-ai-figli_5aad1401-e48c-4296-a5ef-5249632da078.html": "2026-11-07T12:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/07/vigilessa-uccisa-gli-avvocati-dei-familiari-e-un-caso-di-femminicidio-relazionale_cdd8ea0d-3a59-4a60-bfb9-6bc3f25b279b.html": "2026-11-07T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/07/vigilessa-uccisa-gli-avvocati-dei-familiari-femminicidio-relazionale_d78901e2-76a5-474f-b2fc-4352d7c7e440.html": "2026-11-07T16:06+01:00",
+  "https://www.italpress.com/sicurezza-via-accordo-di-programma-tra-regione-emilia-romagna-comune-di-modena": "2026-11-07T16:06+01:00",
+  "https://www.italpress.com/bezzecchi-in-pole-al-gp-del-qatar-davanti-a-marquez-e-di-giannantonio": "2026-11-07T16:06+01:00",
+  "https://www.adnkronos.com/economia/lavoro-manageritalia-in-emilia-romagna-l80-dei-giovani-adulti-occupati_3AvmLgBivgnHHalNms50jo": "2026-11-07T16:06+01:00"
  },
- "updated": "2026-11-07T12:06+01:00",
- "next": "alle 16",
+ "updated": "2026-11-07T16:06+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-07T12:06+01:00",
-  "articles": 3,
+  "at": "2026-11-07T16:06+01:00",
+  "articles": 5,
   "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -168,15 +193,15 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 40,
-    "kept": 0
+    "items": 31,
+    "kept": 1
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 3
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -218,7 +243,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -253,7 +278,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Italpress",
@@ -273,7 +298,7 @@
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
-    "items": 60,
+    "items": 55,
     "kept": 0
    },
    {
