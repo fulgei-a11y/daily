@@ -1,188 +1,18 @@
 {
  "date": "2026-11-07",
- "slot": "mattina",
- "generated": "2026-11-07T09:08+01:00",
- "articles": 520,
- "items": 136,
- "model": "gemini-3.6-flash",
+ "slot": "13",
+ "generated": "2026-11-07T13:07+01:00",
+ "articles": 272,
+ "items": 35,
+ "model": "gemini-2.5-flash",
  "fallback": false,
  "feeds_ok": 77,
  "feeds_total": 77,
  "passaggi": [
   {
-   "parte": "Bologna 1: Cronaca, Giustizia e indagini, Comune di Bologna e politica, Mobilità, cantieri e trasporti, Area metropolitana",
-   "articoli": 286
-  },
-  {
    "modello": "gemini-2.5-flash",
-   "errore": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models"
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash-lite",
-   "notizie": 26,
-   "caratteri": 8500
-  },
-  {
-   "parte": "Bologna 2: Economia, imprese e lavoro, Sanità e sociale, Scuola e università, Imola e circondario, Cultura ed eventi",
-   "articoli": 286
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash-lite",
-   "notizie": 36,
-   "caratteri": 11954
-  },
-  {
-   "parte": "EMILIA",
-   "articoli": 133
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash-lite",
-   "notizie": 39,
-   "caratteri": 13562
-  },
-  {
-   "parte": "ROMAGNA",
-   "articoli": 101
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "notizie": 26,
-   "caratteri": 8072
-  },
-  {
-   "parte": "Bologna completamento (erano 59)"
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.5-flash-lite",
-   "notizie": 12,
-   "caratteri": 3543
-  },
-  {
-   "aggiunte": 12
-  },
-  {
-   "sezioni": {
-    "Bologna": 71,
-    "Emilia-Romagna": 62,
-    "agenda": 3
-   }
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.8-flash",
-   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
-  },
-  {
-   "modello": "gemini-3.6-flash",
-   "notizie": 0,
-   "caratteri": 945
+   "notizie": 49,
+   "caratteri": 18853
   }
  ],
  "feeds": [
@@ -430,13 +260,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 39
+   "items": 40
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 25
+   "items": 29
   },
   {
    "name": "Google News",
@@ -466,13 +296,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 1
+   "items": 6
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 20
+   "items": 16
   },
   {
    "name": "Google News",
@@ -496,13 +326,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 17
+   "items": 12
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
+   "items": 39
   },
   {
    "name": "Google News",
@@ -532,19 +362,19 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 35
+   "items": 33
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 16
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
    "items": 17
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 20
   },
   {
    "name": "Google News",
@@ -556,7 +386,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 6
+   "items": 4
   },
   {
    "name": "Google News",
@@ -568,7 +398,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 26
+   "items": 27
   },
   {
    "name": "Google News",
@@ -580,13 +410,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 17
+   "items": 18
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 24
+   "items": 22
   },
   {
    "name": "Google News",
