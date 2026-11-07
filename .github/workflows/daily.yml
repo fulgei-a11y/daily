@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       tipo:
-        description: 'Cosa generare'
+        description: 'Cosa generare (automatico = solo quello che manca)'
         type: choice
         default: automatico
         options: [automatico, mattina, '13', '19', ultimora, sito]
@@ -56,12 +56,8 @@ jobs:
             SLOT=sito
           elif [ -n "$TIPO" ] && [ "$TIPO" != "automatico" ]; then
             SLOT="$TIPO"
-          elif [ -n "$TIPO" ]; then
-            if   [ "$H" -lt 12 ]; then SLOT=mattina
-            elif [ "$H" -lt 18 ]; then SLOT=13
-            else SLOT=19; fi
           else
-            # programmato: si fa la prima cosa che manca (così un ritardo di GitHub non fa saltare niente
+            # programmato (o "automatico" a mano / da un servizio esterno): si fa la prima cosa che manca (così un ritardo di GitHub non fa saltare niente
             # e non si rifà mai un'edizione già pubblicata)
             SLOT=$(H="$H" TODAY="$TODAY" python3 - <<'PY'
           import datetime as dt, json, os
