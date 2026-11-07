@@ -617,10 +617,18 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
                 pass
         return types.GenerateContentConfig(**kw)
 
-    for model in MODELS_TO_TRY:
+    busy = []   # modelli che hanno risposto "troppo occupato": si riprovano solo nel secondo giro
+    for rnd in range(2):
+      if rnd == 1:
+          if not busy:
+              break
+          print(f"⏳ Modelli occupati ({', '.join(busy)}): aspetto 30 secondi e li riprovo una volta.")
+          time.sleep(30)
+      todo, busy = (busy, []) if rnd == 1 else (MODELS_TO_TRY, [])
+      for model in todo:
         if model in GEMINI_SKIP:
             continue
-        for attempt in range(2):
+        for attempt in range(2 if rnd == 0 else 1):
             try:
                 print(f"Gemini: {model} (tentativo {attempt + 1})...")
                 cfg = config_for(model)
@@ -665,9 +673,11 @@ def call_gemini(prompt, system=None, min_items=25, min_len=300):
                 if quota and re.search(r"per ?day|PerDay", msg, re.I):
                     GEMINI_SKIP.add(model)   # quota del giorno finita: inutile riprovarlo in questo aggiornamento
                     break
-                # quota al minuto superata (ora le richieste del mattino sono cinque): si aspetta e si riprova
-                busy = re.search(r"503|UNAVAILABLE|500|INTERNAL", msg)
-                time.sleep(40 if quota else 15 if busy else 4)   # modello sovraccarico: si aspetta un po' di più
+                if not quota and re.search(r"503|UNAVAILABLE|500|INTERNAL|overloaded|high demand", msg, re.I):
+                    busy.append(model)       # sovraccarico: inutile insistere subito, si passa al successivo
+                    break
+                # quota al minuto superata: si aspetta e si riprova
+                time.sleep(40 if quota else 4)
     return None
 
 
@@ -922,8 +932,15 @@ def complete_bologna(sec, bo):
     if have >= want:
         return sec
     written = "\n".join("- " + clean(t) for t in re.findall(r"<strong>(.*?)</strong>", sec, flags=re.S))
-    print(f"   ➕ Sezione Bologna con {have} notizie: chiedo a Gemini quelle rimaste fuori...")
-    PASS_LOG.append({"parte": f"Bologna completamento (erano {have})"})
+    # a Gemini si mandano solo gli articoli non ancora citati come fonte: meno testo da rileggere
+    # e più attenzione proprio a quello che manca
+    unused = [a for a in bo if f'href="{html.escape(a["link"], quote=True)}"' not in sec]
+    if not unused:
+        return sec
+    print(f"   ➕ Sezione Bologna con {have} notizie: chiedo a Gemini quelle rimaste fuori "
+          f"({len(unused)} articoli non ancora usati su {len(bo)})...")
+    PASS_LOG.append({"parte": f"Bologna completamento (erano {have})", "articoli": len(unused)})
+    bo = unused
     prompt = (f"NOTIZIE GIÀ SCRITTE nella sezione Bologna (NON ripeterle):\n{written}\n\n" + build_prompt(bo) +
               "\nScrivi ADESSO SOLO le notizie di Bologna e area metropolitana che mancano: tutti i fatti concreti non "
               "ancora coperti (cronaca, Comune e politica, consigli comunali, economia e lavoro, mobilità, sanità, scuola). "
