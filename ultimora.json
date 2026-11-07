@@ -178,14 +178,17 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/07/vigilessa-uccisa-gli-avvocati-dei-familiari-femminicidio-relazionale_d78901e2-76a5-474f-b2fc-4352d7c7e440.html": "2026-11-07T16:06+01:00",
   "https://www.italpress.com/sicurezza-via-accordo-di-programma-tra-regione-emilia-romagna-comune-di-modena": "2026-11-07T16:06+01:00",
   "https://www.italpress.com/bezzecchi-in-pole-al-gp-del-qatar-davanti-a-marquez-e-di-giannantonio": "2026-11-07T16:06+01:00",
-  "https://www.adnkronos.com/economia/lavoro-manageritalia-in-emilia-romagna-l80-dei-giovani-adulti-occupati_3AvmLgBivgnHHalNms50jo": "2026-11-07T16:06+01:00"
+  "https://www.adnkronos.com/economia/lavoro-manageritalia-in-emilia-romagna-l80-dei-giovani-adulti-occupati_3AvmLgBivgnHHalNms50jo": "2026-11-07T16:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/07/accoltella-la-compagna-e-le-frattura-il-cranio-arrestato-_590ddfe2-a77b-4b7c-a32c-c1891b0c88c0.html": "2026-11-07T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOR2FoQ3hfR3lhLVAtWDNwS1VCbnl1U0hhcFBSM3FTaGUzODFjSTZSdmNHQmI3cUY4MmhSUHdZcUJNWHBwNGlwa2dmdE5PaUVSTWhxMTM4Q0gxcEE0QjFPS1BqWUgzNlVkZHNTcVE0aHRCamVnY2xmeHJzWDcxVW8wVkZTeVJVWjI5dnRTQmRuNW5HZWlFZ0dTZ0I1TGRQdmdOTzd5d1BfdVg": "2026-11-07T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTEE3V05OVkNsRXp0SUpYZnIyenJzdVhzQTB1VHVwOWk3bHRwV2ZqN3hWcUJsQXhCOWtTLTFxNlRKSTg1b1NIOW0zTG41bFRmcEdnbENpakRFLWY2SldBaDZ2QlFLT0s0SlN3WWtmWjlEY1VyOTJRemRHc0taNXdqUEU2X2psbXFmdkM0dFBqNGpvT29VY01NTFFqU19YbDRWZFFIZUxMT1NuMzlTUXpYUlNySlF0cEJsaEs2YUdQN3VQXzQ2TzZn": "2026-11-07T20:06+01:00"
  },
- "updated": "2026-11-07T16:06+01:00",
- "next": "alle 20",
+ "updated": "2026-11-07T20:06+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-11-07T16:06+01:00",
-  "articles": 5,
-  "items": 2,
+  "at": "2026-11-07T20:06+01:00",
+  "articles": 3,
+  "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -193,8 +196,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 31,
-    "kept": 1
+    "items": 27,
+    "kept": 0
    },
    {
     "agency": "ANSA",
@@ -207,7 +210,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 28,
+    "items": 8,
     "kept": 0
    },
    {
@@ -228,7 +231,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 1,
+    "items": 2,
     "kept": 0
    },
    {
@@ -243,14 +246,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "askanews",
@@ -278,14 +281,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
@@ -298,7 +301,7 @@
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
-    "items": 55,
+    "items": 47,
     "kept": 0
    },
    {
