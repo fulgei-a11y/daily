@@ -124,12 +124,14 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/08/due-infermiere-aggredite-a-reggio-emilia-per-una-mandibola-fratturata_6691451f-d60f-4563-9c14-7023e9fbee26.html": "2026-11-08T12:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/08/incendio-in-casa-con-un-morto-nel-cesenate-il-figlio-soccorso_93ebd6b8-bf49-4063-8008-e73ac70b8c74.html": "2026-11-08T12:06+01:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/11/08/un-modenese-a-cracovia-attimi-indescrivibili-ho-pensato-di-morire_9853f43d-7342-426a-82d8-ff022d40a0cb.html": "2026-11-08T16:06+01:00",
-  "https://www.italpress.com/sicurezza-stradale-emilia-romagna-in-calo-le-vittime-266-nel-2025-26-e-il-numero-piu-basso-degli-ultimi-anni": "2026-11-08T16:06+01:00"
+  "https://www.italpress.com/sicurezza-stradale-emilia-romagna-in-calo-le-vittime-266-nel-2025-26-e-il-numero-piu-basso-degli-ultimi-anni": "2026-11-08T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/08/f1-brasile-vince-norris-quinto-antonelli-settima-ferrari-leclerc_9b39da97-b9f2-40c8-9c68-5dfc4a33058a.html": "2026-11-08T20:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/08/in-un-giorno-aggrediti-4-infermieri-fenomeno-in-aumento_68d9ae75-27f0-4bbb-a54d-6a815f683953.html": "2026-11-08T20:06+01:00"
  },
- "updated": "2026-11-08T16:06+01:00",
- "next": "alle 20",
+ "updated": "2026-11-08T20:06+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-11-08T16:06+01:00",
+  "at": "2026-11-08T20:06+01:00",
   "articles": 2,
   "items": 0,
   "model": "gemini-2.5-flash",
@@ -139,8 +141,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 26,
-    "kept": 0
+    "items": 15,
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -153,7 +155,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 9,
+    "items": 11,
     "kept": 0
    },
    {
@@ -174,7 +176,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 45,
+    "items": 47,
     "kept": 0
    },
    {
@@ -224,7 +226,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
@@ -244,7 +246,7 @@
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
-    "items": 59,
+    "items": 60,
     "kept": 0
    },
    {
