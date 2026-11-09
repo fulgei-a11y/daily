@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 09 Nov 2026 20:06:38 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 00:06:37 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · lunedì 9 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Omicidio Sofia Stefani, respinte le perizie della difesa; Premier Meloni a Bologna per Eima e Conserve Italia; Bologna chiede la sospensione e riscrittura del nuovo Codice della Strada; Medaglia al merito civico per l&#x27;autista Tper che ha aiutato un parto sul bus; Sviluppi: Crollo albero in via Bentivogli, il Comune critica i comitati; Ponte del Battiferro, al via i lavori di restauro nel 2027.</description>
@@ -573,36 +573,6 @@
       <pubDate>Thu, 22 Oct 2026 06:29:00 +0200</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-22.mp3" length="9565119" type="audio/mpeg"/>
       <itunes:duration>3188</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · mercoledì 21 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Morte Fakir, slitta relazione autopsia; Ecomafia: Bologna 49esima in Italia per reati ambientali; Nuova manifestazione sabato 24 ottobre; Il sindaco Lepore scrive al Governo sul decreto Sicurezza; Assemblea pubblica sul futuro dello stadio Dall&#x27;Ara; Ambulatorio solidale al Pilastro con 10 luminari.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-21</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-21-19</guid>
-      <pubDate>Wed, 21 Oct 2026 19:21:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-21-19.mp3" length="1793429" type="audio/mpeg"/>
-      <itunes:duration>597</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · mercoledì 21 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Operazione &quot;Open Eyes&quot;: 29 arresti e oltre 3.200 identificati; Molestie a studentessa, condannato tecnico di laboratorio; Siti fraudolenti per aste giudiziarie, sequestrati 5 portali; Sciopero BRT, rallentamenti nelle spedizioni; Inps sperimenta maternità senza domanda; Manutenzione torrente Sellustra, al via i lavori.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-21</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-21-13</guid>
-      <pubDate>Wed, 21 Oct 2026 13:27:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-21-13.mp3" length="1949066" type="audio/mpeg"/>
-      <itunes:duration>649</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · mercoledì 21 ottobre 2026</title>
-      <description>160 notizie dall&#x27;Emilia-Romagna. In apertura: Arrestato 49enne per maltrattamenti in famiglia; Camionista 57enne trovato morto nella cabina del tir; Spaccata in diretta in un bar di Cadriano; Controlli dei Carabinieri alla Bolognina; Convalidati gli arresti dei quattro minorenni fermati durante gli scontri; Convalidato l&#x27;arresto del 21enne fermato negli scontri.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-21</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-21</guid>
-      <pubDate>Wed, 21 Oct 2026 06:28:00 +0200</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-21.mp3" length="8031783" type="audio/mpeg"/>
-      <itunes:duration>2677</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
