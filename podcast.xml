@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 09 Nov 2026 00:06:33 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 05:16:01 +0100</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · lunedì 9 novembre 2026</title>
+      <description>169 notizie dall&#x27;Emilia-Romagna. In apertura: Rimpatriato cittadino moldavo irregolare; Ragazzi accampati sotto un portico in via de&#x27; Chiari; Albero crolla in via Bentivogli; Furto di profumi in via Rizzoli; Spaccio di droga in Bolognina; Tentativi di truffe telefoniche sventati.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-11-09</link>
+      <guid isPermaLink="false">rassegna-er-2026-11-09</guid>
+      <pubDate>Mon, 09 Nov 2026 05:12:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-11-09.mp3" length="7532034" type="audio/mpeg"/>
+      <itunes:duration>2510</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · domenica 8 novembre 2026</title>
       <description>10 notizie dall&#x27;Emilia-Romagna. In apertura: Albero crolla in via Bentivogli; Sgombero sotto il portico di via de&#x27; Chiari; Indagini geognostiche sulle frane dell&#x27;alluvione; Riconoscimento all&#x27;Istituto Storico Parri; Disinnescata bomba da 240 kg della Seconda guerra mondiale; Tentato furto al centro commerciale, bloccata da un finanziere.</description>
