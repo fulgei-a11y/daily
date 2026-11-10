@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-11-10T20:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Scomparso un 30enne diretto a una festa a Ferrara",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/prende-un-treno-con-un-amico-ad-halloween-scomparso-30enne-di-fabriano_ad9eacd1-9507-46d1-be3e-ee2eec379a4a.html"
+   ],
+   "html": "<strong>Scomparso un 30enne diretto a una festa a Ferrara</strong> — Modena: Non si hanno più notizie dal primo novembre di Lorenzo Marinelli, 30 anni, originario di Fabriano; dopo aver partecipato a un evento nel Ferrarese, l'ultimo avvistamento è avvenuto da parte dei carabinieri durante un controllo nel capoluogo modenese. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/10/prende-un-treno-con-un-amico-ad-halloween-scomparso-30enne-di-fabriano_ad9eacd1-9507-46d1-be3e-ee2eec379a4a.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-10T20:06+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Inaugurato il nuovo sottopasso ferroviario di via Bologna",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/a-ferrara-il-nuovo-sottopasso-ferroviario-un-investimento-da-668-milioni_bb12f533-9100-4251-ab23-a36ff9626f18.html"
+   ],
+   "html": "<strong>Inaugurato il nuovo sottopasso ferroviario di via Bologna</strong> — Ferrara: È stato aperto al traffico il tunnel di 850 metri che elimina due passaggi a livello e migliora i collegamenti viari e ferroviari della zona, un'opera da 66,8 milioni di euro attesa da circa trent'anni. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/10/a-ferrara-il-nuovo-sottopasso-ferroviario-un-investimento-da-668-milioni_bb12f533-9100-4251-ab23-a36ff9626f18.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-10T16:06+01:00",
    "cat": "",
    "bo": false,
@@ -199,23 +219,36 @@
   "https://news.google.com/rss/articles/CBMic0FVX3lxTE4yQVdWVWs4YUc2ZHpmVmNVYlNwNGVENHAxekN0MDFWb1lBYWtGZ0dzUFNLbEx1NG45NmViUTJsbFUxMzh3NktFdGQ3Nnp0YnRLbzhEVmRzYVBHVDEzU1pxUm9Da29LYWd3d2d3cE82NkIyaXM": "2026-11-10T16:06+01:00",
   "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN0hjd1gwYWtEWF94RkxTRnNHckJmVHJkdUdIRmRiQUZFTk9PMmlvU3cyenhzODJSTFpTc2x5cUprcU5rWVN3VmZhSkk0aVRKSEF6VUI1ck5YQVdNUVdRRnNQM0lJYjlYZ0duZG9Pa251d3RyVE94TEhJWlprTEdfUUlLRXF3Qk1BWXowcGFMdmw4bEhkbEM5R0tn": "2026-11-10T16:06+01:00",
   "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPY18wY1l6bU1qdmp0S1FXa1pQWmZRT3ZSVGZLRUlYMjE2RG9sYTd5TWM1UzAxSjZNVjBud0JpVkNjUDNRUEZPaFUzN05HMHlvTU91bkpCWG9DOFlseEdSbmV6SDQxaEFCeEpJSHRJLUtxQW5lXzNUMnhRdGVyUGpycmJvMHlnQXhoUUd1aTVmMDBCNFJlNTlkSER4LW1qTXlLa29qR2NTNDZrQzNnbEY0TExSVjZzQ2NwN0ZIdklZWXZlV0pIcXE1YnV2SmtWeFZiNE1VMUt1Q2JRZVA0ZjFSQUNR": "2026-11-10T16:06+01:00",
-  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNjFSNlotU1cxZWJpbmlrV3hvZHowTEVDZkt3YTBZbVBhNmh3Z0Zza2p3OVpacWtVb25SQkhjdENYVmJBOTJNdWhQaXl4TXdjT1pwRVVWZGJiU1E0ZDRINkg2MUh3bGN1YjRVSXJscUtlZEhHN0s0Sjc1Z3d0NUNHTVRwT2tRSXVQQWxtaWJjQUp0MnhXbnRPdDdEbDMzanJoMGJqREdWVHV6TUk": "2026-11-10T16:06+01:00"
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNjFSNlotU1cxZWJpbmlrV3hvZHowTEVDZkt3YTBZbVBhNmh3Z0Zza2p3OVpacWtVb25SQkhjdENYVmJBOTJNdWhQaXl4TXdjT1pwRVVWZGJiU1E0ZDRINkg2MUh3bGN1YjRVSXJscUtlZEhHN0s0Sjc1Z3d0NUNHTVRwT2tRSXVQQWxtaWJjQUp0MnhXbnRPdDdEbDMzanJoMGJqREdWVHV6TUk": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/prende-un-treno-con-un-amico-ad-halloween-scomparso-30enne-di-fabriano_ad9eacd1-9507-46d1-be3e-ee2eec379a4a.html": "2026-11-10T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/meloni-a-conserve-italia-per-i-50-anni-incontro-con-soci-e-dipendenti_b7f9db55-f366-447a-8c85-3600e66ddc4a.html": "2026-11-10T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/a-ferrara-il-nuovo-sottopasso-ferroviario-un-investimento-da-668-milioni_bb12f533-9100-4251-ab23-a36ff9626f18.html": "2026-11-10T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/novembre-mese-per-la-parita-di-genere-anche-al-supermercato_16f5cb94-a070-4135-837b-65c6f46e85a8.html": "2026-11-10T20:06+01:00",
+  "https://www.italpress.com/a-como-gran-finale-del-trofeo-pirelli-accademia-regione-padana": "2026-11-10T20:06+01:00",
+  "https://www.dire.it/10-11-2026/1287365-bagno-di-folla-alleima-di-bologna-per-meloni-un-gruppo-di-ragazzi-le-grida-abbassaci-le-bollette": "2026-11-10T20:06+01:00",
+  "https://www.dire.it/10-11-2026/1287378-il-lungo-rimbalzo-dello-squash-italiano-da-bologna-alle-olimpiadi-di-los-angeles-2028": "2026-11-10T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaGpydnZRdUR3d1Z0WTdIYTZtS0JLZENnTllKeElIMTZaeVgyYUkyUlh6SGNGMEo4X292TFZMQ05Jb2Z0Q2N4dXRsbHNEMFBlWlN0dzAwSGpjbTM1cWs2alVTVEQxRzlyMVhLcnI3VHhGR0QtQ3RNRlhJMkphOWxXOE9jTF9YTThVeWJuUEczaFhFZ1NlbDBTd1hRZWZwRTQ": "2026-11-10T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcEkwRVZBVnZtVFpXcWJEaUowanNxUVRqRXVwbGFFZGo4S3doUTVVRnBvUGsxLU50M19kcmlKeUdJSUZTZ24wa3F6WVhXOVh1SFB2ZmM3b1lJanctWkFyYlNmMkF4TTNlNS1lUjV4aC1qOTYta3NOcE9Hend3NGg1ZVhvZHF0TU1IaXJGWjdoOWtSbWtJZXJFa01INnFfUEgyelQyZnUydDVGUC1jdEZIMGljUmVTUk0": "2026-11-10T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/in-emilia-romagna-il-festival-leredita-delle-donne-omaggio-a-emma-bonino_85d509f4-fa08-48f8-a0bf-6f8c0cd185a1.html": "2026-11-10T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/al-teatro-municipale-di-piacenza-la-presentazione-della-guida-michelin_1aaf9aae-26b4-4776-8f13-77029b2aa2f0.html": "2026-11-10T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxNb0RLWUoweEZLNzFfajM1TEo5MThQYXVadmU5UHJnZ3pPTU80NzFlVmFEZHhCRkFtYlZTNnd4RzlrNEFkM0Nxd045aFBNd1FnWnh1UFMzMk9FVXp2Y2JEWnQtM0VSUGdfMzlQS2RXU0lkVlhtTG1RcTNwY0tyTHd4MWtjS3JNd0dsZ3RvTzJONWtTNWhvWlZVNk1TQVhkQ2VEcVFwWGlyT2F5YVlYSmludU5UYThxNmNlcFlfTlhvRQ": "2026-11-10T20:06+01:00",
+  "https://www.italpress.com/meloni-quando-sara-a-roma-giorgetti-firmera-pacchetto-aiuti-ucraina": "2026-11-10T20:06+01:00"
  },
- "updated": "2026-11-10T16:06+01:00",
- "next": "alle 20",
+ "updated": "2026-11-10T20:06+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-11-10T16:06+01:00",
-  "articles": 17,
-  "items": 4,
-  "model": "gemini-2.5-flash",
+  "at": "2026-11-10T20:06+01:00",
+  "articles": 13,
+  "items": 2,
+  "model": "gemini-3.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 31,
-    "kept": 7
+    "items": 39,
+    "kept": 6
    },
    {
     "agency": "ANSA",
@@ -227,53 +260,53 @@
    {
     "agency": "ANSA",
     "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 52,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "Google News",
     "status": "ok",
     "items": 60,
     "kept": 1
    },
    {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 2
-   },
-   {
     "agency": "askanews",
     "channel": "feed diretto",
     "status": "HTTP 403",
@@ -292,7 +325,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 1
    },
    {
     "agency": "Italpress",
@@ -313,14 +346,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dagospia",
