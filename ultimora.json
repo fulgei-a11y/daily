@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-11-10T12:06+01:00",
+   "cat": "Economia",
+   "bo": true,
+   "title": "Lavoro nero nella raccolta dei marroni Igp",
+   "links": [
+    "https://www.dire.it/10-11-2026/1286993-video-marroni-igp-ma-raccoglitori-in-nero-sanzioni-per-40-mila-euro-a-castel-del-rio-imola"
+   ],
+   "html": "<strong>Lavoro nero nella raccolta dei marroni Igp</strong> — Castel del Rio (Bologna): sette lavoratori irregolari sono stati scoperti nei castagneti, portando a sanzioni per 40.000 euro. <span class=\"src\">Fonte: <a href=\"https://www.dire.it/10-11-2026/1286993-video-marroni-igp-ma-raccoglitori-in-nero-sanzioni-per-40-mila-euro-a-castel-del-rio-imola/\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
+   "t": "2026-11-10T12:06+01:00",
+   "cat": "Economia",
+   "bo": true,
+   "title": "Forum sull'agricoltura di precisione a Eima International",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/a-eima-international-forum-ansa-sullagricoltura-di-precisione_dbe970c2-5460-43da-abfa-4ed59a0e641e.html"
+   ],
+   "html": "<strong>Forum sull'agricoltura di precisione a Eima International</strong> — Bologna: l'ANSA organizza un forum per discutere di innovazione tecnologica, sostenibilità e competitività nel settore agricolo. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/10/a-eima-international-forum-ansa-sullagricoltura-di-precisione_dbe970c2-5460-43da-abfa-4ed59a0e641e.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-10T00:06+01:00",
    "cat": "",
    "bo": false,
@@ -80,8 +100,6 @@
   }
  ],
  "seen": {
-  "https://www.dire.it/08-11-2026/1286355-tajani-ha-un-nuovo-guardiano-in-casa-il-cane-argo": "2026-11-09T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/08/via-libera-della-consob-allofferta-di-intesa-per-mps-si-parte-il-24-novembre_19020841-0f22-4cb9-8dba-42ddae7037b7.html": "2026-11-09T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/09/falsi-finanzieri-fecero-rapina-in-casa-carabinieri-arrestano-4-persone_b7dafe81-c3be-49a9-b818-53b62d54bbc6.html": "2026-11-09T12:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/09/festival-delleconomia-sociale-a-forli-attesi-ministri-e-rappresentanti-ue_85b6ce72-a034-4ddd-a599-7fab626baa97.html": "2026-11-09T12:06+01:00",
   "https://news.google.com/rss/articles/CBMihAFBVV95cUxNbXJodkppUnN5eEZsVWpRamdwMTRfa1p1ZE1GSmhfZ09sRHRnN3lOOFp1V3p2bDJzMG5qd0liWXVCUmNtT3lWakJzU09ubE1UbXU1amotRktLMTgzUnhNLUlDaWNMcDJOeTNtN2tNUmktNkY4emFrMEFRWVdMeWp1aXlUajfSAYoBQVVfeXFMT0NZb3VKNHNmbG5VMU83ZUdOa0tsbVBOV0YzVnVKVE5XcE9jSDJobjRvcmZIQmxZZmp4VXRZdFZiSF9DeFl6S0xzZGMzVkFHbnBEa2drQ1JvZHFHYkY2VllPbGJPUG1neEpzalQteExrSHJuV19kbUdSZXZxS1dsOEtWbHJIczE4TW9n": "2026-11-09T12:06+01:00",
@@ -120,14 +138,18 @@
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxPNkVqSEt3RjM3R0NJZER1em9BcWJzdi1TeEx6dmZFT1R0TUlqcW5RMGRzRFpNVUNVdVpGTkQyZFpOZnhEUWJiTWo2QWFJNjJuTjNST2Vqb2phVnJTRk11OWpCRzdOY1c1aXRyZXVXY2ZNdmg2bUg1Vjh4RjNybThSazRfTUMzYkVic3dHaTRmZm5NU2_SAZgBQVVfeXFMTlE3NW5PN1hmWUlOTkJJTWc4ckstbXg4LTBVWGIzYTVUUzE4QjVVY1ZBT0V1VTlrSG9XLXE3VjlOUWhhNC1uQmw4c1FwZU1NNkpEVGVtNFhkbll2UDItS0dpajRKeEstbUJSam9odU5XaV9sY2JjSGdKNVk3UXRBSm5Mb0xfSWNpaExGUE95TkNLdndjWmU4a1g": "2026-11-10T00:06+01:00",
   "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOd3JCal9WVTlvUkxybnFlNlNqSjhQcUt4Q0JHUlV5MHJVdlJHMHUwSGtVQ3ZnSlBpWXJ5Rm0xTWtBQklRbmVPNHczUVNDc0V6NE9nZkIyc0RGSHBqSXhzX1hzcUtsUlAwUHF0cmdTdDNHNmNId0x2Z1dWT1dXakpDN1ZXcG53NGFuREVGVlFJTWRKVDRHNmFwX2ZLWFRmQnUtRUhTNEFvT3lqcXhZWTdNSlRETDVTNnVSOXhlYTdoYzEzbkV4NFQ0ek41alotQlh4aHloWFRpWEhfakNjTFRfWE13": "2026-11-10T00:06+01:00",
   "https://news.google.com/rss/articles/CBMiUEFVX3lxTE01VGpfSFg4VkRGeVBkdFpKUDBNNnM2NlRmRm1sTVNIb1d3N0lCeWpXcGEzOGJIbVlndlpOT1dpVUVXQzB1dmxxdUZBVjBkbDVz": "2026-11-10T08:06+01:00",
-  "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBMX0lQSEdPRWdpVmtHNlRsRVBYcG05eVZxaHBJYVF6ZFR5My1NaWlkVUJ2NUkxTmRnaGJqal9USEJpQkNDQ0d1bHAxeGItaW9n": "2026-11-10T08:06+01:00"
+  "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBMX0lQSEdPRWdpVmtHNlRsRVBYcG05eVZxaHBJYVF6ZFR5My1NaWlkVUJ2NUkxTmRnaGJqal9USEJpQkNDQ0d1bHAxeGItaW9n": "2026-11-10T08:06+01:00",
+  "https://www.dire.it/10-11-2026/1286993-video-marroni-igp-ma-raccoglitori-in-nero-sanzioni-per-40-mila-euro-a-castel-del-rio-imola": "2026-11-10T12:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/a-eima-international-forum-ansa-sullagricoltura-di-precisione_dbe970c2-5460-43da-abfa-4ed59a0e641e.html": "2026-11-10T12:06+01:00",
+  "https://www.italpress.com/kimi-antonelli-arriva-allaeroporto-di-bologna-il-saluto-della-torre-di-controllo": "2026-11-10T12:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/chiara-muti-e-ottavio-dantone-per-mozart-1791-il-suo-ultimo-anno_deab2a7d-9f04-4225-9e70-c10d5072ef04.html": "2026-11-10T12:06+01:00"
  },
- "updated": "2026-11-10T08:06+01:00",
- "next": "alle 12",
+ "updated": "2026-11-10T12:06+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-11-10T08:06+01:00",
-  "articles": 2,
-  "items": 0,
+  "at": "2026-11-10T12:06+01:00",
+  "articles": 4,
+  "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -136,7 +158,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 23,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "ANSA",
@@ -149,7 +171,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 57,
+    "items": 58,
     "kept": 0
    },
    {
@@ -220,21 +242,21 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
