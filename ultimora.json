@@ -1,6 +1,46 @@
 {
  "items": [
   {
+   "t": "2026-11-10T16:06+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Allerta meteo arancione sull'Appennino emiliano",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/temporali-in-e-r-allerta-arancione-sullappennino-emiliano_4b037296-20ac-4eeb-9d60-e4d0ed550b05.html"
+   ],
+   "html": "<strong>Allerta meteo arancione sull'Appennino emiliano</strong> — Parma, Modena, Reggio Emilia: previsti temporali e rovesci in intensificazione per domani, con rischio idrogeologico e possibili fenomeni franosi. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/10/temporali-in-e-r-allerta-arancione-sullappennino-emiliano_4b037296-20ac-4eeb-9d60-e4d0ed550b05.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-10T16:06+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Bimba di un anno sente per la prima volta grazie a impianto cocleare",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/bimba-di-un-anno-sente-per-la-prima-volta-grazie-a-un-impianto-cocleare_b43587ac-5a18-405c-8ad3-68cdc12edfc1.html"
+   ],
+   "html": "<strong>Bimba di un anno sente per la prima volta grazie a impianto cocleare</strong> — Carpi (Modena): una bambina nata con sordità profonda bilaterale congenita è stata sottoposta a un intervento di impianto cocleare all'Ospedale Ramazzini. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/10/bimba-di-un-anno-sente-per-la-prima-volta-grazie-a-un-impianto-cocleare_b43587ac-5a18-405c-8ad3-68cdc12edfc1.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-10T16:06+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Rapina in hotel dopo annuncio online, uomo picchiato e derubato",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/appuntamento-in-hotel-con-una-donna-ma-un-uomo-lo-picchia-e-rapina_515dbb46-8f40-4e31-bd71-2cde84783945.html"
+   ],
+   "html": "<strong>Rapina in hotel dopo annuncio online, uomo picchiato e derubato</strong> — Rubiera (Reggio Emilia): un 56enne è stato picchiato e rapinato di un orologio di valore da un uomo incontrato in albergo tramite un sito di incontri; denunciato un 41enne. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/10/appuntamento-in-hotel-con-una-donna-ma-un-uomo-lo-picchia-e-rapina_515dbb46-8f40-4e31-bd71-2cde84783945.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-10T16:06+01:00",
+   "cat": "",
+   "bo": true,
+   "title": "La cooperazione in Emilia-Romagna: 3.400 imprese, 230mila occupati e 44,4 miliardi di fatturato",
+   "links": [
+    "https://www.italpress.com/cooperazione-in-emilia-romagna-oltre-3-400-imprese-230mila-occupati-e-444-miliardi-di-fatturato"
+   ],
+   "html": "<strong>La cooperazione in Emilia-Romagna: 3.400 imprese, 230mila occupati e 44,4 miliardi di fatturato</strong> — Bologna: il 5° Rapporto biennale sullo stato della Cooperazione 2024/25 evidenzia il ruolo strategico del settore con un fatturato pari all'11,5% del totale regionale. <span class=\"src\">Fonte: <a href=\"https://www.italpress.com/cooperazione-in-emilia-romagna-oltre-3-400-imprese-230mila-occupati-e-444-miliardi-di-fatturato/\" target=\"_blank\" rel=\"noopener\">Italpress</a></span>"
+  },
+  {
    "t": "2026-11-10T12:06+01:00",
    "cat": "Economia",
    "bo": true,
@@ -142,14 +182,31 @@
   "https://www.dire.it/10-11-2026/1286993-video-marroni-igp-ma-raccoglitori-in-nero-sanzioni-per-40-mila-euro-a-castel-del-rio-imola": "2026-11-10T12:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/a-eima-international-forum-ansa-sullagricoltura-di-precisione_dbe970c2-5460-43da-abfa-4ed59a0e641e.html": "2026-11-10T12:06+01:00",
   "https://www.italpress.com/kimi-antonelli-arriva-allaeroporto-di-bologna-il-saluto-della-torre-di-controllo": "2026-11-10T12:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/chiara-muti-e-ottavio-dantone-per-mozart-1791-il-suo-ultimo-anno_deab2a7d-9f04-4225-9e70-c10d5072ef04.html": "2026-11-10T12:06+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/chiara-muti-e-ottavio-dantone-per-mozart-1791-il-suo-ultimo-anno_deab2a7d-9f04-4225-9e70-c10d5072ef04.html": "2026-11-10T12:06+01:00",
+  "https://news.google.com/rss/articles/CBMiggFBVV95cUxNMEZnU2pyRllKaXZyT0NLWEVVZkN2MWFyckJSOHFiMUJSTlpPOEFQb2R2UFNrZFVpeDU5elBUN3VsOEdZN2pBMjVlWnNBV3pSbnd6d0haY0ZyMUZ4NWctajVrTUZwVWd0cm5zZFpPckpDcVFNWlpOeFNSRjBRZFVZVDdn": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/viaggio-a-hong-kong-rambert-dirige-sandro-lombardi-allarena-del-sole_f3bda309-5b12-4fda-a765-379f37d9dd63.html": "2026-11-10T16:06+01:00",
+  "https://www.italpress.com/ecomondo-carnimeo-ecopneus-raccontiamo-il-valore-delleconomia-circolare-3": "2026-11-10T16:06+01:00",
+  "https://www.italpress.com/cooperazione-in-emilia-romagna-oltre-3-400-imprese-230mila-occupati-e-444-miliardi-di-fatturato": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/appuntamento-in-hotel-con-una-donna-ma-un-uomo-lo-picchia-e-rapina_515dbb46-8f40-4e31-bd71-2cde84783945.html": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/ronaldinho-atteso-in-campo-a-ravenna-tribuna-in-piu-e-biglietti-alle-stelle_af9e339e-d521-4b22-9b30-1da9c1510ef1.html": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/f1-presidente-fia-conferma-gp-del-qatar-e-di-abu-dhabi-siamo-pronti_3d8258e9-8c9f-4a87-b1b1-398bf89d77e9.html": "2026-11-10T16:06+01:00",
+  "https://www.dire.it/10-11-2026/1287197-f1-sfuma-il-sogno-imola-il-mondiale-si-chiudera-regolarmente-in-medio-oriente": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/sito/notizie/economia/2026/11/10/lollobrigida-la-pizza-in-questo-momento-russi-ne-stanno-facendo-di-cose-sbagliate_0850bd38-2311-419f-bc09-52c977f85105.html": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/premio-letteratura-ragazzi-di-cento-scelti-i-sei-libri-finalisti_e66847cc-147e-40b3-a3bb-aed5e056f3ee.html": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/temporali-in-e-r-allerta-arancione-sullappennino-emiliano_4b037296-20ac-4eeb-9d60-e4d0ed550b05.html": "2026-11-10T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/10/bimba-di-un-anno-sente-per-la-prima-volta-grazie-a-un-impianto-cocleare_b43587ac-5a18-405c-8ad3-68cdc12edfc1.html": "2026-11-10T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxQTnVsSG1xZWJVQjJmell0YmF2NkpxQTd1eHMyWml0MUNHOC05VVJtR2E1Y01Lb1JDUDE1WERlVDRDbWQ3d2dXRHlMUHUzMlVWSl9IRm92SFBRYWRpSVk1THpxU2Y5QUQ0cExSQXJRcVJ0MnlQbHplMkp6RU9haTF3UDlGS1hsb0M0NmZlUjV0S0EzY1kxbzZQVlJkbDE": "2026-11-10T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMic0FVX3lxTE4yQVdWVWs4YUc2ZHpmVmNVYlNwNGVENHAxekN0MDFWb1lBYWtGZ0dzUFNLbEx1NG45NmViUTJsbFUxMzh3NktFdGQ3Nnp0YnRLbzhEVmRzYVBHVDEzU1pxUm9Da29LYWd3d2d3cE82NkIyaXM": "2026-11-10T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN0hjd1gwYWtEWF94RkxTRnNHckJmVHJkdUdIRmRiQUZFTk9PMmlvU3cyenhzODJSTFpTc2x5cUprcU5rWVN3VmZhSkk0aVRKSEF6VUI1ck5YQVdNUVdRRnNQM0lJYjlYZ0duZG9Pa251d3RyVE94TEhJWlprTEdfUUlLRXF3Qk1BWXowcGFMdmw4bEhkbEM5R0tn": "2026-11-10T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPY18wY1l6bU1qdmp0S1FXa1pQWmZRT3ZSVGZLRUlYMjE2RG9sYTd5TWM1UzAxSjZNVjBud0JpVkNjUDNRUEZPaFUzN05HMHlvTU91bkpCWG9DOFlseEdSbmV6SDQxaEFCeEpJSHRJLUtxQW5lXzNUMnhRdGVyUGpycmJvMHlnQXhoUUd1aTVmMDBCNFJlNTlkSER4LW1qTXlLa29qR2NTNDZrQzNnbEY0TExSVjZzQ2NwN0ZIdklZWXZlV0pIcXE1YnV2SmtWeFZiNE1VMUt1Q2JRZVA0ZjFSQUNR": "2026-11-10T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNjFSNlotU1cxZWJpbmlrV3hvZHowTEVDZkt3YTBZbVBhNmh3Z0Zza2p3OVpacWtVb25SQkhjdENYVmJBOTJNdWhQaXl4TXdjT1pwRVVWZGJiU1E0ZDRINkg2MUh3bGN1YjRVSXJscUtlZEhHN0s0Sjc1Z3d0NUNHTVRwT2tRSXVQQWxtaWJjQUp0MnhXbnRPdDdEbDMzanJoMGJqREdWVHV6TUk": "2026-11-10T16:06+01:00"
  },
- "updated": "2026-11-10T12:06+01:00",
- "next": "alle 16",
+ "updated": "2026-11-10T16:06+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-10T12:06+01:00",
-  "articles": 4,
-  "items": 2,
+  "at": "2026-11-10T16:06+01:00",
+  "articles": 17,
+  "items": 4,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -157,66 +214,66 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 23,
+    "items": 31,
+    "kept": 7
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 1
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
     "kept": 2
    },
    {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 58,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
     "agency": "askanews",
     "channel": "feed diretto",
     "status": "HTTP 403",
@@ -235,21 +292,21 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
@@ -263,7 +320,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dagospia",
