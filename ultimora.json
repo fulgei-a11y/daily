@@ -80,10 +80,6 @@
   }
  ],
  "seen": {
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/08/un-modenese-a-cracovia-attimi-indescrivibili-ho-pensato-di-morire_9853f43d-7342-426a-82d8-ff022d40a0cb.html": "2026-11-08T16:06+01:00",
-  "https://www.italpress.com/sicurezza-stradale-emilia-romagna-in-calo-le-vittime-266-nel-2025-26-e-il-numero-piu-basso-degli-ultimi-anni": "2026-11-08T16:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/08/f1-brasile-vince-norris-quinto-antonelli-settima-ferrari-leclerc_9b39da97-b9f2-40c8-9c68-5dfc4a33058a.html": "2026-11-08T20:06+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/08/in-un-giorno-aggrediti-4-infermieri-fenomeno-in-aumento_68d9ae75-27f0-4bbb-a54d-6a815f683953.html": "2026-11-08T20:06+01:00",
   "https://www.dire.it/08-11-2026/1286355-tajani-ha-un-nuovo-guardiano-in-casa-il-cane-argo": "2026-11-09T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/08/via-libera-della-consob-allofferta-di-intesa-per-mps-si-parte-il-24-novembre_19020841-0f22-4cb9-8dba-42ddae7037b7.html": "2026-11-09T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/09/falsi-finanzieri-fecero-rapina-in-casa-carabinieri-arrestano-4-persone_b7dafe81-c3be-49a9-b818-53b62d54bbc6.html": "2026-11-09T12:06+01:00",
@@ -122,14 +118,16 @@
   "https://news.google.com/rss/articles/CBMif0FVX3lxTE9MNHR0SHAxNk5ZX2ZOQTVQNi1IYUxTTGZHS2ZDTTY5TTBfRnhKYTR0bDEyclIzakwtUERrUkhOYmsxeG9BOVVUQldGXy11VU50WktqYlF1d2lQRE5aLThZUTlHc09tLVNsOHB0SnNNOUN6Qi1MTzRYYnZBSWhQTjQ": "2026-11-10T00:06+01:00",
   "https://news.google.com/rss/articles/CBMie0FVX3lxTE5vc1B1aTk0dHZvcmlWdzE5R09SSDJtaVptSG12QklkcElMdVZJQk1BbE1MN2pLTW1vbW9NelpKQXNDd2dVUzZ6a3V1VVRSS3p0MFdIbkxlaDhCMUFVQVpJMm5wSzdLT21mQVczdzZfaTA2bEdMTXNrelNhcw": "2026-11-10T00:06+01:00",
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxPNkVqSEt3RjM3R0NJZER1em9BcWJzdi1TeEx6dmZFT1R0TUlqcW5RMGRzRFpNVUNVdVpGTkQyZFpOZnhEUWJiTWo2QWFJNjJuTjNST2Vqb2phVnJTRk11OWpCRzdOY1c1aXRyZXVXY2ZNdmg2bUg1Vjh4RjNybThSazRfTUMzYkVic3dHaTRmZm5NU2_SAZgBQVVfeXFMTlE3NW5PN1hmWUlOTkJJTWc4ckstbXg4LTBVWGIzYTVUUzE4QjVVY1ZBT0V1VTlrSG9XLXE3VjlOUWhhNC1uQmw4c1FwZU1NNkpEVGVtNFhkbll2UDItS0dpajRKeEstbUJSam9odU5XaV9sY2JjSGdKNVk3UXRBSm5Mb0xfSWNpaExGUE95TkNLdndjWmU4a1g": "2026-11-10T00:06+01:00",
-  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOd3JCal9WVTlvUkxybnFlNlNqSjhQcUt4Q0JHUlV5MHJVdlJHMHUwSGtVQ3ZnSlBpWXJ5Rm0xTWtBQklRbmVPNHczUVNDc0V6NE9nZkIyc0RGSHBqSXhzX1hzcUtsUlAwUHF0cmdTdDNHNmNId0x2Z1dWT1dXakpDN1ZXcG53NGFuREVGVlFJTWRKVDRHNmFwX2ZLWFRmQnUtRUhTNEFvT3lqcXhZWTdNSlRETDVTNnVSOXhlYTdoYzEzbkV4NFQ0ek41alotQlh4aHloWFRpWEhfakNjTFRfWE13": "2026-11-10T00:06+01:00"
+  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOd3JCal9WVTlvUkxybnFlNlNqSjhQcUt4Q0JHUlV5MHJVdlJHMHUwSGtVQ3ZnSlBpWXJ5Rm0xTWtBQklRbmVPNHczUVNDc0V6NE9nZkIyc0RGSHBqSXhzX1hzcUtsUlAwUHF0cmdTdDNHNmNId0x2Z1dWT1dXakpDN1ZXcG53NGFuREVGVlFJTWRKVDRHNmFwX2ZLWFRmQnUtRUhTNEFvT3lqcXhZWTdNSlRETDVTNnVSOXhlYTdoYzEzbkV4NFQ0ek41alotQlh4aHloWFRpWEhfakNjTFRfWE13": "2026-11-10T00:06+01:00",
+  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE01VGpfSFg4VkRGeVBkdFpKUDBNNnM2NlRmRm1sTVNIb1d3N0lCeWpXcGEzOGJIbVlndlpOT1dpVUVXQzB1dmxxdUZBVjBkbDVz": "2026-11-10T08:06+01:00",
+  "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBMX0lQSEdPRWdpVmtHNlRsRVBYcG05eVZxaHBJYVF6ZFR5My1NaWlkVUJ2NUkxTmRnaGJqal9USEJpQkNDQ0d1bHAxeGItaW9n": "2026-11-10T08:06+01:00"
  },
- "updated": "2026-11-10T00:06+01:00",
- "next": "alle 8",
+ "updated": "2026-11-10T08:06+01:00",
+ "next": "alle 12",
  "last_run": {
-  "at": "2026-11-10T00:06+01:00",
-  "articles": 9,
-  "items": 1,
+  "at": "2026-11-10T08:06+01:00",
+  "articles": 2,
+  "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -138,7 +136,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 23,
-    "kept": 3
+    "kept": 0
    },
    {
     "agency": "ANSA",
@@ -151,7 +149,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 56,
+    "items": 57,
     "kept": 0
    },
    {
@@ -173,7 +171,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -222,14 +220,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 3
+    "kept": 2
    },
    {
     "agency": "Dire",
@@ -243,7 +241,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dagospia",
