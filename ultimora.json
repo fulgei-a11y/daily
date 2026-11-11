@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-11-11T16:06+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Allerta meteo arancione per piene e frane",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/allerta-arancione-per-piene-dei-fiumi-e-frane-nel-parmense-reggiano_48715a3d-b0ba-463c-9e75-79c4bf52b82f.html"
+   ],
+   "html": "<strong>Allerta meteo arancione per piene e frane</strong> — Parma, Reggio Emilia, Modena, Bologna, Piacenza: l'Agenzia regionale per la sicurezza territoriale e la Protezione civile ha esteso l'allerta arancione per piene dei fiumi, frane e corsi minori da mezzogiorno a mezzanotte di domani, giovedì 12 novembre, anche al Bolognese e al Piacentino, oltre a Parmense, Reggiano e Modenese. Sono previsti rovesci e temporali, con possibili frane e ruscellamenti sui versanti. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/11/allerta-arancione-per-piene-dei-fiumi-e-frane-nel-parmense-reggiano_48715a3d-b0ba-463c-9e75-79c4bf52b82f.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-11T16:06+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Technogym premiata tra le 'World's Best Companies'",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/technogym-premiata-da-time-tra-le-worlds-best-companies-sustainable-growth-2027_820af18b-271f-40a1-9b03-4ea230678464.html"
+   ],
+   "html": "<strong>Technogym premiata tra le 'World's Best Companies'</strong> — Cesena (Forlì-Cesena): il colosso cesenate Technogym è entrato nella classifica \"World's Best Companies: Sustainable Growth 2027\" del settimanale americano 'Time', che valuta crescita dei ricavi, stabilità finanziaria e impatto ambientale. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/11/technogym-premiata-da-time-tra-le-worlds-best-companies-sustainable-growth-2027_820af18b-271f-40a1-9b03-4ea230678464.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-10T20:06+01:00",
    "cat": "Cronaca",
    "bo": false,
@@ -132,14 +152,27 @@
   "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSGpab2lxbnF6Rng4MWlBemY1SHNOb0xnZEYwNlBMRjRGUEdfYmF5ZXVrY2g3M1dGa0sxN00xZWtROVM4TC1YMjFvYXItaDRaWXJMX1JFcTRzY3pLZzItMGlRZ3NrNDVNRkM3VXJ1Wk8zTTBobU9UX0dBWnlLaUUtenVSYm5vOTg": "2026-11-11T12:06+01:00",
   "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRmpoeXNXU0NGd3pDV2t6XzNEVU1WUXJFNnQ5aEs3dWdsTjZicXZPczRKbGlMMEJJMU5rMVlrT1JmY1VRSUdHNnE0b0gtUzRGR2pDT3ZDaXp3M0JLMHpQa0pfaHdOaGF1QmN0LUprdmtFZTdLbXI4ZWtiTlM5aXhRVmVnWUhrVTkwQl9YZ3c3SkNGQQ": "2026-11-11T12:06+01:00",
   "https://news.google.com/rss/articles/CBMingFBVV95cUxQTWlKSEU3MDZEblY3MWNtX3FBcUR0QWxkZlBIOFgzbS0yNnkwd3JxdjdaY3lWZ2FDRWZyVVRkODltb1NlTEgxU0g1Z2JWb3ZBNVRYeUFfZWVDNmFBZjBFSEozYzczRDJSLTU5ZndibFJyd0J3aWpFNkdMTWJHTXo0UGxQcGo3YzRjbVRNbFBxRkJFNEtCOFVWdEhOcm9oZw": "2026-11-11T12:06+01:00",
-  "https://www.dire.it/11-11-2026/1287531-tajani-litalia-e-in-guerra-non-con-le-armi-ma-e-guerra": "2026-11-11T12:06+01:00"
+  "https://www.dire.it/11-11-2026/1287531-tajani-litalia-e-in-guerra-non-con-le-armi-ma-e-guerra": "2026-11-11T12:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/francesca-mannocchi-a-bologna-per-ad-alta-voce_b01b20e0-2984-4c93-8cbc-4e7c8d250caf.html": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/11/turismo-delle-origini-enit-australiani-in-italia-per-tre-quattro-settimane_d9e4feca-6539-477a-9451-e7c6167eccbf.html": "2026-11-11T16:06+01:00",
+  "https://www.dire.it/11-11-2026/1287724-ravenna-si-prepara-allesordio-di-ronaldinho-tutte-le-misure-previste-per-la-festa": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/un-archivio-popolare-per-custodire-la-memoria-delle-alluvioni-in-emilia-romagna_57fad31b-e394-4e32-966f-9ad49afef3d1.html": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/allerta-arancione-per-piene-dei-fiumi-e-frane-nel-parmense-reggiano_48715a3d-b0ba-463c-9e75-79c4bf52b82f.html": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/ferrara-celebra-il-centenario-della-nascita-del-regista-florestano-vancini_1dc52463-9634-4442-bec8-0db56a8ff1e8.html": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/tredicenne-aggredito-nel-bolognese-denunciati-sei-minorenni_fa1c78f2-a191-4b5f-8a7c-8947572a556d.html": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/al-via-nel-2027-la-grande-riqualificazione-della-reggia-di-colorno-nel-parmense_5ba93950-8a17-42ff-b818-b1d3816a1963.html": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/ecco-il-nuovo-caab-piattaforma-green-efficiente-e-mercati-aperti-vicini-alla_b7d2699f-4e4c-4400-a462-d38f950154c1.html": "2026-11-11T16:06+01:00",
+  "https://www.dire.it/11-11-2026/1287685-video-f1-kimi-antonelli-mantiene-la-promessa-e-si-tinge-i-capelli-tricolore-la-reazione-di-toto-wolff": "2026-11-11T16:06+01:00",
+  "https://www.dire.it/11-11-2026/1287569-omicidio-capotreno-bologna-jelenic-quel-giorno-ero-a-milano-il-pm-chiede-lergastolo": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/technogym-premiata-da-time-tra-le-worlds-best-companies-sustainable-growth-2027_820af18b-271f-40a1-9b03-4ea230678464.html": "2026-11-11T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/lollobrigida-inaugura-il-caab-mercati-strategici-per-i-produttori_cbc5445f-4bb2-462f-9e64-78ae380da801.html": "2026-11-11T16:06+01:00"
  },
- "updated": "2026-11-11T12:06+01:00",
- "next": "alle 16",
+ "updated": "2026-11-11T16:06+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-11T12:06+01:00",
-  "articles": 5,
-  "items": 0,
+  "at": "2026-11-11T16:06+01:00",
+  "articles": 13,
+  "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -148,14 +181,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 38,
-    "kept": 0
+    "kept": 9
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -182,7 +215,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 15,
+    "items": 10,
     "kept": 0
    },
    {
@@ -225,7 +258,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 4
+    "kept": 0
    },
    {
     "agency": "Italpress",
@@ -246,7 +279,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 3
    },
    {
     "agency": "Dire",
