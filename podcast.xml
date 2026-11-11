@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 11 Nov 2026 12:06:42 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 13:08:37 +0100</lastBuildDate>
+    <item>
+      <title>Aggiornamento delle 13 · mercoledì 11 novembre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Allarmi bomba nelle scuole; Omicidio capotreno Ambrosio: chiesto ergastolo per Jelenic; Pestaggio a Molinella: denunciati sei minorenni; Kemet chiude la fabbrica di Pontecchio Marconi; Pugile indagato per violenza sessuale; Studio su limitazioni traffico camion nei centri abitati.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-11-11</link>
+      <guid isPermaLink="false">rassegna-er-2026-11-11-13</guid>
+      <pubDate>Wed, 11 Nov 2026 13:08:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-11-11-13.mp3" length="1890526" type="audio/mpeg"/>
+      <itunes:duration>630</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Rassegna del mattino · mercoledì 11 novembre 2026</title>
       <description>168 notizie dall&#x27;Emilia-Romagna. In apertura: Recuperati monili da truffa; Aggressione con armi da taglio a Borgo Panigale; Testa umana ritrovata sui binari; Rimpatriato cittadino moldavo irregolare; Scomparso 30enne dopo viaggio in treno; Allerta meteo per piogge e frane.</description>
