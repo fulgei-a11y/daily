@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-11-12T20:06+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Maltempo: 40 interventi dei Vigili del Fuoco in Emilia-Romagna",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/maltempo-in-emilia-romagna-quaranta-interventi-dei-vigili-del-fuoco_4da4587c-87ff-4924-9060-2e44273b4c30.html"
+   ],
+   "html": "<strong>Maltempo: 40 interventi dei Vigili del Fuoco in Emilia-Romagna</strong> — Bologna (e altre province): A causa del maltempo, i Vigili del Fuoco hanno effettuato quaranta interventi in regione per alberi e rami caduti, allagamenti e messe in sicurezza; a Bologna è stato chiuso il sottopassaggio di via del Triumvirato. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/12/maltempo-in-emilia-romagna-quaranta-interventi-dei-vigili-del-fuoco_4da4587c-87ff-4924-9060-2e44273b4c30.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-12T12:06+01:00",
    "cat": "Cronaca",
    "bo": false,
@@ -63,7 +73,6 @@
   }
  ],
  "seen": {
-  "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZ0FLSldpM2hlZ0VsQlM3cE0zVFlXS3FOSWFuWERHLTZLRF9LMlViRTM1UWpuSTZqaGt1aExjNll4WkpkdFBHNnBIOTUyaWVsNWJIa2dueTRYcEdEOG1IUHRFUjcxRjBEM2MzNDE2UTRjRVRfSS05aVVvV3pxcTkycnQtTHdCaW5YaE9QV3RUMmdZUzFlZVJMeXpxWlBlUEdwN0I1cDhJN3ltem5kMFh4di13UGR1bENfSVEwZnhOUHNLQQ": "2026-11-11T08:06+01:00",
   "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbEJfcV9vVGVTVW1EZXI5eW50TTk4YkZtaDctaWNKU0pGWWt0RHdUMFlYYU1pUVdkczd2dHhkLXVKR2N0cmtBbVlyeGZvLWxBcng4RzZ6TXBfeVhWUTA5Tk9QVmxEcEdYS2w1d3djUVU5cDQ2SHhDVHFRX2E5d2VrN05McDFyb2Q3dFZLTDBEN0p0ZHg0VDZiT3JCV1g": "2026-11-11T12:06+01:00",
   "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSGpab2lxbnF6Rng4MWlBemY1SHNOb0xnZEYwNlBMRjRGUEdfYmF5ZXVrY2g3M1dGa0sxN00xZWtROVM4TC1YMjFvYXItaDRaWXJMX1JFcTRzY3pLZzItMGlRZ3NrNDVNRkM3VXJ1Wk8zTTBobU9UX0dBWnlLaUUtenVSYm5vOTg": "2026-11-11T12:06+01:00",
   "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRmpoeXNXU0NGd3pDV2t6XzNEVU1WUXJFNnQ5aEs3dWdsTjZicXZPczRKbGlMMEJJMU5rMVlrT1JmY1VRSUdHNnE0b0gtUzRGR2pDT3ZDaXp3M0JLMHpQa0pfaHdOaGF1QmN0LUprdmtFZTdLbXI4ZWtiTlM5aXhRVmVnWUhrVTkwQl9YZ3c3SkNGQQ": "2026-11-11T12:06+01:00",
@@ -114,14 +123,18 @@
   "https://news.google.com/rss/articles/CBMimgFBVV95cUxOTkpuVkdPRldlUnQ1UHAxUGhvRGFIbFB3M0pwNzZQX0lxLUNZOFIzX3BQSUFLcUVCQmRSR0E0djZSUFJqQ256c3IxeWFMRmtfN2JFcGJCcFdWQzBvMWJKdVNJb2RxZHVLd29PVUJ4eU8tcDhnNXpPVHYzSkpBMWpEVGs0VG05cnA4ZXlzUVdndzhXMlQ5b1pfdHFR": "2026-11-12T16:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/lattuca-positiva-lattenzione-governo-per-le-province-ma-servono-risorse_2072b574-37ec-45d0-ba38-86f1cf7623de.html": "2026-11-12T16:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/antonelli-tutto-bellissimo-mi-godo-la-popolarita-ma-piedi-per-terra_81ecc0ce-c0d5-4b9a-a786-0afc7d4b80d1.html": "2026-11-12T16:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/f1-antonelli-finiamo-bene-lanno-e-poi-partiamo-forte-nel-2027_15e26e65-6116-4ea9-a9b7-f27094ac4f6f.html": "2026-11-12T16:06+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/f1-antonelli-finiamo-bene-lanno-e-poi-partiamo-forte-nel-2027_15e26e65-6116-4ea9-a9b7-f27094ac4f6f.html": "2026-11-12T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/maltempo-in-emilia-romagna-quaranta-interventi-dei-vigili-del-fuoco_4da4587c-87ff-4924-9060-2e44273b4c30.html": "2026-11-12T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/omicidio-alice-neri-la-procura-chiede-30-anni-per-gaaloul-anche-in-appello_868a3572-5037-49c3-a01e-b7100c49e208.html": "2026-11-12T20:06+01:00",
+  "https://www.dire.it/12-11-2026/1288346-piogge-e-venti-forti-allerta-meteo-in-5-regioni": "2026-11-12T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/nicola-piovani-consulente-artistico-del-teatro-due-di-parma_7eaad29e-5753-4462-a516-729da43ec27e.html": "2026-11-12T20:06+01:00"
  },
- "updated": "2026-11-12T16:06+01:00",
- "next": "alle 20",
+ "updated": "2026-11-12T20:06+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-11-12T16:06+01:00",
-  "articles": 15,
-  "items": 0,
+  "at": "2026-11-12T20:06+01:00",
+  "articles": 4,
+  "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -129,8 +142,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 43,
-    "kept": 12
+    "items": 36,
+    "kept": 3
    },
    {
     "agency": "ANSA",
@@ -164,7 +177,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 34,
+    "items": 42,
     "kept": 0
    },
    {
@@ -172,7 +185,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -214,7 +227,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
@@ -228,14 +241,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dagospia",
