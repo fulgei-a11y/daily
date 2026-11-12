@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-11-13T00:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Processo per morte in ambulanza",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/morti-in-ambulanza-in-aula-le-ultime-ore-di-vita-di-deanna-mambelli_30460bec-7e22-4014-996c-505abd6af325.html"
+   ],
+   "html": "<strong>Processo per morte in ambulanza</strong> — Forlì: in Corte d'Assise sono state ripercorse le ultime ore di vita di Deanna Mambelli, l'85enne che sarebbe stata uccisa da un ex soccorritore della Croce Rossa con un'insufflazione d'aria durante il trasporto. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/12/morti-in-ambulanza-in-aula-le-ultime-ore-di-vita-di-deanna-mambelli_30460bec-7e22-4014-996c-505abd6af325.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-12T20:06+01:00",
    "cat": "Cronaca",
    "bo": true,
@@ -73,11 +83,6 @@
   }
  ],
  "seen": {
-  "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbEJfcV9vVGVTVW1EZXI5eW50TTk4YkZtaDctaWNKU0pGWWt0RHdUMFlYYU1pUVdkczd2dHhkLXVKR2N0cmtBbVlyeGZvLWxBcng4RzZ6TXBfeVhWUTA5Tk9QVmxEcEdYS2w1d3djUVU5cDQ2SHhDVHFRX2E5d2VrN05McDFyb2Q3dFZLTDBEN0p0ZHg0VDZiT3JCV1g": "2026-11-11T12:06+01:00",
-  "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSGpab2lxbnF6Rng4MWlBemY1SHNOb0xnZEYwNlBMRjRGUEdfYmF5ZXVrY2g3M1dGa0sxN00xZWtROVM4TC1YMjFvYXItaDRaWXJMX1JFcTRzY3pLZzItMGlRZ3NrNDVNRkM3VXJ1Wk8zTTBobU9UX0dBWnlLaUUtenVSYm5vOTg": "2026-11-11T12:06+01:00",
-  "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRmpoeXNXU0NGd3pDV2t6XzNEVU1WUXJFNnQ5aEs3dWdsTjZicXZPczRKbGlMMEJJMU5rMVlrT1JmY1VRSUdHNnE0b0gtUzRGR2pDT3ZDaXp3M0JLMHpQa0pfaHdOaGF1QmN0LUprdmtFZTdLbXI4ZWtiTlM5aXhRVmVnWUhrVTkwQl9YZ3c3SkNGQQ": "2026-11-11T12:06+01:00",
-  "https://news.google.com/rss/articles/CBMingFBVV95cUxQTWlKSEU3MDZEblY3MWNtX3FBcUR0QWxkZlBIOFgzbS0yNnkwd3JxdjdaY3lWZ2FDRWZyVVRkODltb1NlTEgxU0g1Z2JWb3ZBNVRYeUFfZWVDNmFBZjBFSEozYzczRDJSLTU5ZndibFJyd0J3aWpFNkdMTWJHTXo0UGxQcGo3YzRjbVRNbFBxRkJFNEtCOFVWdEhOcm9oZw": "2026-11-11T12:06+01:00",
-  "https://www.dire.it/11-11-2026/1287531-tajani-litalia-e-in-guerra-non-con-le-armi-ma-e-guerra": "2026-11-11T12:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/francesca-mannocchi-a-bologna-per-ad-alta-voce_b01b20e0-2984-4c93-8cbc-4e7c8d250caf.html": "2026-11-11T16:06+01:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/11/11/turismo-delle-origini-enit-australiani-in-italia-per-tre-quattro-settimane_d9e4feca-6539-477a-9451-e7c6167eccbf.html": "2026-11-11T16:06+01:00",
   "https://www.dire.it/11-11-2026/1287724-ravenna-si-prepara-allesordio-di-ronaldinho-tutte-le-misure-previste-per-la-festa": "2026-11-11T16:06+01:00",
@@ -127,13 +132,15 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/maltempo-in-emilia-romagna-quaranta-interventi-dei-vigili-del-fuoco_4da4587c-87ff-4924-9060-2e44273b4c30.html": "2026-11-12T20:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/omicidio-alice-neri-la-procura-chiede-30-anni-per-gaaloul-anche-in-appello_868a3572-5037-49c3-a01e-b7100c49e208.html": "2026-11-12T20:06+01:00",
   "https://www.dire.it/12-11-2026/1288346-piogge-e-venti-forti-allerta-meteo-in-5-regioni": "2026-11-12T20:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/nicola-piovani-consulente-artistico-del-teatro-due-di-parma_7eaad29e-5753-4462-a516-729da43ec27e.html": "2026-11-12T20:06+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/nicola-piovani-consulente-artistico-del-teatro-due-di-parma_7eaad29e-5753-4462-a516-729da43ec27e.html": "2026-11-12T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/occhetto-alla-bolognina-a-37-anni-dalla-svolta_d13ceba0-dadd-427e-805c-263763942d45.html": "2026-11-13T00:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/morti-in-ambulanza-in-aula-le-ultime-ore-di-vita-di-deanna-mambelli_30460bec-7e22-4014-996c-505abd6af325.html": "2026-11-13T00:06+01:00"
  },
- "updated": "2026-11-12T20:06+01:00",
- "next": "alle 24",
+ "updated": "2026-11-13T00:06+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-11-12T20:06+01:00",
-  "articles": 4,
+  "at": "2026-11-13T00:06+01:00",
+  "articles": 2,
   "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -142,8 +149,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 36,
-    "kept": 3
+    "items": 37,
+    "kept": 2
    },
    {
     "agency": "ANSA",
@@ -241,7 +248,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
