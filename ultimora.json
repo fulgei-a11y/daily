@@ -1,6 +1,18 @@
 {
  "items": [
   {
+   "t": "2026-11-13T16:06+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Cane ferito sull'A13 salvato dalla Polizia Stradale",
+   "links": [
+    "https://www.dire.it/13-11-2026/1288760-girovagava-ferito-e-confuso-in-autostrada-traffico-rallentato-per-il-salvataggio-di-artu",
+    "https://www.adnkronos.com/cronaca/cane-ferito-autostrada-salvataggio-polstrada_5lDlaDfHZPdQnt3zK4eA4S",
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/cane-sfugge-al-proprietario-e-finisce-in-autostrada-salvato-dalla-polizia_e3a0c2f7-5ead-498a-bea3-90c809716fa0.html"
+   ],
+   "html": "<strong>Cane ferito sull'A13 salvato dalla Polizia Stradale</strong> — Bologna: un cane di razza Spinone di nome Artù, smarrito dal proprietario, è stato soccorso ferito sulla A13 Bologna-Padova, causando rallentamenti al traffico. Trasportato al Dipartimento di Scienze Mediche Veterinarie dell'Università di Bologna, è stato poi ricongiunto al suo anziano proprietario. <span class=\"src\">Fonti: <a href=\"https://www.dire.it/13-11-2026/1288760-girovagava-ferito-e-confuso-in-autostrada-traffico-rallentato-per-il-salvataggio-di-artu/\" target=\"_blank\" rel=\"noopener\">Dire</a>, <a href=\"https://www.adnkronos.com/cronaca/cane-ferito-autostrada-salvataggio-polstrada_5lDlaDfHZPdQnt3zK4eA4S\" target=\"_blank\" rel=\"noopener\">Adnkronos</a>, <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/13/cane-sfugge-al-proprietario-e-finisce-in-autostrada-salvato-dalla-polizia_e3a0c2f7-5ead-498a-bea3-90c809716fa0.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-13T12:06+01:00",
    "cat": "Cronaca",
    "bo": false,
@@ -83,13 +95,21 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/lutile-di-unipol-sale-a-139-miliardi-124-premi-per-128-miliardi_9d7b4a75-2b97-4629-aaab-533c063cbc41.html": "2026-11-13T08:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/violenza-sessuale-e-maltrattamenti-in-famiglia-arrestato-un-38enne_90d7b55f-3b87-4a76-8541-a189becb928e.html": "2026-11-13T12:06+01:00",
   "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMW5oVE1uSHkzUGpkNDhlOF9kQ2FqNlFicjN4SGlKVTVlMXBKWjNrd2VZNzc2d1B0ZHY3VGdlX3ZCemJlN0ZSUmJ2SEd4dDRTdHZWb3hSYm1Ia3E5UlNZTmxTZmJjZ0NiX1o2TmpKazhRU2d4cE1yNlBDUWVKc3J0U3Roa0lRckdJRkV4YVViR3dvbHVpX2I0SkRNelZpNW9rY3FrUUllREczWGJzUzR4RlpHb1ZvWEZGbl9YRnNBRQ": "2026-11-13T12:06+01:00",
-  "https://www.agi.it/cronaca/news/2026-11-13/maltempo-allerta-regioni-40006872": "2026-11-13T12:06+01:00"
+  "https://www.agi.it/cronaca/news/2026-11-13/maltempo-allerta-regioni-40006872": "2026-11-13T12:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/mandorlini-aspetta-ronaldinho-in-campo-domenica-nel-secondo-tempo_c9bd7cec-3996-4a11-86df-97f1524c0a0f.html": "2026-11-13T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/a-bologna-la-32a-edizione-di-visioni-italiane-spazio-ai-nuovi-talenti_b7ab197e-da20-4bcd-9046-8aefa7eeb463.html": "2026-11-13T16:06+01:00",
+  "https://www.dire.it/13-11-2026/1288760-girovagava-ferito-e-confuso-in-autostrada-traffico-rallentato-per-il-salvataggio-di-artu": "2026-11-13T16:06+01:00",
+  "https://www.adnkronos.com/cronaca/cane-ferito-autostrada-salvataggio-polstrada_5lDlaDfHZPdQnt3zK4eA4S": "2026-11-13T16:06+01:00",
+  "https://www.adnkronos.com/cronaca/francesco-vaia-lancia-manifesto-per-il-welfare-della-salute-da-napoli-partito-tour-per-litalia_2Vy2gZDColGXkizBA7PWxg": "2026-11-13T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/cane-sfugge-al-proprietario-e-finisce-in-autostrada-salvato-dalla-polizia_e3a0c2f7-5ead-498a-bea3-90c809716fa0.html": "2026-11-13T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTEh3R0lsa21GbjI4amVROTZRSE9kMG9kQkQ0dXplR21WYURyR2ZjMzVuRkx4WGN0MnlnRWpSYTBDMmVzODM2Q2c3YmFzdy1uZy1GRURBWUhSemZnTk9VMldrQUMxQ0xXaGFPWkJwYXhmai03NDNZSVJKLTRUMEw5M0VEM3hhRWN6TFlxQW9CUmlzeVU5ZUIwYTJhTQ": "2026-11-13T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNM0M3UVpoeW5RV0o2OEplcVNUd0lENXpQZmgxZ3dPanQxQm9za0RtdjVTQ3hJT3J0cWNTMkdJdWd6Z1Y5NDZ5bnhMaTUyRUdFTktzaXNqNXhMTjhId2VfTmVaalJLMzhGWHVaSG1rYzROQ0ZXWnZEWXhUaVpmVTdfc01KeFYzVTdiU29oNkY4QjNYSXpCSlpfY1owZVJsRzMzQmFmbk9vb055QlJ4QnB2U3czOWotVW9XMXlaZFN0UWhnRlhFdjVyQXRhQlBDaG1sc2ZlRXF3": "2026-11-13T16:06+01:00"
  },
- "updated": "2026-11-13T12:06+01:00",
- "next": "alle 16",
+ "updated": "2026-11-13T16:06+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-13T12:06+01:00",
-  "articles": 3,
+  "at": "2026-11-13T16:06+01:00",
+  "articles": 8,
   "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -98,8 +118,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 39,
-    "kept": 1
+    "items": 33,
+    "kept": 3
    },
    {
     "agency": "ANSA",
@@ -112,7 +132,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 57,
+    "items": 48,
     "kept": 0
    },
    {
@@ -120,7 +140,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "AGI",
@@ -133,7 +153,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 49,
+    "items": 60,
     "kept": 0
    },
    {
@@ -141,7 +161,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Adnkronos",
@@ -155,7 +175,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -190,21 +210,21 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dagospia",
