@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-11-13T20:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Omicidi di 'ndrangheta del 1992: tre ergastoli definitivi",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/gli-omicidi-di-aemilia-1992-definitive-tre-condanne-allergastolo_e1a2efe5-c174-44e4-9db0-772bc930a1de.html"
+   ],
+   "html": "<strong>Omicidi di 'ndrangheta del 1992: tre ergastoli definitivi</strong> — Reggio Emilia (Reggio Emilia): la Cassazione ha confermato tre ergastoli nel processo \"Aemilia 1992\" per gli omicidi di Nicola Vasapollo a Reggio Emilia e Giuseppe Ruggiero a Brescello, avvenuti nel 1992 nell'ambito di una faida tra cosche. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/13/gli-omicidi-di-aemilia-1992-definitive-tre-condanne-allergastolo_e1a2efe5-c174-44e4-9db0-772bc930a1de.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-13T16:06+01:00",
    "cat": "Cronaca",
    "bo": true,
@@ -64,7 +74,6 @@
   }
  ],
  "seen": {
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/save-the-children-negli-ultimi-dieci-anni-le-r-ha-perso-8-sedi-scolastiche_18228011-912d-4d68-9bce-988fe9d99076.html": "2026-11-12T08:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/rapine-minacce-estorsioni-scoperta-una-banda-di-quattro-ventenni_2db1014d-e937-4acd-a92f-4e65e3700427.html": "2026-11-12T12:06+01:00",
   "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPMFZBUkpDWUNFY3FoNm45N3RqdkMtY1p3SWo5V2xDeUR5RjNwd3FKV2VSVlNUUG1MRXVoWTJtaDI5Ukh3RzF1bVM2ZU93VWJtal83SmFvNENGeWcxSURjZTFWa3NhckJDLVNIRFMxeUk1ZXlSVnotcXJLVm1IaGhEZFJzR1FEN1dYRVJMbFMxU3otV0pBbEdSckVnZlRFWGpNUlVHY3FXOTNMWERjeEY2dV9HU1Nwd2xHSE13OWloc05pVUF5Q0xjY2lQRGZYTWlwV3h6d3dFWUVzLUdqUGpPZzZhMVFqTzgzOHNDa2lQcUZsbTZkanc": "2026-11-12T12:06+01:00",
   "https://www.italpress.com/al-via-con-il-progetto-mizar-laccordo-di-programma-tra-regione-e-comune-di-piacenza-335mila-euro-per-sicurezza-e-riqualificazione-urbana": "2026-11-12T12:06+01:00",
@@ -103,13 +112,15 @@
   "https://www.adnkronos.com/cronaca/francesco-vaia-lancia-manifesto-per-il-welfare-della-salute-da-napoli-partito-tour-per-litalia_2Vy2gZDColGXkizBA7PWxg": "2026-11-13T16:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/cane-sfugge-al-proprietario-e-finisce-in-autostrada-salvato-dalla-polizia_e3a0c2f7-5ead-498a-bea3-90c809716fa0.html": "2026-11-13T16:06+01:00",
   "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTEh3R0lsa21GbjI4amVROTZRSE9kMG9kQkQ0dXplR21WYURyR2ZjMzVuRkx4WGN0MnlnRWpSYTBDMmVzODM2Q2c3YmFzdy1uZy1GRURBWUhSemZnTk9VMldrQUMxQ0xXaGFPWkJwYXhmai03NDNZSVJKLTRUMEw5M0VEM3hhRWN6TFlxQW9CUmlzeVU5ZUIwYTJhTQ": "2026-11-13T16:06+01:00",
-  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNM0M3UVpoeW5RV0o2OEplcVNUd0lENXpQZmgxZ3dPanQxQm9za0RtdjVTQ3hJT3J0cWNTMkdJdWd6Z1Y5NDZ5bnhMaTUyRUdFTktzaXNqNXhMTjhId2VfTmVaalJLMzhGWHVaSG1rYzROQ0ZXWnZEWXhUaVpmVTdfc01KeFYzVTdiU29oNkY4QjNYSXpCSlpfY1owZVJsRzMzQmFmbk9vb055QlJ4QnB2U3czOWotVW9XMXlaZFN0UWhnRlhFdjVyQXRhQlBDaG1sc2ZlRXF3": "2026-11-13T16:06+01:00"
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNM0M3UVpoeW5RV0o2OEplcVNUd0lENXpQZmgxZ3dPanQxQm9za0RtdjVTQ3hJT3J0cWNTMkdJdWd6Z1Y5NDZ5bnhMaTUyRUdFTktzaXNqNXhMTjhId2VfTmVaalJLMzhGWHVaSG1rYzROQ0ZXWnZEWXhUaVpmVTdfc01KeFYzVTdiU29oNkY4QjNYSXpCSlpfY1owZVJsRzMzQmFmbk9vb055QlJ4QnB2U3czOWotVW9XMXlaZFN0UWhnRlhFdjVyQXRhQlBDaG1sc2ZlRXF3": "2026-11-13T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/gli-omicidi-di-aemilia-1992-definitive-tre-condanne-allergastolo_e1a2efe5-c174-44e4-9db0-772bc930a1de.html": "2026-11-13T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/riaccolto-al-supermercato-la-passata-di-pomodoro-da-agricoltura-sociale_a5955fed-2a25-4de0-a258-e168152e68b3.html": "2026-11-13T20:06+01:00"
  },
- "updated": "2026-11-13T16:06+01:00",
- "next": "alle 20",
+ "updated": "2026-11-13T20:06+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-11-13T16:06+01:00",
-  "articles": 8,
+  "at": "2026-11-13T20:06+01:00",
+  "articles": 2,
   "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -118,52 +129,52 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 33,
-    "kept": 3
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 48,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "Adnkronos",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
+    "items": 39,
     "kept": 2
    },
    {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 51,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
     "agency": "Adnkronos",
     "channel": "feed diretto",
     "status": "ok",
@@ -195,7 +206,7 @@
     "agency": "askanews",
     "channel": "Google News",
     "status": "ok",
-    "items": 60,
+    "items": 0,
     "kept": 0
    },
    {
@@ -210,21 +221,21 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dagospia",
