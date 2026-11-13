@@ -1,8 +1,8 @@
 {
  "date": "2026-11-13",
- "slot": "13",
- "generated": "2026-11-13T13:07+01:00",
- "articles": 513,
+ "slot": "19",
+ "generated": "2026-11-13T19:08+01:00",
+ "articles": 494,
  "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
@@ -11,8 +11,8 @@
  "passaggi": [
   {
    "modello": "gemini-2.5-flash",
-   "notizie": 71,
-   "caratteri": 21744
+   "notizie": 68,
+   "caratteri": 25482
   }
  ],
  "feeds": [
@@ -260,7 +260,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 31
+   "items": 26
   },
   {
    "name": "Google News",
@@ -296,11 +296,77 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 3
+   "items": 8
   },
   {
    "name": "Google News",
    "prov": "",
+   "status": "ok",
+   "items": 10
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "",
+   "status": "ok",
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 20
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 9
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 13
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 40
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
    "status": "ok",
    "items": 11
   },
@@ -308,91 +374,25 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "",
-   "status": "ok",
-   "items": 20
-  },
-  {
-   "name": "Google News",
-   "prov": "",
-   "status": "ok",
-   "items": 20
-  },
-  {
-   "name": "Google News",
-   "prov": "",
-   "status": "ok",
-   "items": 19
+   "items": 24
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 18
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 13
+   "items": 6
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 13
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 40
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 12
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 20
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 13
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 2
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 29
+   "items": 30
   },
   {
    "name": "Google News",
@@ -416,7 +416,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 22
+   "items": 25
   },
   {
    "name": "Google News",
@@ -452,7 +452,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 18
+   "items": 14
   },
   {
    "name": "Google News",
@@ -476,7 +476,7 @@
    "name": "Google News",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 6
+   "items": 5
   }
  ]
 }
