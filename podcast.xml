@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 13 Nov 2026 20:06:30 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 00:06:41 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · venerdì 13 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Bilancio di previsione 2027-2029 approvato dalla Giunta; Aeroporto Marconi: ricavi record e quasi 9 milioni di passeggeri; Sviluppi: Chiusura stabilimento Kemet a Sasso Marconi; Raccolta fondi &quot;Dedica una poltrona&quot; per il Teatro Comunale; Nascita della Camera forense per la Costituzione; Sostegno di Elly Schlein al sindaco Lepore per le comunali 2027.</description>
@@ -573,36 +573,6 @@
       <pubDate>Mon, 26 Oct 2026 05:31:00 +0100</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-26.mp3" length="6247750" type="audio/mpeg"/>
       <itunes:duration>2082</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · domenica 25 ottobre 2026</title>
-      <description>34 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri di sabato: bilancio feriti e danni, appello dei sindaci e reazioni politiche; Rinviata la relazione sull&#x27;autopsia del caso Fakir; Riqualificazione Galleria e portici del Centro cittadino di Imola; Acquisto immobili per salvare inquilini a rischio sfratto; Italia Nostra denuncia degrado di undici tesori cittadini; Maratonina di Calderara: Bartolotti vince con miglior tempo in sette anni.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-25</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-25-19</guid>
-      <pubDate>Sun, 25 Oct 2026 19:13:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-25-19.mp3" length="1923754" type="audio/mpeg"/>
-      <itunes:duration>641</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · domenica 25 ottobre 2026</title>
-      <description>30 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri a Bologna: 24 agenti feriti, 3 arresti e danni ingenti; Violenza domestica in zona Mazzini; Fakir, perizia attesa per inizio settimana prossima; Macelleria Casella: Stefano Casella confermato vicepresidente vicario nazionale Federcarni; Nuovo centro di raccolta Hera a San Lazzaro di Savena; Concorso fotografico internazionale &quot;Donne &amp; Biosfera&quot;.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-25</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-25-13</guid>
-      <pubDate>Sun, 25 Oct 2026 13:13:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-25-13.mp3" length="1848834" type="audio/mpeg"/>
-      <itunes:duration>616</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · domenica 25 ottobre 2026</title>
-      <description>189 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri e guerriglia urbana in centro; Sequestro di pistola finta e machete prima della manifestazione; Operazione antidroga dei Carabinieri; Arresto per spaccio al Pilastro; Perquisizioni dopo gli scontri in stazione; Furto di gasolio in galleria autostradale.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-25</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-25</guid>
-      <pubDate>Sun, 25 Oct 2026 05:29:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-25.mp3" length="10130617" type="audio/mpeg"/>
-      <itunes:duration>3376</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
