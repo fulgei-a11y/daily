@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-11-13T12:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Arrestato 38enne per violenza sessuale e maltrattamenti",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/violenza-sessuale-e-maltrattamenti-in-famiglia-arrestato-un-38enne_90d7b55f-3b87-4a76-8541-a189becb928e.html"
+   ],
+   "html": "<strong>Arrestato 38enne per violenza sessuale e maltrattamenti</strong> — Rimini: un uomo di nazionalità ucraina è stato arrestato per violenza sessuale sull'ex moglie e maltrattamenti sulla figlia adolescente, che erano fuggite a fine settembre. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/13/violenza-sessuale-e-maltrattamenti-in-famiglia-arrestato-un-38enne_90d7b55f-3b87-4a76-8541-a189becb928e.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-13T08:06+01:00",
    "cat": "Economia",
    "bo": true,
@@ -39,33 +49,9 @@
     "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/rapine-minacce-estorsioni-scoperta-una-banda-di-quattro-ventenni_2db1014d-e937-4acd-a92f-4e65e3700427.html"
    ],
    "html": "<strong>Scompaginata la banda delle rapine con spray e coltelli</strong> — Reggio Emilia: I Carabinieri hanno eseguito un'ordinanza di custodia cautelare in carcere per tre giovani ventenni responsabili di una serie di rapine, aggressioni e tentate estorsioni tra il capoluogo, Correggio e Scandiano, mentre un quarto complice è attualmente ricercato. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/12/rapine-minacce-estorsioni-scoperta-una-banda-di-quattro-ventenni_2db1014d-e937-4acd-a92f-4e65e3700427.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-11-12T00:06+01:00",
-   "cat": "",
-   "bo": false,
-   "title": "Auto pirata travolge nonna e nipote",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/auto-pirata-travolge-nonna-e-nipote-nel-parmense-lei-in-rianimazione_cabfd9c9-3989-49bd-a2e9-f6aa61f1e3b3.html"
-   ],
-   "html": "<strong>Auto pirata travolge nonna e nipote</strong> — Fornovo Taro (Parma): una donna è in rianimazione dopo essere stata investita da un'auto pirata insieme al nipote, che non è in pericolo di vita. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/11/auto-pirata-travolge-nonna-e-nipote-nel-parmense-lei-in-rianimazione_cabfd9c9-3989-49bd-a2e9-f6aa61f1e3b3.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-11-12T00:06+01:00",
-   "cat": "",
-   "bo": true,
-   "title": "Allarmi bomba interrompono conferenza presidi",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/allarmi-bomba-a-bologna-la-notizia-interrompe-la-conferenza-dei-presidi_166c4653-8c8f-41cd-829e-a01d59f5249e.html"
-   ],
-   "html": "<strong>Allarmi bomba interrompono conferenza presidi</strong> — Bologna: la notizia di allarmi bomba in scuole della regione ha interrotto e poi sospeso in anticipo una conferenza dei presidi. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/11/allarmi-bomba-a-bologna-la-notizia-interrompe-la-conferenza-dei-presidi_166c4653-8c8f-41cd-829e-a01d59f5249e.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
   }
  ],
  "seen": {
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/11/allerta-rossa-per-maltempo-in-toscana-arancione-in-tre-regioni_8e24ea9c-68bc-4518-aeea-5487ea4ee781.html": "2026-11-12T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/auto-pirata-travolge-nonna-e-nipote-nel-parmense-lei-in-rianimazione_cabfd9c9-3989-49bd-a2e9-f6aa61f1e3b3.html": "2026-11-12T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/ludovico-ritrovato-a-bologna-restauro-aperto-al-pubblico-al-grand-hotel_bea398c2-83e7-4465-9c4a-94ce82d761f6.html": "2026-11-12T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/11/allarmi-bomba-a-bologna-la-notizia-interrompe-la-conferenza-dei-presidi_166c4653-8c8f-41cd-829e-a01d59f5249e.html": "2026-11-12T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/save-the-children-negli-ultimi-dieci-anni-le-r-ha-perso-8-sedi-scolastiche_18228011-912d-4d68-9bce-988fe9d99076.html": "2026-11-12T08:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/rapine-minacce-estorsioni-scoperta-una-banda-di-quattro-ventenni_2db1014d-e937-4acd-a92f-4e65e3700427.html": "2026-11-12T12:06+01:00",
   "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPMFZBUkpDWUNFY3FoNm45N3RqdkMtY1p3SWo5V2xDeUR5RjNwd3FKV2VSVlNUUG1MRXVoWTJtaDI5Ukh3RzF1bVM2ZU93VWJtal83SmFvNENGeWcxSURjZTFWa3NhckJDLVNIRFMxeUk1ZXlSVnotcXJLVm1IaGhEZFJzR1FEN1dYRVJMbFMxU3otV0pBbEdSckVnZlRFWGpNUlVHY3FXOTNMWERjeEY2dV9HU1Nwd2xHSE13OWloc05pVUF5Q0xjY2lQRGZYTWlwV3h6d3dFWUVzLUdqUGpPZzZhMVFqTzgzOHNDa2lQcUZsbTZkanc": "2026-11-12T12:06+01:00",
@@ -94,13 +80,16 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/nicola-piovani-consulente-artistico-del-teatro-due-di-parma_7eaad29e-5753-4462-a516-729da43ec27e.html": "2026-11-12T20:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/occhetto-alla-bolognina-a-37-anni-dalla-svolta_d13ceba0-dadd-427e-805c-263763942d45.html": "2026-11-13T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/12/morti-in-ambulanza-in-aula-le-ultime-ore-di-vita-di-deanna-mambelli_30460bec-7e22-4014-996c-505abd6af325.html": "2026-11-13T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/lutile-di-unipol-sale-a-139-miliardi-124-premi-per-128-miliardi_9d7b4a75-2b97-4629-aaab-533c063cbc41.html": "2026-11-13T08:06+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/lutile-di-unipol-sale-a-139-miliardi-124-premi-per-128-miliardi_9d7b4a75-2b97-4629-aaab-533c063cbc41.html": "2026-11-13T08:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/violenza-sessuale-e-maltrattamenti-in-famiglia-arrestato-un-38enne_90d7b55f-3b87-4a76-8541-a189becb928e.html": "2026-11-13T12:06+01:00",
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMW5oVE1uSHkzUGpkNDhlOF9kQ2FqNlFicjN4SGlKVTVlMXBKWjNrd2VZNzc2d1B0ZHY3VGdlX3ZCemJlN0ZSUmJ2SEd4dDRTdHZWb3hSYm1Ia3E5UlNZTmxTZmJjZ0NiX1o2TmpKazhRU2d4cE1yNlBDUWVKc3J0U3Roa0lRckdJRkV4YVViR3dvbHVpX2I0SkRNelZpNW9rY3FrUUllREczWGJzUzR4RlpHb1ZvWEZGbl9YRnNBRQ": "2026-11-13T12:06+01:00",
+  "https://www.agi.it/cronaca/news/2026-11-13/maltempo-allerta-regioni-40006872": "2026-11-13T12:06+01:00"
  },
- "updated": "2026-11-13T08:06+01:00",
- "next": "alle 12",
+ "updated": "2026-11-13T12:06+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-11-13T08:06+01:00",
-  "articles": 1,
+  "at": "2026-11-13T12:06+01:00",
+  "articles": 3,
   "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -109,7 +98,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 38,
+    "items": 39,
     "kept": 1
    },
    {
@@ -123,31 +112,31 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 20,
-    "kept": 0
-   },
-   {
-    "agency": "AGI",
-    "channel": "Google News",
-    "status": "ok",
     "items": 57,
     "kept": 0
    },
    {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 1
+   },
+   {
+    "agency": "AGI",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "AGI",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 49,
+    "kept": 0
+   },
+   {
     "agency": "Adnkronos",
     "channel": "feed diretto",
     "status": "ok",
@@ -166,7 +155,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "askanews",
