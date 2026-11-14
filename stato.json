@@ -1,18 +1,18 @@
 {
  "date": "2026-11-14",
- "slot": "13",
- "generated": "2026-11-14T13:07+01:00",
- "articles": 459,
+ "slot": "19",
+ "generated": "2026-11-14T19:09+01:00",
+ "articles": 140,
  "items": 35,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 77,
+ "feeds_ok": 34,
  "feeds_total": 77,
  "passaggi": [
   {
    "modello": "gemini-2.5-flash",
-   "notizie": 62,
-   "caratteri": 20638
+   "notizie": 39,
+   "caratteri": 13845
   }
  ],
  "feeds": [
@@ -223,260 +223,260 @@
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Reggio Emilia",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Parma",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Piacenza",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 32
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 27
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Reggio Emilia",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Modena",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Ferrara",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 4
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 9
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 40
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 15
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 13
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 10
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 11
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 40
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 40
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 37
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 10
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 21
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 14
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 5
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 30
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 28
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 40
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 27
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 23
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Bologna",
-   "status": "ok",
-   "items": 2
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Rimini",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Rimini",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Modena",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Ravenna",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 13
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Ferrara",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Ravenna",
-   "status": "ok",
-   "items": 20
+   "status": "HTTP 503",
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "Forlì-Cesena",
-   "status": "ok",
-   "items": 6
+   "status": "HTTP 503",
+   "items": 0
   }
  ]
 }
