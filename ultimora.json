@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-11-15T00:03+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Paziente aggredisce sanitari al Pronto Soccorso",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/paziente-aggredisce-a-calci-e-morsi-i-sanitari-al-pronto-soccorso-di-pavullo_6b49fbcc-c963-4de0-b07a-fb320f5ba441.html"
+   ],
+   "html": "<strong>Paziente aggredisce sanitari al Pronto Soccorso</strong> — Pavullo (Modena): un uomo, forse sotto effetto di stupefacenti, ha aggredito con calci e morsi il personale sanitario del pronto soccorso, venendo poi trasferito in un altro ospedale. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/14/paziente-aggredisce-a-calci-e-morsi-i-sanitari-al-pronto-soccorso-di-pavullo_6b49fbcc-c963-4de0-b07a-fb320f5ba441.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-15T00:03+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Cane abbandonato in un supermercato",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/recuperato-dalla-polizia-locale-un-cane-abbandonato-in-un-supermercato-a-bologna_abef923a-1eff-408d-b00b-7daed81c22d8.html"
+   ],
+   "html": "<strong>Cane abbandonato in un supermercato</strong> — Bologna: un cane è stato recuperato dalla Polizia Locale dopo essere stato lasciato legato per ore in un supermercato; il proprietario, che si era addormentato per un malore, è stato sanzionato. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/14/recuperato-dalla-polizia-locale-un-cane-abbandonato-in-un-supermercato-a-bologna_abef923a-1eff-408d-b00b-7daed81c22d8.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-14T16:06+01:00",
    "cat": "",
    "bo": false,
@@ -202,14 +222,23 @@
   "https://www.italpress.com/lega-salvini-sui-bot-spero-nessuno-dica-che-siano-hacker-russi": "2026-11-14T20:06+01:00",
   "https://www.italpress.com/cala-sipario-su-i-edizione-del-festival-delleconomia-sociale-4-000-le-presenze": "2026-11-14T20:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/gigi-dalessio-in-tour-nei-palasport-domenica-e-in-concerto-a-bologna_29bc25c9-f2a2-4645-84f8-28c2b7dcbc8f.html": "2026-11-14T20:06+01:00",
-  "https://www.adnkronos.com/economia/bot-intelligenza-artificiale-commenti-errore_18NhRX7jJY4DMr3vAna1BQ": "2026-11-14T20:06+01:00"
+  "https://www.adnkronos.com/economia/bot-intelligenza-artificiale-commenti-errore_18NhRX7jJY4DMr3vAna1BQ": "2026-11-14T20:06+01:00",
+  "https://www.italpress.com/salvini-falsi-profili-spero-nessuno-dica-che-sono-hacker-russi-2": "2026-11-15T00:03+01:00",
+  "https://news.google.com/rss/articles/CBMiekFVX3lxTFBROVUxMXh5SXZWeGNlbzB3UDJLODdBdmFLTnEyUnY3SExQZUQ0c0dmOVlSVlYzQ1Y5WDBVeE9YS25aN1k0QXNraDlMbmw1TmVpRWdjUjViaDBzV0k4WHozQTlyVHRvVXVCMHVYNzgybXE1RGFHR1JIb0NB": "2026-11-15T00:03+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/paziente-aggredisce-a-calci-e-morsi-i-sanitari-al-pronto-soccorso-di-pavullo_6b49fbcc-c963-4de0-b07a-fb320f5ba441.html": "2026-11-15T00:03+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/14/sfilano-20mila-antifascisti-a-parma-1500-i-pro-remigrazione_d6a21632-6347-46fb-ae91-a4bb6273b1a8.html": "2026-11-15T00:03+01:00",
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPNGlLV180cUlueGlleW9QRjNyMWpnRTB6NVNoaTgzdF9jV3VQWU9DV0U3SGxSS1V3UDczN0RreFQ5WUhDcnFVbWZNcDg2bDZiYnJENy1MdXhaRXFXaExJWGZmeE1qVWJGZGpDWThZZHNjWENtdF9rbVp4TzhCaGtlOHNsajR3RUpheDNaNDJSSGM4OWFPQTBYR3RPWmlUakM5WUIzU3QtOWJlRVl6cm1WQ1I4Z29rTWRZcHBj": "2026-11-15T00:03+01:00",
+  "https://news.google.com/rss/articles/CBMie0FVX3lxTE9DNWdSLWZ6ZlZkcTZycXNBN2otcjNOdUl2dHJqU0FSQmNCVFpJYjVVclhhXzh1cWNWdTktU3NnZmNLejJ6aVpkcVc1QWU3RE5UVFZNZmVPWFpPR0V1RU9mTUpfUzlUTGJxM05iWHNrRUY3Z0VzTkFlZ09Dcw": "2026-11-15T00:03+01:00",
+  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1QamhTanNFcVRYd1d0blhUN3ZvTjRNa2kyMTItUFZiTWlwbDVScllWRnpJSmlLNkRIZWhtSDl5UVVwbEhCdUVjYXVkcU1WY213": "2026-11-15T00:03+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/recuperato-dalla-polizia-locale-un-cane-abbandonato-in-un-supermercato-a-bologna_abef923a-1eff-408d-b00b-7daed81c22d8.html": "2026-11-15T00:03+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/il-pianista-grigory-sokolov-torna-a-bologna-con-due-sonate-di-schubert-e-brahms_e69da84e-ccef-451e-8bf6-c1bfd4cefe3d.html": "2026-11-15T00:03+01:00"
  },
- "updated": "2026-11-14T20:06+01:00",
- "next": "alle 24",
+ "updated": "2026-11-15T00:03+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-11-14T20:06+01:00",
-  "articles": 5,
-  "items": 0,
+  "at": "2026-11-15T00:03+01:00",
+  "articles": 9,
+  "items": 2,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -218,14 +247,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 34,
-    "kept": 2
+    "kept": 3
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -251,8 +280,8 @@
    {
     "agency": "AGI",
     "channel": "Google News",
-    "status": "HTTP 503",
-    "items": 0,
+    "status": "ok",
+    "items": 15,
     "kept": 0
    },
    {
@@ -267,16 +296,16 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
+    "kept": 0
+   },
+   {
+    "agency": "Adnkronos",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
     "kept": 1
    },
    {
-    "agency": "Adnkronos",
-    "channel": "Google News",
-    "status": "HTTP 503",
-    "items": 0,
-    "kept": 0
-   },
-   {
     "agency": "askanews",
     "channel": "feed diretto",
     "status": "HTTP 403",
@@ -293,23 +322,23 @@
    {
     "agency": "askanews",
     "channel": "Google News",
-    "status": "HTTP 503",
-    "items": 0,
-    "kept": 0
+    "status": "ok",
+    "items": 60,
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 2
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
-    "status": "HTTP 503",
-    "items": 0,
-    "kept": 0
+    "status": "ok",
+    "items": 60,
+    "kept": 1
    },
    {
     "agency": "Dire",
@@ -321,16 +350,16 @@
    {
     "agency": "Dire",
     "channel": "Google News",
-    "status": "HTTP 503",
-    "items": 0,
+    "status": "ok",
+    "items": 60,
     "kept": 0
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
-    "status": "HTTP 503",
-    "items": 0,
-    "kept": 0
+    "status": "ok",
+    "items": 2,
+    "kept": 1
    }
   ]
  },
