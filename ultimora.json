@@ -1,6 +1,26 @@
 {
  "items": [
   {
+   "t": "2026-11-14T12:03+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Maltrattamenti e violenze sulla moglie per 18 anni: arrestato 40enne",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/accuse-di-maltrattamenti-in-famiglia-e-violenza-sessuale-40enne-arrestato-a-bologna_88ba9dad-5fe6-4ab2-b7b6-ad6d61feac1b.html"
+   ],
+   "html": "<strong>Maltrattamenti e violenze sulla moglie per 18 anni: arrestato 40enne</strong> — Bologna: i Carabinieri hanno eseguito un'ordinanza di custodia cautelare in carcere nei confronti di un uomo accusato di aver picchiato, minacciato di morte e violentato ripetutamente la coniuge nel corso degli anni. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/14/accuse-di-maltrattamenti-in-famiglia-e-violenza-sessuale-40enne-arrestato-a-bologna_88ba9dad-5fe6-4ab2-b7b6-ad6d61feac1b.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-14T12:03+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Aggredisce i sanitari a calci e pugni al Pronto Soccorso: denunciata 31enne",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/da-in-escandescenze-al-pronto-soccorso-e-si-scaglia-contro-i-sanitari-denunciata_e83b3903-dffb-4c7c-8291-3129859a56bf.html"
+   ],
+   "html": "<strong>Aggredisce i sanitari a calci e pugni al Pronto Soccorso: denunciata 31enne</strong> — Reggio Emilia: la donna, giunta all'Arcispedale Santa Maria Nuova in forte stato di agitazione, si è scagliata contro il personale prima di essere bloccata dalle Volanti della Polizia. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/14/da-in-escandescenze-al-pronto-soccorso-e-si-scaglia-contro-i-sanitari-denunciata_e83b3903-dffb-4c7c-8291-3129859a56bf.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-14T08:06+01:00",
    "cat": "Economia",
    "bo": false,
@@ -121,23 +141,29 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/maltempo-aule-allagate-in-una-scuola-primaria-nel-modenese_11945b4c-1bb4-4972-a7b0-199bb064757b.html": "2026-11-14T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/il-corto-per-tutte-le-volte-celebra-gli-80-anni-dal-primo-voto_3375f7d6-9522-4a23-8126-38fbaf69944d.html": "2026-11-14T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/13/a-11-anni-dal-senegal-in-e-r-per-rimuovere-raro-neurofibroma-nellocchio_fb24fd5f-6e5b-4d1b-affc-538f51eff72a.html": "2026-11-14T00:06+01:00",
-  "https://www.italpress.com/economia-sociale-a-forli-il-primo-festival-tra-cooperazione-fisco-e-sanita": "2026-11-14T08:06+01:00"
+  "https://www.italpress.com/economia-sociale-a-forli-il-primo-festival-tra-cooperazione-fisco-e-sanita": "2026-11-14T08:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/la-clemenza-di-tito-apre-mozart-1791-lumanita-e-la-storia-per-chiara-muti_67df9b91-01e5-4a1b-a280-1cb00e638553.html": "2026-11-14T12:03+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/al-museo-della-civilta-villanoviana-nuovi-ambienti-contenuti-ed-esperienze_8ebe1753-5d5a-4713-8a23-078b70075954.html": "2026-11-14T12:03+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/da-in-escandescenze-al-pronto-soccorso-e-si-scaglia-contro-i-sanitari-denunciata_e83b3903-dffb-4c7c-8291-3129859a56bf.html": "2026-11-14T12:03+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/accuse-di-maltrattamenti-in-famiglia-e-violenza-sessuale-40enne-arrestato-a-bologna_88ba9dad-5fe6-4ab2-b7b6-ad6d61feac1b.html": "2026-11-14T12:03+01:00",
+  "https://www.italpress.com/progetto-di-riqualificazione-per-il-giardino-del-gigante-di-cento-de-pascale-valorizziamo-opera-darte-ambientale": "2026-11-14T12:03+01:00",
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWUdKV2VHLWQ1WUZwZ20za1NZTy1VSGlzZTV5MWItQm90UVM5UlMzU1pKcU1VX0F0U2xTRzVkUHgza19BNzk3bnNkbHQ1UnkzTDZYQ3dHZVphdFpiaW5GVFFSLUhscW15eDJMemdzdDZIaXRYTzRCS180YTk2V2VUcjBsZ21LRnMtWl8yMjJScF9jYXVFTXRFelJSakNJbS1vQWh0RURB": "2026-11-14T12:03+01:00"
  },
- "updated": "2026-11-14T08:06+01:00",
- "next": "alle 12",
+ "updated": "2026-11-14T12:03+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-11-14T08:06+01:00",
-  "articles": 1,
-  "items": 1,
-  "model": "gemini-2.5-flash",
+  "at": "2026-11-14T12:03+01:00",
+  "articles": 6,
+  "items": 2,
+  "model": "gemini-3.6-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 39,
-    "kept": 0
+    "items": 37,
+    "kept": 4
    },
    {
     "agency": "ANSA",
@@ -150,7 +176,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 46,
+    "items": 33,
     "kept": 0
    },
    {
@@ -171,7 +197,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 49,
+    "items": 46,
     "kept": 0
    },
    {
@@ -228,7 +254,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
