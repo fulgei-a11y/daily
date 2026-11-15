@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 15 Nov 2026 00:04:11 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 05:12:02 +0100</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · domenica 15 novembre 2026</title>
+      <description>164 notizie dall&#x27;Emilia-Romagna. In apertura: Malore fatale al concerto di Elisa; Club Matis chiuso per sovraffollamento; Cane dimenticato al supermercato; Folle inseguimento e arresto; Perquisizioni Digos per disordini; Arrestato per maltrattamenti e violenza sessuale.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-11-15</link>
+      <guid isPermaLink="false">rassegna-er-2026-11-15</guid>
+      <pubDate>Sun, 15 Nov 2026 05:08:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-11-15.mp3" length="8029824" type="audio/mpeg"/>
+      <itunes:duration>2676</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · sabato 14 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Invito al bigliettaio storico del tram; Carenze di vestiario e distintivi per la Polizia di Stato; Confindustria convoca le Assise Generali a Bologna nel 2027; Manifestazione &quot;Difendi l&#x27;Europa dal califfato&quot;; Presidio pro-Palestina all&#x27;Eima; Pista ciclopedonale del Brasimone.</description>
