@@ -152,13 +152,21 @@
   "https://www.ansa.it/sito/notizie/cronaca/2026/11/15/fan-di-elisa-muore-prima-dello-show-a-bologna-spettacolo-annullato_ff9fb762-ff64-4b76-8156-1b925964b84b.html": "2026-11-15T12:06+01:00",
   "https://www.dire.it/15-11-2026/1289295-tragedia-al-raduno-dei-fan-di-elisa-a-bologna-una-35enne-muore-prima-del-concerto-la-cantante-annulla-lo-show-ha-avuto-un-arresto-cardiaco": "2026-11-15T12:06+01:00",
   "https://news.google.com/rss/articles/CBMitgFBVV95cUxNendVSTZRT0J4VWVPMUJxNmpMRnJldlYxZWpta05SWU5OOGdMaVhKWEpvbFI1dGVnYlVXbm1mNm9wcmQ4WXBKczV3VU12TVk2Tmw0WXFnVkZQWFlPWl9qWk9jc2JJekJqdTlyTTJfS2ZMcFZzSlBDcVV5azI3RzdDUmZzdTNTZElmbkFkMHJwOTdud1JfbDBMTThTYUdNQjRaUEMzdDVraHIwSEcwNUt4YVdGQVRPZw": "2026-11-15T12:06+01:00",
-  "https://www.adnkronos.com/cronaca/meteo-italia-allerta-maltempo-regioni_dLaZ1FYb9hisBI5RMxAOf": "2026-11-15T12:06+01:00"
+  "https://www.adnkronos.com/cronaca/meteo-italia-allerta-maltempo-regioni_dLaZ1FYb9hisBI5RMxAOf": "2026-11-15T12:06+01:00",
+  "https://news.google.com/rss/articles/CBMiggFBVV95cUxPeXhNSWNOZFAxR1hlVjE0UnZ1SlJibVRYQlhXUVc4c3djenM3WWViT1RyWm0yU084ZVFsbEQzRG9CQWxLUEU3dzlTbUZPbnk4a3NXNVZrUHl5Zk42eTk5dzJ3Njc0RHB2c1UxVUpPWWd3YXdJTVdvMWhBQ09TOVVxVGhn": "2026-11-15T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/15/fan-di-elisa-muore-prima-dello-show-a-bologna-spettacolo-annullato_bef460e6-6858-4940-ab59-b7f15a2f1e6c.html": "2026-11-15T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/15/lultimo-incanto-nel-nome-di-mozart-ovvero-la-musica-come-salvezza_1916fdeb-1ce2-45f1-b3d2-f106f27df8ac.html": "2026-11-15T16:06+01:00",
+  "https://www.italpress.com/fan-muore-improvvisamente-poco-prima-dello-show-elisa-annulla-il-concerto-a-bologna": "2026-11-15T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQ185Y0k2a1ZaeXl2MTBVYklrcWZwRWVUcnlTbWgxdVlqNXQ0UnpzaU1ZcUhIRG1oRkt5RkdwX090cDJYY21QNUlUQkg3bXhFZVEyUUFTdmpsSXhEY0ktSmthZGVTTTh2a2laNkktY2NZenFSTUdJVXJBZEtTSDJRYjQ5em53VGQ1dWlhNHRJRlNzQ0JxZVNzTjZPZmJYa1QwM3FKQUlCcXJnZVpQVGdmRlN6ZEVOZw": "2026-11-15T16:06+01:00",
+  "https://www.dire.it/15-11-2026/1289337-bolzano-prima-in-classifica-per-qualita-della-vita-poi-milano-e-bologna-taranto-ultima": "2026-11-15T16:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/15/bolzano-e-la-provincia-in-cui-si-vive-meglio-lultima-e-taranto_9e592d92-7538-4c88-9e59-68831ace8e36.html": "2026-11-15T16:06+01:00",
+  "https://www.italpress.com/bolzano-prima-in-classifica-per-qualita-della-vita-ultima-taranto": "2026-11-15T16:06+01:00"
  },
- "updated": "2026-11-15T12:06+01:00",
- "next": "alle 16",
+ "updated": "2026-11-15T16:06+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-15T12:06+01:00",
-  "articles": 5,
+  "at": "2026-11-15T16:06+01:00",
+  "articles": 8,
   "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
@@ -167,8 +175,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 34,
-    "kept": 0
+    "items": 30,
+    "kept": 2
    },
    {
     "agency": "ANSA",
@@ -181,7 +189,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 10,
+    "items": 9,
     "kept": 0
    },
    {
@@ -202,15 +210,15 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 22,
-    "kept": 1
+    "items": 41,
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -224,7 +232,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -244,15 +252,15 @@
     "agency": "askanews",
     "channel": "Google News",
     "status": "ok",
-    "items": 60,
-    "kept": 0
+    "items": 56,
+    "kept": 2
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Italpress",
@@ -279,7 +287,7 @@
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 3,
+    "items": 2,
     "kept": 0
    }
   ]
