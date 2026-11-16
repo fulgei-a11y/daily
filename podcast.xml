@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 16 Nov 2026 00:06:45 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 05:13:03 +0100</lastBuildDate>
+    <item>
+      <title>Rassegna del mattino · lunedì 16 novembre 2026</title>
+      <description>187 notizie dall&#x27;Emilia-Romagna. In apertura: Fan muore prima del concerto all&#x27;Estragon, annullato lo spettacolo di Elisa; Agente di polizia penitenziaria colpito al volto da un detenuto alla Dozza; Arrestato 40enne per maltrattamenti e violenze sulla moglie durati 18 anni; Cane abbandonato in un supermercato, sanzionato il proprietario; Cortei in bicicletta per le vittime della strada, installazione a Palazzo d&#x27;Accursio; Rapinatore del 2021 arrestato a Crotone.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-11-16</link>
+      <guid isPermaLink="false">rassegna-er-2026-11-16</guid>
+      <pubDate>Mon, 16 Nov 2026 05:09:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-11-16.mp3" length="8482082" type="audio/mpeg"/>
+      <itunes:duration>2827</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 19 · domenica 15 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Qualità della vita: Bologna terza in Italia; Sciopero generale 20 novembre: a rischio bus e treni; Recuperata ciclista caduta al parco Talon; Incidente sulla ferrata degli Alpini: escursionista bolognese soccorso; Carte d&#x27;identità manomesse: allarme furti d&#x27;identità; Eima International chiude con record di visitatori.</description>
