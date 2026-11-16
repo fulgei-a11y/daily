@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-11-16T12:06+01:00",
+   "cat": "",
+   "bo": false,
+   "title": "Sostegno ai caregiver familiari",
+   "links": [
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMnJGU2oyWUVyT0V2M0NLMndCMzZ3VTdsamlZVEVxdjhXMkdRcnZVOTJrdXZxSGJCaDNFeVMyM2VLaENtNlVIelFLa3Y5RmxNaDN1TlFDdzBCeFQ3ODJmeDFVRkJpd1lmUGt3YkNIblZFNHJ1YUJzekpJMlYzZS1vaFVxM1Z3MDc5cl96eGtkMDN2MnE0VjN5RThOaExlclV2Wkd6R1VNdTg4bmFQTkVzUA"
+   ],
+   "html": "<strong>Sostegno ai caregiver familiari</strong> — Emilia-Romagna: la Giunta regionale stanzia 5,325 milioni di euro per il 2026, destinati a rafforzare le misure di supporto e finanziare servizi di sollievo domiciliare. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOMnJGU2oyWUVyT0V2M0NLMndCMzZ3VTdsamlZVEVxdjhXMkdRcnZVOTJrdXZxSGJCaDNFeVMyM2VLaENtNlVIelFLa3Y5RmxNaDN1TlFDdzBCeFQ3ODJmeDFVRkJpd1lmUGt3YkNIblZFNHJ1YUJzekpJMlYzZS1vaFVxM1Z3MDc5cl96eGtkMDN2MnE0VjN5RThOaExlclV2Wkd6R1VNdTg4bmFQTkVzUA?oc=5\" target=\"_blank\" rel=\"noopener\">Italpress</a></span>"
+  },
+  {
    "t": "2026-11-16T00:06+01:00",
    "cat": "Cronaca",
    "bo": false,
@@ -19,38 +29,9 @@
     "https://www.ansa.it/emiliaromagna/notizie/2026/11/15/eima-chiude-con-oltre-370mila-visitatori-7-rispetto-al-2024_022e1f31-3b8d-42b1-96e8-a1d393ba0853.html"
    ],
    "html": "<strong>Eima International chiude con oltre 370mila visitatori, record storico</strong> — Bologna: la 47ª edizione di Eima International, rassegna mondiale della meccanica agricola, si è conclusa con 370mila presenze, di cui circa 68mila estere, superando del 7% il record precedente. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/15/eima-chiude-con-oltre-370mila-visitatori-7-rispetto-al-2024_022e1f31-3b8d-42b1-96e8-a1d393ba0853.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-11-15T00:03+01:00",
-   "cat": "Cronaca",
-   "bo": false,
-   "title": "Paziente aggredisce sanitari al Pronto Soccorso",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/paziente-aggredisce-a-calci-e-morsi-i-sanitari-al-pronto-soccorso-di-pavullo_6b49fbcc-c963-4de0-b07a-fb320f5ba441.html"
-   ],
-   "html": "<strong>Paziente aggredisce sanitari al Pronto Soccorso</strong> — Pavullo (Modena): un uomo, forse sotto effetto di stupefacenti, ha aggredito con calci e morsi il personale sanitario del pronto soccorso, venendo poi trasferito in un altro ospedale. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/14/paziente-aggredisce-a-calci-e-morsi-i-sanitari-al-pronto-soccorso-di-pavullo_6b49fbcc-c963-4de0-b07a-fb320f5ba441.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-11-15T00:03+01:00",
-   "cat": "Cronaca",
-   "bo": true,
-   "title": "Cane abbandonato in un supermercato",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/recuperato-dalla-polizia-locale-un-cane-abbandonato-in-un-supermercato-a-bologna_abef923a-1eff-408d-b00b-7daed81c22d8.html"
-   ],
-   "html": "<strong>Cane abbandonato in un supermercato</strong> — Bologna: un cane è stato recuperato dalla Polizia Locale dopo essere stato lasciato legato per ore in un supermercato; il proprietario, che si era addormentato per un malore, è stato sanzionato. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/14/recuperato-dalla-polizia-locale-un-cane-abbandonato-in-un-supermercato-a-bologna_abef923a-1eff-408d-b00b-7daed81c22d8.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
   }
  ],
  "seen": {
-  "https://www.italpress.com/salvini-falsi-profili-spero-nessuno-dica-che-sono-hacker-russi-2": "2026-11-15T00:03+01:00",
-  "https://news.google.com/rss/articles/CBMiekFVX3lxTFBROVUxMXh5SXZWeGNlbzB3UDJLODdBdmFLTnEyUnY3SExQZUQ0c0dmOVlSVlYzQ1Y5WDBVeE9YS25aN1k0QXNraDlMbmw1TmVpRWdjUjViaDBzV0k4WHozQTlyVHRvVXVCMHVYNzgybXE1RGFHR1JIb0NB": "2026-11-15T00:03+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/paziente-aggredisce-a-calci-e-morsi-i-sanitari-al-pronto-soccorso-di-pavullo_6b49fbcc-c963-4de0-b07a-fb320f5ba441.html": "2026-11-15T00:03+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/14/sfilano-20mila-antifascisti-a-parma-1500-i-pro-remigrazione_d6a21632-6347-46fb-ae91-a4bb6273b1a8.html": "2026-11-15T00:03+01:00",
-  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPNGlLV180cUlueGlleW9QRjNyMWpnRTB6NVNoaTgzdF9jV3VQWU9DV0U3SGxSS1V3UDczN0RreFQ5WUhDcnFVbWZNcDg2bDZiYnJENy1MdXhaRXFXaExJWGZmeE1qVWJGZGpDWThZZHNjWENtdF9rbVp4TzhCaGtlOHNsajR3RUpheDNaNDJSSGM4OWFPQTBYR3RPWmlUakM5WUIzU3QtOWJlRVl6cm1WQ1I4Z29rTWRZcHBj": "2026-11-15T00:03+01:00",
-  "https://news.google.com/rss/articles/CBMie0FVX3lxTE9DNWdSLWZ6ZlZkcTZycXNBN2otcjNOdUl2dHJqU0FSQmNCVFpJYjVVclhhXzh1cWNWdTktU3NnZmNLejJ6aVpkcVc1QWU3RE5UVFZNZmVPWFpPR0V1RU9mTUpfUzlUTGJxM05iWHNrRUY3Z0VzTkFlZ09Dcw": "2026-11-15T00:03+01:00",
-  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1QamhTanNFcVRYd1d0blhUN3ZvTjRNa2kyMTItUFZiTWlwbDVScllWRnpJSmlLNkRIZWhtSDl5UVVwbEhCdUVjYXVkcU1WY213": "2026-11-15T00:03+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/recuperato-dalla-polizia-locale-un-cane-abbandonato-in-un-supermercato-a-bologna_abef923a-1eff-408d-b00b-7daed81c22d8.html": "2026-11-15T00:03+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/14/il-pianista-grigory-sokolov-torna-a-bologna-con-due-sonate-di-schubert-e-brahms_e69da84e-ccef-451e-8bf6-c1bfd4cefe3d.html": "2026-11-15T00:03+01:00",
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxOd3dyZ3dqeWlEci1jOVJPeDZJby11aHhONzd2Uk1nUUIyS3BmeDR3MGlfWGhoQ0tjNVFvc25BT2VQRXpSdlpET3JoMTBtNldxaE5hcGJJZmloLTdoY1ZrVENBX1N3OUhURWhZZnlrUlJYSzhzbnoyTXgyTTFwM01YbzJqaG1VSWFCUGtYQi130gGOAUFVX3lxTE53d3Jnd2p5aURyLWM5Uk94NklvLXVoeE43N3ZSTWdRQjJLcGZ4NHcwaV9YaGhDS2M1UW9zbkFPZVBFelJ2WkRPcmgxMG02V3FoTmFwYklmaWgtN2hjVmtUQ0FfU3c5SFRFaFlmeWtSUlhLOHNuejJNeDJNMXAzTVhvMmpobVVJYUJQa1hCLXc": "2026-11-15T08:06+01:00",
   "https://www.italpress.com/salvini-falsi-profili-spero-nessuno-dica-che-sono-hacker-russi": "2026-11-15T08:06+01:00",
   "https://news.google.com/rss/articles/CBMikgFBVV95cUxQTTRnMGRjWUlESW1jMmNhTUZVdENkMmFSZ3VkU180U2tRZDVFaHBpaWZsVFFramRuclZ4ZHNYQlRPOWRLQmtGNmF5UFpxZy1acDZpbjNlWDJXdkF2ZDF4OWM1bVQ2LTl5OWtpdXZYNF8zU3VWdE5ZNG50cWJLMHJzUFhCMnVjQXlxWllERjQzNGx4UdIBlwFBVV95cUxQTDlhZEtYQXNnczVGbFQ1a3JkMWx5bWZ1QnNodkJGUl8tRUF0czhjM2VybjljYTlPX2p4THk1Vy1DZWpsVHN4OGtpd2lWS2JaSU1qZFNxT0hOSl9kcEtLTldQTndLWmlvNjBWOXJMZngyS2lzYXVCcEEydFNILTF5c2Q3VHU0eWc3Sno2bnlybDZZU0Q2a0dR": "2026-11-15T12:06+01:00",
@@ -78,23 +59,28 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/15/per-evitare-animale-cadono-in-scarpata-con-lauto-due-giovani-in-salvo_c570ddd0-4b31-4455-af8d-b19fb0372657.html": "2026-11-16T00:06+01:00",
   "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTmplRENmdGNjSnZmTHdVczVHZEhkekJYWXhQQ3lRUFV4T09WamFkUUdQbElBYjB5OTJjdzJnWmdZTnhRVnVmcXg3ZGZBb19SU0M4S2VoYXJlOGI3Z1ZLUEI2Q29UUzV6MGJycFAwNFo5QzVESkFTeGw3R1kxUTBqQ0UzMkZqSUFrWGt1aF92d3l0SkNFa2dMcE9JbXV5emc": "2026-11-16T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/15/eima-chiude-con-oltre-370mila-visitatori-7-rispetto-al-2024_022e1f31-3b8d-42b1-96e8-a1d393ba0853.html": "2026-11-16T00:06+01:00",
-  "https://news.google.com/rss/articles/CBMiekFVX3lxTE8tRk51TjE0V05xOF9vSk02dHZwSkxVQ3dvT1lJZzFTZmEtSlZ3S0dpRGVpMTF1OFpyQUNiTXNoWm16bFJGWVNQejB1Sm1UNGtIRXNaZV8xLW5QbUQ4UXF6b3hRYjFrT2x5OWVMdWo2MDViZ1VRVHc4cERn": "2026-11-16T08:06+01:00"
+  "https://news.google.com/rss/articles/CBMiekFVX3lxTE8tRk51TjE0V05xOF9vSk02dHZwSkxVQ3dvT1lJZzFTZmEtSlZ3S0dpRGVpMTF1OFpyQUNiTXNoWm16bFJGWVNQejB1Sm1UNGtIRXNaZV8xLW5QbUQ4UXF6b3hRYjFrT2x5OWVMdWo2MDViZ1VRVHc4cERn": "2026-11-16T08:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/wolff-allontana-le-voci-su-antonelli-in-ferrari-diventera-piu-popolare-di-schumi_92f2311c-a17c-4b83-996b-af1a57a05e37.html": "2026-11-16T12:06+01:00",
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMnJGU2oyWUVyT0V2M0NLMndCMzZ3VTdsamlZVEVxdjhXMkdRcnZVOTJrdXZxSGJCaDNFeVMyM2VLaENtNlVIelFLa3Y5RmxNaDN1TlFDdzBCeFQ3ODJmeDFVRkJpd1lmUGt3YkNIblZFNHJ1YUJzekpJMlYzZS1vaFVxM1Z3MDc5cl96eGtkMDN2MnE0VjN5RThOaExlclV2Wkd6R1VNdTg4bmFQTkVzUA": "2026-11-16T12:06+01:00",
+  "https://www.italpress.com/la-regione-rafforza-misure-sostegno-caregiver-familiari-stanziati-53-milioni-di-euro": "2026-11-16T12:06+01:00",
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOOUQ0MS1SVVR5Z19EZHR0WnNvWkVYUEs2RVZ4NzRvN1d6SDNJaTROeUhLRG5Vc2ozU3FhQ3BUYWtBZVJZS3I5cWREQkItbTJ2REtnZTJGc1hsWk1YbmtuTmtOZ0w0QllNQnBJRVhIa01HMDRIcktKRTBNMWZvbkJsV1VvTGlJS0V3X2FwYmo2TUFUempjb2tsZUY2eUJTY2ZNdGpRSmRydEJBVlU": "2026-11-16T12:06+01:00",
+  "https://www.italpress.com/guerra-ucraina-russia-notizie-aggiornamenti-oggi-16-novembre": "2026-11-16T12:06+01:00"
  },
- "updated": "2026-11-16T08:06+01:00",
- "next": "alle 12",
+ "updated": "2026-11-16T12:06+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-11-16T08:06+01:00",
-  "articles": 1,
-  "items": 0,
-  "model": "gemini-3.6-flash",
+  "at": "2026-11-16T12:06+01:00",
+  "articles": 5,
+  "items": 1,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 21,
-    "kept": 0
+    "items": 19,
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -107,7 +93,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 9,
+    "items": 20,
     "kept": 0
    },
    {
@@ -128,7 +114,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 46,
+    "items": 39,
     "kept": 0
    },
    {
@@ -150,7 +136,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "askanews",
@@ -170,7 +156,7 @@
     "agency": "askanews",
     "channel": "Google News",
     "status": "ok",
-    "items": 48,
+    "items": 60,
     "kept": 0
    },
    {
@@ -178,14 +164,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
@@ -205,8 +191,8 @@
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 10,
-    "kept": 1
+    "items": 9,
+    "kept": 0
    }
   ]
  },
