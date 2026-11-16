@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 16 Nov 2026 20:06:36 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 00:06:37 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · lunedì 16 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Incidente mortale a Medicina; Falso allarme incendio all&#x27;aeroporto Marconi; Blitz antidroga e armi a Borgo Panigale; Strage del 2 agosto, respinta istanza difesa Cavallini; Cordoglio per Sergio Ferrari, ex presidente Confesercenti; Sciopero generale del 20 novembre, corteo in Piazza Maggiore.</description>
@@ -583,36 +583,6 @@
       <pubDate>Thu, 29 Oct 2026 05:41:00 +0100</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-29.mp3" length="8287182" type="audio/mpeg"/>
       <itunes:duration>2762</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · mercoledì 28 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Portici mappati in 3D per lo studio climatico; Sviluppi: Morte di Abderrahim Fakir, scuse del poliziotto; Sciopero generale del 30 ottobre precettato, ma USB conferma; Nuovo Fascicolo Sanitario Elettronico 2.0; Recuperato corno di rinoceronte rubato a Napoli; Aggressione a infermiere al Sant&#x27;Orsola.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-28</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-28-19</guid>
-      <pubDate>Wed, 28 Oct 2026 19:30:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-28-19.mp3" length="2025553" type="audio/mpeg"/>
-      <itunes:duration>675</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · mercoledì 28 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Aggressione a infermiere al Sant&#x27;Orsola; Sviluppi: Morte di Abderrahim Fakir, dettagli sulle chiamate al 118; Sciopero generale del 30 ottobre; Due arresti in Stazione Centrale; Pietre sui binari a Budrio; Nuovo negozio Normal in via Ugo Bassi.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-28</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-28-13</guid>
-      <pubDate>Wed, 28 Oct 2026 13:29:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-28-13.mp3" length="1662712" type="audio/mpeg"/>
-      <itunes:duration>554</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · mercoledì 28 ottobre 2026</title>
-      <description>155 notizie dall&#x27;Emilia-Romagna. In apertura: Coppia denunciata per furto aggravato con passeggino; Ragazza ferita gravemente all&#x27;occhio da idrante durante scontri; Tre arresti convalidati dopo scontri in centro; Tassista abusivo sorpreso con turisti; Morte di Abderrahim Fakir: perizia indica tre concause e frasi choc degli agenti; Banda organizzava aggressioni e traffico di droga dal carcere.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-28</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-28</guid>
-      <pubDate>Wed, 28 Oct 2026 05:39:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-28.mp3" length="7137690" type="audio/mpeg"/>
-      <itunes:duration>2379</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>

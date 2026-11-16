@@ -1,6 +1,46 @@
 {
  "items": [
   {
+   "t": "2026-11-17T00:06+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Incidente mortale a Medicina",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/incidente-mortale-nel-bolognese-anziana-travolta-da-unauto_6dcdd569-2aab-4fee-a878-65f711971e65.html"
+   ],
+   "html": "<strong>Incidente mortale a Medicina</strong> — Medicina (Bologna): un'anziana di 89 anni è stata travolta e uccisa da un'auto in via degli Armigeri. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/16/incidente-mortale-nel-bolognese-anziana-travolta-da-unauto_6dcdd569-2aab-4fee-a878-65f711971e65.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-17T00:06+01:00",
+   "cat": "Economia",
+   "bo": true,
+   "title": "Lavoratori Kemet in presidio davanti alla Regione",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/sindacati-domani-presidio-lavoratori-kemet-davanti-alla-regione-e-r_76f48aae-3d6f-43f4-97b7-0515f73c0ffd.html"
+   ],
+   "html": "<strong>Lavoratori Kemet in presidio davanti alla Regione</strong> — Pontecchio Marconi (Bologna): i lavoratori della Kemet, in sciopero contro la chiusura dello stabilimento, terranno un presidio davanti alla Regione Emilia-Romagna in concomitanza con l'incontro tra azienda e istituzioni. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/16/sindacati-domani-presidio-lavoratori-kemet-davanti-alla-regione-e-r_76f48aae-3d6f-43f4-97b7-0515f73c0ffd.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-17T00:06+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Bologna approva il nuovo piano di Protezione civile",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/a-bologna-il-nuovo-piano-di-protezione-civile-angeli-del-fango-esempi_341a5878-60d9-4f03-be9f-cacaa34ed41b.html"
+   ],
+   "html": "<strong>Bologna approva il nuovo piano di Protezione civile</strong> — Bologna: la Giunta ha approvato il nuovo Piano comunale di Protezione civile, che riorganizza il Centro Operativo Comunale e individua 40 aree di attesa per la popolazione. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/16/a-bologna-il-nuovo-piano-di-protezione-civile-angeli-del-fango-esempi_341a5878-60d9-4f03-be9f-cacaa34ed41b.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-17T00:06+01:00",
+   "cat": "Economia",
+   "bo": true,
+   "title": "Qualità della vita, Bologna, Rimini e Parma nella top 10 nazionale",
+   "links": [
+    "https://www.agi.it/cronaca/news/2026-11-16/qualita-della-vita-2026-classifica-province-40048952"
+   ],
+   "html": "<strong>Qualità della vita, Bologna, Rimini e Parma nella top 10 nazionale</strong> — Bologna, Rimini, Parma: secondo un'indagine di Italia Oggi e Ital Communications, le tre province emiliano-romagnole si posizionano tra le prime dieci in Italia per qualità della vita. <span class=\"src\">Fonte: <a href=\"https://www.agi.it/cronaca/news/2026-11-16/qualita-della-vita-2026-classifica-province-40048952/\" target=\"_blank\" rel=\"noopener\">AGI</a></span>"
+  },
+  {
    "t": "2026-11-16T16:06+01:00",
    "cat": "",
    "bo": false,
@@ -42,11 +82,6 @@
   }
  ],
  "seen": {
-  "https://news.google.com/rss/articles/CBMikgFBVV95cUxQTTRnMGRjWUlESW1jMmNhTUZVdENkMmFSZ3VkU180U2tRZDVFaHBpaWZsVFFramRuclZ4ZHNYQlRPOWRLQmtGNmF5UFpxZy1acDZpbjNlWDJXdkF2ZDF4OWM1bVQ2LTl5OWtpdXZYNF8zU3VWdE5ZNG50cWJLMHJzUFhCMnVjQXlxWllERjQzNGx4UdIBlwFBVV95cUxQTDlhZEtYQXNnczVGbFQ1a3JkMWx5bWZ1QnNodkJGUl8tRUF0czhjM2VybjljYTlPX2p4THk1Vy1DZWpsVHN4OGtpd2lWS2JaSU1qZFNxT0hOSl9kcEtLTldQTndLWmlvNjBWOXJMZngyS2lzYXVCcEEydFNILTF5c2Q3VHU0eWc3Sno2bnlybDZZU0Q2a0dR": "2026-11-15T12:06+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/15/fan-di-elisa-muore-prima-dello-show-a-bologna-spettacolo-annullato_ff9fb762-ff64-4b76-8156-1b925964b84b.html": "2026-11-15T12:06+01:00",
-  "https://www.dire.it/15-11-2026/1289295-tragedia-al-raduno-dei-fan-di-elisa-a-bologna-una-35enne-muore-prima-del-concerto-la-cantante-annulla-lo-show-ha-avuto-un-arresto-cardiaco": "2026-11-15T12:06+01:00",
-  "https://news.google.com/rss/articles/CBMitgFBVV95cUxNendVSTZRT0J4VWVPMUJxNmpMRnJldlYxZWpta05SWU5OOGdMaVhKWEpvbFI1dGVnYlVXbm1mNm9wcmQ4WXBKczV3VU12TVk2Tmw0WXFnVkZQWFlPWl9qWk9jc2JJekJqdTlyTTJfS2ZMcFZzSlBDcVV5azI3RzdDUmZzdTNTZElmbkFkMHJwOTdud1JfbDBMTThTYUdNQjRaUEMzdDVraHIwSEcwNUt4YVdGQVRPZw": "2026-11-15T12:06+01:00",
-  "https://www.adnkronos.com/cronaca/meteo-italia-allerta-maltempo-regioni_dLaZ1FYb9hisBI5RMxAOf": "2026-11-15T12:06+01:00",
   "https://news.google.com/rss/articles/CBMiggFBVV95cUxPeXhNSWNOZFAxR1hlVjE0UnZ1SlJibVRYQlhXUVc4c3djenM3WWViT1RyWm0yU084ZVFsbEQzRG9CQWxLUEU3dzlTbUZPbnk4a3NXNVZrUHl5Zk42eTk5dzJ3Njc0RHB2c1UxVUpPWWd3YXdJTVdvMWhBQ09TOVVxVGhn": "2026-11-15T16:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/15/fan-di-elisa-muore-prima-dello-show-a-bologna-spettacolo-annullato_bef460e6-6858-4940-ab59-b7f15a2f1e6c.html": "2026-11-15T16:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/15/lultimo-incanto-nel-nome-di-mozart-ovvero-la-musica-come-salvezza_1916fdeb-1ce2-45f1-b3d2-f106f27df8ac.html": "2026-11-15T16:06+01:00",
@@ -91,14 +126,18 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/amedeo-minghi-in-tour-teatrale-per-festeggiare-60-anni-di-carriera_cd032972-1cb7-4602-b950-35b8de590f2c.html": "2026-11-16T20:06+01:00",
   "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRFhBblNOQ2lURDNMSUh4YWVWYWZTOG4wbWRhYzJha0NzVjhzOXVkVzJQZFhaX2Z4d3dDT1lTUWEzOUZkdktfN2hZZUFQZFRfbkstZ2FIR3htbXdzazA1eFR5cTNZQlBTRDk5Nm10aWJxcWw1VmJLbzNVVjZKVmRvTzRzeXhOU3RnZkZyMEI2VVZfUW9fWVdr": "2026-11-16T20:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/ansa-wolff-allontana-voci-su-antonelli-in-ferrari-presto-piu-popolare-di-schumi_6ca65bf2-7052-43e4-8d58-2d14341bb006.html": "2026-11-16T20:06+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/16/strage-bologna-respinta-istanza-di-cavallini-nessun-nuovo-esame-del-dna_0f14d66e-5446-4fc1-afd7-9cf73ba4cbb6.html": "2026-11-16T20:06+01:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/16/strage-bologna-respinta-istanza-di-cavallini-nessun-nuovo-esame-del-dna_0f14d66e-5446-4fc1-afd7-9cf73ba4cbb6.html": "2026-11-16T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/incidente-mortale-nel-bolognese-anziana-travolta-da-unauto_6dcdd569-2aab-4fee-a878-65f711971e65.html": "2026-11-17T00:06+01:00",
+  "https://www.agi.it/cronaca/news/2026-11-16/qualita-della-vita-2026-classifica-province-40048952": "2026-11-17T00:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/a-bologna-il-nuovo-piano-di-protezione-civile-angeli-del-fango-esempi_341a5878-60d9-4f03-be9f-cacaa34ed41b.html": "2026-11-17T00:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/sindacati-domani-presidio-lavoratori-kemet-davanti-alla-regione-e-r_76f48aae-3d6f-43f4-97b7-0515f73c0ffd.html": "2026-11-17T00:06+01:00"
  },
- "updated": "2026-11-16T20:06+01:00",
- "next": "alle 24",
+ "updated": "2026-11-17T00:06+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-11-16T20:06+01:00",
-  "articles": 8,
-  "items": 0,
+  "at": "2026-11-17T00:06+01:00",
+  "articles": 4,
+  "items": 4,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -107,28 +146,28 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 19,
-    "kept": 2
+    "kept": 3
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 51,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "AGI",
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "AGI",
@@ -141,7 +180,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 28,
+    "items": 23,
     "kept": 0
    },
    {
@@ -149,7 +188,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
@@ -163,7 +202,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -182,9 +221,9 @@
    {
     "agency": "askanews",
     "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 1
+    "status": "HTTP 429",
+    "items": 0,
+    "kept": 0
    },
    {
     "agency": "Italpress",
@@ -210,15 +249,15 @@
    {
     "agency": "Dire",
     "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 1
+    "status": "HTTP 429",
+    "items": 0,
+    "kept": 0
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 5,
+    "items": 4,
     "kept": 0
    }
   ]
