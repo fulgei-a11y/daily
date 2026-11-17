@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 17 Nov 2026 20:06:53 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 00:06:51 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · martedì 17 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi: Morta la 12enne ferita nell&#x27;incidente in A1; Sviluppi: Funerali di Liliana Negrini a Medicina; Sviluppi: Vertice Kemet, spiraglio per la fabbrica; Sviluppi: Arrestato uno dei rapinatori del Mercato Albani; Andrea Mingardi si è sposato dopo 46 anni di fidanzamento; Occupato il dipartimento di Matematica.</description>
@@ -583,36 +583,6 @@
       <pubDate>Fri, 30 Oct 2026 05:40:00 +0100</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-30.mp3" length="6910111" type="audio/mpeg"/>
       <itunes:duration>2303</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · giovedì 29 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Sviluppi Caso Fakir: la controperizia della famiglia contesta la causa della morte; Sviluppi Sciopero generale del 30 ottobre: Usb conferma la mobilitazione nonostante la precettazione; Inchiesta sulla morte di Lucia Pennisi: la Procura apre un fascicolo; Furto di carrozzina elettrica a turista finlandese in Piazza Maggiore; Esoscheletri per la movimentazione bagagli all&#x27;Aeroporto Marconi; Nuovo tunnel sospeso per la sicurezza dei lavoratori Toyota a Borgo Panigale.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-29</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-29-19</guid>
-      <pubDate>Thu, 29 Oct 2026 19:31:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-29-19.mp3" length="2373269" type="audio/mpeg"/>
-      <itunes:duration>791</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · giovedì 29 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Nuovi lavori per il tram e modifiche alla viabilità; Sottopasso di via Bencivenni approvato; Tentato omicidio in Montagnola, nuovo arresto; Controlli straordinari dei Carabinieri a Imola; Pietre sui binari a Budrio, denunciati tre giovani; Guasto alla rete idrica a Medicina e Castel Guelfo.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-29</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-29-13</guid>
-      <pubDate>Thu, 29 Oct 2026 13:28:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-29-13.mp3" length="1810199" type="audio/mpeg"/>
-      <itunes:duration>603</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · giovedì 29 ottobre 2026</title>
-      <description>177 notizie dall&#x27;Emilia-Romagna. In apertura: Aggressione a infermiere al Sant&#x27;Orsola; Truffa a anziana in Stazione Centrale; Evade dai domiciliari e spaccia droga: due arresti in stazione; Denunciati due uomini con gioielli e contanti in auto; Recuperato raro corno di rinoceronte rubato a Napoli; Aggravamento misura per 37enne recidivo.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-29</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-29</guid>
-      <pubDate>Thu, 29 Oct 2026 05:41:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-29.mp3" length="8287182" type="audio/mpeg"/>
-      <itunes:duration>2762</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
