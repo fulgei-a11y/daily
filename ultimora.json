@@ -1,6 +1,56 @@
 {
  "items": [
   {
+   "t": "2026-11-17T16:06+01:00",
+   "cat": "Economia",
+   "bo": true,
+   "title": "Prezzo del pane: a Bologna supera i 5 euro al chilo",
+   "links": [
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxPdG1NeXBHZ2xlZjJVcUhpWTRKbTdfZkIyNmJLRjdzQUczMTlQYUVrS2I1Z3pUYWxLbDQtQ1ZPTGtRWU5Mc0dZcEcwTnlnYk96dXp5cUxsMG4yWVJ2SnB4TkctNFUxamlsNnAwZU9rTkN1Rm83RF9aQWdPUkZQYlQ4a1NYekFCNjREc1RkOUJfSlFubFpaS0Y4Zk9iVQ"
+   ],
+   "html": "<strong>Prezzo del pane: a Bologna supera i 5 euro al chilo</strong> — Bologna: il costo del pane nel capoluogo emiliano risulta tra i più alti in Italia, superando la soglia dei 5 euro al chilogrammo. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPdG1NeXBHZ2xlZjJVcUhpWTRKbTdfZkIyNmJLRjdzQUczMTlQYUVrS2I1Z3pUYWxLbDQtQ1ZPTGtRWU5Mc0dZcEcwTnlnYk96dXp5cUxsMG4yWVJ2SnB4TkctNFUxamlsNnAwZU9rTkN1Rm83RF9aQWdPUkZQYlQ4a1NYekFCNjREc1RkOUJfSlFubFpaS0Y4Zk9iVQ?oc=5\" target=\"_blank\" rel=\"noopener\">askanews</a></span>"
+  },
+  {
+   "t": "2026-11-17T16:06+01:00",
+   "cat": "Cronaca",
+   "bo": true,
+   "title": "Allerta arancione per vento forte e rischio frane",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/maltempo-allerta-arancione-per-vento-forte-sulla-montagna-romagnola_af5c82c1-0012-48b0-92fe-24ce3d863b8f.html"
+   ],
+   "html": "<strong>Allerta arancione per vento forte e rischio frane</strong> — Bologna, Modena, Parma, Reggio Emilia, Forlì-Cesena, Ravenna, Rimini: disposta un'allerta arancione per vento forte e criticità idrogeologiche su gran parte della regione, con rischio di frane nelle zone montane e collinari. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/17/maltempo-allerta-arancione-per-vento-forte-sulla-montagna-romagnola_af5c82c1-0012-48b0-92fe-24ce3d863b8f.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-17T16:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Primo trapianto di cornea artificiale in Romagna",
+   "links": [
+    "https://www.dire.it/17-11-2026/1290306-sanita-oggi-a-ravenna-il-primo-trapianto-di-cornea-artificiale"
+   ],
+   "html": "<strong>Primo trapianto di cornea artificiale in Romagna</strong> — Ravenna: eseguito all'ospedale Santa Maria delle Croci il primo intervento di impianto di una membrana polimerica biocompatibile per il ripristino della trasparenza corneale. <span class=\"src\">Fonte: <a href=\"https://www.dire.it/17-11-2026/1290306-sanita-oggi-a-ravenna-il-primo-trapianto-di-cornea-artificiale/\" target=\"_blank\" rel=\"noopener\">Dire</a></span>"
+  },
+  {
+   "t": "2026-11-17T16:06+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Mobility management al centro di un evento a Rimini",
+   "links": [
+    "https://www.adnkronos.com/economia/trasporti-il-ruolo-del-mobility-manager-se-ne-parla-allevento-asstra-ibe-intermobility-future-ways_4Pm8A5el1ar8SNEQkkOm7K"
+   ],
+   "html": "<strong>Mobility management al centro di un evento a Rimini</strong> — Rimini: il 25 novembre si terrà un incontro dedicato al ruolo del mobility manager nella transizione verso una mobilità aziendale più sostenibile ed efficiente. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/economia/trasporti-il-ruolo-del-mobility-manager-se-ne-parla-allevento-asstra-ibe-intermobility-future-ways_4Pm8A5el1ar8SNEQkkOm7K\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
+   "t": "2026-11-17T16:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Ricerca oncologica: studio sull'equità dei test molecolari",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/oncologia-di-precisione-ricercatori-italiani-chiedono-test-piu-omogenei_25a1aa85-c6c4-43d6-922e-acc0520cb4a8.html"
+   ],
+   "html": "<strong>Ricerca oncologica: studio sull'equità dei test molecolari</strong> — Meldola (Forlì-Cesena): ricercatori dell'Irst Dino Amadori hanno pubblicato uno studio su Jama Oncology per promuovere test molecolari più omogenei e garantire un accesso equo alle cure di precisione. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/17/oncologia-di-precisione-ricercatori-italiani-chiedono-test-piu-omogenei_25a1aa85-c6c4-43d6-922e-acc0520cb4a8.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-17T00:06+01:00",
    "cat": "Cronaca",
    "bo": true,
@@ -99,23 +149,35 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/universita-di-bologna-guida-progetto-su-ia-etica-per-il-patrimonio-culturale-europeo_3e512da4-17c5-4ea6-85b2-99f4d6fbc2de.html": "2026-11-17T12:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/festival-letterario-salmastro-a-cervia-anteprima-su-grazia-deledda_69097f3d-5ad9-4321-ad08-698479ca549e.html": "2026-11-17T12:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/cade-dal-balcone-per-evadere-dai-domiciliari-78enne-in-carcere_569f9e48-77cd-4921-a9bb-4d46205b91fd.html": "2026-11-17T12:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/i-pinguini-tattici-nucleari-tornano-nel-club-del-primo-sold-out_7bc6d1fe-546b-4397-897f-89959d887e61.html": "2026-11-17T12:06+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/i-pinguini-tattici-nucleari-tornano-nel-club-del-primo-sold-out_7bc6d1fe-546b-4397-897f-89959d887e61.html": "2026-11-17T12:06+01:00",
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxPdG1NeXBHZ2xlZjJVcUhpWTRKbTdfZkIyNmJLRjdzQUczMTlQYUVrS2I1Z3pUYWxLbDQtQ1ZPTGtRWU5Mc0dZcEcwTnlnYk96dXp5cUxsMG4yWVJ2SnB4TkctNFUxamlsNnAwZU9rTkN1Rm83RF9aQWdPUkZQYlQ4a1NYekFCNjREc1RkOUJfSlFubFpaS0Y4Zk9iVQ": "2026-11-17T16:06+01:00",
+  "https://www.ansa.it/sito/notizie/economia/2026/11/17/berlino-deutsche-bank-deve-spiegare-in-modo-trasparente_411981b3-1c96-43d1-bfce-a2156ca0d793.html": "2026-11-17T16:06+01:00",
+  "https://www.dire.it/17-11-2026/1290324-sanita-lo-studio-piu-luce-di-giorno-e-si-dorme-meglio-di-notte": "2026-11-17T16:06+01:00",
+  "https://www.dire.it/17-11-2026/1290326-universita-mattarella-fiducia-ai-giovani-possono-cambiare-il-mondo": "2026-11-17T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/maltempo-allerta-arancione-per-vento-forte-sulla-montagna-romagnola_af5c82c1-0012-48b0-92fe-24ce3d863b8f.html": "2026-11-17T16:06+01:00",
+  "https://www.dire.it/17-11-2026/1290306-sanita-oggi-a-ravenna-il-primo-trapianto-di-cornea-artificiale": "2026-11-17T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSl9sSHJiX3FxYXUzVWI3ajIyclZ3UXBybzhPb1piVnV1eEdFMmpDYUdFalZoVF9QQ2ZUdVpoQ21QUVNhZUJMRDE0S09taWNXc2xwMWZyTEFIVEFJeWhhejgyeWFQSFZkTUpJS3M0dXVPZEdMQ3lwajcxSkt2eWRScTdSUUNlRzVVakxEVkIwNWRnYXYzd1Q0": "2026-11-17T16:06+01:00",
+  "https://www.adnkronos.com/economia/trasporti-il-ruolo-del-mobility-manager-se-ne-parla-allevento-asstra-ibe-intermobility-future-ways_4Pm8A5el1ar8SNEQkkOm7K": "2026-11-17T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/oncologia-di-precisione-ricercatori-italiani-chiedono-test-piu-omogenei_25a1aa85-c6c4-43d6-922e-acc0520cb4a8.html": "2026-11-17T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZlZHQnU5Q0ZVVUxvNXUxT1ByOEZSeXNJM3JYM0RieldNRDIyWGQ3OHg0WXhRcmRPakVxS1ZTYmRRVEdMbm1aT2ZlRVdqa25oX0ZNWmRBRl9RdGkzQjVrQkFENXUzZTRvQ1pQYmRJY1JHLUZ6UlRkb1dVRC1aV1VNQnVia2tHX2QxNm9hVTVsVWNyVnRxejZMT1ZBYk4wUGVPWlE": "2026-11-17T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/f1-ecclestone-al-veleno-su-hamilton-sale-in-macchina-e-si-lagna-pensi-al-ritiro_2ec807e5-550a-44e1-9e04-5a06eef4db33.html": "2026-11-17T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/dreaming-san-marino-song-contest-gia-oltre-500-gli-artisti_1ed5ec09-5d43-42fc-ba91-f30c0b69c73a.html": "2026-11-17T16:06+01:00"
  },
- "updated": "2026-11-17T12:06+01:00",
- "next": "alle 16",
+ "updated": "2026-11-17T16:06+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-17T12:06+01:00",
-  "articles": 7,
-  "items": 0,
-  "model": "gemini-2.5-flash",
+  "at": "2026-11-17T16:06+01:00",
+  "articles": 12,
+  "items": 5,
+  "model": "gemini-3.1-flash-lite",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 24,
-    "kept": 6
+    "items": 27,
+    "kept": 4
    },
    {
     "agency": "ANSA",
@@ -128,8 +190,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 58,
-    "kept": 0
+    "items": 50,
+    "kept": 1
    },
    {
     "agency": "AGI",
@@ -149,7 +211,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 21,
+    "items": 19,
     "kept": 0
    },
    {
@@ -164,35 +226,35 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
-    "channel": "Google News",
-    "status": "ok",
-    "items": 60,
-    "kept": 0
-   },
-   {
-    "agency": "askanews",
-    "channel": "feed diretto",
-    "status": "HTTP 403",
-    "items": 0,
-    "kept": 0
-   },
-   {
-    "agency": "askanews",
-    "channel": "feed diretto",
-    "status": "HTTP 403",
-    "items": 0,
-    "kept": 0
-   },
-   {
-    "agency": "askanews",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
     "kept": 1
+   },
+   {
+    "agency": "askanews",
+    "channel": "feed diretto",
+    "status": "HTTP 403",
+    "items": 0,
+    "kept": 0
+   },
+   {
+    "agency": "askanews",
+    "channel": "feed diretto",
+    "status": "HTTP 403",
+    "items": 0,
+    "kept": 0
+   },
+   {
+    "agency": "askanews",
+    "channel": "Google News",
+    "status": "ok",
+    "items": 60,
+    "kept": 2
    },
    {
     "agency": "Italpress",
@@ -211,9 +273,9 @@
    {
     "agency": "Dire",
     "channel": "feed diretto",
-    "status": "XML non valido",
-    "items": 0,
-    "kept": 0
+    "status": "ok",
+    "items": 10,
+    "kept": 3
    },
    {
     "agency": "Dire",
