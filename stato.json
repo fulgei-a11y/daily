@@ -1,18 +1,89 @@
 {
- "date": "2026-11-16",
- "slot": "19",
- "generated": "2026-11-16T19:08+01:00",
- "articles": 462,
- "items": 35,
+ "date": "2026-11-17",
+ "slot": "mattina",
+ "generated": "2026-11-17T05:10+01:00",
+ "articles": 520,
+ "items": 183,
  "model": "gemini-2.5-flash",
  "fallback": false,
- "feeds_ok": 75,
+ "feeds_ok": 76,
  "feeds_total": 77,
  "passaggi": [
   {
+   "parte": "Bologna 1: Cronaca, Giustizia e indagini, Comune di Bologna e politica, Mobilità, cantieri e trasporti, Area metropolitana",
+   "articoli": 284
+  },
+  {
    "modello": "gemini-2.5-flash",
-   "notizie": 50,
-   "caratteri": 17458
+   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+  },
+  {
+   "modello": "gemini-3.8-flash",
+   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+  },
+  {
+   "modello": "gemini-3.6-flash",
+   "notizie": 31,
+   "caratteri": 12947
+  },
+  {
+   "parte": "Bologna 2: Economia, imprese e lavoro, Sanità e sociale, Scuola e università, Imola e circondario, Cultura ed eventi",
+   "articoli": 284
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+  },
+  {
+   "modello": "gemini-3.8-flash",
+   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+  },
+  {
+   "modello": "gemini-3.6-flash",
+   "notizie": 27,
+   "caratteri": 10933
+  },
+  {
+   "parte": "EMILIA",
+   "articoli": 141
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "notizie": 48,
+   "caratteri": 16111
+  },
+  {
+   "parte": "ROMAGNA",
+   "articoli": 95
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "notizie": 29,
+   "caratteri": 9449
+  },
+  {
+   "parte": "Bologna completamento (erano 55)",
+   "articoli": 181
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "notizie": 53,
+   "caratteri": 12333
+  },
+  {
+   "aggiunte": 53
+  },
+  {
+   "sezioni": {
+    "Bologna": 108,
+    "Emilia-Romagna": 73,
+    "agenda": 2
+   }
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "notizie": 0,
+   "caratteri": 826
   }
  ],
  "feeds": [
@@ -74,7 +145,7 @@
    "name": "Il Resto del Carlino",
    "prov": "Bologna",
    "status": "ok",
-   "items": 28
+   "items": 29
   },
   {
    "name": "BolognaToday",
@@ -266,7 +337,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 18
+   "items": 17
   },
   {
    "name": "Google News",
@@ -296,19 +367,19 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 7
+   "items": 4
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 0
+   "items": 2
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 27
+   "items": 29
   },
   {
    "name": "Google News",
@@ -326,13 +397,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 7
+   "items": 11
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 10
+   "items": 9
   },
   {
    "name": "Google News",
@@ -344,7 +415,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 10
+   "items": 11
   },
   {
    "name": "Google News",
@@ -362,19 +433,19 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 18
+   "items": 17
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 5
+   "items": 7
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 12
+   "items": 14
   },
   {
    "name": "Google News",
@@ -392,13 +463,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 27
+   "items": 22
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 25
+   "items": 26
   },
   {
    "name": "Google News",
@@ -410,13 +481,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 21
+   "items": 26
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 15
+   "items": 16
   },
   {
    "name": "Google News",
@@ -446,13 +517,13 @@
    "name": "Google News",
    "prov": "Ravenna",
    "status": "ok",
-   "items": 16
+   "items": 11
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 17
+   "items": 18
   },
   {
    "name": "Google News",
@@ -470,13 +541,13 @@
    "name": "Google News",
    "prov": "Ravenna",
    "status": "ok",
-   "items": 20
+   "items": 16
   },
   {
    "name": "Google News",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 6
+   "items": 5
   }
  ]
 }
