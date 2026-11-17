@@ -1,6 +1,36 @@
 {
  "items": [
   {
+   "t": "2026-11-17T20:06+01:00",
+   "cat": "Economia",
+   "bo": true,
+   "title": "Crisi Kemet, la Regione non accetta il declino del sito produttivo",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/de-pascale-su-kemet-punto-fermo-e-che-non-possiamo-accettare-declino-sito_6d8d4c69-d52f-4227-ab79-089e0a13b51c.html"
+   ],
+   "html": "<strong>Crisi Kemet, la Regione non accetta il declino del sito produttivo</strong> — Bologna: il presidente dell'Emilia-Romagna, Michele de Pascale, ha ribadito la volontà di affiancare l'azienda di Pontecchio di Sasso Marconi per salvaguardare i 223 posti di lavoro a rischio, dopo un tavolo di salvaguardia occupazionale in Regione. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/17/de-pascale-su-kemet-punto-fermo-e-che-non-possiamo-accettare-declino-sito_6d8d4c69-d52f-4227-ab79-089e0a13b51c.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-17T20:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Primo robot Single port in Emilia-Romagna",
+   "links": [
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxONG1xdUNIaHF3N29oblRyU05EV3BiMGJhejVjcTR3R0JWR1lQMFVrRTdWdnoyMHpqRU9IellNcVVFQlhQZ0Yyd1ktUWNfYkFtaTFCak1WTE4xX2hwVXVWVVdGNWw4MHI5ZkRhM3hXZk8xc3VZUmJBVUktS0tuSEo0dXhUNkxJUGQ4eWgyZEpZUGR2d2wtbG1sOQ"
+   ],
+   "html": "<strong>Primo robot Single port in Emilia-Romagna</strong> — Modena: è stato installato a Modena il primo robot chirurgico Single port della regione, una tecnologia all'avanguardia per interventi meno invasivi. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxONG1xdUNIaHF3N29oblRyU05EV3BiMGJhejVjcTR3R0JWR1lQMFVrRTdWdnoyMHpqRU9IellNcVVFQlhQZ0Yyd1ktUWNfYkFtaTFCak1WTE4xX2hwVXVWVVdGNWw4MHI5ZkRhM3hXZk8xc3VZUmJBVUktS0tuSEo0dXhUNkxJUGQ4eWgyZEpZUGR2d2wtbG1sOQ?oc=5\" target=\"_blank\" rel=\"noopener\">askanews</a></span>"
+  },
+  {
+   "t": "2026-11-17T20:06+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Club del Sole apre due resort a cinque stelle",
+   "links": [
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxORXFfTkNLZnFEZzBiTUZmZUZhVE5NTThyMm9palpCWTBHWW9FaUtua3J0NUVnQ0NmUVJDY0JUT2FWQ3dqTV9LNFZidmNoZzdoY0VtdE1nZUM2Wm53elFIZWpXOFhmRUdweFFYS0hLMVdRM0J0c0UxS0czVmNYekhHdXZCSDVQcUxyeHlmeGtZSU5VMzZXNEZUVW9jSQ"
+   ],
+   "html": "<strong>Club del Sole apre due resort a cinque stelle</strong> — Riccione (Rimini): il Club del Sole ha annunciato l'apertura di due nuovi resort a cinque stelle nel 2027, un investimento nel settore turistico. <span class=\"src\">Fonte: <a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxORXFfTkNLZnFEZzBiTUZmZUZhVE5NTThyMm9palpCWTBHWW9FaUtua3J0NUVnQ0NmUVJDY0JUT2FWQ3dqTV9LNFZidmNoZzdoY0VtdE1nZUM2Wm53elFIZWpXOFhmRUdweFFYS0hLMVdRM0J0c0UxS0czVmNYekhHdXZCSDVQcUxyeHlmeGtZSU5VMzZXNEZUVW9jSQ?oc=5\" target=\"_blank\" rel=\"noopener\">askanews</a></span>"
+  },
+  {
    "t": "2026-11-17T16:06+01:00",
    "cat": "Economia",
    "bo": true,
@@ -112,7 +142,6 @@
   }
  ],
  "seen": {
-  "https://news.google.com/rss/articles/CBMiekFVX3lxTE8tRk51TjE0V05xOF9vSk02dHZwSkxVQ3dvT1lJZzFTZmEtSlZ3S0dpRGVpMTF1OFpyQUNiTXNoWm16bFJGWVNQejB1Sm1UNGtIRXNaZV8xLW5QbUQ4UXF6b3hRYjFrT2x5OWVMdWo2MDViZ1VRVHc4cERn": "2026-11-16T08:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/16/wolff-allontana-le-voci-su-antonelli-in-ferrari-diventera-piu-popolare-di-schumi_92f2311c-a17c-4b83-996b-af1a57a05e37.html": "2026-11-16T12:06+01:00",
   "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMnJGU2oyWUVyT0V2M0NLMndCMzZ3VTdsamlZVEVxdjhXMkdRcnZVOTJrdXZxSGJCaDNFeVMyM2VLaENtNlVIelFLa3Y5RmxNaDN1TlFDdzBCeFQ3ODJmeDFVRkJpd1lmUGt3YkNIblZFNHJ1YUJzekpJMlYzZS1vaFVxM1Z3MDc5cl96eGtkMDN2MnE0VjN5RThOaExlclV2Wkd6R1VNdTg4bmFQTkVzUA": "2026-11-16T12:06+01:00",
   "https://www.italpress.com/la-regione-rafforza-misure-sostegno-caregiver-familiari-stanziati-53-milioni-di-euro": "2026-11-16T12:06+01:00",
@@ -161,22 +190,34 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/oncologia-di-precisione-ricercatori-italiani-chiedono-test-piu-omogenei_25a1aa85-c6c4-43d6-922e-acc0520cb4a8.html": "2026-11-17T16:06+01:00",
   "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZlZHQnU5Q0ZVVUxvNXUxT1ByOEZSeXNJM3JYM0RieldNRDIyWGQ3OHg0WXhRcmRPakVxS1ZTYmRRVEdMbm1aT2ZlRVdqa25oX0ZNWmRBRl9RdGkzQjVrQkFENXUzZTRvQ1pQYmRJY1JHLUZ6UlRkb1dVRC1aV1VNQnVia2tHX2QxNm9hVTVsVWNyVnRxejZMT1ZBYk4wUGVPWlE": "2026-11-17T16:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/f1-ecclestone-al-veleno-su-hamilton-sale-in-macchina-e-si-lagna-pensi-al-ritiro_2ec807e5-550a-44e1-9e04-5a06eef4db33.html": "2026-11-17T16:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/dreaming-san-marino-song-contest-gia-oltre-500-gli-artisti_1ed5ec09-5d43-42fc-ba91-f30c0b69c73a.html": "2026-11-17T16:06+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/dreaming-san-marino-song-contest-gia-oltre-500-gli-artisti_1ed5ec09-5d43-42fc-ba91-f30c0b69c73a.html": "2026-11-17T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMimAFBVV95cUxONG1xdUNIaHF3N29oblRyU05EV3BiMGJhejVjcTR3R0JWR1lQMFVrRTdWdnoyMHpqRU9IellNcVVFQlhQZ0Yyd1ktUWNfYkFtaTFCak1WTE4xX2hwVXVWVVdGNWw4MHI5ZkRhM3hXZk8xc3VZUmJBVUktS0tuSEo0dXhUNkxJUGQ4eWgyZEpZUGR2d2wtbG1sOQ": "2026-11-17T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/de-pascale-su-kemet-punto-fermo-e-che-non-possiamo-accettare-declino-sito_6d8d4c69-d52f-4227-ab79-089e0a13b51c.html": "2026-11-17T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNC1MTDNXMmtiSkVUMWJiRGozRy03dldhY25pMENyaGxUZTgwaHlDNjRnS2Z1cXJSLUQxRHZIdmw1bElpRF9EME9hQzRPRHRJMFA4Qnp5MGExTDhkNWZ4SEJaT0EwTDhYMmdXRFdoQXNJcnY3dnd3UFAyQ0VNeHhEaW16VUJfQm9UdFIzRVJKRk9GQQ": "2026-11-17T20:06+01:00",
+  "https://www.italpress.com/tg-news-17-11-2026": "2026-11-17T20:06+01:00",
+  "https://www.dire.it/17-11-2026/1290435-tg-politico-parlamentare-ledizione-di-martedi-17-novembre-2026": "2026-11-17T20:06+01:00",
+  "https://www.italpress.com/mattarella-inaugurazione-anno-accademico-2026-2027-universita-cattolica-sacro-cuore": "2026-11-17T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQc1JSYzVYN2VScjNvY2ozcDV0a0dENGhvNnRtZ0xzNzdodjZjTERRTkFpbU9Zal9uSG94VG1SZXhJZUVlUnVNUExPcXc5VlJtaTRmUFpYR1Y0bWxrVzN6UGtTM2xlSFJuc3BLT2tPVkgyLW9ldnRRdW5aLWVVazVLZFplbGl1bDlubmVQSk5KNXpIelJyQWpyRmRGUjFpSXMwY2paQV8zYTh6MHREbGtlSTRTX0Y0alZNbUZjZ0UxZ0lHX3QwdTRFYnZuTk9lTi1kamE0Q1NIdUNWSklORmNZQ2l3Z09PUlRFb0dlMFZIR1NFQUM4M05VbnBiZ01KRlBUWjN0SFhZOHY5YWM": "2026-11-17T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxORXFfTkNLZnFEZzBiTUZmZUZhVE5NTThyMm9palpCWTBHWW9FaUtua3J0NUVnQ0NmUVJDY0JUT2FWQ3dqTV9LNFZidmNoZzdoY0VtdE1nZUM2Wm53elFIZWpXOFhmRUdweFFYS0hLMVdRM0J0c0UxS0czVmNYekhHdXZCSDVQcUxyeHlmeGtZSU5VMzZXNEZUVW9jSQ": "2026-11-17T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/il-tour-2026-di-vasco-rossi-in-un-libro-fotografico-anteprima-alla-reggia-di-colorno_3cf5a07c-5317-4046-997a-9f782bcdf042.html": "2026-11-17T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/oltre-64-miliardi-di-colazioni-consumate-fuori-casa-in-italia-94-miliardi-di-spesa_76c18f86-7a73-4a7c-86a7-505bd82ebedf.html": "2026-11-17T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/florestano-vancini.-100-anni-a-ferrara-una-mostra-dedicata-al-regista_0f91c3ad-2d06-4274-b371-ed2a9a456d44.html": "2026-11-17T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxNWEduYkFKWEVPX0FBQmJObHlhY3Q4bHJpN1A1QktPTjcyQnpaR3hSVHZZMnBzMXhrTmlaR0pSTUFKVDVYcjd6VWxjNmxYZjktR1loTlBfUWNVajVjTTlSTTNZd3ZvYThOOU1haXctU1B0QTFHUmlFVEMzbENfOERnREhrNFhQX2FITXk3bjY1UEl1SkFjVmY1ZDNnZERiQl9jbVVENA": "2026-11-17T20:06+01:00"
  },
- "updated": "2026-11-17T16:06+01:00",
- "next": "alle 20",
+ "updated": "2026-11-17T20:06+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-11-17T16:06+01:00",
+  "at": "2026-11-17T20:06+01:00",
   "articles": 12,
-  "items": 5,
-  "model": "gemini-3.1-flash-lite",
+  "items": 3,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 27,
+    "items": 34,
     "kept": 4
    },
    {
@@ -190,8 +231,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 50,
-    "kept": 1
+    "items": 45,
+    "kept": 0
    },
    {
     "agency": "AGI",
@@ -211,7 +252,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 19,
+    "items": 26,
     "kept": 0
    },
    {
@@ -226,14 +267,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Adnkronos",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -254,14 +295,14 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 2
+    "kept": 3
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Italpress",
@@ -275,14 +316,14 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 3
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Dagospia",
