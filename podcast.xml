@@ -14,7 +14,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 18 Nov 2026 20:06:34 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 00:06:37 +0100</lastBuildDate>
     <item>
       <title>Aggiornamento delle 19 · mercoledì 18 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Trapianti di polmone raddoppiati al Sant&#x27;Orsola; Cause esplosione Toyota Material Handling; Protesta sindaci Appennino per classificazione Comuni montani; Chiusura sportello Sosty di piazza Azzarita; Arresti per furto pluriaggravato; Truffa del &quot;finto carabiniere&quot; a anziani.</description>
@@ -583,36 +583,6 @@
       <pubDate>Sat, 31 Oct 2026 05:37:00 +0100</pubDate>
       <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-31.mp3" length="7907806" type="audio/mpeg"/>
       <itunes:duration>2635</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 19 · venerdì 30 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Maxi piantagione di marijuana scoperta ad Altedo; Sviluppi: Sciopero generale, corteo in tangenziale e disagi per la polizia; Sviluppi: Nascita in autobus sulla linea 39; Sviluppi: Via Zoccoli, il Comune incontrerà i residenti; Sviluppi: Morte di Abderrahim Fakir, la nipote denuncia &quot;orrore inqualificabile&quot;; Donna di 76 anni morta in un canale a Minerbio.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-30</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-30-19</guid>
-      <pubDate>Fri, 30 Oct 2026 19:29:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-30-19.mp3" length="2171786" type="audio/mpeg"/>
-      <itunes:duration>723</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Aggiornamento delle 13 · venerdì 30 ottobre 2026</title>
-      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Parto in autobus sulla linea 39; Sviluppi: Sciopero generale, corteo tenta di raggiungere la tangenziale; Sviluppi: Morte di Abderrahim Fakir, controperizie entro il 15 novembre; Sala giochi troppo vicina a clinica, Tar annulla autorizzazioni; Bilancio consolidato 2025 approvato dal Consiglio comunale; Nuovo Ufficio di prossimità inaugurato a Marzabotto.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-30</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-30-13</guid>
-      <pubDate>Fri, 30 Oct 2026 13:27:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-30-13.mp3" length="1802676" type="audio/mpeg"/>
-      <itunes:duration>600</itunes:duration>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>Rassegna del mattino · venerdì 30 ottobre 2026</title>
-      <description>138 notizie dall&#x27;Emilia-Romagna. In apertura: Turista derubata della sedia a rotelle in Piazza Maggiore; Aggressione al Sant&#x27;Orsola: infermiere preso a calci da un paziente; Arrestato per porto abusivo di arma e fucile puntato alla finestra; Truffa anziana fingendosi Carabiniere; Evade dagli arresti domiciliari e aggredisce agenti; Controperizia sulla morte di Abderrahim Fakir: &quot;Decisivo lo schiacciamento del torace&quot;.</description>
-      <link>https://fulgei-a11y.github.io/daily/#2026-10-30</link>
-      <guid isPermaLink="false">rassegna-er-2026-10-30</guid>
-      <pubDate>Fri, 30 Oct 2026 05:40:00 +0100</pubDate>
-      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-10-30.mp3" length="6910111" type="audio/mpeg"/>
-      <itunes:duration>2303</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
