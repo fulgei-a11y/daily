@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-11-19T12:06+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Webuild concretizza progetto industriale con Trevi",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/salini-webuild-da-oggi-il-nostro-progetto-con-trevi-si-e-praticamente-concretizzato_bc7db462-1fc2-4b85-aa90-16a306141ffb.html"
+   ],
+   "html": "<strong>Webuild concretizza progetto industriale con Trevi</strong> — Cesena (Forlì-Cesena): Webuild ha ottenuto il via libera dell'Antitrust e raggiunto il 52,53% del capitale di Trevi, concretizzando il progetto industriale. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/19/salini-webuild-da-oggi-il-nostro-progetto-con-trevi-si-e-praticamente-concretizzato_bc7db462-1fc2-4b85-aa90-16a306141ffb.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-19T00:06+01:00",
    "cat": "Cronaca",
    "bo": true,
@@ -29,46 +39,9 @@
     "https://www.ansa.it/emiliaromagna/notizie/2026/11/18/urso-certi-di-manifestazioni-dinteresse-piu-sostenibili-per-holostem_47437094-871e-4eee-87d1-04a6a964c144.html"
    ],
    "html": "<strong>Holostem, Urso fiducioso su nuove manifestazioni d'interesse</strong> — Modena: Il ministro delle Imprese e del Made in Italy, Adolfo Urso, ha dichiarato che la gestione liquidatoria di Holostem aprirà una nuova procedura per manifestazioni d'interesse, con l'obiettivo di preservare l'integrità aziendale e la ricerca. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/18/urso-certi-di-manifestazioni-dinteresse-piu-sostenibili-per-holostem_47437094-871e-4eee-87d1-04a6a964c144.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-11-18T00:06+01:00",
-   "cat": "Cronaca",
-   "bo": false,
-   "title": "Vigili di Rimini condannati in Appello",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/vigili-rimini-condannati-in-appello-per-perquisizioni-arbitrarie-e-falso_ba56f4ae-bf8d-4b93-9a9c-a40540d6b5dd.html"
-   ],
-   "html": "<strong>Vigili di Rimini condannati in Appello</strong> — Rimini: pene ridotte per prescrizione e abrogazione dell'abuso d'ufficio per otto vigili dell'ex nucleo ambientale, processati per perquisizioni arbitrarie, falso e sequestri di denaro tra il 2014 e il 2016. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/17/vigili-rimini-condannati-in-appello-per-perquisizioni-arbitrarie-e-falso_ba56f4ae-bf8d-4b93-9a9c-a40540d6b5dd.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-11-18T00:06+01:00",
-   "cat": "Cronaca",
-   "bo": false,
-   "title": "Tentata rivolta nel carcere di Modena",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/sappe-coinvolti-100-detenuti-nella-tentata-rivolta-nel-carcere-di-modena_7ca3951c-b250-4fe4-8d69-d4af630c7ca0.html"
-   ],
-   "html": "<strong>Tentata rivolta nel carcere di Modena</strong> — Modena: circa cento detenuti coinvolti nella protesta collettiva scoppiata ieri nel carcere di Sant'Anna, riportata sotto controllo dalla polizia penitenziaria. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/17/sappe-coinvolti-100-detenuti-nella-tentata-rivolta-nel-carcere-di-modena_7ca3951c-b250-4fe4-8d69-d4af630c7ca0.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-11-18T00:06+01:00",
-   "cat": "Cronaca",
-   "bo": false,
-   "title": "30enne arrestato al pronto soccorso",
-   "links": [
-    "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/caos-al-pronto-soccorso-30enne-arrestato-a-fidenza_849e1229-1136-4a94-9a40-cba5deefa36e.html"
-   ],
-   "html": "<strong>30enne arrestato al pronto soccorso</strong> — Fidenza (Parma): un uomo di 30 anni è stato arrestato all'ospedale di Vaio dopo aver aggredito i carabinieri, minacciato medici e infermieri e danneggiato i locali. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/17/caos-al-pronto-soccorso-30enne-arrestato-a-fidenza_849e1229-1136-4a94-9a40-cba5deefa36e.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
   }
  ],
  "seen": {
-  "https://www.italpress.com/una-nuova-casa-della-comunita-a-castelnuovo-rangone-e-un-robot-chirurgico-innovativo-allospedale-di-baggiovara": "2026-11-18T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/il-cantautore-andrea-mingardi-si-e-sposato-a-86-anni-con-la-storica-compagna-beba_656c26e8-7a6b-4eff-b555-e1ceaea6060c.html": "2026-11-18T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/studio-europeo-piu-luce-di-giorno-sonno-migliore-per-gli-anziani_a3b394bf-2813-4bda-9211-4b3bc0f5c1fb.html": "2026-11-18T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/caos-al-pronto-soccorso-30enne-arrestato-a-fidenza_849e1229-1136-4a94-9a40-cba5deefa36e.html": "2026-11-18T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/vigili-rimini-condannati-in-appello-per-perquisizioni-arbitrarie-e-falso_ba56f4ae-bf8d-4b93-9a9c-a40540d6b5dd.html": "2026-11-18T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/sappe-coinvolti-100-detenuti-nella-tentata-rivolta-nel-carcere-di-modena_7ca3951c-b250-4fe4-8d69-d4af630c7ca0.html": "2026-11-18T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/17/omicidio-bergamini-appello-conferma-condanna-a-16-anni-per-interno_887745f0-93f1-416e-921f-e09737bde636.html": "2026-11-18T00:06+01:00",
   "https://www.italpress.com/dalla-passione-per-la-cucina-al-successo-tv-alessandro-borghese-compie-50-anni": "2026-11-18T08:06+01:00",
   "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNQXhRam9pRTM3VmtQSTc2aHBCZGFXZE14VzdKbHFqd3JWVngtZTZGcEV2b2RHNl80U0RoZ05DRVY4ckswSlJqRUdOQkpUN3ozdVpndHFZU2NQRlVTWUxnRnJNM1dVX2RpUTBkM0gxRTFheEdlSVl4bS1YUjJuV1JJZEtXXzJiNHdlSnBHZHJNbmxTRTdyTllacFNZSnhXb3UwdjZ2YlB2Q2gxamJhUlMtcHZPME1yNHJf": "2026-11-18T08:06+01:00",
   "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPNE1Od3N5bDEtdkJpaDA0OEdCVENPWmlmaWE2TzNzN0QwZWRpMEZUNHN1Y0JxejJDMnRfU3ZmN0FJMjBuQ09penlJaUMxS24tcUNRdFBnRDZwc29DVkhMRTZWLWFMbFR6UEQya2ljZWFHaDVud1NfWnlxNFFCZEZGQWFSOF9YQUhkNjVnaEZneF9CWWRvZjdrUGZkamMzVWZpVXV1Nlh6VGhiUWt6UDhqS1JKaGUzOGM4Ym9JREpJaUZ1c1h5dVFSUDAwS0hBZWt2cXZF": "2026-11-18T08:06+01:00",
@@ -92,23 +65,24 @@
   "https://news.google.com/rss/articles/CBMiogFBVV95cUxPOTM3TjJGY0xnVDhhSGJrTjl0MlVaMnlwd2l1bGlDdTFndjV3S0ZvSmRLMzFVVUU4bjlkbnJVaFhSUEF3WjRQTXZxMGRZdm9hNWc1YWZrcC1VN3lTSFAyWk5SSGl6OHZlVWZDQmI0Y20xczBoRGctMDFsQl9XU3k1Um5jdEpaVW55VEUtX29oRFpkYVVCMFlEOHgyazlPMFplMkE": "2026-11-18T20:06+01:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/11/18/melillo-a-commissione-sulla-morte-di-david-rossi-rischio-di-interferenze-e-esposizione-ai-media_8e00e028-5213-4339-b8a1-5c5a6c2b9095.html": "2026-11-19T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/18/trapianti-di-polmone-raddoppiati-al-santorsola-di-bologna_ca340381-fed2-4205-99ec-5a1936b0ad30.html": "2026-11-19T00:06+01:00",
-  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPTXI2RW5NSGFPQVRuY19lUGV3Y3RXS1VDZnBTWnBYUlhnYWkwWXBybWJTN0NWczZnRmhOOUtaMF9hMnNaVnRxU2F1NXo5NENqbl9VbzZXRGlMdllvaE5aazUzTjgwbWtpR2Y0N2JQQUVSZVBWRWMyMkVrdHlud3FXYjA3YlpRWmZHcUVwbENqbUtUck5taldTcGFDS29JTS1hbldQYWx4a01VdUhnN2VJRFdNQVNFRGRlcWxLaW9NdGltaFctdW1fVXVqZnhFbUJGUzlkY005VzA": "2026-11-19T00:06+01:00"
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPTXI2RW5NSGFPQVRuY19lUGV3Y3RXS1VDZnBTWnBYUlhnYWkwWXBybWJTN0NWczZnRmhOOUtaMF9hMnNaVnRxU2F1NXo5NENqbl9VbzZXRGlMdllvaE5aazUzTjgwbWtpR2Y0N2JQQUVSZVBWRWMyMkVrdHlud3FXYjA3YlpRWmZHcUVwbENqbUtUck5taldTcGFDS29JTS1hbldQYWx4a01VdUhnN2VJRFdNQVNFRGRlcWxLaW9NdGltaFctdW1fVXVqZnhFbUJGUzlkY005VzA": "2026-11-19T00:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/salini-webuild-da-oggi-il-nostro-progetto-con-trevi-si-e-praticamente-concretizzato_bc7db462-1fc2-4b85-aa90-16a306141ffb.html": "2026-11-19T12:06+01:00"
  },
- "updated": "2026-11-19T08:06+01:00",
- "next": "alle 12",
+ "updated": "2026-11-19T12:06+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-11-19T08:06+01:00",
-  "articles": 0,
-  "items": 0,
-  "model": null,
+  "at": "2026-11-19T12:06+01:00",
+  "articles": 1,
+  "items": 1,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 29,
-    "kept": 0
+    "items": 26,
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -142,7 +116,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 9,
+    "items": 7,
     "kept": 0
    },
    {
