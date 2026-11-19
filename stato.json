@@ -1,7 +1,7 @@
 {
  "date": "2026-11-19",
- "slot": "13",
- "generated": "2026-11-19T13:07+01:00",
+ "slot": "19",
+ "generated": "2026-11-19T19:08+01:00",
  "articles": 520,
  "items": 35,
  "model": "gemini-2.5-flash",
@@ -11,8 +11,8 @@
  "passaggi": [
   {
    "modello": "gemini-2.5-flash",
-   "notizie": 72,
-   "caratteri": 21724
+   "notizie": 65,
+   "caratteri": 22432
   }
  ],
  "feeds": [
@@ -260,13 +260,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 38
+   "items": 40
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 24
+   "items": 28
   },
   {
    "name": "Google News",
@@ -296,13 +296,13 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 2
+   "items": 6
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 19
+   "items": 20
   },
   {
    "name": "Google News",
@@ -332,13 +332,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 18
+   "items": 20
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 18
+   "items": 20
   },
   {
    "name": "Google News",
@@ -368,7 +368,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 15
+   "items": 14
   },
   {
    "name": "Google News",
@@ -380,13 +380,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 9
+   "items": 6
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 5
+   "items": 3
   },
   {
    "name": "Google News",
@@ -398,7 +398,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 29
+   "items": 30
   },
   {
    "name": "Google News",
@@ -410,7 +410,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 18
+   "items": 19
   },
   {
    "name": "Google News",
@@ -422,7 +422,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 8
+   "items": 7
   },
   {
    "name": "Google News",
@@ -476,7 +476,7 @@
    "name": "Google News",
    "prov": "Forlì-Cesena",
    "status": "ok",
-   "items": 4
+   "items": 6
   }
  ]
 }
