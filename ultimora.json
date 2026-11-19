@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-11-20T00:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Segregata e abusata, 25enne si lancia dall'auto",
+   "links": [
+    "https://www.adnkronos.com/cronaca/pakistana-segregata-abusta-novellara_6zZvclXdiE74ybRFDY30B0"
+   ],
+   "html": "<strong>Segregata e abusata, 25enne si lancia dall'auto</strong> — Novellara (Reggio Emilia): Una donna pakistana di 25 anni è stata segregata, abusata e violentata dal marito e dai suoi parenti. La vittima è riuscita a salvarsi gettandosi da un'auto in corsa. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/cronaca/pakistana-segregata-abusta-novellara_6zZvclXdiE74ybRFDY30B0\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
+  },
+  {
    "t": "2026-11-19T16:06+01:00",
    "cat": "",
    "bo": true,
@@ -72,8 +82,6 @@
   }
  ],
  "seen": {
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/18/da-parma-a-los-angeles-verdi-off-apre-una-nuova-stagione-culturale_6af8c59d-9185-4912-ba9d-fb191af2310d.html": "2026-11-18T12:06+01:00",
-  "https://www.italpress.com/emilia-romagna-rivisitato-il-sistema-di-allertamento-della-protezione-civile": "2026-11-18T12:06+01:00",
   "https://www.adnkronos.com/cronaca/elicottero-207mila-euro-non-vola_7sfmoh8vBUOeR855ihZQoS": "2026-11-18T16:06+01:00",
   "https://www.ansa.it/sito/notizie/economia/2026/11/18/architettura-solare-a-cesena-il-primo-edificio-in-europa-con-parapetti-fotovoltaici_8137b188-8d45-48d2-abb6-89be50c0cb66.html": "2026-11-18T16:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/18/ustiona-la-guancia-di-compagno-di-scuola-con-accendino-a-modena_a2872387-79c7-4092-8b92-04b346d0c103.html": "2026-11-18T16:06+01:00",
@@ -117,14 +125,16 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/da-baricco-a-la-nina-svelato-il-programma-del-maxi-capodanno-di-rimini_ef4a2d06-1264-48bc-9e8e-82b06970fd6c.html": "2026-11-19T20:06+01:00",
   "https://news.google.com/rss/articles/CBMitAFBVV95cUxNajhwSDZUY3hxTnduV19sbV96bTZFOGhKSk5HMk5qdTlreXhkNE1MMTgwVHNEU0N5eS16dFBONmNqVFF1a1N3aFltczJ3OVNCZWtnaHQzQVJrSmZYMWF4MF9EeDl4V0IzWDh3NDZQZXY3Zkdjb1dSOWMycUFLLVZ1SnBXWjdodGR2N3ZWQ3hiY2pCRnU0Q2ZhRXUya20xbWFHbjhzYlNXMHZQRDhUdXdodkI1UEk": "2026-11-19T20:06+01:00",
   "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkh2SVJMbWFFZlV2aExWeHdyOXdlLS1EWHN5a0tyTGxFTkN3LXhtN3hNM0ljTkZCWUFndmY3alh3RXYtc3kzeDZJeDhtX3VFbHYzVDU2RURuOVhxWlFyOVBOSjhvMzZvWF9LWmx6VVB6Ml9CbXZnNlRqZF93WmM3SzdYTVFralkxc1J0QjdhWkExV3FVZ1dCai1B": "2026-11-19T20:06+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/19/ufficiale-carabinieri-spada-rideva-anche-quando-lo-abbiamo-arrestato_796f8f05-6cd6-4252-971d-49214e42c55c.html": "2026-11-19T20:06+01:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/19/ufficiale-carabinieri-spada-rideva-anche-quando-lo-abbiamo-arrestato_796f8f05-6cd6-4252-971d-49214e42c55c.html": "2026-11-19T20:06+01:00",
+  "https://www.adnkronos.com/cronaca/pakistana-segregata-abusta-novellara_6zZvclXdiE74ybRFDY30B0": "2026-11-20T00:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/uccise-moglie-e-suocera-ergastolo-definitivo-per-amato_fd5b2fc2-028f-4882-a551-dad10f24e587.html": "2026-11-20T00:06+01:00"
  },
- "updated": "2026-11-19T20:06+01:00",
- "next": "alle 24",
+ "updated": "2026-11-20T00:06+01:00",
+ "next": "alle 8",
  "last_run": {
-  "at": "2026-11-19T20:06+01:00",
-  "articles": 8,
-  "items": 0,
+  "at": "2026-11-20T00:06+01:00",
+  "articles": 2,
+  "items": 1,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -132,15 +142,15 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 27,
-    "kept": 3
+    "items": 28,
+    "kept": 1
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "ANSA",
@@ -167,7 +177,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 5,
+    "items": 4,
     "kept": 0
    },
    {
@@ -175,7 +185,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -189,7 +199,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "askanews",
@@ -210,7 +220,7 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Italpress",
@@ -224,14 +234,14 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
@@ -244,7 +254,7 @@
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 1,
+    "items": 3,
     "kept": 0
    }
   ]
