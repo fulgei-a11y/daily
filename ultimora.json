@@ -1,6 +1,36 @@
 {
  "items": [
   {
+   "t": "2026-11-19T16:06+01:00",
+   "cat": "",
+   "bo": true,
+   "title": "Prezzi immobiliari in crescita in Emilia-Romagna",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/casa-e-r-nel-2026-prezzi-di-vendita-a-08-su-gli-affitti-nei-capoluoghi_4a45aa54-bcbd-4aad-9b61-9b74b6ff310a.html"
+   ],
+   "html": "<strong>Prezzi immobiliari in crescita in Emilia-Romagna</strong> — Bologna: Nel primo semestre 2026, i canoni di locazione nei capoluoghi regionali sono aumentati dell'1,7%, mentre i prezzi di vendita sono saliti dello 0,8%. Bologna si conferma la città più cara per vendite e affitti. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/19/casa-e-r-nel-2026-prezzi-di-vendita-a-08-su-gli-affitti-nei-capoluoghi_4a45aa54-bcbd-4aad-9b61-9b74b6ff310a.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-19T16:06+01:00",
+   "cat": "",
+   "bo": true,
+   "title": "Manovra regionale da 14,4 miliardi, 10,8 alla sanità",
+   "links": [
+    "https://www.italpress.com/emilia-romagna-via-libera-alla-manovra-da-144-miliardi-di-cui-109-destinati-alla-sanita"
+   ],
+   "html": "<strong>Manovra regionale da 14,4 miliardi, 10,8 alla sanità</strong> — Bologna: La Giunta dell'Emilia-Romagna ha varato il bilancio di previsione 2027-2029, destinando 10,84 miliardi di euro alla sanità e confermando un contributo regionale di 200 milioni, oltre a un aumento di 25 milioni per il Fondo non autosufficienza. <span class=\"src\">Fonte: <a href=\"https://www.italpress.com/emilia-romagna-via-libera-alla-manovra-da-144-miliardi-di-cui-109-destinati-alla-sanita/\" target=\"_blank\" rel=\"noopener\">Italpress</a></span>"
+  },
+  {
+   "t": "2026-11-19T16:06+01:00",
+   "cat": "",
+   "bo": true,
+   "title": "Vigilessa uccisa, chiesta conferma ergastolo per ex comandante",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/vigilessa-uccisa-pg-chiede-conferma-ergastolo-per-ex-comandante-gualandi_cf0f72cf-048c-440f-a8f1-5c6502a15ad8.html"
+   ],
+   "html": "<strong>Vigilessa uccisa, chiesta conferma ergastolo per ex comandante</strong> — Bologna: La Procura generale ha chiesto la conferma dell'ergastolo per Giampiero Gualandi, ex comandante della Polizia locale di Anzola dell'Emilia, condannato in primo grado per l'omicidio di Sofia Stefani. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/19/vigilessa-uccisa-pg-chiede-conferma-ergastolo-per-ex-comandante-gualandi_cf0f72cf-048c-440f-a8f1-5c6502a15ad8.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-19T12:06+01:00",
    "cat": "Economia",
    "bo": false,
@@ -66,14 +96,30 @@
   "https://www.ansa.it/sito/notizie/cronaca/2026/11/18/melillo-a-commissione-sulla-morte-di-david-rossi-rischio-di-interferenze-e-esposizione-ai-media_8e00e028-5213-4339-b8a1-5c5a6c2b9095.html": "2026-11-19T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/18/trapianti-di-polmone-raddoppiati-al-santorsola-di-bologna_ca340381-fed2-4205-99ec-5a1936b0ad30.html": "2026-11-19T00:06+01:00",
   "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPTXI2RW5NSGFPQVRuY19lUGV3Y3RXS1VDZnBTWnBYUlhnYWkwWXBybWJTN0NWczZnRmhOOUtaMF9hMnNaVnRxU2F1NXo5NENqbl9VbzZXRGlMdllvaE5aazUzTjgwbWtpR2Y0N2JQQUVSZVBWRWMyMkVrdHlud3FXYjA3YlpRWmZHcUVwbENqbUtUck5taldTcGFDS29JTS1hbldQYWx4a01VdUhnN2VJRFdNQVNFRGRlcWxLaW9NdGltaFctdW1fVXVqZnhFbUJGUzlkY005VzA": "2026-11-19T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/salini-webuild-da-oggi-il-nostro-progetto-con-trevi-si-e-praticamente-concretizzato_bc7db462-1fc2-4b85-aa90-16a306141ffb.html": "2026-11-19T12:06+01:00"
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/salini-webuild-da-oggi-il-nostro-progetto-con-trevi-si-e-praticamente-concretizzato_bc7db462-1fc2-4b85-aa90-16a306141ffb.html": "2026-11-19T12:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/lectio-magistralis-di-silvana-sciarra-alluniversita-di-san-marino_a9a61fc4-da40-43a1-a4a7-cc280416dcde.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/ce-tempo-arte-fiera-celebra-a-febbraio-la-cinquantesima-edizione_1559f6d9-1868-4436-9a1e-276536c7079f.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/nel-2025-6.200-donne-hanno-contattato-i-centri-antiviolenza-in-e-r_427b4c89-b033-4a62-b715-9011ec559378.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/casa-e-r-nel-2026-prezzi-di-vendita-a-08-su-gli-affitti-nei-capoluoghi_4a45aa54-bcbd-4aad-9b61-9b74b6ff310a.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/a-bologna-un-convegno-per-i-25-anni-del-centro-studi-morandi_adbda525-69c7-4f91-a110-c00c69ab0c71.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/daniele-silvestri-sara-protagonista-del-concerto-di-capodanno-a-modena_ee726c73-2b60-4c2a-9bb5-e520097fcbf1.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/ufficiale-carabinieri-spada-rideva-anche-quando-lo-abbiamo-arrestato_b868da3d-16c4-4146-a944-b745eee00f69.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/procedimento-su-molestie-in-corso-emma-dante-cancella-spettacolo-a-teatro-due-parma_892f6a60-fd7c-4c8d-b741-7abb440cad51.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/vigilessa-uccisa-pg-chiede-conferma-ergastolo-per-ex-comandante-gualandi_cf0f72cf-048c-440f-a8f1-5c6502a15ad8.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/19/uccise-moglie-e-suocera-pg-cassazione-chiede-conferma-ergastolo-per-amato_fa0b4588-a25a-4f0a-99d5-b54084bab2cf.html": "2026-11-19T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRHlUU1NBeGZSYkJKQnJ0R3BPWTRzZXJObEd5dnF6SzNHX3EybjE4UU5kUFFLRlZFbFZDX1ZCVXhZaFJXcVBseGJ5QkVDS3pKYWhfckQwR2VmUnU5M1pVdjJXcWFReHI2UjBkOUhWNF9ZUzJTVEhzQjk5ZkJvU0pXalhMcHVxUWpfd0I2aTZCWGNmYXlXUGFLbGw4SQ": "2026-11-19T16:06+01:00",
+  "https://www.italpress.com/le-forze-ucraine-hanno-colpito-con-droni-oltre-2-milioni-di-obiettivi-russi-nel-2026": "2026-11-19T16:06+01:00",
+  "https://www.italpress.com/emilia-romagna-via-libera-alla-manovra-da-144-miliardi-di-cui-109-destinati-alla-sanita": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/paolo-belli-torna-con-una-ballad-arriva-come-se-non-ci-fosse_e6d31f9b-9de6-49f9-86c8-97a20ef16aba.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/e-calabrese-il-miglior-gelato-allaceto-balsamico-di-modena-igp_95e42395-f859-4e72-bbc3-4fb85cee3ec4.html": "2026-11-19T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/uccise-moglie-e-suocera-pg-cassazione-chiede-conferma-ergastolo-per-amato_390ae822-ff72-4d29-b674-a8ec6b783865.html": "2026-11-19T16:06+01:00"
  },
- "updated": "2026-11-19T12:06+01:00",
- "next": "alle 16",
+ "updated": "2026-11-19T16:06+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-19T12:06+01:00",
-  "articles": 1,
-  "items": 1,
+  "at": "2026-11-19T16:06+01:00",
+  "articles": 16,
+  "items": 3,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -81,15 +127,15 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 26,
-    "kept": 1
+    "items": 31,
+    "kept": 12
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "ANSA",
@@ -159,14 +205,14 @@
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Italpress",
