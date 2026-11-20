@@ -143,14 +143,22 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/ratti-ago-a-modena-e-opera-aperta-lex-ospedale-rinasce-e-accoglie-la-citta_637d9ffa-fa84-425f-b0a4-1a5098d3be63.html": "2026-11-20T16:06+01:00",
   "https://www.italpress.com/sciopero-generale-in-tutta-italia-cortei-sindacati-aggiornamenti-venerdi-20-novembre": "2026-11-20T16:06+01:00",
   "https://www.adnkronos.com/cronaca/sciopero-generale-20-novembre-2026-diretta-oggi-ultime-notizie_3u6CoOImHMPXfKkNV4xx2g": "2026-11-20T16:06+01:00",
-  "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVkNmWTNua0ctQXg3LU9uQ2Jad0loSzBvTVZqSzJXT2NmRG1keVUyS1JMcXJvR3luWWNTVGhyYWZYeXNha3A4YnNYSldJTnlKdHZVanJCUFFna3pyQnozaHJnYnl4bVdncy0wUGg0VVpoWjJXZ3pscE5VRDA2ajJZZ2JON3FFUy1tOHBCeEdOcVNpSlRQS3NnajZxZzNtemFpUUM4T0ZuX3V4VEM5U0xrcA": "2026-11-20T16:06+01:00"
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVkNmWTNua0ctQXg3LU9uQ2Jad0loSzBvTVZqSzJXT2NmRG1keVUyS1JMcXJvR3luWWNTVGhyYWZYeXNha3A4YnNYSldJTnlKdHZVanJCUFFna3pyQnozaHJnYnl4bVdncy0wUGg0VVpoWjJXZ3pscE5VRDA2ajJZZ2JON3FFUy1tOHBCeEdOcVNpSlRQS3NnajZxZzNtemFpUUM4T0ZuX3V4VEM5U0xrcA": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/finito-il-cda-di-mps-il-corrispettivo-dellopas-giudicato-congruo_45e9d438-c20f-49b3-9db2-d297eb5c147a.html": "2026-11-20T20:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/20/sciopero-generale-le-piazze-da-milano-a-napoli_6e8664c2-d3b8-454f-b25f-4d6839031630.html": "2026-11-20T20:06+01:00",
+  "https://www.italpress.com/unapp-per-dare-nuova-vita-agli-oggetti": "2026-11-20T20:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/palladino-non-fa-sconti-a-heggem-ha-esagerato-niente-udinese_fa8d12ae-e413-4c06-b925-a0d9e6cc5e95.html": "2026-11-20T20:06+01:00",
+  "https://www.adnkronos.com/cronaca/in-quel-momento-ha-fatto-le-ultime-due-spinte-niurka-roman-medaglia-al-merito_6mSDaxaz8it1R3dys678j6": "2026-11-20T20:06+01:00",
+  "https://www.ansa.it/sito/notizie/economia/2026/11/20/cgil-bologna-al-corteo-oltre-50mila-persone_88f22089-5c81-46ff-af9f-026db54b5d63.html": "2026-11-20T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTjFaWVRXaEpsUGhjWlZmUVBNNHU0b1lYOW96Tk1Yd2o4YlowdnRtd0ZzY2pKTlFWaTRCOXlyNDVlY1FwaXM3bk8tN3pTSXN1Q3JLVHZaN3hZaGRHZnJZMC1WQWNKYVpRbTlZeGtlNmd3UTVNREd1MXl2amVZQnN1V1ZYUDV0ck5pcTBSSWVGc0JGOHN5Wmd4UC1Wd1NpY1JRUlJIUjB3": "2026-11-20T20:06+01:00",
+  "https://news.google.com/rss/articles/CBMingFBVV95cUxNVWp3ZzIwR3JYZld5bmNnOXNDX3I1OUFfNFNxb2FScm5ydW1HaEpBc1h3TXBBSzQ4WVEyYkV1eXZ6QVo5SDkyeUJvTE1rc1hGTTRDQVdNbFhCQ0kweXBkS2o2c0s3Y1JDQnJyMmxQR3ZZWi0ybW1sZEpKaDh2Sk5vNC1BSWt3ZkVwbTZ4ei10VnMzNTN1ZjZiZVNtcFU1dw": "2026-11-20T20:06+01:00"
  },
- "updated": "2026-11-20T16:06+01:00",
- "next": "alle 20",
+ "updated": "2026-11-20T20:06+01:00",
+ "next": "alle 24",
  "last_run": {
-  "at": "2026-11-20T16:06+01:00",
-  "articles": 17,
-  "items": 3,
+  "at": "2026-11-20T20:06+01:00",
+  "articles": 8,
+  "items": 0,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -158,21 +166,21 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 33,
-    "kept": 9
-   },
-   {
-    "agency": "ANSA",
-    "channel": "feed diretto",
-    "status": "ok",
-    "items": 60,
+    "items": 35,
     "kept": 2
    },
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 49,
+    "items": 60,
+    "kept": 1
+   },
+   {
+    "agency": "ANSA",
+    "channel": "feed diretto",
+    "status": "ok",
+    "items": 60,
     "kept": 1
    },
    {
@@ -193,7 +201,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 2,
+    "items": 1,
     "kept": 0
    },
    {
@@ -243,21 +251,21 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 2
+    "kept": 1
    },
    {
     "agency": "Italpress",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 1
+    "kept": 0
    },
    {
     "agency": "Dire",
@@ -270,7 +278,7 @@
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 2,
+    "items": 0,
     "kept": 0
    }
   ]
