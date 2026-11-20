@@ -14,7 +14,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:block>Yes</itunes:block>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 20 Nov 2026 16:06:39 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 19:08:49 +0100</lastBuildDate>
+    <item>
+      <title>Aggiornamento delle 19 · venerdì 20 novembre 2026</title>
+      <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri al corteo dello sciopero generale; Adesione allo sciopero generale; Ergastolo definitivo per Giampaolo Amato; Esplosione alla Toyota Material Handling; Aggressione alla mensa Caritas; Risonanza magnetica senza anestesia per bambini.</description>
+      <link>https://fulgei-a11y.github.io/daily/#2026-11-20</link>
+      <guid isPermaLink="false">rassegna-er-2026-11-20-19</guid>
+      <pubDate>Fri, 20 Nov 2026 19:08:00 +0100</pubDate>
+      <enclosure url="https://fulgei-a11y.github.io/daily/audio/2026-11-20-19.mp3" length="1717256" type="audio/mpeg"/>
+      <itunes:duration>572</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Aggiornamento delle 13 · venerdì 20 novembre 2026</title>
       <description>35 notizie dall&#x27;Emilia-Romagna. In apertura: Scontri al corteo dello sciopero generale; Aggressione in centro di distribuzione pasti; Morta la seconda 12enne nell&#x27;incidente in A1; Nuova tariffa rifiuti in votazione; Chiusura del Cinema Modernissimo per lavori; Vincita al 10eLotto a Monghidoro.</description>
