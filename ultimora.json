@@ -1,6 +1,36 @@
 {
  "items": [
   {
+   "t": "2026-11-20T16:06+01:00",
+   "cat": "Cronaca",
+   "bo": false,
+   "title": "Anziana cade in casa e resta a terra per 24 ore",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/anziana-cade-in-casa-e-resta-a-terra-per-24-ore-salvata-dai-carabinieri_fb93b25e-f832-4499-8296-eb8c47c71e2f.html"
+   ],
+   "html": "<strong>Anziana cade in casa e resta a terra per 24 ore</strong> — Cattolica (Rimini): un'anziana di 88 anni è stata salvata dai Carabinieri dopo essere caduta in casa e non essere riuscita a chiedere aiuto per quasi 24 ore. I militari sono entrati forzando una finestra dopo l'allarme di un vicino. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/20/anziana-cade-in-casa-e-resta-a-terra-per-24-ore-salvata-dai-carabinieri_fb93b25e-f832-4499-8296-eb8c47c71e2f.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-20T16:06+01:00",
+   "cat": "Economia",
+   "bo": true,
+   "title": "Ducati investe oltre il 10% del fatturato in ricerca e sviluppo",
+   "links": [
+    "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/domenicali-ducati-investiamo-oltre-il-10-del-fatturato-in-ricerca_8fc26fff-d1fa-4389-9082-c34f73e0f595.html"
+   ],
+   "html": "<strong>Ducati investe oltre il 10% del fatturato in ricerca e sviluppo</strong> — Bologna: l'AD di Ducati, Claudio Domenicali, ha dichiarato che l'azienda investe oltre il 10% del proprio fatturato in ricerca e sviluppo, sottolineando l'importanza di tecnologia e qualità per competere nel settore automotive. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/20/domenicali-ducati-investiamo-oltre-il-10-del-fatturato-in-ricerca_8fc26fff-d1fa-4389-9082-c34f73e0f595.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
+   "t": "2026-11-20T16:06+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "L'Italia leader europeo nelle denominazioni agroalimentari",
+   "links": [
+    "https://www.ansa.it/sito/notizie/economia/2026/11/20/litalia-guida-leuropa-delle-denominazioni-agroalimentari-895-prodotti-certificati_74064c72-c3d1-485d-acf0-9ba431506221.html"
+   ],
+   "html": "<strong>L'Italia leader europeo nelle denominazioni agroalimentari</strong> — Parma: l'Italia guida l'Europa con 895 prodotti agroalimentari certificati (Dop, Igp, Stg) su un totale di 3.517, superando Francia e Spagna. I dati dell'Osservatorio Ismea-Qualivita sono stati presentati a Bruxelles da Fiere di Parma-Cibus. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/sito/notizie/economia/2026/11/20/litalia-guida-leuropa-delle-denominazioni-agroalimentari-895-prodotti-certificati_74064c72-c3d1-485d-acf0-9ba431506221.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
+  },
+  {
    "t": "2026-11-20T12:06+01:00",
    "cat": "Cronaca",
    "bo": false,
@@ -96,14 +126,31 @@
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/a-bologna-in-migliaia-per-lo-sciopero-cgil-in-testa-i-lavoratori-kemet_7dec9f77-2b57-493a-9c05-dac516497b0e.html": "2026-11-20T12:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/minacce-alla-moglie-arrestato-dai-carabinieri-per-atti-persecutori_463024b8-cf9b-4d42-b3bc-63f660bb1ec6.html": "2026-11-20T12:06+01:00",
   "https://www.italpress.com/guerra-ucraina-russia-aggiornamenti-venerdi-20-novembre": "2026-11-20T12:06+01:00",
-  "https://www.ansa.it/sito/notizie/cronaca/2026/11/19/uccise-moglie-e-suocera-ergastolo-definitivo-per-amato_fa0b4588-a25a-4f0a-99d5-b54084bab2cf.html": "2026-11-20T12:06+01:00"
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/19/uccise-moglie-e-suocera-ergastolo-definitivo-per-amato_fa0b4588-a25a-4f0a-99d5-b54084bab2cf.html": "2026-11-20T12:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/20/petardi-contro-il-ministero-due-studenti-in-dissenso-tra-i-poliziotti_81ec06b5-2dba-4b72-b8d1-f0341d4535cb.html": "2026-11-20T16:06+01:00",
+  "https://www.dire.it/20-11-2026/1291645-maxi-meeting-del-cuamm-a-bologna-non-facciamoci-rubare-lumanita": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/fabrizio-gifuni-si-racconta-a-parma-in-italia-quasi-nessuna-tutela-alla-categoria_21ed0dbc-1198-4656-b83d-06f073298604.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/sito/notizie/cronaca/2026/11/20/a-bologna-momenti-di-tensione-tra-polizia-e-attivisti-vicino-alla-sede-di-confindustria_456e9ad3-a37c-4078-877d-84feafc02bf1.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/a-parma-una-mostra-fotografica-su-marilyn-monroe-a-centanni-dalla-nascita_1ec5ef71-3244-4bea-b503-7de411f2f037.html": "2026-11-20T16:06+01:00",
+  "https://www.italpress.com/la-roma-di-gasperini-a-parma-convivenza-dybala-soule-un-falso-problema": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/anna-maria-linsalata-lergastolo-ad-amato-ha-ridato-dignita-a-mia-sorella_d8f9b084-5587-4a63-b13e-1b5057355fc9.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/sito/notizie/economia/2026/11/20/litalia-guida-leuropa-delle-denominazioni-agroalimentari-895-prodotti-certificati_74064c72-c3d1-485d-acf0-9ba431506221.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/rimini-accende-il-sogno-del-natale_312c6bd6-eb1b-467f-899b-1520e6f6b12c.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/corteo-a-bologna-i-collettivi-bruciano-un-grande-cavallo-di-carta_5f46cc53-00de-4e9d-a94e-6fae3b801526.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/scontri-tra-polizia-e-attivisti-vicino-a-sede-di-confindustria-a-bologna_93ad6b02-3c60-4b9c-887d-ccc8723d6330.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/domenicali-ducati-investiamo-oltre-il-10-del-fatturato-in-ricerca_8fc26fff-d1fa-4389-9082-c34f73e0f595.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/anziana-cade-in-casa-e-resta-a-terra-per-24-ore-salvata-dai-carabinieri_fb93b25e-f832-4499-8296-eb8c47c71e2f.html": "2026-11-20T16:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/ratti-ago-a-modena-e-opera-aperta-lex-ospedale-rinasce-e-accoglie-la-citta_637d9ffa-fa84-425f-b0a4-1a5098d3be63.html": "2026-11-20T16:06+01:00",
+  "https://www.italpress.com/sciopero-generale-in-tutta-italia-cortei-sindacati-aggiornamenti-venerdi-20-novembre": "2026-11-20T16:06+01:00",
+  "https://www.adnkronos.com/cronaca/sciopero-generale-20-novembre-2026-diretta-oggi-ultime-notizie_3u6CoOImHMPXfKkNV4xx2g": "2026-11-20T16:06+01:00",
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVkNmWTNua0ctQXg3LU9uQ2Jad0loSzBvTVZqSzJXT2NmRG1keVUyS1JMcXJvR3luWWNTVGhyYWZYeXNha3A4YnNYSldJTnlKdHZVanJCUFFna3pyQnozaHJnYnl4bVdncy0wUGg0VVpoWjJXZ3pscE5VRDA2ajJZZ2JON3FFUy1tOHBCeEdOcVNpSlRQS3NnajZxZzNtemFpUUM4T0ZuX3V4VEM5U0xrcA": "2026-11-20T16:06+01:00"
  },
- "updated": "2026-11-20T12:06+01:00",
- "next": "alle 16",
+ "updated": "2026-11-20T16:06+01:00",
+ "next": "alle 20",
  "last_run": {
-  "at": "2026-11-20T12:06+01:00",
-  "articles": 6,
-  "items": 1,
+  "at": "2026-11-20T16:06+01:00",
+  "articles": 17,
+  "items": 3,
   "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
@@ -111,8 +158,8 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 31,
-    "kept": 3
+    "items": 33,
+    "kept": 9
    },
    {
     "agency": "ANSA",
@@ -126,7 +173,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 49,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "AGI",
@@ -146,7 +193,7 @@
     "agency": "AGI",
     "channel": "Google News",
     "status": "ok",
-    "items": 4,
+    "items": 2,
     "kept": 0
    },
    {
@@ -154,7 +201,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 20,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Adnkronos",
@@ -196,7 +243,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 1
+    "kept": 2
    },
    {
     "agency": "Italpress",
@@ -210,20 +257,20 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 10,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dire",
     "channel": "Google News",
     "status": "ok",
     "items": 60,
-    "kept": 0
+    "kept": 1
    },
    {
     "agency": "Dagospia",
     "channel": "Google News",
     "status": "ok",
-    "items": 4,
+    "items": 2,
     "kept": 0
    }
   ]
