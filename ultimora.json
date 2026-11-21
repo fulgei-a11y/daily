@@ -1,6 +1,16 @@
 {
  "items": [
   {
+   "t": "2026-11-21T12:06+01:00",
+   "cat": "Economia",
+   "bo": false,
+   "title": "Stellantis e Maserati, piano per il ritorno dell'auto italiana",
+   "links": [
+    "https://www.italpress.com/urso-non-molliamo-lauto-zes-unica-sara-la-madre-di-tutte-le-semplificazioni-2"
+   ],
+   "html": "<strong>Stellantis e Maserati, piano per il ritorno dell'auto italiana</strong> — Modena: il 10 dicembre Stellantis presenterà il piano Maserati, riavviando il dialogo con il governo per il ritorno dell'auto italiana in Italia. <span class=\"src\">Fonte: <a href=\"https://www.italpress.com/urso-non-molliamo-lauto-zes-unica-sara-la-madre-di-tutte-le-semplificazioni-2/\" target=\"_blank\" rel=\"noopener\">Italpress</a></span>"
+  },
+  {
    "t": "2026-11-21T00:06+01:00",
    "cat": "Cronaca",
    "bo": false,
@@ -70,21 +80,9 @@
     "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/rimborsi-di-ticket-sanitari-mai-dovuti-arrestato-dipendente-aosp-parma_09285664-c7e5-4f7c-8527-7af1822073f7.html"
    ],
    "html": "<strong>Rimborsi ticket sanitari mai dovuti, arrestato dipendente Aosp</strong> — Parma: un dipendente amministrativo dell'Azienda ospedaliero-universitaria è finito agli arresti domiciliari con l'accusa di aver sottratto circa 900mila euro all'ente con rimborsi di ticket sanitari mai dovuti, accusato di truffa aggravata ai danni dello Stato e autoriciclaggio. <span class=\"src\">Fonte: <a href=\"https://www.ansa.it/emiliaromagna/notizie/2026/11/20/rimborsi-di-ticket-sanitari-mai-dovuti-arrestato-dipendente-aosp-parma_09285664-c7e5-4f7c-8527-7af1822073f7.html\" target=\"_blank\" rel=\"noopener\">ANSA</a></span>"
-  },
-  {
-   "t": "2026-11-20T00:06+01:00",
-   "cat": "Cronaca",
-   "bo": false,
-   "title": "Segregata e abusata, 25enne si lancia dall'auto",
-   "links": [
-    "https://www.adnkronos.com/cronaca/pakistana-segregata-abusta-novellara_6zZvclXdiE74ybRFDY30B0"
-   ],
-   "html": "<strong>Segregata e abusata, 25enne si lancia dall'auto</strong> — Novellara (Reggio Emilia): Una donna pakistana di 25 anni è stata segregata, abusata e violentata dal marito e dai suoi parenti. La vittima è riuscita a salvarsi gettandosi da un'auto in corsa. <span class=\"src\">Fonte: <a href=\"https://www.adnkronos.com/cronaca/pakistana-segregata-abusta-novellara_6zZvclXdiE74ybRFDY30B0\" target=\"_blank\" rel=\"noopener\">Adnkronos</a></span>"
   }
  ],
  "seen": {
-  "https://www.adnkronos.com/cronaca/pakistana-segregata-abusta-novellara_6zZvclXdiE74ybRFDY30B0": "2026-11-20T00:06+01:00",
-  "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/uccise-moglie-e-suocera-ergastolo-definitivo-per-amato_fd5b2fc2-028f-4882-a551-dad10f24e587.html": "2026-11-20T00:06+01:00",
   "https://www.dire.it/20-11-2026/1291405-raid-russi-nella-notte-su-kiev-tre-morti-due-feriti-e-ponti-danneggiati": "2026-11-20T08:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/19/uccise-moglie-e-suocera-ergastolo-definitivo-per-amato_080c87c0-3d51-44f9-a9e1-a5a5c4088b5a.html": "2026-11-20T08:06+01:00",
   "https://www.ansa.it/sito/notizie/cronaca/2026/11/20/a-kiev-si-dorme-nella-metro-per-timore-degli-attacchi-russi_4a156298-546d-44be-8603-ac38e45990fc.html": "2026-11-20T12:06+01:00",
@@ -121,23 +119,28 @@
   "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRUlBckJ2UGFDSEhCVklJVlRUSm9rdWpHU2lUTTdvU2d5aTdDUmVWYmdoSEkxb09jOUZyamZHWUt3WGxFazQ0bmNLV2xkVlZGZWpfU250bC14ZGg3S3hTNExreGtQY3E1UE9uNGFYRlpKa2Q3NS1qMGg4SWx4NnJVYUJpRmZMSl8wZExZRm82eVNyZDdEM3UyeGJQQWo2VVh4MkcyRFVHaw": "2026-11-21T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/orsini-motor-valley-modello-per-litalia-ma-crisi-automotive-ce-la-siamo-cercata_35c8f410-615b-4a56-a9e4-e21e9f294a02.html": "2026-11-21T00:06+01:00",
   "https://www.ansa.it/emiliaromagna/notizie/2026/11/20/cgil-bologna-al-corteo-oltre-50mila-persone_1f01c76c-4eb4-40b8-bdce-1d71c2c0f84f.html": "2026-11-21T00:06+01:00",
-  "https://news.google.com/rss/articles/CBMijgJBVV95cUxONGt1ZFY2S2lIc1d3T0dTSXo5RzVnb2Zpc25qdEt2Sk5wUVpNVzB2aEZVczIwR3VMam1GX1NkczdGY2FuaG9Fa3RqTVprQ2pxU3VRWHdrN05IdjJ4Z0lkR3RYUWY2TUNNWTRSanZ3Z2xkeHI2OTZFMkhFX0dIQWsxTFMzU0VfVVBqZHhCY2c5UXQ0czZhQUFzMVE5ejgtSU9RcXJhOG1CN3dZanhKc1M0ME0yV2pOR2JOWHNJS05rdk5XZndYYUxoQ25veW5qYzg3OE1UcDFtRGV6djZXVERRT0Y5WmZoMG5DX1BDUzNSMU5jNE5KTXg5dnR4d3NSNEQwMURnRlA0d2NaWEJpY2c": "2026-11-21T00:06+01:00"
+  "https://news.google.com/rss/articles/CBMijgJBVV95cUxONGt1ZFY2S2lIc1d3T0dTSXo5RzVnb2Zpc25qdEt2Sk5wUVpNVzB2aEZVczIwR3VMam1GX1NkczdGY2FuaG9Fa3RqTVprQ2pxU3VRWHdrN05IdjJ4Z0lkR3RYUWY2TUNNWTRSanZ3Z2xkeHI2OTZFMkhFX0dIQWsxTFMzU0VfVVBqZHhCY2c5UXQ0czZhQUFzMVE5ejgtSU9RcXJhOG1CN3dZanhKc1M0ME0yV2pOR2JOWHNJS05rdk5XZndYYUxoQ25veW5qYzg3OE1UcDFtRGV6djZXVERRT0Y5WmZoMG5DX1BDUzNSMU5jNE5KTXg5dnR4d3NSNEQwMURnRlA0d2NaWEJpY2c": "2026-11-21T00:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/21/uno-spettacolo-in-otto-atti-dallombra-alla-luce-per-francesca-michielin_243c02f4-91ca-4090-85e6-a6616412f906.html": "2026-11-21T12:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/21/giudici-ausiliari-dappello-beffati-dal-governo-meloni-ci-incontri_e1f5b4b2-7f01-47fc-8657-8efe38177590.html": "2026-11-21T12:06+01:00",
+  "https://www.ansa.it/emiliaromagna/notizie/2026/11/21/f1-las-vegas-che-rischio-nel-finale-ho-un-gran-passo-si-puo-vincere_19ea57ee-a238-4df9-bcc1-b8441c4998f0.html": "2026-11-21T12:06+01:00",
+  "https://www.italpress.com/urso-non-molliamo-lauto-zes-unica-sara-la-madre-di-tutte-le-semplificazioni-2": "2026-11-21T12:06+01:00",
+  "https://www.italpress.com/guerra-ucraina-russia-notizie-aggiornamenti-oggi-21-novembre-2026": "2026-11-21T12:06+01:00"
  },
- "updated": "2026-11-21T08:06+01:00",
- "next": "alle 12",
+ "updated": "2026-11-21T12:06+01:00",
+ "next": "alle 16",
  "last_run": {
-  "at": "2026-11-21T08:06+01:00",
-  "articles": 0,
-  "items": 0,
-  "model": null,
+  "at": "2026-11-21T12:06+01:00",
+  "articles": 5,
+  "items": 1,
+  "model": "gemini-2.5-flash",
   "fallback": false,
   "feeds": [
    {
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 35,
-    "kept": 0
+    "items": 37,
+    "kept": 3
    },
    {
     "agency": "ANSA",
@@ -150,7 +153,7 @@
     "agency": "ANSA",
     "channel": "feed diretto",
     "status": "ok",
-    "items": 60,
+    "items": 47,
     "kept": 0
    },
    {
@@ -221,7 +224,7 @@
     "channel": "feed diretto",
     "status": "ok",
     "items": 30,
-    "kept": 0
+    "kept": 2
    },
    {
     "agency": "Italpress",
