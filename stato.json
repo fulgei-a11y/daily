@@ -1,18 +1,73 @@
 {
- "date": "2026-11-20",
- "slot": "19",
- "generated": "2026-11-20T19:08+01:00",
- "articles": 437,
- "items": 35,
- "model": "gemini-2.5-flash",
+ "date": "2026-11-21",
+ "slot": "mattina",
+ "generated": "2026-11-21T06:24+01:00",
+ "articles": 520,
+ "items": 128,
+ "model": "gemini-3.8-flash",
  "fallback": false,
- "feeds_ok": 77,
+ "feeds_ok": 76,
  "feeds_total": 77,
  "passaggi": [
   {
+   "parte": "Bologna 1: Cronaca, Giustizia e indagini, Comune di Bologna e politica, Mobilità, cantieri e trasporti, Area metropolitana",
+   "articoli": 286
+  },
+  {
    "modello": "gemini-2.5-flash",
-   "notizie": 54,
-   "caratteri": 18912
+   "notizie": 30,
+   "caratteri": 13332
+  },
+  {
+   "parte": "Bologna 2: Economia, imprese e lavoro, Sanità e sociale, Scuola e università, Imola e circondario, Cultura ed eventi",
+   "articoli": 286
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "notizie": 44,
+   "caratteri": 18474
+  },
+  {
+   "parte": "EMILIA",
+   "articoli": 133
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "notizie": 38,
+   "caratteri": 13962
+  },
+  {
+   "parte": "ROMAGNA",
+   "articoli": 101
+  },
+  {
+   "modello": "gemini-2.5-flash",
+   "errore": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on"
+  },
+  {
+   "modello": "gemini-3.8-flash",
+   "errore": "peer closed connection without sending complete message body (incomplete chunked read)"
+  },
+  {
+   "modello": "gemini-3.8-flash",
+   "errore": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again "
+  },
+  {
+   "modello": "gemini-3.6-flash",
+   "notizie": 22,
+   "caratteri": 7969
+  },
+  {
+   "sezioni": {
+    "Bologna": 69,
+    "Emilia-Romagna": 59,
+    "agenda": 0
+   }
+  },
+  {
+   "modello": "gemini-3.8-flash",
+   "notizie": 0,
+   "caratteri": 904
   }
  ],
  "feeds": [
@@ -230,7 +285,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 20
+   "items": 18
   },
   {
    "name": "Google News",
@@ -266,7 +321,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 15
+   "items": 20
   },
   {
    "name": "Google News",
@@ -296,19 +351,19 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 1
+   "items": 0
   },
   {
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 17
+   "items": 14
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
+   "items": 39
   },
   {
    "name": "Google News",
@@ -326,13 +381,7 @@
    "name": "Google News",
    "prov": "",
    "status": "ok",
-   "items": 12
-  },
-  {
-   "name": "Google News",
-   "prov": "Bologna",
-   "status": "ok",
-   "items": 23
+   "items": 11
   },
   {
    "name": "Google News",
@@ -344,7 +393,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 23
+   "items": 21
+  },
+  {
+   "name": "Google News",
+   "prov": "Bologna",
+   "status": "ok",
+   "items": 25
   },
   {
    "name": "Google News",
@@ -356,7 +411,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 40
+   "items": 38
   },
   {
    "name": "Google News",
@@ -368,13 +423,13 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 16
+   "items": 15
   },
   {
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 18
+   "items": 20
   },
   {
    "name": "Google News",
@@ -386,7 +441,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 5
+   "items": 7
   },
   {
    "name": "Google News",
@@ -410,7 +465,7 @@
    "name": "Google News",
    "prov": "Bologna",
    "status": "ok",
-   "items": 25
+   "items": 22
   },
   {
    "name": "Google News",
