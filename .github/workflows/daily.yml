@@ -52,7 +52,7 @@ jobs:
             usata=$(python3 .github/apri.py dati.bin dati.tgz 2>/dev/null) && tar -xzf dati.tgz -C w 2>/dev/null \
               || { echo "Decifratura non riuscita."; exit 1; }
             rm -f dati.tgz
-            echo "$usata" > w/.chiave
+            echo "$usata" > chiave_usata.txt
           elif [ -f tools/esegui.sh ]; then
             git archive HEAD | tar -x -C w && rm -rf w/.github
           else
