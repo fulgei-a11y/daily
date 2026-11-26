@@ -11,9 +11,8 @@ on:
     inputs:
       tipo:
         description: 'Cosa fare'
-        type: choice
+        type: string
         default: automatico
-        options: [automatico, mattina, '13', '19', ultimora, sito, prova]
 
 permissions:
   contents: write
@@ -61,7 +60,7 @@ jobs:
         if: steps.d.outputs.audio == 'si'
         with:
           path: ~/.cache/voce-tts
-          key: paola-tts-1.12.14
+          key: c-1
 
       - name: Esegui
         if: steps.d.outputs.fare == 'true'
@@ -78,10 +77,11 @@ jobs:
       - name: Registro
         if: always()
         env:
-          PASSWORD_DATI: ${{ secrets.PASSWORD_DATI }}
+          # password separata per il registro; se manca si usa quella dei dati
+          PASSWORD_REGISTRO: ${{ secrets.PASSWORD_REGISTRO || secrets.PASSWORD_DATI }}
         run: |
-          [ -n "$PASSWORD_DATI" ] && [ -s uscita.txt ] || exit 0
-          openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -md sha256 -salt -pass env:PASSWORD_DATI -in uscita.txt -out r.bin
+          [ -n "$PASSWORD_REGISTRO" ] && [ -s uscita.txt ] || exit 0
+          openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -md sha256 -salt -pass env:PASSWORD_REGISTRO -in uscita.txt -out r.bin
           rm -f uscita.txt
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -95,3 +95,20 @@ jobs:
       - name: Avvisi
         run: |
           if [ -s avvisi.txt ]; then echo "::error::Avvisi"; exit 1; fi
+
+  # una volta al giorno riattiva i flussi programmati, che GitHub spegne
+  # nei repository pubblici dopo 60 giorni senza attività
+  vivo:
+    if: github.event_name == 'schedule' && github.event.schedule == '53 3,4 * * *'
+    runs-on: ubuntu-24.04
+    permissions:
+      actions: write
+    steps:
+      - name: Riattiva
+        env:
+          GH_TOKEN: ${{ github.token }}
+          R: ${{ github.repository }}
+        run: |
+          for w in daily.yml manutenzione.yml; do
+            gh api -X PUT "repos/$R/actions/workflows/$w/enable" >/dev/null 2>&1 || echo "non riuscito"
+          done
