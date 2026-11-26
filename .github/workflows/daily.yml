@@ -40,6 +40,7 @@ jobs:
         id: d
         env:
           PASSWORD_DATI: ${{ secrets.PASSWORD_DATI }}
+          PASSWORD_NUOVA: ${{ secrets.PASSWORD_NUOVA }}
           TIPO: ${{ github.event.inputs.tipo }}
           EVENT: ${{ github.event_name }}
         run: |
@@ -47,8 +48,11 @@ jobs:
           mkdir -p w
           if git fetch -q --depth=1 origin dati 2>/dev/null; then
             git show FETCH_HEAD:dati.bin > dati.bin
-            openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -md sha256 -pass env:PASSWORD_DATI -in dati.bin 2>/dev/null \
-              | tar -xz -C w 2>/dev/null || { echo "Decifratura non riuscita."; exit 1; }
+            python -m pip install -q cryptography >/dev/null 2>&1
+            usata=$(python3 .github/apri.py dati.bin dati.tgz 2>/dev/null) && tar -xzf dati.tgz -C w 2>/dev/null \
+              || { echo "Decifratura non riuscita."; exit 1; }
+            rm -f dati.tgz
+            echo "$usata" > w/.chiave
           elif [ -f tools/esegui.sh ]; then
             git archive HEAD | tar -x -C w && rm -rf w/.github
           else
@@ -66,6 +70,7 @@ jobs:
         if: steps.d.outputs.fare == 'true'
         env:
           PASSWORD_DATI: ${{ secrets.PASSWORD_DATI }}
+          PASSWORD_NUOVA: ${{ secrets.PASSWORD_NUOVA }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           SENTINELLE: ${{ secrets.SENTINELLE }}
