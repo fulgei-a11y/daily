@@ -1,0 +1,97 @@
+name: Aggiornamento
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+    - cron: '53 3,4 * * *'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/daily.yml']
+  workflow_dispatch:
+    inputs:
+      tipo:
+        description: 'Cosa fare'
+        type: choice
+        default: automatico
+        options: [automatico, mattina, '13', '19', ultimora, sito, prova]
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: lavoro
+  cancel-in-progress: false
+
+jobs:
+  lavoro:
+    runs-on: ubuntu-24.04
+    timeout-minutes: ${{ github.event.inputs.tipo == 'prova' && 100 || 60 }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.11"
+
+      - name: Prepara
+        id: d
+        env:
+          PASSWORD_DATI: ${{ secrets.PASSWORD_DATI }}
+          TIPO: ${{ github.event.inputs.tipo }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          [ -n "$PASSWORD_DATI" ] || { echo "Manca un segreto."; exit 1; }
+          mkdir -p w
+          if git fetch -q --depth=1 origin dati 2>/dev/null; then
+            git show FETCH_HEAD:dati.bin > dati.bin
+            openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -md sha256 -pass env:PASSWORD_DATI -in dati.bin 2>/dev/null \
+              | tar -xz -C w 2>/dev/null || { echo "Decifratura non riuscita."; exit 1; }
+          elif [ -f tools/esegui.sh ]; then
+            git archive HEAD | tar -x -C w && rm -rf w/.github
+          else
+            echo "Dati non raggiungibili."; exit 1
+          fi
+          bash w/tools/esegui.sh decidi >> uscita.txt 2>&1 || { echo "Non riuscito."; exit 1; }
+
+      - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        if: steps.d.outputs.audio == 'si'
+        with:
+          path: ~/.cache/voce-tts
+          key: paola-tts-1.12.14
+
+      - name: Esegui
+        if: steps.d.outputs.fare == 'true'
+        env:
+          PASSWORD_DATI: ${{ secrets.PASSWORD_DATI }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          SENTINELLE: ${{ secrets.SENTINELLE }}
+          GH_TOKEN: ${{ github.token }}
+          AUDIO_DAYS: '19'
+        run: |
+          bash w/tools/esegui.sh lavora >> uscita.txt 2>&1 && echo "Fatto." || { echo "Non riuscito."; exit 1; }
+
+      - name: Registro
+        if: always()
+        env:
+          PASSWORD_DATI: ${{ secrets.PASSWORD_DATI }}
+        run: |
+          [ -n "$PASSWORD_DATI" ] && [ -s uscita.txt ] || exit 0
+          openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -md sha256 -salt -pass env:PASSWORD_DATI -in uscita.txt -out r.bin
+          rm -f uscita.txt
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: r
+          path: r.bin
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Avvisi
+        run: |
+          if [ -s avvisi.txt ]; then echo "::error::Avvisi"; exit 1; fi
