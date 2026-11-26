@@ -36,6 +36,12 @@ jobs:
         with:
           python-version: "3.11"
 
+      # libreria per decifrare: scaricata una volta sola, poi presa dalla cache di GitHub
+      - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: ~/.cache/lib-py
+          key: lib-py-311-1
+
       - name: Prepara
         id: d
         env:
@@ -48,7 +54,10 @@ jobs:
           mkdir -p w
           if git fetch -q --depth=1 origin dati 2>/dev/null; then
             git show FETCH_HEAD:dati.bin > dati.bin
-            python -m pip install -q cryptography >/dev/null 2>&1
+            export PYTHONPATH="$HOME/.cache/lib-py"
+            echo "PYTHONPATH=$PYTHONPATH" >> "$GITHUB_ENV"
+            python3 -c "import cryptography" 2>/dev/null \
+              || python -m pip install -q --target "$PYTHONPATH" cryptography >/dev/null 2>&1
             usata=$(python3 .github/apri.py dati.bin dati.tgz 2>/dev/null) && tar -xzf dati.tgz -C w 2>/dev/null \
               || { echo "Decifratura non riuscita."; exit 1; }
             rm -f dati.tgz
