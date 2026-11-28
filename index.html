@@ -1,0 +1,48 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer"><meta name="theme-color" content="#F3F1EC">
+<title>Daily</title><link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon-64.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Daily">
+<style>html,body{margin:0;height:100%;background:#F3F1EC;font:16px system-ui,sans-serif}
+body{display:flex;align-items:center;justify-content:center}
+form{display:flex;flex-direction:column;gap:10px;width:min(320px,88vw)}
+input,button{font:inherit;padding:12px 14px;border-radius:10px;border:1px solid #ccc}
+label{font-size:14px;display:flex;gap:8px;align-items:center}
+button{background:#222;color:#fff;border:0}#e{color:#b00020;min-height:1.3em;font-size:14px}</style>
+</head><body><form id="f" hidden autocomplete="on">
+<input name="username" autocomplete="username" value="daily" hidden>
+<input id="p" name="password" type="password" autocomplete="current-password" placeholder="Password" required>
+<label><input type="checkbox" id="r" checked style="padding:0">Ricorda su questo dispositivo</label>
+<button>Apri</button><div id="e"></div></form>
+<script>(async()=>{
+const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+const f=document.getElementById('f'),p=document.getElementById('p'),er=document.getElementById('e');
+const db=()=>new Promise((res,rej)=>{const q=indexedDB.open('chiave',1);q.onupgradeneeded=()=>q.result.createObjectStore('k');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)});
+const idb=async(m,fn)=>{const d=await db();return new Promise((res,rej)=>{const t=d.transaction('k',m),q=fn(t.objectStore('k'));t.oncomplete=()=>res(q&&q.result);t.onerror=()=>rej(t.error)})};
+const dec=async(k,u)=>new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv:u.subarray(4,16)},k,u.subarray(16)));
+const meta=async()=>{const r=await fetch('chiave.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw 1;return r.json()};
+async function deriva(pw,m){const x=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveBits']);
+ const bits=new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:b(m.salt),iterations:m.iter},x,512));
+ const k=await crypto.subtle.importKey('raw',bits.subarray(0,32),'AES-GCM',false,['decrypt']);bits.fill(0);return k}
+const prova=async(k,m)=>{try{await dec(k,b(m.check));return true}catch(x){return false}};
+async function apri(k){
+ const a=new Uint8Array(await (await fetch('app.bin?v='+Date.now())).arrayBuffer());
+ const html=new TextDecoder().decode(await dec(k,a));
+ window.__RERKEY=k;
+ document.open();document.write(html);document.close();
+ if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
+let k=null,m=null;
+try{m=await meta()}catch(x){}
+try{k=await idb('readonly',s=>s.get('aes'))}catch(x){k=null}
+if(k&&m&&!(await prova(k,m))){k=null;try{await idb('readwrite',s=>s.delete('aes'))}catch(x){}}
+if(k){try{await apri(k);return}catch(x){}}
+f.hidden=false;p.focus();
+f.addEventListener('submit',async ev=>{ev.preventDefault();er.textContent='…';
+ try{m=m||await meta();const k=await deriva(p.value,m);
+  if(!(await prova(k,m))){er.textContent='Password errata';return}
+  if(document.getElementById('r').checked){try{await idb('readwrite',s=>s.put(k,'aes'))}catch(x){}}
+  p.value='';await apri(k)}catch(x){er.textContent='Impossibile aprire: controlla la connessione'}});
+})();</script></body></html>
